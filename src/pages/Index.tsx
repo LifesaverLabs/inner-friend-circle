@@ -1,14 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { LandingHero } from '@/components/LandingHero';
+import { FriendDashboard } from '@/components/FriendDashboard';
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [showDashboard, setShowDashboard] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleGetStarted = () => {
+    setShowDashboard(true);
+  };
+
+  const handleSignIn = () => {
+    setShowDashboard(true);
+  };
+
+  const handleSignOut = () => {
+    setIsLoggedIn(false);
+    setShowDashboard(false);
+  };
+
+  if (showDashboard) {
+    return (
+      <FriendDashboard
+        isLoggedIn={isLoggedIn}
+        onSignIn={handleSignIn}
+        onSignOut={handleSignOut}
+      />
+    );
+  }
+
+  return <LandingHero onGetStarted={handleGetStarted} />;
 };
 
 export default Index;

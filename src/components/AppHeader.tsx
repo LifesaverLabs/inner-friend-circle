@@ -1,0 +1,79 @@
+import { motion } from 'framer-motion';
+import { Heart, LogOut, Settings, User } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+
+interface AppHeaderProps {
+  isLoggedIn: boolean;
+  userEmail?: string;
+  onSignIn: () => void;
+  onSignOut: () => void;
+  onSettings?: () => void;
+}
+
+export function AppHeader({ 
+  isLoggedIn, 
+  userEmail, 
+  onSignIn, 
+  onSignOut,
+  onSettings 
+}: AppHeaderProps) {
+  return (
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <motion.a 
+          href="/"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="flex items-center gap-2"
+        >
+          <Heart className="w-7 h-7 text-primary fill-primary/20" />
+          <span className="font-display text-xl font-bold text-foreground">Inner Friend</span>
+        </motion.a>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
+          {isLoggedIn ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-2">
+                  <User className="w-4 h-4" />
+                  <span className="hidden sm:inline max-w-[150px] truncate">
+                    {userEmail}
+                  </span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {onSettings && (
+                  <>
+                    <DropdownMenuItem onClick={onSettings}>
+                      <Settings className="w-4 h-4 mr-2" />
+                      Settings
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                  </>
+                )}
+                <DropdownMenuItem onClick={onSignOut}>
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button variant="outline" size="sm" onClick={onSignIn}>
+              Sign In
+            </Button>
+          )}
+        </motion.div>
+      </div>
+    </header>
+  );
+}
