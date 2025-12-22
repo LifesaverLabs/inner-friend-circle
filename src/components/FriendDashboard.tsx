@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
-import { Share2 } from 'lucide-react';
+import { Share2, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TierSection } from '@/components/TierSection';
 import { AppHeader } from '@/components/AppHeader';
 import { ShareDialog } from '@/components/ShareDialog';
+import { TendingDialog } from '@/components/TendingDialog';
 import { useFriendLists } from '@/hooks/useFriendLists';
-import { TierType } from '@/types/friend';
+import { TierType, ContactMethod } from '@/types/friend';
 
 interface FriendDashboardProps {
   isLoggedIn: boolean;
@@ -23,6 +24,7 @@ export function FriendDashboard({
   onSignOut 
 }: FriendDashboardProps) {
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const [tendingDialogOpen, setTendingDialogOpen] = useState(false);
   
   const {
     lists,
@@ -34,15 +36,20 @@ export function FriendDashboard({
     removeFriend,
     reorderFriendsInTier,
     setReservedSpots,
+    updateFriend,
   } = useFriendLists();
 
-  const handleAddFriend = (tier: TierType) => (name: string, email?: string) => {
-    const result = addFriend({ name, email, tier });
+  const handleAddFriend = (tier: TierType) => (name: string, email?: string, phone?: string, preferredContact?: ContactMethod) => {
+    const result = addFriend({ name, email, phone, preferredContact, tier });
     if (result.success) {
       toast.success(`Added ${name} to your ${tier} circle`);
     } else {
       toast.error(result.error);
     }
+  };
+
+  const handleUpdateLastContacted = (id: string) => {
+    updateFriend(id, { lastContacted: new Date() });
   };
 
   const handleMoveFriend = (id: string, newTier: TierType) => {
@@ -114,6 +121,14 @@ export function FriendDashboard({
             </div>
             <Button 
               variant="outline" 
+              onClick={() => setTendingDialogOpen(true)}
+              className="shrink-0"
+            >
+              <Heart className="h-4 w-4 mr-2" />
+              Tend
+            </Button>
+            <Button 
+              variant="outline" 
               onClick={() => setShareDialogOpen(true)}
               className="shrink-0"
             >
@@ -151,6 +166,14 @@ export function FriendDashboard({
           onOpenChange={setShareDialogOpen}
           friends={lists.friends}
           getFriendsInTier={getFriendsInTier}
+        />
+
+        <TendingDialog
+          open={tendingDialogOpen}
+          onOpenChange={setTendingDialogOpen}
+          friends={lists.friends}
+          getFriendsInTier={getFriendsInTier}
+          onUpdateLastContacted={handleUpdateLastContacted}
         />
       </main>
     </div>

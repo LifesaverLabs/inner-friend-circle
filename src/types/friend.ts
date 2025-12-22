@@ -1,11 +1,24 @@
 export type TierType = 'core' | 'inner' | 'outer' | 'parasocial';
 
+export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram';
+
+export const CONTACT_METHODS: Record<ContactMethod, { name: string; icon: string; getUrl: (phone: string) => string }> = {
+  tel: { name: 'Phone Call', icon: '📞', getUrl: (phone) => `tel:${phone}` },
+  facetime: { name: 'FaceTime', icon: '📱', getUrl: (phone) => `facetime:${phone}` },
+  whatsapp: { name: 'WhatsApp', icon: '💬', getUrl: (phone) => `https://wa.me/${phone.replace(/\D/g, '')}` },
+  signal: { name: 'Signal', icon: '🔐', getUrl: (phone) => `https://signal.me/#p/${phone.replace(/\D/g, '')}` },
+  telegram: { name: 'Telegram', icon: '✈️', getUrl: (phone) => `https://t.me/${phone.replace(/\D/g, '')}` },
+};
+
 export interface Friend {
   id: string;
   name: string;
   email?: string;
+  phone?: string;
+  preferredContact?: ContactMethod;
   tier: TierType;
   addedAt: Date;
+  lastContacted?: Date;
   notes?: string;
   sortOrder?: number; // Custom sort order; if undefined, sort alphabetically
 }

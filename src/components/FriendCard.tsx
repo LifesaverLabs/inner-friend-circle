@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical } from 'lucide-react';
+import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical, Phone } from 'lucide-react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { Button } from '@/components/ui/button';
@@ -11,7 +11,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Friend, TierType, TIER_INFO } from '@/types/friend';
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
+import { Friend, TierType, TIER_INFO, CONTACT_METHODS } from '@/types/friend';
+import { toast } from 'sonner';
 
 interface FriendCardProps {
   friend: Friend;
@@ -72,7 +74,39 @@ export function FriendCard({ friend, onMove, onRemove, canMoveUp, canMoveDown }:
         {friend.email && (
           <p className="text-xs text-muted-foreground truncate">{friend.email}</p>
         )}
+        {friend.phone && (
+          <p className="text-xs text-muted-foreground truncate">{friend.phone}</p>
+        )}
       </div>
+
+      {friend.phone && (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-primary hover:text-primary/80"
+                onClick={() => {
+                  const method = friend.preferredContact || 'tel';
+                  const contactInfo = CONTACT_METHODS[method];
+                  window.open(contactInfo.getUrl(friend.phone!), '_blank');
+                  toast.success(`Connecting via ${contactInfo.name}`);
+                }}
+              >
+                <Phone className="w-4 h-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>
+                {friend.preferredContact 
+                  ? `Call via ${CONTACT_METHODS[friend.preferredContact].name}` 
+                  : 'Call'}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
