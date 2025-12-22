@@ -7,6 +7,7 @@ export interface Friend {
   tier: TierType;
   addedAt: Date;
   notes?: string;
+  sortOrder?: number; // Custom sort order; if undefined, sort alphabetically
 }
 
 export interface ReservedSpots {

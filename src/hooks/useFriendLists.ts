@@ -56,8 +56,33 @@ export function useFriendLists() {
   }, [lists, isLoaded]);
 
   const getFriendsInTier = useCallback((tier: TierType) => {
-    return lists.friends.filter(f => f.tier === tier);
+    const tierFriends = lists.friends.filter(f => f.tier === tier);
+    
+    // Sort: friends with sortOrder use that, otherwise alphabetically by name
+    return tierFriends.sort((a, b) => {
+      // Both have sortOrder: sort by sortOrder
+      if (a.sortOrder !== undefined && b.sortOrder !== undefined) {
+        return a.sortOrder - b.sortOrder;
+      }
+      // Only a has sortOrder: a comes first
+      if (a.sortOrder !== undefined) return -1;
+      // Only b has sortOrder: b comes first
+      if (b.sortOrder !== undefined) return 1;
+      // Neither has sortOrder: alphabetically
+      return a.name.localeCompare(b.name);
+    });
   }, [lists.friends]);
+
+  const reorderFriendsInTier = useCallback((tier: TierType, orderedIds: string[]) => {
+    setLists(prev => ({
+      ...prev,
+      friends: prev.friends.map(f => {
+        if (f.tier !== tier) return f;
+        const newOrder = orderedIds.indexOf(f.id);
+        return { ...f, sortOrder: newOrder >= 0 ? newOrder : undefined };
+      }),
+    }));
+  }, []);
 
   const getTierCapacity = useCallback((tier: TierType) => {
     const friendsInTier = getFriendsInTier(tier).length;
@@ -156,6 +181,7 @@ export function useFriendLists() {
     updateFriend,
     removeFriend,
     moveFriend,
+    reorderFriendsInTier,
     setReservedSpots,
     clearAllData,
   };
