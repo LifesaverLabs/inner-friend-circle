@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+import { Share2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { TierSection } from '@/components/TierSection';
 import { AppHeader } from '@/components/AppHeader';
+import { ShareDialog } from '@/components/ShareDialog';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { TierType } from '@/types/friend';
 
@@ -19,6 +22,8 @@ export function FriendDashboard({
   onSignIn, 
   onSignOut 
 }: FriendDashboardProps) {
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  
   const {
     lists,
     isLoaded,
@@ -93,14 +98,26 @@ export function FriendDashboard({
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <h1 className="font-display text-3xl font-bold text-foreground mb-2">
-            Your Inner Circles
-          </h1>
-          <p className="text-muted-foreground">
-            Curate and tend to your closest relationships
-          </p>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="font-display text-3xl font-bold text-foreground mb-2">
+                Your Inner Circles
+              </h1>
+              <p className="text-muted-foreground">
+                Curate and tend to your closest relationships
+              </p>
+            </div>
+            <Button 
+              variant="outline" 
+              onClick={() => setShareDialogOpen(true)}
+              className="shrink-0"
+            >
+              <Share2 className="h-4 w-4 mr-2" />
+              Share
+            </Button>
+          </div>
           {!isLoggedIn && (
-            <p className="text-sm text-muted-foreground mt-2 bg-muted/50 rounded-lg px-4 py-2 inline-block">
+            <p className="text-sm text-muted-foreground mt-4 bg-muted/50 rounded-lg px-4 py-2 inline-block">
               💡 Your lists are saved locally. Create an account to sync across devices and enable mutual matching.
             </p>
           )}
@@ -122,6 +139,13 @@ export function FriendDashboard({
             />
           ))}
         </div>
+
+        <ShareDialog
+          open={shareDialogOpen}
+          onOpenChange={setShareDialogOpen}
+          friends={lists.friends}
+          getFriendsInTier={getFriendsInTier}
+        />
       </main>
     </div>
   );
