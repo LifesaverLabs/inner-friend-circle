@@ -1,5 +1,8 @@
+import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { MoreVertical, ArrowUp, ArrowDown, Trash2, User } from 'lucide-react';
+import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical } from 'lucide-react';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -18,23 +21,48 @@ interface FriendCardProps {
   canMoveDown: boolean;
 }
 
-const tierOrder: TierType[] = ['core', 'inner', 'outer'];
+const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
 
 export function FriendCard({ friend, onMove, onRemove, canMoveUp, canMoveDown }: FriendCardProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: friend.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+    zIndex: isDragging ? 10 : 0,
+  };
+
   const currentTierIndex = tierOrder.indexOf(friend.tier);
   const tierAbove = currentTierIndex > 0 ? tierOrder[currentTierIndex - 1] : null;
   const tierBelow = currentTierIndex < tierOrder.length - 1 ? tierOrder[currentTierIndex + 1] : null;
 
-  const tierInfo = TIER_INFO[friend.tier];
-
   return (
     <motion.div
+      ref={setNodeRef}
+      style={style}
       layout
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ opacity: isDragging ? 0.5 : 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       className="friend-card bg-card border border-border flex items-center gap-3"
     >
+      <button
+        {...attributes}
+        {...listeners}
+        className="touch-none p-1 -ml-1 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing"
+        aria-label="Drag to reorder"
+      >
+        <GripVertical className="w-4 h-4" />
+      </button>
+
       <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
         <User className="w-5 h-5 text-muted-foreground" />
       </div>
@@ -65,7 +93,7 @@ export function FriendCard({ friend, onMove, onRemove, canMoveUp, canMoveDown }:
               Move to {TIER_INFO[tierBelow].name}
             </DropdownMenuItem>
           )}
-          {(tierAbove || tierBelow) && <DropdownMenuSeparator />}
+          {((tierAbove && canMoveUp) || (tierBelow && canMoveDown)) && <DropdownMenuSeparator />}
           <DropdownMenuItem 
             onClick={() => onRemove(friend.id)}
             className="text-destructive focus:text-destructive"

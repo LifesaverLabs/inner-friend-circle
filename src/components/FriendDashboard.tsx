@@ -32,6 +32,7 @@ export function FriendDashboard({
     addFriend,
     moveFriend,
     removeFriend,
+    reorderFriendsInTier,
     setReservedSpots,
   } = useFriendLists();
 
@@ -65,6 +66,10 @@ export function FriendDashboard({
   const handleSetReserved = (tier: TierType) => (count: number, note?: string) => {
     setReservedSpots(tier, count, note);
     toast.success(`Updated reserved spots for ${tier}`);
+  };
+
+  const handleReorderFriends = (tier: TierType) => (orderedIds: string[]) => {
+    reorderFriendsInTier(tier, orderedIds);
   };
 
   if (!isLoaded) {
@@ -135,6 +140,7 @@ export function FriendDashboard({
               onMoveFriend={handleMoveFriend}
               onRemoveFriend={handleRemoveFriend}
               onSetReserved={handleSetReserved(tier)}
+              onReorderFriends={handleReorderFriends(tier)}
               getTierCapacity={getTierCapacity}
             />
           ))}

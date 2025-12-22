@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Lock, Users } from 'lucide-react';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { FriendCard } from './FriendCard';
@@ -17,6 +32,7 @@ interface TierSectionProps {
   onMoveFriend: (id: string, newTier: TierType) => void;
   onRemoveFriend: (id: string) => void;
   onSetReserved: (count: number, note?: string) => void;
+  onReorderFriends: (orderedIds: string[]) => void;
   getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number };
 }
 
@@ -29,10 +45,22 @@ export function TierSection({
   onMoveFriend,
   onRemoveFriend,
   onSetReserved,
+  onReorderFriends,
   getTierCapacity,
 }: TierSectionProps) {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   const tierInfo = TIER_INFO[tier];
   const capacity = getTierCapacity(tier);
@@ -51,6 +79,17 @@ export function TierSection({
     const targetTier = tierOrder[tierOrder.indexOf(friendTier) + 1];
     if (!targetTier) return false;
     return getTierCapacity(targetTier).available > 0;
+  };
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      const oldIndex = friends.findIndex(f => f.id === active.id);
+      const newIndex = friends.findIndex(f => f.id === over.id);
+      const reordered = arrayMove(friends, oldIndex, newIndex);
+      onReorderFriends(reordered.map(f => f.id));
+    }
   };
 
   const bgColors: Record<TierType, string> = {
@@ -130,18 +169,29 @@ export function TierSection({
         </div>
       ) : (
         <div className="space-y-2">
-          <AnimatePresence mode="popLayout">
-            {friends.map(friend => (
-              <FriendCard
-                key={friend.id}
-                friend={friend}
-                onMove={onMoveFriend}
-                onRemove={onRemoveFriend}
-                canMoveUp={canMoveUp(tier)}
-                canMoveDown={canMoveDown(tier)}
-              />
-            ))}
-          </AnimatePresence>
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+          >
+            <SortableContext
+              items={friends.map(f => f.id)}
+              strategy={verticalListSortingStrategy}
+            >
+              <AnimatePresence mode="popLayout">
+                {friends.map(friend => (
+                  <FriendCard
+                    key={friend.id}
+                    friend={friend}
+                    onMove={onMoveFriend}
+                    onRemove={onRemoveFriend}
+                    canMoveUp={canMoveUp(tier)}
+                    canMoveDown={canMoveDown(tier)}
+                  />
+                ))}
+              </AnimatePresence>
+            </SortableContext>
+          </DndContext>
 
           {reservedCount > 0 && (
             <motion.div
