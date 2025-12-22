@@ -7,6 +7,7 @@ const defaultReservedSpots: ReservedSpots = {
   core: 0,
   inner: 0,
   outer: 0,
+  parasocial: 0,
   notes: {},
 };
 

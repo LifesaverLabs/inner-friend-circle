@@ -38,7 +38,7 @@ export function TierSection({
   const capacity = getTierCapacity(tier);
   const progressPercent = (capacity.used / capacity.limit) * 100;
 
-  const tierOrder: TierType[] = ['core', 'inner', 'outer'];
+  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
   const currentIndex = tierOrder.indexOf(tier);
 
   const canMoveUp = (friendTier: TierType) => {
@@ -57,18 +57,21 @@ export function TierSection({
     core: 'bg-tier-core/5',
     inner: 'bg-tier-inner/5',
     outer: 'bg-tier-outer/5',
+    parasocial: 'bg-tier-parasocial/5',
   };
 
   const borderColors: Record<TierType, string> = {
     core: 'border-tier-core/20',
     inner: 'border-tier-inner/20',
     outer: 'border-tier-outer/20',
+    parasocial: 'border-tier-parasocial/20',
   };
 
   const progressColors: Record<TierType, string> = {
     core: '[&>div]:bg-tier-core',
     inner: '[&>div]:bg-tier-inner',
     outer: '[&>div]:bg-tier-outer',
+    parasocial: '[&>div]:bg-tier-parasocial',
   };
 
   return (

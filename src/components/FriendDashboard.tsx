@@ -76,7 +76,7 @@ export function FriendDashboard({
     );
   }
 
-  const tiers: TierType[] = ['core', 'inner', 'outer'];
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
 
   return (
     <div className="min-h-screen bg-background">
