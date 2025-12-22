@@ -31,6 +31,15 @@ export function useFriendLists() {
           ...f,
           addedAt: new Date(f.addedAt),
         }));
+        // Migrate old data: ensure all tier keys exist in reservedSpots
+        parsed.reservedSpots = {
+          ...defaultReservedSpots,
+          ...parsed.reservedSpots,
+          notes: {
+            ...defaultReservedSpots.notes,
+            ...(parsed.reservedSpots?.notes || {}),
+          },
+        };
         setLists(parsed);
       } catch (e) {
         console.error('Failed to parse stored friend lists:', e);
