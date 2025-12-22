@@ -58,6 +58,7 @@ export default {
         "tier-core": "hsl(var(--tier-core))",
         "tier-inner": "hsl(var(--tier-inner))",
         "tier-outer": "hsl(var(--tier-outer))",
+        "tier-parasocial": "hsl(var(--tier-parasocial))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

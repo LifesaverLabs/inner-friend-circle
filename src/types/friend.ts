@@ -1,4 +1,4 @@
-export type TierType = 'core' | 'inner' | 'outer';
+export type TierType = 'core' | 'inner' | 'outer' | 'parasocial';
 
 export interface Friend {
   id: string;
@@ -13,10 +13,12 @@ export interface ReservedSpots {
   core: number;
   inner: number;
   outer: number;
+  parasocial: number;
   notes: {
     core?: string;
     inner?: string;
     outer?: string;
+    parasocial?: string;
   };
 }
 
@@ -34,6 +36,7 @@ export const TIER_LIMITS: Record<TierType, number> = {
   core: 5,
   inner: 15,
   outer: 150,
+  parasocial: 25,
 };
 
 export const TIER_INFO: Record<TierType, { 
@@ -59,5 +62,11 @@ export const TIER_INFO: Record<TierType, {
     description: 'Meaningful connections — acquaintances who matter',
     limit: 150,
     color: 'tier-outer',
+  },
+  parasocial: {
+    name: 'Parasocials',
+    description: 'One-sided connections — creators, celebrities, or figures you follow',
+    limit: 25,
+    color: 'tier-parasocial',
   },
 };

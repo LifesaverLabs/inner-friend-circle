@@ -47,10 +47,11 @@
 
     --radius: 1rem;
 
-    /* Tier colors for Core, Inner, Outer */
+    /* Tier colors for Core, Inner, Outer, Parasocial */
     --tier-core: 15 85% 62%;
     --tier-inner: 35 80% 65%;
     --tier-outer: 145 35% 60%;
+    --tier-parasocial: 270 50% 65%;
 
     /* Success/match color */
     --success: 145 50% 45%;
@@ -99,6 +100,7 @@
     --tier-core: 15 75% 55%;
     --tier-inner: 35 70% 58%;
     --tier-outer: 145 30% 50%;
+    --tier-parasocial: 270 45% 55%;
 
     --success: 145 45% 40%;
     --success-foreground: 0 0% 100%;
@@ -139,6 +141,10 @@
   
   .tier-badge-outer {
     @apply bg-tier-outer text-white;
+  }
+
+  .tier-badge-parasocial {
+    @apply bg-tier-parasocial text-white;
   }
 
   .friend-card {
