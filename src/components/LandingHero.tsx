@@ -5,9 +5,10 @@ import { DunbarVisualization } from './DunbarVisualization';
 
 interface LandingHeroProps {
   onGetStarted: () => void;
+  onSignIn?: () => void;
 }
 
-export function LandingHero({ onGetStarted }: LandingHeroProps) {
+export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
   return (
     <section className="min-h-screen flex flex-col">
       {/* Header */}
@@ -24,7 +25,7 @@ export function LandingHero({ onGetStarted }: LandingHeroProps) {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <Button variant="outline" onClick={onGetStarted}>
+          <Button variant="outline" onClick={onSignIn || onGetStarted}>
             Sign In
           </Button>
         </motion.div>
