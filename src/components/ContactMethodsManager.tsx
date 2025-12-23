@@ -51,6 +51,11 @@ import { toast } from 'sonner';
 
 // Detailed guidance for each service
 const SERVICE_GUIDANCE: Record<ServiceType, { howToFind: string; example: string; tip?: string }> = {
+  real_face_time: {
+    howToFind: 'Specify your city, neighborhood, or favorite meeting spot. This helps friends know where you\'re available for in-person connection.',
+    example: 'San Francisco, CA or "Coffee at Blue Bottle"',
+    tip: 'Nothing beats real face time — prioritize meeting in person when possible!',
+  },
   phone: {
     howToFind: 'Use your mobile or landline phone number with country code.',
     example: '+1 555-123-4567',
