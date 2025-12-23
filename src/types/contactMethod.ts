@@ -1,4 +1,5 @@
 export type ServiceType = 
+  | 'real_face_time'
   | 'facetime' 
   | 'whatsapp' 
   | 'signal' 
@@ -37,6 +38,14 @@ export interface ServiceInfo {
 }
 
 export const SERVICES: Record<ServiceType, ServiceInfo> = {
+  real_face_time: {
+    name: 'Real Face Time',
+    icon: '🤝',
+    placeholder: 'Location, city, or "Let\'s meet!"',
+    supportsCall: false,
+    supportsSchedule: true,
+    getScheduleUrl: (id) => `https://maps.google.com/maps?q=${encodeURIComponent(id)}`,
+  },
   facetime: {
     name: 'FaceTime',
     icon: '📱',
