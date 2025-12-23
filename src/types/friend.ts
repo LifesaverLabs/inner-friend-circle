@@ -1,4 +1,4 @@
-export type TierType = 'core' | 'inner' | 'outer' | 'parasocial';
+export type TierType = 'core' | 'inner' | 'outer' | 'parasocial' | 'acquainted';
 
 export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram';
 
@@ -28,11 +28,13 @@ export interface ReservedSpots {
   inner: number;
   outer: number;
   parasocial: number;
+  acquainted: number;
   notes: {
     core?: string;
     inner?: string;
     outer?: string;
     parasocial?: string;
+    acquainted?: string;
   };
 }
 
@@ -51,6 +53,7 @@ export const TIER_LIMITS: Record<TierType, number> = {
   inner: 15,
   outer: 150,
   parasocial: 25,
+  acquainted: 1000,
 };
 
 export const TIER_INFO: Record<TierType, { 
@@ -82,5 +85,11 @@ export const TIER_INFO: Record<TierType, {
     description: 'One-sided connections — creators, celebrities, or figures you follow',
     limit: 25,
     color: 'tier-parasocial',
+  },
+  acquainted: {
+    name: 'Acquainted Cousins',
+    description: 'People you rarely see — demoted here through lack of contact over time',
+    limit: 1000,
+    color: 'tier-acquainted',
   },
 };

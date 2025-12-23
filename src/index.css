@@ -47,11 +47,12 @@
 
     --radius: 1rem;
 
-    /* Tier colors for Core, Inner, Outer, Parasocial */
+    /* Tier colors for Core, Inner, Outer, Parasocial, Acquainted */
     --tier-core: 15 85% 62%;
     --tier-inner: 35 80% 65%;
     --tier-outer: 145 35% 60%;
     --tier-parasocial: 270 50% 65%;
+    --tier-acquainted: 200 40% 55%;
 
     /* Success/match color */
     --success: 145 50% 45%;

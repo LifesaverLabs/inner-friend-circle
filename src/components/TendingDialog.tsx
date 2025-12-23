@@ -26,6 +26,7 @@ const tierEmoji: Record<TierType, string> = {
   inner: '💛',
   outer: '🌿',
   parasocial: '📺',
+  acquainted: '🤝',
 };
 
 export function TendingDialog({ 

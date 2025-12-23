@@ -14,13 +14,14 @@ interface ShareDialogProps {
   getFriendsInTier: (tier: TierType) => Friend[];
 }
 
-const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
+const shareTiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
 
 const tierEmoji: Record<TierType, string> = {
   core: '💎',
   inner: '💛',
   outer: '🌿',
   parasocial: '📺',
+  acquainted: '🤝',
 };
 
 export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: ShareDialogProps) {
@@ -36,7 +37,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
   };
 
   const selectAll = () => {
-    setSelectedTiers([...tiers]);
+    setSelectedTiers([...shareTiers]);
   };
 
   const clearAll = () => {
@@ -56,7 +57,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
       lines.push('');
     }
     
-    tiers.forEach(tier => {
+    shareTiers.forEach(tier => {
       if (selectedTiers.includes(tier)) {
         const tierFriends = getFriendsInTier(tier);
         const info = TIER_INFO[tier];
@@ -207,10 +208,10 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
 
   const handleHealthcareShare = () => {
     setIsHealthcareMode(true);
-    setSelectedTiers([...tiers]);
+    setSelectedTiers([...shareTiers]);
   };
 
-  const allSelected = selectedTiers.length === tiers.length;
+  const allSelected = selectedTiers.length === shareTiers.length;
   const multipleSelected = selectedTiers.length > 1;
   const showPrivacyWarning = !isHealthcareMode && (allSelected || multipleSelected);
 
@@ -260,7 +261,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
           </div>
 
           <div className="space-y-3">
-            {tiers.map(tier => {
+            {shareTiers.map(tier => {
               const info = TIER_INFO[tier];
               const count = getFriendsInTier(tier).length;
               
