@@ -190,8 +190,16 @@ export function TierSection({
       {friends.length === 0 && reservedCount === 0 ? (
         <div className="text-center py-8 text-muted-foreground">
           <Users className="w-12 h-12 mx-auto mb-2 opacity-30" />
-          <p className="text-sm">No {tierInfo.name.toLowerCase()} friends yet</p>
-          <p className="text-xs mt-1">Add someone to your closest circle</p>
+          <p className="text-sm">
+            {tier === 'parasocial' 
+              ? 'No parasocials yet' 
+              : `No ${tierInfo.name.toLowerCase()} friends yet`}
+          </p>
+          <p className="text-xs mt-1">
+            {tier === 'parasocial'
+              ? 'Add creators, celebrities, or figures you follow'
+              : 'Add someone to your closest circle'}
+          </p>
         </div>
       ) : (
         <div className="space-y-2">
