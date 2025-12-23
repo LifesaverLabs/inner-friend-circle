@@ -98,7 +98,7 @@ export const TIER_INFO: Record<TierType, {
   },
   acquainted: {
     name: 'Acquainted Cousins',
-    description: 'People you rarely see, or those you encounter regularly but beyond your capacity to deeply model — like colleagues known chiefly in their professional role, not as richly understood whole humans',
+    description: 'All humans are cousins — we are one related family. These are people you rarely see, or those you encounter regularly but beyond your capacity to deeply model — like colleagues known chiefly in their professional role, not as richly understood whole humans',
     limit: 1000,
     color: 'tier-acquainted',
   },
