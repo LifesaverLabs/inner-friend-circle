@@ -13,6 +13,7 @@ interface TendingDialogProps {
   friends: Friend[];
   getFriendsInTier: (tier: TierType) => Friend[];
   onUpdateLastContacted: (id: string) => void;
+  onTendingComplete?: () => void;
 }
 
 const TENDING_TIERS: { tier: TierType; period: string; days: number }[] = [
@@ -35,7 +36,8 @@ export function TendingDialog({
   onOpenChange, 
   friends, 
   getFriendsInTier,
-  onUpdateLastContacted 
+  onUpdateLastContacted,
+  onTendingComplete
 }: TendingDialogProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [neglectedIds, setNeglectedIds] = useState<Set<string>>(new Set());
@@ -102,6 +104,7 @@ export function TendingDialog({
     setCurrentStep(0);
     setNeglectedIds(new Set());
     setShowCallPrompt(false);
+    onTendingComplete?.();
     onOpenChange(false);
   };
 

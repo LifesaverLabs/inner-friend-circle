@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { Share2, Heart } from 'lucide-react';
+import { formatDistanceToNow, differenceInDays } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import { TierSection } from '@/components/TierSection';
 import { AppHeader } from '@/components/AppHeader';
@@ -45,6 +46,7 @@ export function FriendDashboard({
   const {
     lists,
     isLoaded,
+    lastTendedAt,
     getFriendsInTier,
     getTierCapacity,
     addFriend,
@@ -53,7 +55,15 @@ export function FriendDashboard({
     reorderFriendsInTier,
     setReservedSpots,
     updateFriend,
+    markTended,
   } = useFriendLists();
+
+  const daysSinceLastTended = useMemo(() => {
+    if (!lastTendedAt) return null;
+    return differenceInDays(new Date(), lastTendedAt);
+  }, [lastTendedAt]);
+
+  const needsUrgentTending = daysSinceLastTended !== null && daysSinceLastTended >= 30;
 
   const handleAddFriend = (tier: TierType) => (name: string, email?: string, roleModelReason?: string) => {
     const result = addFriend({ name, email, tier, roleModelReason });
@@ -192,10 +202,30 @@ export function FriendDashboard({
             <Button 
               variant="outline" 
               onClick={() => setTendingDialogOpen(true)}
-              className="shrink-0"
+              className={`shrink-0 relative ${needsUrgentTending ? 'border-destructive' : ''}`}
             >
-              <Heart className="h-4 w-4 mr-2" />
-              Tend
+              <motion.div
+                animate={needsUrgentTending ? { 
+                  scale: [1, 1.2, 1],
+                  opacity: [1, 0.7, 1]
+                } : {}}
+                transition={{ 
+                  repeat: Infinity, 
+                  duration: 1.5,
+                  ease: "easeInOut"
+                }}
+                className="flex items-center"
+              >
+                <Heart className={`h-4 w-4 mr-2 ${needsUrgentTending ? 'text-destructive fill-destructive' : ''}`} />
+              </motion.div>
+              <span className="flex flex-col items-start">
+                <span>Tend</span>
+                {lastTendedAt && (
+                  <span className={`text-[10px] ${needsUrgentTending ? 'text-destructive' : 'text-muted-foreground'}`}>
+                    {formatDistanceToNow(lastTendedAt, { addSuffix: true })}
+                  </span>
+                )}
+              </span>
             </Button>
             <Button 
               variant="outline" 
@@ -261,6 +291,7 @@ export function FriendDashboard({
           friends={lists.friends}
           getFriendsInTier={getFriendsInTier}
           onUpdateLastContacted={handleUpdateLastContacted}
+          onTendingComplete={markTended}
         />
 
         {user && (
