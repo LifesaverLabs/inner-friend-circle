@@ -88,7 +88,7 @@ export const TIER_INFO: Record<TierType, {
   },
   acquainted: {
     name: 'Acquainted Cousins',
-    description: 'People you rarely see — demoted here through lack of contact over time',
+    description: 'People you rarely see — reclassified here through lack of contact over time',
     limit: 1000,
     color: 'tier-acquainted',
   },
