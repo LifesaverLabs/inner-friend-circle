@@ -1,6 +1,23 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Trash2, Video, Calendar, HelpCircle, Info } from 'lucide-react';
+import { Plus, Trash2, Video, Calendar, HelpCircle, Info, GripVertical } from 'lucide-react';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -29,7 +46,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { useContactMethods } from '@/hooks/useContactMethods';
-import { ServiceType, SERVICES, SERVICE_LIST } from '@/types/contactMethod';
+import { ServiceType, SERVICES, SERVICE_LIST, ContactMethod } from '@/types/contactMethod';
 import { toast } from 'sonner';
 
 // Detailed guidance for each service
@@ -103,6 +120,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
     isLoading,
     addContactMethod,
     removeContactMethod,
+    reorderPriorities,
     getSpontaneousMethods,
     getScheduledMethods,
   } = useContactMethods(userId);
@@ -113,6 +131,17 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
   const [newLabel, setNewLabel] = useState('');
   const [forSpontaneous, setForSpontaneous] = useState(true);
   const [forScheduled, setForScheduled] = useState(true);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   const handleAdd = async () => {
     if (!newIdentifier.trim()) {
@@ -143,6 +172,19 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
   const handleCancel = () => {
     setDialogOpen(false);
     resetForm();
+  };
+
+  const handleDragEnd = (callType: 'spontaneous' | 'scheduled') => (event: DragEndEvent) => {
+    const { active, over } = event;
+    
+    if (over && active.id !== over.id) {
+      const methods = callType === 'spontaneous' ? getSpontaneousMethods() : getScheduledMethods();
+      const oldIndex = methods.findIndex((m) => m.id === active.id);
+      const newIndex = methods.findIndex((m) => m.id === over.id);
+      
+      const reordered = arrayMove(methods, oldIndex, newIndex);
+      reorderPriorities(reordered.map(m => m.id), callType);
+    }
   };
 
   const spontaneousMethods = getSpontaneousMethods();
@@ -332,7 +374,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               Spontaneous Kalls
             </CardTitle>
             <CardDescription>
-              Services for instant, interruptive video calls — when friends want to connect right now
+              Drag to reorder priority. #1 is your preferred method.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -341,11 +383,27 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
                 No spontaneous call methods added yet
               </p>
             ) : (
-              <MethodsList
-                methods={spontaneousMethods}
-                onRemove={removeContactMethod}
-                showPriority
-              />
+              <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd('spontaneous')}
+              >
+                <SortableContext
+                  items={spontaneousMethods.map(m => m.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <div className="space-y-2">
+                    {spontaneousMethods.map((method, index) => (
+                      <SortableMethodItem
+                        key={method.id}
+                        method={method}
+                        index={index}
+                        onRemove={removeContactMethod}
+                      />
+                    ))}
+                  </div>
+                </SortableContext>
+              </DndContext>
             )}
           </CardContent>
         </Card>
@@ -357,7 +415,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               Scheduled Kalls
             </CardTitle>
             <CardDescription>
-              Services for planned video meetings — set up a time that works for both of you
+              Drag to reorder priority. #1 is your preferred method.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -366,11 +424,27 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
                 No scheduled call methods added yet
               </p>
             ) : (
-              <MethodsList
-                methods={scheduledMethods}
-                onRemove={removeContactMethod}
-                showPriority
-              />
+              <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd('scheduled')}
+              >
+                <SortableContext
+                  items={scheduledMethods.map(m => m.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <div className="space-y-2">
+                    {scheduledMethods.map((method, index) => (
+                      <SortableMethodItem
+                        key={method.id}
+                        method={method}
+                        index={index}
+                        onRemove={removeContactMethod}
+                      />
+                    ))}
+                  </div>
+                </SortableContext>
+              </DndContext>
             )}
           </CardContent>
         </Card>
@@ -379,23 +453,80 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
   );
 }
 
-interface MethodsListProps {
-  methods: Array<{
-    id: string;
-    service_type: ServiceType;
-    contact_identifier: string;
-    label?: string;
-    spontaneous_priority?: number;
-  }>;
+interface SortableMethodItemProps {
+  method: ContactMethod;
+  index: number;
   onRemove: (id: string) => void;
-  showPriority?: boolean;
 }
 
-function MethodsList({ methods, onRemove, showPriority }: MethodsListProps) {
+function SortableMethodItem({ method, index, onRemove }: SortableMethodItemProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: method.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+    zIndex: isDragging ? 10 : 0,
+  };
+
+  const service = SERVICES[method.service_type];
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className={`flex items-center gap-2 p-3 bg-muted/50 rounded-lg group ${
+        isDragging ? 'shadow-lg ring-2 ring-primary/20' : ''
+      }`}
+    >
+      <button
+        {...attributes}
+        {...listeners}
+        className="touch-none p-1 -ml-1 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing"
+        aria-label="Drag to reorder"
+      >
+        <GripVertical className="w-4 h-4" />
+      </button>
+      <span className="text-xs font-medium text-muted-foreground w-5">
+        #{index + 1}
+      </span>
+      <span className="text-xl">{service.icon}</span>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium truncate">{service.name}</p>
+        <p className="text-xs text-muted-foreground truncate">
+          {method.label ? `${method.label}: ` : ''}
+          {method.contact_identifier}
+        </p>
+      </div>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+        onClick={() => onRemove(method.id)}
+      >
+        <Trash2 className="w-4 h-4 text-destructive" />
+      </Button>
+    </div>
+  );
+}
+
+interface MethodsListProps {
+  methods: ContactMethod[];
+  onRemove: (id: string) => void;
+}
+
+function MethodsList({ methods, onRemove }: MethodsListProps) {
   return (
     <div className="space-y-2">
       <AnimatePresence>
-        {methods.map((method, index) => {
+        {methods.map((method) => {
           const service = SERVICES[method.service_type];
           return (
             <motion.div
@@ -405,11 +536,6 @@ function MethodsList({ methods, onRemove, showPriority }: MethodsListProps) {
               exit={{ opacity: 0, x: -10 }}
               className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg group"
             >
-              {showPriority && (
-                <span className="text-xs font-medium text-muted-foreground w-5">
-                  #{index + 1}
-                </span>
-              )}
               <span className="text-xl">{service.icon}</span>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium truncate">{service.name}</p>
