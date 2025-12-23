@@ -21,6 +21,7 @@ export type Database = {
           display_name: string | null
           id: string
           updated_at: string
+          user_handle: string | null
           user_id: string
         }
         Insert: {
@@ -29,6 +30,7 @@ export type Database = {
           display_name?: string | null
           id?: string
           updated_at?: string
+          user_handle?: string | null
           user_id: string
         }
         Update: {
@@ -37,6 +39,7 @@ export type Database = {
           display_name?: string | null
           id?: string
           updated_at?: string
+          user_handle?: string | null
           user_id?: string
         }
         Relationships: []
@@ -46,7 +49,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_handle_appropriate: { Args: { handle: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
