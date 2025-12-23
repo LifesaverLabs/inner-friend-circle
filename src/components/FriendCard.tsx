@@ -24,7 +24,7 @@ interface FriendCardProps {
   getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number };
 }
 
-const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
+const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
 
 export function FriendCard({ 
   friend, 

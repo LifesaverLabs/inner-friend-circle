@@ -1,4 +1,4 @@
-export type TierType = 'core' | 'inner' | 'outer' | 'parasocial' | 'acquainted';
+export type TierType = 'core' | 'inner' | 'outer' | 'parasocial' | 'rolemodel' | 'acquainted';
 
 export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram';
 
@@ -21,6 +21,7 @@ export interface Friend {
   lastContacted?: Date;
   notes?: string;
   sortOrder?: number; // Custom sort order; if undefined, sort alphabetically
+  roleModelReason?: string; // Why this person is a role model (only for rolemodel tier)
 }
 
 export interface ReservedSpots {
@@ -28,12 +29,14 @@ export interface ReservedSpots {
   inner: number;
   outer: number;
   parasocial: number;
+  rolemodel: number;
   acquainted: number;
   notes: {
     core?: string;
     inner?: string;
     outer?: string;
     parasocial?: string;
+    rolemodel?: string;
     acquainted?: string;
   };
 }
@@ -53,6 +56,7 @@ export const TIER_LIMITS: Record<TierType, number> = {
   inner: 15,
   outer: 150,
   parasocial: 25,
+  rolemodel: 25,
   acquainted: 1000,
 };
 
@@ -85,6 +89,12 @@ export const TIER_INFO: Record<TierType, {
     description: 'One-sided connections — creators, celebrities, or figures you follow',
     limit: 25,
     color: 'tier-parasocial',
+  },
+  rolemodel: {
+    name: 'Role Models',
+    description: 'Living or departed — people whose life stories inspire you to be good, better, best',
+    limit: 25,
+    color: 'tier-rolemodel',
   },
   acquainted: {
     name: 'Acquainted Cousins',
