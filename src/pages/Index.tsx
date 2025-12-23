@@ -1,35 +1,45 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LandingHero } from '@/components/LandingHero';
 import { FriendDashboard } from '@/components/FriendDashboard';
+import { useAuth } from '@/hooks/useAuth';
+import { toast } from 'sonner';
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { user, signOut, isAuthenticated, loading } = useAuth();
   const [showDashboard, setShowDashboard] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleGetStarted = () => {
     setShowDashboard(true);
   };
 
   const handleSignIn = () => {
-    setShowDashboard(true);
+    navigate('/auth');
   };
 
-  const handleSignOut = () => {
-    setIsLoggedIn(false);
-    setShowDashboard(false);
+  const handleSignOut = async () => {
+    const { error } = await signOut();
+    if (error) {
+      toast.error('Failed to sign out');
+    } else {
+      toast.success('Signed out successfully');
+      setShowDashboard(false);
+    }
   };
 
-  if (showDashboard) {
+  if (showDashboard || isAuthenticated) {
     return (
       <FriendDashboard
-        isLoggedIn={isLoggedIn}
+        isLoggedIn={isAuthenticated}
+        userEmail={user?.email}
         onSignIn={handleSignIn}
         onSignOut={handleSignOut}
       />
     );
   }
 
-  return <LandingHero onGetStarted={handleGetStarted} />;
+  return <LandingHero onGetStarted={handleGetStarted} onSignIn={handleSignIn} />;
 };
 
 export default Index;
