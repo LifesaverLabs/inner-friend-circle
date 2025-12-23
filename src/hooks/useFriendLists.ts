@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Friend, FriendLists, ReservedSpots, TierType, TIER_LIMITS } from '@/types/friend';
 
 const STORAGE_KEY = 'inner-friend-lists';
+const LAST_TENDED_KEY = 'inner-last-tended';
 
 const defaultReservedSpots: ReservedSpots = {
   core: 0,
@@ -21,6 +22,7 @@ const defaultLists: FriendLists = {
 export function useFriendLists() {
   const [lists, setLists] = useState<FriendLists>(defaultLists);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [lastTendedAt, setLastTendedAt] = useState<Date | null>(null);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -47,6 +49,13 @@ export function useFriendLists() {
         console.error('Failed to parse stored friend lists:', e);
       }
     }
+    
+    // Load last tended date
+    const storedTended = localStorage.getItem(LAST_TENDED_KEY);
+    if (storedTended) {
+      setLastTendedAt(new Date(storedTended));
+    }
+    
     setIsLoaded(true);
   }, []);
 
@@ -172,11 +181,20 @@ export function useFriendLists() {
   const clearAllData = useCallback(() => {
     setLists(defaultLists);
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(LAST_TENDED_KEY);
+    setLastTendedAt(null);
+  }, []);
+
+  const markTended = useCallback(() => {
+    const now = new Date();
+    setLastTendedAt(now);
+    localStorage.setItem(LAST_TENDED_KEY, now.toISOString());
   }, []);
 
   return {
     lists,
     isLoaded,
+    lastTendedAt,
     getFriendsInTier,
     getTierCapacity,
     addFriend,
@@ -186,5 +204,6 @@ export function useFriendLists() {
     reorderFriendsInTier,
     setReservedSpots,
     clearAllData,
+    markTended,
   };
 }
