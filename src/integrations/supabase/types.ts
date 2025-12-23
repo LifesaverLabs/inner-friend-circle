@@ -64,6 +64,67 @@ export type Database = {
           },
         ]
       }
+      friend_connections: {
+        Row: {
+          circle_tier: Database["public"]["Enums"]["circle_tier"]
+          confirmed_at: string | null
+          created_at: string
+          disclose_circle: boolean
+          id: string
+          matched_contact_method_id: string | null
+          requester_id: string
+          status: Database["public"]["Enums"]["connection_status"]
+          target_user_id: string
+          updated_at: string
+        }
+        Insert: {
+          circle_tier: Database["public"]["Enums"]["circle_tier"]
+          confirmed_at?: string | null
+          created_at?: string
+          disclose_circle?: boolean
+          id?: string
+          matched_contact_method_id?: string | null
+          requester_id: string
+          status?: Database["public"]["Enums"]["connection_status"]
+          target_user_id: string
+          updated_at?: string
+        }
+        Update: {
+          circle_tier?: Database["public"]["Enums"]["circle_tier"]
+          confirmed_at?: string | null
+          created_at?: string
+          disclose_circle?: boolean
+          id?: string
+          matched_contact_method_id?: string | null
+          requester_id?: string
+          status?: Database["public"]["Enums"]["connection_status"]
+          target_user_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "friend_connections_matched_contact_method_id_fkey"
+            columns: ["matched_contact_method_id"]
+            isOneToOne: false
+            referencedRelation: "contact_methods"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "friend_connections_requester_id_fkey"
+            columns: ["requester_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "friend_connections_target_user_id_fkey"
+            columns: ["target_user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -102,10 +163,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      has_confirmed_connection: {
+        Args: { user1_id: string; user2_id: string }
+        Returns: boolean
+      }
       is_handle_appropriate: { Args: { handle: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      circle_tier: "core" | "inner" | "outer"
+      connection_status: "pending" | "confirmed" | "declined"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -232,6 +298,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      circle_tier: ["core", "inner", "outer"],
+      connection_status: ["pending", "confirmed", "declined"],
+    },
   },
 } as const

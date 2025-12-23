@@ -10,8 +10,10 @@ import { TendingDialog } from '@/components/TendingDialog';
 import { ProfileSettingsDialog } from '@/components/ProfileSettingsDialog';
 import { ContactSetupOnboarding, useContactSetupNeeded } from '@/components/ContactSetupOnboarding';
 import { MissionBanner } from '@/components/MissionBanner';
+import { ConnectionRequestsPanel } from '@/components/ConnectionRequestsPanel';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
+import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
 import { TierType, ContactMethod } from '@/types/friend';
 
 interface FriendDashboardProps {
@@ -33,6 +35,12 @@ export function FriendDashboard({
   
   const { user } = useAuth();
   const { needsSetup, setNeedsSetup } = useContactSetupNeeded(user?.id);
+  
+  const {
+    pendingRequests,
+    createConnectionRequest,
+    respondToRequest,
+  } = useFriendConnections(user?.id);
   
   const {
     lists,
@@ -87,6 +95,23 @@ export function FriendDashboard({
     reorderFriendsInTier(tier, orderedIds);
   };
 
+  const handleAddLinkedFriend = async (
+    targetUserId: string,
+    circleTier: CircleTier,
+    matchedContactMethodId: string | null,
+    discloseCircle: boolean
+  ) => {
+    return createConnectionRequest(targetUserId, circleTier, matchedContactMethodId, discloseCircle);
+  };
+
+  const handleAcceptRequest = async (connectionId: string) => {
+    await respondToRequest(connectionId, true);
+  };
+
+  const handleDeclineRequest = async (connectionId: string) => {
+    await respondToRequest(connectionId, false);
+  };
+
   if (!isLoaded) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -123,6 +148,17 @@ export function FriendDashboard({
 
       <main className="container mx-auto px-4 py-8">
         <MissionBanner />
+        
+        {/* Connection Requests Panel */}
+        {isLoggedIn && pendingRequests.length > 0 && (
+          <div className="mb-6">
+            <ConnectionRequestsPanel
+              requests={pendingRequests}
+              onAccept={handleAcceptRequest}
+              onDecline={handleDeclineRequest}
+            />
+          </div>
+        )}
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -176,6 +212,8 @@ export function FriendDashboard({
               onSetReserved={handleSetReserved(tier)}
               onReorderFriends={handleReorderFriends(tier)}
               getTierCapacity={getTierCapacity}
+              isLoggedIn={isLoggedIn}
+              onAddLinkedFriend={handleAddLinkedFriend}
             />
           ))}
         </div>

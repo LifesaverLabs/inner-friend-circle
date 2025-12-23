@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Lock, Users } from 'lucide-react';
+import { Plus, Lock, Users, Link2 } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -20,9 +20,10 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { FriendCard } from './FriendCard';
 import { AddFriendDialog } from './AddFriendDialog';
+import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
 import { Friend, TierType, TIER_INFO, TIER_LIMITS } from '@/types/friend';
-
+import { CircleTier } from '@/hooks/useFriendConnections';
 interface TierSectionProps {
   tier: TierType;
   friends: Friend[];
@@ -34,6 +35,13 @@ interface TierSectionProps {
   onSetReserved: (count: number, note?: string) => void;
   onReorderFriends: (orderedIds: string[]) => void;
   getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number };
+  isLoggedIn?: boolean;
+  onAddLinkedFriend?: (
+    targetUserId: string,
+    circleTier: CircleTier,
+    matchedContactMethodId: string | null,
+    discloseCircle: boolean
+  ) => Promise<{ success: boolean; error?: string }>;
 }
 
 export function TierSection({
@@ -47,9 +55,15 @@ export function TierSection({
   onSetReserved,
   onReorderFriends,
   getTierCapacity,
+  isLoggedIn,
+  onAddLinkedFriend,
 }: TierSectionProps) {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
+  const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
+  
+  // Only core, inner, outer can have linked friends (not parasocial)
+  const canHaveLinkedFriends = tier !== 'parasocial';
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -144,6 +158,18 @@ export function TierSection({
             <Lock className="w-4 h-4" />
             {reservedCount > 0 ? `${reservedCount} Reserved` : 'Reserve'}
           </Button>
+          {isLoggedIn && canHaveLinkedFriends && onAddLinkedFriend && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setLinkedDialogOpen(true)}
+              disabled={capacity.available <= 0}
+              className="gap-1"
+            >
+              <Link2 className="w-4 h-4" />
+              Link
+            </Button>
+          )}
           <Button
             size="sm"
             onClick={() => setAddDialogOpen(true)}
@@ -224,6 +250,15 @@ export function TierSection({
         onAdd={onAddFriend}
         capacity={capacity}
       />
+
+      {canHaveLinkedFriends && onAddLinkedFriend && (
+        <AddLinkedFriendDialog
+          open={linkedDialogOpen}
+          onOpenChange={setLinkedDialogOpen}
+          tier={tier as CircleTier}
+          onAddConnection={onAddLinkedFriend}
+        />
+      )}
 
       <ReservedSpotsDialog
         open={reservedDialogOpen}
