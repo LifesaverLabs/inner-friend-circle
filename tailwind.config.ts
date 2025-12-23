@@ -59,6 +59,7 @@ export default {
         "tier-inner": "hsl(var(--tier-inner))",
         "tier-outer": "hsl(var(--tier-outer))",
         "tier-parasocial": "hsl(var(--tier-parasocial))",
+        "tier-rolemodel": "hsl(var(--tier-rolemodel))",
         "tier-acquainted": "hsl(var(--tier-acquainted))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

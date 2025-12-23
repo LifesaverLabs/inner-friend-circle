@@ -14,7 +14,7 @@ import { ConnectionRequestsPanel } from '@/components/ConnectionRequestsPanel';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
-import { TierType, ContactMethod } from '@/types/friend';
+import { TierType } from '@/types/friend';
 
 interface FriendDashboardProps {
   isLoggedIn: boolean;
@@ -55,8 +55,8 @@ export function FriendDashboard({
     updateFriend,
   } = useFriendLists();
 
-  const handleAddFriend = (tier: TierType) => (name: string, email?: string, phone?: string, preferredContact?: ContactMethod) => {
-    const result = addFriend({ name, email, phone, preferredContact, tier });
+  const handleAddFriend = (tier: TierType) => (name: string, email?: string, roleModelReason?: string) => {
+    const result = addFriend({ name, email, tier, roleModelReason });
     if (result.success) {
       toast.success(`Added ${name} to your ${tier} circle`);
     } else {
@@ -126,16 +126,18 @@ export function FriendDashboard({
     );
   }
 
-  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
 
   // Define allowed move transitions
   // acquainted can only move to outer; outer can move to inner or acquainted
+  // rolemodel is standalone - no moves allowed
   const getAllowedMoves = (fromTier: TierType): TierType[] => {
     switch (fromTier) {
       case 'core': return ['inner'];
       case 'inner': return ['core', 'outer'];
       case 'outer': return ['inner', 'acquainted'];
       case 'parasocial': return ['outer'];
+      case 'rolemodel': return []; // Role models don't move between tiers
       case 'acquainted': return ['outer'];
       default: return [];
     }
@@ -227,6 +229,7 @@ export function FriendDashboard({
               getTierCapacity={getTierCapacity}
               isLoggedIn={isLoggedIn}
               onAddLinkedFriend={handleAddLinkedFriend}
+              onUpdateFriend={updateFriend}
               getAllowedMoves={getAllowedMoves}
             />
           ))}

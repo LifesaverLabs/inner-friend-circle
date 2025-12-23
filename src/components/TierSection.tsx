@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Lock, Users, Link2 } from 'lucide-react';
+import { Plus, Lock, Users, Link2, Star } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -19,8 +19,10 @@ import {
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { FriendCard } from './FriendCard';
+import { RoleModelCard } from './RoleModelCard';
 import { AddFriendDialog } from './AddFriendDialog';
 import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
+import { AddRoleModelDialog } from './AddRoleModelDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
 import { Friend, TierType, TIER_INFO } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
@@ -30,9 +32,10 @@ interface TierSectionProps {
   friends: Friend[];
   reservedCount: number;
   reservedNote?: string;
-  onAddFriend: (name: string, email?: string) => void;
+  onAddFriend: (name: string, email?: string, roleModelReason?: string) => void;
   onMoveFriend: (id: string, newTier: TierType) => void;
   onRemoveFriend: (id: string) => void;
+  onUpdateFriend?: (id: string, updates: Partial<Friend>) => void;
   onSetReserved: (count: number, note?: string) => void;
   onReorderFriends: (orderedIds: string[]) => void;
   getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number };
@@ -54,6 +57,7 @@ export function TierSection({
   onAddFriend,
   onMoveFriend,
   onRemoveFriend,
+  onUpdateFriend,
   onSetReserved,
   onReorderFriends,
   getTierCapacity,
@@ -64,12 +68,16 @@ export function TierSection({
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
+  const [roleModelDialogOpen, setRoleModelDialogOpen] = useState(false);
   
-  // Only core, inner, outer can have linked friends (not parasocial or acquainted)
-  const canHaveLinkedFriends = tier !== 'parasocial' && tier !== 'acquainted';
+  // Only core, inner, outer can have linked friends (not parasocial, rolemodel, or acquainted)
+  const canHaveLinkedFriends = tier !== 'parasocial' && tier !== 'rolemodel' && tier !== 'acquainted';
   
-  // Acquainted tier cannot have direct adds
-  const canAddDirectly = tier !== 'acquainted';
+  // Acquainted tier cannot have direct adds, role models has special add
+  const canAddDirectly = tier !== 'acquainted' && tier !== 'rolemodel';
+  
+  // Role models tier has special behavior
+  const isRoleModelTier = tier === 'rolemodel';
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -86,7 +94,7 @@ export function TierSection({
   const capacity = getTierCapacity(tier);
   const progressPercent = (capacity.used / capacity.limit) * 100;
 
-  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
+  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
   const currentIndex = tierOrder.indexOf(tier);
 
   const canMoveUp = (friendTier: TierType) => {
@@ -123,6 +131,7 @@ export function TierSection({
     inner: 'bg-tier-inner/5',
     outer: 'bg-tier-outer/5',
     parasocial: 'bg-tier-parasocial/5',
+    rolemodel: 'bg-tier-rolemodel/5',
     acquainted: 'bg-tier-acquainted/5',
   };
 
@@ -131,6 +140,7 @@ export function TierSection({
     inner: 'border-tier-inner/20',
     outer: 'border-tier-outer/20',
     parasocial: 'border-tier-parasocial/20',
+    rolemodel: 'border-tier-rolemodel/20',
     acquainted: 'border-tier-acquainted/20',
   };
 
@@ -139,6 +149,7 @@ export function TierSection({
     inner: '[&>div]:bg-tier-inner',
     outer: '[&>div]:bg-tier-outer',
     parasocial: '[&>div]:bg-tier-parasocial',
+    rolemodel: '[&>div]:bg-tier-rolemodel',
     acquainted: '[&>div]:bg-tier-acquainted',
   };
 
@@ -185,6 +196,17 @@ export function TierSection({
               Link
             </Button>
           )}
+          {isRoleModelTier && (
+            <Button
+              size="sm"
+              onClick={() => setRoleModelDialogOpen(true)}
+              disabled={capacity.available <= 0}
+              className="gap-1"
+            >
+              <Star className="w-4 h-4" />
+              Add Role Model
+            </Button>
+          )}
           {canAddDirectly && (
             <Button
               size="sm"
@@ -212,13 +234,17 @@ export function TierSection({
               ? 'No parasocials yet' 
               : tier === 'acquainted'
               ? 'No acquainted cousins yet'
+              : tier === 'rolemodel'
+              ? 'No role models yet'
               : `No ${tierInfo.name.toLowerCase()} friends yet`}
           </p>
           <p className="text-xs mt-1">
             {tier === 'parasocial'
               ? 'Add creators, celebrities, or figures you follow'
               : tier === 'acquainted'
-              ? 'Friends are demoted here through lack of contact over time'
+              ? 'Friends are reclassified here through lack of contact over time'
+              : tier === 'rolemodel'
+              ? 'Add people whose life stories inspire you to be good, better, best'
               : 'Add someone to your closest circle'}
           </p>
         </div>
@@ -234,17 +260,27 @@ export function TierSection({
               strategy={verticalListSortingStrategy}
             >
               <AnimatePresence mode="popLayout">
-                {friends.map(friend => (
-                  <FriendCard
-                    key={friend.id}
-                    friend={friend}
-                    onMove={onMoveFriend}
-                    onRemove={onRemoveFriend}
-                    canMoveUp={canMoveUp(tier)}
-                    canMoveDown={canMoveDown(tier)}
-                    getAllowedMoves={getAllowedMoves}
-                    getTierCapacity={getTierCapacity}
-                  />
+                {friends.map((friend, index) => (
+                  isRoleModelTier ? (
+                    <RoleModelCard
+                      key={friend.id}
+                      friend={friend}
+                      rank={index + 1}
+                      onRemove={onRemoveFriend}
+                      onUpdateReason={onUpdateFriend ? (id, reason) => onUpdateFriend(id, { roleModelReason: reason }) : undefined}
+                    />
+                  ) : (
+                    <FriendCard
+                      key={friend.id}
+                      friend={friend}
+                      onMove={onMoveFriend}
+                      onRemove={onRemoveFriend}
+                      canMoveUp={canMoveUp(tier)}
+                      canMoveDown={canMoveDown(tier)}
+                      getAllowedMoves={getAllowedMoves}
+                      getTierCapacity={getTierCapacity}
+                    />
+                  )
                 ))}
               </AnimatePresence>
             </SortableContext>
@@ -281,6 +317,15 @@ export function TierSection({
         onAdd={onAddFriend}
         capacity={capacity}
       />
+
+      {isRoleModelTier && (
+        <AddRoleModelDialog
+          open={roleModelDialogOpen}
+          onOpenChange={setRoleModelDialogOpen}
+          onAdd={(name, reason) => onAddFriend(name, undefined, reason)}
+          capacity={capacity}
+        />
+      )}
 
       {canHaveLinkedFriends && onAddLinkedFriend && (
         <AddLinkedFriendDialog
