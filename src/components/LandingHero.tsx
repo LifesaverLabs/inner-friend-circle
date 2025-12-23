@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, ArrowRight, Shield, Sparkles } from 'lucide-react';
+import { Heart, Users, ArrowRight, Shield, Sparkles, Video, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DunbarVisualization } from './DunbarVisualization';
 
@@ -95,12 +95,44 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
         </motion.div>
       </section>
 
-      {/* Asymmetry Message */}
+      {/* Mission Statement */}
       <section className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 rounded-2xl p-8 text-center">
+            <Video className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+              Face Time, Not Ad Time
+            </h2>
+            <p className="text-muted-foreground mb-6 text-balance">
+              We win when you leave our site — to share real moments with the people who matter most.
+              When distance separates you, we'll help you spark video kalls. But nothing beats being there.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="https://www.youtube.com/watch?v=kAGoqhXtrX4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Our inspiration: Dentyne Ice "Make Face Time"
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Asymmetry Message */}
+      <section className="container mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
           className="max-w-2xl mx-auto text-center"
         >
           <blockquote className="font-display text-xl md:text-2xl text-foreground/80 italic">
