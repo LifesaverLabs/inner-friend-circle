@@ -53,7 +53,9 @@ export function FriendDashboard({
     moveFriend,
     removeFriend,
     reorderFriendsInTier,
-    setReservedSpots,
+    addReservedGroup,
+    updateReservedGroup,
+    removeReservedGroup,
     updateFriend,
     markTended,
   } = useFriendLists();
@@ -96,9 +98,23 @@ export function FriendDashboard({
     }
   };
 
-  const handleSetReserved = (tier: TierType) => (count: number, note?: string) => {
-    setReservedSpots(tier, count, note);
-    toast.success(`Updated reserved spots for ${tier}`);
+  const handleAddReservedGroup = (tier: TierType) => (count: number, note?: string) => {
+    const result = addReservedGroup(tier, count, note);
+    if (result.success) {
+      toast.success(`Added reserved group to ${tier}`);
+    } else {
+      toast.error(result.error || 'Failed to add reserved group');
+    }
+  };
+
+  const handleUpdateReservedGroup = (tier: TierType) => (groupId: string, count: number, note?: string) => {
+    updateReservedGroup(tier, groupId, count, note);
+    toast.success(`Updated reserved group`);
+  };
+
+  const handleRemoveReservedGroup = (tier: TierType) => (groupId: string) => {
+    removeReservedGroup(tier, groupId);
+    toast.success(`Removed reserved group`);
   };
 
   const handleReorderFriends = (tier: TierType) => (orderedIds: string[]) => {
@@ -249,12 +265,13 @@ export function FriendDashboard({
               key={tier}
               tier={tier}
               friends={getFriendsInTier(tier)}
-              reservedCount={lists.reservedSpots[tier]}
-              reservedNote={lists.reservedSpots.notes[tier]}
+              reservedGroups={lists.reservedSpots[tier] || []}
               onAddFriend={handleAddFriend(tier)}
               onMoveFriend={handleMoveFriend}
               onRemoveFriend={handleRemoveFriend}
-              onSetReserved={handleSetReserved(tier)}
+              onAddReservedGroup={handleAddReservedGroup(tier)}
+              onUpdateReservedGroup={handleUpdateReservedGroup(tier)}
+              onRemoveReservedGroup={handleRemoveReservedGroup(tier)}
               onReorderFriends={handleReorderFriends(tier)}
               getTierCapacity={getTierCapacity}
               isLoggedIn={isLoggedIn}
