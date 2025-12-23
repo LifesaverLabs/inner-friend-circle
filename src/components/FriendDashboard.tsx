@@ -7,7 +7,11 @@ import { TierSection } from '@/components/TierSection';
 import { AppHeader } from '@/components/AppHeader';
 import { ShareDialog } from '@/components/ShareDialog';
 import { TendingDialog } from '@/components/TendingDialog';
+import { ProfileSettingsDialog } from '@/components/ProfileSettingsDialog';
+import { ContactSetupOnboarding, useContactSetupNeeded } from '@/components/ContactSetupOnboarding';
+import { MissionBanner } from '@/components/MissionBanner';
 import { useFriendLists } from '@/hooks/useFriendLists';
+import { useAuth } from '@/hooks/useAuth';
 import { TierType, ContactMethod } from '@/types/friend';
 
 interface FriendDashboardProps {
@@ -25,6 +29,10 @@ export function FriendDashboard({
 }: FriendDashboardProps) {
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [tendingDialogOpen, setTendingDialogOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  
+  const { user } = useAuth();
+  const { needsSetup, setNeedsSetup } = useContactSetupNeeded(user?.id);
   
   const {
     lists,
@@ -114,6 +122,8 @@ export function FriendDashboard({
       />
 
       <main className="container mx-auto px-4 py-8">
+        <MissionBanner />
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
