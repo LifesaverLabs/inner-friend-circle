@@ -32,6 +32,7 @@ export function AddFriendDialog({
 
   const tierInfo = TIER_INFO[tier];
   const isFull = capacity.available <= 0;
+  const isParasocial = tier === 'parasocial';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +69,7 @@ export function AddFriendDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <div className={`w-3 h-3 rounded-full bg-${tierInfo.color}`} />
-            Add {tierInfo.name} Friend
+            Add {tierInfo.name}{isParasocial ? '' : ' Friend'}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
             {tierInfo.description}
@@ -104,102 +105,106 @@ export function AddFriendDialog({
               />
             </div>
 
-            <AnimatePresence>
-              {showEmailField ? (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="space-y-2 overflow-hidden"
-                >
-                  <Label htmlFor="email" className="flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    Email (optional)
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="For mutual match notifications"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    If they also list you as a {tierInfo.name.toLowerCase()} friend and you both have 
-                    notifications enabled, you'll both be notified of your mutual connection.
-                  </p>
-                </motion.div>
-              ) : (
-                <motion.button
-                  type="button"
-                  onClick={() => setShowEmailField(true)}
-                  className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  <Plus className="w-4 h-4" />
-                  Add email for mutual matching
-                </motion.button>
-              )}
-            </AnimatePresence>
-
-            <AnimatePresence>
-              {showPhoneField ? (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="space-y-3 overflow-hidden"
-                >
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="flex items-center gap-2">
-                      <Phone className="w-4 h-4" />
-                      Phone (optional)
+            {!isParasocial && (
+              <AnimatePresence>
+                {showEmailField ? (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="space-y-2 overflow-hidden"
+                  >
+                    <Label htmlFor="email" className="flex items-center gap-2">
+                      <Mail className="w-4 h-4" />
+                      Email (optional)
                     </Label>
                     <Input
-                      id="phone"
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+1 555-123-4567"
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="For mutual match notifications"
                     />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-method">Preferred contact method</Label>
-                    <Select value={preferredContact} onValueChange={(v) => setPreferredContact(v as ContactMethod)}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {Object.entries(CONTACT_METHODS).map(([key, { name, icon }]) => (
-                          <SelectItem key={key} value={key}>
-                            <span className="flex items-center gap-2">
-                              <span>{icon}</span>
-                              <span>{name}</span>
-                            </span>
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <p className="text-xs text-muted-foreground">
-                    Use this for the Tending feature to reach out to friends.
-                  </p>
-                </motion.div>
-              ) : (
-                <motion.button
-                  type="button"
-                  onClick={() => setShowPhoneField(true)}
-                  className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  <Plus className="w-4 h-4" />
-                  Add phone for face time
-                </motion.button>
-              )}
-            </AnimatePresence>
+                    <p className="text-xs text-muted-foreground">
+                      If they also list you as a {tierInfo.name.toLowerCase()} friend and you both have 
+                      notifications enabled, you'll both be notified of your mutual connection.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    type="button"
+                    onClick={() => setShowEmailField(true)}
+                    className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <Plus className="w-4 h-4" />
+                    Add email for mutual matching
+                  </motion.button>
+                )}
+              </AnimatePresence>
+            )}
+
+            {!isParasocial && (
+              <AnimatePresence>
+                {showPhoneField ? (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="space-y-3 overflow-hidden"
+                  >
+                    <div className="space-y-2">
+                      <Label htmlFor="phone" className="flex items-center gap-2">
+                        <Phone className="w-4 h-4" />
+                        Phone (optional)
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+1 555-123-4567"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-method">Preferred contact method</Label>
+                      <Select value={preferredContact} onValueChange={(v) => setPreferredContact(v as ContactMethod)}>
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Object.entries(CONTACT_METHODS).map(([key, { name, icon }]) => (
+                            <SelectItem key={key} value={key}>
+                              <span className="flex items-center gap-2">
+                                <span>{icon}</span>
+                                <span>{name}</span>
+                              </span>
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    
+                    <p className="text-xs text-muted-foreground">
+                      Use this for the Tending feature to reach out to friends.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    type="button"
+                    onClick={() => setShowPhoneField(true)}
+                    className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <Plus className="w-4 h-4" />
+                    Add phone for face time
+                  </motion.button>
+                )}
+              </AnimatePresence>
+            )}
 
             <div className="flex justify-between items-center pt-2">
               <span className="text-sm text-muted-foreground">
@@ -210,7 +215,7 @@ export function AddFriendDialog({
                   Cancel
                 </Button>
                 <Button type="submit" disabled={!name.trim()}>
-                  Add Friend
+                  {isParasocial ? 'Add' : 'Add Friend'}
                 </Button>
               </div>
             </div>
