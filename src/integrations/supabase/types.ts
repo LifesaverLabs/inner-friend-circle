@@ -125,6 +125,39 @@ export type Database = {
           },
         ]
       }
+      friend_lists: {
+        Row: {
+          created_at: string
+          friends: Json
+          id: string
+          last_tended_at: string | null
+          reserved_spots: Json
+          role_models: Json
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          friends?: Json
+          id?: string
+          last_tended_at?: string | null
+          reserved_spots?: Json
+          role_models?: Json
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          friends?: Json
+          id?: string
+          last_tended_at?: string | null
+          reserved_spots?: Json
+          role_models?: Json
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null

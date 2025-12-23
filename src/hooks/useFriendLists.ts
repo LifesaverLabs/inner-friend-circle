@@ -1,5 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Friend, FriendLists, ReservedSpots, ReservedGroup, TierType, TIER_LIMITS } from '@/types/friend';
+import { supabase } from '@/integrations/supabase/client';
+import { useAuth } from '@/hooks/useAuth';
 
 const STORAGE_KEY = 'inner-friend-lists';
 const LAST_TENDED_KEY = 'inner-last-tended';
@@ -18,76 +20,192 @@ const defaultLists: FriendLists = {
   reservedSpots: defaultReservedSpots,
 };
 
+// Helper to convert friends from JSON (dates as strings) to proper Friend objects
+function parseFriends(friends: any[]): Friend[] {
+  return friends.map((f: any) => ({
+    ...f,
+    addedAt: new Date(f.addedAt),
+  }));
+}
+
+// Helper to migrate old localStorage format to new format
+function migrateReservedSpots(oldReserved: any): ReservedSpots {
+  const migrated: ReservedSpots = { ...defaultReservedSpots };
+  
+  for (const tier of Object.keys(defaultReservedSpots) as TierType[]) {
+    if (Array.isArray(oldReserved[tier])) {
+      migrated[tier] = oldReserved[tier];
+    } else if (typeof oldReserved[tier] === 'number' && oldReserved[tier] > 0) {
+      migrated[tier] = [{
+        id: crypto.randomUUID(),
+        count: oldReserved[tier],
+        note: oldReserved.notes?.[tier],
+      }];
+    }
+  }
+  
+  return migrated;
+}
+
 export function useFriendLists() {
+  const { user } = useAuth();
   const [lists, setLists] = useState<FriendLists>(defaultLists);
   const [isLoaded, setIsLoaded] = useState(false);
   const [lastTendedAt, setLastTendedAt] = useState<Date | null>(null);
+  const isSyncing = useRef(false);
+  const hasInitialLoad = useRef(false);
 
-  // Load from localStorage on mount
+  // Load data - from Supabase if authenticated, localStorage otherwise
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        // Convert date strings back to Date objects
-        parsed.friends = parsed.friends.map((f: Friend) => ({
-          ...f,
-          addedAt: new Date(f.addedAt),
-        }));
-        // Migrate old data: ensure all tier keys exist in reservedSpots as arrays
-        const migratedReserved: ReservedSpots = { ...defaultReservedSpots };
-        const oldReserved = parsed.reservedSpots || {};
-        
-        // Handle migration from old format (numbers) to new format (arrays)
-        for (const tier of Object.keys(defaultReservedSpots) as TierType[]) {
-          if (Array.isArray(oldReserved[tier])) {
-            migratedReserved[tier] = oldReserved[tier];
-          } else if (typeof oldReserved[tier] === 'number' && oldReserved[tier] > 0) {
-            // Migrate old single number format to array with one group
-            migratedReserved[tier] = [{
-              id: crypto.randomUUID(),
-              count: oldReserved[tier],
-              note: oldReserved.notes?.[tier],
-            }];
+    const loadData = async () => {
+      if (user) {
+        // Load from Supabase
+        try {
+          const { data, error } = await supabase
+            .from('friend_lists')
+            .select('*')
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (error) {
+            console.error('Failed to load friend lists from database:', error);
+            return;
+          }
+
+          if (data) {
+            // User has data in database
+            const friends = parseFriends(data.friends as any[] || []);
+            const reservedSpots = migrateReservedSpots(data.reserved_spots || {});
+            setLists({ friends, reservedSpots });
+            if (data.last_tended_at) {
+              setLastTendedAt(new Date(data.last_tended_at));
+            }
+          } else {
+            // No data in database - check if there's localStorage data to migrate
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+              try {
+                const parsed = JSON.parse(stored);
+                const friends = parseFriends(parsed.friends || []);
+                const reservedSpots = migrateReservedSpots(parsed.reservedSpots || {});
+                
+                // Migrate localStorage data to database
+                const { error: insertError } = await supabase
+                  .from('friend_lists')
+                  .insert([{
+                    user_id: user.id,
+                    friends: friends as any,
+                    reserved_spots: reservedSpots as any,
+                    last_tended_at: localStorage.getItem(LAST_TENDED_KEY) || null,
+                  }]);
+
+                if (insertError) {
+                  console.error('Failed to migrate data to database:', insertError);
+                } else {
+                  // Clear localStorage after successful migration
+                  localStorage.removeItem(STORAGE_KEY);
+                  localStorage.removeItem(LAST_TENDED_KEY);
+                }
+
+                setLists({ friends, reservedSpots });
+                const storedTended = localStorage.getItem(LAST_TENDED_KEY);
+                if (storedTended) {
+                  setLastTendedAt(new Date(storedTended));
+                }
+              } catch (e) {
+                console.error('Failed to parse stored friend lists:', e);
+              }
+            } else {
+              // No data anywhere - create empty record in database
+              await supabase
+                .from('friend_lists')
+                .insert([{
+                  user_id: user.id,
+                  friends: [] as any,
+                  reserved_spots: defaultReservedSpots as any,
+                }]);
+            }
+          }
+        } catch (e) {
+          console.error('Error loading from database:', e);
+        }
+      } else {
+        // Load from localStorage when not authenticated
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            const friends = parseFriends(parsed.friends || []);
+            const reservedSpots = migrateReservedSpots(parsed.reservedSpots || {});
+            setLists({ friends, reservedSpots });
+          } catch (e) {
+            console.error('Failed to parse stored friend lists:', e);
           }
         }
-        parsed.reservedSpots = migratedReserved;
-        setLists(parsed);
-      } catch (e) {
-        console.error('Failed to parse stored friend lists:', e);
+        
+        const storedTended = localStorage.getItem(LAST_TENDED_KEY);
+        if (storedTended) {
+          setLastTendedAt(new Date(storedTended));
+        }
       }
-    }
-    
-    // Load last tended date
-    const storedTended = localStorage.getItem(LAST_TENDED_KEY);
-    if (storedTended) {
-      setLastTendedAt(new Date(storedTended));
-    }
-    
-    setIsLoaded(true);
-  }, []);
+      
+      hasInitialLoad.current = true;
+      setIsLoaded(true);
+    };
 
-  // Save to localStorage on change
+    loadData();
+  }, [user]);
+
+  // Save data - to Supabase if authenticated, localStorage otherwise
   useEffect(() => {
-    if (isLoaded) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
-    }
-  }, [lists, isLoaded]);
+    if (!isLoaded || !hasInitialLoad.current || isSyncing.current) return;
+
+    const saveData = async () => {
+      isSyncing.current = true;
+      
+      if (user) {
+        // Save to Supabase
+        try {
+          const { error } = await supabase
+            .from('friend_lists')
+            .upsert([{
+              user_id: user.id,
+              friends: lists.friends as any,
+              reserved_spots: lists.reservedSpots as any,
+              last_tended_at: lastTendedAt?.toISOString() || null,
+            }], {
+              onConflict: 'user_id'
+            });
+
+          if (error) {
+            console.error('Failed to save friend lists to database:', error);
+          }
+        } catch (e) {
+          console.error('Error saving to database:', e);
+        }
+      } else {
+        // Save to localStorage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
+        if (lastTendedAt) {
+          localStorage.setItem(LAST_TENDED_KEY, lastTendedAt.toISOString());
+        }
+      }
+      
+      isSyncing.current = false;
+    };
+
+    saveData();
+  }, [lists, lastTendedAt, isLoaded, user]);
 
   const getFriendsInTier = useCallback((tier: TierType) => {
     const tierFriends = lists.friends.filter(f => f.tier === tier);
     
-    // Sort: friends with sortOrder use that, otherwise alphabetically by name
     return tierFriends.sort((a, b) => {
-      // Both have sortOrder: sort by sortOrder
       if (a.sortOrder !== undefined && b.sortOrder !== undefined) {
         return a.sortOrder - b.sortOrder;
       }
-      // Only a has sortOrder: a comes first
       if (a.sortOrder !== undefined) return -1;
-      // Only b has sortOrder: b comes first
       if (b.sortOrder !== undefined) return 1;
-      // Neither has sortOrder: alphabetically
       return a.name.localeCompare(b.name);
     });
   }, [lists.friends]);
@@ -223,17 +341,26 @@ export function useFriendLists() {
     }));
   }, []);
 
-  const clearAllData = useCallback(() => {
+  const clearAllData = useCallback(async () => {
     setLists(defaultLists);
+    setLastTendedAt(null);
+    
+    if (user) {
+      // Clear from database
+      await supabase
+        .from('friend_lists')
+        .delete()
+        .eq('user_id', user.id);
+    }
+    
+    // Always clear localStorage
     localStorage.removeItem(STORAGE_KEY);
     localStorage.removeItem(LAST_TENDED_KEY);
-    setLastTendedAt(null);
-  }, []);
+  }, [user]);
 
   const markTended = useCallback(() => {
     const now = new Date();
     setLastTendedAt(now);
-    localStorage.setItem(LAST_TENDED_KEY, now.toISOString());
   }, []);
 
   return {
