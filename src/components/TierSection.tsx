@@ -275,6 +275,7 @@ export function TierSection({
                       friend={friend}
                       onMove={onMoveFriend}
                       onRemove={onRemoveFriend}
+                      onUpdate={onUpdateFriend}
                       canMoveUp={canMoveUp(tier)}
                       canMoveDown={canMoveDown(tier)}
                       getAllowedMoves={getAllowedMoves}
