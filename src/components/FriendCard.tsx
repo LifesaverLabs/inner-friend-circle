@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical, Phone } from 'lucide-react';
 import { useSortable } from '@dnd-kit/sortable';
@@ -21,11 +20,21 @@ interface FriendCardProps {
   onRemove: (id: string) => void;
   canMoveUp: boolean;
   canMoveDown: boolean;
+  getAllowedMoves: (fromTier: TierType) => TierType[];
+  getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number };
 }
 
-const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
+const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
 
-export function FriendCard({ friend, onMove, onRemove, canMoveUp, canMoveDown }: FriendCardProps) {
+export function FriendCard({ 
+  friend, 
+  onMove, 
+  onRemove, 
+  canMoveUp, 
+  canMoveDown,
+  getAllowedMoves,
+  getTierCapacity,
+}: FriendCardProps) {
   const {
     attributes,
     listeners,
@@ -43,8 +52,16 @@ export function FriendCard({ friend, onMove, onRemove, canMoveUp, canMoveDown }:
   };
 
   const currentTierIndex = tierOrder.indexOf(friend.tier);
-  const tierAbove = currentTierIndex > 0 ? tierOrder[currentTierIndex - 1] : null;
-  const tierBelow = currentTierIndex < tierOrder.length - 1 ? tierOrder[currentTierIndex + 1] : null;
+  const allowedMoves = getAllowedMoves(friend.tier);
+  
+  // Get the tier above (closer to core) that's allowed
+  const tierAbove = allowedMoves.find(t => tierOrder.indexOf(t) < currentTierIndex);
+  // Get the tier below (further from core) that's allowed
+  const tierBelow = allowedMoves.find(t => tierOrder.indexOf(t) > currentTierIndex);
+  
+  // Check if we can actually move (capacity available)
+  const canActuallyMoveUp = tierAbove && getTierCapacity(tierAbove).available > 0;
+  const canActuallyMoveDown = tierBelow && getTierCapacity(tierBelow).available > 0;
 
   return (
     <motion.div
@@ -115,19 +132,19 @@ export function FriendCard({ friend, onMove, onRemove, canMoveUp, canMoveDown }:
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {tierAbove && canMoveUp && (
+          {tierAbove && canActuallyMoveUp && (
             <DropdownMenuItem onClick={() => onMove(friend.id, tierAbove)}>
               <ArrowUp className="w-4 h-4 mr-2" />
               Move to {TIER_INFO[tierAbove].name}
             </DropdownMenuItem>
           )}
-          {tierBelow && canMoveDown && (
+          {tierBelow && canActuallyMoveDown && (
             <DropdownMenuItem onClick={() => onMove(friend.id, tierBelow)}>
               <ArrowDown className="w-4 h-4 mr-2" />
               Move to {TIER_INFO[tierBelow].name}
             </DropdownMenuItem>
           )}
-          {((tierAbove && canMoveUp) || (tierBelow && canMoveDown)) && <DropdownMenuSeparator />}
+          {((tierAbove && canActuallyMoveUp) || (tierBelow && canActuallyMoveDown)) && <DropdownMenuSeparator />}
           <DropdownMenuItem 
             onClick={() => onRemove(friend.id)}
             className="text-destructive focus:text-destructive"

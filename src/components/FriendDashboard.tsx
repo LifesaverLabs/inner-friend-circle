@@ -126,7 +126,20 @@ export function FriendDashboard({
     );
   }
 
-  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
+
+  // Define allowed move transitions
+  // acquainted can only move to outer; outer can move to inner or acquainted
+  const getAllowedMoves = (fromTier: TierType): TierType[] => {
+    switch (fromTier) {
+      case 'core': return ['inner'];
+      case 'inner': return ['core', 'outer'];
+      case 'outer': return ['inner', 'acquainted'];
+      case 'parasocial': return ['outer'];
+      case 'acquainted': return ['outer'];
+      default: return [];
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -214,6 +227,7 @@ export function FriendDashboard({
               getTierCapacity={getTierCapacity}
               isLoggedIn={isLoggedIn}
               onAddLinkedFriend={handleAddLinkedFriend}
+              getAllowedMoves={getAllowedMoves}
             />
           ))}
         </div>

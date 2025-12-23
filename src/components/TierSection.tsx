@@ -22,8 +22,9 @@ import { FriendCard } from './FriendCard';
 import { AddFriendDialog } from './AddFriendDialog';
 import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
-import { Friend, TierType, TIER_INFO, TIER_LIMITS } from '@/types/friend';
+import { Friend, TierType, TIER_INFO } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
+
 interface TierSectionProps {
   tier: TierType;
   friends: Friend[];
@@ -42,6 +43,7 @@ interface TierSectionProps {
     matchedContactMethodId: string | null,
     discloseCircle: boolean
   ) => Promise<{ success: boolean; error?: string }>;
+  getAllowedMoves: (fromTier: TierType) => TierType[];
 }
 
 export function TierSection({
@@ -57,13 +59,17 @@ export function TierSection({
   getTierCapacity,
   isLoggedIn,
   onAddLinkedFriend,
+  getAllowedMoves,
 }: TierSectionProps) {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
   
-  // Only core, inner, outer can have linked friends (not parasocial)
-  const canHaveLinkedFriends = tier !== 'parasocial';
+  // Only core, inner, outer can have linked friends (not parasocial or acquainted)
+  const canHaveLinkedFriends = tier !== 'parasocial' && tier !== 'acquainted';
+  
+  // Acquainted tier cannot have direct adds
+  const canAddDirectly = tier !== 'acquainted';
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -80,19 +86,25 @@ export function TierSection({
   const capacity = getTierCapacity(tier);
   const progressPercent = (capacity.used / capacity.limit) * 100;
 
-  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial'];
+  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'acquainted'];
   const currentIndex = tierOrder.indexOf(tier);
 
   const canMoveUp = (friendTier: TierType) => {
-    const targetTier = tierOrder[tierOrder.indexOf(friendTier) - 1];
-    if (!targetTier) return false;
-    return getTierCapacity(targetTier).available > 0;
+    const allowed = getAllowedMoves(friendTier);
+    const tierIdx = tierOrder.indexOf(friendTier);
+    // "Up" means closer to core (lower index)
+    const upTier = allowed.find(t => tierOrder.indexOf(t) < tierIdx);
+    if (!upTier) return false;
+    return getTierCapacity(upTier).available > 0;
   };
 
   const canMoveDown = (friendTier: TierType) => {
-    const targetTier = tierOrder[tierOrder.indexOf(friendTier) + 1];
-    if (!targetTier) return false;
-    return getTierCapacity(targetTier).available > 0;
+    const allowed = getAllowedMoves(friendTier);
+    const tierIdx = tierOrder.indexOf(friendTier);
+    // "Down" means further from core (higher index)
+    const downTier = allowed.find(t => tierOrder.indexOf(t) > tierIdx);
+    if (!downTier) return false;
+    return getTierCapacity(downTier).available > 0;
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -111,6 +123,7 @@ export function TierSection({
     inner: 'bg-tier-inner/5',
     outer: 'bg-tier-outer/5',
     parasocial: 'bg-tier-parasocial/5',
+    acquainted: 'bg-tier-acquainted/5',
   };
 
   const borderColors: Record<TierType, string> = {
@@ -118,6 +131,7 @@ export function TierSection({
     inner: 'border-tier-inner/20',
     outer: 'border-tier-outer/20',
     parasocial: 'border-tier-parasocial/20',
+    acquainted: 'border-tier-acquainted/20',
   };
 
   const progressColors: Record<TierType, string> = {
@@ -125,6 +139,7 @@ export function TierSection({
     inner: '[&>div]:bg-tier-inner',
     outer: '[&>div]:bg-tier-outer',
     parasocial: '[&>div]:bg-tier-parasocial',
+    acquainted: '[&>div]:bg-tier-acquainted',
   };
 
   return (
@@ -170,15 +185,17 @@ export function TierSection({
               Link
             </Button>
           )}
-          <Button
-            size="sm"
-            onClick={() => setAddDialogOpen(true)}
-            disabled={capacity.available <= 0}
-            className="gap-1"
-          >
-            <Plus className="w-4 h-4" />
-            Add
-          </Button>
+          {canAddDirectly && (
+            <Button
+              size="sm"
+              onClick={() => setAddDialogOpen(true)}
+              disabled={capacity.available <= 0}
+              className="gap-1"
+            >
+              <Plus className="w-4 h-4" />
+              Add
+            </Button>
+          )}
         </div>
       </div>
 
@@ -193,11 +210,15 @@ export function TierSection({
           <p className="text-sm">
             {tier === 'parasocial' 
               ? 'No parasocials yet' 
+              : tier === 'acquainted'
+              ? 'No acquainted cousins yet'
               : `No ${tierInfo.name.toLowerCase()} friends yet`}
           </p>
           <p className="text-xs mt-1">
             {tier === 'parasocial'
               ? 'Add creators, celebrities, or figures you follow'
+              : tier === 'acquainted'
+              ? 'Friends are demoted here through lack of contact over time'
               : 'Add someone to your closest circle'}
           </p>
         </div>
@@ -221,6 +242,8 @@ export function TierSection({
                     onRemove={onRemoveFriend}
                     canMoveUp={canMoveUp(tier)}
                     canMoveDown={canMoveDown(tier)}
+                    getAllowedMoves={getAllowedMoves}
+                    getTierCapacity={getTierCapacity}
                   />
                 ))}
               </AnimatePresence>
