@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Video, ArrowRight, Check, Plus, X } from 'lucide-react';
+import { Phone, Video, ArrowRight, Check, Plus, X, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -24,6 +24,22 @@ import { useContactMethods } from '@/hooks/useContactMethods';
 import { supabase } from '@/integrations/supabase/client';
 import { ServiceType, SERVICES, SERVICE_LIST } from '@/types/contactMethod';
 import { toast } from 'sonner';
+
+// Quick guidance hints for onboarding
+const QUICK_HINTS: Record<ServiceType, string> = {
+  phone: 'Your phone number with country code (e.g., +1 555-123-4567)',
+  facetime: 'Phone number or Apple ID email linked to FaceTime',
+  whatsapp: 'Phone number with country code, no spaces (e.g., +15551234567)',
+  signal: 'Phone number registered with Signal app',
+  telegram: 'Your @username (without @) or phone number',
+  zoom: 'Personal Meeting ID or your zoom.us meeting link',
+  google_meet: 'Your Gmail address',
+  teams: 'Your Microsoft work or personal email',
+  discord: 'Username#1234 or your User ID',
+  skype: 'Your Skype Name (find in Settings → Account)',
+  webex: 'Personal Room link or Webex email',
+  slack: 'Work email (both parties need same workspace)',
+};
 
 interface ContactSetupOnboardingProps {
   userId: string;
@@ -211,7 +227,7 @@ export function ContactSetupOnboarding({
 
                   {/* Add new method form */}
                   <div className="space-y-3 p-4 border rounded-lg">
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-3">
                       <div className="space-y-1">
                         <Label className="text-xs">Service</Label>
                         <Select
@@ -221,7 +237,7 @@ export function ContactSetupOnboarding({
                           <SelectTrigger className="h-9">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent>
+                          <SelectContent className="max-h-[200px]">
                             {SERVICE_LIST.map((service) => (
                               <SelectItem key={service.type} value={service.type}>
                                 <span className="flex items-center gap-2">
@@ -233,8 +249,15 @@ export function ContactSetupOnboarding({
                           </SelectContent>
                         </Select>
                       </div>
+                      
+                      {/* Guidance hint */}
+                      <div className="flex items-start gap-2 p-2 bg-muted/50 rounded text-xs">
+                        <Info className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
+                        <span className="text-muted-foreground">{QUICK_HINTS[currentService]}</span>
+                      </div>
+                      
                       <div className="space-y-1">
-                        <Label className="text-xs">Contact Info</Label>
+                        <Label className="text-xs">Your {SERVICES[currentService].name} Contact Info</Label>
                         <Input
                           className="h-9"
                           placeholder={SERVICES[currentService].placeholder}

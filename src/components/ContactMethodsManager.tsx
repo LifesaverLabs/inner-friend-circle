@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Trash2, GripVertical, Video, Calendar } from 'lucide-react';
+import { Plus, Trash2, Video, Calendar, HelpCircle, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -20,10 +20,77 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from '@/components/ui/dialog';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { useContactMethods } from '@/hooks/useContactMethods';
 import { ServiceType, SERVICES, SERVICE_LIST } from '@/types/contactMethod';
 import { toast } from 'sonner';
+
+// Detailed guidance for each service
+const SERVICE_GUIDANCE: Record<ServiceType, { howToFind: string; example: string; tip?: string }> = {
+  phone: {
+    howToFind: 'Use your mobile or landline phone number with country code.',
+    example: '+1 555-123-4567',
+  },
+  facetime: {
+    howToFind: 'Use the phone number or Apple ID email linked to your FaceTime account. Find it in Settings → FaceTime on your iPhone/Mac.',
+    example: '+1 555-123-4567 or you@icloud.com',
+    tip: 'FaceTime only works between Apple devices.',
+  },
+  whatsapp: {
+    howToFind: 'Use the phone number registered with WhatsApp, including country code. Find it in WhatsApp → Settings → tap your profile.',
+    example: '+1 555-123-4567',
+    tip: 'Include the + and country code without spaces or dashes.',
+  },
+  signal: {
+    howToFind: 'Use the phone number registered with Signal. Find it in Signal → Settings → tap your profile picture.',
+    example: '+1 555-123-4567',
+    tip: 'Signal requires both parties to have the app installed.',
+  },
+  telegram: {
+    howToFind: 'Use your Telegram username (without @) or phone number. Find your username in Telegram → Settings → Username.',
+    example: 'your_username or +1 555-123-4567',
+    tip: 'Usernames work better than phone numbers for privacy.',
+  },
+  zoom: {
+    howToFind: 'Use your Personal Meeting ID (PMI) or personal meeting link. Find it in Zoom → Meetings → Personal Meeting ID.',
+    example: '123-456-7890 or https://zoom.us/j/1234567890',
+    tip: 'Your PMI stays the same across all meetings.',
+  },
+  google_meet: {
+    howToFind: 'Use your Gmail address. Friends can start a Meet and invite you, or use your personal meeting link from Google Calendar.',
+    example: 'you@gmail.com',
+    tip: 'Works best when both parties have Google accounts.',
+  },
+  teams: {
+    howToFind: 'Use your Microsoft work or personal email. Find it in Teams → click your profile picture.',
+    example: 'you@company.com or you@outlook.com',
+  },
+  discord: {
+    howToFind: 'Use your Discord username or User ID. Find your username in Discord → Settings → My Account.',
+    example: 'username#1234 or 123456789012345678',
+    tip: 'For User ID: Enable Developer Mode, right-click your name, Copy ID.',
+  },
+  skype: {
+    howToFind: 'Use your Skype Name. Find it in Skype → Settings → Account & Profile → Skype Name.',
+    example: 'live:your.name or your.skypename',
+  },
+  webex: {
+    howToFind: 'Use your Webex Personal Room link or email. Find your room link in Webex → Preferences → My Personal Room.',
+    example: 'https://meet.webex.com/your.room or you@company.com',
+  },
+  slack: {
+    howToFind: 'Use your Slack email or workspace member ID. Note: Slack Huddles only work within shared workspaces.',
+    example: 'you@company.com',
+    tip: 'Both parties must be in the same Slack workspace.',
+  },
+};
 
 interface ContactMethodsManagerProps {
   userId: string;
@@ -61,16 +128,27 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
     if (result) {
       setDialogOpen(false);
-      setNewIdentifier('');
-      setNewLabel('');
-      setNewService('phone');
-      setForSpontaneous(true);
-      setForScheduled(true);
+      resetForm();
     }
+  };
+
+  const resetForm = () => {
+    setNewIdentifier('');
+    setNewLabel('');
+    setNewService('phone');
+    setForSpontaneous(true);
+    setForScheduled(true);
+  };
+
+  const handleCancel = () => {
+    setDialogOpen(false);
+    resetForm();
   };
 
   const spontaneousMethods = getSpontaneousMethods();
   const scheduledMethods = getScheduledMethods();
+  const selectedService = SERVICES[newService];
+  const guidance = SERVICE_GUIDANCE[newService];
 
   if (isLoading) {
     return (
@@ -80,32 +158,154 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
     );
   }
 
+  const AddMethodDialog = (
+    <Dialog open={dialogOpen} onOpenChange={(open) => {
+      setDialogOpen(open);
+      if (!open) resetForm();
+    }}>
+      <DialogTrigger asChild>
+        <Button size={compact ? 'sm' : 'default'} variant={compact ? 'outline' : 'default'}>
+          <Plus className="w-4 h-4 mr-1" />
+          {compact ? 'Add' : 'Add Contact Method'}
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Add Contact Method</DialogTitle>
+          <DialogDescription>
+            Add a way for your friends to reach you for video kalls
+          </DialogDescription>
+        </DialogHeader>
+        
+        <div className="space-y-4 py-4">
+          {/* Service Selection */}
+          <div className="space-y-2">
+            <Label>Service</Label>
+            <Select value={newService} onValueChange={(v) => setNewService(v as ServiceType)}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="max-h-[300px]">
+                {SERVICE_LIST.map((service) => (
+                  <SelectItem key={service.type} value={service.type}>
+                    <span className="flex items-center gap-2">
+                      <span>{service.icon}</span>
+                      <span>{service.name}</span>
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Guidance Box */}
+          <div className="bg-muted/50 rounded-lg p-3 space-y-2">
+            <div className="flex items-start gap-2">
+              <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+              <div className="text-sm">
+                <p className="text-foreground">{guidance.howToFind}</p>
+                <p className="text-muted-foreground mt-1">
+                  <span className="font-medium">Example:</span> {guidance.example}
+                </p>
+                {guidance.tip && (
+                  <p className="text-primary/80 mt-1 text-xs">
+                    💡 {guidance.tip}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Info Input */}
+          <div className="space-y-2">
+            <Label htmlFor="contact-identifier">
+              Your {selectedService.name} Contact Info
+            </Label>
+            <Input
+              id="contact-identifier"
+              placeholder={selectedService.placeholder}
+              value={newIdentifier}
+              onChange={(e) => setNewIdentifier(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && newIdentifier.trim()) {
+                  e.preventDefault();
+                  handleAdd();
+                }
+              }}
+            />
+          </div>
+
+          {/* Label Input */}
+          <div className="space-y-2">
+            <Label htmlFor="contact-label">Label (optional)</Label>
+            <Input
+              id="contact-label"
+              placeholder="e.g., Personal, Work, Home"
+              value={newLabel}
+              onChange={(e) => setNewLabel(e.target.value)}
+            />
+            <p className="text-xs text-muted-foreground">
+              Helps you identify between multiple accounts on the same service
+            </p>
+          </div>
+
+          {/* Call Type Toggles */}
+          <div className="space-y-3 pt-2">
+            <Label>Available for</Label>
+            <TooltipProvider>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground">Spontaneous Kalls</span>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="max-w-xs">Instant, drop-in video calls when friends want to connect right now</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+                <Switch checked={forSpontaneous} onCheckedChange={setForSpontaneous} />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground">Scheduled Kalls</span>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="max-w-xs">Planned video meetings set up in advance for a specific time</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+                <Switch checked={forScheduled} onCheckedChange={setForScheduled} />
+              </div>
+            </TooltipProvider>
+          </div>
+        </div>
+
+        <DialogFooter>
+          <Button variant="outline" onClick={handleCancel}>
+            Cancel
+          </Button>
+          <Button 
+            onClick={handleAdd} 
+            disabled={!newIdentifier.trim() || (!forSpontaneous && !forScheduled)}
+          >
+            Add Method
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+
   if (compact) {
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-medium text-foreground">Contact Methods</h3>
-          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogTrigger asChild>
-              <Button size="sm" variant="outline">
-                <Plus className="w-4 h-4 mr-1" />
-                Add
-              </Button>
-            </DialogTrigger>
-            <AddMethodDialogContent
-              newService={newService}
-              setNewService={setNewService}
-              newIdentifier={newIdentifier}
-              setNewIdentifier={setNewIdentifier}
-              newLabel={newLabel}
-              setNewLabel={setNewLabel}
-              forSpontaneous={forSpontaneous}
-              setForSpontaneous={setForSpontaneous}
-              forScheduled={forScheduled}
-              setForScheduled={setForScheduled}
-              onAdd={handleAdd}
-            />
-          </Dialog>
+          {AddMethodDialog}
         </div>
         <MethodsList methods={contactMethods} onRemove={removeContactMethod} />
       </div>
@@ -118,30 +318,10 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
         <div>
           <h2 className="text-xl font-semibold text-foreground">Contact Methods</h2>
           <p className="text-sm text-muted-foreground">
-            Add your preferred video call and messaging services
+            Add your preferred video call and messaging services so friends can reach you
           </p>
         </div>
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <Button>
-              <Plus className="w-4 h-4 mr-2" />
-              Add Contact Method
-            </Button>
-          </DialogTrigger>
-          <AddMethodDialogContent
-            newService={newService}
-            setNewService={setNewService}
-            newIdentifier={newIdentifier}
-            setNewIdentifier={setNewIdentifier}
-            newLabel={newLabel}
-            setNewLabel={setNewLabel}
-            forSpontaneous={forSpontaneous}
-            setForSpontaneous={setForSpontaneous}
-            forScheduled={forScheduled}
-            setForScheduled={setForScheduled}
-            onAdd={handleAdd}
-          />
-        </Dialog>
+        {AddMethodDialog}
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -152,7 +332,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               Spontaneous Kalls
             </CardTitle>
             <CardDescription>
-              Services for instant, interruptive video calls
+              Services for instant, interruptive video calls — when friends want to connect right now
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -177,7 +357,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               Scheduled Kalls
             </CardTitle>
             <CardDescription>
-              Services for planned video meetings
+              Services for planned video meetings — set up a time that works for both of you
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -251,104 +431,5 @@ function MethodsList({ methods, onRemove, showPriority }: MethodsListProps) {
         })}
       </AnimatePresence>
     </div>
-  );
-}
-
-interface AddMethodDialogContentProps {
-  newService: ServiceType;
-  setNewService: (s: ServiceType) => void;
-  newIdentifier: string;
-  setNewIdentifier: (s: string) => void;
-  newLabel: string;
-  setNewLabel: (s: string) => void;
-  forSpontaneous: boolean;
-  setForSpontaneous: (b: boolean) => void;
-  forScheduled: boolean;
-  setForScheduled: (b: boolean) => void;
-  onAdd: () => void;
-}
-
-function AddMethodDialogContent({
-  newService,
-  setNewService,
-  newIdentifier,
-  setNewIdentifier,
-  newLabel,
-  setNewLabel,
-  forSpontaneous,
-  setForSpontaneous,
-  forScheduled,
-  setForScheduled,
-  onAdd,
-}: AddMethodDialogContentProps) {
-  const selectedService = SERVICES[newService];
-
-  return (
-    <DialogContent className="sm:max-w-md">
-      <DialogHeader>
-        <DialogTitle>Add Contact Method</DialogTitle>
-        <DialogDescription>
-          Add a way for your friends to reach you
-        </DialogDescription>
-      </DialogHeader>
-      <div className="space-y-4 py-4">
-        <div className="space-y-2">
-          <Label>Service</Label>
-          <Select value={newService} onValueChange={(v) => setNewService(v as ServiceType)}>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {SERVICE_LIST.map((service) => (
-                <SelectItem key={service.type} value={service.type}>
-                  <span className="flex items-center gap-2">
-                    <span>{service.icon}</span>
-                    <span>{service.name}</span>
-                  </span>
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div className="space-y-2">
-          <Label>Contact Info</Label>
-          <Input
-            placeholder={selectedService.placeholder}
-            value={newIdentifier}
-            onChange={(e) => setNewIdentifier(e.target.value)}
-          />
-        </div>
-
-        <div className="space-y-2">
-          <Label>Label (optional)</Label>
-          <Input
-            placeholder="e.g., Personal, Work"
-            value={newLabel}
-            onChange={(e) => setNewLabel(e.target.value)}
-          />
-        </div>
-
-        <div className="space-y-3">
-          <Label>Available for</Label>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Spontaneous Kalls</span>
-            <Switch checked={forSpontaneous} onCheckedChange={setForSpontaneous} />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Scheduled Kalls</span>
-            <Switch checked={forScheduled} onCheckedChange={setForScheduled} />
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-end gap-2">
-        <Button variant="outline" onClick={() => {}}>
-          Cancel
-        </Button>
-        <Button onClick={onAdd} disabled={!forSpontaneous && !forScheduled}>
-          Add Method
-        </Button>
-      </div>
-    </DialogContent>
   );
 }
