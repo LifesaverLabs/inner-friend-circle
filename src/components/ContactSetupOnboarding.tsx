@@ -27,6 +27,7 @@ import { toast } from 'sonner';
 
 // Quick guidance hints for onboarding
 const QUICK_HINTS: Record<ServiceType, string> = {
+  real_face_time: 'Your city or favorite meeting spot — nothing beats real face time!',
   phone: 'Your phone number with country code (e.g., +1 555-123-4567)',
   facetime: 'Phone number or Apple ID email linked to FaceTime',
   whatsapp: 'Phone number with country code, no spaces (e.g., +15551234567)',
