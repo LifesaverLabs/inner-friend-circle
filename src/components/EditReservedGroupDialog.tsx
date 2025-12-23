@@ -1,49 +1,50 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Minus, Plus, Lock, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { TierType, TIER_INFO, TIER_LIMITS } from '@/types/friend';
+import { TierType, TIER_INFO, ReservedGroup } from '@/types/friend';
 
-interface ReservedSpotsDialogProps {
+interface EditReservedGroupDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   tier: TierType;
-  friendCount: number;
-  currentReservedTotal: number;
+  group: ReservedGroup;
+  maxCount: number;
   onSave: (count: number, note?: string) => void;
 }
 
-export function ReservedSpotsDialog({
+export function EditReservedGroupDialog({
   open,
   onOpenChange,
   tier,
-  friendCount,
-  currentReservedTotal,
+  group,
+  maxCount,
   onSave,
-}: ReservedSpotsDialogProps) {
-  const [count, setCount] = useState(1);
-  const [note, setNote] = useState('');
+}: EditReservedGroupDialogProps) {
+  const [count, setCount] = useState(group.count);
+  const [note, setNote] = useState(group.note || '');
 
   const tierInfo = TIER_INFO[tier];
-  const maxNew = TIER_LIMITS[tier] - friendCount - currentReservedTotal;
+
+  useEffect(() => {
+    if (open) {
+      setCount(group.count);
+      setNote(group.note || '');
+    }
+  }, [open, group]);
 
   const handleSave = () => {
     onSave(count, note.trim() || undefined);
-    setCount(1);
-    setNote('');
-    onOpenChange(false);
   };
 
   const handleClose = () => {
-    setCount(1);
-    setNote('');
     onOpenChange(false);
   };
 
-  const increment = () => setCount(c => Math.min(c + 1, maxNew));
+  const increment = () => setCount(c => Math.min(c + 1, maxCount));
   const decrement = () => setCount(c => Math.max(c - 1, 1));
 
   return (
@@ -52,11 +53,10 @@ export function ReservedSpotsDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <Lock className="w-5 h-5 text-muted-foreground" />
-            Add Reserved Group — {tierInfo.name}
+            Edit Reserved Group — {tierInfo.name}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Reserve spots for people you don't want to explicitly list. 
-            Each group counts toward your {tierInfo.name.toLowerCase()} limit but stays private.
+            Update the number of spots and note for this reserved group.
           </DialogDescription>
         </DialogHeader>
 
@@ -90,7 +90,7 @@ export function ReservedSpotsDialog({
               variant="outline"
               size="icon"
               onClick={increment}
-              disabled={count >= maxNew}
+              disabled={count >= maxCount}
               className="h-12 w-12 rounded-full"
             >
               <Plus className="w-5 h-5" />
@@ -98,7 +98,7 @@ export function ReservedSpotsDialog({
           </div>
 
           <div className="text-center text-sm text-muted-foreground">
-            {friendCount} named + {currentReservedTotal} already reserved + {count} new = {friendCount + currentReservedTotal + count}/{TIER_LIMITS[tier]} {tierInfo.name.toLowerCase()}
+            Max available: {maxCount} spots
           </div>
 
           <div className="space-y-2">
@@ -110,7 +110,7 @@ export function ReservedSpotsDialog({
               id="note"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              placeholder="Only you can see this. E.g., 'People from the hiking group' or 'Family members who prefer privacy'"
+              placeholder="Only you can see this. E.g., 'People from the hiking group'"
               rows={3}
             />
           </div>
@@ -119,8 +119,8 @@ export function ReservedSpotsDialog({
             <Button variant="outline" onClick={handleClose}>
               Cancel
             </Button>
-            <Button onClick={handleSave} disabled={maxNew <= 0}>
-              Add Group
+            <Button onClick={handleSave}>
+              Save
             </Button>
           </div>
         </div>

@@ -1,0 +1,123 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Lock, Pencil, Trash2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
+import { ReservedGroup, TierType } from '@/types/friend';
+import { EditReservedGroupDialog } from './EditReservedGroupDialog';
+
+interface ReservedGroupCardProps {
+  group: ReservedGroup;
+  tier: TierType;
+  friendCount: number;
+  tierLimit: number;
+  otherGroupsTotal: number;
+  onUpdate: (groupId: string, count: number, note?: string) => void;
+  onRemove: (groupId: string) => void;
+}
+
+export function ReservedGroupCard({
+  group,
+  tier,
+  friendCount,
+  tierLimit,
+  otherGroupsTotal,
+  onUpdate,
+  onRemove,
+}: ReservedGroupCardProps) {
+  const [editDialogOpen, setEditDialogOpen] = useState(false);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+
+  const maxForThisGroup = tierLimit - friendCount - otherGroupsTotal;
+
+  return (
+    <>
+      <motion.div
+        layout
+        className="friend-card bg-muted/50 border border-dashed border-border flex items-center gap-3"
+      >
+        <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
+          <Lock className="w-4 h-4 text-muted-foreground" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h4 className="font-medium text-muted-foreground">
+            {group.count} Reserved Spot{group.count !== 1 ? 's' : ''}
+          </h4>
+          {group.note && (
+            <p className="text-xs text-muted-foreground/70 truncate italic">
+              {group.note}
+            </p>
+          )}
+        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
+              <Pencil className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={() => setEditDialogOpen(true)}>
+              <Pencil className="w-4 h-4 mr-2" />
+              Edit Group
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => setDeleteDialogOpen(true)}
+              className="text-destructive focus:text-destructive"
+            >
+              <Trash2 className="w-4 h-4 mr-2" />
+              Delete Group
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </motion.div>
+
+      <EditReservedGroupDialog
+        open={editDialogOpen}
+        onOpenChange={setEditDialogOpen}
+        tier={tier}
+        group={group}
+        maxCount={maxForThisGroup}
+        onSave={(count, note) => {
+          onUpdate(group.id, count, note);
+          setEditDialogOpen(false);
+        }}
+      />
+
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete Reserved Group?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This will remove {group.count} reserved spot{group.count !== 1 ? 's' : ''}
+              {group.note ? ` (${group.note})` : ''} from your {tier} tier.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => onRemove(group.id)}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
+  );
+}

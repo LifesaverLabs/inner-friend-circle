@@ -20,25 +20,27 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { FriendCard } from './FriendCard';
 import { RoleModelCard } from './RoleModelCard';
+import { ReservedGroupCard } from './ReservedGroupCard';
 import { AddFriendDialog } from './AddFriendDialog';
 import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
 import { AddRoleModelDialog } from './AddRoleModelDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
-import { Friend, TierType, TIER_INFO } from '@/types/friend';
+import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
 
 interface TierSectionProps {
   tier: TierType;
   friends: Friend[];
-  reservedCount: number;
-  reservedNote?: string;
+  reservedGroups: ReservedGroup[];
   onAddFriend: (name: string, email?: string, roleModelReason?: string) => void;
   onMoveFriend: (id: string, newTier: TierType) => void;
   onRemoveFriend: (id: string) => void;
   onUpdateFriend?: (id: string, updates: Partial<Friend>) => void;
-  onSetReserved: (count: number, note?: string) => void;
+  onAddReservedGroup: (count: number, note?: string) => void;
+  onUpdateReservedGroup: (groupId: string, count: number, note?: string) => void;
+  onRemoveReservedGroup: (groupId: string) => void;
   onReorderFriends: (orderedIds: string[]) => void;
-  getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number };
+  getTierCapacity: (tier: TierType) => { available: number; used: number; limit: number; reservedGroups: ReservedGroup[] };
   isLoggedIn?: boolean;
   onAddLinkedFriend?: (
     targetUserId: string,
@@ -52,13 +54,14 @@ interface TierSectionProps {
 export function TierSection({
   tier,
   friends,
-  reservedCount,
-  reservedNote,
+  reservedGroups,
   onAddFriend,
   onMoveFriend,
   onRemoveFriend,
   onUpdateFriend,
-  onSetReserved,
+  onAddReservedGroup,
+  onUpdateReservedGroup,
+  onRemoveReservedGroup,
   onReorderFriends,
   getTierCapacity,
   isLoggedIn,
@@ -93,6 +96,7 @@ export function TierSection({
   const tierInfo = TIER_INFO[tier];
   const capacity = getTierCapacity(tier);
   const progressPercent = (capacity.used / capacity.limit) * 100;
+  const reservedTotal = reservedGroups.reduce((sum, g) => sum + g.count, 0);
 
   const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
   const currentIndex = tierOrder.indexOf(tier);
@@ -179,10 +183,11 @@ export function TierSection({
             variant="outline"
             size="sm"
             onClick={() => setReservedDialogOpen(true)}
+            disabled={capacity.available <= 0}
             className="gap-1"
           >
             <Lock className="w-4 h-4" />
-            {reservedCount > 0 ? `${reservedCount} Reserved` : 'Reserve'}
+            {reservedTotal > 0 ? `${reservedTotal} Reserved` : 'Reserve'}
           </Button>
           {isLoggedIn && canHaveLinkedFriends && onAddLinkedFriend && (
             <Button
@@ -226,7 +231,7 @@ export function TierSection({
         className={`h-2 mb-4 ${progressColors[tier]}`} 
       />
 
-      {friends.length === 0 && reservedCount === 0 ? (
+      {friends.length === 0 && reservedGroups.length === 0 ? (
         <div className="text-center py-8 text-muted-foreground">
           <Users className="w-12 h-12 mx-auto mb-2 opacity-30" />
           <p className="text-sm">
@@ -287,27 +292,23 @@ export function TierSection({
             </SortableContext>
           </DndContext>
 
-          {reservedCount > 0 && (
-            <motion.div
-              layout
-              className="friend-card bg-muted/50 border border-dashed border-border flex items-center gap-3 cursor-pointer hover:bg-muted/70"
-              onClick={() => setReservedDialogOpen(true)}
-            >
-              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                <Lock className="w-4 h-4 text-muted-foreground" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="font-medium text-muted-foreground">
-                  {reservedCount} Reserved Spot{reservedCount !== 1 ? 's' : ''}
-                </h4>
-                {reservedNote && (
-                  <p className="text-xs text-muted-foreground/70 truncate italic">
-                    {reservedNote}
-                  </p>
-                )}
-              </div>
-            </motion.div>
-          )}
+          {reservedGroups.map((group) => {
+            const otherGroupsTotal = reservedGroups
+              .filter(g => g.id !== group.id)
+              .reduce((sum, g) => sum + g.count, 0);
+            return (
+              <ReservedGroupCard
+                key={group.id}
+                group={group}
+                tier={tier}
+                friendCount={friends.length}
+                tierLimit={TIER_LIMITS[tier]}
+                otherGroupsTotal={otherGroupsTotal}
+                onUpdate={onUpdateReservedGroup}
+                onRemove={onRemoveReservedGroup}
+              />
+            );
+          })}
         </div>
       )}
 
@@ -341,10 +342,9 @@ export function TierSection({
         open={reservedDialogOpen}
         onOpenChange={setReservedDialogOpen}
         tier={tier}
-        currentReserved={reservedCount}
-        currentNote={reservedNote}
         friendCount={friends.length}
-        onSave={onSetReserved}
+        currentReservedTotal={reservedTotal}
+        onSave={onAddReservedGroup}
       />
     </motion.section>
   );

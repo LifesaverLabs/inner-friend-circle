@@ -1,17 +1,16 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Friend, FriendLists, ReservedSpots, TierType, TIER_LIMITS } from '@/types/friend';
+import { Friend, FriendLists, ReservedSpots, ReservedGroup, TierType, TIER_LIMITS } from '@/types/friend';
 
 const STORAGE_KEY = 'inner-friend-lists';
 const LAST_TENDED_KEY = 'inner-last-tended';
 
 const defaultReservedSpots: ReservedSpots = {
-  core: 0,
-  inner: 0,
-  outer: 0,
-  parasocial: 0,
-  rolemodel: 0,
-  acquainted: 0,
-  notes: {},
+  core: [],
+  inner: [],
+  outer: [],
+  parasocial: [],
+  rolemodel: [],
+  acquainted: [],
 };
 
 const defaultLists: FriendLists = {
@@ -35,15 +34,24 @@ export function useFriendLists() {
           ...f,
           addedAt: new Date(f.addedAt),
         }));
-        // Migrate old data: ensure all tier keys exist in reservedSpots
-        parsed.reservedSpots = {
-          ...defaultReservedSpots,
-          ...parsed.reservedSpots,
-          notes: {
-            ...defaultReservedSpots.notes,
-            ...(parsed.reservedSpots?.notes || {}),
-          },
-        };
+        // Migrate old data: ensure all tier keys exist in reservedSpots as arrays
+        const migratedReserved: ReservedSpots = { ...defaultReservedSpots };
+        const oldReserved = parsed.reservedSpots || {};
+        
+        // Handle migration from old format (numbers) to new format (arrays)
+        for (const tier of Object.keys(defaultReservedSpots) as TierType[]) {
+          if (Array.isArray(oldReserved[tier])) {
+            migratedReserved[tier] = oldReserved[tier];
+          } else if (typeof oldReserved[tier] === 'number' && oldReserved[tier] > 0) {
+            // Migrate old single number format to array with one group
+            migratedReserved[tier] = [{
+              id: crypto.randomUUID(),
+              count: oldReserved[tier],
+              note: oldReserved.notes?.[tier],
+            }];
+          }
+        }
+        parsed.reservedSpots = migratedReserved;
         setLists(parsed);
       } catch (e) {
         console.error('Failed to parse stored friend lists:', e);
@@ -97,14 +105,16 @@ export function useFriendLists() {
 
   const getTierCapacity = useCallback((tier: TierType) => {
     const friendsInTier = getFriendsInTier(tier).length;
-    const reserved = lists.reservedSpots[tier];
+    const reservedGroups = lists.reservedSpots[tier] || [];
+    const reservedTotal = reservedGroups.reduce((sum, g) => sum + g.count, 0);
     const limit = TIER_LIMITS[tier];
     return {
-      used: friendsInTier + reserved,
+      used: friendsInTier + reservedTotal,
       friendCount: friendsInTier,
-      reserved,
+      reserved: reservedTotal,
+      reservedGroups,
       limit,
-      available: limit - friendsInTier - reserved,
+      available: limit - friendsInTier - reservedTotal,
     };
   }, [getFriendsInTier, lists.reservedSpots]);
 
@@ -160,23 +170,58 @@ export function useFriendLists() {
     return { success: true };
   }, [getTierCapacity]);
 
-  const setReservedSpots = useCallback((tier: TierType, count: number, note?: string) => {
+  const addReservedGroup = useCallback((tier: TierType, count: number, note?: string) => {
     const friendsInTier = getFriendsInTier(tier).length;
-    const maxReserved = TIER_LIMITS[tier] - friendsInTier;
-    const validCount = Math.max(0, Math.min(count, maxReserved));
+    const currentReserved = (lists.reservedSpots[tier] || []).reduce((sum, g) => sum + g.count, 0);
+    const maxNew = TIER_LIMITS[tier] - friendsInTier - currentReserved;
+    const validCount = Math.max(1, Math.min(count, maxNew));
+
+    if (validCount <= 0) return { success: false, error: 'No capacity for reserved spots' };
+
+    const newGroup: ReservedGroup = {
+      id: crypto.randomUUID(),
+      count: validCount,
+      note: note?.trim() || undefined,
+    };
 
     setLists(prev => ({
       ...prev,
       reservedSpots: {
         ...prev.reservedSpots,
-        [tier]: validCount,
-        notes: {
-          ...prev.reservedSpots.notes,
-          [tier]: note,
-        },
+        [tier]: [...(prev.reservedSpots[tier] || []), newGroup],
       },
     }));
-  }, [getFriendsInTier]);
+
+    return { success: true, group: newGroup };
+  }, [getFriendsInTier, lists.reservedSpots]);
+
+  const updateReservedGroup = useCallback((tier: TierType, groupId: string, count: number, note?: string) => {
+    const friendsInTier = getFriendsInTier(tier).length;
+    const groups = lists.reservedSpots[tier] || [];
+    const otherGroupsTotal = groups.filter(g => g.id !== groupId).reduce((sum, g) => sum + g.count, 0);
+    const maxForThisGroup = TIER_LIMITS[tier] - friendsInTier - otherGroupsTotal;
+    const validCount = Math.max(0, Math.min(count, maxForThisGroup));
+
+    setLists(prev => ({
+      ...prev,
+      reservedSpots: {
+        ...prev.reservedSpots,
+        [tier]: prev.reservedSpots[tier].map(g =>
+          g.id === groupId ? { ...g, count: validCount, note: note?.trim() || undefined } : g
+        ),
+      },
+    }));
+  }, [getFriendsInTier, lists.reservedSpots]);
+
+  const removeReservedGroup = useCallback((tier: TierType, groupId: string) => {
+    setLists(prev => ({
+      ...prev,
+      reservedSpots: {
+        ...prev.reservedSpots,
+        [tier]: prev.reservedSpots[tier].filter(g => g.id !== groupId),
+      },
+    }));
+  }, []);
 
   const clearAllData = useCallback(() => {
     setLists(defaultLists);
@@ -202,7 +247,9 @@ export function useFriendLists() {
     removeFriend,
     moveFriend,
     reorderFriendsInTier,
-    setReservedSpots,
+    addReservedGroup,
+    updateReservedGroup,
+    removeReservedGroup,
     clearAllData,
     markTended,
   };

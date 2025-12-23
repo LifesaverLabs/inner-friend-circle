@@ -24,21 +24,19 @@ export interface Friend {
   roleModelReason?: string; // Why this person is a role model (only for rolemodel tier)
 }
 
+export interface ReservedGroup {
+  id: string;
+  count: number;
+  note?: string;
+}
+
 export interface ReservedSpots {
-  core: number;
-  inner: number;
-  outer: number;
-  parasocial: number;
-  rolemodel: number;
-  acquainted: number;
-  notes: {
-    core?: string;
-    inner?: string;
-    outer?: string;
-    parasocial?: string;
-    rolemodel?: string;
-    acquainted?: string;
-  };
+  core: ReservedGroup[];
+  inner: ReservedGroup[];
+  outer: ReservedGroup[];
+  parasocial: ReservedGroup[];
+  rolemodel: ReservedGroup[];
+  acquainted: ReservedGroup[];
 }
 
 export interface FriendLists {
