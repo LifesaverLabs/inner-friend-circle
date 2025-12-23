@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Warm cream background with rounded corners -->
+  <rect width="512" height="512" rx="96" fill="#F9F5F0"/>
+
+  <!-- Concentric circles centered -->
+  <g transform="translate(256, 256)">
+    <!-- Outer ring (sage green) -->
+    <circle cx="0" cy="0" r="180" fill="#6BBF8A30" stroke="#6BBF8A" stroke-width="8"/>
+
+    <!-- Inner ring (golden) -->
+    <circle cx="0" cy="0" r="130" fill="#E8B45A35" stroke="#E8B45A" stroke-width="8"/>
+
+    <!-- Core circle (coral) -->
+    <circle cx="0" cy="0" r="80" fill="#E8734A40" stroke="#E8734A" stroke-width="8"/>
+
+    <!-- Heart icon in center -->
+    <path d="M0 -15 C-12 -32, -38 -32, -38 -8 C-38 16, 0 45, 0 45 C0 45, 38 16, 38 -8 C38 -32, 12 -32, 0 -15Z" fill="#E8734A"/>
+  </g>
+</svg>

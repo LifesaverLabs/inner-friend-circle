@@ -1,0 +1,76 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Warm cream background -->
+  <rect width="1200" height="630" fill="#F9F5F0"/>
+
+  <!-- Subtle gradient overlay -->
+  <defs>
+    <radialGradient id="warmGlow" cx="0.35" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#E8B4A0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F9F5F0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Tier colors from CSS (HSL converted to hex) -->
+    <!-- Core: hsl(15, 85%, 62%) = #E8734A -->
+    <!-- Inner: hsl(35, 80%, 65%) = #E8B45A -->
+    <!-- Outer: hsl(145, 35%, 60%) = #6BBF8A -->
+    <!-- Parasocial: hsl(270, 50%, 65%) = #A66DD9 -->
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#warmGlow)"/>
+
+  <!-- Concentric circles visualization (centered left of center) -->
+  <g transform="translate(340, 315)">
+    <!-- Parasocial ring (outermost) -->
+    <circle cx="0" cy="0" r="200" fill="#A66DD910" stroke="#A66DD9" stroke-width="2"/>
+
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="160" fill="#6BBF8A20" stroke="#6BBF8A" stroke-width="3"/>
+
+    <!-- Inner ring -->
+    <circle cx="0" cy="0" r="105" fill="#E8B45A25" stroke="#E8B45A" stroke-width="3"/>
+
+    <!-- Core circle (center) -->
+    <circle cx="0" cy="0" r="55" fill="#E8734A35" stroke="#E8734A" stroke-width="3"/>
+
+    <!-- Heart icon in center -->
+    <path d="M0 -12 C-8 -22, -22 -22, -22 -8 C-22 6, 0 22, 0 22 C0 22, 22 6, 22 -8 C22 -22, 8 -22, 0 -12Z" fill="#E8734A"/>
+  </g>
+
+  <!-- Text content (right side) -->
+  <g transform="translate(600, 180)">
+    <!-- App name -->
+    <text x="0" y="0" font-family="Georgia, 'Crimson Pro', serif" font-size="72" font-weight="600" fill="#3D2E24">
+      Inner Friend
+    </text>
+
+    <!-- Tagline -->
+    <text x="0" y="60" font-family="system-ui, 'Nunito', sans-serif" font-size="28" fill="#6B5A4E">
+      Curate Your Closest Relationships
+    </text>
+
+    <!-- Dunbar tier legend -->
+    <g transform="translate(0, 120)">
+      <!-- Core -->
+      <circle cx="12" cy="8" r="10" fill="#E8734A"/>
+      <text x="32" y="14" font-family="system-ui, 'Nunito', sans-serif" font-size="20" fill="#3D2E24">5 Core</text>
+
+      <!-- Inner -->
+      <circle cx="132" cy="8" r="10" fill="#E8B45A"/>
+      <text x="152" y="14" font-family="system-ui, 'Nunito', sans-serif" font-size="20" fill="#3D2E24">15 Inner</text>
+
+      <!-- Outer -->
+      <circle cx="262" cy="8" r="10" fill="#6BBF8A"/>
+      <text x="282" y="14" font-family="system-ui, 'Nunito', sans-serif" font-size="20" fill="#3D2E24">150 Outer</text>
+    </g>
+
+    <!-- Slogan -->
+    <text x="0" y="200" font-family="Georgia, 'Crimson Pro', serif" font-size="24" font-style="italic" fill="#8B7A6E">
+      Face Time, Not Ad Time.
+    </text>
+  </g>
+
+  <!-- Domain/URL at bottom -->
+  <text x="600" y="580" font-family="system-ui, 'Nunito', sans-serif" font-size="22" fill="#8B7A6E" text-anchor="middle">
+    innerfriend.org
+  </text>
+</svg>

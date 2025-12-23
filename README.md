@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+# Inner Friend
 
-## Project info
+**Curate Your Closest Relationships**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Inner Friend is a relationship support and tending app that helps you intentionally nurture your closest friendships based on Dunbar's Number research. Instead of endless scrolling, invest quality time in real relationships.
 
-## How can I edit this code?
+*Face Time, Not Ad Time.*
 
-There are several ways of editing your application.
+## What is Dunbar's Number?
 
-**Use Lovable**
+Research by anthropologist Robin Dunbar shows humans can maintain meaningful relationships at different scales:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Core (5)** — Your closest confidants
+- **Inner (15)** — Close friends you trust deeply
+- **Outer (150)** — Meaningful connections
+- **Parasocial (25)** — One-sided connections (celebrities, creators)
+- **Role Models (25)** — Inspiring figures
+- **Acquaintances (1000)** — Peripheral contacts
 
-Changes made via Lovable will be committed automatically to this repo.
+## Features
 
-**Use your preferred IDE**
+- **Intentional Limits** — Science-backed caps on each tier help you focus on quality over quantity
+- **Private by Default** — Your lists stay on your device; account creation is optional
+- **Tending Reminders** — Get notified when you haven't contacted someone in 30+ days
+- **Mutual Discovery** — Optionally discover when friends have you on their list too
+- **Drag & Drop** — Easily reorder and tend to friends within tiers
+- **Multiple Contact Methods** — Phone, FaceTime, WhatsApp, Signal, Telegram
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) for fast development
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [shadcn/ui](https://ui.shadcn.com/) component library
+- [Supabase](https://supabase.com/) for optional persistence and auth
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [React Query](https://tanstack.com/query) for data fetching
 
-Follow these steps:
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/your-org/inner-friend-circle.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project
+cd inner-friend-circle
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Philosophy
 
-**Use GitHub Codespaces**
+Inner Friend embraces these principles:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Quality over Quantity** — Cognitive limits are real; honor them
+- **Asymmetry is Natural** — Not all relationships are symmetrical, and that's okay
+- **Privacy First** — Your relationships are yours; we don't need your data
+- **Intentional Design** — Leave the app to spend time with the people you've listed
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
+- **Code**: [MIT License](LICENSE)
+- **Content**: [CC0 1.0 Universal](LICENSE-CONTENT)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Copyright (c) 2025 Lifesaver Labs Public Benefit Corporation and Lifesaver Labs Koalition
