@@ -97,11 +97,20 @@ export function FriendDashboard({
 
   return (
     <div className="min-h-screen bg-background">
+      {isLoggedIn && user && needsSetup && (
+        <ContactSetupOnboarding
+          userId={user.id}
+          onComplete={() => setNeedsSetup(false)}
+          onSkip={() => setNeedsSetup(false)}
+        />
+      )}
+
       <AppHeader
         isLoggedIn={isLoggedIn}
         userEmail={userEmail}
         onSignIn={onSignIn}
         onSignOut={onSignOut}
+        onSettings={isLoggedIn ? () => setSettingsOpen(true) : undefined}
       />
 
       <main className="container mx-auto px-4 py-8">
@@ -175,6 +184,14 @@ export function FriendDashboard({
           getFriendsInTier={getFriendsInTier}
           onUpdateLastContacted={handleUpdateLastContacted}
         />
+
+        {user && (
+          <ProfileSettingsDialog
+            open={settingsOpen}
+            onOpenChange={setSettingsOpen}
+            userId={user.id}
+          />
+        )}
       </main>
     </div>
   );

@@ -14,9 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_methods: {
+        Row: {
+          contact_identifier: string
+          created_at: string
+          for_scheduled: boolean
+          for_spontaneous: boolean
+          id: string
+          label: string | null
+          scheduled_priority: number | null
+          service_type: string
+          spontaneous_priority: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          contact_identifier: string
+          created_at?: string
+          for_scheduled?: boolean
+          for_spontaneous?: boolean
+          id?: string
+          label?: string | null
+          scheduled_priority?: number | null
+          service_type: string
+          spontaneous_priority?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          contact_identifier?: string
+          created_at?: string
+          for_scheduled?: boolean
+          for_spontaneous?: boolean
+          id?: string
+          label?: string | null
+          scheduled_priority?: number | null
+          service_type?: string
+          spontaneous_priority?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "contact_methods_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
+          contact_setup_complete: boolean
           created_at: string
           display_name: string | null
           id: string
@@ -26,6 +77,7 @@ export type Database = {
         }
         Insert: {
           avatar_url?: string | null
+          contact_setup_complete?: boolean
           created_at?: string
           display_name?: string | null
           id?: string
@@ -35,6 +87,7 @@ export type Database = {
         }
         Update: {
           avatar_url?: string | null
+          contact_setup_complete?: boolean
           created_at?: string
           display_name?: string | null
           id?: string
