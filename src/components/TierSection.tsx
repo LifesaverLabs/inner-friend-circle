@@ -25,6 +25,7 @@ import { AddFriendDialog } from "./AddFriendDialog";
 import { AddLinkedFriendDialog } from "./AddLinkedFriendDialog";
 import { AddRoleModelDialog } from "./AddRoleModelDialog";
 import { ReservedSpotsDialog } from "./ReservedSpotsDialog";
+import { NayborVideo } from "./NayborVideo";
 import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup, NAYBOR_MINIMUM } from "@/types/friend";
 import { CircleTier } from "@/hooks/useFriendConnections";
 
@@ -200,17 +201,7 @@ export function TierSection({
                   <p className="text-amber-600 dark:text-amber-500">{tierInfo.warning}</p>
                 </div>
               </div>
-              <div className="aspect-video rounded-lg overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/watch?v=ed5sac4OLbI"
-                  title="Won't You Be My Naybor? - Mr. Rogers"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="border-0"
-                />
-              </div>
+              <NayborVideo />
             </motion.div>
           )}
         </div>
