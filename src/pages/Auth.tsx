@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Mail, Lock, User, ArrowLeft, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,30 +14,19 @@ const passwordSchema = z.string().min(6, 'Password must be at least 6 characters
 
 export default function Auth() {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { signIn, signUp, signOut, isAuthenticated, loading } = useAuth();
+  const { signIn, signUp, isAuthenticated, loading } = useAuth();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
-  const hasSignedOut = useRef(false);
 
-  // If user explicitly navigated here and is authenticated, sign them out first
   useEffect(() => {
-    const shouldForceSignOut = location.state?.forceSignOut === true;
-    
-    if (isAuthenticated && !loading && !hasSignedOut.current) {
-      if (shouldForceSignOut) {
-        hasSignedOut.current = true;
-        signOut();
-      } else {
-        // User is authenticated and didn't request sign out, redirect to home
-        navigate('/', { replace: true });
-      }
+    if (isAuthenticated && !loading) {
+      navigate('/', { replace: true });
     }
-  }, [isAuthenticated, loading, navigate, signOut, location.state]);
+  }, [isAuthenticated, loading, navigate]);
 
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {};

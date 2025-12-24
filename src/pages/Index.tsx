@@ -15,7 +15,7 @@ const Index = () => {
   };
 
   const handleSignIn = () => {
-    navigate('/auth', { state: { forceSignOut: true } });
+    navigate('/auth');
   };
 
   const handleSignOut = async () => {
