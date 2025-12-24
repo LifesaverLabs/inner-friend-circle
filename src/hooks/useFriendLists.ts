@@ -101,39 +101,67 @@ export function useFriendLists() {
             }
           }
           
-          // Merge: prefer localStorage data if database is empty but localStorage has data
-          const shouldUseLocalData = localFriends.length > 0 && dbFriends.length === 0;
-          const finalFriends = shouldUseLocalData ? localFriends : dbFriends;
-          const finalReservedSpots = shouldUseLocalData ? localReservedSpots : dbReservedSpots;
-          const finalLastTended = shouldUseLocalData ? localLastTended : (data?.last_tended_at ? new Date(data.last_tended_at) : null);
+          // Determine the best data source:
+          // 1. If localStorage has data and database is empty -> use localStorage (migration)
+          // 2. If database has data -> always use database (prevents overwrites from other devices)
+          // 3. If both are empty -> use empty defaults
+          const hasLocalData = localFriends.length > 0;
+          const hasDbData = dbFriends.length > 0;
+          const shouldMigrateLocalData = hasLocalData && !hasDbData;
           
-          console.log('[FriendLists] Final data:', { shouldUseLocalData, friendsCount: finalFriends.length });
+          console.log('[FriendLists] Data sources:', { hasLocalData, hasDbData, shouldMigrateLocalData });
+          
+          // Always prefer database data if it exists
+          const finalFriends = hasDbData ? dbFriends : localFriends;
+          const finalReservedSpots = hasDbData ? dbReservedSpots : localReservedSpots;
+          const finalLastTended = hasDbData 
+            ? (data?.last_tended_at ? new Date(data.last_tended_at) : null) 
+            : localLastTended;
+          
+          console.log('[FriendLists] Final data:', { friendsCount: finalFriends.length });
           
           setLists({ friends: finalFriends, reservedSpots: finalReservedSpots });
           if (finalLastTended) {
             setLastTendedAt(finalLastTended);
           }
           
-          // If we used localStorage data OR no record exists, save to database
-          if (shouldUseLocalData || !data) {
-            console.log('[FriendLists] Creating/updating database record');
+          // Only write to database if:
+          // 1. Migrating localStorage data to database (localStorage has data, db is empty)
+          // 2. Creating initial empty record (no record exists AND no local data to migrate)
+          if (shouldMigrateLocalData) {
+            console.log('[FriendLists] Migrating localStorage data to database');
             const { error: upsertError } = await supabase
               .from('friend_lists')
               .upsert([{
                 user_id: user.id,
-                friends: finalFriends as any,
-                reserved_spots: finalReservedSpots as any,
-                last_tended_at: finalLastTended?.toISOString() || null,
+                friends: localFriends as any,
+                reserved_spots: localReservedSpots as any,
+                last_tended_at: localLastTended?.toISOString() || null,
               }], {
                 onConflict: 'user_id'
               });
 
             if (upsertError) {
-              console.error('[FriendLists] Failed to save to database:', upsertError);
-            } else if (shouldUseLocalData) {
+              console.error('[FriendLists] Failed to migrate to database:', upsertError);
+            } else {
               localStorage.removeItem(STORAGE_KEY);
               localStorage.removeItem(LAST_TENDED_KEY);
-              console.log('[FriendLists] Migrated localStorage to database');
+              console.log('[FriendLists] Migration complete, cleared localStorage');
+            }
+          } else if (!data) {
+            // No database record exists and no local data - create empty record
+            console.log('[FriendLists] Creating initial empty database record');
+            const { error: insertError } = await supabase
+              .from('friend_lists')
+              .insert([{
+                user_id: user.id,
+                friends: [] as any,
+                reserved_spots: defaultReservedSpots as any,
+                last_tended_at: null,
+              }]);
+
+            if (insertError) {
+              console.error('[FriendLists] Failed to create initial record:', insertError);
             }
           }
         } catch (e) {
