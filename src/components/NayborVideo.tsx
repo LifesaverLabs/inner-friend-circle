@@ -28,9 +28,10 @@ export const NayborVideo = () => {
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/AQS3JGqx46U"
+        src="https://www.youtube.com/embed/ed5sac4OLbI?si=dQr0ssS5e-6rps7j"
         title="Won't You Be My Naybor? - Mr. Rogers"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
         className="border-0"
         onError={() => setVideoFailed(true)}
