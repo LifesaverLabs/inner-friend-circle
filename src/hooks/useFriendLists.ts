@@ -102,14 +102,20 @@ export function useFriendLists() {
           }
           
           // Determine the best data source:
-          // 1. If localStorage has data and database is empty -> use localStorage (migration)
-          // 2. If database has data -> always use database (prevents overwrites from other devices)
+          // 1. If database record exists -> always use database (even if empty friends array)
+          // 2. If localStorage has data and no database record -> migrate localStorage
           // 3. If both are empty -> use empty defaults
           const hasLocalData = localFriends.length > 0;
-          const hasDbData = dbFriends.length > 0;
+          const hasDbData = data !== null; // Check if record exists, not if it has friends
           const shouldMigrateLocalData = hasLocalData && !hasDbData;
           
-          console.log('[FriendLists] Data sources:', { hasLocalData, hasDbData, shouldMigrateLocalData });
+          console.log('[FriendLists] Data sources:', { 
+            hasLocalData, 
+            hasDbData, 
+            shouldMigrateLocalData,
+            dbRecordExists: data !== null,
+            dbFriendsCount: dbFriends.length 
+          });
           
           // Always prefer database data if it exists
           const finalFriends = hasDbData ? dbFriends : localFriends;
