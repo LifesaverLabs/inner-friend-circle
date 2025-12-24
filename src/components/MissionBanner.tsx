@@ -87,11 +87,15 @@ export function MissionBanner() {
                         </p>
                         <div className="aspect-video max-w-md rounded-lg overflow-hidden bg-black">
                           <iframe
+                            width="100%"
+                            height="100%"
                             src="https://www.youtube.com/embed/kAGoqhXtrX4"
                             title="Dentyne Ice - Face Time"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
-                            className="w-full h-full"
+                            className="w-full h-full border-0"
                           />
                         </div>
                         <p className="text-xs text-muted-foreground mt-3 italic">

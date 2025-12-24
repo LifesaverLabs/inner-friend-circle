@@ -1,11 +1,43 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, Play } from "lucide-react";
 
-export const NayborVideo = () => {
+interface YouTubeEmbedProps {
+  videoId: string;
+  title: string;
+  privacyMode?: boolean;
+  className?: string;
+}
+
+/**
+ * YouTube embed component with automatic fallback for blocked videos.
+ * 
+ * @param videoId - The YouTube video ID (from the URL after v=)
+ * @param title - Descriptive title for the video
+ * @param privacyMode - Use youtube-nocookie.com for privacy-enhanced mode
+ * @param className - Additional CSS classes for the container
+ * 
+ * Requirements met:
+ * - Uses HTTPS embed URLs only
+ * - No authentication required for watching
+ * - Uses /embed/ format, never watch?v=
+ * - No JavaScript API dependency
+ * - Works on lovable.app and custom domains
+ * - Graceful fallback with clickable thumbnail
+ */
+export const YouTubeEmbed = ({ 
+  videoId, 
+  title, 
+  privacyMode = false,
+  className = "" 
+}: YouTubeEmbedProps) => {
   const [videoFailed, setVideoFailed] = useState(false);
   const [loading, setLoading] = useState(true);
-  const videoId = "ed5sac4OLbI";
-  const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+  
+  const embedDomain = privacyMode 
+    ? "https://www.youtube-nocookie.com" 
+    : "https://www.youtube.com";
+  const embedUrl = `${embedDomain}/embed/${videoId}`;
+  const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
   useEffect(() => {
     // Timeout to detect if video doesn't load (CSP/network blocks don't trigger onError)
@@ -20,9 +52,9 @@ export const NayborVideo = () => {
 
   if (videoFailed) {
     return (
-      <div className="aspect-video rounded-lg overflow-hidden bg-muted flex flex-col items-center justify-center p-6 text-center relative group cursor-pointer">
+      <div className={`aspect-video rounded-lg overflow-hidden bg-muted flex flex-col items-center justify-center p-6 text-center relative group cursor-pointer ${className}`}>
         <a
-          href={videoUrl}
+          href={watchUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="absolute inset-0 flex flex-col items-center justify-center"
@@ -33,7 +65,7 @@ export const NayborVideo = () => {
             </div>
           </div>
           <p className="text-sm text-foreground mb-2 font-medium">
-            Won't You Be My Naybor?
+            {title}
           </p>
           <p className="text-xs text-muted-foreground mb-4">
             Click to watch on YouTube
@@ -58,12 +90,12 @@ export const NayborVideo = () => {
   }
 
   return (
-    <div className="aspect-video rounded-lg overflow-hidden">
+    <div className={`aspect-video rounded-lg overflow-hidden ${className}`}>
       <iframe
         width="100%"
         height="100%"
-        src={`https://www.youtube.com/embed/${videoId}?si=dQr0ssS5e-6rps7j`}
-        title="Won't You Be My Naybor? - Mr. Rogers"
+        src={embedUrl}
+        title={title}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
