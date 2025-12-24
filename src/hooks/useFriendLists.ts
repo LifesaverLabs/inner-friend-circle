@@ -244,40 +244,42 @@ export function useFriendLists() {
       isFromRealtime.current = false;
       return;
     }
+    
+    // CRITICAL: Only save to localStorage when logged OUT
+    // Never save localStorage to database when logging back in
+    if (!user) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
+      if (lastTendedAt) {
+        localStorage.setItem(LAST_TENDED_KEY, lastTendedAt.toISOString());
+      }
+      console.log('[FriendLists] Saved to localStorage');
+      return;
+    }
 
     const saveData = async () => {
       isSyncing.current = true;
       
-      if (user) {
-        console.log('[FriendLists] Saving to database:', { friendsCount: lists.friends.length });
-        // Save to Supabase
-        try {
-          const { error } = await supabase
-            .from('friend_lists')
-            .upsert([{
-              user_id: user.id,
-              friends: lists.friends as any,
-              reserved_spots: lists.reservedSpots as any,
-              last_tended_at: lastTendedAt?.toISOString() || null,
-            }], {
-              onConflict: 'user_id'
-            });
+      console.log('[FriendLists] Saving to database:', { friendsCount: lists.friends.length });
+      // Save to Supabase
+      try {
+        const { error } = await supabase
+          .from('friend_lists')
+          .upsert([{
+            user_id: user.id,
+            friends: lists.friends as any,
+            reserved_spots: lists.reservedSpots as any,
+            last_tended_at: lastTendedAt?.toISOString() || null,
+          }], {
+            onConflict: 'user_id'
+          });
 
-          if (error) {
-            console.error('[FriendLists] Failed to save to database:', error);
-          } else {
-            console.log('[FriendLists] Successfully saved to database');
-          }
-        } catch (e) {
-          console.error('[FriendLists] Error saving to database:', e);
+        if (error) {
+          console.error('[FriendLists] Failed to save to database:', error);
+        } else {
+          console.log('[FriendLists] Successfully saved to database');
         }
-      } else {
-        // Save to localStorage
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
-        if (lastTendedAt) {
-          localStorage.setItem(LAST_TENDED_KEY, lastTendedAt.toISOString());
-        }
-        console.log('[FriendLists] Saved to localStorage');
+      } catch (e) {
+        console.error('[FriendLists] Error saving to database:', e);
       }
       
       isSyncing.current = false;
