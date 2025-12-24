@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Heart, Users, ArrowRight, Shield, Sparkles, Video, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DunbarVisualization } from './DunbarVisualization';
+import { VersionBadge } from './VersionBadge';
 
 interface LandingHeroProps {
   onGetStarted: () => void;
@@ -16,10 +17,11 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
         >
           <Heart className="w-8 h-8 text-primary fill-primary/20" />
           <span className="font-display text-2xl font-bold text-foreground">Inner Friend</span>
+          <VersionBadge />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 20 }}

@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { VersionBadge } from './VersionBadge';
 
 interface AppHeaderProps {
   isLoggedIn: boolean;
@@ -31,10 +32,11 @@ export function AppHeader({
           href="/"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
         >
           <Heart className="w-7 h-7 text-primary fill-primary/20" />
           <span className="font-display text-xl font-bold text-foreground">Inner Friend</span>
+          <VersionBadge />
         </motion.a>
 
         <motion.div
