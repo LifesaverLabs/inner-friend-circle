@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Heart, Users, ArrowRight, Shield, Sparkles, Video, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DunbarVisualization } from './DunbarVisualization';
+import { Footer } from './Footer';
 import { VersionBadge } from './VersionBadge';
 
 interface LandingHeroProps {
@@ -143,6 +144,8 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
           </blockquote>
         </motion.div>
       </section>
+
+      <Footer />
     </section>
   );
 }

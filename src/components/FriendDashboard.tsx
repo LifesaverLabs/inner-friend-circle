@@ -12,6 +12,7 @@ import { ProfileSettingsDialog } from '@/components/ProfileSettingsDialog';
 import { ContactSetupOnboarding, useContactSetupNeeded } from '@/components/ContactSetupOnboarding';
 import { MissionBanner } from '@/components/MissionBanner';
 import { ConnectionRequestsPanel } from '@/components/ConnectionRequestsPanel';
+import { Footer } from '@/components/Footer';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
@@ -319,6 +320,8 @@ export function FriendDashboard({
           />
         )}
       </main>
+
+      <Footer />
     </div>
   );
 }
