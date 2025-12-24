@@ -1,4 +1,4 @@
-export type TierType = 'core' | 'inner' | 'outer' | 'parasocial' | 'rolemodel' | 'acquainted';
+export type TierType = 'core' | 'inner' | 'outer' | 'naybor' | 'parasocial' | 'rolemodel' | 'acquainted';
 
 export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram';
 
@@ -34,6 +34,7 @@ export interface ReservedSpots {
   core: ReservedGroup[];
   inner: ReservedGroup[];
   outer: ReservedGroup[];
+  naybor: ReservedGroup[];
   parasocial: ReservedGroup[];
   rolemodel: ReservedGroup[];
   acquainted: ReservedGroup[];
@@ -53,16 +54,21 @@ export const TIER_LIMITS: Record<TierType, number> = {
   core: 5,
   inner: 15,
   outer: 150,
+  naybor: 25,
   parasocial: 25,
   rolemodel: 25,
   acquainted: 1000,
 };
+
+// Minimum recommended naybors for safety
+export const NAYBOR_MINIMUM = 10;
 
 export const TIER_INFO: Record<TierType, { 
   name: string; 
   description: string; 
   limit: number;
   color: string;
+  warning?: string;
 }> = {
   core: {
     name: 'Core',
@@ -81,6 +87,13 @@ export const TIER_INFO: Record<TierType, {
     description: 'Meaningful connections — acquaintances who matter',
     limit: 150,
     color: 'tier-outer',
+  },
+  naybor: {
+    name: 'Naybors',
+    description: 'Your nayborhood konnektions — people akross the blok or down the hall. Knowing your naybors keeps you safe, informed, and ready to help each other in emergencies. Integrates with Naybor SOS via InnerFriend.org',
+    limit: 25,
+    color: 'tier-naybor',
+    warning: "It's unsafe not to know your naybors! How will you know what's happening around you? What if an emergency happens? Introduse yourself to your naybors — learn their names, where they live, a little about their lives, and their kontakt info so you kan be of service to each other.",
   },
   parasocial: {
     name: 'Parasocials',

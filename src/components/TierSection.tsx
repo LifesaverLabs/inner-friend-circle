@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Lock, Users, Link2, Star } from 'lucide-react';
+import { Plus, Lock, Users, Link2, Star, AlertTriangle } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -25,7 +25,7 @@ import { AddFriendDialog } from './AddFriendDialog';
 import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
 import { AddRoleModelDialog } from './AddRoleModelDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
-import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
+import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup, NAYBOR_MINIMUM } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
 
 interface TierSectionProps {
@@ -73,8 +73,8 @@ export function TierSection({
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
   const [roleModelDialogOpen, setRoleModelDialogOpen] = useState(false);
   
-  // Only core, inner, outer can have linked friends (not parasocial, rolemodel, or acquainted)
-  const canHaveLinkedFriends = tier !== 'parasocial' && tier !== 'rolemodel' && tier !== 'acquainted';
+  // Only core, inner, outer can have linked friends (not naybor, parasocial, rolemodel, or acquainted)
+  const canHaveLinkedFriends = tier !== 'naybor' && tier !== 'parasocial' && tier !== 'rolemodel' && tier !== 'acquainted';
   
   // Acquainted tier cannot have direct adds, role models has special add
   const canAddDirectly = tier !== 'acquainted' && tier !== 'rolemodel';
@@ -98,7 +98,7 @@ export function TierSection({
   const progressPercent = (capacity.used / capacity.limit) * 100;
   const reservedTotal = reservedGroups.reduce((sum, g) => sum + g.count, 0);
 
-  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
+  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
   const currentIndex = tierOrder.indexOf(tier);
 
   const canMoveUp = (friendTier: TierType) => {
@@ -134,6 +134,7 @@ export function TierSection({
     core: 'bg-tier-core/5',
     inner: 'bg-tier-inner/5',
     outer: 'bg-tier-outer/5',
+    naybor: 'bg-tier-naybor/5',
     parasocial: 'bg-tier-parasocial/5',
     rolemodel: 'bg-tier-rolemodel/5',
     acquainted: 'bg-tier-acquainted/5',
@@ -143,6 +144,7 @@ export function TierSection({
     core: 'border-tier-core/20',
     inner: 'border-tier-inner/20',
     outer: 'border-tier-outer/20',
+    naybor: 'border-tier-naybor/20',
     parasocial: 'border-tier-parasocial/20',
     rolemodel: 'border-tier-rolemodel/20',
     acquainted: 'border-tier-acquainted/20',
@@ -152,6 +154,7 @@ export function TierSection({
     core: '[&>div]:bg-tier-core',
     inner: '[&>div]:bg-tier-inner',
     outer: '[&>div]:bg-tier-outer',
+    naybor: '[&>div]:bg-tier-naybor',
     parasocial: '[&>div]:bg-tier-parasocial',
     rolemodel: '[&>div]:bg-tier-rolemodel',
     acquainted: '[&>div]:bg-tier-acquainted',
@@ -176,6 +179,25 @@ export function TierSection({
             </span>
           </div>
           <p className="text-sm text-muted-foreground">{tierInfo.description}</p>
+          
+          {/* Naybor safety warning */}
+          {tier === 'naybor' && friends.length < NAYBOR_MINIMUM && (
+            <motion.div 
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-3 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-start gap-2"
+            >
+              <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div className="text-sm">
+                <p className="font-medium text-amber-700 dark:text-amber-400 mb-1">
+                  You only know {friends.length} of 10 recommended naybors
+                </p>
+                <p className="text-amber-600 dark:text-amber-500">
+                  {tierInfo.warning}
+                </p>
+              </div>
+            </motion.div>
+          )}
         </div>
         
         <div className="flex gap-2">

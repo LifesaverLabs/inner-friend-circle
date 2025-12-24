@@ -26,6 +26,7 @@ const tierEmoji: Record<TierType, string> = {
   core: '💎',
   inner: '💛',
   outer: '🌿',
+  naybor: '🏠',
   parasocial: '📺',
   rolemodel: '⭐',
   acquainted: '🤝',

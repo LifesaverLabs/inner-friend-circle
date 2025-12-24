@@ -10,6 +10,7 @@ const defaultReservedSpots: ReservedSpots = {
   core: [],
   inner: [],
   outer: [],
+  naybor: [],
   parasocial: [],
   rolemodel: [],
   acquainted: [],
