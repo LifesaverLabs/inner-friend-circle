@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, X, User, Mail, Lock, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { TierType, TIER_INFO, ContactMethod, CONTACT_METHODS } from '@/types/friend';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, X, User, Mail, Lock, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { TierType, TIER_INFO, ContactMethod, CONTACT_METHODS } from "@/types/friend";
 
 interface AddFriendDialogProps {
   open: boolean;
@@ -16,38 +16,32 @@ interface AddFriendDialogProps {
   capacity: { available: number; used: number; limit: number };
 }
 
-export function AddFriendDialog({ 
-  open, 
-  onOpenChange, 
-  tier, 
-  onAdd, 
-  capacity 
-}: AddFriendDialogProps) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [preferredContact, setPreferredContact] = useState<ContactMethod>('tel');
+export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: AddFriendDialogProps) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [preferredContact, setPreferredContact] = useState<ContactMethod>("tel");
   const [showEmailField, setShowEmailField] = useState(false);
   const [showPhoneField, setShowPhoneField] = useState(false);
 
   const tierInfo = TIER_INFO[tier];
   const isFull = capacity.available <= 0;
-  const isParasocial = tier === 'parasocial';
-  const isNaybor = tier === 'naybor';
+  const isParasocial = tier === "parasocial";
+  const isNaybor = tier === "naybor";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() && !isFull) {
       onAdd(
-        name.trim(), 
+        name.trim(),
         email.trim() || undefined,
         phone.trim() || undefined,
-        phone.trim() ? preferredContact : undefined
+        phone.trim() ? preferredContact : undefined,
       );
-      setName('');
-      setEmail('');
-      setPhone('');
-      setPreferredContact('tel');
+      setName("");
+      setEmail("");
+      setPhone("");
+      setPreferredContact("tel");
       setShowEmailField(false);
       setShowPhoneField(false);
       onOpenChange(false);
@@ -55,10 +49,10 @@ export function AddFriendDialog({
   };
 
   const handleClose = () => {
-    setName('');
-    setEmail('');
-    setPhone('');
-    setPreferredContact('tel');
+    setName("");
+    setEmail("");
+    setPhone("");
+    setPreferredContact("tel");
     setShowEmailField(false);
     setShowPhoneField(false);
     onOpenChange(false);
@@ -70,11 +64,10 @@ export function AddFriendDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <div className={`w-3 h-3 rounded-full bg-${tierInfo.color}`} />
-            Add {isNaybor ? 'Naybor' : tierInfo.name}{isParasocial ? '' : isNaybor ? '' : ' Friend'}
+            Add {isNaybor ? "Naybor" : tierInfo.name}
+            {isParasocial ? "" : isNaybor ? "" : " Friend"}
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground">
-            {tierInfo.description}
-          </DialogDescription>
+          <DialogDescription className="text-muted-foreground">{tierInfo.description}</DialogDescription>
         </DialogHeader>
 
         {isFull ? (
@@ -82,12 +75,10 @@ export function AddFriendDialog({
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
               <Lock className="w-8 h-8 text-muted-foreground" />
             </div>
-            <p className="font-medium text-foreground mb-2">
-              Your {tierInfo.name} circle is full
-            </p>
+            <p className="font-medium text-foreground mb-2">Your {tierInfo.name} circle is full</p>
             <p className="text-sm text-muted-foreground">
-              To add someone here, you'll need to move a current {tierInfo.name.toLowerCase()} friend 
-              to another tier first.
+              To add someone here, you'll need to move a current {tierInfo.name.toLowerCase()} friend to another tier
+              first.
             </p>
           </div>
         ) : (
@@ -111,7 +102,7 @@ export function AddFriendDialog({
                 {showEmailField ? (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
+                    animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     className="space-y-2 overflow-hidden"
                   >
@@ -127,8 +118,8 @@ export function AddFriendDialog({
                       placeholder="For mutual match notifications"
                     />
                     <p className="text-xs text-muted-foreground">
-                      If they also list you as a {tierInfo.name.toLowerCase()} friend and you both have 
-                      notifications enabled, you'll both be notified of your mutual connection.
+                      If they also list you as a {tierInfo.name.toLowerCase()} friend and you both have notifications
+                      enabled, you'll both be notified of your mutual connection.
                     </p>
                   </motion.div>
                 ) : (
@@ -151,7 +142,7 @@ export function AddFriendDialog({
                 {showPhoneField ? (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
+                    animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     className="space-y-3 overflow-hidden"
                   >
@@ -168,7 +159,7 @@ export function AddFriendDialog({
                         placeholder="+1 555-123-4567"
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="contact-method">Preferred contact method</Label>
                       <Select value={preferredContact} onValueChange={(v) => setPreferredContact(v as ContactMethod)}>
@@ -187,9 +178,9 @@ export function AddFriendDialog({
                         </SelectContent>
                       </Select>
                     </div>
-                    
+
                     <p className="text-xs text-muted-foreground">
-                      {isNaybor 
+                      {isNaybor
                         ? "Having kontakt info for your naybors is essential for emergencies and mutual support."
                         : "Use this for the Tending feature to reach out to friends."}
                     </p>
@@ -203,7 +194,7 @@ export function AddFriendDialog({
                     animate={{ opacity: 1 }}
                   >
                     <Plus className="w-4 h-4" />
-                    {isNaybor ? 'Add kontakt info for emergencies' : 'Add phone for face time'}
+                    {isNaybor ? "Add kontakt info for emergencies" : "Add phone for face time"}
                   </motion.button>
                 )}
               </AnimatePresence>
@@ -218,7 +209,7 @@ export function AddFriendDialog({
                   Cancel
                 </Button>
                 <Button type="submit" disabled={!name.trim()}>
-                  {isParasocial ? 'Add' : isNaybor ? 'Add Naybor' : 'Add Friend'}
+                  {isParasocial ? "Add" : isNaybor ? "Add Naybor" : "Add Friend"}
                 </Button>
               </div>
             </div>
