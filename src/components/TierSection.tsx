@@ -189,14 +189,27 @@ export function TierSection({
             <motion.div
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-3 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-start gap-2"
+              className="mt-3 p-4 rounded-lg bg-amber-500/10 border border-amber-500/30"
             >
-              <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-              <div className="text-sm">
-                <p className="font-medium text-amber-700 dark:text-amber-400 mb-1">
-                  You only know {friends.length} of 10 recommended necessary⁵ naybors
-                </p>
-                <p className="text-amber-600 dark:text-amber-500">{tierInfo.warning}</p>
+              <div className="flex items-start gap-2 mb-3">
+                <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <div className="text-sm">
+                  <p className="font-medium text-amber-700 dark:text-amber-400 mb-1">
+                    You only know {friends.length} of 10 recommended necessary⁵ naybors
+                  </p>
+                  <p className="text-amber-600 dark:text-amber-500">{tierInfo.warning}</p>
+                </div>
+              </div>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/AQS3JGqx46U"
+                  title="Won't You Be My Naybor? - Mr. Rogers"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="border-0"
+                />
               </div>
             </motion.div>
           )}
