@@ -19,12 +19,13 @@ const Index = () => {
   };
 
   const handleSignOut = async () => {
+    // Reset showDashboard first to ensure we go back to landing
+    setShowDashboard(false);
     const { error } = await signOut();
     if (error) {
       toast.error('Failed to sign out');
     } else {
       toast.success('Signed out successfully');
-      setShowDashboard(false);
     }
   };
 
