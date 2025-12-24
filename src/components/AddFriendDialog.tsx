@@ -33,6 +33,7 @@ export function AddFriendDialog({
   const tierInfo = TIER_INFO[tier];
   const isFull = capacity.available <= 0;
   const isParasocial = tier === 'parasocial';
+  const isNaybor = tier === 'naybor';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,7 +70,7 @@ export function AddFriendDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <div className={`w-3 h-3 rounded-full bg-${tierInfo.color}`} />
-            Add {tierInfo.name}{isParasocial ? '' : ' Friend'}
+            Add {isNaybor ? 'Naybor' : tierInfo.name}{isParasocial ? '' : isNaybor ? '' : ' Friend'}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
             {tierInfo.description}
@@ -188,7 +189,9 @@ export function AddFriendDialog({
                     </div>
                     
                     <p className="text-xs text-muted-foreground">
-                      Use this for the Tending feature to reach out to friends.
+                      {isNaybor 
+                        ? "Having kontakt info for your naybors is essential for emergencies and mutual support."
+                        : "Use this for the Tending feature to reach out to friends."}
                     </p>
                   </motion.div>
                 ) : (
@@ -200,7 +203,7 @@ export function AddFriendDialog({
                     animate={{ opacity: 1 }}
                   >
                     <Plus className="w-4 h-4" />
-                    Add phone for face time
+                    {isNaybor ? 'Add kontakt info for emergencies' : 'Add phone for face time'}
                   </motion.button>
                 )}
               </AnimatePresence>
@@ -215,7 +218,7 @@ export function AddFriendDialog({
                   Cancel
                 </Button>
                 <Button type="submit" disabled={!name.trim()}>
-                  {isParasocial ? 'Add' : 'Add Friend'}
+                  {isParasocial ? 'Add' : isNaybor ? 'Add Naybor' : 'Add Friend'}
                 </Button>
               </div>
             </div>

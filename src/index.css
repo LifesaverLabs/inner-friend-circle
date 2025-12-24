@@ -47,10 +47,11 @@
 
     --radius: 1rem;
 
-    /* Tier colors for Core, Inner, Outer, Parasocial, Role Models, Acquainted */
+    /* Tier colors for Core, Inner, Outer, Naybor, Parasocial, Role Models, Acquainted */
     --tier-core: 15 85% 62%;
     --tier-inner: 35 80% 65%;
     --tier-outer: 145 35% 60%;
+    --tier-naybor: 25 75% 50%;
     --tier-parasocial: 270 50% 65%;
     --tier-rolemodel: 45 90% 55%;
     --tier-acquainted: 200 40% 55%;
@@ -102,6 +103,7 @@
     --tier-core: 15 75% 55%;
     --tier-inner: 35 70% 58%;
     --tier-outer: 145 30% 50%;
+    --tier-naybor: 25 65% 45%;
     --tier-parasocial: 270 45% 55%;
     --tier-rolemodel: 45 85% 50%;
     --tier-acquainted: 200 35% 45%;
@@ -145,6 +147,10 @@
   
   .tier-badge-outer {
     @apply bg-tier-outer text-white;
+  }
+
+  .tier-badge-naybor {
+    @apply bg-tier-naybor text-white;
   }
 
   .tier-badge-parasocial {

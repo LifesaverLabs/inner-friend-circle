@@ -152,16 +152,18 @@ export function FriendDashboard({
     );
   }
 
-  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
 
   // Define allowed move transitions
   // acquainted can only move to outer; outer can move to inner or acquainted
   // rolemodel is standalone - no moves allowed
+  // naybor is standalone - neighbors stay neighbors
   const getAllowedMoves = (fromTier: TierType): TierType[] => {
     switch (fromTier) {
       case 'core': return ['inner'];
       case 'inner': return ['core', 'outer'];
       case 'outer': return ['inner', 'acquainted'];
+      case 'naybor': return []; // Naybors stay as naybors
       case 'parasocial': return ['outer'];
       case 'rolemodel': return []; // Role models don't move between tiers
       case 'acquainted': return ['outer'];

@@ -14,12 +14,13 @@ interface ShareDialogProps {
   getFriendsInTier: (tier: TierType) => Friend[];
 }
 
-const shareTiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
+const shareTiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
 
 const tierEmoji: Record<TierType, string> = {
   core: '💎',
   inner: '💛',
   outer: '🌿',
+  naybor: '🏠',
   parasocial: '📺',
   rolemodel: '⭐',
   acquainted: '🤝',
