@@ -148,22 +148,8 @@ export function useFriendLists() {
               localStorage.removeItem(LAST_TENDED_KEY);
               console.log('[FriendLists] Migration complete, cleared localStorage');
             }
-          } else if (!data) {
-            // No database record exists and no local data - create empty record
-            console.log('[FriendLists] Creating initial empty database record');
-            const { error: insertError } = await supabase
-              .from('friend_lists')
-              .insert([{
-                user_id: user.id,
-                friends: [] as any,
-                reserved_spots: defaultReservedSpots as any,
-                last_tended_at: null,
-              }]);
-
-            if (insertError) {
-              console.error('[FriendLists] Failed to create initial record:', insertError);
-            }
           }
+          // Don't auto-create empty records - they'll be created by save effect when user adds data
         } catch (e) {
           console.error('[FriendLists] Error loading from database:', e);
         }
