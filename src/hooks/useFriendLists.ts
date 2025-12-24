@@ -58,8 +58,9 @@ export function useFriendLists() {
 
   // Load data - from Supabase if authenticated, localStorage otherwise
   useEffect(() => {
-    // Reset hasInitialLoad when user changes to prevent race condition
+    // Reset both flags when user changes to block saves during load
     hasInitialLoad.current = false;
+    setIsLoaded(false);
     
     const loadData = async () => {
       console.log('[FriendLists] Loading data, user:', user?.id);
