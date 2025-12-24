@@ -56,6 +56,7 @@ export function useFriendLists() {
   const isSyncing = useRef(false);
   const hasInitialLoad = useRef(false);
   const isFromRealtime = useRef(false);
+  const previousUser = useRef<string | null>(null);
 
   // Load data - from Supabase if authenticated, localStorage otherwise
   useEffect(() => {
@@ -239,13 +240,36 @@ export function useFriendLists() {
   // Save data - to Supabase if authenticated, localStorage otherwise
   useEffect(() => {
     if (!isLoaded || !hasInitialLoad.current || isSyncing.current) return;
-    
+
     // Skip save if this update came from realtime
     if (isFromRealtime.current) {
       isFromRealtime.current = false;
       return;
     }
-    
+
+    // CRITICAL: Detect auth transitions to prevent race conditions
+    // - Logout: user changed from authenticated to null
+    // - Login: user changed from null to authenticated
+    // Skip saving during these transitions to prevent writing empty/stale data
+    const currentUserId = user?.id ?? null;
+    const wasLoggedIn = previousUser.current !== null;
+    const isNowLoggedIn = currentUserId !== null;
+    const isLoggingOut = wasLoggedIn && !isNowLoggedIn;
+    const isLoggingIn = !wasLoggedIn && isNowLoggedIn;
+
+    // Update the previous user ref for next comparison
+    previousUser.current = currentUserId;
+
+    if (isLoggingOut) {
+      console.log('[FriendLists] Logout detected, skipping save to preserve localStorage');
+      return;
+    }
+
+    if (isLoggingIn) {
+      console.log('[FriendLists] Login detected, skipping save to let load effect complete first');
+      return;
+    }
+
     // CRITICAL: Only save to localStorage when logged OUT
     // Never save localStorage to database when logging back in
     if (!user) {
