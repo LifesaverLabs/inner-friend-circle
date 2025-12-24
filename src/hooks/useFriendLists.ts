@@ -54,10 +54,13 @@ export function useFriendLists() {
   const [lastTendedAt, setLastTendedAt] = useState<Date | null>(null);
   const isSyncing = useRef(false);
   const hasInitialLoad = useRef(false);
+  const isFromRealtime = useRef(false);
 
   // Load data - from Supabase if authenticated, localStorage otherwise
   useEffect(() => {
     const loadData = async () => {
+      console.log('[FriendLists] Loading data, user:', user?.id);
+      
       if (user) {
         // Load from Supabase
         try {
@@ -67,8 +70,10 @@ export function useFriendLists() {
             .eq('user_id', user.id)
             .maybeSingle();
 
+          console.log('[FriendLists] Database load result:', { data: data ? 'exists' : 'null', friendsCount: (data?.friends as any[])?.length, error });
+
           if (error) {
-            console.error('Failed to load friend lists from database:', error);
+            console.error('[FriendLists] Failed to load from database:', error);
             return;
           }
 
@@ -90,8 +95,9 @@ export function useFriendLists() {
               if (storedTended) {
                 localLastTended = new Date(storedTended);
               }
+              console.log('[FriendLists] localStorage has data:', { friendsCount: localFriends.length });
             } catch (e) {
-              console.error('Failed to parse stored friend lists:', e);
+              console.error('[FriendLists] Failed to parse localStorage:', e);
             }
           }
           
@@ -101,6 +107,8 @@ export function useFriendLists() {
           const finalReservedSpots = shouldUseLocalData ? localReservedSpots : dbReservedSpots;
           const finalLastTended = shouldUseLocalData ? localLastTended : (data?.last_tended_at ? new Date(data.last_tended_at) : null);
           
+          console.log('[FriendLists] Final data:', { shouldUseLocalData, friendsCount: finalFriends.length });
+          
           setLists({ friends: finalFriends, reservedSpots: finalReservedSpots });
           if (finalLastTended) {
             setLastTendedAt(finalLastTended);
@@ -108,6 +116,7 @@ export function useFriendLists() {
           
           // If we used localStorage data OR no record exists, save to database
           if (shouldUseLocalData || !data) {
+            console.log('[FriendLists] Creating/updating database record');
             const { error: upsertError } = await supabase
               .from('friend_lists')
               .upsert([{
@@ -120,16 +129,15 @@ export function useFriendLists() {
               });
 
             if (upsertError) {
-              console.error('Failed to save data to database:', upsertError);
+              console.error('[FriendLists] Failed to save to database:', upsertError);
             } else if (shouldUseLocalData) {
-              // Clear localStorage after successful migration
               localStorage.removeItem(STORAGE_KEY);
               localStorage.removeItem(LAST_TENDED_KEY);
-              console.log('Migrated localStorage data to database');
+              console.log('[FriendLists] Migrated localStorage to database');
             }
           }
         } catch (e) {
-          console.error('Error loading from database:', e);
+          console.error('[FriendLists] Error loading from database:', e);
         }
       } else {
         // Load from localStorage when not authenticated
@@ -140,8 +148,9 @@ export function useFriendLists() {
             const friends = parseFriends(parsed.friends || []);
             const reservedSpots = migrateReservedSpots(parsed.reservedSpots || {});
             setLists({ friends, reservedSpots });
+            console.log('[FriendLists] Loaded from localStorage:', { friendsCount: friends.length });
           } catch (e) {
-            console.error('Failed to parse stored friend lists:', e);
+            console.error('[FriendLists] Failed to parse localStorage:', e);
           }
         }
         
@@ -158,14 +167,65 @@ export function useFriendLists() {
     loadData();
   }, [user]);
 
+  // Subscribe to realtime updates when authenticated
+  useEffect(() => {
+    if (!user) return;
+
+    console.log('[FriendLists] Setting up realtime subscription for user:', user.id);
+    
+    const channel = supabase
+      .channel('friend_lists_changes')
+      .on(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'friend_lists',
+          filter: `user_id=eq.${user.id}`
+        },
+        (payload) => {
+          console.log('[FriendLists] Realtime update received:', payload);
+          
+          // Only update if this wasn't triggered by our own save
+          if (!isSyncing.current) {
+            const newData = payload.new as any;
+            const friends = parseFriends(newData.friends || []);
+            const reservedSpots = migrateReservedSpots(newData.reserved_spots || {});
+            
+            isFromRealtime.current = true;
+            setLists({ friends, reservedSpots });
+            if (newData.last_tended_at) {
+              setLastTendedAt(new Date(newData.last_tended_at));
+            }
+            console.log('[FriendLists] Updated from realtime:', { friendsCount: friends.length });
+          }
+        }
+      )
+      .subscribe((status) => {
+        console.log('[FriendLists] Realtime subscription status:', status);
+      });
+
+    return () => {
+      console.log('[FriendLists] Cleaning up realtime subscription');
+      supabase.removeChannel(channel);
+    };
+  }, [user]);
+
   // Save data - to Supabase if authenticated, localStorage otherwise
   useEffect(() => {
     if (!isLoaded || !hasInitialLoad.current || isSyncing.current) return;
+    
+    // Skip save if this update came from realtime
+    if (isFromRealtime.current) {
+      isFromRealtime.current = false;
+      return;
+    }
 
     const saveData = async () => {
       isSyncing.current = true;
       
       if (user) {
+        console.log('[FriendLists] Saving to database:', { friendsCount: lists.friends.length });
         // Save to Supabase
         try {
           const { error } = await supabase
@@ -180,10 +240,12 @@ export function useFriendLists() {
             });
 
           if (error) {
-            console.error('Failed to save friend lists to database:', error);
+            console.error('[FriendLists] Failed to save to database:', error);
+          } else {
+            console.log('[FriendLists] Successfully saved to database');
           }
         } catch (e) {
-          console.error('Error saving to database:', e);
+          console.error('[FriendLists] Error saving to database:', e);
         }
       } else {
         // Save to localStorage
@@ -191,6 +253,7 @@ export function useFriendLists() {
         if (lastTendedAt) {
           localStorage.setItem(LAST_TENDED_KEY, lastTendedAt.toISOString());
         }
+        console.log('[FriendLists] Saved to localStorage');
       }
       
       isSyncing.current = false;
