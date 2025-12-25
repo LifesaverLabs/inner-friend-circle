@@ -258,6 +258,38 @@ export function TierSection({
         className={`h-2 mb-4 ${progressColors[tier]}`} 
       />
 
+      {/* Naybor under-minimum warning with Mr. Rogers video */}
+      {tier === 'naybor' && tierInfo.recommendedMin && friends.length < tierInfo.recommendedMin && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-4 p-4 rounded-xl bg-destructive/10 border border-destructive/20"
+        >
+          <div className="flex flex-col lg:flex-row gap-4 items-start">
+            <div className="flex-1">
+              <p className="text-sm text-destructive font-medium mb-2">
+                ⚠️ You only know {friends.length} of your naybors!
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {tierInfo.underMinWarning}
+              </p>
+              <p className="text-xs text-muted-foreground mt-2 italic">
+                Everyone ought to have a nayborhood-konnekted life; it's really important not just for us but for grandchildren and children growing up anywhere near us and for the elderly and the lonely.
+              </p>
+            </div>
+            <div className="w-full lg:w-80 aspect-video rounded-lg overflow-hidden bg-black shrink-0">
+              <iframe
+                src="https://www.youtube.com/embed/AQS3JGqx46U"
+                title="Mr. Rogers - Won't You Be My Naybor?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </motion.div>
+      )}
+
       {friends.length === 0 && reservedGroups.length === 0 ? (
         <div className="text-center py-8 text-muted-foreground">
           <Users className="w-12 h-12 mx-auto mb-2 opacity-30" />
@@ -268,6 +300,8 @@ export function TierSection({
               ? 'No acquainted cousins yet'
               : tier === 'rolemodel'
               ? 'No role models yet'
+              : tier === 'naybor'
+              ? 'No naybors yet'
               : `No ${tierInfo.name.toLowerCase()} friends yet`}
           </p>
           <p className="text-xs mt-1">
@@ -277,6 +311,8 @@ export function TierSection({
               ? 'Friends are reclassified here through lack of contact over time'
               : tier === 'rolemodel'
               ? 'Add people whose life stories inspire you to be good, better, best'
+              : tier === 'naybor'
+              ? 'Introduse yourself to your naybors and add them here'
               : 'Add someone to your closest circle'}
           </p>
         </div>
