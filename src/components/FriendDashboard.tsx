@@ -160,7 +160,7 @@ export function FriendDashboard({
     );
   }
 
-  const tiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
 
   // Define allowed move transitions
   // acquainted can only move to outer; outer can move to inner or acquainted
