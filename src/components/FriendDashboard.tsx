@@ -16,6 +16,7 @@ import { Footer } from '@/components/Footer';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
+import { useParasocial } from '@/hooks/useParasocial';
 import { TierType } from '@/types/friend';
 
 interface FriendDashboardProps {
@@ -43,6 +44,12 @@ export function FriendDashboard({
     createConnectionRequest,
     respondToRequest,
   } = useFriendConnections(user?.id);
+
+  const {
+    feedShares,
+    seenShares,
+    recordEngagement,
+  } = useParasocial(user?.id);
   
   const {
     lists,
@@ -280,6 +287,9 @@ export function FriendDashboard({
               onAddLinkedFriend={handleAddLinkedFriend}
               onUpdateFriend={updateFriend}
               getAllowedMoves={getAllowedMoves}
+              parasocialShares={tier === 'parasocial' ? feedShares : undefined}
+              parasocialSeenShares={tier === 'parasocial' ? seenShares : undefined}
+              onParasocialEngage={tier === 'parasocial' ? recordEngagement : undefined}
             />
           ))}
         </div>

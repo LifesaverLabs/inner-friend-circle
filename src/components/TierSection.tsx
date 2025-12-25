@@ -25,8 +25,10 @@ import { AddFriendDialog } from './AddFriendDialog';
 import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
 import { AddRoleModelDialog } from './AddRoleModelDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
+import { ParasocialFeed } from './ParasocialFeed';
 import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
+import { ParasocialShare } from '@/hooks/useParasocial';
 
 interface TierSectionProps {
   tier: TierType;
@@ -49,6 +51,10 @@ interface TierSectionProps {
     discloseCircle: boolean
   ) => Promise<{ success: boolean; error?: string }>;
   getAllowedMoves: (fromTier: TierType) => TierType[];
+  // Parasocial feed props
+  parasocialShares?: ParasocialShare[];
+  parasocialSeenShares?: Set<string>;
+  onParasocialEngage?: (shareId: string) => void;
 }
 
 export function TierSection({
@@ -67,6 +73,9 @@ export function TierSection({
   isLoggedIn,
   onAddLinkedFriend,
   getAllowedMoves,
+  parasocialShares,
+  parasocialSeenShares,
+  onParasocialEngage,
 }: TierSectionProps) {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
@@ -310,6 +319,15 @@ export function TierSection({
             );
           })}
         </div>
+      )}
+
+      {/* Show parasocial feed in the parasocial tier */}
+      {tier === 'parasocial' && parasocialShares && parasocialSeenShares && onParasocialEngage && (
+        <ParasocialFeed
+          shares={parasocialShares}
+          seenShares={parasocialSeenShares}
+          onEngage={onParasocialEngage}
+        />
       )}
 
       <AddFriendDialog
