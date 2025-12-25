@@ -15,7 +15,7 @@ import { ContactMethodsManager } from '@/components/ContactMethodsManager';
 import { ParasocialDashboard } from '@/components/ParasocialDashboard';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { User, Phone, AtSign, Star } from 'lucide-react';
+import { User, Phone, AtSign, Star, Globe, Lock, Copy, ExternalLink } from 'lucide-react';
 
 interface ProfileSettingsDialogProps {
   open: boolean;
@@ -30,6 +30,7 @@ export function ProfileSettingsDialog({
 }: ProfileSettingsDialogProps) {
   const [displayName, setDisplayName] = useState('');
   const [userHandle, setUserHandle] = useState('');
+  const [isPublic, setIsPublic] = useState(true);
   const [isParasocialPersonality, setIsParasocialPersonality] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -46,7 +47,7 @@ export function ProfileSettingsDialog({
     try {
       const { data, error } = await supabase
         .from('profiles')
-        .select('display_name, user_handle, is_parasocial_personality')
+        .select('display_name, user_handle, is_parasocial_personality, is_public')
         .eq('user_id', userId)
         .single();
 
@@ -56,6 +57,7 @@ export function ProfileSettingsDialog({
         setDisplayName(data.display_name || '');
         setUserHandle(data.user_handle || '');
         setIsParasocialPersonality(data.is_parasocial_personality || false);
+        setIsPublic(data.is_public ?? true);
       }
     } catch (error) {
       console.error('Error fetching profile:', error);
@@ -126,6 +128,7 @@ export function ProfileSettingsDialog({
           display_name: displayName.trim() || null,
           user_handle: userHandle.trim() || null,
           is_parasocial_personality: isParasocialPersonality,
+          is_public: isPublic,
         }, { onConflict: 'user_id' });
 
       if (error) throw error;
@@ -213,6 +216,62 @@ export function ProfileSettingsDialog({
                 <p className="text-xs text-muted-foreground">
                   3-30 characters. Letters, numbers, and underscores only.
                 </p>
+              </div>
+
+              {/* Public Profile Link */}
+              {userHandle && (
+                <div className="p-3 rounded-lg border bg-muted/30 space-y-2">
+                  <Label className="text-sm font-medium">Your Public Profile</Label>
+                  <div className="flex items-center gap-2">
+                    <code className="flex-1 text-sm bg-background px-3 py-2 rounded border truncate">
+                      {window.location.origin}/@{userHandle}
+                    </code>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        navigator.clipboard.writeText(`${window.location.origin}/@${userHandle}`);
+                        toast.success('Link copied!');
+                      }}
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open(`/@${userHandle}`, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* Privacy Toggle */}
+              <div className="flex items-center justify-between p-3 rounded-lg border bg-muted/30">
+                <div className="flex items-center gap-3">
+                  {isPublic ? (
+                    <Globe className="h-5 w-5 text-muted-foreground" />
+                  ) : (
+                    <Lock className="h-5 w-5 text-muted-foreground" />
+                  )}
+                  <div>
+                    <Label htmlFor="public-toggle" className="text-sm font-medium">
+                      {isPublic ? 'Public Profile' : 'Private Profile'}
+                    </Label>
+                    <p className="text-xs text-muted-foreground">
+                      {isPublic 
+                        ? 'Anyone can view your profile page' 
+                        : 'Only you and confirmed friends can view your profile'
+                      }
+                    </p>
+                  </div>
+                </div>
+                <Switch
+                  id="public-toggle"
+                  checked={isPublic}
+                  onCheckedChange={setIsPublic}
+                />
               </div>
 
               <div className="flex justify-end pt-4">

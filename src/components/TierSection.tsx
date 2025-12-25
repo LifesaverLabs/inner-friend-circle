@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Lock, Users, Link2, Star } from 'lucide-react';
+import { Plus, Lock, Users, Link2, Star, UserPlus } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -26,6 +26,7 @@ import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
 import { AddRoleModelDialog } from './AddRoleModelDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
 import { ParasocialFeed } from './ParasocialFeed';
+import { FollowCreatorDialog } from './FollowCreatorDialog';
 import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
 import { ParasocialShare } from '@/hooks/useParasocial';
@@ -55,6 +56,7 @@ interface TierSectionProps {
   parasocialShares?: ParasocialShare[];
   parasocialSeenShares?: Set<string>;
   onParasocialEngage?: (shareId: string) => void;
+  userId?: string;
 }
 
 export function TierSection({
@@ -76,11 +78,13 @@ export function TierSection({
   parasocialShares,
   parasocialSeenShares,
   onParasocialEngage,
+  userId,
 }: TierSectionProps) {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
   const [roleModelDialogOpen, setRoleModelDialogOpen] = useState(false);
+  const [followCreatorDialogOpen, setFollowCreatorDialogOpen] = useState(false);
   
   // Only core, inner, outer can have linked friends (not parasocial, rolemodel, or acquainted)
   const canHaveLinkedFriends = tier !== 'parasocial' && tier !== 'rolemodel' && tier !== 'acquainted';
@@ -208,6 +212,17 @@ export function TierSection({
             >
               <Link2 className="w-4 h-4" />
               Link
+            </Button>
+          )}
+          {tier === 'parasocial' && isLoggedIn && userId && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setFollowCreatorDialogOpen(true)}
+              className="gap-1"
+            >
+              <UserPlus className="w-4 h-4" />
+              Follow Creator
             </Button>
           )}
           {isRoleModelTier && (
@@ -364,6 +379,14 @@ export function TierSection({
         currentReservedTotal={reservedTotal}
         onSave={onAddReservedGroup}
       />
+
+      {tier === 'parasocial' && userId && (
+        <FollowCreatorDialog
+          open={followCreatorDialogOpen}
+          onOpenChange={setFollowCreatorDialogOpen}
+          userId={userId}
+        />
+      )}
     </motion.section>
   );
 }

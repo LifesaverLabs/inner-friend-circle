@@ -279,6 +279,7 @@ export type Database = {
           display_name: string | null
           id: string
           is_parasocial_personality: boolean
+          is_public: boolean
           updated_at: string
           user_handle: string | null
           user_id: string
@@ -290,6 +291,7 @@ export type Database = {
           display_name?: string | null
           id?: string
           is_parasocial_personality?: boolean
+          is_public?: boolean
           updated_at?: string
           user_handle?: string | null
           user_id: string
@@ -301,6 +303,7 @@ export type Database = {
           display_name?: string | null
           id?: string
           is_parasocial_personality?: boolean
+          is_public?: boolean
           updated_at?: string
           user_handle?: string | null
           user_id?: string
