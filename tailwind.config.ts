@@ -58,6 +58,7 @@ export default {
         "tier-core": "hsl(var(--tier-core))",
         "tier-inner": "hsl(var(--tier-inner))",
         "tier-outer": "hsl(var(--tier-outer))",
+        "tier-naybor": "hsl(var(--tier-naybor))",
         "tier-parasocial": "hsl(var(--tier-parasocial))",
         "tier-rolemodel": "hsl(var(--tier-rolemodel))",
         "tier-acquainted": "hsl(var(--tier-acquainted))",

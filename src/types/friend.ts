@@ -1,4 +1,4 @@
-export type TierType = 'core' | 'inner' | 'outer' | 'parasocial' | 'rolemodel' | 'acquainted';
+export type TierType = 'core' | 'inner' | 'outer' | 'naybor' | 'parasocial' | 'rolemodel' | 'acquainted';
 
 export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram';
 
@@ -34,6 +34,7 @@ export interface ReservedSpots {
   core: ReservedGroup[];
   inner: ReservedGroup[];
   outer: ReservedGroup[];
+  naybor: ReservedGroup[];
   parasocial: ReservedGroup[];
   rolemodel: ReservedGroup[];
   acquainted: ReservedGroup[];
@@ -53,6 +54,7 @@ export const TIER_LIMITS: Record<TierType, number> = {
   core: 5,
   inner: 15,
   outer: 150,
+  naybor: 25,
   parasocial: 25,
   rolemodel: 25,
   acquainted: 1000,
@@ -63,6 +65,8 @@ export const TIER_INFO: Record<TierType, {
   description: string; 
   limit: number;
   color: string;
+  recommendedMin?: number;
+  underMinWarning?: string;
 }> = {
   core: {
     name: 'Core',
@@ -81,6 +85,14 @@ export const TIER_INFO: Record<TierType, {
     description: 'Meaningful connections — acquaintances who matter',
     limit: 150,
     color: 'tier-outer',
+  },
+  naybor: {
+    name: 'Naybors',
+    description: 'Your neighbors — the people akross the blok or down the hall. Know your naybors so you kan be of service to each other as needs arise.',
+    limit: 25,
+    color: 'tier-naybor',
+    recommendedMin: 10,
+    underMinWarning: "It's unsafe not to know your naybors! How are you going to know what's happening around you, what life is like for the people akross the blok or down the hall, and what if an emergency happens? Introduse yourself to your naybors, get to know their names, where they live, a little bit about their lives, and their kontakt info.",
   },
   parasocial: {
     name: 'Parasocials',
