@@ -290,6 +290,7 @@ export function FriendDashboard({
               parasocialShares={tier === 'parasocial' ? feedShares : undefined}
               parasocialSeenShares={tier === 'parasocial' ? seenShares : undefined}
               onParasocialEngage={tier === 'parasocial' ? recordEngagement : undefined}
+              userId={user?.id}
             />
           ))}
         </div>
