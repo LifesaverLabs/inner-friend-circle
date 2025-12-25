@@ -157,13 +157,14 @@ export function FriendDashboard({
 
   // Define allowed move transitions
   // acquainted can only move to outer; outer can move to inner or acquainted
-  // rolemodel is standalone - no moves allowed
+  // rolemodel and parasocial are standalone - no moves allowed
+  // If someone converts from parasocial to a real relationship, re-enter them manually
   const getAllowedMoves = (fromTier: TierType): TierType[] => {
     switch (fromTier) {
       case 'core': return ['inner'];
       case 'inner': return ['core', 'outer'];
       case 'outer': return ['inner', 'acquainted'];
-      case 'parasocial': return ['outer'];
+      case 'parasocial': return []; // Parasocials are one-sided; can't convert to mutual relationships
       case 'rolemodel': return []; // Role models don't move between tiers
       case 'acquainted': return ['outer'];
       default: return [];
