@@ -48,7 +48,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (handle) {
-      fetchProfile(handle.replace('@', ''));
+      fetchProfile(handle);
     }
   }, [handle, user?.id]);
 
@@ -181,7 +181,7 @@ export default function Profile() {
             <User className="h-16 w-16 mx-auto text-muted-foreground" />
             <h1 className="text-2xl font-display font-bold">Profile Not Found</h1>
             <p className="text-muted-foreground">
-              No user exists with the handle @{handle?.replace('@', '')}
+              No user exists with the handle @{handle}
             </p>
             <Button onClick={() => navigate('/')}>
               <ArrowLeft className="h-4 w-4 mr-2" />

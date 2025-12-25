@@ -224,13 +224,13 @@ export function ProfileSettingsDialog({
                   <Label className="text-sm font-medium">Your Public Profile</Label>
                   <div className="flex items-center gap-2">
                     <code className="flex-1 text-sm bg-background px-3 py-2 rounded border truncate">
-                      {window.location.origin}/@{userHandle}
+                      {window.location.origin}/u/{userHandle}
                     </code>
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        navigator.clipboard.writeText(`${window.location.origin}/@${userHandle}`);
+                        navigator.clipboard.writeText(`${window.location.origin}/u/${userHandle}`);
                         toast.success('Link copied!');
                       }}
                     >
@@ -239,7 +239,7 @@ export function ProfileSettingsDialog({
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => window.open(`/@${userHandle}`, '_blank')}
+                      onClick={() => window.open(`/u/${userHandle}`, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4" />
                     </Button>
