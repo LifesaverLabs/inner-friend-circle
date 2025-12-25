@@ -158,6 +158,119 @@ export type Database = {
         }
         Relationships: []
       }
+      parasocial_engagements: {
+        Row: {
+          clicked_at: string
+          id: string
+          share_id: string
+          user_id: string
+        }
+        Insert: {
+          clicked_at?: string
+          id?: string
+          share_id: string
+          user_id: string
+        }
+        Update: {
+          clicked_at?: string
+          id?: string
+          share_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "parasocial_engagements_share_id_fkey"
+            columns: ["share_id"]
+            isOneToOne: false
+            referencedRelation: "parasocial_shares"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "parasocial_engagements_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      parasocial_follows: {
+        Row: {
+          created_at: string
+          follower_id: string
+          id: string
+          parasocial_id: string
+        }
+        Insert: {
+          created_at?: string
+          follower_id: string
+          id?: string
+          parasocial_id: string
+        }
+        Update: {
+          created_at?: string
+          follower_id?: string
+          id?: string
+          parasocial_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "parasocial_follows_follower_id_fkey"
+            columns: ["follower_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "parasocial_follows_parasocial_id_fkey"
+            columns: ["parasocial_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      parasocial_shares: {
+        Row: {
+          created_at: string
+          creator_id: string
+          description: string | null
+          expires_at: string | null
+          id: string
+          is_active: boolean
+          title: string
+          url: string
+        }
+        Insert: {
+          created_at?: string
+          creator_id: string
+          description?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean
+          title: string
+          url: string
+        }
+        Update: {
+          created_at?: string
+          creator_id?: string
+          description?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean
+          title?: string
+          url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "parasocial_shares_creator_id_fkey"
+            columns: ["creator_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -165,6 +278,7 @@ export type Database = {
           created_at: string
           display_name: string | null
           id: string
+          is_parasocial_personality: boolean
           updated_at: string
           user_handle: string | null
           user_id: string
@@ -175,6 +289,7 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           id?: string
+          is_parasocial_personality?: boolean
           updated_at?: string
           user_handle?: string | null
           user_id: string
@@ -185,6 +300,7 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           id?: string
+          is_parasocial_personality?: boolean
           updated_at?: string
           user_handle?: string | null
           user_id?: string
