@@ -220,5 +220,106 @@
     "about": "About",
     "contribute": "Kontribute",
     "openSource": "Open Sourse"
+  },
+  "contactImport": {
+    "title": "Import Kontakts",
+    "description": "Import kontakts from your phone, vCard file, or CSV spreadsheet. All kontakts will be added as Akquainted Kuzins.",
+    "tabs": {
+      "phone": "Phone",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "Akquainted kapasity",
+    "capacityFull": "Your Akquainted tier is full. Promote some kontakts to make room.",
+    "loading": "Loading...",
+    "parsing": "Parsing kontakts...",
+    "importing": "Importing...",
+    "importingDescription": "Adding kontakts to your Akquainted Kuzins...",
+    "selectFile": "Selekt File",
+    "selectedFile": "Selekted file",
+    "columns": "kolumns",
+    "privacyNote": "Your kontakt data stays on your device. We never upload or store it.",
+    "defaultCountry": "Default Kountry for Phone Numbers",
+    "defaultCountryHint": "Phone numbers without a kountry kode will use this kountry. Most kontakts are stored without kountry kodes.",
+    "promotionInfo": {
+      "title": "Easy Promotion Path",
+      "description": "All imported kontakts start as Akquainted Kuzins. You kan easily promote any kontakt to:",
+      "core": "Kore (your 5 klosest konfidants)",
+      "inner": "Inner (up to 15 klose friends)",
+      "outer": "Outer (up to 50 good friends)",
+      "naybor": "Naybor (trusted naybors for emergensies)",
+      "roleModel": "Role Model (inspirational figures)"
+    },
+    "fromPhone": {
+      "title": "Import from Phone",
+      "description": "Selekt kontakts from your phone's address book",
+      "button": "Selekt Kontakts"
+    },
+    "fromVCard": {
+      "dropZone": "Drop your vCard file here",
+      "hint": "Akkepts .vcf or .vcard files from iCloud, Google, Outlook",
+      "exportInstructions": "Export kontakts from your email or phone app as a .vcf file, then import here."
+    },
+    "fromCsv": {
+      "dropZone": "Drop your CSV file here",
+      "hint": "Standard CSV format with headers",
+      "mapColumns": "Map CSV Kolumns",
+      "mapColumnsDescription": "Selekt which kolumns kontain your kontakt information:",
+      "importButton": "Import Kontakts"
+    },
+    "columnMapping": {
+      "name": "Full Name Kolumn",
+      "firstName": "First Name Kolumn",
+      "lastName": "Last Name Kolumn",
+      "phone": "Phone Kolumn",
+      "email": "Email Kolumn",
+      "selectColumn": "Selekt kolumn",
+      "none": "Not mapped",
+      "orSeparate": "Or use separate first/last name kolumns:"
+    },
+    "preview": {
+      "title": "Import Preview",
+      "description": "Review kontakts before importing",
+      "total": "Total parsed",
+      "toImport": "To import",
+      "duplicates": "Duplikates",
+      "source": "Sourse",
+      "capacityWarning": "Only {{available}} of {{total}} kontakts kan be imported. {{skipped}} will be skipped due to kapasity limits.",
+      "duplicatesInfo": "{{count}} kontakt(s) already exist in your friend list and will be skipped.",
+      "promotionReminder": "All kontakts import as Akquainted",
+      "promotionReminderDescription": "You kan easily promote any kontakt to Kore, Inner, Outer, Naybor, or Role Model at any time.",
+      "contactsToImport": "Kontakts to import",
+      "noContactsToImport": "No kontakts to import",
+      "andMore": "...and {{count}} more",
+      "duplicatesSkipped": "Duplikates (skipped)",
+      "matchedWith": "matches {{name}} by {{by}}",
+      "andMoreDuplicates": "...and {{count}} more duplikates",
+      "importButton": "Import {{count}} Kontakts"
+    },
+    "success": {
+      "title": "Import Komplete!",
+      "description": "{{count}} kontakts added to your Akquainted Kuzins.",
+      "imported": "Imported",
+      "skipped": "Skipped",
+      "promotionTip": "Visit the Manage tab to promote kontakts to Kore, Inner, Outer, or other tiers."
+    },
+    "error": {
+      "title": "Import Failed",
+      "generic": "Unable to import kontakts. Please try again.",
+      "tryAgain": "Try Again"
+    },
+    "errors": {
+      "notSupported": "Kontakt Pikker is not supported on this device",
+      "pickerFailed": "Failed to akkess kontakts",
+      "invalidVCardFile": "Please selekt a valid vCard file (.vcf or .vcard)",
+      "invalidCsvFile": "Please selekt a valid CSV file",
+      "noContactsFound": "No kontakts found in the file",
+      "parseError": "Failed to parse the file",
+      "nameColumnRequired": "A name kolumn is required to import kontakts",
+      "importFailed": "Failed to import kontakts"
+    },
+    "mobileOnly": "Kontakt Pikker is only available on mobile devices. Use vCard or CSV import instead.",
+    "browserNotSupported": "Your browser doesn't support Kontakt Pikker. Use vCard or CSV import instead.",
+    "useFileImport": "Try importing from a vCard or CSV file instead."
   }
 }

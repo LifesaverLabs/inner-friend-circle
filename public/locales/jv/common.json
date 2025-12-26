@@ -215,5 +215,106 @@
     "about": "Babagan",
     "contribute": "Kontribusi",
     "openSource": "Open Source"
+  },
+  "contactImport": {
+    "title": "Impor Kontak",
+    "description": "Impor kontak saka telpon, file vCard, utawa spreadsheet CSV. Kabeh kontak bakal ditambahake minangka kenal.",
+    "tabs": {
+      "phone": "Telpon",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "Kapasitas kenal",
+    "capacityFull": "Tingkat kenal wis kebak. Promosekake sawetara kontak kanggo nggawe papan.",
+    "loading": "Lagi dimuat...",
+    "parsing": "Lagi parsing kontak...",
+    "importing": "Lagi diimpor...",
+    "importingDescription": "Nambahake kontak menyang kenal...",
+    "selectFile": "Pilih File",
+    "selectedFile": "File sing dipilih",
+    "columns": "kolom",
+    "privacyNote": "Data kontakmu tetep ana ing perangkatmu. Kita ora tau ngunggah utawa nyimpen.",
+    "defaultCountry": "Negara Default kanggo Nomer Telpon",
+    "defaultCountryHint": "Nomer telpon tanpa kode negara bakal nggunakake negara iki. Umume kontak disimpen tanpa kode negara.",
+    "promotionInfo": {
+      "title": "Dalan Promosi Gampang",
+      "description": "Kabeh kontak sing diimpor diwiwiti minangka kenal. Sampeyan bisa kanthi gampang promosekake kontak apa wae menyang:",
+      "core": "Inti (5 wong sing paling dipercaya)",
+      "inner": "Cedhak (nganti 15 kanca raket)",
+      "outer": "Njaba (nganti 50 kanca apik)",
+      "naybor": "Tangga (tangga sing dipercaya kanggo darurat)",
+      "roleModel": "Panutan (tokoh inspiratif)"
+    },
+    "fromPhone": {
+      "title": "Impor saka Telpon",
+      "description": "Pilih kontak saka buku alamat telponmu",
+      "button": "Pilih Kontak"
+    },
+    "fromVCard": {
+      "dropZone": "Selehake file vCard ing kene",
+      "hint": "Nampa file .vcf utawa .vcard saka iCloud, Google, Outlook",
+      "exportInstructions": "Ekspor kontak saka email utawa app telpon minangka file .vcf, banjur impor ing kene."
+    },
+    "fromCsv": {
+      "dropZone": "Selehake file CSV ing kene",
+      "hint": "Format CSV standar karo header",
+      "mapColumns": "Petakan Kolom CSV",
+      "mapColumnsDescription": "Pilih kolom sing ngemot informasi kontakmu:",
+      "importButton": "Impor Kontak"
+    },
+    "columnMapping": {
+      "name": "Kolom Jeneng Lengkap",
+      "firstName": "Kolom Jeneng Ngarep",
+      "lastName": "Kolom Jeneng Mburi",
+      "phone": "Kolom Telpon",
+      "email": "Kolom Email",
+      "selectColumn": "Pilih kolom",
+      "none": "Ora dipetakan",
+      "orSeparate": "Utawa gunakake kolom jeneng ngarep/mburi sing kapisah:"
+    },
+    "preview": {
+      "title": "Pratinjau Impor",
+      "description": "Tinjau kontak sadurunge ngimpor",
+      "total": "Total diparsing",
+      "toImport": "Sing bakal diimpor",
+      "duplicates": "Duplikat",
+      "source": "Sumber",
+      "capacityWarning": "Mung {{available}} saka {{total}} kontak sing bisa diimpor. {{skipped}} bakal dilewati amarga watesan kapasitas.",
+      "duplicatesInfo": "{{count}} kontak wis ana ing daftar kancamu lan bakal dilewati.",
+      "promotionReminder": "Kabeh kontak diimpor minangka kenal",
+      "promotionReminderDescription": "Sampeyan bisa kanthi gampang promosekake kontak apa wae menyang Inti, Cedhak, Njaba, Tangga, utawa Panutan kapan wae.",
+      "contactsToImport": "Kontak sing bakal diimpor",
+      "noContactsToImport": "Ora ana kontak sing bakal diimpor",
+      "andMore": "...lan {{count}} maneh",
+      "duplicatesSkipped": "Duplikat (dilewati)",
+      "matchedWith": "cocog karo {{name}} liwat {{by}}",
+      "andMoreDuplicates": "...lan {{count}} duplikat maneh",
+      "importButton": "Impor {{count}} Kontak"
+    },
+    "success": {
+      "title": "Impor Rampung!",
+      "description": "{{count}} kontak ditambahake menyang kenal.",
+      "imported": "Diimpor",
+      "skipped": "Dilewati",
+      "promotionTip": "Bukak tab Kelola kanggo promosekake kontak menyang Inti, Cedhak, Njaba, utawa tingkat liyane."
+    },
+    "error": {
+      "title": "Impor Gagal",
+      "generic": "Ora bisa ngimpor kontak. Mangga coba maneh.",
+      "tryAgain": "Coba Maneh"
+    },
+    "errors": {
+      "notSupported": "Contact Picker ora didhukung ing perangkat iki",
+      "pickerFailed": "Gagal ngakses kontak",
+      "invalidVCardFile": "Mangga pilih file vCard sing valid (.vcf utawa .vcard)",
+      "invalidCsvFile": "Mangga pilih file CSV sing valid",
+      "noContactsFound": "Ora ana kontak sing ditemokake ing file",
+      "parseError": "Gagal parsing file",
+      "nameColumnRequired": "Kolom jeneng dibutuhake kanggo ngimpor kontak",
+      "importFailed": "Gagal ngimpor kontak"
+    },
+    "mobileOnly": "Contact Picker mung kasedhiya ing perangkat mobile. Gunakake impor vCard utawa CSV.",
+    "browserNotSupported": "Browser sampeyan ora ndhukung Contact Picker. Gunakake impor vCard utawa CSV.",
+    "useFileImport": "Coba impor saka file vCard utawa CSV."
   }
 }

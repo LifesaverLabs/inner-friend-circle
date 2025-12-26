@@ -2,6 +2,61 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+// Mock react-i18next
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+    i18n: { language: 'en', changeLanguage: vi.fn() },
+  }),
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
+// Mock framer-motion to avoid animation issues
+vi.mock('framer-motion', () => ({
+  motion: {
+    div: ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+      <div {...props}>{children}</div>
+    ),
+    button: ({ children, ...props }: React.HTMLAttributes<HTMLButtonElement>) => (
+      <button {...props}>{children}</button>
+    ),
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+      <p {...props}>{children}</p>
+    ),
+    a: ({ children, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+      <a {...props}>{children}</a>
+    ),
+    span: ({ children, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
+      <span {...props}>{children}</span>
+    ),
+    h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h1 {...props}>{children}</h1>
+    ),
+    h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h2 {...props}>{children}</h2>
+    ),
+    h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h3 {...props}>{children}</h3>
+    ),
+    section: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
+      <section {...props}>{children}</section>
+    ),
+    article: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
+      <article {...props}>{children}</article>
+    ),
+    ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+      <ul {...props}>{children}</ul>
+    ),
+    li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
+      <li {...props}>{children}</li>
+    ),
+  },
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
+
 // Mock useAuth
 const mockSignOut = vi.fn();
 const mockAuthState = {
@@ -77,6 +132,21 @@ vi.mock('@/hooks/useContactMethods', () => ({
     contactMethods: [],
     isLoading: false,
   }),
+}));
+
+// Mock useParasocial
+vi.mock('@/hooks/useParasocial', () => ({
+  useParasocial: () => ({
+    feedShares: [],
+    seenShares: new Set(),
+    recordEngagement: vi.fn(),
+    isLoading: false,
+  }),
+}));
+
+// Mock LanguageSelector to avoid complex component tree issues
+vi.mock('@/components/i18n/LanguageSelector', () => ({
+  LanguageSelector: () => <div data-testid="language-selector">EN</div>,
 }));
 
 // Mock react-router-dom

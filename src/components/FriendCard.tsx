@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical, Phone, Pencil } from 'lucide-react';
+import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical, Phone, Pencil, ArrowRightCircle } from 'lucide-react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
 import { Friend, TierType, TIER_INFO, CONTACT_METHODS } from '@/types/friend';
@@ -59,12 +60,21 @@ export function FriendCard({
 
   const currentTierIndex = tierOrder.indexOf(friend.tier);
   const allowedMoves = getAllowedMoves(friend.tier);
-  
+
+  // For acquainted tier, we show all available moves as "promote to" options
+  const isAcquainted = friend.tier === 'acquainted';
+
+  // Get available moves with capacity check
+  const availableMovesWithCapacity = allowedMoves.filter(
+    tier => getTierCapacity(tier).available > 0
+  );
+
+  // For non-acquainted tiers, use the traditional up/down navigation
   // Get the tier above (closer to core) that's allowed
-  const tierAbove = allowedMoves.find(t => tierOrder.indexOf(t) < currentTierIndex);
+  const tierAbove = !isAcquainted ? allowedMoves.find(t => tierOrder.indexOf(t) < currentTierIndex) : undefined;
   // Get the tier below (further from core) that's allowed
-  const tierBelow = allowedMoves.find(t => tierOrder.indexOf(t) > currentTierIndex);
-  
+  const tierBelow = !isAcquainted ? allowedMoves.find(t => tierOrder.indexOf(t) > currentTierIndex) : undefined;
+
   // Check if we can actually move (capacity available)
   const canActuallyMoveUp = tierAbove && getTierCapacity(tierAbove).available > 0;
   const canActuallyMoveDown = tierBelow && getTierCapacity(tierBelow).available > 0;
@@ -151,20 +161,41 @@ export function FriendCard({
                 Edit Contact Info
               </DropdownMenuItem>
             )}
-            {tierAbove && canActuallyMoveUp && (
+
+            {/* For acquainted tier: show all promotion options */}
+            {isAcquainted && availableMovesWithCapacity.length > 0 && (
+              <>
+                <DropdownMenuLabel className="text-xs text-muted-foreground">
+                  Promote to
+                </DropdownMenuLabel>
+                {availableMovesWithCapacity.map(targetTier => (
+                  <DropdownMenuItem
+                    key={targetTier}
+                    onClick={() => onMove(friend.id, targetTier)}
+                  >
+                    <ArrowRightCircle className="w-4 h-4 mr-2" />
+                    {TIER_INFO[targetTier].name}
+                  </DropdownMenuItem>
+                ))}
+              </>
+            )}
+
+            {/* For other tiers: traditional up/down navigation */}
+            {!isAcquainted && tierAbove && canActuallyMoveUp && (
               <DropdownMenuItem onClick={() => onMove(friend.id, tierAbove)}>
                 <ArrowUp className="w-4 h-4 mr-2" />
                 Move to {TIER_INFO[tierAbove].name}
               </DropdownMenuItem>
             )}
-            {tierBelow && canActuallyMoveDown && (
+            {!isAcquainted && tierBelow && canActuallyMoveDown && (
               <DropdownMenuItem onClick={() => onMove(friend.id, tierBelow)}>
                 <ArrowDown className="w-4 h-4 mr-2" />
                 Move to {TIER_INFO[tierBelow].name}
               </DropdownMenuItem>
             )}
-            {(onUpdate || (tierAbove && canActuallyMoveUp) || (tierBelow && canActuallyMoveDown)) && <DropdownMenuSeparator />}
-            <DropdownMenuItem 
+
+            {(onUpdate || (isAcquainted && availableMovesWithCapacity.length > 0) || (!isAcquainted && ((tierAbove && canActuallyMoveUp) || (tierBelow && canActuallyMoveDown)))) && <DropdownMenuSeparator />}
+            <DropdownMenuItem
               onClick={() => onRemove(friend.id)}
               className="text-destructive focus:text-destructive"
             >

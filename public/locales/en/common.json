@@ -215,5 +215,106 @@
     "about": "About",
     "contribute": "Contribute",
     "openSource": "Open Source"
+  },
+  "contactImport": {
+    "title": "Import Contacts",
+    "description": "Import contacts from your phone, vCard file, or CSV spreadsheet. All contacts will be added as Acquainted Cousins.",
+    "tabs": {
+      "phone": "Phone",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "Acquainted capacity",
+    "capacityFull": "Your Acquainted tier is full. Promote some contacts to make room.",
+    "loading": "Loading...",
+    "parsing": "Parsing contacts...",
+    "importing": "Importing...",
+    "importingDescription": "Adding contacts to your Acquainted Cousins...",
+    "selectFile": "Select File",
+    "selectedFile": "Selected file",
+    "columns": "columns",
+    "privacyNote": "Your contact data stays on your device. We never upload or store it.",
+    "defaultCountry": "Default Country for Phone Numbers",
+    "defaultCountryHint": "Phone numbers without a country code will use this country. Most contacts are stored without country codes.",
+    "promotionInfo": {
+      "title": "Easy Promotion Path",
+      "description": "All imported contacts start as Acquainted Cousins. You can easily promote any contact to:",
+      "core": "Core (your 5 closest confidants)",
+      "inner": "Inner (up to 15 close friends)",
+      "outer": "Outer (up to 50 good friends)",
+      "naybor": "Naybor (trusted neighbors for emergencies)",
+      "roleModel": "Role Model (inspirational figures)"
+    },
+    "fromPhone": {
+      "title": "Import from Phone",
+      "description": "Select contacts from your phone's address book",
+      "button": "Select Contacts"
+    },
+    "fromVCard": {
+      "dropZone": "Drop your vCard file here",
+      "hint": "Accepts .vcf or .vcard files from iCloud, Google, Outlook",
+      "exportInstructions": "Export contacts from your email or phone app as a .vcf file, then import here."
+    },
+    "fromCsv": {
+      "dropZone": "Drop your CSV file here",
+      "hint": "Standard CSV format with headers",
+      "mapColumns": "Map CSV Columns",
+      "mapColumnsDescription": "Select which columns contain your contact information:",
+      "importButton": "Import Contacts"
+    },
+    "columnMapping": {
+      "name": "Full Name Column",
+      "firstName": "First Name Column",
+      "lastName": "Last Name Column",
+      "phone": "Phone Column",
+      "email": "Email Column",
+      "selectColumn": "Select column",
+      "none": "Not mapped",
+      "orSeparate": "Or use separate first/last name columns:"
+    },
+    "preview": {
+      "title": "Import Preview",
+      "description": "Review contacts before importing",
+      "total": "Total parsed",
+      "toImport": "To import",
+      "duplicates": "Duplicates",
+      "source": "Source",
+      "capacityWarning": "Only {{available}} of {{total}} contacts can be imported. {{skipped}} will be skipped due to capacity limits.",
+      "duplicatesInfo": "{{count}} contact(s) already exist in your friend list and will be skipped.",
+      "promotionReminder": "All contacts import as Acquainted",
+      "promotionReminderDescription": "You can easily promote any contact to Core, Inner, Outer, Naybor, or Role Model at any time.",
+      "contactsToImport": "Contacts to import",
+      "noContactsToImport": "No contacts to import",
+      "andMore": "...and {{count}} more",
+      "duplicatesSkipped": "Duplicates (skipped)",
+      "matchedWith": "matches {{name}} by {{by}}",
+      "andMoreDuplicates": "...and {{count}} more duplicates",
+      "importButton": "Import {{count}} Contacts"
+    },
+    "success": {
+      "title": "Import Complete!",
+      "description": "{{count}} contacts added to your Acquainted Cousins.",
+      "imported": "Imported",
+      "skipped": "Skipped",
+      "promotionTip": "Visit the Manage tab to promote contacts to Core, Inner, Outer, or other tiers."
+    },
+    "error": {
+      "title": "Import Failed",
+      "generic": "Unable to import contacts. Please try again.",
+      "tryAgain": "Try Again"
+    },
+    "errors": {
+      "notSupported": "Contact Picker is not supported on this device",
+      "pickerFailed": "Failed to access contacts",
+      "invalidVCardFile": "Please select a valid vCard file (.vcf or .vcard)",
+      "invalidCsvFile": "Please select a valid CSV file",
+      "noContactsFound": "No contacts found in the file",
+      "parseError": "Failed to parse the file",
+      "nameColumnRequired": "A name column is required to import contacts",
+      "importFailed": "Failed to import contacts"
+    },
+    "mobileOnly": "Contact Picker is only available on mobile devices. Use vCard or CSV import instead.",
+    "browserNotSupported": "Your browser doesn't support Contact Picker. Use vCard or CSV import instead.",
+    "useFileImport": "Try importing from a vCard or CSV file instead."
   }
 }

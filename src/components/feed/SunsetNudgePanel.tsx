@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, Phone, Mic, Calendar, X, Clock, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Phone, Mic, Calendar, X, Clock, Check, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -115,6 +115,11 @@ export function SunsetNudgePanel({
               className="overflow-hidden"
             >
               <div className="p-3 pt-0 space-y-2">
+                {/* Mobile recommendation note */}
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground pb-1">
+                  <Smartphone className="w-3 h-3" aria-hidden="true" />
+                  <span>Contact actions work best on mobile devices</span>
+                </div>
                 {nudges.map((nudge) => (
                   <NudgeCard
                     key={nudge.id}
