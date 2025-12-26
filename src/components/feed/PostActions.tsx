@@ -179,7 +179,7 @@ export function PostActions({
               className={buttonClass}
               aria-label="Add contact info"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-4 h-4" aria-hidden="true" />
               <span className="hidden sm:inline text-xs">Add Contact Info</span>
             </Button>
           </TooltipTrigger>
@@ -201,7 +201,7 @@ export function PostActions({
                 className={`${buttonClass} rounded-r-none pr-1`}
                 aria-label={`Call via ${CONTACT_METHODS[effectiveMethod].name}`}
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 {prominent && <span className="hidden sm:inline">Call</span>}
               </Button>
             </TooltipTrigger>
@@ -221,7 +221,7 @@ export function PostActions({
               data-testid="contact-method-dropdown"
               aria-label="Select contact method"
             >
-              <ChevronDown className="w-3 h-3" />
+              <ChevronDown className="w-3 h-3" aria-hidden="true" />
             </Button>
           </DropdownMenuTrigger>
         </div>
@@ -235,13 +235,18 @@ export function PostActions({
               aria-selected={key === effectiveMethod}
               className={`flex items-center gap-2 ${method.warning ? 'text-amber-600 dark:text-amber-500' : ''}`}
             >
-              <span>{method.icon}</span>
+              <span aria-hidden="true">{method.icon}</span>
               <span>{method.name}</span>
               {method.warning && (
-                <span className="text-amber-500" title={method.warning}>⚠️</span>
+                <span className="text-amber-500" aria-label="Warning: platform may have surveillance concerns">
+                  <span aria-hidden="true">⚠️</span>
+                </span>
               )}
               {key === effectiveMethod && (
-                <span className="ml-auto text-xs text-muted-foreground">✓</span>
+                <span className="ml-auto text-xs text-muted-foreground">
+                  <span className="sr-only">Currently selected</span>
+                  <span aria-hidden="true">✓</span>
+                </span>
               )}
             </DropdownMenuItem>
           ))}
@@ -253,7 +258,7 @@ export function PostActions({
                 onClick={handleAddContactInfo}
                 className="flex items-center gap-2"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-4 h-4" aria-hidden="true" />
                 <span>Add more contact info</span>
               </DropdownMenuItem>
             </>
@@ -278,7 +283,7 @@ export function PostActions({
                 className="gap-2 text-primary hover:text-primary hover:bg-primary/10"
                 aria-label="Voice Reply"
               >
-                <Mic className="w-4 h-4" />
+                <Mic className="w-4 h-4" aria-hidden="true" />
                 <span className="hidden sm:inline">Voice Reply</span>
               </Button>
             </TooltipTrigger>
@@ -296,9 +301,9 @@ export function PostActions({
                 size="sm"
                 onClick={handleMeetupRsvp}
                 className="gap-2 text-primary hover:text-primary hover:bg-primary/10"
-                aria-label="Meetup"
+                aria-label="Schedule a meetup"
               >
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4" aria-hidden="true" />
                 <span className="hidden sm:inline">Meetup</span>
               </Button>
             </TooltipTrigger>
@@ -315,9 +320,9 @@ export function PostActions({
             size="sm"
             onClick={handleComment}
             className="gap-2"
-            aria-label="Comment"
+            aria-label="Add a comment"
           >
-            <MessageCircle className="w-4 h-4" />
+            <MessageCircle className="w-4 h-4" aria-hidden="true" />
             <span className="hidden sm:inline">Comment</span>
           </Button>
         </TooltipTrigger>
@@ -336,9 +341,10 @@ export function PostActions({
                 ? 'text-muted-foreground/50 hover:text-muted-foreground text-xs'
                 : ''
             } ${liked ? 'text-red-500 hover:text-red-600' : ''}`}
-            aria-label="Like"
+            aria-label={liked ? 'Unlike this post' : 'Like this post'}
+            aria-pressed={liked}
           >
-            <Heart className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} />
+            <Heart className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} aria-hidden="true" />
             {!isHighFidelityTier && <span className="hidden sm:inline">Like</span>}
           </Button>
         </TooltipTrigger>
@@ -357,9 +363,9 @@ export function PostActions({
             size="sm"
             onClick={handleShare}
             className="gap-2 ml-auto"
-            aria-label="Share"
+            aria-label="Share this post"
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-4 h-4" aria-hidden="true" />
           </Button>
         </TooltipTrigger>
         <TooltipContent>Share</TooltipContent>
@@ -375,9 +381,9 @@ export function PostActions({
                 size="sm"
                 onClick={handleVoiceReply}
                 className="gap-2"
-                aria-label="Voice reply"
+                aria-label="Send a voice reply"
               >
-                <Mic className="w-4 h-4" />
+                <Mic className="w-4 h-4" aria-hidden="true" />
               </Button>
             </TooltipTrigger>
             <TooltipContent>Voice reply</TooltipContent>

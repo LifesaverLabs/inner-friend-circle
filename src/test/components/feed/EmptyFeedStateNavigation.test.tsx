@@ -313,7 +313,7 @@ describe('FeedTabs - Empty State Navigation Integration', () => {
     );
 
     // Verify we're on Outer+ Feed
-    expect(screen.getByRole('tab', { name: /outer\+/i })).toHaveAttribute('data-state', 'active');
+    expect(screen.getByRole('tab', { name: /outer plus/i })).toHaveAttribute('data-state', 'active');
 
     // Click the "Add Outer Friends" button
     const addButton = screen.getByRole('button', { name: /add outer.*friends/i });

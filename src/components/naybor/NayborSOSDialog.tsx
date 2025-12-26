@@ -169,7 +169,7 @@ export function NayborSOSDialog({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <AlertTriangle className="w-5 h-5 text-tier-naybor" />
+            <AlertTriangle className="w-5 h-5 text-tier-naybor" aria-hidden="true" />
             Naybor SOS™
           </DialogTitle>
           <DialogDescription>
@@ -200,11 +200,12 @@ export function NayborSOSDialog({
                         : 'hover:border-tier-naybor hover:bg-tier-naybor/5'
                     }`}
                     onClick={() => handleCategorySelect(category.id)}
+                    aria-label={`${category.name}${category.urgencyLevel === 'critical' ? ' - Critical urgency' : ''}`}
                   >
-                    <span className="text-lg">{category.icon}</span>
+                    <span className="text-lg" aria-hidden="true">{category.icon}</span>
                     <span className="font-medium text-sm">{category.name}</span>
                     {category.urgencyLevel === 'critical' && (
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-destructive/10 text-destructive">
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-destructive/10 text-destructive" aria-hidden="true">
                         Critical
                       </span>
                     )}
@@ -261,23 +262,28 @@ export function NayborSOSDialog({
                   id="include-location"
                   checked={includeLocation}
                   onCheckedChange={(checked) => setIncludeLocation(checked === true)}
+                  aria-describedby="location-description"
                 />
                 <label htmlFor="include-location" className="text-sm flex items-center gap-1 cursor-pointer">
-                  <MapPin className="w-3.5 h-3.5" />
+                  <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
                   Include location info
                 </label>
+                <span id="location-description" className="sr-only">
+                  When enabled, your approximate location will be shared with your naybors
+                </span>
               </div>
 
               <div className="flex gap-2">
-                <Button variant="outline" onClick={handleBack} className="flex-1">
+                <Button variant="outline" onClick={handleBack} className="flex-1" aria-label="Go back to category selection">
                   Back
                 </Button>
                 <Button
                   onClick={handleComposeNext}
                   className="flex-1 bg-tier-naybor hover:bg-tier-naybor/90"
+                  aria-label="Continue to choose naybors to contact"
                 >
                   Choose Naybors
-                  <ChevronRight className="w-4 h-4 ml-1" />
+                  <ChevronRight className="w-4 h-4 ml-1" aria-hidden="true" />
                 </Button>
               </div>
             </motion.div>
@@ -293,17 +299,17 @@ export function NayborSOSDialog({
               className="space-y-3"
             >
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">
-                  {selectedNaybors.size} selected
+                <span className="text-sm text-muted-foreground" aria-live="polite">
+                  {selectedNaybors.size} naybor{selectedNaybors.size !== 1 ? 's' : ''} selected
                 </span>
-                <Button variant="ghost" size="sm" onClick={handleCopyMessage}>
-                  <Copy className="w-3.5 h-3.5 mr-1" />
+                <Button variant="ghost" size="sm" onClick={handleCopyMessage} aria-label="Copy SOS message to clipboard">
+                  <Copy className="w-3.5 h-3.5 mr-1" aria-hidden="true" />
                   Copy message
                 </Button>
               </div>
 
               <ScrollArea className="h-[200px] pr-3">
-                <div className="space-y-2">
+                <div className="space-y-2" role="list" aria-label="Naybor contacts">
                   {sortedNaybors.map((naybor) => {
                     const isSelected = selectedNaybors.has(naybor.id);
                     const wasContacted = contactedNaybors.has(naybor.id);
@@ -311,6 +317,7 @@ export function NayborSOSDialog({
                     return (
                       <div
                         key={naybor.id}
+                        role="listitem"
                         className={`flex items-center gap-2 p-2 rounded-lg border transition-colors ${
                           isSelected
                             ? 'border-tier-naybor bg-tier-naybor/5'
@@ -320,16 +327,20 @@ export function NayborSOSDialog({
                         <Checkbox
                           checked={isSelected}
                           onCheckedChange={() => handleNayborToggle(naybor.id)}
+                          aria-label={`Select ${naybor.name}${wasContacted ? ' (already contacted)' : ''}`}
                         />
                         <div className="flex items-center gap-2 flex-1 min-w-0">
-                          <div className="p-1.5 rounded-full bg-tier-naybor/10 shrink-0">
+                          <div className="p-1.5 rounded-full bg-tier-naybor/10 shrink-0" aria-hidden="true">
                             <User className="w-3 h-3 text-tier-naybor" />
                           </div>
                           <div className="min-w-0">
                             <p className="text-sm font-medium truncate flex items-center gap-1">
                               {naybor.name}
                               {wasContacted && (
-                                <Check className="w-3 h-3 text-green-500" />
+                                <>
+                                  <Check className="w-3 h-3 text-green-500" aria-hidden="true" />
+                                  <span className="sr-only">(already contacted)</span>
+                                </>
                               )}
                             </p>
                             {naybor.phone && (
@@ -340,24 +351,24 @@ export function NayborSOSDialog({
                           </div>
                         </div>
                         {naybor.phone && (
-                          <div className="flex items-center gap-1 shrink-0">
+                          <div className="flex items-center gap-1 shrink-0" role="group" aria-label={`Contact options for ${naybor.name}`}>
                             <Button
                               variant="ghost"
                               size="icon"
                               className="h-7 w-7"
                               onClick={() => handleCall(naybor)}
-                              title="Call"
+                              aria-label={`Call ${naybor.name}`}
                             >
-                              <Phone className="w-3.5 h-3.5" />
+                              <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                             </Button>
                             <Button
                               variant="ghost"
                               size="icon"
                               className="h-7 w-7"
                               onClick={() => handleMessage(naybor)}
-                              title="Message"
+                              aria-label={`Message ${naybor.name}`}
                             >
-                              <MessageCircle className="w-3.5 h-3.5" />
+                              <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                             </Button>
                           </div>
                         )}
@@ -368,21 +379,22 @@ export function NayborSOSDialog({
               </ScrollArea>
 
               <div className="flex gap-2 pt-2 border-t">
-                <Button variant="outline" onClick={handleBack} className="flex-1">
+                <Button variant="outline" onClick={handleBack} className="flex-1" aria-label="Go back to compose message">
                   Back
                 </Button>
                 <Button
                   onClick={handleContactAll}
                   disabled={selectedNaybors.size === 0}
                   className="flex-1 bg-tier-naybor hover:bg-tier-naybor/90"
+                  aria-label={`Message all ${selectedNaybors.size} selected naybor${selectedNaybors.size !== 1 ? 's' : ''}`}
                 >
-                  <MessageCircle className="w-4 h-4 mr-1" />
+                  <MessageCircle className="w-4 h-4 mr-1" aria-hidden="true" />
                   Message All ({selectedNaybors.size})
                 </Button>
               </div>
 
               {contactedNaybors.size > 0 && (
-                <p className="text-xs text-center text-muted-foreground">
+                <p className="text-xs text-center text-muted-foreground" aria-live="polite">
                   Contacted {contactedNaybors.size} naybor{contactedNaybors.size !== 1 ? 's' : ''}
                 </p>
               )}

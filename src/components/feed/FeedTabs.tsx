@@ -70,31 +70,35 @@ export function FeedTabs({
 
   return (
     <Tabs value={currentTab} onValueChange={handleTabChange} className="w-full">
-      <TabsList className="grid w-full grid-cols-4 mb-6">
+      <TabsList className="grid w-full grid-cols-4 mb-6" aria-label="Friend circle feeds">
         <TabsTrigger
           value="core"
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-core"
+          aria-label="Core Feed - Your closest friends"
         >
-          <div className="w-2 h-2 rounded-full bg-tier-core" />
+          <div className="w-2 h-2 rounded-full bg-tier-core" aria-hidden="true" />
           Core Feed
         </TabsTrigger>
         <TabsTrigger
           value="inner"
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-inner"
+          aria-label="Inner Feed - Close friends"
         >
-          <div className="w-2 h-2 rounded-full bg-tier-inner" />
+          <div className="w-2 h-2 rounded-full bg-tier-inner" aria-hidden="true" />
           Inner Feed
         </TabsTrigger>
         <TabsTrigger
           value="outer"
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-outer"
+          aria-label="Outer Plus Feed - Extended circle including naybors"
         >
-          <div className="w-2 h-2 rounded-full bg-tier-outer" />
+          <div className="w-2 h-2 rounded-full bg-tier-outer" aria-hidden="true" />
           Outer+
         </TabsTrigger>
         <TabsTrigger
           value="manage"
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary"
+          aria-label="Manage your friend circle"
         >
           Manage
         </TabsTrigger>

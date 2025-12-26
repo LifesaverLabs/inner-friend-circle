@@ -38,6 +38,7 @@ interface TierFeedProps {
   isLoggedIn: boolean;
   onGoToManage?: () => void;
   onRequestContactInfo?: (friendId: string) => void;
+  onUpdateLastContacted?: (friendId: string, date: Date) => void;
 }
 
 const TIER_BG_COLORS: Record<FeedTier, string> = {
@@ -66,6 +67,7 @@ export function TierFeed({
   isLoggedIn,
   onGoToManage,
   onRequestContactInfo,
+  onUpdateLastContacted,
 }: TierFeedProps) {
   const {
     nudges,
@@ -205,6 +207,24 @@ export function TierFeed({
     dismissNudge(nudgeId);
   }, [tierNudges, friends, defaultContactMethod, onRequestContactInfo, dismissNudge]);
 
+  // Handle marking a friend as connected (update lastContacted date)
+  const handleMarkConnected = useCallback((
+    nudgeId: string,
+    friendId: string,
+    date: Date
+  ) => {
+    const friend = friends.find(f => f.id === friendId);
+    if (!friend) return;
+
+    if (onUpdateLastContacted) {
+      onUpdateLastContacted(friendId, date);
+      toast.success(`Marked ${friend.name} as connected`);
+    }
+
+    // Dismiss the nudge
+    dismissNudge(nudgeId);
+  }, [friends, onUpdateLastContacted, dismissNudge]);
+
   const bgColor = TIER_BG_COLORS[tier];
   const borderColor = TIER_BORDER_COLORS[tier];
 
@@ -213,9 +233,12 @@ export function TierFeed({
       <div
         data-testid="feed-loading"
         className={`rounded-xl border ${borderColor} ${bgColor} p-8`}
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
       >
         <div className="flex items-center justify-center">
-          <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
+          <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" aria-hidden="true" />
           <span className="ml-2 text-muted-foreground">Loading feed...</span>
         </div>
       </div>
@@ -227,11 +250,13 @@ export function TierFeed({
       <div
         data-testid={`tier-feed-${tier}`}
         className={`rounded-xl border ${borderColor} ${bgColor} p-8`}
+        role="alert"
+        aria-live="assertive"
       >
         <div className="text-center">
           <p className="text-destructive mb-4">Failed to load feed</p>
-          <Button variant="outline" onClick={() => window.location.reload()}>
-            <RefreshCw className="w-4 h-4 mr-2" />
+          <Button variant="outline" onClick={() => window.location.reload()} aria-label="Retry loading the feed">
+            <RefreshCw className="w-4 h-4 mr-2" aria-hidden="true" />
             Retry
           </Button>
         </div>
@@ -245,6 +270,7 @@ export function TierFeed({
       nudges={tierNudges}
       onDismiss={dismissNudge}
       onAction={handleNudgeAction}
+      onMarkConnected={onUpdateLastContacted ? handleMarkConnected : undefined}
     />
   );
 

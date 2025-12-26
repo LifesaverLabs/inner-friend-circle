@@ -332,8 +332,8 @@ describe('NayborSOSQuickPanel Component', () => {
 
     render(<NayborSOSQuickPanel contacts={contacts} />);
 
-    expect(screen.getByTitle('Call Alice')).toBeInTheDocument();
-    expect(screen.getByTitle('Message Alice')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Call Alice' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Message Alice' })).toBeInTheDocument();
   });
 
   it('should show "No phone" for naybors without phone', () => {
@@ -358,7 +358,7 @@ describe('NayborSOSQuickPanel Component', () => {
 
     render(<NayborSOSQuickPanel contacts={contacts} onContact={onContact} />);
 
-    const callButton = screen.getByTitle('Call Alice');
+    const callButton = screen.getByRole('button', { name: 'Call Alice' });
     await userEvent.click(callButton);
 
     expect(onContact).toHaveBeenCalledWith(contacts[0]);
