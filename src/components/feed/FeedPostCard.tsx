@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { formatDistanceToNow } from 'date-fns';
 import { FeedPost, InteractionType } from '@/types/feed';
+import { ContactMethod } from '@/types/friend';
 import { PostContent } from './PostContent';
 import { PostActions } from './PostActions';
 import { Badge } from '@/components/ui/badge';
@@ -13,6 +14,13 @@ interface FeedPostCardProps {
   tier: FeedTier;
   showLikeCount: boolean;
   onInteract: (type: InteractionType, content?: string) => void;
+  // Contact info for the post author
+  authorPhone?: string;
+  authorPreferredContact?: ContactMethod;
+  // Feed-level default contact method
+  feedDefaultContactMethod?: ContactMethod;
+  // Callback to request adding contact info
+  onRequestContactInfo?: (friendId: string) => void;
 }
 
 const TIER_BORDER_COLORS: Record<string, string> = {
@@ -32,6 +40,10 @@ export const FeedPostCard = forwardRef<HTMLElement, FeedPostCardProps>(function 
   tier,
   showLikeCount,
   onInteract,
+  authorPhone,
+  authorPreferredContact,
+  feedDefaultContactMethod,
+  onRequestContactInfo,
 }, ref) {
   const borderColor = TIER_BORDER_COLORS[post.authorTier] || TIER_BORDER_COLORS[tier];
   const badgeColor = TIER_BADGE_COLORS[post.authorTier] || TIER_BADGE_COLORS[tier];
@@ -90,6 +102,10 @@ export const FeedPostCard = forwardRef<HTMLElement, FeedPostCardProps>(function 
         tier={tier}
         showLikeCount={showLikeCount}
         onInteract={onInteract}
+        authorPhone={authorPhone}
+        authorPreferredContact={authorPreferredContact}
+        feedDefaultContactMethod={feedDefaultContactMethod}
+        onRequestContactInfo={onRequestContactInfo}
       />
     </motion.article>
   );
