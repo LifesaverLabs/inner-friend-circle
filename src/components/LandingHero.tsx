@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, ArrowRight, Shield, Sparkles, Video, ExternalLink } from 'lucide-react';
+import { Heart, Users, ArrowRight, Shield, Sparkles, Video, ExternalLink, Download, Home, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { DunbarVisualization } from './DunbarVisualization';
@@ -98,6 +98,28 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
             icon={<Sparkles className="w-6 h-6" />}
             title={t('landing.features.mutualDiscovery.title')}
             description={t('landing.features.mutualDiscovery.description')}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="grid md:grid-cols-3 gap-8 mt-8"
+        >
+          <FeatureCard
+            icon={<Download className="w-6 h-6" />}
+            title={t('landing.features.dataLiberation.title')}
+            description={t('landing.features.dataLiberation.description')}
+          />
+          <FeatureCard
+            icon={<Home className="w-6 h-6" />}
+            title={t('landing.features.nayborNetwork.title')}
+            description={t('landing.features.nayborNetwork.description')}
+          />
+          <FeatureCard
+            icon={<Globe className="w-6 h-6" />}
+            title={t('landing.features.globalReach.title')}
+            description={t('landing.features.globalReach.description')}
           />
         </motion.div>
       </section>
