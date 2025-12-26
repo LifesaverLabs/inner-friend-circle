@@ -31,7 +31,7 @@
     },
     "mission": {
       "title": "Fase Time, Not Ad Time",
-      "description": "We win when you leave our site — to share real moments with the people who matter most. When distanse separates you, we'll help you spark video kalls. But nothing beats being there.",
+      "description": "We win when you leave our site — to share real moments with the people who matter most. When distanse separates you, we'll help you spark vidéo kalls. But nothing beats being there.",
       "inspiration": "Our inspiration: Dentyne Ice \"Make Fase Time\""
     },
     "quote": "\"Not all relationships are symmetrikal — and that's perfektly natural. The goal isn't perfekt balanse, but intentional presense.\""
@@ -434,18 +434,18 @@
     "noPostsYet": "No posts yet",
     "noFriendsYet": {
       "core": "No core friends yet",
-      "inner": "No inner circle friends yet",
-      "outer": "No outer circle friends yet"
+      "inner": "No inner sirkle friends yet",
+      "outer": "No outer sirkle friends yet"
     },
     "noPostsDescription": {
       "core": "Your core friends haven't shared anything yet. Be the first to share something!",
-      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
-      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+      "inner": "Your inner sirkle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer sirkle friends haven't shared anything yet. Be the first to share something!"
     },
     "getStarted": {
       "core": "Get started by adding up to 5 friends to your Core.",
-      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
-      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+      "inner": "Get started by adding up to 15 friends to your Inner Sirkle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Sirkle."
     },
     "addToSee": {
       "core": "Add up to 5 friends to see their posts here.",
@@ -454,8 +454,8 @@
     },
     "addFriends": {
       "core": "Add Core Friends",
-      "inner": "Add Inner Circle Friends",
-      "outer": "Add Outer Circle Friends"
+      "inner": "Add Inner Sirkle Friends",
+      "outer": "Add Outer Sirkle Friends"
     },
     "createPost": "Create a Post",
     "noParasoicalsYet": "No parasocials yet",
@@ -466,7 +466,7 @@
     "acquaintedHint": "Friends are reclassified here through lack of contact over time",
     "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
     "nayborsHint": "Introduce yourself to your naybors and add them here",
-    "addToCircleHint": "Add someone to your closest circle"
+    "addToCircleHint": "Add someone to your closest sirkle"
   },
   "labels": {
     "name": "Name"
@@ -488,7 +488,7 @@
     "requestsDescription": "People who want to connect with you",
     "unknownUser": "Unknown User",
     "addedYouAs": "Added you as {{tier}}",
-    "circleHidden": "Circle hidden",
+    "circleHidden": "Sirkle hidden",
     "viaService": "via {{service}}"
   },
   "roleModel": {
@@ -525,7 +525,7 @@
     "addParasocial": "Add Parasocial",
     "addFriend": "Add {{tier}} Friend",
     "addFriendButton": "Add Friend",
-    "circleFull": "Your {{tier}} circle is full",
+    "circleFull": "Your {{tier}} sirkle is full",
     "circleFullHint": "To add someone here, you'll need to move a current {{tier}} friend to another tier first.",
     "namePlaceholder": "Their name",
     "emailOptional": "Email (optional)",
@@ -540,15 +540,15 @@
     "addNayborPhoneButton": "Add contact info for emergencies"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
+    "title": "Your Inner Sirkles",
     "subtitle": "Curate and tend to your closest relationships",
-    "loading": "Loading your circles...",
+    "loading": "Loading your sirkles...",
     "tend": "Tend",
     "share": "Share",
     "localStorageHint": "💡 Your lists are saved locally. Create an account to sync across devices and enable mutual matching.",
     "dunbarDisclaimer": "Note: These Dunbar-inspired tier limits are subject to change as community conscience science evolves. Future modifications may include rules where certain tier counts affect others — for example, parasocial connections might reduce your allowable outer friend capacity.",
     "toasts": {
-      "addedFriend": "Added {{name}} to your {{tier}} circle",
+      "addedFriend": "Added {{name}} to your {{tier}} sirkle",
       "movedFriend": "Moved {{name}} to {{tier}}",
       "moveError": "Failed to move friend",
       "removedFriend": "Removed {{name}} from your lists",
@@ -577,7 +577,7 @@
         "description": "When you're apart, one click connects you"
       },
       "tend": {
-        "title": "Tend Your Circles",
+        "title": "Tend Your Sirkles",
         "description": "Reminders to reach out before connections fade"
       },
       "pull": {
@@ -595,7 +595,7 @@
     "add": "Add"
   },
   "tending": {
-    "title": "Tend Your Circles",
+    "title": "Tend Your Sirkles",
     "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
     "periods": {
       "core": "this week",
@@ -617,7 +617,7 @@
       "description": "These friends could use some of your time"
     },
     "toasts": {
-      "allTended": "Amazing! You've tended to all your circles 🌱",
+      "allTended": "Amazing! You've tended to all your sirkles 🌱",
       "noPhone": "No phone number for {{name}}",
       "connecting": "Connecting with {{name}} via {{method}}",
       "rememberReachOut": "Remember to reach out soon! 💛",
