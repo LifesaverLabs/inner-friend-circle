@@ -11,11 +11,15 @@ import { SunsetNudgePanel } from './SunsetNudgePanel';
 
 type FeedTier = 'core' | 'inner' | 'outer';
 
+// Outer+ includes these additional tiers beyond just 'outer'
+const OUTER_PLUS_TIERS: TierType[] = ['outer', 'naybor', 'parasocial', 'rolemodel'];
+
 interface TierFeedProps {
   tier: FeedTier;
   friends: Friend[];
   userId?: string;
   isLoggedIn: boolean;
+  onGoToManage?: () => void;
 }
 
 const TIER_BG_COLORS: Record<FeedTier, string> = {
@@ -35,6 +39,7 @@ export function TierFeed({
   friends,
   userId,
   isLoggedIn,
+  onGoToManage,
 }: TierFeedProps) {
   const {
     nudges,
@@ -51,13 +56,19 @@ export function TierFeed({
     return getTierFeed(tier);
   }, [getTierFeed, tier]);
 
-  // Filter nudges for this tier
+  // Filter nudges for this tier (Outer+ includes naybor, parasocial, rolemodel)
   const tierNudges = useMemo(() => {
+    if (tier === 'outer') {
+      return nudges.filter(n => OUTER_PLUS_TIERS.includes(n.friendTier as TierType));
+    }
     return nudges.filter(n => n.friendTier === tier);
   }, [nudges, tier]);
 
-  // Check if user has friends in this tier
+  // Check if user has friends in this tier (Outer+ includes naybor, parasocial, rolemodel)
   const hasFriendsInTier = useMemo(() => {
+    if (tier === 'outer') {
+      return friends.some(f => OUTER_PLUS_TIERS.includes(f.tier));
+    }
     return friends.some(f => f.tier === tier);
   }, [friends, tier]);
 
@@ -124,6 +135,7 @@ export function TierFeed({
             tier={tier}
             hasFriends={hasFriendsInTier}
             isLoggedIn={isLoggedIn}
+            onGoToManage={onGoToManage}
           />
         </div>
       ) : (

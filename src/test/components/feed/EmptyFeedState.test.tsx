@@ -229,7 +229,7 @@ describe('EmptyFeedState', () => {
       expect(container.textContent?.toLowerCase()).toMatch(/get started|add/i);
     });
 
-    it('should guide to Manage tab', () => {
+    it('should guide to Manage tab via Add Friends button', () => {
       const onGoToManage = vi.fn();
       render(
         <EmptyFeedState
@@ -239,9 +239,9 @@ describe('EmptyFeedState', () => {
         />
       );
 
-      // Click "Go to Manage" button
-      const manageButton = screen.getByRole('button', { name: /manage/i });
-      fireEvent.click(manageButton);
+      // Click "Add Friends" button - this navigates to Manage tab
+      const addButton = screen.getByRole('button', { name: /add.*friends/i });
+      fireEvent.click(addButton);
 
       expect(onGoToManage).toHaveBeenCalled();
     });

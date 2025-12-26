@@ -81,7 +81,7 @@ describe('FeedTabs', () => {
 
       expect(screen.getByRole('tab', { name: /core feed/i })).toBeInTheDocument();
       expect(screen.getByRole('tab', { name: /inner feed/i })).toBeInTheDocument();
-      expect(screen.getByRole('tab', { name: /outer feed/i })).toBeInTheDocument();
+      expect(screen.getByRole('tab', { name: /outer\+/i })).toBeInTheDocument();
       expect(screen.getByRole('tab', { name: /manage/i })).toBeInTheDocument();
     });
 
@@ -101,7 +101,7 @@ describe('FeedTabs', () => {
       // Each feed tab should have a colored dot indicator
       const coreTab = screen.getByRole('tab', { name: /core feed/i });
       const innerTab = screen.getByRole('tab', { name: /inner feed/i });
-      const outerTab = screen.getByRole('tab', { name: /outer feed/i });
+      const outerTab = screen.getByRole('tab', { name: /outer\+/i });
 
       // Check for tier color classes in tab content
       expect(coreTab.querySelector('.bg-tier-core')).toBeInTheDocument();
@@ -149,12 +149,12 @@ describe('FeedTabs', () => {
       });
     });
 
-    it('should switch to Outer Feed when clicked', async () => {
+    it('should switch to Outer+ when clicked', async () => {
       const user = userEvent.setup();
       const friends = [createMockFriend()];
       renderWithRouter(<FeedTabs {...defaultProps} friends={friends} />);
 
-      const outerTab = screen.getByRole('tab', { name: /outer feed/i });
+      const outerTab = screen.getByRole('tab', { name: /outer\+/i });
       await user.click(outerTab);
 
       await waitFor(() => {
@@ -212,7 +212,7 @@ describe('FeedTabs', () => {
         { initialEntries: ['/?tab=outer'] }
       );
 
-      const outerTab = screen.getByRole('tab', { name: /outer feed/i });
+      const outerTab = screen.getByRole('tab', { name: /outer\+/i });
       expect(outerTab).toHaveAttribute('data-state', 'active');
     });
 
@@ -261,12 +261,12 @@ describe('FeedTabs', () => {
       });
     });
 
-    it('should render TierFeed for Outer Feed tab when selected', async () => {
+    it('should render TierFeed for Outer+ tab when selected', async () => {
       const user = userEvent.setup();
       const friends = [createMockFriend()];
       renderWithRouter(<FeedTabs {...defaultProps} friends={friends} />);
 
-      await user.click(screen.getByRole('tab', { name: /outer feed/i }));
+      await user.click(screen.getByRole('tab', { name: /outer\+/i }));
 
       await waitFor(() => {
         expect(screen.getByTestId('tier-feed-outer')).toBeInTheDocument();
@@ -383,7 +383,7 @@ describe('FeedTabs - Edge Cases', () => {
     renderWithRouter(<FeedTabs {...defaultProps} friends={friends} />);
 
     const innerTab = screen.getByRole('tab', { name: /inner feed/i });
-    const outerTab = screen.getByRole('tab', { name: /outer feed/i });
+    const outerTab = screen.getByRole('tab', { name: /outer\+/i });
     const coreTab = screen.getByRole('tab', { name: /core feed/i });
 
     await user.click(innerTab);

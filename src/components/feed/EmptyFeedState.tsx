@@ -117,12 +117,6 @@ export function EmptyFeedState({
             Create a Post
           </Button>
         )}
-
-        {!hasFriends && (
-          <Button onClick={handleAddClick} variant="outline">
-            Go to Manage
-          </Button>
-        )}
       </div>
     </motion.div>
   );
