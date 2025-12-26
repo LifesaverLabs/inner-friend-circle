@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Heart, Mail, Lock, User, ArrowLeft, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';
 import { LanguageSelector } from '@/components/i18n/LanguageSelector';
@@ -20,7 +21,8 @@ export default function Auth() {
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string; password?: string; consent?: string }>({});
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   // Create validation schemas with translated messages
   const emailSchema = z.string().email(t('auth.validation.invalidEmail'));
@@ -33,18 +35,23 @@ export default function Auth() {
   }, [isAuthenticated, loading, navigate]);
 
   const validateForm = () => {
-    const newErrors: { email?: string; password?: string } = {};
-    
+    const newErrors: { email?: string; password?: string; consent?: string } = {};
+
     const emailResult = emailSchema.safeParse(email);
     if (!emailResult.success) {
       newErrors.email = emailResult.error.errors[0].message;
     }
-    
+
     const passwordResult = passwordSchema.safeParse(password);
     if (!passwordResult.success) {
       newErrors.password = passwordResult.error.errors[0].message;
     }
-    
+
+    // GDPR: Require explicit consent for sign-up
+    if (isSignUp && !agreedToTerms) {
+      newErrors.consent = t('auth.validation.mustAgreeToTerms');
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -204,6 +211,43 @@ export default function Auth() {
                 <p id="password-error" className="text-sm text-destructive" role="alert">{errors.password}</p>
               )}
             </div>
+
+            {/* GDPR Consent Checkbox - Only shown for sign-up */}
+            {isSignUp && (
+              <div className="space-y-2">
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="terms-consent"
+                    checked={agreedToTerms}
+                    onCheckedChange={(checked) => {
+                      setAgreedToTerms(!!checked);
+                      if (errors.consent) setErrors(prev => ({ ...prev, consent: undefined }));
+                    }}
+                    className="mt-1"
+                    aria-invalid={errors.consent ? 'true' : 'false'}
+                    aria-describedby={errors.consent ? 'consent-error' : 'consent-hint'}
+                  />
+                  <div className="text-sm">
+                    <Label htmlFor="terms-consent" className="cursor-pointer leading-relaxed">
+                      {t('auth.consent.agreeTo')}{' '}
+                      <Link to="/privacy" className="text-primary hover:underline" target="_blank">
+                        {t('auth.consent.privacyPolicy')}
+                      </Link>{' '}
+                      {t('auth.consent.and')}{' '}
+                      <Link to="/terms" className="text-primary hover:underline" target="_blank">
+                        {t('auth.consent.termsOfService')}
+                      </Link>
+                    </Label>
+                    <p id="consent-hint" className="text-xs text-muted-foreground mt-1">
+                      {t('auth.consent.dataProcessingNote')}
+                    </p>
+                  </div>
+                </div>
+                {errors.consent && (
+                  <p id="consent-error" className="text-sm text-destructive" role="alert">{errors.consent}</p>
+                )}
+              </div>
+            )}
 
             <Button
               type="submit"

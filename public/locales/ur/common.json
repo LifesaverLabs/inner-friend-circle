@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "براہ کرم ایک درست ای میل ایڈریس درج کریں",
-      "passwordTooShort": "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے"
+      "passwordTooShort": "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "پہلے سے اکاؤنٹ ہے؟ سائن ان کریں",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "پڑوسی",
     "nayborDescription": "ہنگامی حالات اور باہمی مدد کے لیے قابل اعتماد پڑوسی",
     "parasocial": "فالو",
-    "parasocialDescription": "مشہور شخصیات اور کنٹینٹ کریٹرز جنہیں آپ فالو کرتے ہیں"
+    "parasocialDescription": "مشہور شخصیات اور کنٹینٹ کریٹرز جنہیں آپ فالو کرتے ہیں",
+    "rolemodel": "رول ماڈل",
+    "rolemodelDescription": "وہ لوگ جن کی زندگی کی کہانیاں آپ کو اچھا، بہتر، بہترین بننے کی تحریک دیتی ہیں"
   },
   "visualization": {
     "coreLabel": "{{count}} کور",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "شیئر کی گئی چابیاں",
+    "keysSharedCount": "چابیاں ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "شیئر کی گئی چابیاں",
+    "steps": {
+      "address": {
+        "title": "آپ کا پتہ",
+        "description": "ہنگامی جواب دہندگان کے لیے اپنے گھر کے پتے کی تصدیق کریں"
+      },
+      "keyholders": {
+        "title": "چابی رکھنے والے",
+        "description": "منتخب کریں کہ کن پڑوسیوں کے پاس آپ کے گھر کی چابیاں یا کوڈ ہیں"
+      },
+      "permissions": {
+        "title": "داخلے کی اجازتیں",
+        "description": "منتخب کریں کہ ہنگامی حالات میں پڑوسی آپ کے گھر میں کب داخل ہو سکتے ہیں"
+      },
+      "review": {
+        "title": "جائزہ اور محفوظ کریں",
+        "description": "اپنی ہنگامی گھر تک رسائی کی ترتیبات کی تصدیق کریں"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "لازمی داخلے کی اجازتیں",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "ترجیحات محفوظ کریں",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "ہنگامی کارکنوں تک رسائی",
+      "enabled": "ہنگامی خدمات کے ساتھ شیئر کریں",
+      "disabled": "ہنگامی کارکنوں کے ساتھ شیئر نہ کریں",
+      "enabledDescription": "تصدیق شدہ ہنگامی ڈسپیچ (ایمبولینس، فائر، پولیس) آپ کے پتے پر ہنگامی حالات کا جواب دیتے وقت آپ کے ڈور کی ٹری کی درخواست کر سکتے ہیں۔",
+      "disabledDescription": "ہنگامی ڈسپیچ سروسز کو آپ کے پڑوسیوں کے کی رابطوں تک رسائی نہیں ہوگی۔ صرف آپ کے نامزد پڑوسی ہی یہ معلومات استعمال کر سکتے ہیں۔",
+      "warning": "اسے غیر فعال کرنے سے ہنگامی ردعمل میں تاخیر ہو سکتی ہے اگر جواب دہندگان کو پڑوسیوں کی چابیاں استعمال کرنے کی بجائے آپ کا دروازہ توڑنا پڑے۔",
+      "reviewEnabled": "ہنگامی ڈسپیچ آپ کے ڈور کی ٹری تک رسائی حاصل کر سکتی ہے",
+      "reviewDisabled": "ہنگامی ڈسپیچ رسائی غیر فعال ہے"
+    },
+    "doorBreaking": {
+      "title": "دروازہ توڑنے کی ترجیح",
+      "description": "اگر ہنگامی جواب دہندگان کی ہولڈر تک نہیں پہنچ سکتے، تو انہیں کیسے آگے بڑھنا چاہیے؟",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "جلدی توڑیں، پڑوسیوں کو چھوڑیں",
+          "description": "ہنگامی حالات میں، فوری طور پر دروازہ توڑ دیں۔ چابیوں کے لیے پڑوسیوں سے رابطہ کرنے میں وقت ضائع نہ کریں۔"
+        },
+        "break_fast_call_naybors": {
+          "name": "جلدی توڑیں، پڑوسیوں کو کال کریں",
+          "description": "چابیوں کے لیے پڑوسیوں سے رابطہ کریں، لیکن ضرورت ہو تو دروازہ توڑنے میں ہچکچاہٹ نہ کریں۔ رفتار ترجیح ہے۔"
+        },
+        "last_resort_only": {
+          "name": "صرف آخری حربہ",
+          "description": "براہ کرم دروازہ صرف محتاط غور و فکر کے بعد توڑیں، آخری حربے کے طور پر جب قانونی طور پر سختی سے ضروری ہو۔"
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "آپ کے پاس صرف {{count}} پڑوسی ہیں — ہم کم از کم 3 کی سفارش کرتے ہیں",
+    "underMinDescription": "ہنگامی حالات، باہمی مدد اور کمیونٹی لچک کی تعمیر کے لیے قریب میں قابل اعتماد پڑوسیوں کا ہونا ضروری ہے۔ اپنے پڑوسیوں سے اپنا تعارف کروائیں!",
+    "mrRogersQuote": "\"کیا تم میرے پڑوسی نہیں بنو گے؟\" — فریڈ راجرز"
   }
 }

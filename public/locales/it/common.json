@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Inserisci un indirizzo email valido",
-      "passwordTooShort": "La password deve essere di almeno 6 caratteri"
+      "passwordTooShort": "La password deve essere di almeno 6 caratteri",
+      "mustAgreeToTerms": "Devi accettare l'Informativa sulla Privacy e i Termini di Servizio per creare un account"
     },
     "switch": {
       "haveAccount": "Hai già un account? Accedi",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "Accetto l'",
+      "privacyPolicy": "Informativa sulla Privacy",
+      "and": "e i",
+      "termsOfService": "Termini di Servizio",
+      "dataProcessingNote": "Elaboriamo i tuoi dati per fornire il servizio. Puoi esportare o eliminare i tuoi dati in qualsiasi momento."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Vicini",
     "nayborDescription": "Vicini fidati per aiuto reciproco ed emergenze",
     "parasocial": "Seguiti",
-    "parasocialDescription": "Personaggi pubblici e creatori di contenuti che segui"
+    "parasocialDescription": "Personaggi pubblici e creatori di contenuti che segui",
+    "rolemodel": "Modello di riferimento",
+    "rolemodelDescription": "Persone le cui storie di vita ti ispirano ad essere buono, migliore, il migliore"
   },
   "visualization": {
     "coreLabel": "{{count}} Nucleo",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "Chiavi Condivise",
+    "keysSharedCount": "Chiavi ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "Chiavi Condivise",
+    "steps": {
+      "address": {
+        "title": "Il Tuo Indirizzo",
+        "description": "Conferma il tuo indirizzo di casa per i soccorritori"
+      },
+      "keyholders": {
+        "title": "Detentori di Chiavi",
+        "description": "Seleziona quali vicini hanno chiavi o codici della tua casa"
+      },
+      "permissions": {
+        "title": "Permessi di Ingresso",
+        "description": "Scegli quando i vicini possono entrare in casa tua nelle emergenze"
+      },
+      "review": {
+        "title": "Rivedi e Salva",
+        "description": "Conferma le tue impostazioni di accesso di emergenza"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "Permessi di Ingresso Obbligatori",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "Salva Preferenze",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Accesso Soccorritori",
+      "enabled": "Condividi con i Servizi di Emergenza",
+      "disabled": "Non Condividere con i Soccorritori",
+      "enabledDescription": "Le centrali operative verificate (ambulanza, vigili del fuoco, polizia) possono richiedere il tuo Albero delle Chiavi della Porta durante le emergenze al tuo indirizzo.",
+      "disabledDescription": "I servizi di emergenza NON avranno accesso ai tuoi contatti chiavi dei vicini. Solo i tuoi vicini designati possono usare queste informazioni.",
+      "warning": "Disabilitare questo potrebbe ritardare la risposta di emergenza se i soccorritori devono sfondare la porta invece di usare le chiavi dei vicini.",
+      "reviewEnabled": "La centrale operativa può accedere al tuo Albero delle Chiavi della Porta",
+      "reviewDisabled": "L'accesso della centrale operativa è disabilitato"
+    },
+    "doorBreaking": {
+      "title": "Preferenza Sfondamento Porta",
+      "description": "Se i soccorritori non riescono a raggiungere un detentore di chiavi, come devono procedere?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Sfonda Veloce, Salta i Vicini",
+          "description": "In emergenza, sfondare la porta immediatamente. Non perdere tempo a contattare i vicini per le chiavi."
+        },
+        "break_fast_call_naybors": {
+          "name": "Sfonda Veloce, Chiama i Vicini",
+          "description": "Contattare i vicini per le chiavi, ma non esitare a sfondare la porta se necessario. La velocità è prioritaria."
+        },
+        "last_resort_only": {
+          "name": "Solo Ultima Risorsa",
+          "description": "Per favore sfondare la porta solo dopo attenta considerazione, come ultima risorsa quando strettamente necessario legalmente."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Informativa sulla Privacy",
+    "termsOfService": "Termini di Servizio",
+    "lastUpdated": "Ultimo aggiornamento: {{date}}",
+    "backToHome": "Torna alla Home"
+  },
+  "settings": {
+    "deleteAccount": "Elimina Account",
+    "deleteAccountDescription": "Elimina permanentemente il tuo account e tutti i dati associati",
+    "deleteAccountWarning": "Questa azione non può essere annullata. Tutti i tuoi amici, post, impostazioni e altri dati saranno eliminati permanentemente.",
+    "deleteAccountConfirmation": "Digita DELETE per confermare",
+    "deleteAccountButton": "Elimina il Mio Account",
+    "deleteAccountSuccess": "Il tuo account è stato eliminato",
+    "deleteAccountError": "Eliminazione account fallita. Riprova."
+  },
+  "naybor": {
+    "underMinWarning": "Hai solo {{count}} vicino/i — consigliamo almeno 3",
+    "underMinDescription": "Avere vicini fidati nelle vicinanze è essenziale per le emergenze, l'aiuto reciproco e la costruzione della resilienza della comunità. Presentati ai tuoi vicini!",
+    "mrRogersQuote": "\"Non vuoi essere il mio vicino?\" — Fred Rogers"
   }
 }

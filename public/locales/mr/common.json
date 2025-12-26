@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "कृपया वैध ईमेल पत्ता प्रविष्ट करा",
-      "passwordTooShort": "पासवर्ड किमान 6 अक्षरांचा असणे आवश्यक आहे"
+      "passwordTooShort": "पासवर्ड किमान 6 अक्षरांचा असणे आवश्यक आहे",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "आधीपासून खाते आहे? साइन इन करा",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "शेजारी",
     "nayborDescription": "आणीबाणी आणि परस्पर मदतीसाठी विश्वासू शेजारी",
     "parasocial": "फॉलो",
-    "parasocialDescription": "तुम्ही फॉलो करता त्या प्रसिद्ध व्यक्ती आणि कंटेंट क्रिएटर"
+    "parasocialDescription": "तुम्ही फॉलो करता त्या प्रसिद्ध व्यक्ती आणि कंटेंट क्रिएटर",
+    "rolemodel": "आदर्श",
+    "rolemodelDescription": "ज्यांच्या जीवनकथा तुम्हाला चांगले, उत्तम, सर्वोत्तम बनण्यासाठी प्रेरणा देतात"
   },
   "visualization": {
     "coreLabel": "{{count}} कोर",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "शेअर केलेल्या चाव्या",
+    "keysSharedCount": "चाव्या ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "शेअर केलेल्या चाव्या",
+    "steps": {
+      "address": {
+        "title": "तुमचा पत्ता",
+        "description": "आपत्कालीन प्रतिसादकांसाठी तुमच्या घराचा पत्ता पुष्टी करा"
+      },
+      "keyholders": {
+        "title": "चावी धारक",
+        "description": "कोणत्या शेजाऱ्यांकडे तुमच्या घराच्या चाव्या किंवा कोड आहेत ते निवडा"
+      },
+      "permissions": {
+        "title": "प्रवेश परवानग्या",
+        "description": "आपत्कालीन परिस्थितीत शेजारी तुमच्या घरात कधी प्रवेश करू शकतात ते निवडा"
+      },
+      "review": {
+        "title": "पुनरावलोकन आणि जतन करा",
+        "description": "तुमच्या आपत्कालीन घर प्रवेश सेटिंग्जची पुष्टी करा"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "अनिवार्य प्रवेश परवानग्या",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "प्राधान्ये जतन करा",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "आपत्कालीन कर्मचारी प्रवेश",
+      "enabled": "आपत्कालीन सेवांसोबत शेअर करा",
+      "disabled": "आपत्कालीन कर्मचाऱ्यांसोबत शेअर करू नका",
+      "enabledDescription": "प्रमाणित आपत्कालीन डिस्पॅच (अॅम्बुलन्स, अग्निशमन, पोलीस) तुमच्या पत्त्यावरील आपत्कालीन परिस्थितीला प्रतिसाद देताना तुमच्या डोर की ट्रीची विनंती करू शकतात.",
+      "disabledDescription": "आपत्कालीन डिस्पॅच सेवांना तुमच्या शेजाऱ्यांच्या की संपर्कांमध्ये प्रवेश मिळणार नाही. फक्त तुमचे नियुक्त शेजारी ही माहिती वापरू शकतात.",
+      "warning": "हे अक्षम केल्यास आपत्कालीन प्रतिसादात विलंब होऊ शकतो जर प्रतिसादकर्त्यांना शेजाऱ्यांकडील चाव्या वापरण्याऐवजी तुमचा दरवाजा तोडावा लागला.",
+      "reviewEnabled": "आपत्कालीन डिस्पॅच तुमच्या डोर की ट्रीमध्ये प्रवेश करू शकते",
+      "reviewDisabled": "आपत्कालीन डिस्पॅच प्रवेश अक्षम आहे"
+    },
+    "doorBreaking": {
+      "title": "दरवाजा तोडण्याची प्राधान्ये",
+      "description": "जर आपत्कालीन प्रतिसादकर्ते कीहोल्डरपर्यंत पोहोचू शकत नाहीत, तर त्यांनी कसे पुढे जावे?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "लवकर तोडा, शेजाऱ्यांना वगळा",
+          "description": "आपत्कालीन परिस्थितीत, लगेच दरवाजा तोडा. चाव्यांसाठी शेजाऱ्यांशी संपर्क साधण्यात वेळ वाया घालवू नका."
+        },
+        "break_fast_call_naybors": {
+          "name": "लवकर तोडा, शेजाऱ्यांना कॉल करा",
+          "description": "चाव्यांसाठी शेजाऱ्यांशी संपर्क साधा, पण गरज असल्यास दरवाजा तोडण्यास संकोच करू नका. वेग हे प्राधान्य आहे."
+        },
+        "last_resort_only": {
+          "name": "फक्त शेवटचा उपाय",
+          "description": "कृपया काळजीपूर्वक विचार केल्यानंतरच दरवाजा तोडा, केवळ शेवटचा उपाय म्हणून जेव्हा कायदेशीररित्या कठोरपणे आवश्यक असेल."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "तुमच्याकडे फक्त {{count}} शेजारी आहे — आम्ही किमान 3 ची शिफारस करतो",
+    "underMinDescription": "आपत्कालीन परिस्थितीत, परस्पर मदत आणि समुदाय लवचिकता निर्माण करण्यासाठी विश्वासार्ह शेजारी जवळ असणे आवश्यक आहे. तुमच्या शेजाऱ्यांशी स्वतःचा परिचय करून द्या!",
+    "mrRogersQuote": "\"तुम्ही माझे शेजारी व्हाल का?\" — फ्रेड रॉजर्स"
   }
 }

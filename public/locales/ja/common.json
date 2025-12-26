@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "有効なメールアドレスを入力してください",
-      "passwordTooShort": "パスワードは6文字以上必要です"
+      "passwordTooShort": "パスワードは6文字以上必要です",
+      "mustAgreeToTerms": "アカウントを作成するには、プライバシーポリシーと利用規約に同意する必要があります"
     },
     "switch": {
       "haveAccount": "アカウントをお持ちですか？サインイン",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "に同意します",
+      "privacyPolicy": "プライバシーポリシー",
+      "and": "と",
+      "termsOfService": "利用規約",
+      "dataProcessingNote": "サービスを提供するためにお客様のデータを処理します。いつでもデータのエクスポートまたは削除ができます。"
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "ご近所",
     "nayborDescription": "相互扶助や緊急時のための信頼できる近隣住民",
     "parasocial": "フォロー",
-    "parasocialDescription": "フォローしている著名人やコンテンツクリエイター"
+    "parasocialDescription": "フォローしている著名人やコンテンツクリエイター",
+    "rolemodel": "ロールモデル",
+    "rolemodelDescription": "その人生の物語があなたを良く、より良く、最高になるよう鼓舞する人々"
   },
   "visualization": {
     "coreLabel": "{{count}} コア",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "共有キー",
+    "keysSharedCount": "キー ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "共有キー",
+    "steps": {
+      "address": {
+        "title": "あなたの住所",
+        "description": "緊急対応者のために自宅住所を確認してください"
+      },
+      "keyholders": {
+        "title": "キー保有者",
+        "description": "どの近所の人があなたの家の鍵やコードを持っているか選択してください"
+      },
+      "permissions": {
+        "title": "入室許可",
+        "description": "緊急時に近所の人があなたの家に入れる時を選択してください"
+      },
+      "review": {
+        "title": "確認して保存",
+        "description": "緊急時の自宅アクセス設定を確認してください"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "必須入室許可",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "設定を保存",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "緊急作業員アクセス",
+      "enabled": "緊急サービスと共有",
+      "disabled": "緊急作業員と共有しない",
+      "enabledDescription": "認証された緊急派遣（救急車、消防、警察）は、お住まいの住所での緊急事態に対応する際にドアキーツリーをリクエストできます。",
+      "disabledDescription": "緊急派遣サービスは隣人のキー連絡先にアクセスできません。指定された隣人のみがこの情報を使用できます。",
+      "warning": "これを無効にすると、対応者が隣人が持っている鍵を使用する代わりにドアを破る必要がある場合、緊急対応が遅れる可能性があります。",
+      "reviewEnabled": "緊急派遣はドアキーツリーにアクセスできます",
+      "reviewDisabled": "緊急派遣アクセスが無効になっています"
+    },
+    "doorBreaking": {
+      "title": "ドア破壊の設定",
+      "description": "緊急対応者がキーホルダーに連絡できない場合、どのように進めるべきですか？",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "速く破る、隣人をスキップ",
+          "description": "緊急時には、すぐにドアを破ります。鍵のために隣人に連絡する時間を無駄にしないでください。"
+        },
+        "break_fast_call_naybors": {
+          "name": "速く破る、隣人に電話",
+          "description": "鍵のために隣人に連絡しますが、必要に応じてドアを破ることをためらわないでください。速度が優先です。"
+        },
+        "last_resort_only": {
+          "name": "最後の手段のみ",
+          "description": "法的に厳密に必要な場合にのみ、最後の手段として慎重に検討した後にドアを破ってください。"
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "lastUpdated": "最終更新日: {{date}}",
+    "backToHome": "ホームに戻る"
+  },
+  "settings": {
+    "deleteAccount": "アカウントを削除",
+    "deleteAccountDescription": "アカウントとすべての関連データを完全に削除します",
+    "deleteAccountWarning": "この操作は元に戻せません。すべての友達、投稿、設定、その他のデータが完全に削除されます。",
+    "deleteAccountConfirmation": "確認するにはDELETEと入力してください",
+    "deleteAccountButton": "アカウントを削除",
+    "deleteAccountSuccess": "アカウントが削除されました",
+    "deleteAccountError": "アカウントの削除に失敗しました。もう一度お試しください。"
+  },
+  "naybor": {
+    "underMinWarning": "{{count}}人のご近所さんしかいません — 最低3人をお勧めします",
+    "underMinDescription": "信頼できるご近所さんが近くにいることは、緊急時、相互扶助、コミュニティのレジリエンス構築に不可欠です。ご近所さんに自己紹介しましょう！",
+    "mrRogersQuote": "「私のご近所さんになってくれませんか？」— フレッド・ロジャース"
   }
 }

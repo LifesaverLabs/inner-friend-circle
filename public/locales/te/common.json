@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి",
-      "passwordTooShort": "పాస్‌వర్డ్ కనీసం 6 అక్షరాలు ఉండాలి"
+      "passwordTooShort": "పాస్‌వర్డ్ కనీసం 6 అక్షరాలు ఉండాలి",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "ఇప్పటికే ఖాతా ఉందా? సైన్ ఇన్ చేయండి",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "పొరుగువారు",
     "nayborDescription": "పరస్పర సహాయం మరియు అత్యవసర పరిస్థితులకు నమ్మకమైన పొరుగువారు",
     "parasocial": "ఫాలో",
-    "parasocialDescription": "మీరు అనుసరించే ప్రసిద్ధ వ్యక్తులు మరియు కంటెంట్ క్రియేటర్లు"
+    "parasocialDescription": "మీరు అనుసరించే ప్రసిద్ధ వ్యక్తులు మరియు కంటెంట్ క్రియేటర్లు",
+    "rolemodel": "రోల్ మోడల్",
+    "rolemodelDescription": "ఎవరి జీవిత కథలు మిమ్మల్ని మంచివారిగా, మెరుగుగా, అత్యుత్తమంగా ఉండేందుకు ప్రేరేపిస్తాయి"
   },
   "visualization": {
     "coreLabel": "{{count}} కోర్",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "షేర్ చేసిన కీలు",
+    "keysSharedCount": "కీలు ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "షేర్ చేసిన కీలు",
+    "steps": {
+      "address": {
+        "title": "మీ చిరునామా",
+        "description": "అత్యవసర ప్రతిస్పందకుల కోసం మీ ఇంటి చిరునామాను నిర్ధారించండి"
+      },
+      "keyholders": {
+        "title": "కీ హోల్డర్లు",
+        "description": "ఏ పొరుగువారికి మీ ఇంటి కీలు లేదా కోడ్‌లు ఉన్నాయో ఎంచుకోండి"
+      },
+      "permissions": {
+        "title": "ప్రవేశ అనుమతులు",
+        "description": "అత్యవసర సమయంలో పొరుగువారు మీ ఇంటిలోకి ఎప్పుడు ప్రవేశించవచ్చో ఎంచుకోండి"
+      },
+      "review": {
+        "title": "సమీక్షించి సేవ్ చేయండి",
+        "description": "మీ అత్యవసర హోమ్ యాక్సెస్ సెట్టింగ్‌లను నిర్ధారించండి"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "తప్పనిసరి ప్రవేశ అనుమతులు",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "ప్రాధాన్యతలను సేవ్ చేయండి",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "అత్యవసర కార్మికుల యాక్సెస్",
+      "enabled": "అత్యవసర సేవలతో షేర్ చేయండి",
+      "disabled": "అత్యవసర కార్మికులతో షేర్ చేయవద్దు",
+      "enabledDescription": "ధృవీకరించబడిన అత్యవసర డిస్పాచ్ (అంబులెన్స్, ఫైర్, పోలీసు) మీ చిరునామాలో అత్యవసర పరిస్థితులకు స్పందిస్తున్నప్పుడు మీ డోర్ కీ ట్రీని అభ్యర్థించవచ్చు.",
+      "disabledDescription": "అత్యవసర డిస్పాచ్ సేవలకు మీ పొరుగువారి కీ సంప్రదింపులకు యాక్సెస్ ఉండదు. మీ నిర్ణీత పొరుగువారు మాత్రమే ఈ సమాచారాన్ని ఉపయోగించగలరు.",
+      "warning": "దీన్ని నిష్క్రియం చేయడం వల్ల ప్రతిస్పందకులు పొరుగువారి కీలను ఉపయోగించకుండా మీ తలుపును పగలగొట్టవలసి వస్తే అత్యవసర ప్రతిస్పందన ఆలస్యం కావచ్చు.",
+      "reviewEnabled": "అత్యవసర డిస్పాచ్ మీ డోర్ కీ ట్రీని యాక్సెస్ చేయగలదు",
+      "reviewDisabled": "అత్యవసర డిస్పాచ్ యాక్సెస్ నిష్క్రియం చేయబడింది"
+    },
+    "doorBreaking": {
+      "title": "తలుపు పగలగొట్టడం ప్రాధాన్యత",
+      "description": "అత్యవసర ప్రతిస్పందకులు కీహోల్డర్‌ను చేరుకోలేకపోతే, వారు ఎలా కొనసాగించాలి?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "వేగంగా పగలగొట్టండి, పొరుగువారిని దాటండి",
+          "description": "అత్యవసర పరిస్థితుల్లో, వెంటనే తలుపును పగలగొట్టండి. కీల కోసం పొరుగువారిని సంప్రదించడంలో సమయం వృథా చేయకండి."
+        },
+        "break_fast_call_naybors": {
+          "name": "వేగంగా పగలగొట్టండి, పొరుగువారికి కాల్ చేయండి",
+          "description": "కీల కోసం పొరుగువారిని సంప్రదించండి, కానీ అవసరమైతే తలుపును పగలగొట్టడానికి వెనుకాడకండి. వేగం ప్రాధాన్యత."
+        },
+        "last_resort_only": {
+          "name": "చివరి ఆశ్రయం మాత్రమే",
+          "description": "దయచేసి జాగ్రత్తగా పరిగణించిన తర్వాతనే తలుపును పగలగొట్టండి, చట్టబద్ధంగా కఠినంగా అవసరమైనప్పుడు చివరి ఆశ్రయంగా."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "మీకు {{count}} పొరుగువారు మాత్రమే ఉన్నారు — మేము కనీసం 3 మందిని సిఫార్సు చేస్తాము",
+    "underMinDescription": "అత్యవసర పరిస్థితులు, పరస్పర సహాయం మరియు కమ్యూనిటీ స్థితిస్థాపకతను నిర్మించడానికి సమీపంలో నమ్మకమైన పొరుగువారు ఉండటం అవసరం. మీ పొరుగువారికి మిమ్మల్ని పరిచయం చేసుకోండి!",
+    "mrRogersQuote": "\"నీవు నా పొరుగువాడివి కాదా?\" — ఫ్రెడ్ రోజర్స్"
   }
 }

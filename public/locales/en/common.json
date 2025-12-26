@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Please enter a valid email address",
-      "passwordTooShort": "Password must be at least 6 characters"
+      "passwordTooShort": "Password must be at least 6 characters",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "Already have an account? Sign in",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Naybor",
     "nayborDescription": "Trusted neighbors for mutual aid and emergencies",
     "parasocial": "Following",
-    "parasocialDescription": "Public figures and content creators you follow"
+    "parasocialDescription": "Public figures and content creators you follow",
+    "rolemodel": "Role Model",
+    "rolemodelDescription": "People whose life stories inspire you to be good, better, best"
   },
   "visualization": {
     "coreLabel": "{{count}} Core",
@@ -589,7 +599,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "Keys Shared",
+    "keysSharedCount": "Keys ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -697,5 +709,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "Keys Shared",
+    "steps": {
+      "address": {
+        "title": "Your Address",
+        "description": "Confirm your home address for emergency responders"
+      },
+      "keyholders": {
+        "title": "Key Holders",
+        "description": "Select which naybors have keys or codes to your home"
+      },
+      "permissions": {
+        "title": "Entry Permissions",
+        "description": "Choose when naybors can enter your home in emergencies"
+      },
+      "review": {
+        "title": "Review & Save",
+        "description": "Confirm your emergency home access settings"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "Mandatory Entry Permissions",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "Save Preferences",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Emergency Worker Access",
+      "enabled": "Share with Emergency Services",
+      "disabled": "Do Not Share with Emergency Workers",
+      "enabledDescription": "Verified emergency dispatch (ambulance, fire, police) can request your Door Key Tree when responding to emergencies at your address.",
+      "disabledDescription": "Emergency dispatch services will NOT have access to your naybor key contacts. Only your designated naybors can use this information.",
+      "warning": "Disabling this may delay emergency response if responders need to break down your door instead of using naybor-held keys.",
+      "reviewEnabled": "Emergency dispatch can access your Door Key Tree",
+      "reviewDisabled": "Emergency dispatch access is disabled"
+    },
+    "doorBreaking": {
+      "title": "Door Breaking Preference",
+      "description": "If emergency responders cannot reach a keyholder, how should they proceed?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Break Fast, Skip Naybors",
+          "description": "In emergencies, break down the door immediately. Do not waste time contacting naybors for keys."
+        },
+        "break_fast_call_naybors": {
+          "name": "Break Fast, Call Naybors",
+          "description": "Contact naybors for keys, but do not hesitate to break down the door if needed. Speed is priority."
+        },
+        "last_resort_only": {
+          "name": "Last Resort Only",
+          "description": "Please only break door after careful consideration, as a last resort when strictly legally necessary."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "You only have {{count}} naybor(s) — we recommend at least 3",
+    "underMinDescription": "Having trusted naybors nearby is essential for emergencies, mutual aid, and building community resilience. Introduce yourself to your neighbors!",
+    "mrRogersQuote": "\"Won't you be my neighbor?\" — Fred Rogers"
   }
 }

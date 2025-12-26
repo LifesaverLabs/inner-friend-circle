@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "유효한 이메일 주소를 입력하세요",
-      "passwordTooShort": "비밀번호는 최소 6자 이상이어야 합니다"
+      "passwordTooShort": "비밀번호는 최소 6자 이상이어야 합니다",
+      "mustAgreeToTerms": "계정을 만들려면 개인정보 처리방침과 서비스 약관에 동의해야 합니다"
     },
     "switch": {
       "haveAccount": "이미 계정이 있나요? 로그인",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "동의합니다",
+      "privacyPolicy": "개인정보 처리방침",
+      "and": "및",
+      "termsOfService": "서비스 약관",
+      "dataProcessingNote": "서비스를 제공하기 위해 귀하의 데이터를 처리합니다. 언제든지 데이터를 내보내거나 삭제할 수 있습니다."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "이웃",
     "nayborDescription": "상호 도움과 긴급 상황을 위한 믿을 수 있는 이웃",
     "parasocial": "팔로잉",
-    "parasocialDescription": "팔로우하는 공인과 콘텐츠 크리에이터"
+    "parasocialDescription": "팔로우하는 공인과 콘텐츠 크리에이터",
+    "rolemodel": "롤모델",
+    "rolemodelDescription": "삶의 이야기가 당신을 좋게, 더 좋게, 최고가 되도록 영감을 주는 사람들"
   },
   "visualization": {
     "coreLabel": "{{count}} 코어",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "공유된 열쇠",
+    "keysSharedCount": "열쇠 ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "공유된 열쇠",
+    "steps": {
+      "address": {
+        "title": "귀하의 주소",
+        "description": "응급 대응자를 위해 집 주소를 확인하세요"
+      },
+      "keyholders": {
+        "title": "열쇠 보유자",
+        "description": "어떤 이웃이 귀하의 집 열쇠나 코드를 가지고 있는지 선택하세요"
+      },
+      "permissions": {
+        "title": "입장 권한",
+        "description": "응급 상황에서 이웃이 귀하의 집에 들어올 수 있는 시기를 선택하세요"
+      },
+      "review": {
+        "title": "검토 및 저장",
+        "description": "응급 가정 접근 설정을 확인하세요"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "필수 입장 권한",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "설정 저장",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "응급 요원 접근",
+      "enabled": "응급 서비스와 공유",
+      "disabled": "응급 요원과 공유하지 않음",
+      "enabledDescription": "인증된 응급 디스패치(구급차, 소방서, 경찰)는 귀하의 주소에서 응급 상황에 대응할 때 도어 키 트리를 요청할 수 있습니다.",
+      "disabledDescription": "응급 디스패치 서비스는 이웃 키 연락처에 접근할 수 없습니다. 지정된 이웃만 이 정보를 사용할 수 있습니다.",
+      "warning": "이를 비활성화하면 대응자가 이웃이 가진 키를 사용하는 대신 문을 부숴야 할 경우 응급 대응이 지연될 수 있습니다.",
+      "reviewEnabled": "응급 디스패치가 도어 키 트리에 접근할 수 있습니다",
+      "reviewDisabled": "응급 디스패치 접근이 비활성화됨"
+    },
+    "doorBreaking": {
+      "title": "문 부수기 선호도",
+      "description": "응급 대응자가 키 소지자에게 연락할 수 없는 경우 어떻게 진행해야 합니까?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "빨리 부수기, 이웃 건너뛰기",
+          "description": "응급 상황에서 즉시 문을 부숩니다. 키를 위해 이웃에게 연락하느라 시간을 낭비하지 마세요."
+        },
+        "break_fast_call_naybors": {
+          "name": "빨리 부수기, 이웃에게 전화",
+          "description": "키를 위해 이웃에게 연락하되, 필요하면 문을 부수는 것을 주저하지 마세요. 속도가 우선입니다."
+        },
+        "last_resort_only": {
+          "name": "최후의 수단만",
+          "description": "법적으로 엄격하게 필요한 경우에만 최후의 수단으로 신중하게 고려한 후 문을 부숴주세요."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "개인정보 처리방침",
+    "termsOfService": "서비스 약관",
+    "lastUpdated": "최종 업데이트: {{date}}",
+    "backToHome": "홈으로 돌아가기"
+  },
+  "settings": {
+    "deleteAccount": "계정 삭제",
+    "deleteAccountDescription": "계정과 모든 관련 데이터를 영구적으로 삭제",
+    "deleteAccountWarning": "이 작업은 취소할 수 없습니다. 모든 친구, 게시물, 설정 및 기타 데이터가 영구적으로 삭제됩니다.",
+    "deleteAccountConfirmation": "확인하려면 DELETE를 입력하세요",
+    "deleteAccountButton": "내 계정 삭제",
+    "deleteAccountSuccess": "계정이 삭제되었습니다",
+    "deleteAccountError": "계정 삭제 실패. 다시 시도해 주세요."
+  },
+  "naybor": {
+    "underMinWarning": "{{count}}명의 이웃밖에 없습니다 — 최소 3명을 권장합니다",
+    "underMinDescription": "가까이에 믿을 수 있는 이웃이 있는 것은 비상시, 상호 부조, 그리고 지역 사회 회복력 구축에 필수적입니다. 이웃에게 자신을 소개하세요!",
+    "mrRogersQuote": "\"제 이웃이 되어 주시겠어요?\" — 프레드 로저스"
   }
 }

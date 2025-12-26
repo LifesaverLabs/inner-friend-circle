@@ -69,7 +69,8 @@
     },
     "validation": {
       "invalidEmail": "Please enter a valid email address",
-      "passwordTooShort": "Password must be at least 6 kareakters"
+      "passwordTooShort": "Password must be at least 6 kareakters",
+      "mustAgreeToTerms": "You must agree to the Privasee Polisee and Terms of Servis to kreayt an akkount"
     },
     "switch": {
       "haveAccount": "Already have an akount? Sign in",
@@ -85,6 +86,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privasee Polisee",
+      "and": "and",
+      "termsOfService": "Terms of Servis",
+      "dataProcessingNote": "We proses yor data to provyde the servis. You kan eksport or deleyt yor data at eny tyme."
     }
   },
   "notFound": {
@@ -132,7 +140,9 @@
     "naybor": "Naybor",
     "nayborDescription": "Trusted naybors for mutual aid and emergensies",
     "parasocial": "Following",
-    "parasocialDescription": "Publik figures and kontent kreators you follow"
+    "parasocialDescription": "Publik figures and kontent kreators you follow",
+    "rolemodel": "Role Model",
+    "rolemodelDescription": "Peeple whoze lyfe storeez inspyre you to be good, better, best"
   },
   "visualization": {
     "coreLabel": "{{count}} Kore",
@@ -592,7 +602,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "Keys Shared",
+    "keysSharedCount": "Keys ({{count}})"
   },
   "tending": {
     "title": "Tend Your Sirkles",
@@ -700,5 +712,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "Keys Shared",
+    "steps": {
+      "address": {
+        "title": "Your Address",
+        "description": "Konfirm your home address for emergensy responders"
+      },
+      "keyholders": {
+        "title": "Key Holders",
+        "description": "Selekt which naybors have keys or kodes to your home"
+      },
+      "permissions": {
+        "title": "Entry Permissions",
+        "description": "Choose when naybors kan enter your home in emergensies"
+      },
+      "review": {
+        "title": "Review & Save",
+        "description": "Konfirm your emergensy home akses settings"
+      }
+    },
+    "addressHelp": "This address will be shared with emergensy responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Speshal Entry Instrukshons",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twis...",
+    "instructionsHint": "Inklude any details responders should know about aksessing your home",
+    "keyType": "Type of Akses",
+    "keyTypes": {
+      "physical": "Physikal Key",
+      "digital": "Digital Kode",
+      "both": "Both"
+    },
+    "digitalCodeType": "Kode Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lok App",
+      "garage": "Garage Kode",
+      "other": "Other"
+    },
+    "notes": "Notes (opshunal)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Konfirm",
+    "currentKeyHolders": "Kurrent Key Holders",
+    "selectNaybors": "Add a naybor who has akses:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "Mandatory Entry Permissions",
+    "mandatoryScenariosHelp": "These life-threatening or safety-kritikal senarios always allow entry. They kannot be disabled bekause they protekt life, limb, and innosent humans from trauma.",
+    "optionalScenarios": "Opshunal Entry Permissions",
+    "optionalScenariosHelp": "You kan choose whether naybors kan enter for these senarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Kardiak Arrest",
+        "description": "Heart attak or sudden kardiak arrest — every sekond kounts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergensy — airway bloked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylaktik Shok",
+        "description": "Severe allergik reakshon from bee sting, food, medikashon"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detekted — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detekted — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Karbon Monoxide",
+        "description": "CO detektor alarm — silent killer, okupants may be unkonshus"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Korporal Punishment",
+        "description": "Child alerting naybors to korporal punishment. Research shows kommunity intervenshon prevents future violense."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestik shouting eskalating unakseptably. De-eskalashon intervenshon needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Konsent Konflikt",
+        "description": "Detekted bedroom konsent konflikt emergensy — immediate intervenshon required"
+      },
+      "medical_other": {
+        "name": "Other Medikal Emergensy",
+        "description": "Other medikal emergensy requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Chek",
+        "description": "Chek on suspekted intruder when you kannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Chek",
+        "description": "General welfare chek when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevenshon (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "opshunal enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selekted emergensy senarios. Make sure you trust these people with akses to your home.",
+    "savePreferences": "Save Preferenses",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferenses saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Emerjensee Worker Akses",
+      "enabled": "Share with Emerjensee Servisés",
+      "disabled": "Do Not Share with Emerjensee Workers",
+      "enabledDescription": "Verifyed emerjensee dispach (ambulans, fyre, polees) kan request yor Door Key Tree when responding to emerjenseez at yor adres.",
+      "disabledDescription": "Emerjensee dispach servisés will NOT have akses to yor naybor key kontakts. Only yor deziggnaytéd naybors kan use thiz informashon.",
+      "warning": "Dizaybling thiz may delay emerjensee respons if responders need to break down yor door insted of using naybor-held keys.",
+      "reviewEnabled": "Emerjensee dispach kan akses yor Door Key Tree",
+      "reviewDisabled": "Emerjensee dispach akses iz dizaybléd"
+    },
+    "doorBreaking": {
+      "title": "Door Brayking Preferens",
+      "description": "If emerjensee responders kannot reach a keyholder, how shood they proseed?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Brayk Fast, Skip Naybors",
+          "description": "In emerjenseez, brayk down the door imeedyatlee. Do not wayst tyme kontakting naybors for keys."
+        },
+        "break_fast_call_naybors": {
+          "name": "Brayk Fast, Kall Naybors",
+          "description": "Kontakt naybors for keys, but do not hezitaté to brayk down the door if needed. Speed iz priorytee."
+        },
+        "last_resort_only": {
+          "name": "Last Resort Onlee",
+          "description": "Pleez only brayk door after kayrful konsiderashon, az a last resort when striktlee legallee nesesaree."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privasee Polisee",
+    "termsOfService": "Terms of Servis",
+    "lastUpdated": "Last updayted: {{date}}",
+    "backToHome": "Bak to Home"
+  },
+  "settings": {
+    "deleteAccount": "Deleyt Akkount",
+    "deleteAccountDescription": "Permanentlee deleyt yor akkount and all assosheeayted data",
+    "deleteAccountWarning": "Thiz akshon kannot be undun. All yor frends, posts, settings, and other data will be permanentlee deleyted.",
+    "deleteAccountConfirmation": "Type DELETE to konfirm",
+    "deleteAccountButton": "Deleyt My Akkount",
+    "deleteAccountSuccess": "Yor akkount haz been deleyted",
+    "deleteAccountError": "Fayled to deleyt akkount. Pleez try agen."
+  },
+  "naybor": {
+    "underMinWarning": "You only haz {{count}} naybor(z) — we rekumend at leest 3",
+    "underMinDescription": "Havin trusted naybors nerby iz essential 4 emergensiez, mutual aid, and bildin komunity reziliens. Introduce yoself 2 ur naybors!",
+    "mrRogersQuote": "\"Wont u be my naybor?\" — Fred Rogerz"
   }
 }

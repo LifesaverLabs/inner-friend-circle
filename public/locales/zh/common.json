@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "请输入有效的邮箱地址",
-      "passwordTooShort": "密码至少需要6个字符"
+      "passwordTooShort": "密码至少需要6个字符",
+      "mustAgreeToTerms": "您必须同意隐私政策和服务条款才能创建账户"
     },
     "switch": {
       "haveAccount": "已有账户？登录",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "我同意",
+      "privacyPolicy": "隐私政策",
+      "and": "和",
+      "termsOfService": "服务条款",
+      "dataProcessingNote": "我们处理您的数据以提供服务。您可以随时导出或删除您的数据。"
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "邻里",
     "nayborDescription": "可信赖的邻居，用于互助和紧急情况",
     "parasocial": "关注",
-    "parasocialDescription": "您关注的公众人物和内容创作者"
+    "parasocialDescription": "您关注的公众人物和内容创作者",
+    "rolemodel": "榜样",
+    "rolemodelDescription": "他们的人生故事激励你成为好人、更好的人、最好的人"
   },
   "visualization": {
     "coreLabel": "{{count}} 核心",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "共享钥匙",
+    "keysSharedCount": "钥匙 ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "共享钥匙",
+    "steps": {
+      "address": {
+        "title": "您的地址",
+        "description": "为紧急响应人员确认您的家庭地址"
+      },
+      "keyholders": {
+        "title": "钥匙持有者",
+        "description": "选择哪些邻居拥有您家的钥匙或密码"
+      },
+      "permissions": {
+        "title": "进入权限",
+        "description": "选择紧急情况下邻居何时可以进入您的家"
+      },
+      "review": {
+        "title": "审核并保存",
+        "description": "确认您的紧急家庭访问设置"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "强制进入权限",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "保存偏好设置",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "急救人员访问权限",
+      "enabled": "与紧急服务共享",
+      "disabled": "不与急救人员共享",
+      "enabledDescription": "经验证的紧急调度（救护车、消防、警察）可以在响应您地址的紧急情况时请求您的门钥匙树。",
+      "disabledDescription": "紧急调度服务将无法访问您邻居的钥匙联系人。只有您指定的邻居才能使用此信息。",
+      "warning": "禁用此功能可能会延迟紧急响应，如果响应者需要破门而入而不是使用邻居持有的钥匙。",
+      "reviewEnabled": "紧急调度可以访问您的门钥匙树",
+      "reviewDisabled": "紧急调度访问已禁用"
+    },
+    "doorBreaking": {
+      "title": "破门偏好",
+      "description": "如果急救人员无法联系到钥匙持有人，他们应该如何进行？",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "快速破门，跳过邻居",
+          "description": "在紧急情况下，立即破门。不要浪费时间联系邻居获取钥匙。"
+        },
+        "break_fast_call_naybors": {
+          "name": "快速破门，呼叫邻居",
+          "description": "联系邻居获取钥匙，但如果需要，不要犹豫破门。速度是优先的。"
+        },
+        "last_resort_only": {
+          "name": "仅作为最后手段",
+          "description": "请仅在仔细考虑后才破门，作为严格法律上必要时的最后手段。"
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "lastUpdated": "最后更新：{{date}}",
+    "backToHome": "返回首页"
+  },
+  "settings": {
+    "deleteAccount": "删除账户",
+    "deleteAccountDescription": "永久删除您的账户和所有关联数据",
+    "deleteAccountWarning": "此操作无法撤销。您的所有好友、帖子、设置和其他数据将被永久删除。",
+    "deleteAccountConfirmation": "输入 DELETE 确认",
+    "deleteAccountButton": "删除我的账户",
+    "deleteAccountSuccess": "您的账户已删除",
+    "deleteAccountError": "删除账户失败。请重试。"
+  },
+  "naybor": {
+    "underMinWarning": "您只有{{count}}位邻居 — 我们建议至少3位",
+    "underMinDescription": "拥有值得信赖的邻居对于紧急情况、互助和建立社区韧性至关重要。向您的邻居介绍自己吧！",
+    "mrRogersQuote": "\"你愿意做我的邻居吗？\" — 弗雷德·罗杰斯"
   }
 }

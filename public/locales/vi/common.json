@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
-      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự"
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "Đã có tài khoản? Đăng nhập",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Hàng xóm",
     "nayborDescription": "Hàng xóm đáng tin cậy để giúp đỡ và tình huống khẩn cấp",
     "parasocial": "Theo dõi",
-    "parasocialDescription": "Người nổi tiếng và nhà sáng tạo nội dung bạn theo dõi"
+    "parasocialDescription": "Người nổi tiếng và nhà sáng tạo nội dung bạn theo dõi",
+    "rolemodel": "Hình mẫu",
+    "rolemodelDescription": "Những người mà câu chuyện cuộc đời truyền cảm hứng cho bạn trở nên tốt, tốt hơn, tốt nhất"
   },
   "visualization": {
     "coreLabel": "{{count}} Lõi",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "Chìa Khóa Đã Chia Sẻ",
+    "keysSharedCount": "Chìa khóa ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "Chìa Khóa Đã Chia Sẻ",
+    "steps": {
+      "address": {
+        "title": "Địa Chỉ Của Bạn",
+        "description": "Xác nhận địa chỉ nhà của bạn cho người phản hồi khẩn cấp"
+      },
+      "keyholders": {
+        "title": "Người Giữ Chìa Khóa",
+        "description": "Chọn hàng xóm nào có chìa khóa hoặc mã nhà của bạn"
+      },
+      "permissions": {
+        "title": "Quyền Vào Nhà",
+        "description": "Chọn khi nào hàng xóm có thể vào nhà bạn trong trường hợp khẩn cấp"
+      },
+      "review": {
+        "title": "Xem Lại và Lưu",
+        "description": "Xác nhận cài đặt truy cập nhà khẩn cấp của bạn"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "Quyền Vào Nhà Bắt Buộc",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "Lưu Tùy Chọn",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Quyền Truy Cập Nhân Viên Cấp Cứu",
+      "enabled": "Chia Sẻ với Dịch Vụ Cấp Cứu",
+      "disabled": "Không Chia Sẻ với Nhân Viên Cấp Cứu",
+      "enabledDescription": "Điều phối cấp cứu đã xác minh (xe cấp cứu, cứu hỏa, công an) có thể yêu cầu Cây Khóa Cửa của bạn khi phản hồi các trường hợp khẩn cấp tại địa chỉ của bạn.",
+      "disabledDescription": "Các dịch vụ điều phối cấp cứu sẽ KHÔNG có quyền truy cập vào danh bạ khóa hàng xóm của bạn. Chỉ những hàng xóm được chỉ định của bạn mới có thể sử dụng thông tin này.",
+      "warning": "Tắt điều này có thể trì hoãn phản hồi cấp cứu nếu người cứu hộ phải phá cửa thay vì sử dụng chìa khóa hàng xóm giữ.",
+      "reviewEnabled": "Điều phối cấp cứu có thể truy cập Cây Khóa Cửa của bạn",
+      "reviewDisabled": "Quyền truy cập điều phối cấp cứu bị tắt"
+    },
+    "doorBreaking": {
+      "title": "Ưu Tiên Phá Cửa",
+      "description": "Nếu người cứu hộ không thể liên lạc được người giữ chìa khóa, họ nên tiến hành như thế nào?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Phá Nhanh, Bỏ Qua Hàng Xóm",
+          "description": "Trong trường hợp khẩn cấp, phá cửa ngay lập tức. Đừng lãng phí thời gian liên lạc hàng xóm để lấy chìa khóa."
+        },
+        "break_fast_call_naybors": {
+          "name": "Phá Nhanh, Gọi Hàng Xóm",
+          "description": "Liên lạc hàng xóm để lấy chìa khóa, nhưng đừng ngần ngại phá cửa nếu cần. Tốc độ là ưu tiên."
+        },
+        "last_resort_only": {
+          "name": "Chỉ Là Phương Án Cuối",
+          "description": "Xin chỉ phá cửa sau khi cân nhắc kỹ, như phương án cuối cùng khi cần thiết về mặt pháp lý."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "Bạn chỉ có {{count}} người hàng xóm — chúng tôi khuyến nghị ít nhất 3",
+    "underMinDescription": "Có hàng xóm đáng tin cậy gần đó là điều cần thiết cho các trường hợp khẩn cấp, hỗ trợ lẫn nhau và xây dựng khả năng phục hồi của cộng đồng. Hãy giới thiệu bản thân với hàng xóm của bạn!",
+    "mrRogersQuote": "\"Bạn sẽ không làm hàng xóm của tôi sao?\" — Fred Rogers"
   }
 }

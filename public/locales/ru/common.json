@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Пожалуйста, введите действительный email",
-      "passwordTooShort": "Пароль должен содержать минимум 6 символов"
+      "passwordTooShort": "Пароль должен содержать минимум 6 символов",
+      "mustAgreeToTerms": "Вы должны согласиться с Политикой конфиденциальности и Условиями использования для создания аккаунта"
     },
     "switch": {
       "haveAccount": "Уже есть аккаунт? Войти",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "Я соглашаюсь с",
+      "privacyPolicy": "Политикой конфиденциальности",
+      "and": "и",
+      "termsOfService": "Условиями использования",
+      "dataProcessingNote": "Мы обрабатываем ваши данные для предоставления услуги. Вы можете экспортировать или удалить свои данные в любое время."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Соседи",
     "nayborDescription": "Надёжные соседи для взаимопомощи и экстренных ситуаций",
     "parasocial": "Подписки",
-    "parasocialDescription": "Публичные личности и создатели контента, на которых вы подписаны"
+    "parasocialDescription": "Публичные личности и создатели контента, на которых вы подписаны",
+    "rolemodel": "Образец для подражания",
+    "rolemodelDescription": "Люди, чьи истории жизни вдохновляют вас быть хорошим, лучше, лучшим"
   },
   "visualization": {
     "coreLabel": "{{count}} Ядро",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "Общие ключи",
+    "keysSharedCount": "Ключи ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "Общие ключи",
+    "steps": {
+      "address": {
+        "title": "Ваш адрес",
+        "description": "Подтвердите домашний адрес для экстренных служб"
+      },
+      "keyholders": {
+        "title": "Держатели ключей",
+        "description": "Выберите у каких соседей есть ключи или коды от вашего дома"
+      },
+      "permissions": {
+        "title": "Разрешения на вход",
+        "description": "Выберите когда соседи могут войти в ваш дом в экстренных случаях"
+      },
+      "review": {
+        "title": "Проверить и сохранить",
+        "description": "Подтвердите настройки экстренного доступа к дому"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "Обязательные разрешения на вход",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "Сохранить настройки",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Доступ для Экстренных Служб",
+      "enabled": "Делиться с Экстренными Службами",
+      "disabled": "Не Делиться с Экстренными Службами",
+      "enabledDescription": "Верифицированные экстренные диспетчерские (скорая, пожарные, полиция) могут запросить ваше Дерево Ключей при реагировании на чрезвычайные ситуации по вашему адресу.",
+      "disabledDescription": "Экстренные диспетчерские службы НЕ будут иметь доступа к контактам ваших соседей с ключами. Только ваши назначенные соседи могут использовать эту информацию.",
+      "warning": "Отключение может задержать экстренное реагирование, если спасателям придётся взламывать вашу дверь вместо использования ключей соседей.",
+      "reviewEnabled": "Экстренная диспетчерская может получить доступ к вашему Дереву Ключей",
+      "reviewDisabled": "Доступ экстренной диспетчерской отключён"
+    },
+    "doorBreaking": {
+      "title": "Предпочтение по Взлому Двери",
+      "description": "Если спасатели не могут связаться с владельцем ключа, как им действовать?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Взламывать Быстро, Пропустить Соседей",
+          "description": "В экстренных случаях немедленно взломать дверь. Не тратить время на связь с соседями за ключами."
+        },
+        "break_fast_call_naybors": {
+          "name": "Взламывать Быстро, Позвонить Соседям",
+          "description": "Связаться с соседями за ключами, но не колебаться взломать дверь при необходимости. Скорость приоритетна."
+        },
+        "last_resort_only": {
+          "name": "Только в Крайнем Случае",
+          "description": "Пожалуйста, взламывайте дверь только после тщательного рассмотрения, в крайнем случае, когда это строго юридически необходимо."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Политика конфиденциальности",
+    "termsOfService": "Условия использования",
+    "lastUpdated": "Последнее обновление: {{date}}",
+    "backToHome": "Вернуться на главную"
+  },
+  "settings": {
+    "deleteAccount": "Удалить аккаунт",
+    "deleteAccountDescription": "Безвозвратно удалить ваш аккаунт и все связанные данные",
+    "deleteAccountWarning": "Это действие нельзя отменить. Все ваши друзья, посты, настройки и другие данные будут безвозвратно удалены.",
+    "deleteAccountConfirmation": "Введите DELETE для подтверждения",
+    "deleteAccountButton": "Удалить мой аккаунт",
+    "deleteAccountSuccess": "Ваш аккаунт удалён",
+    "deleteAccountError": "Не удалось удалить аккаунт. Пожалуйста, попробуйте снова."
+  },
+  "naybor": {
+    "underMinWarning": "У вас только {{count}} сосед(ей) — мы рекомендуем минимум 3",
+    "underMinDescription": "Иметь надёжных соседей рядом необходимо для экстренных ситуаций, взаимопомощи и укрепления устойчивости сообщества. Познакомьтесь со своими соседями!",
+    "mrRogersQuote": "\"Не хотите ли вы стать моим соседом?\" — Фред Роджерс"
   }
 }

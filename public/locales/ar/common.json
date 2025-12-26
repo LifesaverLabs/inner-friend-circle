@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح",
-      "passwordTooShort": "يجب أن تكون كلمة المرور 6 أحرف على الأقل"
+      "passwordTooShort": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+      "mustAgreeToTerms": "يجب أن توافق على سياسة الخصوصية وشروط الخدمة لإنشاء حساب"
     },
     "switch": {
       "haveAccount": "لديك حساب بالفعل؟ سجل الدخول",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "أوافق على",
+      "privacyPolicy": "سياسة الخصوصية",
+      "and": "و",
+      "termsOfService": "شروط الخدمة",
+      "dataProcessingNote": "نقوم بمعالجة بياناتك لتقديم الخدمة. يمكنك تصدير أو حذف بياناتك في أي وقت."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "الجيران",
     "nayborDescription": "جيران موثوقون للمساعدة المتبادلة وحالات الطوارئ",
     "parasocial": "متابَعون",
-    "parasocialDescription": "الشخصيات العامة وصناع المحتوى الذين تتابعهم"
+    "parasocialDescription": "الشخصيات العامة وصناع المحتوى الذين تتابعهم",
+    "rolemodel": "قدوة",
+    "rolemodelDescription": "أشخاص تلهمك قصص حياتهم لتكون جيداً وأفضل وأفضل ما يمكن"
   },
   "visualization": {
     "coreLabel": "{{count}} النواة",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "المفاتيح المشتركة",
+    "keysSharedCount": "المفاتيح ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "المفاتيح المشتركة",
+    "steps": {
+      "address": {
+        "title": "عنوانك",
+        "description": "أكد عنوان منزلك للمستجيبين للطوارئ"
+      },
+      "keyholders": {
+        "title": "حاملو المفاتيح",
+        "description": "اختر الجيران الذين لديهم مفاتيح أو رموز لمنزلك"
+      },
+      "permissions": {
+        "title": "أذونات الدخول",
+        "description": "اختر متى يمكن للجيران دخول منزلك في حالات الطوارئ"
+      },
+      "review": {
+        "title": "مراجعة وحفظ",
+        "description": "أكد إعدادات الوصول الطارئ لمنزلك"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "أذونات الدخول الإلزامية",
+    "mandatoryScenariosHelp": "هذه السيناريوهات المهددة للحياة أو الحرجة للسلامة تسمح دائمًا بالدخول. لا يمكن تعطيلها لأنها تحمي الحياة والأطراف والبشر الأبرياء من الصدمات.",
+    "optionalScenarios": "أذونات الدخول الاختيارية",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "حفظ التفضيلات",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "وصول عمال الطوارئ",
+      "enabled": "مشاركة مع خدمات الطوارئ",
+      "disabled": "عدم المشاركة مع عمال الطوارئ",
+      "enabledDescription": "يمكن لإرسال الطوارئ المعتمد (الإسعاف، الإطفاء، الشرطة) طلب شجرة مفاتيح بابك عند الاستجابة لحالات الطوارئ في عنوانك.",
+      "disabledDescription": "لن يكون لخدمات إرسال الطوارئ وصول إلى جهات اتصال مفاتيح جارك. فقط جيرانك المعينون يمكنهم استخدام هذه المعلومات.",
+      "warning": "تعطيل هذا قد يؤخر الاستجابة للطوارئ إذا احتاج المستجيبون لكسر بابك بدلاً من استخدام مفاتيح الجيران.",
+      "reviewEnabled": "يمكن لإرسال الطوارئ الوصول إلى شجرة مفاتيح بابك",
+      "reviewDisabled": "وصول إرسال الطوارئ معطل"
+    },
+    "doorBreaking": {
+      "title": "تفضيل كسر الباب",
+      "description": "إذا لم يتمكن المستجيبون للطوارئ من الوصول إلى حامل المفتاح، كيف يجب أن يتصرفوا؟",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "اكسر بسرعة، تخطى الجيران",
+          "description": "في حالات الطوارئ، اكسر الباب فوراً. لا تضيع الوقت في الاتصال بالجيران للحصول على المفاتيح."
+        },
+        "break_fast_call_naybors": {
+          "name": "اكسر بسرعة، اتصل بالجيران",
+          "description": "اتصل بالجيران للحصول على المفاتيح، لكن لا تتردد في كسر الباب إذا لزم الأمر. السرعة هي الأولوية."
+        },
+        "last_resort_only": {
+          "name": "الملاذ الأخير فقط",
+          "description": "يرجى كسر الباب فقط بعد دراسة متأنية، كملاذ أخير عندما يكون ذلك ضرورياً قانونياً بشكل صارم."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة",
+    "lastUpdated": "آخر تحديث: {{date}}",
+    "backToHome": "العودة للرئيسية"
+  },
+  "settings": {
+    "deleteAccount": "حذف الحساب",
+    "deleteAccountDescription": "حذف حسابك وجميع البيانات المرتبطة به نهائياً",
+    "deleteAccountWarning": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف جميع أصدقائك ومنشوراتك وإعداداتك وبياناتك الأخرى نهائياً.",
+    "deleteAccountConfirmation": "اكتب DELETE للتأكيد",
+    "deleteAccountButton": "حذف حسابي",
+    "deleteAccountSuccess": "تم حذف حسابك",
+    "deleteAccountError": "فشل حذف الحساب. يرجى المحاولة مرة أخرى."
+  },
+  "naybor": {
+    "underMinWarning": "لديك فقط {{count}} جار(ين) — نوصي بما لا يقل عن 3",
+    "underMinDescription": "وجود جيران موثوقين قريبين أمر ضروري للطوارئ والمساعدة المتبادلة وبناء مرونة المجتمع. عرّف نفسك لجيرانك!",
+    "mrRogersQuote": "\"ألن تكون جاري؟\" — فريد روجرز"
   }
 }

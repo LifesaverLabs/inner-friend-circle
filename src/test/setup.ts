@@ -4,6 +4,25 @@ import { vi, beforeEach } from 'vitest';
 // Define __APP_VERSION__ for tests (normally injected by Vite at build time)
 (globalThis as Record<string, unknown>).__APP_VERSION__ = '0.0.0-test';
 
+// Mock ResizeObserver (required for Radix UI components like Checkbox, Switch)
+class MockResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+Object.defineProperty(window, 'ResizeObserver', {
+  writable: true,
+  configurable: true,
+  value: MockResizeObserver,
+});
+
+Object.defineProperty(global, 'ResizeObserver', {
+  writable: true,
+  configurable: true,
+  value: MockResizeObserver,
+});
+
 // Mock localStorage
 const localStorageMock = (() => {
   let store: Record<string, string> = {};

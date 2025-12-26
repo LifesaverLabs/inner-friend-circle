@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "தயவுசெய்து சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்",
-      "passwordTooShort": "கடவுச்சொல் குறைந்தது 6 எழுத்துக்களாக இருக்க வேண்டும்"
+      "passwordTooShort": "கடவுச்சொல் குறைந்தது 6 எழுத்துக்களாக இருக்க வேண்டும்",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "ஏற்கனவே கணக்கு உள்ளதா? உள்நுழையவும்",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "அண்டை வீட்டார்",
     "nayborDescription": "அவசர நிலைகள் மற்றும் பரஸ்பர உதவிக்கான நம்பகமான அண்டை வீட்டார்",
     "parasocial": "பின்தொடர்தல்",
-    "parasocialDescription": "நீங்கள் பின்தொடரும் பிரபலங்கள் மற்றும் உள்ளடக்க படைப்பாளர்கள்"
+    "parasocialDescription": "நீங்கள் பின்தொடரும் பிரபலங்கள் மற்றும் உள்ளடக்க படைப்பாளர்கள்",
+    "rolemodel": "முன்மாதிரி",
+    "rolemodelDescription": "யாருடைய வாழ்க்கைக் கதைகள் உங்களை நல்லவராக, சிறந்தவராக, மிகச்சிறந்தவராக ஊக்குவிக்கின்றன"
   },
   "visualization": {
     "coreLabel": "{{count}} கோர்",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "பகிரப்பட்ட சாவிகள்",
+    "keysSharedCount": "சாவிகள் ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "பகிரப்பட்ட சாவிகள்",
+    "steps": {
+      "address": {
+        "title": "உங்கள் முகவரி",
+        "description": "அவசர பதிலளிப்பாளர்களுக்கு உங்கள் வீட்டு முகவரியை உறுதிப்படுத்தவும்"
+      },
+      "keyholders": {
+        "title": "சாவி வைத்திருப்பவர்கள்",
+        "description": "எந்த அண்டை வீட்டாரிடம் உங்கள் வீட்டின் சாவிகள் அல்லது குறியீடுகள் உள்ளன என்பதைத் தேர்ந்தெடுக்கவும்"
+      },
+      "permissions": {
+        "title": "நுழைவு அனுமதிகள்",
+        "description": "அவசரநிலையில் அண்டை வீட்டார் உங்கள் வீட்டில் எப்போது நுழையலாம் என்பதைத் தேர்வு செய்யவும்"
+      },
+      "review": {
+        "title": "மதிப்பாய்வு செய்து சேமிக்கவும்",
+        "description": "உங்கள் அவசர வீட்டு அணுகல் அமைப்புகளை உறுதிப்படுத்தவும்"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "கட்டாய நுழைவு அனுமதிகள்",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "விருப்பங்களைச் சேமிக்கவும்",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "அவசர ஊழியர் அணுகல்",
+      "enabled": "அவசர சேவைகளுடன் பகிர்",
+      "disabled": "அவசர ஊழியர்களுடன் பகிர வேண்டாம்",
+      "enabledDescription": "சரிபார்க்கப்பட்ட அவசர அனுப்புதல் (ஆம்புலன்ஸ், தீ, காவல்துறை) உங்கள் முகவரியில் அவசரநிலைகளுக்கு பதிலளிக்கும்போது உங்கள் கதவு சாவி மரத்தைக் கோரலாம்.",
+      "disabledDescription": "அவசர அனுப்புதல் சேவைகளுக்கு உங்கள் அக்கம்பக்கத்தினரின் சாவி தொடர்புகளுக்கு அணுகல் இருக்காது. உங்கள் நியமிக்கப்பட்ட அக்கம்பக்கத்தினர் மட்டுமே இந்த தகவலைப் பயன்படுத்த முடியும்.",
+      "warning": "இதை முடக்குவது அவசர பதிலை தாமதப்படுத்தலாம், பதிலளிப்பவர்கள் அக்கம்பக்கத்தினரின் சாவிகளைப் பயன்படுத்துவதற்குப் பதிலாக உங்கள் கதவை உடைக்க வேண்டியிருந்தால்.",
+      "reviewEnabled": "அவசர அனுப்புதல் உங்கள் கதவு சாவி மரத்தை அணுகலாம்",
+      "reviewDisabled": "அவசர அனுப்புதல் அணுகல் முடக்கப்பட்டது"
+    },
+    "doorBreaking": {
+      "title": "கதவு உடைப்பு விருப்பம்",
+      "description": "அவசர பதிலளிப்பவர்கள் சாவி வைத்திருப்பவரை அணுக முடியாவிட்டால், அவர்கள் எப்படி தொடர வேண்டும்?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "வேகமாக உடை, அக்கம்பக்கத்தினரை தவிர்",
+          "description": "அவசரநிலையில், உடனடியாக கதவை உடை. சாவிகளுக்கு அக்கம்பக்கத்தினரைத் தொடர்புகொள்ள நேரத்தை வீணடிக்க வேண்டாம்."
+        },
+        "break_fast_call_naybors": {
+          "name": "வேகமாக உடை, அக்கம்பக்கத்தினரை அழை",
+          "description": "சாவிகளுக்கு அக்கம்பக்கத்தினரைத் தொடர்புகொள், ஆனால் தேவைப்பட்டால் கதவை உடைக்க தயங்க வேண்டாம். வேகம் முன்னுரிமை."
+        },
+        "last_resort_only": {
+          "name": "கடைசி வழி மட்டுமே",
+          "description": "கவனமான பரிசீலனைக்குப் பிறகு மட்டுமே கதவை உடையுங்கள், சட்டப்பூர்வமாக கடுமையாக தேவைப்படும்போது கடைசி வழியாக."
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "உங்களிடம் {{count}} அண்டை வீட்டார் மட்டுமே உள்ளனர் — குறைந்தது 3 பேரை பரிந்துரைக்கிறோம்",
+    "underMinDescription": "அவசரநிலைகள், பரஸ்பர உதவி மற்றும் சமூக நெகிழ்ச்சியை உருவாக்க அருகிலுள்ள நம்பகமான அண்டை வீட்டார் இருப்பது அவசியம். உங்கள் அண்டை வீட்டாரிடம் உங்களை அறிமுகப்படுத்திக்கொள்ளுங்கள்!",
+    "mrRogersQuote": "\"நீ என் அண்டை வீட்டாராக இருக்க மாட்டாயா?\" — ஃபிரெட் ரோஜர்ஸ்"
   }
 }

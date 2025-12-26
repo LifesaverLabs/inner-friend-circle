@@ -271,12 +271,12 @@ export function NayborSOSDialog({
                   {t('nayborSOS.includeLocation')}
                 </label>
                 <span id="location-description" className="sr-only">
-                  {t('a11y.naybor.locationDescription')}
+                  {t('accessibility.naybor.locationDescription')}
                 </span>
               </div>
 
               <div className="flex gap-2">
-                <Button variant="outline" onClick={handleBack} className="flex-1" aria-label={t('a11y.dialog.back')}>
+                <Button variant="outline" onClick={handleBack} className="flex-1" aria-label={t('accessibility.dialog.back')}>
                   {t('actions.back')}
                 </Button>
                 <Button
@@ -304,14 +304,14 @@ export function NayborSOSDialog({
                 <span className="text-sm text-muted-foreground" aria-live="polite">
                   {t('nayborSOS.nayborsSelected', { count: selectedNaybors.size })}
                 </span>
-                <Button variant="ghost" size="sm" onClick={handleCopyMessage} aria-label={t('a11y.naybor.copyMessage')}>
+                <Button variant="ghost" size="sm" onClick={handleCopyMessage} aria-label={t('accessibility.naybor.copyMessage')}>
                   <Copy className="w-3.5 h-3.5 mr-1" aria-hidden="true" />
                   {t('nayborSOS.copyMessage')}
                 </Button>
               </div>
 
               <ScrollArea className="h-[200px] pr-3">
-                <div className="space-y-2" role="list" aria-label={t('a11y.naybor.nayborsList')}>
+                <div className="space-y-2" role="list" aria-label={t('accessibility.naybor.nayborsList')}>
                   {sortedNaybors.map((naybor) => {
                     const isSelected = selectedNaybors.has(naybor.id);
                     const wasContacted = contactedNaybors.has(naybor.id);
@@ -329,7 +329,7 @@ export function NayborSOSDialog({
                         <Checkbox
                           checked={isSelected}
                           onCheckedChange={() => handleNayborToggle(naybor.id)}
-                          aria-label={t('a11y.naybor.selectNaybor', { name: naybor.name }) + (wasContacted ? ` ${t('a11y.naybor.alreadyContacted')}` : '')}
+                          aria-label={t('accessibility.naybor.selectNaybor', { name: naybor.name }) + (wasContacted ? ` ${t('accessibility.naybor.alreadyContacted')}` : '')}
                         />
                         <div className="flex items-center gap-2 flex-1 min-w-0">
                           <div className="p-1.5 rounded-full bg-tier-naybor/10 shrink-0" aria-hidden="true">
@@ -353,13 +353,13 @@ export function NayborSOSDialog({
                           </div>
                         </div>
                         {naybor.phone && (
-                          <div className="flex items-center gap-1 shrink-0" role="group" aria-label={t('a11y.naybor.contactOptions', { name: naybor.name })}>
+                          <div className="flex items-center gap-1 shrink-0" role="group" aria-label={t('accessibility.naybor.contactOptions', { name: naybor.name })}>
                             <Button
                               variant="ghost"
                               size="icon"
                               className="h-7 w-7"
                               onClick={() => handleCall(naybor)}
-                              aria-label={t('a11y.naybor.callButton', { name: naybor.name })}
+                              aria-label={t('accessibility.naybor.callButton', { name: naybor.name })}
                             >
                               <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                             </Button>
@@ -368,7 +368,7 @@ export function NayborSOSDialog({
                               size="icon"
                               className="h-7 w-7"
                               onClick={() => handleMessage(naybor)}
-                              aria-label={t('a11y.naybor.messageButton', { name: naybor.name })}
+                              aria-label={t('accessibility.naybor.messageButton', { name: naybor.name })}
                             >
                               <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                             </Button>
@@ -381,14 +381,14 @@ export function NayborSOSDialog({
               </ScrollArea>
 
               <div className="flex gap-2 pt-2 border-t">
-                <Button variant="outline" onClick={handleBack} className="flex-1" aria-label={t('a11y.dialog.back')}>
+                <Button variant="outline" onClick={handleBack} className="flex-1" aria-label={t('accessibility.dialog.back')}>
                   {t('actions.back')}
                 </Button>
                 <Button
                   onClick={handleContactAll}
                   disabled={selectedNaybors.size === 0}
                   className="flex-1 bg-tier-naybor hover:bg-tier-naybor/90"
-                  aria-label={t('a11y.naybor.messageAll', { count: selectedNaybors.size })}
+                  aria-label={t('accessibility.naybor.messageAll', { count: selectedNaybors.size })}
                 >
                   <MessageCircle className="w-4 h-4 mr-1" aria-hidden="true" />
                   {t('nayborSOS.messageAll', { count: selectedNaybors.size })}

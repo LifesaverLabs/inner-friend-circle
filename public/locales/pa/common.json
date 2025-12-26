@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੈਧ ਈਮੇਲ ਐਡਰੈੱਸ ਦਾਖਲ ਕਰੋ",
-      "passwordTooShort": "ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ"
+      "passwordTooShort": "ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "ਪਹਿਲਾਂ ਹੀ ਖਾਤਾ ਹੈ? ਸਾਈਨ ਇਨ ਕਰੋ",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "ਗੁਆਂਢੀ",
     "nayborDescription": "ਐਮਰਜੈਂਸੀ ਅਤੇ ਆਪਸੀ ਮਦਦ ਲਈ ਭਰੋਸੇਮੰਦ ਗੁਆਂਢੀ",
     "parasocial": "ਫਾਲੋ",
-    "parasocialDescription": "ਜਿਨ੍ਹਾਂ ਮਸ਼ਹੂਰ ਹਸਤੀਆਂ ਨੂੰ ਤੁਸੀਂ ਫਾਲੋ ਕਰਦੇ ਹੋ"
+    "parasocialDescription": "ਜਿਨ੍ਹਾਂ ਮਸ਼ਹੂਰ ਹਸਤੀਆਂ ਨੂੰ ਤੁਸੀਂ ਫਾਲੋ ਕਰਦੇ ਹੋ",
+    "rolemodel": "ਆਦਰਸ਼",
+    "rolemodelDescription": "ਜਿਨ੍ਹਾਂ ਦੀਆਂ ਜੀਵਨ ਕਹਾਣੀਆਂ ਤੁਹਾਨੂੰ ਚੰਗੇ, ਬਿਹਤਰ, ਸਭ ਤੋਂ ਵਧੀਆ ਬਣਨ ਲਈ ਪ੍ਰੇਰਿਤ ਕਰਦੀਆਂ ਹਨ"
   },
   "visualization": {
     "coreLabel": "{{count}} ਕੋਰ",
@@ -587,7 +597,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "ਸਾਂਝੀਆਂ ਚਾਬੀਆਂ",
+    "keysSharedCount": "ਚਾਬੀਆਂ ({{count}})"
   },
   "tending": {
     "title": "Tend Your Circles",
@@ -695,5 +707,186 @@
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
     }
+  },
+  "keysShared": {
+    "title": "ਸਾਂਝੀਆਂ ਚਾਬੀਆਂ",
+    "steps": {
+      "address": {
+        "title": "ਤੁਹਾਡਾ ਪਤਾ",
+        "description": "ਐਮਰਜੈਂਸੀ ਜਵਾਬਦੇਹਾਂ ਲਈ ਆਪਣੇ ਘਰ ਦੇ ਪਤੇ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
+      },
+      "keyholders": {
+        "title": "ਚਾਬੀ ਧਾਰਕ",
+        "description": "ਚੁਣੋ ਕਿ ਕਿਹੜੇ ਗੁਆਂਢੀਆਂ ਕੋਲ ਤੁਹਾਡੇ ਘਰ ਦੀਆਂ ਚਾਬੀਆਂ ਜਾਂ ਕੋਡ ਹਨ"
+      },
+      "permissions": {
+        "title": "ਪ੍ਰਵੇਸ਼ ਇਜਾਜ਼ਤਾਂ",
+        "description": "ਚੁਣੋ ਕਿ ਐਮਰਜੈਂਸੀ ਵਿੱਚ ਗੁਆਂਢੀ ਤੁਹਾਡੇ ਘਰ ਵਿੱਚ ਕਦੋਂ ਦਾਖਲ ਹੋ ਸਕਦੇ ਹਨ"
+      },
+      "review": {
+        "title": "ਸਮੀਖਿਆ ਅਤੇ ਸੇਵ ਕਰੋ",
+        "description": "ਆਪਣੀਆਂ ਐਮਰਜੈਂਸੀ ਘਰ ਪਹੁੰਚ ਸੈਟਿੰਗਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
+      }
+    },
+    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Special Entry Instructions",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
+    "instructionsHint": "Include any details responders should know about accessing your home",
+    "keyType": "Type of Access",
+    "keyTypes": {
+      "physical": "Physical Key",
+      "digital": "Digital Code",
+      "both": "Both"
+    },
+    "digitalCodeType": "Code Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lock App",
+      "garage": "Garage Code",
+      "other": "Other"
+    },
+    "notes": "Notes (optional)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Confirm",
+    "currentKeyHolders": "Current Key Holders",
+    "selectNaybors": "Add a naybor who has access:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "ਲਾਜ਼ਮੀ ਪ੍ਰਵੇਸ਼ ਇਜਾਜ਼ਤਾਂ",
+    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
+    "optionalScenarios": "Optional Entry Permissions",
+    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Cardiac Arrest",
+        "description": "Heart attack or sudden cardiac arrest — every second counts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergency — airway blocked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylactic Shock",
+        "description": "Severe allergic reaction from bee sting, food, medication"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detected — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Carbon Monoxide",
+        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Corporal Punishment",
+        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Consent Conflict",
+        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+      },
+      "medical_other": {
+        "name": "Other Medical Emergency",
+        "description": "Other medical emergency requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Check",
+        "description": "Check on suspected intruder when you cannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Check",
+        "description": "General welfare check when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "optional enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "savePreferences": "ਤਰਜੀਹਾਂ ਸੇਵ ਕਰੋ",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "ਐਮਰਜੈਂਸੀ ਵਰਕਰ ਐਕਸੈਸ",
+      "enabled": "ਐਮਰਜੈਂਸੀ ਸੇਵਾਵਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ",
+      "disabled": "ਐਮਰਜੈਂਸੀ ਵਰਕਰਾਂ ਨਾਲ ਸਾਂਝਾ ਨਾ ਕਰੋ",
+      "enabledDescription": "ਪ੍ਰਮਾਣਿਤ ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ (ਐਂਬੂਲੈਂਸ, ਫਾਇਰ, ਪੁਲਿਸ) ਤੁਹਾਡੇ ਪਤੇ 'ਤੇ ਐਮਰਜੈਂਸੀ ਦਾ ਜਵਾਬ ਦਿੰਦੇ ਸਮੇਂ ਤੁਹਾਡੇ ਡੋਰ ਕੀ ਟ੍ਰੀ ਦੀ ਬੇਨਤੀ ਕਰ ਸਕਦੇ ਹਨ।",
+      "disabledDescription": "ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਸੇਵਾਵਾਂ ਕੋਲ ਤੁਹਾਡੇ ਗੁਆਂਢੀ ਕੀ ਸੰਪਰਕਾਂ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਹੋਵੇਗੀ। ਸਿਰਫ਼ ਤੁਹਾਡੇ ਨਿਯੁਕਤ ਗੁਆਂਢੀ ਇਹ ਜਾਣਕਾਰੀ ਵਰਤ ਸਕਦੇ ਹਨ।",
+      "warning": "ਇਸਨੂੰ ਅਯੋਗ ਕਰਨ ਨਾਲ ਐਮਰਜੈਂਸੀ ਜਵਾਬ ਵਿੱਚ ਦੇਰੀ ਹੋ ਸਕਦੀ ਹੈ ਜੇਕਰ ਜਵਾਬ ਦੇਣ ਵਾਲਿਆਂ ਨੂੰ ਗੁਆਂਢੀਆਂ ਦੀਆਂ ਚਾਬੀਆਂ ਵਰਤਣ ਦੀ ਬਜਾਏ ਤੁਹਾਡਾ ਦਰਵਾਜ਼ਾ ਤੋੜਨਾ ਪਵੇ।",
+      "reviewEnabled": "ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਤੁਹਾਡੇ ਡੋਰ ਕੀ ਟ੍ਰੀ ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦਾ ਹੈ",
+      "reviewDisabled": "ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਐਕਸੈਸ ਅਯੋਗ ਹੈ"
+    },
+    "doorBreaking": {
+      "title": "ਦਰਵਾਜ਼ਾ ਤੋੜਨ ਦੀ ਤਰਜੀਹ",
+      "description": "ਜੇ ਐਮਰਜੈਂਸੀ ਜਵਾਬ ਦੇਣ ਵਾਲੇ ਕੀਹੋਲਡਰ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਸਕਦੇ, ਤਾਂ ਉਹਨਾਂ ਨੂੰ ਕਿਵੇਂ ਅੱਗੇ ਵਧਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "ਜਲਦੀ ਤੋੜੋ, ਗੁਆਂਢੀਆਂ ਨੂੰ ਛੱਡੋ",
+          "description": "ਐਮਰਜੈਂਸੀ ਵਿੱਚ, ਤੁਰੰਤ ਦਰਵਾਜ਼ਾ ਤੋੜੋ। ਚਾਬੀਆਂ ਲਈ ਗੁਆਂਢੀਆਂ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਵਿੱਚ ਸਮਾਂ ਬਰਬਾਦ ਨਾ ਕਰੋ।"
+        },
+        "break_fast_call_naybors": {
+          "name": "ਜਲਦੀ ਤੋੜੋ, ਗੁਆਂਢੀਆਂ ਨੂੰ ਕਾਲ ਕਰੋ",
+          "description": "ਚਾਬੀਆਂ ਲਈ ਗੁਆਂਢੀਆਂ ਨਾਲ ਸੰਪਰਕ ਕਰੋ, ਪਰ ਲੋੜ ਪੈਣ 'ਤੇ ਦਰਵਾਜ਼ਾ ਤੋੜਨ ਤੋਂ ਝਿਜਕੋ ਨਾ। ਸਪੀਡ ਤਰਜੀਹ ਹੈ।"
+        },
+        "last_resort_only": {
+          "name": "ਸਿਰਫ਼ ਆਖਰੀ ਉਪਾਅ",
+          "description": "ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਨਾਲ ਵਿਚਾਰ ਕਰਨ ਤੋਂ ਬਾਅਦ ਹੀ ਦਰਵਾਜ਼ਾ ਤੋੜੋ, ਆਖਰੀ ਉਪਾਅ ਵਜੋਂ ਜਦੋਂ ਕਾਨੂੰਨੀ ਤੌਰ 'ਤੇ ਸਖ਼ਤੀ ਨਾਲ ਜ਼ਰੂਰੀ ਹੋਵੇ।"
+        }
+      }
+    }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "ਤੁਹਾਡੇ ਕੋਲ ਸਿਰਫ਼ {{count}} ਗੁਆਂਢੀ ਹਨ — ਅਸੀਂ ਘੱਟੋ-ਘੱਟ 3 ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕਰਦੇ ਹਾਂ",
+    "underMinDescription": "ਐਮਰਜੈਂਸੀ, ਆਪਸੀ ਸਹਾਇਤਾ ਅਤੇ ਭਾਈਚਾਰਕ ਲਚਕੀਲਾਪਣ ਬਣਾਉਣ ਲਈ ਨੇੜੇ ਭਰੋਸੇਯੋਗ ਗੁਆਂਢੀ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਆਪਣੇ ਗੁਆਂਢੀਆਂ ਨਾਲ ਆਪਣੀ ਜਾਣ-ਪਛਾਣ ਕਰਵਾਓ!",
+    "mrRogersQuote": "\"ਕੀ ਤੁਸੀਂ ਮੇਰੇ ਗੁਆਂਢੀ ਨਹੀਂ ਹੋਵੋਗੇ?\" — ਫ੍ਰੈੱਡ ਰੋਜਰਜ਼"
   }
 }
