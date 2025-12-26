@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} இன்னர்",
     "outerLabel": "{{count}} அவுட்டர்",
     "nayborLabel": "{{count}} அண்டை வீட்டார்",
-    "parasocialLabel": "{{count}} பின்தொடர்தல்"
+    "parasocialLabel": "{{count}} பாராசோஷியல்"
   },
   "actions": {
     "add": "சேர்",
@@ -320,7 +320,10 @@
     "terms": "விதிமுறைகள்",
     "about": "பற்றி",
     "contribute": "பங்களிக்க",
-    "openSource": "திறந்த மூலம்"
+    "openSource": "திறந்த மூலம்",
+    "lifesaverProject": "ஒரு Lifesaver Labs திட்டம்",
+    "contributeGithub": "GitHub இல் பங்களிக்கவும் திருத்தவும்",
+    "tagline": "திறந்த மூலம். அர்த்தமுள்ள இணைப்புகளுக்காக அக்கறையுடன் உருவாக்கப்பட்டது."
   },
   "contactImport": {
     "title": "தொடர்புகளை இறக்குமதி செய்",

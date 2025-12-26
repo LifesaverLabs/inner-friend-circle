@@ -135,7 +135,7 @@
     "innerLabel": "{{count}} Inner",
     "outerLabel": "{{count}} Outer",
     "nayborLabel": "{{count}} Naybors",
-    "parasocialLabel": "{{count}} Following"
+    "parasocialLabel": "{{count}} Parasoshals"
   },
   "actions": {
     "add": "Add",
@@ -325,7 +325,10 @@
     "terms": "Terms",
     "about": "About",
     "contribute": "Kontribute",
-    "openSource": "Open Sourse"
+    "openSource": "Open Sourse",
+    "lifesaverProject": "A Lifesaver Labs Projekt",
+    "contributeGithub": "Kontribute and Korekt on GitHub",
+    "tagline": "Open sourse. Built with kare for meaningful koneksions."
   },
   "contactImport": {
     "title": "Import Kontakts",

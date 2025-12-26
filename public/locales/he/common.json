@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} פנימי",
     "outerLabel": "{{count}} חיצוני",
     "nayborLabel": "{{count}} שכנים",
-    "parasocialLabel": "{{count}} עוקב"
+    "parasocialLabel": "{{count}} פרה-סוציאלי"
   },
   "actions": {
     "add": "הוסף",
@@ -320,7 +320,10 @@
     "terms": "תנאים",
     "about": "אודות",
     "contribute": "תרום",
-    "openSource": "קוד פתוח"
+    "openSource": "קוד פתוח",
+    "lifesaverProject": "פרויקט של Lifesaver Labs",
+    "contributeGithub": "תרום ותקן ב-GitHub",
+    "tagline": "קוד פתוח. נבנה בקפידה לחיבורים משמעותיים."
   },
   "contactImport": {
     "title": "ייבוא אנשי קשר",

@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} Inner",
     "outerLabel": "{{count}} Outer",
     "nayborLabel": "{{count}} Nachbarn",
-    "parasocialLabel": "{{count}} Folgen"
+    "parasocialLabel": "{{count}} Parasoziale"
   },
   "actions": {
     "add": "Hinzufügen",
@@ -320,7 +320,10 @@
     "terms": "Nutzungsbedingungen",
     "about": "Über uns",
     "contribute": "Mitwirken",
-    "openSource": "Open Source"
+    "openSource": "Open Source",
+    "lifesaverProject": "Ein Lifesaver Labs Projekt",
+    "contributeGithub": "Auf GitHub beitragen und korrigieren",
+    "tagline": "Open Source. Mit Sorgfalt für bedeutungsvolle Verbindungen gebaut."
   },
   "contactImport": {
     "title": "Kontakte importieren",

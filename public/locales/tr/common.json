@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} İç",
     "outerLabel": "{{count}} Dış",
     "nayborLabel": "{{count}} Komşu",
-    "parasocialLabel": "{{count}} Takip"
+    "parasocialLabel": "{{count}} Parasosyal"
   },
   "actions": {
     "add": "Ekle",
@@ -320,7 +320,10 @@
     "terms": "Şartlar",
     "about": "Hakkında",
     "contribute": "Katkıda Bulun",
-    "openSource": "Açık Kaynak"
+    "openSource": "Açık Kaynak",
+    "lifesaverProject": "Bir Lifesaver Labs Projesi",
+    "contributeGithub": "GitHub'da Katkıda Bulunun ve Düzeltin",
+    "tagline": "Açık kaynak. Anlamlı bağlantılar için özenle inşa edildi."
   },
   "contactImport": {
     "title": "Kişileri İçe Aktar",

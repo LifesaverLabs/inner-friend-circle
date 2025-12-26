@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} Trong",
     "outerLabel": "{{count}} Ngoài",
     "nayborLabel": "{{count}} Hàng xóm",
-    "parasocialLabel": "{{count}} Theo dõi"
+    "parasocialLabel": "{{count}} Parasocial"
   },
   "actions": {
     "add": "Thêm",
@@ -320,7 +320,10 @@
     "terms": "Điều khoản",
     "about": "Giới thiệu",
     "contribute": "Đóng góp",
-    "openSource": "Mã nguồn mở"
+    "openSource": "Mã nguồn mở",
+    "lifesaverProject": "Một Dự án Lifesaver Labs",
+    "contributeGithub": "Đóng góp và Sửa chữa trên GitHub",
+    "tagline": "Mã nguồn mở. Được xây dựng với sự quan tâm cho những kết nối ý nghĩa."
   },
   "contactImport": {
     "title": "Nhập Danh Bạ",

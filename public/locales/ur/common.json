@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} اندرونی",
     "outerLabel": "{{count}} بیرونی",
     "nayborLabel": "{{count}} پڑوسی",
-    "parasocialLabel": "{{count}} فالو"
+    "parasocialLabel": "{{count}} پیراسوشل"
   },
   "actions": {
     "add": "شامل کریں",
@@ -320,7 +320,10 @@
     "terms": "شرائط",
     "about": "کے بارے میں",
     "contribute": "تعاون کریں",
-    "openSource": "اوپن سورس"
+    "openSource": "اوپن سورس",
+    "lifesaverProject": "ایک Lifesaver Labs پروجیکٹ",
+    "contributeGithub": "GitHub پر شراکت کریں اور درست کریں",
+    "tagline": "اوپن سورس۔ بامعنی رابطوں کے لیے محبت سے بنایا گیا۔"
   },
   "contactImport": {
     "title": "روابط درآمد کریں",

@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} ఇన్నర్",
     "outerLabel": "{{count}} ఔటర్",
     "nayborLabel": "{{count}} పొరుగువారు",
-    "parasocialLabel": "{{count}} ఫాలో"
+    "parasocialLabel": "{{count}} పారాసోషల్"
   },
   "actions": {
     "add": "జోడించు",
@@ -320,7 +320,10 @@
     "terms": "నిబంధనలు",
     "about": "గురించి",
     "contribute": "సహకరించు",
-    "openSource": "ఓపెన్ సోర్స్"
+    "openSource": "ఓపెన్ సోర్స్",
+    "lifesaverProject": "ఒక Lifesaver Labs ప్రాజెక్ట్",
+    "contributeGithub": "GitHub లో అందించండి మరియు సరిదిద్దండి",
+    "tagline": "ఓపెన్ సోర్స్. అర్థవంతమైన కనెక్షన్ల కోసం శ్రద్ధగా నిర్మించబడింది."
   },
   "contactImport": {
     "title": "పరిచయాలను ఇంపోర్ట్ చేయండి",

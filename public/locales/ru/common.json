@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} Внутренний",
     "outerLabel": "{{count}} Внешний",
     "nayborLabel": "{{count}} Соседи",
-    "parasocialLabel": "{{count}} Подписки"
+    "parasocialLabel": "{{count}} Парасоциальные"
   },
   "actions": {
     "add": "Добавить",
@@ -320,7 +320,10 @@
     "terms": "Условия",
     "about": "О нас",
     "contribute": "Участвовать",
-    "openSource": "Открытый код"
+    "openSource": "Открытый код",
+    "lifesaverProject": "Проект Lifesaver Labs",
+    "contributeGithub": "Внести вклад и исправить на GitHub",
+    "tagline": "Открытый исходный код. Создано с заботой о значимых связях."
   },
   "contactImport": {
     "title": "Импорт контактов",

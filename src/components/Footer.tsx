@@ -1,7 +1,10 @@
 import { ExternalLink, Github } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import lifesaverLabsLogo from '@/assets/lifesaver-labs-logo.webp';
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t border-border bg-muted/30 py-8 mt-12">
       <div className="container mx-auto px-4">
@@ -19,7 +22,7 @@ export function Footer() {
               className="h-10 w-10 object-contain"
             />
             <span className="text-sm font-medium">
-              A Lifesaver Labs Project
+              {t('footer.lifesaverProject')}
             </span>
             <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
@@ -32,13 +35,13 @@ export function Footer() {
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="w-5 h-5" />
-            <span className="text-sm">Contribute on GitHub</span>
+            <span className="text-sm">{t('footer.contributeGithub')}</span>
           </a>
         </div>
 
         <div className="mt-6 pt-4 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            Open source. Built with care for meaningful connections.
+            {t('footer.tagline')}
           </p>
         </div>
       </div>
