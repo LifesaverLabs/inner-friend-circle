@@ -10,6 +10,7 @@ import {
   InteractionType,
   PostContentType,
 } from '@/types/feed';
+import { HomeEntryPreferences } from '@/types/keysShared';
 
 // ============================================================================
 // Export Functions
@@ -19,13 +20,15 @@ const EXPORT_VERSION = '1.0.0';
 
 /**
  * Create an exportable social graph from user data
+ * Follows Data Liberation Front principles: your data belongs to you
  */
 export function exportSocialGraph(
   userId: string,
   friends: Friend[],
   posts: FeedPost[],
   privacySettings: PrivacySettings = DEFAULT_PRIVACY_SETTINGS,
-  notificationSettings: NotificationSettings = DEFAULT_NOTIFICATION_SETTINGS
+  notificationSettings: NotificationSettings = DEFAULT_NOTIFICATION_SETTINGS,
+  keysSharedPreferences?: HomeEntryPreferences
 ): ExportableSocialGraph {
   return {
     version: EXPORT_VERSION,
@@ -63,6 +66,8 @@ export function exportSocialGraph(
       privacy: privacySettings,
       notifications: notificationSettings,
     },
+    // Keys Shared preferences for emergency home access (GDPR: personal security data)
+    keysShared: keysSharedPreferences,
   };
 }
 

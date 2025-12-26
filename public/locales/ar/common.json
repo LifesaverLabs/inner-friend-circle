@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح",
-      "passwordTooShort": "يجب أن تكون كلمة المرور 6 أحرف على الأقل"
+      "passwordTooShort": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+      "mustAgreeToTerms": "يجب أن توافق على سياسة الخصوصية وشروط الخدمة لإنشاء حساب"
     },
     "switch": {
       "haveAccount": "لديك حساب بالفعل؟ سجل الدخول",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "أوافق على",
+      "privacyPolicy": "سياسة الخصوصية",
+      "and": "و",
+      "termsOfService": "شروط الخدمة",
+      "dataProcessingNote": "نقوم بمعالجة بياناتك لتقديم الخدمة. يمكنك تصدير أو حذف بياناتك في أي وقت."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "الجيران",
     "nayborDescription": "جيران موثوقون للمساعدة المتبادلة وحالات الطوارئ",
     "parasocial": "متابَعون",
-    "parasocialDescription": "الشخصيات العامة وصناع المحتوى الذين تتابعهم"
+    "parasocialDescription": "الشخصيات العامة وصناع المحتوى الذين تتابعهم",
+    "rolemodel": "قدوة",
+    "rolemodelDescription": "أشخاص تلهمك قصص حياتهم لتكون جيداً وأفضل وأفضل ما يمكن"
   },
   "visualization": {
     "coreLabel": "{{count}} النواة",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "وصول عمال الطوارئ",
+      "enabled": "مشاركة مع خدمات الطوارئ",
+      "disabled": "عدم المشاركة مع عمال الطوارئ",
+      "enabledDescription": "يمكن لإرسال الطوارئ المعتمد (الإسعاف، الإطفاء، الشرطة) طلب شجرة مفاتيح بابك عند الاستجابة لحالات الطوارئ في عنوانك.",
+      "disabledDescription": "لن يكون لخدمات إرسال الطوارئ وصول إلى جهات اتصال مفاتيح جارك. فقط جيرانك المعينون يمكنهم استخدام هذه المعلومات.",
+      "warning": "تعطيل هذا قد يؤخر الاستجابة للطوارئ إذا احتاج المستجيبون لكسر بابك بدلاً من استخدام مفاتيح الجيران.",
+      "reviewEnabled": "يمكن لإرسال الطوارئ الوصول إلى شجرة مفاتيح بابك",
+      "reviewDisabled": "وصول إرسال الطوارئ معطل"
+    },
+    "doorBreaking": {
+      "title": "تفضيل كسر الباب",
+      "description": "إذا لم يتمكن المستجيبون للطوارئ من الوصول إلى حامل المفتاح، كيف يجب أن يتصرفوا؟",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "اكسر بسرعة، تخطى الجيران",
+          "description": "في حالات الطوارئ، اكسر الباب فوراً. لا تضيع الوقت في الاتصال بالجيران للحصول على المفاتيح."
+        },
+        "break_fast_call_naybors": {
+          "name": "اكسر بسرعة، اتصل بالجيران",
+          "description": "اتصل بالجيران للحصول على المفاتيح، لكن لا تتردد في كسر الباب إذا لزم الأمر. السرعة هي الأولوية."
+        },
+        "last_resort_only": {
+          "name": "الملاذ الأخير فقط",
+          "description": "يرجى كسر الباب فقط بعد دراسة متأنية، كملاذ أخير عندما يكون ذلك ضرورياً قانونياً بشكل صارم."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة",
+    "lastUpdated": "آخر تحديث: {{date}}",
+    "backToHome": "العودة للرئيسية"
+  },
+  "settings": {
+    "deleteAccount": "حذف الحساب",
+    "deleteAccountDescription": "حذف حسابك وجميع البيانات المرتبطة به نهائياً",
+    "deleteAccountWarning": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف جميع أصدقائك ومنشوراتك وإعداداتك وبياناتك الأخرى نهائياً.",
+    "deleteAccountConfirmation": "اكتب DELETE للتأكيد",
+    "deleteAccountButton": "حذف حسابي",
+    "deleteAccountSuccess": "تم حذف حسابك",
+    "deleteAccountError": "فشل حذف الحساب. يرجى المحاولة مرة أخرى."
+  },
+  "naybor": {
+    "underMinWarning": "لديك فقط {{count}} جار(ين) — نوصي بما لا يقل عن 3",
+    "underMinDescription": "وجود جيران موثوقين قريبين أمر ضروري للطوارئ والمساعدة المتبادلة وبناء مرونة المجتمع. عرّف نفسك لجيرانك!",
+    "mrRogersQuote": "\"ألن تكون جاري؟\" — فريد روجرز"
   }
 }

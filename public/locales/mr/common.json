@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "कृपया वैध ईमेल पत्ता प्रविष्ट करा",
-      "passwordTooShort": "पासवर्ड किमान 6 अक्षरांचा असणे आवश्यक आहे"
+      "passwordTooShort": "पासवर्ड किमान 6 अक्षरांचा असणे आवश्यक आहे",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "आधीपासून खाते आहे? साइन इन करा",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "शेजारी",
     "nayborDescription": "आणीबाणी आणि परस्पर मदतीसाठी विश्वासू शेजारी",
     "parasocial": "फॉलो",
-    "parasocialDescription": "तुम्ही फॉलो करता त्या प्रसिद्ध व्यक्ती आणि कंटेंट क्रिएटर"
+    "parasocialDescription": "तुम्ही फॉलो करता त्या प्रसिद्ध व्यक्ती आणि कंटेंट क्रिएटर",
+    "rolemodel": "आदर्श",
+    "rolemodelDescription": "ज्यांच्या जीवनकथा तुम्हाला चांगले, उत्तम, सर्वोत्तम बनण्यासाठी प्रेरणा देतात"
   },
   "visualization": {
     "coreLabel": "{{count}} कोर",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "आपत्कालीन कर्मचारी प्रवेश",
+      "enabled": "आपत्कालीन सेवांसोबत शेअर करा",
+      "disabled": "आपत्कालीन कर्मचाऱ्यांसोबत शेअर करू नका",
+      "enabledDescription": "प्रमाणित आपत्कालीन डिस्पॅच (अॅम्बुलन्स, अग्निशमन, पोलीस) तुमच्या पत्त्यावरील आपत्कालीन परिस्थितीला प्रतिसाद देताना तुमच्या डोर की ट्रीची विनंती करू शकतात.",
+      "disabledDescription": "आपत्कालीन डिस्पॅच सेवांना तुमच्या शेजाऱ्यांच्या की संपर्कांमध्ये प्रवेश मिळणार नाही. फक्त तुमचे नियुक्त शेजारी ही माहिती वापरू शकतात.",
+      "warning": "हे अक्षम केल्यास आपत्कालीन प्रतिसादात विलंब होऊ शकतो जर प्रतिसादकर्त्यांना शेजाऱ्यांकडील चाव्या वापरण्याऐवजी तुमचा दरवाजा तोडावा लागला.",
+      "reviewEnabled": "आपत्कालीन डिस्पॅच तुमच्या डोर की ट्रीमध्ये प्रवेश करू शकते",
+      "reviewDisabled": "आपत्कालीन डिस्पॅच प्रवेश अक्षम आहे"
+    },
+    "doorBreaking": {
+      "title": "दरवाजा तोडण्याची प्राधान्ये",
+      "description": "जर आपत्कालीन प्रतिसादकर्ते कीहोल्डरपर्यंत पोहोचू शकत नाहीत, तर त्यांनी कसे पुढे जावे?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "लवकर तोडा, शेजाऱ्यांना वगळा",
+          "description": "आपत्कालीन परिस्थितीत, लगेच दरवाजा तोडा. चाव्यांसाठी शेजाऱ्यांशी संपर्क साधण्यात वेळ वाया घालवू नका."
+        },
+        "break_fast_call_naybors": {
+          "name": "लवकर तोडा, शेजाऱ्यांना कॉल करा",
+          "description": "चाव्यांसाठी शेजाऱ्यांशी संपर्क साधा, पण गरज असल्यास दरवाजा तोडण्यास संकोच करू नका. वेग हे प्राधान्य आहे."
+        },
+        "last_resort_only": {
+          "name": "फक्त शेवटचा उपाय",
+          "description": "कृपया काळजीपूर्वक विचार केल्यानंतरच दरवाजा तोडा, केवळ शेवटचा उपाय म्हणून जेव्हा कायदेशीररित्या कठोरपणे आवश्यक असेल."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "तुमच्याकडे फक्त {{count}} शेजारी आहे — आम्ही किमान 3 ची शिफारस करतो",
+    "underMinDescription": "आपत्कालीन परिस्थितीत, परस्पर मदत आणि समुदाय लवचिकता निर्माण करण्यासाठी विश्वासार्ह शेजारी जवळ असणे आवश्यक आहे. तुमच्या शेजाऱ्यांशी स्वतःचा परिचय करून द्या!",
+    "mrRogersQuote": "\"तुम्ही माझे शेजारी व्हाल का?\" — फ्रेड रॉजर्स"
   }
 }

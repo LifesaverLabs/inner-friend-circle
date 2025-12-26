@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
-      "passwordTooShort": "Şifre en az 6 karakter olmalıdır"
+      "passwordTooShort": "Şifre en az 6 karakter olmalıdır",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "Zaten hesabınız var mı? Giriş yapın",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Komşular",
     "nayborDescription": "Acil durumlar ve karşılıklı yardım için güvenilir komşular",
     "parasocial": "Takip",
-    "parasocialDescription": "Takip ettiğiniz ünlüler ve içerik oluşturucular"
+    "parasocialDescription": "Takip ettiğiniz ünlüler ve içerik oluşturucular",
+    "rolemodel": "Rol Model",
+    "rolemodelDescription": "Hayat hikayeleri sizi iyi, daha iyi, en iyi olmaya ilham veren insanlar"
   },
   "visualization": {
     "coreLabel": "{{count}} Çekirdek",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Acil Durum Çalışanı Erişimi",
+      "enabled": "Acil Servislerle Paylaş",
+      "disabled": "Acil Durum Çalışanlarıyla Paylaşma",
+      "enabledDescription": "Doğrulanmış acil durum sevki (ambulans, itfaiye, polis) adresinizdeki acil durumlara yanıt verirken Kapı Anahtar Ağacınızı talep edebilir.",
+      "disabledDescription": "Acil durum sevk hizmetleri komşu anahtar kişilerinize erişim OLMAYACAKTIR. Yalnızca belirlediğiniz komşular bu bilgileri kullanabilir.",
+      "warning": "Bunu devre dışı bırakmak, müdahale ekiplerinin komşuların elindeki anahtarları kullanmak yerine kapınızı kırmak zorunda kalmaları durumunda acil müdahaleyi geciktirebilir.",
+      "reviewEnabled": "Acil durum sevki Kapı Anahtar Ağacınıza erişebilir",
+      "reviewDisabled": "Acil durum sevk erişimi devre dışı"
+    },
+    "doorBreaking": {
+      "title": "Kapı Kırma Tercihi",
+      "description": "Acil müdahale ekipleri anahtar sahibine ulaşamazsa, nasıl devam etmeliler?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Hızlı Kır, Komşuları Atla",
+          "description": "Acil durumlarda kapıyı hemen kırın. Anahtarlar için komşularla iletişim kurmaya zaman harcamayın."
+        },
+        "break_fast_call_naybors": {
+          "name": "Hızlı Kır, Komşuları Ara",
+          "description": "Anahtarlar için komşularla iletişime geçin, ancak gerekirse kapıyı kırmaktan çekinmeyin. Hız önceliktir."
+        },
+        "last_resort_only": {
+          "name": "Yalnızca Son Çare",
+          "description": "Lütfen kapıyı yalnızca dikkatli bir değerlendirmeden sonra, yasal olarak kesinlikle gerekli olduğunda son çare olarak kırın."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "Sadece {{count}} komşunuz var — en az 3 tavsiye ediyoruz",
+    "underMinDescription": "Acil durumlar, karşılıklı yardım ve topluluk dayanıklılığı oluşturmak için yakında güvenilir komşulara sahip olmak önemlidir. Komşularınıza kendinizi tanıtın!",
+    "mrRogersQuote": "\"Benim komşum olmak istemez misin?\" — Fred Rogers"
   }
 }

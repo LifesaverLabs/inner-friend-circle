@@ -69,7 +69,8 @@
     },
     "validation": {
       "invalidEmail": "Please enter a valid email address",
-      "passwordTooShort": "Password must be at least 6 kareakters"
+      "passwordTooShort": "Password must be at least 6 kareakters",
+      "mustAgreeToTerms": "You must agree to the Privasee Polisee and Terms of Servis to kreayt an akkount"
     },
     "switch": {
       "haveAccount": "Already have an akount? Sign in",
@@ -85,6 +86,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privasee Polisee",
+      "and": "and",
+      "termsOfService": "Terms of Servis",
+      "dataProcessingNote": "We proses yor data to provyde the servis. You kan eksport or deleyt yor data at eny tyme."
     }
   },
   "notFound": {
@@ -132,7 +140,9 @@
     "naybor": "Naybor",
     "nayborDescription": "Trusted naybors for mutual aid and emergensies",
     "parasocial": "Following",
-    "parasocialDescription": "Publik figures and kontent kreators you follow"
+    "parasocialDescription": "Publik figures and kontent kreators you follow",
+    "rolemodel": "Role Model",
+    "rolemodelDescription": "Peeple whoze lyfe storeez inspyre you to be good, better, best"
   },
   "visualization": {
     "coreLabel": "{{count}} Kore",
@@ -834,6 +844,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferenses saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Emerjensee Worker Akses",
+      "enabled": "Share with Emerjensee Servisés",
+      "disabled": "Do Not Share with Emerjensee Workers",
+      "enabledDescription": "Verifyed emerjensee dispach (ambulans, fyre, polees) kan request yor Door Key Tree when responding to emerjenseez at yor adres.",
+      "disabledDescription": "Emerjensee dispach servisés will NOT have akses to yor naybor key kontakts. Only yor deziggnaytéd naybors kan use thiz informashon.",
+      "warning": "Dizaybling thiz may delay emerjensee respons if responders need to break down yor door insted of using naybor-held keys.",
+      "reviewEnabled": "Emerjensee dispach kan akses yor Door Key Tree",
+      "reviewDisabled": "Emerjensee dispach akses iz dizaybléd"
+    },
+    "doorBreaking": {
+      "title": "Door Brayking Preferens",
+      "description": "If emerjensee responders kannot reach a keyholder, how shood they proseed?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Brayk Fast, Skip Naybors",
+          "description": "In emerjenseez, brayk down the door imeedyatlee. Do not wayst tyme kontakting naybors for keys."
+        },
+        "break_fast_call_naybors": {
+          "name": "Brayk Fast, Kall Naybors",
+          "description": "Kontakt naybors for keys, but do not hezitaté to brayk down the door if needed. Speed iz priorytee."
+        },
+        "last_resort_only": {
+          "name": "Last Resort Onlee",
+          "description": "Pleez only brayk door after kayrful konsiderashon, az a last resort when striktlee legallee nesesaree."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privasee Polisee",
+    "termsOfService": "Terms of Servis",
+    "lastUpdated": "Last updayted: {{date}}",
+    "backToHome": "Bak to Home"
+  },
+  "settings": {
+    "deleteAccount": "Deleyt Akkount",
+    "deleteAccountDescription": "Permanentlee deleyt yor akkount and all assosheeayted data",
+    "deleteAccountWarning": "Thiz akshon kannot be undun. All yor frends, posts, settings, and other data will be permanentlee deleyted.",
+    "deleteAccountConfirmation": "Type DELETE to konfirm",
+    "deleteAccountButton": "Deleyt My Akkount",
+    "deleteAccountSuccess": "Yor akkount haz been deleyted",
+    "deleteAccountError": "Fayled to deleyt akkount. Pleez try agen."
+  },
+  "naybor": {
+    "underMinWarning": "You only haz {{count}} naybor(z) — we rekumend at leest 3",
+    "underMinDescription": "Havin trusted naybors nerby iz essential 4 emergensiez, mutual aid, and bildin komunity reziliens. Introduce yoself 2 ur naybors!",
+    "mrRogersQuote": "\"Wont u be my naybor?\" — Fred Rogerz"
   }
 }

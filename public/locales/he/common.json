@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "נא להזין כתובת דוא\"ל חוקית",
-      "passwordTooShort": "הסיסמה חייבת להכיל לפחות 6 תווים"
+      "passwordTooShort": "הסיסמה חייבת להכיל לפחות 6 תווים",
+      "mustAgreeToTerms": "עליך להסכים למדיניות הפרטיות ולתנאי השימוש כדי ליצור חשבון"
     },
     "switch": {
       "haveAccount": "כבר יש לך חשבון? התחבר",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "אני מסכים ל",
+      "privacyPolicy": "מדיניות הפרטיות",
+      "and": "ול",
+      "termsOfService": "תנאי השימוש",
+      "dataProcessingNote": "אנו מעבדים את הנתונים שלך כדי לספק את השירות. תוכל לייצא או למחוק את הנתונים שלך בכל עת."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "שכן",
     "nayborDescription": "שכנים מהימנים לעזרה הדדית ומצבי חירום",
     "parasocial": "עוקב",
-    "parasocialDescription": "דמויות ציבוריות ויוצרי תוכן שאתה עוקב אחריהם"
+    "parasocialDescription": "דמויות ציבוריות ויוצרי תוכן שאתה עוקב אחריהם",
+    "rolemodel": "דמות מופת",
+    "rolemodelDescription": "אנשים שסיפורי חייהם מעוררים בך השראה להיות טוב, טוב יותר, הכי טוב"
   },
   "visualization": {
     "coreLabel": "{{count}} ליבה",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "גישת עובדי חירום",
+      "enabled": "שתף עם שירותי חירום",
+      "disabled": "אל תשתף עם עובדי חירום",
+      "enabledDescription": "מוקדי חירום מאומתים (אמבולנס, כיבוי, משטרה) יכולים לבקש את עץ מפתחות הדלת שלך בעת תגובה למקרי חירום בכתובתך.",
+      "disabledDescription": "שירותי מוקד החירום לא יקבלו גישה לאנשי קשר מפתחות השכנים שלך. רק השכנים המיועדים שלך יכולים להשתמש במידע זה.",
+      "warning": "השבתה עלולה לעכב את תגובת החירום אם המגיבים צריכים לפרוץ את הדלת במקום להשתמש במפתחות שמחזיקים השכנים.",
+      "reviewEnabled": "מוקד חירום יכול לגשת לעץ מפתחות הדלת שלך",
+      "reviewDisabled": "גישת מוקד החירום מושבתת"
+    },
+    "doorBreaking": {
+      "title": "העדפת פריצת דלת",
+      "description": "אם מגיבי חירום לא יכולים להגיע למחזיק מפתח, איך עליהם להמשיך?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "פרוץ מהר, דלג על שכנים",
+          "description": "במקרי חירום, פרוץ את הדלת מיד. אל תבזבז זמן ביצירת קשר עם שכנים למפתחות."
+        },
+        "break_fast_call_naybors": {
+          "name": "פרוץ מהר, התקשר לשכנים",
+          "description": "צור קשר עם שכנים למפתחות, אבל אל תהסס לפרוץ את הדלת אם צריך. מהירות היא העדיפות."
+        },
+        "last_resort_only": {
+          "name": "מוצא אחרון בלבד",
+          "description": "אנא פרוץ דלת רק לאחר שיקול דעת מעמיק, כמוצא אחרון כאשר זה הכרחי מבחינה משפטית."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "מדיניות פרטיות",
+    "termsOfService": "תנאי שימוש",
+    "lastUpdated": "עודכן לאחרונה: {{date}}",
+    "backToHome": "חזרה לדף הבית"
+  },
+  "settings": {
+    "deleteAccount": "מחק חשבון",
+    "deleteAccountDescription": "מחק לצמיתות את החשבון שלך ואת כל הנתונים המשויכים",
+    "deleteAccountWarning": "פעולה זו אינה ניתנת לביטול. כל החברים, הפוסטים, ההגדרות והנתונים האחרים שלך יימחקו לצמיתות.",
+    "deleteAccountConfirmation": "הקלד DELETE לאישור",
+    "deleteAccountButton": "מחק את החשבון שלי",
+    "deleteAccountSuccess": "החשבון שלך נמחק",
+    "deleteAccountError": "מחיקת החשבון נכשלה. אנא נסה שוב."
+  },
+  "naybor": {
+    "underMinWarning": "יש לך רק {{count}} שכן(ים) — אנו ממליצים על לפחות 3",
+    "underMinDescription": "שכנים אמינים בקרבת מקום חיוניים למקרי חירום, עזרה הדדית ובניית חוסן קהילתי. הציגו את עצמכם לשכנים שלכם!",
+    "mrRogersQuote": "\"האם תהיה השכן שלי?\" — פרד רוג'רס"
   }
 }

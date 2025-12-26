@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੈਧ ਈਮੇਲ ਐਡਰੈੱਸ ਦਾਖਲ ਕਰੋ",
-      "passwordTooShort": "ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ"
+      "passwordTooShort": "ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "ਪਹਿਲਾਂ ਹੀ ਖਾਤਾ ਹੈ? ਸਾਈਨ ਇਨ ਕਰੋ",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "ਗੁਆਂਢੀ",
     "nayborDescription": "ਐਮਰਜੈਂਸੀ ਅਤੇ ਆਪਸੀ ਮਦਦ ਲਈ ਭਰੋਸੇਮੰਦ ਗੁਆਂਢੀ",
     "parasocial": "ਫਾਲੋ",
-    "parasocialDescription": "ਜਿਨ੍ਹਾਂ ਮਸ਼ਹੂਰ ਹਸਤੀਆਂ ਨੂੰ ਤੁਸੀਂ ਫਾਲੋ ਕਰਦੇ ਹੋ"
+    "parasocialDescription": "ਜਿਨ੍ਹਾਂ ਮਸ਼ਹੂਰ ਹਸਤੀਆਂ ਨੂੰ ਤੁਸੀਂ ਫਾਲੋ ਕਰਦੇ ਹੋ",
+    "rolemodel": "ਆਦਰਸ਼",
+    "rolemodelDescription": "ਜਿਨ੍ਹਾਂ ਦੀਆਂ ਜੀਵਨ ਕਹਾਣੀਆਂ ਤੁਹਾਨੂੰ ਚੰਗੇ, ਬਿਹਤਰ, ਸਭ ਤੋਂ ਵਧੀਆ ਬਣਨ ਲਈ ਪ੍ਰੇਰਿਤ ਕਰਦੀਆਂ ਹਨ"
   },
   "visualization": {
     "coreLabel": "{{count}} ਕੋਰ",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "ਐਮਰਜੈਂਸੀ ਵਰਕਰ ਐਕਸੈਸ",
+      "enabled": "ਐਮਰਜੈਂਸੀ ਸੇਵਾਵਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ",
+      "disabled": "ਐਮਰਜੈਂਸੀ ਵਰਕਰਾਂ ਨਾਲ ਸਾਂਝਾ ਨਾ ਕਰੋ",
+      "enabledDescription": "ਪ੍ਰਮਾਣਿਤ ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ (ਐਂਬੂਲੈਂਸ, ਫਾਇਰ, ਪੁਲਿਸ) ਤੁਹਾਡੇ ਪਤੇ 'ਤੇ ਐਮਰਜੈਂਸੀ ਦਾ ਜਵਾਬ ਦਿੰਦੇ ਸਮੇਂ ਤੁਹਾਡੇ ਡੋਰ ਕੀ ਟ੍ਰੀ ਦੀ ਬੇਨਤੀ ਕਰ ਸਕਦੇ ਹਨ।",
+      "disabledDescription": "ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਸੇਵਾਵਾਂ ਕੋਲ ਤੁਹਾਡੇ ਗੁਆਂਢੀ ਕੀ ਸੰਪਰਕਾਂ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਹੋਵੇਗੀ। ਸਿਰਫ਼ ਤੁਹਾਡੇ ਨਿਯੁਕਤ ਗੁਆਂਢੀ ਇਹ ਜਾਣਕਾਰੀ ਵਰਤ ਸਕਦੇ ਹਨ।",
+      "warning": "ਇਸਨੂੰ ਅਯੋਗ ਕਰਨ ਨਾਲ ਐਮਰਜੈਂਸੀ ਜਵਾਬ ਵਿੱਚ ਦੇਰੀ ਹੋ ਸਕਦੀ ਹੈ ਜੇਕਰ ਜਵਾਬ ਦੇਣ ਵਾਲਿਆਂ ਨੂੰ ਗੁਆਂਢੀਆਂ ਦੀਆਂ ਚਾਬੀਆਂ ਵਰਤਣ ਦੀ ਬਜਾਏ ਤੁਹਾਡਾ ਦਰਵਾਜ਼ਾ ਤੋੜਨਾ ਪਵੇ।",
+      "reviewEnabled": "ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਤੁਹਾਡੇ ਡੋਰ ਕੀ ਟ੍ਰੀ ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦਾ ਹੈ",
+      "reviewDisabled": "ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਐਕਸੈਸ ਅਯੋਗ ਹੈ"
+    },
+    "doorBreaking": {
+      "title": "ਦਰਵਾਜ਼ਾ ਤੋੜਨ ਦੀ ਤਰਜੀਹ",
+      "description": "ਜੇ ਐਮਰਜੈਂਸੀ ਜਵਾਬ ਦੇਣ ਵਾਲੇ ਕੀਹੋਲਡਰ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਸਕਦੇ, ਤਾਂ ਉਹਨਾਂ ਨੂੰ ਕਿਵੇਂ ਅੱਗੇ ਵਧਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "ਜਲਦੀ ਤੋੜੋ, ਗੁਆਂਢੀਆਂ ਨੂੰ ਛੱਡੋ",
+          "description": "ਐਮਰਜੈਂਸੀ ਵਿੱਚ, ਤੁਰੰਤ ਦਰਵਾਜ਼ਾ ਤੋੜੋ। ਚਾਬੀਆਂ ਲਈ ਗੁਆਂਢੀਆਂ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਵਿੱਚ ਸਮਾਂ ਬਰਬਾਦ ਨਾ ਕਰੋ।"
+        },
+        "break_fast_call_naybors": {
+          "name": "ਜਲਦੀ ਤੋੜੋ, ਗੁਆਂਢੀਆਂ ਨੂੰ ਕਾਲ ਕਰੋ",
+          "description": "ਚਾਬੀਆਂ ਲਈ ਗੁਆਂਢੀਆਂ ਨਾਲ ਸੰਪਰਕ ਕਰੋ, ਪਰ ਲੋੜ ਪੈਣ 'ਤੇ ਦਰਵਾਜ਼ਾ ਤੋੜਨ ਤੋਂ ਝਿਜਕੋ ਨਾ। ਸਪੀਡ ਤਰਜੀਹ ਹੈ।"
+        },
+        "last_resort_only": {
+          "name": "ਸਿਰਫ਼ ਆਖਰੀ ਉਪਾਅ",
+          "description": "ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਨਾਲ ਵਿਚਾਰ ਕਰਨ ਤੋਂ ਬਾਅਦ ਹੀ ਦਰਵਾਜ਼ਾ ਤੋੜੋ, ਆਖਰੀ ਉਪਾਅ ਵਜੋਂ ਜਦੋਂ ਕਾਨੂੰਨੀ ਤੌਰ 'ਤੇ ਸਖ਼ਤੀ ਨਾਲ ਜ਼ਰੂਰੀ ਹੋਵੇ।"
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "ਤੁਹਾਡੇ ਕੋਲ ਸਿਰਫ਼ {{count}} ਗੁਆਂਢੀ ਹਨ — ਅਸੀਂ ਘੱਟੋ-ਘੱਟ 3 ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕਰਦੇ ਹਾਂ",
+    "underMinDescription": "ਐਮਰਜੈਂਸੀ, ਆਪਸੀ ਸਹਾਇਤਾ ਅਤੇ ਭਾਈਚਾਰਕ ਲਚਕੀਲਾਪਣ ਬਣਾਉਣ ਲਈ ਨੇੜੇ ਭਰੋਸੇਯੋਗ ਗੁਆਂਢੀ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਆਪਣੇ ਗੁਆਂਢੀਆਂ ਨਾਲ ਆਪਣੀ ਜਾਣ-ਪਛਾਣ ਕਰਵਾਓ!",
+    "mrRogersQuote": "\"ਕੀ ਤੁਸੀਂ ਮੇਰੇ ਗੁਆਂਢੀ ਨਹੀਂ ਹੋਵੋਗੇ?\" — ਫ੍ਰੈੱਡ ਰੋਜਰਜ਼"
   }
 }

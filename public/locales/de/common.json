@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein",
-      "passwordTooShort": "Das Passwort muss mindestens 6 Zeichen lang sein"
+      "passwordTooShort": "Das Passwort muss mindestens 6 Zeichen lang sein",
+      "mustAgreeToTerms": "Sie müssen der Datenschutzerklärung und den Nutzungsbedingungen zustimmen, um ein Konto zu erstellen"
     },
     "switch": {
       "haveAccount": "Bereits ein Konto? Anmelden",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "Ich stimme zu",
+      "privacyPolicy": "Datenschutzerklärung",
+      "and": "und",
+      "termsOfService": "Nutzungsbedingungen",
+      "dataProcessingNote": "Wir verarbeiten Ihre Daten, um den Service bereitzustellen. Sie können Ihre Daten jederzeit exportieren oder löschen."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Nachbarn",
     "nayborDescription": "Vertrauenswürdige Nachbarn für gegenseitige Hilfe und Notfälle",
     "parasocial": "Folgen",
-    "parasocialDescription": "Öffentliche Persönlichkeiten und Content-Creator, denen du folgst"
+    "parasocialDescription": "Öffentliche Persönlichkeiten und Content-Creator, denen du folgst",
+    "rolemodel": "Vorbild",
+    "rolemodelDescription": "Menschen, deren Lebensgeschichten Sie inspirieren, gut, besser, am besten zu sein"
   },
   "visualization": {
     "coreLabel": "{{count}} Kern",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Zugang für Rettungskräfte",
+      "enabled": "Mit Rettungsdiensten teilen",
+      "disabled": "Nicht mit Rettungskräften teilen",
+      "enabledDescription": "Verifizierte Notfallleitstellen (Krankenwagen, Feuerwehr, Polizei) können Ihren Türschlüsselbaum anfordern, wenn sie auf Notfälle an Ihrer Adresse reagieren.",
+      "disabledDescription": "Notfallleitstellen haben KEINEN Zugang zu Ihren Nachbar-Schlüsselkontakten. Nur Ihre designierten Nachbarn können diese Informationen nutzen.",
+      "warning": "Das Deaktivieren kann die Notfallreaktion verzögern, wenn Rettungskräfte Ihre Tür einbrechen müssen, anstatt von Nachbarn gehaltene Schlüssel zu verwenden.",
+      "reviewEnabled": "Notfallleitstelle kann auf Ihren Türschlüsselbaum zugreifen",
+      "reviewDisabled": "Zugang für Notfallleitstelle ist deaktiviert"
+    },
+    "doorBreaking": {
+      "title": "Präferenz für Türöffnung",
+      "description": "Wenn Rettungskräfte keinen Schlüsselhalter erreichen können, wie sollen sie vorgehen?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Schnell einbrechen, Nachbarn überspringen",
+          "description": "Bei Notfällen sofort die Tür einbrechen. Keine Zeit verschwenden, um Nachbarn wegen Schlüsseln zu kontaktieren."
+        },
+        "break_fast_call_naybors": {
+          "name": "Schnell einbrechen, Nachbarn anrufen",
+          "description": "Nachbarn wegen Schlüsseln kontaktieren, aber nicht zögern, die Tür bei Bedarf einzubrechen. Geschwindigkeit hat Priorität."
+        },
+        "last_resort_only": {
+          "name": "Nur als letztes Mittel",
+          "description": "Bitte die Tür nur nach sorgfältiger Überlegung einbrechen, als letztes Mittel, wenn es streng rechtlich notwendig ist."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsOfService": "Nutzungsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "settings": {
+    "deleteAccount": "Konto löschen",
+    "deleteAccountDescription": "Löschen Sie Ihr Konto und alle zugehörigen Daten dauerhaft",
+    "deleteAccountWarning": "Diese Aktion kann nicht rückgängig gemacht werden. Alle Ihre Freunde, Beiträge, Einstellungen und anderen Daten werden dauerhaft gelöscht.",
+    "deleteAccountConfirmation": "Geben Sie DELETE ein, um zu bestätigen",
+    "deleteAccountButton": "Mein Konto löschen",
+    "deleteAccountSuccess": "Ihr Konto wurde gelöscht",
+    "deleteAccountError": "Konto konnte nicht gelöscht werden. Bitte versuchen Sie es erneut."
+  },
+  "naybor": {
+    "underMinWarning": "Sie haben nur {{count}} Nachbar(n) — wir empfehlen mindestens 3",
+    "underMinDescription": "Vertrauenswürdige Nachbarn in der Nähe zu haben ist unerlässlich für Notfälle, gegenseitige Hilfe und den Aufbau von Gemeinschaftsresilienz. Stellen Sie sich Ihren Nachbarn vor!",
+    "mrRogersQuote": "\"Willst du nicht mein Nachbar sein?\" — Fred Rogers"
   }
 }

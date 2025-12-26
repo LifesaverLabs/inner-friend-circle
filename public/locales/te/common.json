@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి",
-      "passwordTooShort": "పాస్‌వర్డ్ కనీసం 6 అక్షరాలు ఉండాలి"
+      "passwordTooShort": "పాస్‌వర్డ్ కనీసం 6 అక్షరాలు ఉండాలి",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "ఇప్పటికే ఖాతా ఉందా? సైన్ ఇన్ చేయండి",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "పొరుగువారు",
     "nayborDescription": "పరస్పర సహాయం మరియు అత్యవసర పరిస్థితులకు నమ్మకమైన పొరుగువారు",
     "parasocial": "ఫాలో",
-    "parasocialDescription": "మీరు అనుసరించే ప్రసిద్ధ వ్యక్తులు మరియు కంటెంట్ క్రియేటర్లు"
+    "parasocialDescription": "మీరు అనుసరించే ప్రసిద్ధ వ్యక్తులు మరియు కంటెంట్ క్రియేటర్లు",
+    "rolemodel": "రోల్ మోడల్",
+    "rolemodelDescription": "ఎవరి జీవిత కథలు మిమ్మల్ని మంచివారిగా, మెరుగుగా, అత్యుత్తమంగా ఉండేందుకు ప్రేరేపిస్తాయి"
   },
   "visualization": {
     "coreLabel": "{{count}} కోర్",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "అత్యవసర కార్మికుల యాక్సెస్",
+      "enabled": "అత్యవసర సేవలతో షేర్ చేయండి",
+      "disabled": "అత్యవసర కార్మికులతో షేర్ చేయవద్దు",
+      "enabledDescription": "ధృవీకరించబడిన అత్యవసర డిస్పాచ్ (అంబులెన్స్, ఫైర్, పోలీసు) మీ చిరునామాలో అత్యవసర పరిస్థితులకు స్పందిస్తున్నప్పుడు మీ డోర్ కీ ట్రీని అభ్యర్థించవచ్చు.",
+      "disabledDescription": "అత్యవసర డిస్పాచ్ సేవలకు మీ పొరుగువారి కీ సంప్రదింపులకు యాక్సెస్ ఉండదు. మీ నిర్ణీత పొరుగువారు మాత్రమే ఈ సమాచారాన్ని ఉపయోగించగలరు.",
+      "warning": "దీన్ని నిష్క్రియం చేయడం వల్ల ప్రతిస్పందకులు పొరుగువారి కీలను ఉపయోగించకుండా మీ తలుపును పగలగొట్టవలసి వస్తే అత్యవసర ప్రతిస్పందన ఆలస్యం కావచ్చు.",
+      "reviewEnabled": "అత్యవసర డిస్పాచ్ మీ డోర్ కీ ట్రీని యాక్సెస్ చేయగలదు",
+      "reviewDisabled": "అత్యవసర డిస్పాచ్ యాక్సెస్ నిష్క్రియం చేయబడింది"
+    },
+    "doorBreaking": {
+      "title": "తలుపు పగలగొట్టడం ప్రాధాన్యత",
+      "description": "అత్యవసర ప్రతిస్పందకులు కీహోల్డర్‌ను చేరుకోలేకపోతే, వారు ఎలా కొనసాగించాలి?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "వేగంగా పగలగొట్టండి, పొరుగువారిని దాటండి",
+          "description": "అత్యవసర పరిస్థితుల్లో, వెంటనే తలుపును పగలగొట్టండి. కీల కోసం పొరుగువారిని సంప్రదించడంలో సమయం వృథా చేయకండి."
+        },
+        "break_fast_call_naybors": {
+          "name": "వేగంగా పగలగొట్టండి, పొరుగువారికి కాల్ చేయండి",
+          "description": "కీల కోసం పొరుగువారిని సంప్రదించండి, కానీ అవసరమైతే తలుపును పగలగొట్టడానికి వెనుకాడకండి. వేగం ప్రాధాన్యత."
+        },
+        "last_resort_only": {
+          "name": "చివరి ఆశ్రయం మాత్రమే",
+          "description": "దయచేసి జాగ్రత్తగా పరిగణించిన తర్వాతనే తలుపును పగలగొట్టండి, చట్టబద్ధంగా కఠినంగా అవసరమైనప్పుడు చివరి ఆశ్రయంగా."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "మీకు {{count}} పొరుగువారు మాత్రమే ఉన్నారు — మేము కనీసం 3 మందిని సిఫార్సు చేస్తాము",
+    "underMinDescription": "అత్యవసర పరిస్థితులు, పరస్పర సహాయం మరియు కమ్యూనిటీ స్థితిస్థాపకతను నిర్మించడానికి సమీపంలో నమ్మకమైన పొరుగువారు ఉండటం అవసరం. మీ పొరుగువారికి మిమ్మల్ని పరిచయం చేసుకోండి!",
+    "mrRogersQuote": "\"నీవు నా పొరుగువాడివి కాదా?\" — ఫ్రెడ్ రోజర్స్"
   }
 }

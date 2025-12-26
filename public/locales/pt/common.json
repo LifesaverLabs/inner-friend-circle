@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Por favor insira um email válido",
-      "passwordTooShort": "A senha deve ter pelo menos 6 caracteres"
+      "passwordTooShort": "A senha deve ter pelo menos 6 caracteres",
+      "mustAgreeToTerms": "Você deve concordar com a Política de Privacidade e os Termos de Serviço para criar uma conta"
     },
     "switch": {
       "haveAccount": "Já tem conta? Entre",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "Eu concordo com a",
+      "privacyPolicy": "Política de Privacidade",
+      "and": "e os",
+      "termsOfService": "Termos de Serviço",
+      "dataProcessingNote": "Processamos seus dados para fornecer o serviço. Você pode exportar ou excluir seus dados a qualquer momento."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Vizinhos",
     "nayborDescription": "Vizinhos confiáveis para ajuda mútua e emergências",
     "parasocial": "Seguindo",
-    "parasocialDescription": "Figuras públicas e criadores de conteúdo que você segue"
+    "parasocialDescription": "Figuras públicas e criadores de conteúdo que você segue",
+    "rolemodel": "Modelo",
+    "rolemodelDescription": "Pessoas cujas histórias de vida te inspiram a ser bom, melhor, o melhor"
   },
   "visualization": {
     "coreLabel": "{{count}} Núcleo",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Acesso de Socorristas",
+      "enabled": "Compartilhar com Serviços de Emergência",
+      "disabled": "Não Compartilhar com Socorristas",
+      "enabledDescription": "Despacho de emergência verificado (ambulância, bombeiros, polícia) pode solicitar sua Árvore de Chaves da Porta ao responder a emergências no seu endereço.",
+      "disabledDescription": "Os serviços de despacho de emergência NÃO terão acesso aos seus contatos de chaves dos vizinhos. Apenas seus vizinhos designados podem usar essas informações.",
+      "warning": "Desabilitar isso pode atrasar a resposta de emergência se os socorristas precisarem arrombar sua porta em vez de usar as chaves dos vizinhos.",
+      "reviewEnabled": "Despacho de emergência pode acessar sua Árvore de Chaves da Porta",
+      "reviewDisabled": "Acesso do despacho de emergência está desabilitado"
+    },
+    "doorBreaking": {
+      "title": "Preferência de Arrombamento",
+      "description": "Se os socorristas não conseguirem contatar um portador de chave, como devem proceder?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Arrombar Rápido, Pular Vizinhos",
+          "description": "Em emergências, arrombar a porta imediatamente. Não perder tempo contatando vizinhos por chaves."
+        },
+        "break_fast_call_naybors": {
+          "name": "Arrombar Rápido, Ligar para Vizinhos",
+          "description": "Contatar vizinhos por chaves, mas não hesitar em arrombar a porta se necessário. Velocidade é prioridade."
+        },
+        "last_resort_only": {
+          "name": "Apenas Último Recurso",
+          "description": "Por favor, arrombar a porta apenas após consideração cuidadosa, como último recurso quando estritamente necessário legalmente."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "lastUpdated": "Última atualização: {{date}}",
+    "backToHome": "Voltar para o Início"
+  },
+  "settings": {
+    "deleteAccount": "Excluir Conta",
+    "deleteAccountDescription": "Excluir permanentemente sua conta e todos os dados associados",
+    "deleteAccountWarning": "Esta ação não pode ser desfeita. Todos os seus amigos, posts, configurações e outros dados serão permanentemente excluídos.",
+    "deleteAccountConfirmation": "Digite DELETE para confirmar",
+    "deleteAccountButton": "Excluir Minha Conta",
+    "deleteAccountSuccess": "Sua conta foi excluída",
+    "deleteAccountError": "Falha ao excluir conta. Por favor, tente novamente."
+  },
+  "naybor": {
+    "underMinWarning": "Você tem apenas {{count}} vizinho(s) — recomendamos pelo menos 3",
+    "underMinDescription": "Ter vizinhos de confiança por perto é essencial para emergências, ajuda mútua e construção de resiliência comunitária. Apresente-se aos seus vizinhos!",
+    "mrRogersQuote": "\"Você não quer ser meu vizinho?\" — Fred Rogers"
   }
 }

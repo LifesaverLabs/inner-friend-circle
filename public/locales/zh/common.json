@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "请输入有效的邮箱地址",
-      "passwordTooShort": "密码至少需要6个字符"
+      "passwordTooShort": "密码至少需要6个字符",
+      "mustAgreeToTerms": "您必须同意隐私政策和服务条款才能创建账户"
     },
     "switch": {
       "haveAccount": "已有账户？登录",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "我同意",
+      "privacyPolicy": "隐私政策",
+      "and": "和",
+      "termsOfService": "服务条款",
+      "dataProcessingNote": "我们处理您的数据以提供服务。您可以随时导出或删除您的数据。"
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "邻里",
     "nayborDescription": "可信赖的邻居，用于互助和紧急情况",
     "parasocial": "关注",
-    "parasocialDescription": "您关注的公众人物和内容创作者"
+    "parasocialDescription": "您关注的公众人物和内容创作者",
+    "rolemodel": "榜样",
+    "rolemodelDescription": "他们的人生故事激励你成为好人、更好的人、最好的人"
   },
   "visualization": {
     "coreLabel": "{{count}} 核心",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "急救人员访问权限",
+      "enabled": "与紧急服务共享",
+      "disabled": "不与急救人员共享",
+      "enabledDescription": "经验证的紧急调度（救护车、消防、警察）可以在响应您地址的紧急情况时请求您的门钥匙树。",
+      "disabledDescription": "紧急调度服务将无法访问您邻居的钥匙联系人。只有您指定的邻居才能使用此信息。",
+      "warning": "禁用此功能可能会延迟紧急响应，如果响应者需要破门而入而不是使用邻居持有的钥匙。",
+      "reviewEnabled": "紧急调度可以访问您的门钥匙树",
+      "reviewDisabled": "紧急调度访问已禁用"
+    },
+    "doorBreaking": {
+      "title": "破门偏好",
+      "description": "如果急救人员无法联系到钥匙持有人，他们应该如何进行？",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "快速破门，跳过邻居",
+          "description": "在紧急情况下，立即破门。不要浪费时间联系邻居获取钥匙。"
+        },
+        "break_fast_call_naybors": {
+          "name": "快速破门，呼叫邻居",
+          "description": "联系邻居获取钥匙，但如果需要，不要犹豫破门。速度是优先的。"
+        },
+        "last_resort_only": {
+          "name": "仅作为最后手段",
+          "description": "请仅在仔细考虑后才破门，作为严格法律上必要时的最后手段。"
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "lastUpdated": "最后更新：{{date}}",
+    "backToHome": "返回首页"
+  },
+  "settings": {
+    "deleteAccount": "删除账户",
+    "deleteAccountDescription": "永久删除您的账户和所有关联数据",
+    "deleteAccountWarning": "此操作无法撤销。您的所有好友、帖子、设置和其他数据将被永久删除。",
+    "deleteAccountConfirmation": "输入 DELETE 确认",
+    "deleteAccountButton": "删除我的账户",
+    "deleteAccountSuccess": "您的账户已删除",
+    "deleteAccountError": "删除账户失败。请重试。"
+  },
+  "naybor": {
+    "underMinWarning": "您只有{{count}}位邻居 — 我们建议至少3位",
+    "underMinDescription": "拥有值得信赖的邻居对于紧急情况、互助和建立社区韧性至关重要。向您的邻居介绍自己吧！",
+    "mrRogersQuote": "\"你愿意做我的邻居吗？\" — 弗雷德·罗杰斯"
   }
 }

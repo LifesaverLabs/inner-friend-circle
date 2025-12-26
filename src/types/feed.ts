@@ -1,4 +1,5 @@
 import { TierType, Friend } from './friend';
+import { HomeEntryPreferences } from './keysShared';
 
 // Post content types - high-fidelity interactions are boosted
 export type PostContentType =
@@ -340,6 +341,7 @@ export interface AcquaintedNudgeBatch {
 }
 
 // Exportable social graph format for data portability
+// Follows Data Liberation Front principles: your data belongs to you
 export interface ExportableSocialGraph {
   version: string;
   exportedAt: Date;
@@ -370,6 +372,11 @@ export interface ExportableSocialGraph {
     privacy: PrivacySettings;
     notifications: NotificationSettings;
   };
+  /**
+   * Keys Shared preferences for emergency home access
+   * GDPR: This is personal data about your home security preferences
+   */
+  keysShared?: HomeEntryPreferences;
 }
 
 // Feed filter options

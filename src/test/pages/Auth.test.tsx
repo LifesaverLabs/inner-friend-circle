@@ -24,6 +24,7 @@ const mockAuthTranslations: Record<string, string> = {
   'auth.form.passwordPlaceholder': '••••••••',
   'auth.validation.invalidEmail': 'Please enter a valid email address',
   'auth.validation.passwordTooShort': 'Password must be at least 6 characters',
+  'auth.validation.mustAgreeToTerms': 'You must agree to the Privacy Policy and Terms of Service to create an account',
   'auth.switch.haveAccount': 'Already have an account? Sign in',
   'auth.switch.noAccount': "Don't have an account? Sign up",
   'auth.toast.signInSuccess': 'Welcome back!',
@@ -31,6 +32,11 @@ const mockAuthTranslations: Record<string, string> = {
   'auth.toast.emailAlreadyRegistered': 'This email is already registered. Try signing in instead.',
   'auth.toast.invalidCredentials': 'Invalid email or password. Please try again.',
   'auth.toast.unexpectedError': 'An unexpected error occurred. Please try again.',
+  'auth.consent.agreeTo': 'I agree to the',
+  'auth.consent.privacyPolicy': 'Privacy Policy',
+  'auth.consent.and': 'and',
+  'auth.consent.termsOfService': 'Terms of Service',
+  'auth.consent.dataProcessingNote': 'We process your data to provide the service. You can export or delete your data at any time.',
 };
 
 vi.mock('react-i18next', () => ({
@@ -222,6 +228,10 @@ describe('Auth Page', () => {
       await user.type(emailInput, 'new@example.com');
       await user.type(passwordInput, 'newpassword123');
 
+      // GDPR: Must check consent checkbox before sign up
+      const consentCheckbox = screen.getByRole('checkbox');
+      await user.click(consentCheckbox);
+
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
 
@@ -249,6 +259,10 @@ describe('Auth Page', () => {
 
       await user.type(emailInput, 'existing@example.com');
       await user.type(passwordInput, 'password123');
+
+      // GDPR: Must check consent checkbox before sign up
+      const consentCheckbox = screen.getByRole('checkbox');
+      await user.click(consentCheckbox);
 
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
@@ -350,6 +364,172 @@ describe('Auth Page', () => {
         // Should have display name field with placeholder "Your name"
         const nameInput = screen.queryByPlaceholderText('Your name');
         expect(nameInput).toBeInTheDocument();
+      });
+    });
+  });
+
+  describe('GDPR consent checkbox', () => {
+    it('should show consent checkbox only in sign up mode', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Sign in mode should NOT show consent checkbox
+      expect(screen.queryByLabelText(/I agree to the/i)).not.toBeInTheDocument();
+
+      // Toggle to sign up
+      const toggleLink = screen.getByText(/sign up/i);
+      await user.click(toggleLink);
+
+      await waitFor(() => {
+        // Sign up mode SHOULD show consent checkbox
+        expect(screen.getByText(/I agree to the/i)).toBeInTheDocument();
+      });
+    });
+
+    it('should show links to Privacy Policy and Terms of Service', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Toggle to sign up
+      const toggleLink = screen.getByText(/sign up/i);
+      await user.click(toggleLink);
+
+      await waitFor(() => {
+        expect(screen.getByRole('link', { name: /Privacy Policy/i })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: /Terms of Service/i })).toBeInTheDocument();
+      });
+    });
+
+    it('should require consent to be checked for sign up', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Toggle to sign up
+      const toggleLink = screen.getByText(/sign up/i);
+      await user.click(toggleLink);
+
+      await waitFor(() => {
+        expect(screen.getByRole('button', { name: /create account/i })).toBeInTheDocument();
+      });
+
+      const emailInput = screen.getByPlaceholderText('you@example.com');
+      const passwordInput = screen.getByPlaceholderText('••••••••');
+
+      await user.type(emailInput, 'new@example.com');
+      await user.type(passwordInput, 'password123');
+
+      // Try to submit WITHOUT checking the consent checkbox
+      const submitButton = screen.getByRole('button', { name: /create account/i });
+      await user.click(submitButton);
+
+      // Should show error message about consent
+      await waitFor(() => {
+        expect(screen.getByText(/must agree to the Privacy Policy/i)).toBeInTheDocument();
+      });
+
+      // signUp should NOT have been called
+      expect(mockSignUp).not.toHaveBeenCalled();
+    });
+
+    it('should allow sign up when consent is checked', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Toggle to sign up
+      const toggleLink = screen.getByText(/sign up/i);
+      await user.click(toggleLink);
+
+      await waitFor(() => {
+        expect(screen.getByRole('button', { name: /create account/i })).toBeInTheDocument();
+      });
+
+      const emailInput = screen.getByPlaceholderText('you@example.com');
+      const passwordInput = screen.getByPlaceholderText('••••••••');
+
+      await user.type(emailInput, 'new@example.com');
+      await user.type(passwordInput, 'password123');
+
+      // Check the consent checkbox
+      const consentCheckbox = screen.getByRole('checkbox');
+      await user.click(consentCheckbox);
+
+      // Now submit
+      const submitButton = screen.getByRole('button', { name: /create account/i });
+      await user.click(submitButton);
+
+      // signUp should have been called
+      await waitFor(() => {
+        expect(mockSignUp).toHaveBeenCalled();
+      });
+    });
+
+    it('should not require consent for sign in', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Stay in sign in mode (default)
+      const emailInput = screen.getByPlaceholderText('you@example.com');
+      const passwordInput = screen.getByPlaceholderText('••••••••');
+
+      await user.type(emailInput, 'test@example.com');
+      await user.type(passwordInput, 'password123');
+
+      const submitButton = screen.getByRole('button', { name: /sign in/i });
+      await user.click(submitButton);
+
+      // signIn should have been called (no consent required for sign in)
+      await waitFor(() => {
+        expect(mockSignIn).toHaveBeenCalledWith('test@example.com', 'password123');
+      });
+    });
+
+    it('should clear consent error when checkbox is checked', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Toggle to sign up
+      const toggleLink = screen.getByText(/sign up/i);
+      await user.click(toggleLink);
+
+      await waitFor(() => {
+        expect(screen.getByRole('button', { name: /create account/i })).toBeInTheDocument();
+      });
+
+      const emailInput = screen.getByPlaceholderText('you@example.com');
+      const passwordInput = screen.getByPlaceholderText('••••••••');
+
+      await user.type(emailInput, 'new@example.com');
+      await user.type(passwordInput, 'password123');
+
+      // Try to submit without consent
+      const submitButton = screen.getByRole('button', { name: /create account/i });
+      await user.click(submitButton);
+
+      // Error should appear
+      await waitFor(() => {
+        expect(screen.getByText(/must agree to the Privacy Policy/i)).toBeInTheDocument();
+      });
+
+      // Now check the consent checkbox
+      const consentCheckbox = screen.getByRole('checkbox');
+      await user.click(consentCheckbox);
+
+      // Error should be cleared
+      await waitFor(() => {
+        expect(screen.queryByText(/must agree to the Privacy Policy/i)).not.toBeInTheDocument();
+      });
+    });
+
+    it('should include data processing note text', async () => {
+      const user = userEvent.setup();
+      renderAuth();
+
+      // Toggle to sign up
+      const toggleLink = screen.getByText(/sign up/i);
+      await user.click(toggleLink);
+
+      await waitFor(() => {
+        expect(screen.getByText(/We process your data to provide the service/i)).toBeInTheDocument();
       });
     });
   });

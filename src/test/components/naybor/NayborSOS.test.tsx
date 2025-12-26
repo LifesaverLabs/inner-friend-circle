@@ -16,6 +16,73 @@ import { NayborSOSDialog } from '@/components/naybor/NayborSOSDialog';
 import * as nayborExports from '@/components/naybor';
 import * as nayborSOSExports from '@/types/nayborSOS';
 
+// Mock translations for NayborSOS components
+const mockTranslations: Record<string, string> = {
+  // NayborSOS Dialog - actual keys from component
+  'nayborSOS.title': 'Naybor SOS™',
+  'nayborSOS.steps.category': 'What kind of help do you need?',
+  'nayborSOS.steps.contacts': 'Choose naybors to contact',
+  'nayborSOS.suggestedActions': 'Suggested actions:',
+  'nayborSOS.addDetails': 'Add details (optional)',
+  'nayborSOS.describePlaceholder': 'Describe your situation...',
+  'nayborSOS.includeLocation': 'Include my location',
+  'nayborSOS.chooseNaybors': 'Choose Naybors',
+  'nayborSOS.chooseNayborsAria': 'Choose naybors to contact',
+  'nayborSOS.nayborsSelected': '{{count}} naybor(s) selected',
+  'nayborSOS.copyMessage': 'Copy Message',
+  'nayborSOS.messageAll': 'Message All ({{count}})',
+  'nayborSOS.contacted': 'Contacted {{count}} naybor(s)',
+  'nayborSOS.critical': 'Critical',
+  'nayborSOS.emergencyWarning': 'For life-threatening emergencies, call 911 first',
+  'nayborSOS.toasts.messageCopied': 'Message copied to clipboard',
+  'nayborSOS.toasts.noNayborsSelected': 'Please select at least one naybor',
+  // NayborSOS Banner
+  'nayborSOS.banner.title': 'Naybor SOS™',
+  'nayborSOS.banner.networkStatus': '{{count}} naybors in your SOS network',
+  'nayborSOS.banner.addMore': 'Add more naybors to strengthen your network',
+  'nayborSOS.banner.quickButton': 'Quick',
+  'nayborSOS.banner.sosButton': 'SOS',
+  // Quick Panel
+  'nayborSOS.quickPanel.title': 'Quick Contacts',
+  'nayborSOS.quickPanel.noPhone': 'No phone',
+  // Actions
+  'actions.back': 'Back',
+  // Accessibility - keys from component
+  'accessibility.naybor.sosButton': 'Open SOS dialog',
+  'accessibility.naybor.quickButton': 'Open quick contacts panel',
+  'accessibility.naybor.categoryButton': 'Select {{category}} category',
+  'accessibility.naybor.callButton': 'Call {{name}}',
+  'accessibility.naybor.messageButton': 'Message {{name}}',
+  'accessibility.naybor.selectNaybor': 'Select {{name}}',
+  'accessibility.naybor.alreadyContacted': '(already contacted)',
+  'accessibility.naybor.copyMessage': 'Copy SOS message to clipboard',
+  'accessibility.naybor.nayborsList': 'List of naybors to contact',
+  'accessibility.naybor.contactOptions': 'Contact options for {{name}}',
+  'accessibility.naybor.messageAll': 'Message all {{count}} selected naybors',
+  'accessibility.naybor.locationDescription': 'Include your current location in the SOS message',
+  'accessibility.dialog.back': 'Go back to previous step',
+};
+
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, opts?: Record<string, unknown>) => {
+      let translation = mockTranslations[key] || key;
+      // Handle interpolation like {{count}} or {{name}}
+      if (opts) {
+        Object.entries(opts).forEach(([k, v]) => {
+          translation = translation.replace(new RegExp(`\\{\\{${k}\\}\\}`, 'g'), String(v));
+        });
+      }
+      return translation;
+    },
+    i18n: { language: 'en', changeLanguage: vi.fn() },
+  }),
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
 // Helper to create mock naybor
 const createMockNaybor = (overrides: Partial<Friend> = {}): Friend => ({
   id: `naybor-${Math.random().toString(36).substr(2, 9)}`,

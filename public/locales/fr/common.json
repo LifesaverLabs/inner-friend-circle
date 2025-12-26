@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Veuillez entrer une adresse email valide",
-      "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères"
+      "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères",
+      "mustAgreeToTerms": "Vous devez accepter la Politique de Confidentialité et les Conditions d'Utilisation pour créer un compte"
     },
     "switch": {
       "haveAccount": "Déjà un compte ? Connectez-vous",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "J'accepte la",
+      "privacyPolicy": "Politique de Confidentialité",
+      "and": "et les",
+      "termsOfService": "Conditions d'Utilisation",
+      "dataProcessingNote": "Nous traitons vos données pour fournir le service. Vous pouvez exporter ou supprimer vos données à tout moment."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Voisins",
     "nayborDescription": "Voisins de confiance pour l'entraide et les urgences",
     "parasocial": "Suivis",
-    "parasocialDescription": "Personnalités publiques et créateurs de contenu que vous suivez"
+    "parasocialDescription": "Personnalités publiques et créateurs de contenu que vous suivez",
+    "rolemodel": "Modèle",
+    "rolemodelDescription": "Des personnes dont les histoires de vie vous inspirent à être bon, meilleur, le meilleur"
   },
   "visualization": {
     "coreLabel": "{{count}} Noyau",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Accès des Secouristes",
+      "enabled": "Partager avec les Services d'Urgence",
+      "disabled": "Ne Pas Partager avec les Secouristes",
+      "enabledDescription": "Les dispatchers d'urgence vérifiés (ambulance, pompiers, police) peuvent demander votre Arbre de Clés de Porte lors d'interventions à votre adresse.",
+      "disabledDescription": "Les services de dispatch d'urgence N'auront PAS accès à vos contacts de clés de voisins. Seuls vos voisins désignés peuvent utiliser ces informations.",
+      "warning": "Désactiver ceci peut retarder la réponse d'urgence si les intervenants doivent enfoncer votre porte au lieu d'utiliser les clés détenues par les voisins.",
+      "reviewEnabled": "Le dispatch d'urgence peut accéder à votre Arbre de Clés de Porte",
+      "reviewDisabled": "L'accès du dispatch d'urgence est désactivé"
+    },
+    "doorBreaking": {
+      "title": "Préférence d'Enfoncement de Porte",
+      "description": "Si les intervenants d'urgence ne peuvent pas joindre un détenteur de clé, comment doivent-ils procéder?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Enfoncer Rapidement, Ignorer les Voisins",
+          "description": "En cas d'urgence, enfoncer la porte immédiatement. Ne pas perdre de temps à contacter les voisins pour les clés."
+        },
+        "break_fast_call_naybors": {
+          "name": "Enfoncer Rapidement, Appeler les Voisins",
+          "description": "Contacter les voisins pour les clés, mais ne pas hésiter à enfoncer la porte si nécessaire. La rapidité est prioritaire."
+        },
+        "last_resort_only": {
+          "name": "Dernier Recours Uniquement",
+          "description": "Veuillez n'enfoncer la porte qu'après mûre réflexion, en dernier recours lorsque c'est strictement légalement nécessaire."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "lastUpdated": "Dernière mise à jour: {{date}}",
+    "backToHome": "Retour à l'Accueil"
+  },
+  "settings": {
+    "deleteAccount": "Supprimer le Compte",
+    "deleteAccountDescription": "Supprimer définitivement votre compte et toutes les données associées",
+    "deleteAccountWarning": "Cette action est irréversible. Tous vos amis, publications, paramètres et autres données seront définitivement supprimés.",
+    "deleteAccountConfirmation": "Tapez DELETE pour confirmer",
+    "deleteAccountButton": "Supprimer Mon Compte",
+    "deleteAccountSuccess": "Votre compte a été supprimé",
+    "deleteAccountError": "Échec de la suppression du compte. Veuillez réessayer."
+  },
+  "naybor": {
+    "underMinWarning": "Vous n'avez que {{count}} voisin(s) — nous recommandons au moins 3",
+    "underMinDescription": "Avoir des voisins de confiance à proximité est essentiel pour les urgences, l'entraide et la résilience communautaire. Présentez-vous à vos voisins !",
+    "mrRogersQuote": "\"Ne veux-tu pas être mon voisin ?\" — Fred Rogers"
   }
 }

@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Por favor ingresa un correo electrónico válido",
-      "passwordTooShort": "La contraseña debe tener al menos 6 caracteres"
+      "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+      "mustAgreeToTerms": "Debes aceptar la Política de Privacidad y los Términos de Servicio para crear una cuenta"
     },
     "switch": {
       "haveAccount": "¿Ya tienes cuenta? Inicia sesión",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "Acepto la",
+      "privacyPolicy": "Política de Privacidad",
+      "and": "y los",
+      "termsOfService": "Términos de Servicio",
+      "dataProcessingNote": "Procesamos tus datos para proporcionar el servicio. Puedes exportar o eliminar tus datos en cualquier momento."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Vecinos",
     "nayborDescription": "Vecinos de confianza para ayuda mutua y emergencias",
     "parasocial": "Siguiendo",
-    "parasocialDescription": "Figuras públicas y creadores de contenido que sigues"
+    "parasocialDescription": "Figuras públicas y creadores de contenido que sigues",
+    "rolemodel": "Modelo a seguir",
+    "rolemodelDescription": "Personas cuyas historias de vida te inspiran a ser bueno, mejor, el mejor"
   },
   "visualization": {
     "coreLabel": "{{count}} Núcleo",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Acceso de Trabajadores de Emergencia",
+      "enabled": "Compartir con Servicios de Emergencia",
+      "disabled": "No Compartir con Trabajadores de Emergencia",
+      "enabledDescription": "El despacho de emergencia verificado (ambulancia, bomberos, policía) puede solicitar tu Árbol de Llaves de Puerta al responder a emergencias en tu dirección.",
+      "disabledDescription": "Los servicios de despacho de emergencia NO tendrán acceso a tus contactos de llaves de vecinos. Solo tus vecinos designados pueden usar esta información.",
+      "warning": "Desactivar esto puede retrasar la respuesta de emergencia si los respondedores necesitan derribar tu puerta en lugar de usar las llaves que tienen los vecinos.",
+      "reviewEnabled": "El despacho de emergencia puede acceder a tu Árbol de Llaves de Puerta",
+      "reviewDisabled": "El acceso del despacho de emergencia está desactivado"
+    },
+    "doorBreaking": {
+      "title": "Preferencia de Derribar Puerta",
+      "description": "Si los respondedores de emergencia no pueden contactar a un portador de llaves, ¿cómo deben proceder?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Derribar Rápido, Saltar Vecinos",
+          "description": "En emergencias, derribar la puerta inmediatamente. No perder tiempo contactando vecinos por llaves."
+        },
+        "break_fast_call_naybors": {
+          "name": "Derribar Rápido, Llamar Vecinos",
+          "description": "Contactar vecinos por llaves, pero no dudar en derribar la puerta si es necesario. La velocidad es prioridad."
+        },
+        "last_resort_only": {
+          "name": "Solo Último Recurso",
+          "description": "Por favor, solo derribar la puerta después de consideración cuidadosa, como último recurso cuando sea estrictamente necesario legalmente."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "lastUpdated": "Última actualización: {{date}}",
+    "backToHome": "Volver al Inicio"
+  },
+  "settings": {
+    "deleteAccount": "Eliminar Cuenta",
+    "deleteAccountDescription": "Eliminar permanentemente tu cuenta y todos los datos asociados",
+    "deleteAccountWarning": "Esta acción no se puede deshacer. Todos tus amigos, publicaciones, configuraciones y otros datos serán eliminados permanentemente.",
+    "deleteAccountConfirmation": "Escribe DELETE para confirmar",
+    "deleteAccountButton": "Eliminar Mi Cuenta",
+    "deleteAccountSuccess": "Tu cuenta ha sido eliminada",
+    "deleteAccountError": "Error al eliminar la cuenta. Por favor, inténtalo de nuevo."
+  },
+  "naybor": {
+    "underMinWarning": "Solo tienes {{count}} vecino(s) — recomendamos al menos 3",
+    "underMinDescription": "Tener vecinos de confianza cerca es esencial para emergencias, ayuda mutua y construir resiliencia comunitaria. ¡Preséntate a tus vecinos!",
+    "mrRogersQuote": "\"¿No quieres ser mi vecino?\" — Fred Rogers"
   }
 }

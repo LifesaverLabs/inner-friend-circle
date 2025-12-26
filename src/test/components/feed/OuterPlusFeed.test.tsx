@@ -8,6 +8,69 @@ import { TierFeed } from '@/components/feed/TierFeed';
 import { Friend, TierType } from '@/types/friend';
 import { FeedPost, SunsetNudge } from '@/types/feed';
 
+// Mock translations for FeedTabs and TierFeed components
+const mockTranslations: Record<string, string> = {
+  // Feed tabs translations
+  'feed.coreFeed': 'Core Feed',
+  'feed.innerFeed': 'Inner Feed',
+  'feed.outerFeed': 'Outer Plus',
+  'feed.manage': 'Manage',
+  'accessibility.feed.tabList': 'Feed navigation tabs',
+  'accessibility.feed.coreTab': 'Core Feed',
+  'accessibility.feed.innerTab': 'Inner Feed',
+  'accessibility.feed.outerTab': 'Outer Plus Feed',
+  'accessibility.feed.manageTab': 'Manage friends',
+  // Feed header translations
+  'feed.header.outer.title': 'Outer+',
+  'feed.header.outer.description': 'Posts from outer, naybor, parasocial, and role model friends',
+  // Empty state translations
+  'emptyState.noFriendsYet.core': 'No Core friends yet',
+  'emptyState.noFriendsYet.inner': 'No Inner Circle friends yet',
+  'emptyState.noFriendsYet.outer': 'No Outer Circle friends yet',
+  'emptyState.noPostsYet': 'No posts yet',
+  'emptyState.noPostsDescription.core': 'Share something with your closest friends.',
+  'emptyState.noPostsDescription.inner': 'Share something with your inner circle.',
+  'emptyState.noPostsDescription.outer': 'Share something with your connections.',
+  'tiers.coreDescription': 'Your 5 closest, most trusted friends',
+  'tiers.innerDescription': 'Up to 15 close friends you see regularly',
+  'tiers.outerDescription': 'Up to 150 meaningful connections that matter',
+  'emptyState.getStarted.core': 'Get started by adding friends to your Core circle.',
+  'emptyState.getStarted.inner': 'Get started by adding friends to your Inner circle.',
+  'emptyState.getStarted.outer': 'Get started by adding friends to your Outer circle.',
+  'emptyState.addToSee.core': 'Add friends to see their posts here.',
+  'emptyState.addToSee.inner': 'Add friends to see their posts here.',
+  'emptyState.addToSee.outer': 'Add friends to see their posts here.',
+  'emptyState.addFriends.core': 'Add Core Friends',
+  'emptyState.addFriends.inner': 'Add Inner Circle Friends',
+  'emptyState.addFriends.outer': 'Add Outer Circle Friends',
+  'emptyState.createPost': 'Create Post',
+  // Sunset nudge panel translations
+  'sunsetNudge.title': 'Sunset Reconnection',
+  'sunsetNudge.friendsNeedReconnection': '{{count}} friends need reconnection',
+  // Manage tab translations
+  'manage.title': 'Manage Friends',
+  'manage.addFriend': 'Add Friend',
+};
+
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, opts?: Record<string, unknown>) => {
+      let translation = mockTranslations[key] || key;
+      if (opts) {
+        Object.entries(opts).forEach(([k, v]) => {
+          translation = translation.replace(new RegExp(`\\{\\{${k}\\}\\}`, 'g'), String(v));
+        });
+      }
+      return translation;
+    },
+    i18n: { language: 'en', changeLanguage: vi.fn() },
+  }),
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
 // Wrapper with required providers
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
   <TooltipProvider>{children}</TooltipProvider>

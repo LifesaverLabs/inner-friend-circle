@@ -184,6 +184,40 @@ export interface NayborKeyAccess {
 }
 
 /**
+ * Door breaking preference - how aggressively to attempt entry vs using keys
+ */
+export type DoorBreakingPreference =
+  | 'break_fast_no_naybors'       // "Please break my door fast, don't call naybors"
+  | 'break_fast_call_naybors'     // "Please break door fast, call naybors but don't hesitate"
+  | 'last_resort_only';           // "Please only break door after lots of thought and last resort"
+
+export const DOOR_BREAKING_OPTIONS: Record<DoorBreakingPreference, {
+  id: DoorBreakingPreference;
+  name: string;
+  description: string;
+  icon: string;
+}> = {
+  break_fast_no_naybors: {
+    id: 'break_fast_no_naybors',
+    name: 'Break Door Fast, Skip Naybors',
+    description: 'In emergencies, break down the door immediately. Do not waste time contacting naybors for keys.',
+    icon: '⚡',
+  },
+  break_fast_call_naybors: {
+    id: 'break_fast_call_naybors',
+    name: 'Break Door Fast, Call Naybors',
+    description: 'Contact naybors for keys, but do not hesitate to break down the door if needed. Speed is priority.',
+    icon: '🚪',
+  },
+  last_resort_only: {
+    id: 'last_resort_only',
+    name: 'Last Resort Only',
+    description: 'Please only break door after careful consideration, as a last resort when strictly legally necessary.',
+    icon: '🔐',
+  },
+};
+
+/**
  * User's home entry preferences
  */
 export interface HomeEntryPreferences {
@@ -193,8 +227,199 @@ export interface HomeEntryPreferences {
   entryInstructions?: string; // Special instructions for entry
   emergencyPermissions: EmergencyScenario[]; // Which scenarios allow entry (mandatory ones always included)
   keyHolders: NayborKeyAccess[];
+  /**
+   * Whether to share Door Key Tree with verified Emergency Dispatch accounts
+   * (ambulance, fire, police) via Naybor SOS or Inner Friend API.
+   * User can toggle this off to "Do not share with Emergency Workers"
+   */
+  shareWithEmergencyWorkers: boolean;
+  /**
+   * User's preference for how aggressively to break door vs use naybor keys
+   */
+  doorBreakingPreference: DoorBreakingPreference;
   createdAt: Date;
   updatedAt: Date;
+}
+
+// ============================================================================
+// EMERGENCY DISPATCH ACCOUNT INFRASTRUCTURE
+// ============================================================================
+
+/**
+ * Types of emergency dispatch organizations
+ */
+export type DispatchOrganizationType =
+  | 'police'          // Law enforcement
+  | 'fire'            // Fire department
+  | 'ems'             // Emergency Medical Services / Ambulance
+  | 'combined'        // Combined dispatch center (handles multiple services)
+  | 'private_ems'     // Private ambulance services
+  | 'hospital'        // Hospital emergency department
+  | 'crisis_center';  // Mental health crisis centers
+
+/**
+ * Types of legal authority for Door Key Tree requests
+ */
+export type RequestLegalBasis =
+  | 'warrantless_probable_cause'  // Warrantless emergency (life-threatening, child safety)
+  | 'judicial_warrant'            // Court-issued search warrant
+  | 'consent'                     // Voluntary consent from resident/key holder
+  | 'exigent_circumstances';      // Immediate threat to life requiring action
+
+/**
+ * Jurisdictions served by a dispatch organization
+ */
+export interface DispatchJurisdiction {
+  country: string;       // ISO country code
+  state?: string;        // State/province/region
+  county?: string;       // County/district
+  city?: string;         // City/municipality
+  zipCodes?: string[];   // Specific zip/postal codes covered
+  description?: string;  // Human-readable description of coverage area
+}
+
+/**
+ * Contact person for accountability at a dispatch organization
+ */
+export interface DispatchResponsibleParty {
+  name: string;
+  title: string;                    // e.g., "Chief of Police", "Fire Chief", "EMS Director"
+  email: string;
+  phone: string;
+  available24x7: boolean;
+  alternateContactName?: string;
+  alternateContactPhone?: string;
+}
+
+/**
+ * Legal accountability information for a dispatch organization
+ */
+export interface DispatchLegalInfo {
+  organizationLegalName: string;    // Full legal name for lawsuits
+  taxId?: string;                   // EIN or equivalent tax ID
+  incorporationState?: string;      // Where organization is incorporated
+  registeredAgent?: string;         // Legal agent for service of process
+  registeredAgentAddress?: string;
+  insuranceCarrier?: string;        // Liability insurance provider
+  insurancePolicyNumber?: string;
+  arbitrationClause?: string;       // Mandatory arbitration terms if applicable
+  disputeResolutionProcess?: string; // How disputes should be handled
+}
+
+/**
+ * Verified Emergency Dispatch account - created and managed by Inner Friend admins
+ */
+export interface EmergencyDispatchAccount {
+  id: string;
+  organizationType: DispatchOrganizationType;
+  organizationName: string;         // Display name
+  organizationCode?: string;        // Internal department code (e.g., NYPD, LAFD)
+
+  // Verification status
+  isVerified: boolean;
+  verifiedAt?: Date;
+  verifiedBy?: string;              // Inner Friend admin who verified
+  verificationMethod?: string;      // How verification was performed
+  verificationDocuments?: string[]; // References to uploaded verification docs
+
+  // Jurisdictions and coverage
+  jurisdictions: DispatchJurisdiction[];
+
+  // Contact and accountability
+  primaryContact: DispatchResponsibleParty;
+  secondaryContact?: DispatchResponsibleParty;
+  dispatchCenterPhone: string;      // 24/7 dispatch phone
+  dispatchCenterAddress: string;
+
+  // Legal accountability
+  legalInfo: DispatchLegalInfo;
+
+  // API access
+  apiKeyHash?: string;              // Hashed API key for programmatic access
+  apiKeyCreatedAt?: Date;
+  apiKeyLastUsedAt?: Date;
+  apiRateLimit?: number;            // Requests per hour limit
+
+  // Account status
+  isActive: boolean;
+  suspendedAt?: Date;
+  suspendedReason?: string;
+  suspendedBy?: string;
+
+  // Metadata
+  createdAt: Date;
+  updatedAt: Date;
+  notes?: string;                   // Internal admin notes
+}
+
+/**
+ * Audit log entry for Door Key Tree requests
+ */
+export interface DoorKeyTreeRequestAuditLog {
+  id: string;
+  requestId: string;                // Unique request identifier
+
+  // Who requested
+  dispatchAccountId: string;
+  dispatchOrganizationName: string;
+  dispatchOrganizationType: DispatchOrganizationType;
+  requestingOfficerName?: string;   // Name of person making request
+  requestingOfficerBadge?: string;  // Badge number or ID
+
+  // What was requested
+  targetUserId: string;
+  targetAddress: string;
+  targetUnitNumber?: string;
+
+  // Legal basis
+  legalBasis: RequestLegalBasis;
+  warrantNumber?: string;           // If judicial warrant
+  warrantIssuingJudge?: string;     // Judge who issued warrant
+  warrantIssuedAt?: Date;
+  warrantExpiresAt?: Date;
+  probableCauseDescription?: string; // For warrantless requests
+
+  // Emergency classification
+  emergencyScenario: EmergencyScenario;
+  emergencyDescription: string;     // Human-readable description of emergency
+  isLifeThreatening: boolean;
+  estimatedResponseTimeMinutes?: number;
+
+  // Response
+  wasApproved: boolean;
+  responseAt: Date;
+  responseMethod: 'auto' | 'manual' | 'denied';
+  denialReason?: string;
+
+  // Data returned (if approved)
+  keyHoldersReturned?: number;      // Count of naybors with keys shared
+  dataReturnedAt?: Date;
+
+  // Naybor communication
+  nayborsNotified?: string[];       // IDs of naybors notified about request
+  nayborNotificationMethod?: 'sms' | 'push' | 'email' | 'call';
+  nayborNotificationSentAt?: Date;
+  nayborNotificationMessage?: string;
+
+  // Audit metadata
+  ipAddress?: string;
+  userAgent?: string;
+  requestedAt: Date;
+  createdAt: Date;
+}
+
+/**
+ * Status of sharing preference for a user
+ */
+export interface EmergencyWorkerSharingStatus {
+  userId: string;
+  shareWithEmergencyWorkers: boolean;
+  lastUpdatedAt: Date;
+  updateHistory: Array<{
+    previousValue: boolean;
+    newValue: boolean;
+    changedAt: Date;
+  }>;
 }
 
 /**
@@ -236,12 +461,15 @@ export function getScenariosByCategory(): Record<EmergencyScenarioInfo['category
 
 /**
  * Default home entry preferences with all mandatory scenarios
+ * By default, sharing with emergency workers is ON (opt-out model for safety)
  */
 export function getDefaultHomeEntryPreferences(userId: string): HomeEntryPreferences {
   return {
     userId,
     emergencyPermissions: getMandatoryScenarios(),
     keyHolders: [],
+    shareWithEmergencyWorkers: true, // Default to sharing for safety
+    doorBreakingPreference: 'break_fast_call_naybors', // Default: call naybors but don't hesitate
     createdAt: new Date(),
     updatedAt: new Date(),
   };

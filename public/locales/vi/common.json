@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
-      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự"
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "Đã có tài khoản? Đăng nhập",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Hàng xóm",
     "nayborDescription": "Hàng xóm đáng tin cậy để giúp đỡ và tình huống khẩn cấp",
     "parasocial": "Theo dõi",
-    "parasocialDescription": "Người nổi tiếng và nhà sáng tạo nội dung bạn theo dõi"
+    "parasocialDescription": "Người nổi tiếng và nhà sáng tạo nội dung bạn theo dõi",
+    "rolemodel": "Hình mẫu",
+    "rolemodelDescription": "Những người mà câu chuyện cuộc đời truyền cảm hứng cho bạn trở nên tốt, tốt hơn, tốt nhất"
   },
   "visualization": {
     "coreLabel": "{{count}} Lõi",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Quyền Truy Cập Nhân Viên Cấp Cứu",
+      "enabled": "Chia Sẻ với Dịch Vụ Cấp Cứu",
+      "disabled": "Không Chia Sẻ với Nhân Viên Cấp Cứu",
+      "enabledDescription": "Điều phối cấp cứu đã xác minh (xe cấp cứu, cứu hỏa, công an) có thể yêu cầu Cây Khóa Cửa của bạn khi phản hồi các trường hợp khẩn cấp tại địa chỉ của bạn.",
+      "disabledDescription": "Các dịch vụ điều phối cấp cứu sẽ KHÔNG có quyền truy cập vào danh bạ khóa hàng xóm của bạn. Chỉ những hàng xóm được chỉ định của bạn mới có thể sử dụng thông tin này.",
+      "warning": "Tắt điều này có thể trì hoãn phản hồi cấp cứu nếu người cứu hộ phải phá cửa thay vì sử dụng chìa khóa hàng xóm giữ.",
+      "reviewEnabled": "Điều phối cấp cứu có thể truy cập Cây Khóa Cửa của bạn",
+      "reviewDisabled": "Quyền truy cập điều phối cấp cứu bị tắt"
+    },
+    "doorBreaking": {
+      "title": "Ưu Tiên Phá Cửa",
+      "description": "Nếu người cứu hộ không thể liên lạc được người giữ chìa khóa, họ nên tiến hành như thế nào?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Phá Nhanh, Bỏ Qua Hàng Xóm",
+          "description": "Trong trường hợp khẩn cấp, phá cửa ngay lập tức. Đừng lãng phí thời gian liên lạc hàng xóm để lấy chìa khóa."
+        },
+        "break_fast_call_naybors": {
+          "name": "Phá Nhanh, Gọi Hàng Xóm",
+          "description": "Liên lạc hàng xóm để lấy chìa khóa, nhưng đừng ngần ngại phá cửa nếu cần. Tốc độ là ưu tiên."
+        },
+        "last_resort_only": {
+          "name": "Chỉ Là Phương Án Cuối",
+          "description": "Xin chỉ phá cửa sau khi cân nhắc kỹ, như phương án cuối cùng khi cần thiết về mặt pháp lý."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "Bạn chỉ có {{count}} người hàng xóm — chúng tôi khuyến nghị ít nhất 3",
+    "underMinDescription": "Có hàng xóm đáng tin cậy gần đó là điều cần thiết cho các trường hợp khẩn cấp, hỗ trợ lẫn nhau và xây dựng khả năng phục hồi của cộng đồng. Hãy giới thiệu bản thân với hàng xóm của bạn!",
+    "mrRogersQuote": "\"Bạn sẽ không làm hàng xóm của tôi sao?\" — Fred Rogers"
   }
 }

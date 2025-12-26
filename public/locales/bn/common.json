@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "অনুগ্রহ করে একটি বৈধ ইমেইল ঠিকানা লিখুন",
-      "passwordTooShort": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে"
+      "passwordTooShort": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "ইতিমধ্যে অ্যাকাউন্ট আছে? সাইন ইন করুন",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "প্রতিবেশী",
     "nayborDescription": "জরুরি অবস্থা ও পারস্পরিক সাহায্যের জন্য বিশ্বস্ত প্রতিবেশী",
     "parasocial": "অনুসরণ",
-    "parasocialDescription": "যে পাবলিক ফিগার ও কন্টেন্ট ক্রিয়েটরদের আপনি অনুসরণ করেন"
+    "parasocialDescription": "যে পাবলিক ফিগার ও কন্টেন্ট ক্রিয়েটরদের আপনি অনুসরণ করেন",
+    "rolemodel": "আদর্শ",
+    "rolemodelDescription": "যাদের জীবনের গল্প আপনাকে ভালো, উন্নত, সেরা হতে অনুপ্রাণিত করে"
   },
   "visualization": {
     "coreLabel": "{{count}} কোর",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "জরুরি কর্মী অ্যাক্সেস",
+      "enabled": "জরুরি পরিষেবার সাথে শেয়ার করুন",
+      "disabled": "জরুরি কর্মীদের সাথে শেয়ার করবেন না",
+      "enabledDescription": "যাচাইকৃত জরুরি প্রেরণ (অ্যাম্বুলেন্স, অগ্নি, পুলিশ) আপনার ঠিকানায় জরুরি পরিস্থিতিতে সাড়া দেওয়ার সময় আপনার ডোর কী ট্রি অনুরোধ করতে পারে।",
+      "disabledDescription": "জরুরি প্রেরণ পরিষেবাগুলির আপনার প্রতিবেশীর চাবি পরিচিতিতে অ্যাক্সেস থাকবে না। শুধুমাত্র আপনার মনোনীত প্রতিবেশীরা এই তথ্য ব্যবহার করতে পারেন।",
+      "warning": "এটি নিষ্ক্রিয় করলে জরুরি প্রতিক্রিয়া বিলম্বিত হতে পারে যদি সাড়াদানকারীদের প্রতিবেশীর ধারণকৃত চাবি ব্যবহার না করে আপনার দরজা ভাঙতে হয়।",
+      "reviewEnabled": "জরুরি প্রেরণ আপনার ডোর কী ট্রি অ্যাক্সেস করতে পারে",
+      "reviewDisabled": "জরুরি প্রেরণ অ্যাক্সেস নিষ্ক্রিয়"
+    },
+    "doorBreaking": {
+      "title": "দরজা ভাঙার পছন্দ",
+      "description": "যদি জরুরি সাড়াদানকারীরা চাবিধারীর কাছে পৌঁছাতে না পারে, তাহলে তারা কীভাবে এগিয়ে যাবে?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "দ্রুত ভাঙুন, প্রতিবেশী এড়িয়ে যান",
+          "description": "জরুরি অবস্থায়, অবিলম্বে দরজা ভেঙে ফেলুন। চাবির জন্য প্রতিবেশীদের সাথে যোগাযোগ করতে সময় নষ্ট করবেন না।"
+        },
+        "break_fast_call_naybors": {
+          "name": "দ্রুত ভাঙুন, প্রতিবেশীদের কল করুন",
+          "description": "চাবির জন্য প্রতিবেশীদের সাথে যোগাযোগ করুন, তবে প্রয়োজনে দরজা ভাঙতে দ্বিধা করবেন না। গতি অগ্রাধিকার।"
+        },
+        "last_resort_only": {
+          "name": "শুধুমাত্র শেষ অবলম্বন",
+          "description": "অনুগ্রহ করে সতর্কতার সাথে বিবেচনা করার পরেই দরজা ভাঙুন, শুধুমাত্র কঠোরভাবে আইনত প্রয়োজনীয় হলে শেষ অবলম্বন হিসাবে।"
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "আপনার শুধু {{count}} জন প্রতিবেশী আছে — আমরা কমপক্ষে ৩ জন সুপারিশ করি",
+    "underMinDescription": "জরুরি অবস্থা, পারস্পরিক সহায়তা এবং সম্প্রদায়ের স্থিতিস্থাপকতা তৈরির জন্য নিকটবর্তী বিশ্বস্ত প্রতিবেশী থাকা অপরিহার্য। আপনার প্রতিবেশীদের সাথে পরিচিত হন!",
+    "mrRogersQuote": "\"তুমি কি আমার প্রতিবেশী হবে?\" — ফ্রেড রজার্স"
   }
 }

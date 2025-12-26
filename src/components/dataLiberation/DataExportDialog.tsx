@@ -15,6 +15,7 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Friend, TierType } from '@/types/friend';
 import { FeedPost, PrivacySettings, NotificationSettings } from '@/types/feed';
+import { HomeEntryPreferences } from '@/types/keysShared';
 import {
   exportSocialGraph,
   createExportFile,
@@ -29,6 +30,7 @@ interface DataExportDialogProps {
   posts: FeedPost[];
   privacySettings?: PrivacySettings;
   notificationSettings?: NotificationSettings;
+  keysSharedPreferences?: HomeEntryPreferences;
 }
 
 interface ExportOptions {
@@ -37,6 +39,7 @@ interface ExportOptions {
   includeSettings: boolean;
   includeContactInfo: boolean;
   includeNotes: boolean;
+  includeKeysShared: boolean;
 }
 
 type ExportState = 'options' | 'exporting' | 'success' | 'error';
@@ -59,6 +62,7 @@ export function DataExportDialog({
   posts,
   privacySettings,
   notificationSettings,
+  keysSharedPreferences,
 }: DataExportDialogProps) {
   const [options, setOptions] = useState<ExportOptions>({
     includeFriends: true,
@@ -66,6 +70,7 @@ export function DataExportDialog({
     includeSettings: true,
     includeContactInfo: true,
     includeNotes: true,
+    includeKeysShared: true,
   });
 
   const [exportState, setExportState] = useState<ExportState>('options');
@@ -133,7 +138,8 @@ export function DataExportDialog({
         filteredFriends,
         filteredPosts,
         options.includeSettings ? privacySettings : undefined,
-        options.includeSettings ? notificationSettings : undefined
+        options.includeSettings ? notificationSettings : undefined,
+        options.includeKeysShared ? keysSharedPreferences : undefined
       );
 
       // Create downloadable file
@@ -300,19 +306,42 @@ export function DataExportDialog({
                       Privacy & notification settings
                     </Label>
                   </div>
+
+                  {keysSharedPreferences && (
+                    <div className="flex items-center gap-2">
+                      <Checkbox
+                        id="includeKeysShared"
+                        checked={options.includeKeysShared}
+                        onCheckedChange={(checked) =>
+                          setOptions((o) => ({ ...o, includeKeysShared: !!checked }))
+                        }
+                      />
+                      <Label htmlFor="includeKeysShared" className="text-sm">
+                        Keys Shared preferences (emergency access)
+                      </Label>
+                    </div>
+                  )}
                 </div>
               </div>
 
               {/* Sensitive Data Warning */}
-              {options.includeContactInfo && exportSummary.hasContactInfo && (
+              {(options.includeContactInfo && exportSummary.hasContactInfo) || (options.includeKeysShared && keysSharedPreferences) ? (
                 <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex gap-2">
                   <AlertTriangle className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
-                  <p className="text-xs text-yellow-700 dark:text-yellow-500">
-                    This export will include personal contact information.
-                    Store the file securely.
-                  </p>
+                  <div className="text-xs text-yellow-700 dark:text-yellow-500">
+                    <p className="font-medium mb-1">Sensitive data included:</p>
+                    <ul className="list-disc list-inside space-y-0.5">
+                      {options.includeContactInfo && exportSummary.hasContactInfo && (
+                        <li>Personal contact information (email, phone)</li>
+                      )}
+                      {options.includeKeysShared && keysSharedPreferences && (
+                        <li>Home security info (address, key holders, entry codes)</li>
+                      )}
+                    </ul>
+                    <p className="mt-1">Store the exported file securely.</p>
+                  </div>
                 </div>
-              )}
+              ) : null}
 
               <DialogFooter className="mt-6">
                 <Button variant="outline" onClick={handleClose}>

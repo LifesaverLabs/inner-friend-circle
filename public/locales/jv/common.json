@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Mangga lebokake alamat email sing valid",
-      "passwordTooShort": "Sandi kudu paling ora 6 karakter"
+      "passwordTooShort": "Sandi kudu paling ora 6 karakter",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "Wis duwe akun? Mlebu",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Tangga",
     "nayborDescription": "Tangga sing dipercaya kanggo tulung-tinulung lan darurat",
     "parasocial": "Ngikuti",
-    "parasocialDescription": "Tokoh publik lan kreator konten sing diikuti"
+    "parasocialDescription": "Tokoh publik lan kreator konten sing diikuti",
+    "rolemodel": "Model",
+    "rolemodelDescription": "Wong sing cerita uripe menehi inspirasi kanggo dadi apik, luwih apik, paling apik"
   },
   "visualization": {
     "coreLabel": "{{count}} Inti",
@@ -829,6 +839,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Akses Petugas Darurat",
+      "enabled": "Bagikan karo Layanan Darurat",
+      "disabled": "Ora Bagikan karo Petugas Darurat",
+      "enabledDescription": "Dispatch darurat sing diverifikasi (ambulans, pemadam, polisi) bisa njaluk Door Key Tree sampeyan nalika nanggapi kedaruratan ing alamatmu.",
+      "disabledDescription": "Layanan dispatch darurat ORA bakal duwe akses menyang kontak kunci tetangga sampeyan. Mung tetangga sing ditunjuk sing bisa nggunakake informasi iki.",
+      "warning": "Mateni iki bisa ngundurake respon darurat yen responden kudu nyerang lawang tinimbang nggunakake kunci sing dicekel tetangga.",
+      "reviewEnabled": "Dispatch darurat bisa ngakses Door Key Tree sampeyan",
+      "reviewDisabled": "Akses dispatch darurat dipateni"
+    },
+    "doorBreaking": {
+      "title": "Preferensi Nyerang Lawang",
+      "description": "Yen responden darurat ora bisa nggayuh pemegang kunci, kepiye carane kudu maju?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Nyerang Cepet, Lewati Tetangga",
+          "description": "Ing kedaruratan, nyerang lawang langsung. Ora mbuwang wektu kanggo hubungi tetangga kanggo kunci."
+        },
+        "break_fast_call_naybors": {
+          "name": "Nyerang Cepet, Telpon Tetangga",
+          "description": "Hubungi tetangga kanggo kunci, nanging ora ragu nyerang lawang yen perlu. Kecepatan minangka prioritas."
+        },
+        "last_resort_only": {
+          "name": "Mung Pilihan Terakhir",
+          "description": "Tulung mung nyerang lawang sawise pertimbangan sing ati-ati, minangka pilihan terakhir nalika sacara hukum perlu."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "Sampeyan mung duwe {{count}} tangga — kita nyaranake paling ora 3",
+    "underMinDescription": "Duwe tangga sing dipercaya cedhak iku penting kanggo darurat, bantuan bebarengan, lan mbangun ketahanan komunitas. Kenalake dhewe marang tanggamu!",
+    "mrRogersQuote": "\"Apa sampeyan ora dadi tanggaku?\" — Fred Rogers"
   }
 }

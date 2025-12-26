@@ -11,6 +11,96 @@ import { NayborSOSQuickPanel } from '@/components/naybor/NayborSOSQuickPanel';
 import { SunsetNudge, FeedPost } from '@/types/feed';
 import { Friend } from '@/types/friend';
 
+// Mock translations for accessibility tests
+const mockTranslations: Record<string, string> = {
+  // Feed tabs
+  'feed.coreFeed': 'Core Feed',
+  'feed.innerFeed': 'Inner Feed',
+  'feed.outerFeed': 'Outer Plus',
+  'feed.manage': 'Manage',
+  // Post actions
+  'post.actions.like': 'Like this post',
+  'post.actions.unlike': 'Unlike this post',
+  'post.actions.voiceReply': 'Voice Reply',
+  'post.actions.meetup': 'Schedule a meetup',
+  'post.actions.comment': 'Add a comment',
+  'post.actions.share': 'Share this post',
+  // Post content
+  'post.content.joinCall': 'Join call',
+  'post.content.rsvpYes': 'RSVP yes to meetup',
+  'post.content.rsvpMaybe': 'RSVP maybe to meetup',
+  'post.content.sharedPhoto': 'Shared photo',
+  // Sunset nudge panel
+  'sunsetNudge.title': 'Sunset Reconnection',
+  'sunsetNudge.friendsNeedReconnection': '{{count}} friends need reconnection',
+  'sunsetNudge.planMeetup': 'Plan Meetup',
+  'sunsetNudge.dismiss': 'Dismiss',
+  'sunsetNudge.connected': 'Connected',
+  'sunsetNudge.selectDate': 'Select date',
+  // NayborSOS Quick Panel
+  'nayborSOS.quickPanel.title': 'Quick contacts:',
+  'nayborSOS.quickPanel.noPhone': 'No phone',
+  // Empty states
+  'emptyState.noFriendsYet.core': 'No Core friends yet',
+  'emptyState.noFriendsYet.inner': 'No Inner Circle friends yet',
+  'emptyState.noFriendsYet.outer': 'No Outer Circle friends yet',
+  'emptyState.noPostsYet': 'No posts yet',
+  'emptyState.noPostsDescription.core': 'Share something with your closest friends.',
+  'emptyState.noPostsDescription.inner': 'Share something with your inner circle.',
+  'emptyState.noPostsDescription.outer': 'Share something with your connections.',
+  'tiers.coreDescription': 'Your 5 closest, most trusted friends',
+  'tiers.innerDescription': 'Up to 15 close friends you see regularly',
+  'tiers.outerDescription': 'Up to 150 meaningful connections that matter',
+  'emptyState.getStarted.core': 'Get started by adding friends to your Core circle.',
+  'emptyState.getStarted.inner': 'Get started by adding friends to your Inner circle.',
+  'emptyState.getStarted.outer': 'Get started by adding friends to your Outer circle.',
+  'emptyState.addToSee.core': 'Add friends to see their posts here.',
+  'emptyState.addToSee.inner': 'Add friends to see their posts here.',
+  'emptyState.addToSee.outer': 'Add friends to see their posts here.',
+  'emptyState.addFriends.core': 'Add Core Friends',
+  'emptyState.addFriends.inner': 'Add Inner Circle Friends',
+  'emptyState.addFriends.outer': 'Add Outer Circle Friends',
+  'emptyState.createPost': 'Create Post',
+  // Accessibility labels
+  'accessibility.feed.tabList': 'Friend circle feeds',
+  'accessibility.feed.coreTab': 'Core Feed - Your closest friends',
+  'accessibility.feed.innerTab': 'Inner Feed - Close friends',
+  'accessibility.feed.outerTab': 'Outer Plus Feed - Extended circle',
+  'accessibility.feed.manageTab': 'Manage your friend circle',
+  'accessibility.sunsetNudge.togglePanel': 'Toggle reconnection panel',
+  'accessibility.sunsetNudge.nudgeList': 'Friends who need reconnection',
+  'accessibility.sunsetNudge.planMeetupWith': 'Plan Meetup with {{name}}',
+  'accessibility.sunsetNudge.dismissReminder': 'Dismiss reminder for {{name}}',
+  'accessibility.sunsetNudge.markConnectedToday': 'Mark {{name}} as connected today',
+  'accessibility.sunsetNudge.selectWhenConnected': 'Select when you connected with {{name}}',
+  'accessibility.naybor.quickPanelRegion': 'Quick SOS contacts',
+  'accessibility.naybor.contactsList': 'Quick contacts:',
+  'accessibility.naybor.contactOptions': 'Contact options for {{name}}',
+  'accessibility.naybor.callButton': 'Call {{name}}',
+  'accessibility.naybor.messageButton': 'Message {{name}}',
+  'accessibility.post.rsvpOptions': 'RSVP options',
+};
+
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, opts?: Record<string, unknown>) => {
+      let translation = mockTranslations[key] || key;
+      // Handle interpolation like {{count}} or {{name}}
+      if (opts) {
+        Object.entries(opts).forEach(([k, v]) => {
+          translation = translation.replace(new RegExp(`\\{\\{${k}\\}\\}`, 'g'), String(v));
+        });
+      }
+      return translation;
+    },
+    i18n: { language: 'en', changeLanguage: vi.fn() },
+  }),
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
 // Mock the useFeed hook
 vi.mock('@/hooks/useFeed', () => ({
   useFeed: vi.fn(() => ({

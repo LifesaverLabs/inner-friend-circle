@@ -64,7 +64,8 @@
     },
     "validation": {
       "invalidEmail": "Please enter a valid email address",
-      "passwordTooShort": "Password must be at least 6 characters"
+      "passwordTooShort": "Password must be at least 6 characters",
+      "mustAgreeToTerms": "You must agree to the Privacy Policy and Terms of Service to create an account"
     },
     "switch": {
       "haveAccount": "Already have an account? Sign in",
@@ -80,6 +81,13 @@
     "toasts": {
       "signOutError": "Failed to sign out",
       "signOutSuccess": "Signed out successfully"
+    },
+    "consent": {
+      "agreeTo": "I agree to the",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service",
+      "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
     }
   },
   "notFound": {
@@ -127,7 +135,9 @@
     "naybor": "Naybor",
     "nayborDescription": "Trusted neighbors for mutual aid and emergencies",
     "parasocial": "Following",
-    "parasocialDescription": "Public figures and content creators you follow"
+    "parasocialDescription": "Public figures and content creators you follow",
+    "rolemodel": "Role Model",
+    "rolemodelDescription": "People whose life stories inspire you to be good, better, best"
   },
   "visualization": {
     "coreLabel": "{{count}} Core",
@@ -831,6 +841,54 @@
       "keyHolderAdded": "Key holder added",
       "keyHolderRemoved": "Key holder removed",
       "saved": "Keys shared preferences saved"
+    },
+    "emergencyWorkerSharing": {
+      "title": "Emergency Worker Access",
+      "enabled": "Share with Emergency Services",
+      "disabled": "Do Not Share with Emergency Workers",
+      "enabledDescription": "Verified emergency dispatch (ambulance, fire, police) can request your Door Key Tree when responding to emergencies at your address.",
+      "disabledDescription": "Emergency dispatch services will NOT have access to your naybor key contacts. Only your designated naybors can use this information.",
+      "warning": "Disabling this may delay emergency response if responders need to break down your door instead of using naybor-held keys.",
+      "reviewEnabled": "Emergency dispatch can access your Door Key Tree",
+      "reviewDisabled": "Emergency dispatch access is disabled"
+    },
+    "doorBreaking": {
+      "title": "Door Breaking Preference",
+      "description": "If emergency responders cannot reach a keyholder, how should they proceed?",
+      "options": {
+        "break_fast_no_naybors": {
+          "name": "Break Fast, Skip Naybors",
+          "description": "In emergencies, break down the door immediately. Do not waste time contacting naybors for keys."
+        },
+        "break_fast_call_naybors": {
+          "name": "Break Fast, Call Naybors",
+          "description": "Contact naybors for keys, but do not hesitate to break down the door if needed. Speed is priority."
+        },
+        "last_resort_only": {
+          "name": "Last Resort Only",
+          "description": "Please only break door after careful consideration, as a last resort when strictly legally necessary."
+        }
+      }
     }
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountDescription": "Permanently delete your account and all associated data",
+    "deleteAccountWarning": "This action cannot be undone. All your friends, posts, settings, and other data will be permanently deleted.",
+    "deleteAccountConfirmation": "Type DELETE to confirm",
+    "deleteAccountButton": "Delete My Account",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "naybor": {
+    "underMinWarning": "You only have {{count}} naybor(s) — we recommend at least 3",
+    "underMinDescription": "Having trusted naybors nearby is essential for emergencies, mutual aid, and building community resilience. Introduce yourself to your neighbors!",
+    "mrRogersQuote": "\"Won't you be my neighbor?\" — Fred Rogers"
   }
 }

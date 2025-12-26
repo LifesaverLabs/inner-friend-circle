@@ -42,7 +42,9 @@ import {
   EmergencyScenario,
   NayborKeyAccess,
   HomeEntryPreferences,
+  DoorBreakingPreference,
   EMERGENCY_SCENARIOS,
+  DOOR_BREAKING_OPTIONS,
   getMandatoryScenarios,
   getOptionalScenarios,
   getScenariosByCategory,
@@ -91,6 +93,8 @@ export function KeysSharedDialog({
   const [entryInstructions, setEntryInstructions] = useState('');
   const [keyHolders, setKeyHolders] = useState<NayborKeyAccess[]>([]);
   const [selectedOptionalScenarios, setSelectedOptionalScenarios] = useState<Set<EmergencyScenario>>(new Set());
+  const [shareWithEmergencyWorkers, setShareWithEmergencyWorkers] = useState(true);
+  const [doorBreakingPreference, setDoorBreakingPreference] = useState<DoorBreakingPreference>('break_fast_call_naybors');
 
   // Editing state for adding key holder
   const [editingNayborId, setEditingNayborId] = useState<string | null>(null);
@@ -105,6 +109,8 @@ export function KeysSharedDialog({
       setUnitNumber(initialPreferences.unitNumber || '');
       setEntryInstructions(initialPreferences.entryInstructions || '');
       setKeyHolders(initialPreferences.keyHolders);
+      setShareWithEmergencyWorkers(initialPreferences.shareWithEmergencyWorkers ?? true);
+      setDoorBreakingPreference(initialPreferences.doorBreakingPreference ?? 'break_fast_call_naybors');
 
       // Set optional scenarios
       const optionalEnabled = new Set<EmergencyScenario>();
@@ -122,6 +128,8 @@ export function KeysSharedDialog({
       setEntryInstructions('');
       setKeyHolders([]);
       setSelectedOptionalScenarios(new Set());
+      setShareWithEmergencyWorkers(true); // Default to sharing for safety
+      setDoorBreakingPreference('break_fast_call_naybors');
     }
   }, [initialPreferences, open]);
 
@@ -190,6 +198,8 @@ export function KeysSharedDialog({
       entryInstructions: entryInstructions || undefined,
       emergencyPermissions: allPermissions,
       keyHolders,
+      shareWithEmergencyWorkers,
+      doorBreakingPreference,
       createdAt: initialPreferences?.createdAt || new Date(),
       updatedAt: new Date(),
     };
@@ -580,6 +590,95 @@ export function KeysSharedDialog({
                     })}
                   </div>
                 </div>
+
+                {/* Emergency Worker Sharing Toggle */}
+                <div className="pt-4 border-t">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="w-4 h-4 text-blue-500" />
+                    <p className="text-sm font-medium">{t('keysShared.emergencyWorkerSharing.title')}</p>
+                  </div>
+                  <div className="p-3 rounded-lg border">
+                    <div className="flex items-start gap-3">
+                      <Switch
+                        id="share-emergency-workers"
+                        checked={shareWithEmergencyWorkers}
+                        onCheckedChange={setShareWithEmergencyWorkers}
+                      />
+                      <div className="flex-1">
+                        <Label htmlFor="share-emergency-workers" className="text-sm font-medium cursor-pointer">
+                          {shareWithEmergencyWorkers
+                            ? t('keysShared.emergencyWorkerSharing.enabled')
+                            : t('keysShared.emergencyWorkerSharing.disabled')}
+                        </Label>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          {shareWithEmergencyWorkers
+                            ? t('keysShared.emergencyWorkerSharing.enabledDescription')
+                            : t('keysShared.emergencyWorkerSharing.disabledDescription')}
+                        </p>
+                      </div>
+                    </div>
+                    {!shareWithEmergencyWorkers && (
+                      <div className="mt-3 p-2 rounded bg-amber-500/10 border border-amber-500/30">
+                        <div className="flex items-start gap-2">
+                          <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                          <p className="text-xs text-amber-700 dark:text-amber-400">
+                            {t('keysShared.emergencyWorkerSharing.warning')}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Door Breaking Preference */}
+                <div className="pt-4 border-t">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Lock className="w-4 h-4 text-muted-foreground" />
+                    <p className="text-sm font-medium">{t('keysShared.doorBreaking.title')}</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {t('keysShared.doorBreaking.description')}
+                  </p>
+                  <div className="space-y-2">
+                    {(Object.keys(DOOR_BREAKING_OPTIONS) as DoorBreakingPreference[]).map(optionId => {
+                      const option = DOOR_BREAKING_OPTIONS[optionId];
+                      const isSelected = doorBreakingPreference === optionId;
+                      return (
+                        <label
+                          key={optionId}
+                          className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
+                            isSelected
+                              ? 'bg-tier-naybor/5 border-tier-naybor/30'
+                              : 'border-border hover:border-tier-naybor/50'
+                          }`}
+                        >
+                          <div className={`w-4 h-4 rounded-full border-2 mt-0.5 shrink-0 flex items-center justify-center ${
+                            isSelected ? 'border-tier-naybor' : 'border-muted-foreground'
+                          }`}>
+                            {isSelected && <div className="w-2 h-2 rounded-full bg-tier-naybor" />}
+                          </div>
+                          <input
+                            type="radio"
+                            name="doorBreaking"
+                            value={optionId}
+                            checked={isSelected}
+                            onChange={() => setDoorBreakingPreference(optionId)}
+                            className="sr-only"
+                          />
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span>{option.icon}</span>
+                              <span className="font-medium text-sm">{t(`keysShared.doorBreaking.options.${optionId}.name`)}</span>
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {t(`keysShared.doorBreaking.options.${optionId}.description`)}
+                            </p>
+                          </div>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
               </motion.div>
             )}
 
@@ -654,6 +753,37 @@ export function KeysSharedDialog({
                     <p>
                       {t('keysShared.optionalCount', { count: selectedOptionalScenarios.size })} {t('keysShared.optionalLabel')}
                     </p>
+                  </div>
+                </div>
+
+                {/* Emergency worker sharing summary */}
+                <div className={`p-3 rounded-lg border ${
+                  shareWithEmergencyWorkers
+                    ? 'bg-blue-500/5 border-blue-500/20'
+                    : 'bg-amber-500/5 border-amber-500/20'
+                }`}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Shield className={`w-4 h-4 ${shareWithEmergencyWorkers ? 'text-blue-500' : 'text-amber-500'}`} />
+                    <span className="font-medium text-sm">{t('keysShared.emergencyWorkerSharing.title')}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    {shareWithEmergencyWorkers
+                      ? t('keysShared.emergencyWorkerSharing.reviewEnabled')
+                      : t('keysShared.emergencyWorkerSharing.reviewDisabled')}
+                  </p>
+                </div>
+
+                {/* Door breaking preference summary */}
+                <div className="p-3 rounded-lg bg-muted/50 border">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Lock className="w-4 h-4 text-muted-foreground" />
+                    <span className="font-medium text-sm">{t('keysShared.doorBreaking.title')}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>{DOOR_BREAKING_OPTIONS[doorBreakingPreference].icon}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {t(`keysShared.doorBreaking.options.${doorBreakingPreference}.name`)}
+                    </span>
                   </div>
                 </div>
 
