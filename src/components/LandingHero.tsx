@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { DunbarVisualization } from './DunbarVisualization';
 import { Footer } from './Footer';
 import { VersionBadge } from './VersionBadge';
+import { LanguageSelector } from './i18n/LanguageSelector';
 
 interface LandingHeroProps {
   onGetStarted: () => void;
@@ -27,7 +28,9 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
+          className="flex items-center gap-2"
         >
+          <LanguageSelector variant="prominent" />
           <Button variant="outline" onClick={onSignIn || onGetStarted}>
             Sign In
           </Button>

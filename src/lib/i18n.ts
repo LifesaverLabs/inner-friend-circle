@@ -141,6 +141,12 @@ export const SUPPORTED_LANGUAGES = {
     direction: 'rtl' as const,
     flag: '🇵🇰',
   },
+  he: {
+    name: 'Evereet',
+    nativeName: 'עברית',
+    direction: 'rtl' as const,
+    flag: '🇮🇱',
+  },
   bled: {
     name: 'Blesséd',
     nativeName: 'Blesséd',

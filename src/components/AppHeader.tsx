@@ -48,7 +48,7 @@ export function AppHeader({
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-2"
         >
-          <LanguageSelector variant="compact" />
+          <LanguageSelector variant="prominent" />
 
           {isLoggedIn ? (
             <DropdownMenu>

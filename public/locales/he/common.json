@@ -1,0 +1,320 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "טפח את מערכות היחסים הקרובות ביותר שלך",
+    "description": "כלי פרטיות-ראשון לשמירה על חברויות משמעותיות המבוסס על מחקר מספר דנבר"
+  },
+  "nav": {
+    "home": "בית",
+    "dashboard": "לוח בקרה",
+    "settings": "הגדרות",
+    "signIn": "התחברות",
+    "signOut": "התנתקות",
+    "profile": "פרופיל"
+  },
+  "tiers": {
+    "core": "ליבה",
+    "coreDescription": "המקורבים הכי קרובים שלך (עד 5)",
+    "inner": "פנימי",
+    "innerDescription": "חברים קרובים שאתה פוגש באופן קבוע (עד 15)",
+    "outer": "חיצוני",
+    "outerDescription": "חברים טובים ומעגל מורחב (עד 50)",
+    "acquainted": "מכרים",
+    "acquaintedDescription": "אנשים שאתה מכיר מספיק טוב כדי לברך",
+    "naybor": "שכן",
+    "nayborDescription": "שכנים מהימנים לעזרה הדדית ומצבי חירום",
+    "parasocial": "עוקב",
+    "parasocialDescription": "דמויות ציבוריות ויוצרי תוכן שאתה עוקב אחריהם"
+  },
+  "actions": {
+    "add": "הוסף",
+    "edit": "ערוך",
+    "delete": "מחק",
+    "save": "שמור",
+    "cancel": "בטל",
+    "confirm": "אשר",
+    "close": "סגור",
+    "back": "חזור",
+    "next": "הבא",
+    "done": "סיום",
+    "search": "חפש",
+    "filter": "סנן",
+    "export": "ייצוא",
+    "import": "ייבוא"
+  },
+  "friend": {
+    "addFriend": "הוסף חבר",
+    "editFriend": "ערוך איש קשר",
+    "removeFriend": "הסר חבר",
+    "moveTo": "העבר ל{{tier}}",
+    "name": "שם",
+    "email": "דוא\"ל",
+    "phone": "טלפון",
+    "notes": "הערות",
+    "preferredContact": "אמצעי קשר מועדף",
+    "lastContact": "קשר אחרון",
+    "daysSince": "לפני {{days}} ימים",
+    "neverContacted": "מעולם לא יצרתי קשר"
+  },
+  "feed": {
+    "coreFeed": "פיד ליבה",
+    "innerFeed": "פיד פנימי",
+    "outerFeed": "חיצוני+",
+    "manage": "ניהול",
+    "emptyCore": "הוסף חברי ליבה כדי לראות את הפוסטים שלהם כאן",
+    "emptyInner": "הוסף חברים פנימיים כדי לראות את הפוסטים שלהם כאן",
+    "emptyOuter": "הוסף חברים חיצוניים כדי לראות את הפוסטים שלהם כאן",
+    "compose": "מה על הלב?",
+    "post": "פרסם",
+    "like": "אהבתי",
+    "unlike": "הסר לייק",
+    "comment": "תגובה",
+    "share": "שתף",
+    "voiceReply": "תשובה קולית",
+    "scheduleCall": "תזמן שיחה",
+    "planMeetup": "תכנן מפגש"
+  },
+  "nudge": {
+    "timeToReconnect": "הגיע הזמן להתחבר מחדש",
+    "friendsNeedAttention": "חבר אחד זקוק לחיבור מחדש",
+    "friendsNeedAttention_plural": "{{count}} חברים זקוקים לחיבור מחדש",
+    "daysSinceContact": "{{days}} ימים מאז הקשר האחרון",
+    "neverContacted": "מעולם לא יצרתי קשר",
+    "connected": "מחובר",
+    "connectedToday": "סמן כמחובר היום",
+    "selectDate": "בחר מתי התחברת",
+    "dismiss": "התעלם"
+  },
+  "contact": {
+    "call": "התקשר",
+    "message": "הודעה",
+    "email": "דוא\"ל",
+    "methods": {
+      "tel": "שיחת טלפון",
+      "sms": "הודעת טקסט",
+      "whatsapp": "וואטסאפ",
+      "signal": "סיגנל",
+      "telegram": "טלגרם",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "דלג לתוכן הראשי",
+    "openMenu": "פתח תפריט",
+    "closeMenu": "סגור תפריט",
+    "expandPanel": "הרחב פאנל",
+    "collapsePanel": "צמצם פאנל",
+    "loading": "טוען...",
+    "loadingFeed": "טוען תוכן פיד",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "selected": "נבחר",
+    "notSelected": "לא נבחר",
+    "required": "חובה",
+    "optional": "אופציונלי",
+
+    "feed": {
+      "tabList": "פידים של מעגלי חברים",
+      "coreTab": "פיד ליבה - החברים הכי קרובים שלך",
+      "innerTab": "פיד פנימי - חברים קרובים",
+      "outerTab": "פיד חיצוני פלוס - מעגל מורחב כולל שכנים",
+      "manageTab": "נהל את מעגל החברים שלך"
+    },
+
+    "post": {
+      "likeButton": "אהב את הפוסט הזה",
+      "unlikeButton": "הסר לייק מהפוסט הזה",
+      "commentButton": "הוסף תגובה",
+      "shareButton": "שתף את הפוסט הזה",
+      "voiceReplyButton": "תשובה קולית",
+      "meetupButton": "תזמן מפגש",
+      "callButton": "התקשר דרך {{method}}",
+      "selectContactMethod": "בחר אמצעי קשר",
+      "photoAlt": "תמונה: {{description}}",
+      "photoFallback": "תמונה משותפת",
+      "videoLabel": "וידאו: {{description}}",
+      "videoFallback": "וידאו משותף",
+      "voiceNoteLabel": "הודעה קולית: {{description}}",
+      "voiceNoteFallback": "הודעה קולית",
+      "joinCall": "הצטרף לשיחה",
+      "rsvpYes": "אשר הגעה למפגש",
+      "rsvpMaybe": "אולי אגיע למפגש",
+      "rsvpOptions": "אפשרויות אישור הגעה"
+    },
+
+    "nudge": {
+      "panelExpanded": "פאנל תזכורת מורחב",
+      "panelCollapsed": "פאנל תזכורת מצומצם",
+      "friendsList": "חברים שזקוקים לחיבור מחדש",
+      "actionGroup": "פעולות עבור {{name}}",
+      "actionButton": "{{action}} עם {{name}}",
+      "dismissButton": "התעלם מתזכורת עבור {{name}}",
+      "connectedButton": "סמן את {{name}} כמחובר היום",
+      "selectDateButton": "בחר מתי התחברת עם {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "אנשי קשר מהירים למקרי חירום",
+      "sosContactsList": "אנשי קשר מהירים:",
+      "contactOptions": "אפשרויות קשר עבור {{name}}",
+      "callButton": "התקשר ל{{name}}",
+      "messageButton": "שלח הודעה ל{{name}}",
+      "sosDialogButton": "פתח דיאלוג קשר חירום שכנים",
+      "showQuickContacts": "הצג אנשי קשר מהירים",
+      "hideQuickContacts": "הסתר אנשי קשר מהירים",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - דחיפות קריטית",
+      "backToCategory": "חזור לבחירת קטגוריה",
+      "chooseNaybors": "המשך לבחירת שכנים ליצירת קשר",
+      "backToCompose": "חזור לכתיבת הודעה",
+      "copyMessage": "העתק הודעת חירום ללוח",
+      "nayborsList": "אנשי קשר שכנים",
+      "selectNaybor": "בחר {{name}}",
+      "alreadyContacted": "(כבר יצרתי קשר)",
+      "messageAll": "שלח הודעה לכל {{count}} השכן הנבחר",
+      "messageAll_plural": "שלח הודעה לכל {{count}} השכנים הנבחרים",
+      "locationDescription": "כאשר מופעל, המיקום המשוער שלך ישותף עם השכנים שלך"
+    },
+
+    "dialog": {
+      "close": "סגור דיאלוג",
+      "back": "חזור",
+      "confirm": "אשר פעולה"
+    },
+
+    "form": {
+      "showPassword": "הצג סיסמה",
+      "hidePassword": "הסתר סיסמה",
+      "clearInput": "נקה קלט",
+      "selectCountry": "בחר מדינה",
+      "phoneNumber": "מספר טלפון"
+    },
+
+    "status": {
+      "online": "מחובר",
+      "offline": "לא מחובר",
+      "away": "לא נמצא",
+      "busy": "עסוק"
+    }
+  },
+  "language": {
+    "select": "בחר שפה",
+    "current": "שפה נוכחית: {{language}}",
+    "helpTranslate": "עזור לתרגם את InnerFriend",
+    "communityTranslation": "הצטרף לקהילת המתרגמים שלנו כדי להנגיש את InnerFriend לעוד אנשים ברחבי העולם."
+  },
+  "errors": {
+    "generic": "משהו השתבש. אנא נסה שוב.",
+    "network": "שגיאת רשת. אנא בדוק את החיבור שלך.",
+    "notFound": "הדף לא נמצא",
+    "unauthorized": "אנא התחבר כדי להמשיך"
+  },
+  "footer": {
+    "privacy": "פרטיות",
+    "terms": "תנאים",
+    "about": "אודות",
+    "contribute": "תרום",
+    "openSource": "קוד פתוח"
+  },
+  "contactImport": {
+    "title": "ייבוא אנשי קשר",
+    "description": "ייבא אנשי קשר מהטלפון שלך, קובץ vCard, או גיליון CSV. כל אנשי הקשר יתווספו כמכרים.",
+    "tabs": {
+      "phone": "טלפון",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "קיבולת מכרים",
+    "capacityFull": "שכבת המכרים שלך מלאה. קדם כמה אנשי קשר כדי לפנות מקום.",
+    "loading": "טוען...",
+    "parsing": "מנתח אנשי קשר...",
+    "importing": "מייבא...",
+    "importingDescription": "מוסיף אנשי קשר למכרים שלך...",
+    "selectFile": "בחר קובץ",
+    "selectedFile": "קובץ נבחר",
+    "columns": "עמודות",
+    "privacyNote": "נתוני אנשי הקשר שלך נשארים במכשיר שלך. אנחנו לעולם לא מעלים או שומרים אותם.",
+    "defaultCountry": "מדינת ברירת מחדל למספרי טלפון",
+    "defaultCountryHint": "מספרי טלפון ללא קידומת מדינה ישתמשו במדינה זו. רוב אנשי הקשר נשמרים ללא קידומות מדינה.",
+    "promotionInfo": {
+      "title": "מסלול קידום קל",
+      "description": "כל אנשי הקשר המיובאים מתחילים כמכרים. אתה יכול בקלות לקדם כל איש קשר ל:",
+      "core": "ליבה (5 המקורבים הקרובים ביותר שלך)",
+      "inner": "פנימי (עד 15 חברים קרובים)",
+      "outer": "חיצוני (עד 50 חברים טובים)",
+      "naybor": "שכן (שכנים מהימנים למצבי חירום)",
+      "roleModel": "מודל לחיקוי (דמויות מעוררות השראה)"
+    },
+    "fromPhone": {
+      "title": "ייבא מהטלפון",
+      "description": "בחר אנשי קשר מספר הכתובות של הטלפון שלך",
+      "button": "בחר אנשי קשר"
+    },
+    "fromVCard": {
+      "dropZone": "שחרר את קובץ ה-vCard שלך כאן",
+      "hint": "מקבל קבצי .vcf או .vcard מ-iCloud, Google, Outlook",
+      "exportInstructions": "ייצא אנשי קשר מאפליקציית הדוא\"ל או הטלפון שלך כקובץ .vcf, ואז ייבא כאן."
+    },
+    "fromCsv": {
+      "dropZone": "שחרר את קובץ ה-CSV שלך כאן",
+      "hint": "פורמט CSV סטנדרטי עם כותרות",
+      "mapColumns": "מפה עמודות CSV",
+      "mapColumnsDescription": "בחר אילו עמודות מכילות את פרטי אנשי הקשר שלך:",
+      "importButton": "ייבא אנשי קשר"
+    },
+    "columnMapping": {
+      "name": "עמודת שם מלא",
+      "firstName": "עמודת שם פרטי",
+      "lastName": "עמודת שם משפחה",
+      "phone": "עמודת טלפון",
+      "email": "עמודת דוא\"ל",
+      "selectColumn": "בחר עמודה",
+      "none": "לא ממופה",
+      "orSeparate": "או השתמש בעמודות נפרדות לשם פרטי/משפחה:"
+    },
+    "preview": {
+      "title": "תצוגה מקדימה לייבוא",
+      "description": "סקור אנשי קשר לפני הייבוא",
+      "total": "סה\"כ מנותח",
+      "toImport": "לייבוא",
+      "duplicates": "כפילויות",
+      "source": "מקור",
+      "capacityWarning": "רק {{available}} מתוך {{total}} אנשי קשר ניתן לייבא. {{skipped}} ידולגו בגלל מגבלות קיבולת.",
+      "duplicatesInfo": "{{count}} איש/אנשי קשר כבר קיימים ברשימת החברים שלך וידולגו.",
+      "promotionReminder": "כל אנשי הקשר מיובאים כמכרים",
+      "promotionReminderDescription": "אתה יכול בקלות לקדם כל איש קשר לליבה, פנימי, חיצוני, שכן, או מודל לחיקוי בכל עת.",
+      "contactsToImport": "אנשי קשר לייבוא",
+      "noContactsToImport": "אין אנשי קשר לייבוא",
+      "andMore": "...ועוד {{count}}",
+      "duplicatesSkipped": "כפילויות (ידולגו)",
+      "matchedWith": "תואם ל{{name}} לפי {{by}}",
+      "andMoreDuplicates": "...ועוד {{count}} כפילויות",
+      "importButton": "ייבא {{count}} אנשי קשר"
+    },
+    "success": {
+      "title": "הייבוא הושלם!",
+      "description": "{{count}} אנשי קשר נוספו למכרים שלך.",
+      "imported": "יובאו",
+      "skipped": "דולגו",
+      "promotionTip": "בקר בלשונית ניהול כדי לקדם אנשי קשר לליבה, פנימי, חיצוני, או שכבות אחרות."
+    },
+    "error": {
+      "title": "הייבוא נכשל",
+      "generic": "לא ניתן לייבא אנשי קשר. אנא נסה שוב.",
+      "tryAgain": "נסה שוב"
+    },
+    "errors": {
+      "notSupported": "בורר אנשי הקשר אינו נתמך במכשיר זה",
+      "pickerFailed": "נכשל בגישה לאנשי קשר",
+      "invalidVCardFile": "אנא בחר קובץ vCard תקין (.vcf או .vcard)",
+      "invalidCsvFile": "אנא בחר קובץ CSV תקין",
+      "noContactsFound": "לא נמצאו אנשי קשר בקובץ",
+      "parseError": "נכשל בניתוח הקובץ",
+      "nameColumnRequired": "נדרשת עמודת שם לייבוא אנשי קשר",
+      "importFailed": "נכשל בייבוא אנשי קשר"
+    },
+    "mobileOnly": "בורר אנשי הקשר זמין רק במכשירים ניידים. השתמש בייבוא vCard או CSV במקום.",
+    "browserNotSupported": "הדפדפן שלך אינו תומך בבורר אנשי קשר. השתמש בייבוא vCard או CSV במקום.",
+    "useFileImport": "נסה לייבא מקובץ vCard או CSV במקום."
+  }
+}

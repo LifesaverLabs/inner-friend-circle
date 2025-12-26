@@ -16,7 +16,7 @@ import {
 } from '@/lib/i18n';
 
 interface LanguageSelectorProps {
-  variant?: 'default' | 'compact';
+  variant?: 'default' | 'compact' | 'prominent';
   showLabel?: boolean;
   className?: string;
 }
@@ -44,13 +44,22 @@ export function LanguageSelector({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="ghost"
+          variant={variant === 'prominent' ? 'outline' : 'ghost'}
           size={variant === 'compact' ? 'icon' : 'default'}
-          className={className}
+          className={`${className} ${variant === 'prominent' ? 'gap-2 border-primary/30 hover:border-primary/50' : ''}`}
           aria-label={t('language.select')}
         >
           {variant === 'compact' ? (
-            <Globe className="h-4 w-4" />
+            <>
+              <Globe className="h-4 w-4" />
+              <span className="sr-only">{t('language.select')}</span>
+            </>
+          ) : variant === 'prominent' ? (
+            <>
+              <Globe className="h-4 w-4 text-primary" />
+              <span className="text-base">{currentLangInfo.flag}</span>
+              <span className="text-sm font-medium">{currentLangInfo.nativeName}</span>
+            </>
           ) : (
             <>
               <span className="text-base mr-2">{currentLangInfo.flag}</span>
