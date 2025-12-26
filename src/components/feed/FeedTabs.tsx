@@ -90,7 +90,7 @@ export function FeedTabs({
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-outer"
         >
           <div className="w-2 h-2 rounded-full bg-tier-outer" />
-          Outer Feed
+          Outer+
         </TabsTrigger>
         <TabsTrigger
           value="manage"
@@ -106,6 +106,7 @@ export function FeedTabs({
           friends={friends}
           userId={userId}
           isLoggedIn={isLoggedIn}
+          onGoToManage={() => handleTabChange('manage')}
         />
       </TabsContent>
 
@@ -115,6 +116,7 @@ export function FeedTabs({
           friends={friends}
           userId={userId}
           isLoggedIn={isLoggedIn}
+          onGoToManage={() => handleTabChange('manage')}
         />
       </TabsContent>
 
@@ -124,6 +126,7 @@ export function FeedTabs({
           friends={friends}
           userId={userId}
           isLoggedIn={isLoggedIn}
+          onGoToManage={() => handleTabChange('manage')}
         />
       </TabsContent>
 

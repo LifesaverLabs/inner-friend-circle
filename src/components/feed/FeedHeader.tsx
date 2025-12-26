@@ -14,13 +14,13 @@ interface FeedHeaderProps {
 const TIER_NAMES: Record<FeedTier, string> = {
   core: 'Core',
   inner: 'Inner',
-  outer: 'Outer',
+  outer: 'Outer+',
 };
 
 const TIER_DESCRIPTIONS: Record<FeedTier, string> = {
   core: 'Updates from your closest friends',
   inner: 'Updates from your close friends',
-  outer: 'Updates from your meaningful connections',
+  outer: 'Updates from outer circle, naybors, parasocials & role models',
 };
 
 export function FeedHeader({
