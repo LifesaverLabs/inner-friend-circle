@@ -37,7 +37,79 @@
     "settings": "সেটিংস",
     "signIn": "সাইন ইন",
     "signOut": "সাইন আউট",
-    "profile": "প্রোফাইল"
+    "profile": "প্রোফাইল",
+    "back": "ফিরুন"
+  },
+  "auth": {
+    "signIn": {
+      "title": "স্বাগতম আবার",
+      "subtitle": "আপনার সার্কেলে প্রবেশ করতে সাইন ইন করুন",
+      "button": "সাইন ইন",
+      "submitting": "সাইন ইন হচ্ছে..."
+    },
+    "signUp": {
+      "title": "আপনার অ্যাকাউন্ট তৈরি করুন",
+      "subtitle": "আপনার ঘনিষ্ঠ বন্ধুত্ব লালন শুরু করুন",
+      "button": "অ্যাকাউন্ট তৈরি করুন",
+      "submitting": "অ্যাকাউন্ট তৈরি হচ্ছে..."
+    },
+    "form": {
+      "displayName": "প্রদর্শন নাম",
+      "displayNameOptional": "প্রদর্শন নাম (ঐচ্ছিক)",
+      "displayNamePlaceholder": "আপনার নাম",
+      "email": "ইমেইল",
+      "emailPlaceholder": "you@example.com",
+      "password": "পাসওয়ার্ড",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "অনুগ্রহ করে একটি বৈধ ইমেইল ঠিকানা লিখুন",
+      "passwordTooShort": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে"
+    },
+    "switch": {
+      "haveAccount": "ইতিমধ্যে অ্যাকাউন্ট আছে? সাইন ইন করুন",
+      "noAccount": "অ্যাকাউন্ট নেই? সাইন আপ করুন"
+    },
+    "toast": {
+      "signInSuccess": "স্বাগতম আবার!",
+      "signUpSuccess": "অ্যাকাউন্ট তৈরি হয়েছে! আপনি এখন সাইন ইন আছেন।",
+      "emailAlreadyRegistered": "এই ইমেইল ইতিমধ্যে নিবন্ধিত। সাইন ইন করার চেষ্টা করুন।",
+      "invalidCredentials": "অবৈধ ইমেইল বা পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।",
+      "unexpectedError": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
+    }
+  },
+  "notFound": {
+    "title": "৪০৪",
+    "message": "উপস! পেজ পাওয়া যায়নি",
+    "returnHome": "হোমে ফিরুন"
+  },
+  "profile": {
+    "notFound": {
+      "title": "প্রোফাইল পাওয়া যায়নি",
+      "message": "@{{handle}} হ্যান্ডেলে কোনো ব্যবহারকারী নেই",
+      "goHome": "হোমে যান"
+    },
+    "private": {
+      "title": "ব্যক্তিগত প্রোফাইল",
+      "message": "@{{handle}} তাদের প্রোফাইল ব্যক্তিগত করেছে",
+      "goHome": "হোমে যান"
+    },
+    "back": "ফিরুন",
+    "anonymous": "বেনামী",
+    "creator": "ক্রিয়েটর",
+    "joined": "{{time}} যোগ দিয়েছেন",
+    "followerCount": "{{count}} অনুসরণকারী",
+    "followerCount_plural": "{{count}} অনুসরণকারী",
+    "follow": "অনুসরণ করুন",
+    "unfollow": "আনফলো করুন",
+    "latestShares": "সাম্প্রতিক শেয়ার",
+    "contentSharedBy": "{{name}} দ্বারা শেয়ার করা কন্টেন্ট",
+    "noShares": "এখনো কোনো শেয়ার নেই",
+    "toast": {
+      "followed": "@{{handle}} অনুসরণ করছেন",
+      "unfollowed": "@{{handle}} আনফলো করেছেন",
+      "followFailed": "অনুসরণ করতে ব্যর্থ"
+    }
   },
   "tiers": {
     "core": "কোর",
@@ -52,6 +124,13 @@
     "nayborDescription": "জরুরি অবস্থা ও পারস্পরিক সাহায্যের জন্য বিশ্বস্ত প্রতিবেশী",
     "parasocial": "অনুসরণ",
     "parasocialDescription": "যে পাবলিক ফিগার ও কন্টেন্ট ক্রিয়েটরদের আপনি অনুসরণ করেন"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} কোর",
+    "innerLabel": "{{count}} ইনার",
+    "outerLabel": "{{count}} আউটার",
+    "nayborLabel": "{{count}} প্রতিবেশী",
+    "parasocialLabel": "{{count}} অনুসরণ"
   },
   "actions": {
     "add": "যোগ করুন",

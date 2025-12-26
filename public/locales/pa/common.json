@@ -37,7 +37,79 @@
     "settings": "ਸੈਟਿੰਗਾਂ",
     "signIn": "ਸਾਈਨ ਇਨ",
     "signOut": "ਸਾਈਨ ਆਉਟ",
-    "profile": "ਪ੍ਰੋਫਾਈਲ"
+    "profile": "ਪ੍ਰੋਫਾਈਲ",
+    "back": "ਪਿੱਛੇ"
+  },
+  "auth": {
+    "signIn": {
+      "title": "ਫਿਰ ਸੁਆਗਤ ਹੈ",
+      "subtitle": "ਆਪਣੇ ਸਰਕਲਾਂ ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ",
+      "button": "ਸਾਈਨ ਇਨ",
+      "submitting": "ਸਾਈਨ ਇਨ ਹੋ ਰਿਹਾ ਹੈ..."
+    },
+    "signUp": {
+      "title": "ਆਪਣਾ ਖਾਤਾ ਬਣਾਓ",
+      "subtitle": "ਆਪਣੀਆਂ ਨਜ਼ਦੀਕੀ ਦੋਸਤੀਆਂ ਨੂੰ ਸੰਭਾਲਣਾ ਸ਼ੁਰੂ ਕਰੋ",
+      "button": "ਖਾਤਾ ਬਣਾਓ",
+      "submitting": "ਖਾਤਾ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ..."
+    },
+    "form": {
+      "displayName": "ਡਿਸਪਲੇ ਨਾਮ",
+      "displayNameOptional": "ਡਿਸਪਲੇ ਨਾਮ (ਵਿਕਲਪਿਕ)",
+      "displayNamePlaceholder": "ਤੁਹਾਡਾ ਨਾਮ",
+      "email": "ਈਮੇਲ",
+      "emailPlaceholder": "you@example.com",
+      "password": "ਪਾਸਵਰਡ",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੈਧ ਈਮੇਲ ਐਡਰੈੱਸ ਦਾਖਲ ਕਰੋ",
+      "passwordTooShort": "ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ"
+    },
+    "switch": {
+      "haveAccount": "ਪਹਿਲਾਂ ਹੀ ਖਾਤਾ ਹੈ? ਸਾਈਨ ਇਨ ਕਰੋ",
+      "noAccount": "ਖਾਤਾ ਨਹੀਂ ਹੈ? ਸਾਈਨ ਅੱਪ ਕਰੋ"
+    },
+    "toast": {
+      "signInSuccess": "ਫਿਰ ਸੁਆਗਤ ਹੈ!",
+      "signUpSuccess": "ਖਾਤਾ ਬਣਾਇਆ ਗਿਆ! ਤੁਸੀਂ ਹੁਣ ਸਾਈਨ ਇਨ ਹੋ।",
+      "emailAlreadyRegistered": "ਇਹ ਈਮੇਲ ਪਹਿਲਾਂ ਹੀ ਰਜਿਸਟਰਡ ਹੈ। ਇਸ ਦੀ ਬਜਾਏ ਸਾਈਨ ਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+      "invalidCredentials": "ਗਲਤ ਈਮੇਲ ਜਾਂ ਪਾਸਵਰਡ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+      "unexpectedError": "ਇੱਕ ਅਣਕਿਆਸੀ ਗਲਤੀ ਆਈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "ਓਹੋ! ਪੇਜ ਨਹੀਂ ਮਿਲਿਆ",
+    "returnHome": "ਹੋਮ ਤੇ ਵਾਪਸ ਜਾਓ"
+  },
+  "profile": {
+    "notFound": {
+      "title": "ਪ੍ਰੋਫਾਈਲ ਨਹੀਂ ਮਿਲੀ",
+      "message": "@{{handle}} ਹੈਂਡਲ ਵਾਲਾ ਕੋਈ ਵਰਤੋਂਕਾਰ ਮੌਜੂਦ ਨਹੀਂ ਹੈ",
+      "goHome": "ਹੋਮ 'ਤੇ ਜਾਓ"
+    },
+    "private": {
+      "title": "ਨਿੱਜੀ ਪ੍ਰੋਫਾਈਲ",
+      "message": "@{{handle}} ਨੇ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਨਿੱਜੀ ਸੈੱਟ ਕੀਤਾ ਹੈ",
+      "goHome": "ਹੋਮ 'ਤੇ ਜਾਓ"
+    },
+    "back": "ਪਿੱਛੇ",
+    "anonymous": "ਅਗਿਆਤ",
+    "creator": "ਕ੍ਰਿਏਟਰ",
+    "joined": "{{time}} ਨੂੰ ਸ਼ਾਮਲ ਹੋਏ",
+    "followerCount": "{{count}} ਫਾਲੋਅਰ",
+    "followerCount_plural": "{{count}} ਫਾਲੋਅਰ",
+    "follow": "ਫਾਲੋ ਕਰੋ",
+    "unfollow": "ਅਨਫਾਲੋ ਕਰੋ",
+    "latestShares": "ਤਾਜ਼ਾ ਸ਼ੇਅਰ",
+    "contentSharedBy": "{{name}} ਦੁਆਰਾ ਸਾਂਝੀ ਕੀਤੀ ਸਮੱਗਰੀ",
+    "noShares": "ਅਜੇ ਤੱਕ ਕੋਈ ਸ਼ੇਅਰ ਨਹੀਂ",
+    "toast": {
+      "followed": "@{{handle}} ਨੂੰ ਫਾਲੋ ਕਰ ਰਹੇ ਹੋ",
+      "unfollowed": "@{{handle}} ਨੂੰ ਅਨਫਾਲੋ ਕੀਤਾ",
+      "followFailed": "ਫਾਲੋ ਕਰਨਾ ਅਸਫਲ ਰਿਹਾ"
+    }
   },
   "tiers": {
     "core": "ਕੋਰ",
@@ -52,6 +124,13 @@
     "nayborDescription": "ਐਮਰਜੈਂਸੀ ਅਤੇ ਆਪਸੀ ਮਦਦ ਲਈ ਭਰੋਸੇਮੰਦ ਗੁਆਂਢੀ",
     "parasocial": "ਫਾਲੋ",
     "parasocialDescription": "ਜਿਨ੍ਹਾਂ ਮਸ਼ਹੂਰ ਹਸਤੀਆਂ ਨੂੰ ਤੁਸੀਂ ਫਾਲੋ ਕਰਦੇ ਹੋ"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} ਕੋਰ",
+    "innerLabel": "{{count}} ਇਨਰ",
+    "outerLabel": "{{count}} ਆਊਟਰ",
+    "nayborLabel": "{{count}} ਗੁਆਂਢੀ",
+    "parasocialLabel": "{{count}} ਫਾਲੋ"
   },
   "actions": {
     "add": "ਸ਼ਾਮਲ ਕਰੋ",

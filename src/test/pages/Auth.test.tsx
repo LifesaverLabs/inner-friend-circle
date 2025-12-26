@@ -3,10 +3,39 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 
-// Mock react-i18next
+// Mock react-i18next with actual translations for auth page
+const mockAuthTranslations: Record<string, string> = {
+  'app.name': 'InnerFriend',
+  'nav.back': 'Back',
+  'auth.signIn.title': 'Welcome back',
+  'auth.signIn.subtitle': 'Sign in to access your circles',
+  'auth.signIn.button': 'Sign In',
+  'auth.signIn.submitting': 'Signing in...',
+  'auth.signUp.title': 'Create your account',
+  'auth.signUp.subtitle': 'Start curating your closest friendships',
+  'auth.signUp.button': 'Create Account',
+  'auth.signUp.submitting': 'Creating account...',
+  'auth.form.displayName': 'Display Name',
+  'auth.form.displayNameOptional': 'Display Name (optional)',
+  'auth.form.displayNamePlaceholder': 'Your name',
+  'auth.form.email': 'Email',
+  'auth.form.emailPlaceholder': 'you@example.com',
+  'auth.form.password': 'Password',
+  'auth.form.passwordPlaceholder': '••••••••',
+  'auth.validation.invalidEmail': 'Please enter a valid email address',
+  'auth.validation.passwordTooShort': 'Password must be at least 6 characters',
+  'auth.switch.haveAccount': 'Already have an account? Sign in',
+  'auth.switch.noAccount': "Don't have an account? Sign up",
+  'auth.toast.signInSuccess': 'Welcome back!',
+  'auth.toast.signUpSuccess': 'Account created! You are now signed in.',
+  'auth.toast.emailAlreadyRegistered': 'This email is already registered. Try signing in instead.',
+  'auth.toast.invalidCredentials': 'Invalid email or password. Please try again.',
+  'auth.toast.unexpectedError': 'An unexpected error occurred. Please try again.',
+};
+
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key: string) => key,
+    t: (key: string) => mockAuthTranslations[key] || key,
     i18n: { language: 'en', changeLanguage: vi.fn() },
   }),
   initReactI18next: {

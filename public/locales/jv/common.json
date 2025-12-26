@@ -37,7 +37,79 @@
     "settings": "Setelan",
     "signIn": "Mlebu",
     "signOut": "Metu",
-    "profile": "Profil"
+    "profile": "Profil",
+    "back": "Bali"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sugeng rawuh maneh",
+      "subtitle": "Mlebu kanggo ngakses lingkaranmu",
+      "button": "Mlebu",
+      "submitting": "Lagi mlebu..."
+    },
+    "signUp": {
+      "title": "Gawe akunmu",
+      "subtitle": "Miwiti ngatur persahabatan sing cedhak",
+      "button": "Gawe Akun",
+      "submitting": "Lagi nggawe akun..."
+    },
+    "form": {
+      "displayName": "Jeneng Tampilan",
+      "displayNameOptional": "Jeneng Tampilan (opsional)",
+      "displayNamePlaceholder": "Jenengmu",
+      "email": "Email",
+      "emailPlaceholder": "kowe@conto.com",
+      "password": "Sandi",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Mangga lebokake alamat email sing valid",
+      "passwordTooShort": "Sandi kudu paling ora 6 karakter"
+    },
+    "switch": {
+      "haveAccount": "Wis duwe akun? Mlebu",
+      "noAccount": "Durung duwe akun? Ndhaftar"
+    },
+    "toast": {
+      "signInSuccess": "Sugeng rawuh maneh!",
+      "signUpSuccess": "Akun digawe! Kowe saiki wis mlebu.",
+      "emailAlreadyRegistered": "Email iki wis didaftarake. Nyoba mlebu wae.",
+      "invalidCredentials": "Email utawa sandi salah. Mangga coba maneh.",
+      "unexpectedError": "Ana kesalahan sing ora dikarepake. Mangga coba maneh."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Aduh! Kaca ora ketemu",
+    "returnHome": "Bali menyang Omah"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profil Ora Ketemu",
+      "message": "Ora ana pangguna karo handle @{{handle}}",
+      "goHome": "Bali menyang Omah"
+    },
+    "private": {
+      "title": "Profil Pribadi",
+      "message": "@{{handle}} wis nyetel profile dadi pribadi",
+      "goHome": "Bali menyang Omah"
+    },
+    "back": "Bali",
+    "anonymous": "Anonim",
+    "creator": "Kreator",
+    "joined": "Gabung {{time}}",
+    "followerCount": "{{count}} pengikut",
+    "followerCount_plural": "{{count}} pengikut",
+    "follow": "Tindakake",
+    "unfollow": "Ora Tindakake",
+    "latestShares": "Sharing Paling Anyar",
+    "contentSharedBy": "Konten sing dibagekake {{name}}",
+    "noShares": "Durung ana sharing",
+    "toast": {
+      "followed": "Lagi ngetutake @{{handle}}",
+      "unfollowed": "Wis ora ngetutake @{{handle}}",
+      "followFailed": "Gagal ngetutake"
+    }
   },
   "tiers": {
     "core": "Inti",
@@ -52,6 +124,13 @@
     "nayborDescription": "Tangga sing dipercaya kanggo tulung-tinulung lan darurat",
     "parasocial": "Ngikuti",
     "parasocialDescription": "Tokoh publik lan kreator konten sing diikuti"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Inti",
+    "innerLabel": "{{count}} Cedhak",
+    "outerLabel": "{{count}} Njaba",
+    "nayborLabel": "{{count}} Tangga",
+    "parasocialLabel": "{{count}} Ngikuti"
   },
   "actions": {
     "add": "Tambah",

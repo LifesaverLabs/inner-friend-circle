@@ -37,7 +37,79 @@
     "settings": "Ayarlar",
     "signIn": "Giriş Yap",
     "signOut": "Çıkış Yap",
-    "profile": "Profil"
+    "profile": "Profil",
+    "back": "Geri"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Tekrar hoş geldiniz",
+      "subtitle": "Çevrelerinize erişmek için giriş yapın",
+      "button": "Giriş Yap",
+      "submitting": "Giriş yapılıyor..."
+    },
+    "signUp": {
+      "title": "Hesabınızı oluşturun",
+      "subtitle": "En yakın dostluklarınızı beslemeye başlayın",
+      "button": "Hesap Oluştur",
+      "submitting": "Hesap oluşturuluyor..."
+    },
+    "form": {
+      "displayName": "Görünen Ad",
+      "displayNameOptional": "Görünen Ad (isteğe bağlı)",
+      "displayNamePlaceholder": "Adınız",
+      "email": "E-posta",
+      "emailPlaceholder": "siz@ornek.com",
+      "password": "Şifre",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+      "passwordTooShort": "Şifre en az 6 karakter olmalıdır"
+    },
+    "switch": {
+      "haveAccount": "Zaten hesabınız var mı? Giriş yapın",
+      "noAccount": "Hesabınız yok mu? Kaydolun"
+    },
+    "toast": {
+      "signInSuccess": "Tekrar hoş geldiniz!",
+      "signUpSuccess": "Hesap oluşturuldu! Şimdi giriş yaptınız.",
+      "emailAlreadyRegistered": "Bu e-posta zaten kayıtlı. Bunun yerine giriş yapmayı deneyin.",
+      "invalidCredentials": "Geçersiz e-posta veya şifre. Lütfen tekrar deneyin.",
+      "unexpectedError": "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Hata! Sayfa bulunamadı",
+    "returnHome": "Ana Sayfaya Dön"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profil Bulunamadı",
+      "message": "@{{handle}} kullanıcı adına sahip kullanıcı yok",
+      "goHome": "Ana Sayfaya Git"
+    },
+    "private": {
+      "title": "Özel Profil",
+      "message": "@{{handle}} profilini özel olarak ayarladı",
+      "goHome": "Ana Sayfaya Git"
+    },
+    "back": "Geri",
+    "anonymous": "Anonim",
+    "creator": "Oluşturucu",
+    "joined": "{{time}} katıldı",
+    "followerCount": "{{count}} takipçi",
+    "followerCount_plural": "{{count}} takipçi",
+    "follow": "Takip Et",
+    "unfollow": "Takibi Bırak",
+    "latestShares": "Son Paylaşımlar",
+    "contentSharedBy": "{{name}} tarafından paylaşılan içerik",
+    "noShares": "Henüz paylaşım yok",
+    "toast": {
+      "followed": "@{{handle}} takip ediliyor",
+      "unfollowed": "@{{handle}} takip edilmiyor",
+      "followFailed": "Takip edilemedi"
+    }
   },
   "tiers": {
     "core": "Çekirdek",
@@ -52,6 +124,13 @@
     "nayborDescription": "Acil durumlar ve karşılıklı yardım için güvenilir komşular",
     "parasocial": "Takip",
     "parasocialDescription": "Takip ettiğiniz ünlüler ve içerik oluşturucular"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Çekirdek",
+    "innerLabel": "{{count}} İç",
+    "outerLabel": "{{count}} Dış",
+    "nayborLabel": "{{count}} Komşu",
+    "parasocialLabel": "{{count}} Takip"
   },
   "actions": {
     "add": "Ekle",

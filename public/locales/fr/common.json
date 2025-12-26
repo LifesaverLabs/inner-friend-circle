@@ -37,7 +37,79 @@
     "settings": "Paramètres",
     "signIn": "Connexion",
     "signOut": "Déconnexion",
-    "profile": "Profil"
+    "profile": "Profil",
+    "back": "Retour"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Bon retour",
+      "subtitle": "Connectez-vous pour accéder à vos cercles",
+      "button": "Se connecter",
+      "submitting": "Connexion en cours..."
+    },
+    "signUp": {
+      "title": "Créez votre compte",
+      "subtitle": "Commencez à cultiver vos amitiés les plus proches",
+      "button": "Créer un compte",
+      "submitting": "Création du compte..."
+    },
+    "form": {
+      "displayName": "Nom d'affichage",
+      "displayNameOptional": "Nom d'affichage (optionnel)",
+      "displayNamePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "vous@exemple.com",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Veuillez entrer une adresse email valide",
+      "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères"
+    },
+    "switch": {
+      "haveAccount": "Déjà un compte ? Connectez-vous",
+      "noAccount": "Pas de compte ? Inscrivez-vous"
+    },
+    "toast": {
+      "signInSuccess": "Bon retour !",
+      "signUpSuccess": "Compte créé ! Vous êtes maintenant connecté.",
+      "emailAlreadyRegistered": "Cet email est déjà enregistré. Essayez de vous connecter.",
+      "invalidCredentials": "Email ou mot de passe invalide. Veuillez réessayer.",
+      "unexpectedError": "Une erreur inattendue s'est produite. Veuillez réessayer."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oups ! Page non trouvée",
+    "returnHome": "Retour à l'accueil"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profil introuvable",
+      "message": "Aucun utilisateur n'existe avec l'identifiant @{{handle}}",
+      "goHome": "Aller à l'accueil"
+    },
+    "private": {
+      "title": "Profil privé",
+      "message": "@{{handle}} a défini son profil comme privé",
+      "goHome": "Aller à l'accueil"
+    },
+    "back": "Retour",
+    "anonymous": "Anonyme",
+    "creator": "Créateur",
+    "joined": "Inscrit {{time}}",
+    "followerCount": "{{count}} abonné",
+    "followerCount_plural": "{{count}} abonnés",
+    "follow": "Suivre",
+    "unfollow": "Ne plus suivre",
+    "latestShares": "Derniers partages",
+    "contentSharedBy": "Contenu partagé par {{name}}",
+    "noShares": "Pas encore de partages",
+    "toast": {
+      "followed": "Vous suivez @{{handle}}",
+      "unfollowed": "Vous ne suivez plus @{{handle}}",
+      "followFailed": "Échec du suivi"
+    }
   },
   "tiers": {
     "core": "Noyau",
@@ -52,6 +124,13 @@
     "nayborDescription": "Voisins de confiance pour l'entraide et les urgences",
     "parasocial": "Suivis",
     "parasocialDescription": "Personnalités publiques et créateurs de contenu que vous suivez"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Noyau",
+    "innerLabel": "{{count}} Intime",
+    "outerLabel": "{{count}} Élargi",
+    "nayborLabel": "{{count}} Voisins",
+    "parasocialLabel": "{{count}} Suivis"
   },
   "actions": {
     "add": "Ajouter",

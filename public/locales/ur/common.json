@@ -37,7 +37,79 @@
     "settings": "سیٹنگز",
     "signIn": "سائن ان",
     "signOut": "سائن آؤٹ",
-    "profile": "پروفائل"
+    "profile": "پروفائل",
+    "back": "واپس"
+  },
+  "auth": {
+    "signIn": {
+      "title": "واپسی پر خوش آمدید",
+      "subtitle": "اپنے حلقوں تک رسائی کے لیے سائن ان کریں",
+      "button": "سائن ان",
+      "submitting": "سائن ان ہو رہا ہے..."
+    },
+    "signUp": {
+      "title": "اپنا اکاؤنٹ بنائیں",
+      "subtitle": "اپنی قریب ترین دوستیوں کی پرورش شروع کریں",
+      "button": "اکاؤنٹ بنائیں",
+      "submitting": "اکاؤنٹ بنایا جا رہا ہے..."
+    },
+    "form": {
+      "displayName": "ڈسپلے نام",
+      "displayNameOptional": "ڈسپلے نام (اختیاری)",
+      "displayNamePlaceholder": "آپ کا نام",
+      "email": "ای میل",
+      "emailPlaceholder": "you@example.com",
+      "password": "پاس ورڈ",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "براہ کرم ایک درست ای میل ایڈریس درج کریں",
+      "passwordTooShort": "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے"
+    },
+    "switch": {
+      "haveAccount": "پہلے سے اکاؤنٹ ہے؟ سائن ان کریں",
+      "noAccount": "اکاؤنٹ نہیں ہے؟ سائن اپ کریں"
+    },
+    "toast": {
+      "signInSuccess": "واپسی پر خوش آمدید!",
+      "signUpSuccess": "اکاؤنٹ بن گیا! اب آپ سائن ان ہیں۔",
+      "emailAlreadyRegistered": "یہ ای میل پہلے سے رجسٹرڈ ہے۔ اس کے بجائے سائن ان کرنے کی کوشش کریں۔",
+      "invalidCredentials": "غلط ای میل یا پاس ورڈ۔ براہ کرم دوبارہ کوشش کریں۔",
+      "unexpectedError": "ایک غیر متوقع خرابی واقع ہوئی۔ براہ کرم دوبارہ کوشش کریں۔"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "افسوس! صفحہ نہیں ملا",
+    "returnHome": "ہوم پر واپس جائیں"
+  },
+  "profile": {
+    "notFound": {
+      "title": "پروفائل نہیں ملا",
+      "message": "@{{handle}} ہینڈل کے ساتھ کوئی صارف موجود نہیں",
+      "goHome": "ہوم پر جائیں"
+    },
+    "private": {
+      "title": "نجی پروفائل",
+      "message": "@{{handle}} نے اپنا پروفائل نجی مقرر کیا ہے",
+      "goHome": "ہوم پر جائیں"
+    },
+    "back": "واپس",
+    "anonymous": "گمنام",
+    "creator": "تخلیق کار",
+    "joined": "{{time}} میں شامل ہوئے",
+    "followerCount": "{{count}} پیروکار",
+    "followerCount_plural": "{{count}} پیروکار",
+    "follow": "فالو کریں",
+    "unfollow": "ان فالو کریں",
+    "latestShares": "تازہ ترین شیئرز",
+    "contentSharedBy": "{{name}} کی طرف سے شیئر کردہ مواد",
+    "noShares": "ابھی تک کوئی شیئر نہیں",
+    "toast": {
+      "followed": "@{{handle}} کو فالو کر رہے ہیں",
+      "unfollowed": "@{{handle}} کو ان فالو کیا",
+      "followFailed": "فالو کرنا ناکام رہا"
+    }
   },
   "tiers": {
     "core": "کور",
@@ -52,6 +124,13 @@
     "nayborDescription": "ہنگامی حالات اور باہمی مدد کے لیے قابل اعتماد پڑوسی",
     "parasocial": "فالو",
     "parasocialDescription": "مشہور شخصیات اور کنٹینٹ کریٹرز جنہیں آپ فالو کرتے ہیں"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} کور",
+    "innerLabel": "{{count}} اندرونی",
+    "outerLabel": "{{count}} بیرونی",
+    "nayborLabel": "{{count}} پڑوسی",
+    "parasocialLabel": "{{count}} فالو"
   },
   "actions": {
     "add": "شامل کریں",

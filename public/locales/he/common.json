@@ -37,7 +37,79 @@
     "settings": "הגדרות",
     "signIn": "התחברות",
     "signOut": "התנתקות",
-    "profile": "פרופיל"
+    "profile": "פרופיל",
+    "back": "חזרה"
+  },
+  "auth": {
+    "signIn": {
+      "title": "ברוכים השבים",
+      "subtitle": "התחבר כדי לגשת למעגלים שלך",
+      "button": "התחברות",
+      "submitting": "מתחבר..."
+    },
+    "signUp": {
+      "title": "צור את החשבון שלך",
+      "subtitle": "התחל לטפח את החברויות הקרובות ביותר שלך",
+      "button": "צור חשבון",
+      "submitting": "יוצר חשבון..."
+    },
+    "form": {
+      "displayName": "שם תצוגה",
+      "displayNameOptional": "שם תצוגה (אופציונלי)",
+      "displayNamePlaceholder": "השם שלך",
+      "email": "דוא\"ל",
+      "emailPlaceholder": "you@example.com",
+      "password": "סיסמה",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "נא להזין כתובת דוא\"ל חוקית",
+      "passwordTooShort": "הסיסמה חייבת להכיל לפחות 6 תווים"
+    },
+    "switch": {
+      "haveAccount": "כבר יש לך חשבון? התחבר",
+      "noAccount": "אין לך חשבון? הירשם"
+    },
+    "toast": {
+      "signInSuccess": "ברוכים השבים!",
+      "signUpSuccess": "החשבון נוצר! אתה מחובר כעת.",
+      "emailAlreadyRegistered": "הדוא\"ל הזה כבר רשום. נסה להתחבר.",
+      "invalidCredentials": "דוא\"ל או סיסמה לא חוקיים. נסה שוב.",
+      "unexpectedError": "אירעה שגיאה לא צפויה. נסה שוב."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "אופס! הדף לא נמצא",
+    "returnHome": "חזור לדף הבית"
+  },
+  "profile": {
+    "notFound": {
+      "title": "הפרופיל לא נמצא",
+      "message": "אין משתמש עם הידית @{{handle}}",
+      "goHome": "חזור לדף הבית"
+    },
+    "private": {
+      "title": "פרופיל פרטי",
+      "message": "@{{handle}} הגדיר את הפרופיל שלו כפרטי",
+      "goHome": "חזור לדף הבית"
+    },
+    "back": "חזרה",
+    "anonymous": "אנונימי",
+    "creator": "יוצר",
+    "joined": "הצטרף {{time}}",
+    "followerCount": "{{count}} עוקב",
+    "followerCount_plural": "{{count}} עוקבים",
+    "follow": "עקוב",
+    "unfollow": "הפסק לעקוב",
+    "latestShares": "שיתופים אחרונים",
+    "contentSharedBy": "תוכן ששותף על ידי {{name}}",
+    "noShares": "עדיין אין שיתופים",
+    "toast": {
+      "followed": "עוקב אחרי @{{handle}}",
+      "unfollowed": "הפסקת לעקוב אחרי @{{handle}}",
+      "followFailed": "המעקב נכשל"
+    }
   },
   "tiers": {
     "core": "ליבה",
@@ -52,6 +124,13 @@
     "nayborDescription": "שכנים מהימנים לעזרה הדדית ומצבי חירום",
     "parasocial": "עוקב",
     "parasocialDescription": "דמויות ציבוריות ויוצרי תוכן שאתה עוקב אחריהם"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} ליבה",
+    "innerLabel": "{{count}} פנימי",
+    "outerLabel": "{{count}} חיצוני",
+    "nayborLabel": "{{count}} שכנים",
+    "parasocialLabel": "{{count}} עוקב"
   },
   "actions": {
     "add": "הוסף",

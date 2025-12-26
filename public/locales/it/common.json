@@ -37,7 +37,79 @@
     "settings": "Impostazioni",
     "signIn": "Accedi",
     "signOut": "Esci",
-    "profile": "Profilo"
+    "profile": "Profilo",
+    "back": "Indietro"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Bentornato",
+      "subtitle": "Accedi per accedere ai tuoi cerchi",
+      "button": "Accedi",
+      "submitting": "Accesso in corso..."
+    },
+    "signUp": {
+      "title": "Crea il tuo account",
+      "subtitle": "Inizia a coltivare le tue amicizie più strette",
+      "button": "Crea Account",
+      "submitting": "Creazione account..."
+    },
+    "form": {
+      "displayName": "Nome visualizzato",
+      "displayNameOptional": "Nome visualizzato (opzionale)",
+      "displayNamePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "tu@esempio.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Inserisci un indirizzo email valido",
+      "passwordTooShort": "La password deve essere di almeno 6 caratteri"
+    },
+    "switch": {
+      "haveAccount": "Hai già un account? Accedi",
+      "noAccount": "Non hai un account? Registrati"
+    },
+    "toast": {
+      "signInSuccess": "Bentornato!",
+      "signUpSuccess": "Account creato! Ora sei connesso.",
+      "emailAlreadyRegistered": "Questa email è già registrata. Prova ad accedere.",
+      "invalidCredentials": "Email o password non validi. Riprova.",
+      "unexpectedError": "Si è verificato un errore imprevisto. Riprova."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Ops! Pagina non trovata",
+    "returnHome": "Torna alla Home"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profilo Non Trovato",
+      "message": "Nessun utente esiste con l'handle @{{handle}}",
+      "goHome": "Vai alla Home"
+    },
+    "private": {
+      "title": "Profilo Privato",
+      "message": "@{{handle}} ha impostato il suo profilo come privato",
+      "goHome": "Vai alla Home"
+    },
+    "back": "Indietro",
+    "anonymous": "Anonimo",
+    "creator": "Creatore",
+    "joined": "Iscritto {{time}}",
+    "followerCount": "{{count}} follower",
+    "followerCount_plural": "{{count}} follower",
+    "follow": "Segui",
+    "unfollow": "Non seguire più",
+    "latestShares": "Ultimi Condivisi",
+    "contentSharedBy": "Contenuto condiviso da {{name}}",
+    "noShares": "Nessuna condivisione ancora",
+    "toast": {
+      "followed": "Ora segui @{{handle}}",
+      "unfollowed": "Non segui più @{{handle}}",
+      "followFailed": "Impossibile seguire"
+    }
   },
   "tiers": {
     "core": "Nucleo",
@@ -52,6 +124,13 @@
     "nayborDescription": "Vicini fidati per aiuto reciproco ed emergenze",
     "parasocial": "Seguiti",
     "parasocialDescription": "Personaggi pubblici e creatori di contenuti che segui"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Nucleo",
+    "innerLabel": "{{count}} Interno",
+    "outerLabel": "{{count}} Esterno",
+    "nayborLabel": "{{count}} Vicini",
+    "parasocialLabel": "{{count}} Seguiti"
   },
   "actions": {
     "add": "Aggiungi",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Heart, Mail, Lock, User, ArrowLeft, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,11 +11,9 @@ import { useAuth } from '@/hooks/useAuth';
 import { LanguageSelector } from '@/components/i18n/LanguageSelector';
 import { z } from 'zod';
 
-const emailSchema = z.string().email('Please enter a valid email address');
-const passwordSchema = z.string().min(6, 'Password must be at least 6 characters');
-
 export default function Auth() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { signIn, signUp, isAuthenticated, loading } = useAuth();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
@@ -22,6 +21,10 @@ export default function Auth() {
   const [displayName, setDisplayName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+
+  // Create validation schemas with translated messages
+  const emailSchema = z.string().email(t('auth.validation.invalidEmail'));
+  const passwordSchema = z.string().min(6, t('auth.validation.passwordTooShort'));
 
   useEffect(() => {
     if (isAuthenticated && !loading) {
@@ -58,29 +61,29 @@ export default function Auth() {
         const { error } = await signUp(email, password, displayName || undefined);
         if (error) {
           if (error.message.includes('already registered')) {
-            toast.error('This email is already registered. Try signing in instead.');
+            toast.error(t('auth.toast.emailAlreadyRegistered'));
           } else {
             toast.error(error.message);
           }
         } else {
-          toast.success('Account created! You are now signed in.');
+          toast.success(t('auth.toast.signUpSuccess'));
           navigate('/', { replace: true });
         }
       } else {
         const { error } = await signIn(email, password);
         if (error) {
           if (error.message.includes('Invalid login credentials')) {
-            toast.error('Invalid email or password. Please try again.');
+            toast.error(t('auth.toast.invalidCredentials'));
           } else {
             toast.error(error.message);
           }
         } else {
-          toast.success('Welcome back!');
+          toast.success(t('auth.toast.signInSuccess'));
           navigate('/', { replace: true });
         }
       }
     } catch {
-      toast.error('An unexpected error occurred. Please try again.');
+      toast.error(t('auth.toast.unexpectedError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -102,9 +105,10 @@ export default function Auth() {
           variant="ghost"
           onClick={() => navigate('/')}
           className="gap-2"
+          aria-label={t('nav.back')}
         >
-          <ArrowLeft className="h-4 w-4" />
-          Back
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          {t('nav.back')}
         </Button>
         <LanguageSelector variant="prominent" />
       </header>
@@ -118,46 +122,47 @@ export default function Auth() {
         >
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Heart className="w-8 h-8 text-primary fill-primary/20" />
-              <span className="font-display text-2xl font-bold text-foreground">Inner Friend</span>
+              <Heart className="w-8 h-8 text-primary fill-primary/20" aria-hidden="true" />
+              <span className="font-display text-2xl font-bold text-foreground">{t('app.name')}</span>
             </div>
             <h1 className="font-display text-2xl font-bold text-foreground mb-2">
-              {isSignUp ? 'Create your account' : 'Welcome back'}
+              {isSignUp ? t('auth.signUp.title') : t('auth.signIn.title')}
             </h1>
             <p className="text-muted-foreground">
-              {isSignUp 
-                ? 'Start curating your closest friendships' 
-                : 'Sign in to access your circles'}
+              {isSignUp
+                ? t('auth.signUp.subtitle')
+                : t('auth.signIn.subtitle')}
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" aria-label={isSignUp ? t('auth.signUp.title') : t('auth.signIn.title')}>
             {isSignUp && (
               <div className="space-y-2">
-                <Label htmlFor="displayName">Display Name (optional)</Label>
+                <Label htmlFor="displayName">{t('auth.form.displayNameOptional')}</Label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
                   <Input
                     id="displayName"
                     type="text"
-                    placeholder="Your name"
+                    placeholder={t('auth.form.displayNamePlaceholder')}
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                     className="pl-10"
                     maxLength={100}
+                    aria-describedby="displayName-hint"
                   />
                 </div>
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('auth.form.email')}</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder={t('auth.form.emailPlaceholder')}
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -166,21 +171,23 @@ export default function Auth() {
                   className={`pl-10 ${errors.email ? 'border-destructive' : ''}`}
                   required
                   maxLength={255}
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
                 />
               </div>
               {errors.email && (
-                <p className="text-sm text-destructive">{errors.email}</p>
+                <p id="email-error" className="text-sm text-destructive" role="alert">{errors.email}</p>
               )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t('auth.form.password')}</Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <Input
                   id="password"
                   type="password"
-                  placeholder="••••••••"
+                  placeholder={t('auth.form.passwordPlaceholder')}
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -189,25 +196,28 @@ export default function Auth() {
                   className={`pl-10 ${errors.password ? 'border-destructive' : ''}`}
                   required
                   minLength={6}
+                  aria-invalid={errors.password ? 'true' : 'false'}
+                  aria-describedby={errors.password ? 'password-error' : undefined}
                 />
               </div>
               {errors.password && (
-                <p className="text-sm text-destructive">{errors.password}</p>
+                <p id="password-error" className="text-sm text-destructive" role="alert">{errors.password}</p>
               )}
             </div>
 
-            <Button 
-              type="submit" 
-              className="w-full" 
+            <Button
+              type="submit"
+              className="w-full"
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {isSignUp ? 'Creating account...' : 'Signing in...'}
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+                  {isSignUp ? t('auth.signUp.submitting') : t('auth.signIn.submitting')}
                 </>
               ) : (
-                isSignUp ? 'Create Account' : 'Sign In'
+                isSignUp ? t('auth.signUp.button') : t('auth.signIn.button')
               )}
             </Button>
           </form>
@@ -221,9 +231,9 @@ export default function Auth() {
               }}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              {isSignUp 
-                ? 'Already have an account? Sign in' 
-                : "Don't have an account? Sign up"}
+              {isSignUp
+                ? t('auth.switch.haveAccount')
+                : t('auth.switch.noAccount')}
             </button>
           </div>
         </motion.div>
