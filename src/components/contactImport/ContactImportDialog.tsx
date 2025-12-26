@@ -18,13 +18,13 @@ import {
   X,
 } from 'lucide-react';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogDescription,
+  ResponsiveDialogFooter,
+  ResponsiveDialogHeader,
+  ResponsiveDialogTitle,
+} from '@/components/ui/responsive-dialog';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ImportableContact, ImportState, DeduplicationResult } from '@/types/contactImport';
@@ -140,8 +140,8 @@ export function ContactImportDialog({
   const isContactPickerAvailable = isContactPickerSupported();
 
   return (
-    <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
+    <ResponsiveDialog open={open} onOpenChange={handleClose}>
+      <ResponsiveDialogContent className="sm:max-w-lg">
         <AnimatePresence mode="wait">
           {/* Selecting Source */}
           {importState === 'selecting' && (
@@ -151,15 +151,15 @@ export function ContactImportDialog({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <DialogHeader>
-                <DialogTitle className="flex items-center gap-2">
+              <ResponsiveDialogHeader>
+                <ResponsiveDialogTitle className="flex items-center gap-2">
                   <Upload className="w-5 h-5 text-primary" />
                   {t('contactImport.title')}
-                </DialogTitle>
-                <DialogDescription>
+                </ResponsiveDialogTitle>
+                <ResponsiveDialogDescription>
                   {t('contactImport.description')}
-                </DialogDescription>
-              </DialogHeader>
+                </ResponsiveDialogDescription>
+              </ResponsiveDialogHeader>
 
               {/* Capacity Info */}
               <div className="mt-4 p-3 bg-muted/50 rounded-lg">
@@ -230,11 +230,11 @@ export function ContactImportDialog({
                 </div>
               </Tabs>
 
-              <DialogFooter className="mt-6">
-                <Button variant="outline" onClick={handleClose}>
+              <ResponsiveDialogFooter className="mt-6">
+                <Button variant="outline" onClick={handleClose} className="h-11">
                   {t('actions.cancel')}
                 </Button>
-              </DialogFooter>
+              </ResponsiveDialogFooter>
             </motion.div>
           )}
 
@@ -246,15 +246,15 @@ export function ContactImportDialog({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <DialogHeader>
-                <DialogTitle className="flex items-center gap-2">
+              <ResponsiveDialogHeader>
+                <ResponsiveDialogTitle className="flex items-center gap-2">
                   <Users className="w-5 h-5 text-primary" />
                   {t('contactImport.preview.title')}
-                </DialogTitle>
-                <DialogDescription>
+                </ResponsiveDialogTitle>
+                <ResponsiveDialogDescription>
                   {t('contactImport.preview.description')}
-                </DialogDescription>
-              </DialogHeader>
+                </ResponsiveDialogDescription>
+              </ResponsiveDialogHeader>
 
               <div className="mt-4">
                 <ImportPreview
@@ -325,9 +325,9 @@ export function ContactImportDialog({
                 <p>{t('contactImport.success.promotionTip')}</p>
               </div>
 
-              <DialogFooter className="mt-6 justify-center">
-                <Button onClick={handleClose}>{t('actions.done')}</Button>
-              </DialogFooter>
+              <ResponsiveDialogFooter className="mt-6 justify-center">
+                <Button onClick={handleClose} className="h-11">{t('actions.done')}</Button>
+              </ResponsiveDialogFooter>
             </motion.div>
           )}
 
@@ -348,16 +348,16 @@ export function ContactImportDialog({
                 {errorMessage || t('contactImport.error.generic')}
               </p>
 
-              <DialogFooter className="mt-6 justify-center gap-2">
-                <Button variant="outline" onClick={handleClose}>
+              <ResponsiveDialogFooter className="mt-6 justify-center gap-2">
+                <Button variant="outline" onClick={handleClose} className="h-11">
                   {t('actions.cancel')}
                 </Button>
-                <Button onClick={handleBack}>{t('contactImport.error.tryAgain')}</Button>
-              </DialogFooter>
+                <Button onClick={handleBack} className="h-11">{t('contactImport.error.tryAgain')}</Button>
+              </ResponsiveDialogFooter>
             </motion.div>
           )}
         </AnimatePresence>
-      </DialogContent>
-    </Dialog>
+      </ResponsiveDialogContent>
+    </ResponsiveDialog>
   );
 }

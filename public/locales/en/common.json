@@ -17,7 +17,7 @@
       },
       "privateByDefault": {
         "title": "Private by Default",
-        "description": "Your lists stay on your device. Create an account only if you want persistence and optional mutual matching."
+        "description": "Create an account to unlock mutual matching, cross-device sync, Naybor SOS, and tending reminders. Try locally first, but the full experience awaits."
       },
       "mutualDiscovery": {
         "title": "Mutual Discovery",

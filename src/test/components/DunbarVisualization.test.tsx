@@ -60,7 +60,8 @@ describe('DunbarVisualization', () => {
 
     it('should display core count in center', () => {
       render(<DunbarVisualization coreCount={5} />);
-      expect(screen.getByText('5')).toBeInTheDocument();
+      // May have multiple '5' elements (center display + mobile legend)
+      expect(screen.getAllByText('5').length).toBeGreaterThanOrEqual(1);
     });
 
     it('should display "Core" label in center', () => {
@@ -80,7 +81,8 @@ describe('DunbarVisualization', () => {
   describe('default props', () => {
     it('should use default core count of 5', () => {
       render(<DunbarVisualization />);
-      expect(screen.getByText('5')).toBeInTheDocument();
+      // May have multiple '5' elements (center display + mobile legend)
+      expect(screen.getAllByText('5').length).toBeGreaterThanOrEqual(1);
     });
 
     it('should not be interactive by default', () => {

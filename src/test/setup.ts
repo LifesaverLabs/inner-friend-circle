@@ -23,6 +23,21 @@ Object.defineProperty(global, 'ResizeObserver', {
   value: MockResizeObserver,
 });
 
+// Mock matchMedia (required for useIsMobile hook and responsive components)
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: false, // Default to desktop view in tests
+    media: query,
+    onchange: null,
+    addListener: vi.fn(), // Deprecated but still used in some libraries
+    removeListener: vi.fn(), // Deprecated but still used in some libraries
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+});
+
 // Mock localStorage
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
