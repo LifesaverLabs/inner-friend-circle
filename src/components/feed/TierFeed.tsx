@@ -1,13 +1,19 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useFeed } from '@/hooks/useFeed';
-import { Friend, TierType, ContactMethod } from '@/types/friend';
+import { Friend, TierType, ContactMethod, CONTACT_METHODS } from '@/types/friend';
 import { FeedHeader } from './FeedHeader';
 import { FeedList } from './FeedList';
 import { EmptyFeedState } from './EmptyFeedState';
 import { SunsetNudgePanel } from './SunsetNudgePanel';
+import { toast } from 'sonner';
+import {
+  isWarningSuppressed,
+  suppressWarningUntilNextMonth,
+  SUPPRESSIBLE_METHODS,
+} from '@/lib/warningSuppressionUtils';
 
 type FeedTier = 'core' | 'inner' | 'outer';
 
@@ -130,6 +136,75 @@ export function TierFeed({
   // Get like count visibility for this tier
   const showLikeCount = shouldShowLikeCount(tier);
 
+  // Handle nudge actions (schedule call, send voice note, plan meetup)
+  const handleNudgeAction = useCallback((
+    nudgeId: string,
+    action: 'schedule_call' | 'send_voice_note' | 'plan_meetup'
+  ) => {
+    // Find the nudge and friend
+    const nudge = tierNudges.find(n => n.id === nudgeId);
+    if (!nudge) return;
+
+    const friend = friends.find(f => f.id === nudge.friendId);
+    if (!friend) return;
+
+    // Get contact method and phone
+    const contactMethod = defaultContactMethod;
+    const phone = friend.phone;
+
+    if (!phone) {
+      // No phone number - request contact info
+      if (onRequestContactInfo) {
+        onRequestContactInfo(friend.id);
+        toast.info(`Add contact info for ${friend.name} to reach out`);
+      } else {
+        toast.error(`No contact information for ${friend.name}`);
+      }
+      return;
+    }
+
+    const methodInfo = CONTACT_METHODS[contactMethod];
+
+    // Show warning for surveilled platforms unless suppressed
+    if (methodInfo.warning && !isWarningSuppressed(contactMethod)) {
+      toast.warning(methodInfo.warning, {
+        duration: 10000,
+        action: SUPPRESSIBLE_METHODS.includes(contactMethod)
+          ? {
+              label: "Don't show for 1 month",
+              onClick: () => {
+                suppressWarningUntilNextMonth(contactMethod);
+                toast.info(`${methodInfo.name} warnings silenced until next month`);
+              },
+            }
+          : undefined,
+      });
+    }
+
+    // Execute the action based on type
+    switch (action) {
+      case 'schedule_call':
+      case 'send_voice_note': {
+        // Open contact method
+        const url = methodInfo.getUrl(phone);
+        window.open(url, '_blank');
+        toast.success(`Connecting with ${friend.name} via ${methodInfo.name}`);
+        break;
+      }
+      case 'plan_meetup': {
+        // For now, initiate contact to plan the meetup
+        // Future: Could open a meetup scheduling dialog
+        const url = methodInfo.getUrl(phone);
+        window.open(url, '_blank');
+        toast.success(`Reach out to ${friend.name} to plan a meetup`);
+        break;
+      }
+    }
+
+    // Dismiss the nudge after action
+    dismissNudge(nudgeId);
+  }, [tierNudges, friends, defaultContactMethod, onRequestContactInfo, dismissNudge]);
+
   const bgColor = TIER_BG_COLORS[tier];
   const borderColor = TIER_BORDER_COLORS[tier];
 
@@ -169,6 +244,7 @@ export function TierFeed({
     <SunsetNudgePanel
       nudges={tierNudges}
       onDismiss={dismissNudge}
+      onAction={handleNudgeAction}
     />
   );
 
