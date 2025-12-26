@@ -39,7 +39,7 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
         {/* Main Banner */}
         <div className="p-3 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-tier-naybor/20">
+            <div className="p-2 rounded-lg bg-tier-naybor/20" aria-hidden="true">
               <Shield className="w-5 h-5 text-tier-naybor" />
             </div>
             <div>
@@ -63,13 +63,16 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
                 size="sm"
                 onClick={() => setQuickPanelExpanded(!quickPanelExpanded)}
                 className="gap-1 text-tier-naybor hover:text-tier-naybor hover:bg-tier-naybor/10"
+                aria-expanded={quickPanelExpanded}
+                aria-controls="quick-sos-panel"
+                aria-label={quickPanelExpanded ? 'Hide quick contacts' : 'Show quick contacts'}
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 Quick
                 {quickPanelExpanded ? (
-                  <ChevronUp className="w-3 h-3" />
+                  <ChevronUp className="w-3 h-3" aria-hidden="true" />
                 ) : (
-                  <ChevronDown className="w-3 h-3" />
+                  <ChevronDown className="w-3 h-3" aria-hidden="true" />
                 )}
               </Button>
             )}
@@ -80,8 +83,9 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
               size="sm"
               onClick={() => setDialogOpen(true)}
               className="gap-1 bg-tier-naybor hover:bg-tier-naybor/90 text-white"
+              aria-label="Open Naybor SOS emergency contact dialog"
             >
-              <AlertTriangle className="w-4 h-4" />
+              <AlertTriangle className="w-4 h-4" aria-hidden="true" />
               SOS
             </Button>
           </div>
@@ -91,6 +95,7 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
         <AnimatePresence>
           {quickPanelExpanded && quickContacts.length > 0 && (
             <motion.div
+              id="quick-sos-panel"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}

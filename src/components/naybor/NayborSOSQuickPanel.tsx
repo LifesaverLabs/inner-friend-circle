@@ -29,16 +29,17 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
   };
 
   return (
-    <div className="p-3 bg-tier-naybor/5">
-      <p className="text-xs text-muted-foreground mb-2">Quick contacts:</p>
-      <div className="space-y-2">
+    <div className="p-3 bg-tier-naybor/5" role="region" aria-label="Quick SOS contacts">
+      <p className="text-xs text-muted-foreground mb-2" id="quick-contacts-label">Quick contacts:</p>
+      <div className="space-y-2" role="list" aria-labelledby="quick-contacts-label">
         {contacts.map((naybor) => (
           <div
             key={naybor.id}
+            role="listitem"
             className="flex items-center justify-between gap-2 p-2 rounded-lg bg-background/50 border border-tier-naybor/10"
           >
             <div className="flex items-center gap-2 min-w-0">
-              <div className="p-1.5 rounded-full bg-tier-naybor/10 shrink-0">
+              <div className="p-1.5 rounded-full bg-tier-naybor/10 shrink-0" aria-hidden="true">
                 <User className="w-3.5 h-3.5 text-tier-naybor" />
               </div>
               <div className="min-w-0">
@@ -49,7 +50,7 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
               </div>
             </div>
 
-            <div className="flex items-center gap-1 shrink-0">
+            <div className="flex items-center gap-1 shrink-0" role="group" aria-label={`Contact options for ${naybor.name}`}>
               {naybor.phone ? (
                 <>
                   <Button
@@ -57,18 +58,18 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
                     size="icon"
                     className="h-8 w-8 text-tier-naybor hover:text-tier-naybor hover:bg-tier-naybor/10"
                     onClick={() => handleCall(naybor)}
-                    title={`Call ${naybor.name}`}
+                    aria-label={`Call ${naybor.name}`}
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-4 h-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8 text-tier-naybor hover:text-tier-naybor hover:bg-tier-naybor/10"
                     onClick={() => handleMessage(naybor)}
-                    title={`Message ${naybor.name}`}
+                    aria-label={`Message ${naybor.name}`}
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-4 h-4" aria-hidden="true" />
                   </Button>
                 </>
               ) : (

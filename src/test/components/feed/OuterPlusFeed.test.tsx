@@ -124,7 +124,8 @@ describe('Outer+ Feed - Tab Naming', () => {
     renderWithRouter(<FeedTabs {...defaultProps} friends={friends} />);
 
     // The tab should be labeled "Outer+" to indicate it includes more than just outer tier
-    expect(screen.getByRole('tab', { name: /outer\+/i })).toBeInTheDocument();
+    // The full aria-label is "Outer Plus Feed - Extended circle including naybors"
+    expect(screen.getByRole('tab', { name: /outer plus/i })).toBeInTheDocument();
   });
 
   it('should NOT display "Outer Feed" as a tab name', () => {

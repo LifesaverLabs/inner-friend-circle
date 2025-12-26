@@ -666,8 +666,8 @@ describe('TierFeed - Connected Button', () => {
       />
     );
 
-    // The dropdown trigger should have an accessible label
+    // The dropdown trigger should have an accessible label with the friend's name
     const dropdown = screen.getByTestId('connected-date-dropdown');
-    expect(dropdown).toHaveAttribute('aria-label', 'Select connection date');
+    expect(dropdown).toHaveAttribute('aria-label', 'Select when you connected with Alice');
   });
 });

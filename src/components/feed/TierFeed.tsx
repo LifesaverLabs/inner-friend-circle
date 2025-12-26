@@ -233,9 +233,12 @@ export function TierFeed({
       <div
         data-testid="feed-loading"
         className={`rounded-xl border ${borderColor} ${bgColor} p-8`}
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
       >
         <div className="flex items-center justify-center">
-          <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
+          <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" aria-hidden="true" />
           <span className="ml-2 text-muted-foreground">Loading feed...</span>
         </div>
       </div>
@@ -247,11 +250,13 @@ export function TierFeed({
       <div
         data-testid={`tier-feed-${tier}`}
         className={`rounded-xl border ${borderColor} ${bgColor} p-8`}
+        role="alert"
+        aria-live="assertive"
       >
         <div className="text-center">
           <p className="text-destructive mb-4">Failed to load feed</p>
-          <Button variant="outline" onClick={() => window.location.reload()}>
-            <RefreshCw className="w-4 h-4 mr-2" />
+          <Button variant="outline" onClick={() => window.location.reload()} aria-label="Retry loading the feed">
+            <RefreshCw className="w-4 h-4 mr-2" aria-hidden="true" />
             Retry
           </Button>
         </div>
