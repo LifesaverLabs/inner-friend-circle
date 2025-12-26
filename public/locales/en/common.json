@@ -174,7 +174,8 @@
     "export": "Export",
     "import": "Import",
     "remove": "Remove",
-    "accept": "Accept"
+    "accept": "Accept",
+    "refresh": "Refresh"
   },
   "labels": {
     "name": "Name"
@@ -1002,5 +1003,254 @@
   },
   "common": {
     "optional": "optional"
+  },
+  "dispatch": {
+    "registration": {
+      "pageTitle": "Emergency Dispatch Registration",
+      "pageDescription": "Register your emergency service organization to access Door Key Tree information during emergencies.",
+      "alreadyRegistered": "Already registered? Sign in",
+      "infoTitle": "What you'll need:",
+      "infoPoint1": "Organization legal information (Tax ID, insurance)",
+      "infoPoint2": "Registered agent contact details",
+      "infoPoint3": "Primary contact information",
+      "steps": {
+        "organization": {
+          "title": "Organization Info",
+          "description": "Tell us about your emergency service organization"
+        },
+        "legal": {
+          "title": "Legal Accountability",
+          "description": "Provide legal and insurance information for verification"
+        },
+        "contact": {
+          "title": "Primary Contact",
+          "description": "Designate a primary contact for your organization"
+        },
+        "account": {
+          "title": "Account Setup",
+          "description": "Create your dispatch account credentials"
+        },
+        "review": {
+          "title": "Review & Submit",
+          "description": "Review your information before submitting"
+        }
+      },
+      "fields": {
+        "organizationName": "Organization Name",
+        "organizationType": "Organization Type",
+        "organizationCode": "Organization Code",
+        "jurisdictions": "Jurisdictions Served",
+        "taxId": "Tax ID / EIN",
+        "insuranceCarrier": "Insurance Carrier",
+        "policyNumber": "Policy Number",
+        "registeredAgentName": "Registered Agent Name",
+        "registeredAgentContact": "Registered Agent Contact",
+        "primaryContactName": "Primary Contact Name",
+        "primaryContactEmail": "Primary Contact Email",
+        "primaryContactPhone": "Primary Contact Phone",
+        "dispatchCenterPhone": "Dispatch Center Phone (24/7)",
+        "dispatchCenterAddress": "Dispatch Center Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password"
+      },
+      "placeholders": {
+        "organizationName": "City Police Department",
+        "organizationCode": "e.g., NYPD, LAFD",
+        "jurisdiction": "Add jurisdiction (city, county, state)",
+        "taxId": "XX-XXXXXXX",
+        "insuranceCarrier": "Insurance company name",
+        "policyNumber": "Policy number",
+        "registeredAgentName": "Full legal name",
+        "registeredAgentContact": "Phone or email",
+        "primaryContactName": "Full name",
+        "primaryContactEmail": "dispatch@example.gov",
+        "dispatchCenterAddress": "123 Main St, City, State",
+        "password": "Minimum 8 characters",
+        "confirmPassword": "Re-enter password"
+      },
+      "hints": {
+        "organizationCode": "Internal department code (optional)",
+        "password": "Use a strong password with at least 8 characters"
+      },
+      "optionalFields": "Optional Information",
+      "legalNotice": "This information will be used for verification and legal accountability. All data is subject to audit.",
+      "terms": {
+        "agree": "I agree to the",
+        "termsOfService": "Emergency Services Terms of Service",
+        "and": "and",
+        "privacyPolicy": "Data Handling Policy",
+        "dataProcessing": "I understand that access requests will be logged and audited."
+      },
+      "review": {
+        "organization": "Organization",
+        "legal": "Legal Information",
+        "contact": "Contact Information",
+        "verificationTitle": "Verification Process",
+        "verificationDescription": "Your application will be reviewed by our team. You will receive an email when your account is verified or if additional information is needed."
+      },
+      "submitting": "Submitting...",
+      "submit": "Submit Application",
+      "success": "Application submitted successfully! You will receive an email when verified.",
+      "errors": {
+        "emailExists": "An account with this email already exists",
+        "generic": "Failed to submit application. Please try again."
+      },
+      "footer": {
+        "questions": "Questions about the verification process?"
+      }
+    },
+    "login": {
+      "title": "Dispatch Account Login",
+      "subtitle": "Sign in to access the Emergency Dispatch Dashboard",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "placeholders": {
+        "email": "dispatch@example.gov",
+        "password": "Your password"
+      },
+      "validation": {
+        "invalidEmail": "Please enter a valid email address",
+        "passwordRequired": "Password is required"
+      },
+      "button": "Sign In",
+      "submitting": "Signing in...",
+      "success": "Welcome back!",
+      "verificationNote": "Only verified dispatch accounts can access resident information. Pending accounts have limited access.",
+      "noAccount": "Don't have an account?",
+      "register": "Register your organization",
+      "forgotPassword": "Forgot password?",
+      "errors": {
+        "invalidCredentials": "Invalid email or password",
+        "suspended": "This account has been suspended. Contact support for assistance.",
+        "generic": "Sign in failed. Please try again."
+      }
+    },
+    "dashboard": {
+      "signOut": "Sign Out",
+      "verificationPending": {
+        "title": "Account Verification Pending",
+        "description": "Your organization's application is being reviewed. You will receive an email when verified. Full access to resident search is only available after verification."
+      },
+      "verificationRejected": {
+        "title": "Account Verification Rejected",
+        "description": "Your organization's application was not approved. Please contact support for more information."
+      },
+      "search": {
+        "title": "Resident Search",
+        "placeholder": "Enter address to search...",
+        "addressLabel": "Address",
+        "button": "Search",
+        "verificationRequired": "Search is only available for verified accounts",
+        "anonymous": "Anonymous Resident",
+        "keysAvailable": "Keys Available",
+        "requestAccess": "Request Access"
+      },
+      "recentRequests": {
+        "title": "Recent Access Requests",
+        "empty": "No access requests yet"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "denied": "Denied",
+        "expired": "Expired"
+      },
+      "accountInfo": {
+        "title": "Account Information",
+        "organization": "Organization",
+        "type": "Type",
+        "status": "Status"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "apiKeys": "Manage API Keys",
+        "accessLogs": "View Access Logs"
+      },
+      "requestDialog": {
+        "title": "Request Door Key Tree Access",
+        "description": "Provide emergency details and legal basis for accessing resident key holder information.",
+        "emergencyScenario": "Emergency Scenario",
+        "selectScenario": "Select emergency type",
+        "emergencyDescription": "Emergency Description",
+        "descriptionPlaceholder": "Describe the emergency situation...",
+        "legalBasis": "Legal Basis for Access",
+        "selectLegalBasis": "Select legal basis",
+        "caseNumber": "Case / Incident Number",
+        "caseNumberPlaceholder": "e.g., INC-2024-12345",
+        "officerName": "Requesting Officer Name",
+        "officerNamePlaceholder": "Full name",
+        "badgeNumber": "Badge Number",
+        "badgePlaceholder": "Optional",
+        "legalWarning": "All access requests are logged and audited. Unauthorized access may result in account suspension and legal action.",
+        "submitting": "Submitting...",
+        "submit": "Submit Access Request"
+      },
+      "requestSubmitted": "Access request submitted successfully",
+      "errors": {
+        "requiredFields": "Please fill in all required fields",
+        "requestFailed": "Failed to submit access request"
+      }
+    }
+  },
+  "admin": {
+    "dispatch": {
+      "title": "Dispatch Account Verification",
+      "searchPlaceholder": "Search by organization, email, or contact name...",
+      "filters": {
+        "all": "All Accounts"
+      },
+      "noAccounts": "No accounts found matching your criteria",
+      "accessDenied": {
+        "title": "Access Denied",
+        "description": "You don't have permission to access the dispatch verification panel."
+      },
+      "actions": {
+        "verify": "Verify",
+        "reject": "Reject",
+        "suspend": "Suspend"
+      },
+      "success": {
+        "verify": "Account verified successfully",
+        "reject": "Account rejected",
+        "suspend": "Account suspended"
+      },
+      "errors": {
+        "fetchFailed": "Failed to fetch accounts",
+        "actionFailed": "Action failed. Please try again."
+      },
+      "detail": {
+        "description": "Review organization details and verification documents",
+        "organization": "Organization Details",
+        "name": "Name",
+        "type": "Type",
+        "jurisdictions": "Jurisdictions",
+        "legal": "Legal Information",
+        "taxId": "Tax ID",
+        "insurance": "Insurance Carrier",
+        "policyNumber": "Policy Number",
+        "registeredAgent": "Registered Agent",
+        "contact": "Contact Information",
+        "contactName": "Contact Name",
+        "contactEmail": "Email",
+        "contactPhone": "Phone",
+        "status": "Account Status",
+        "verificationStatus": "Status",
+        "createdAt": "Applied On",
+        "rejectionReason": "Rejection Reason"
+      },
+      "confirm": {
+        "verifyTitle": "Verify Account?",
+        "verifyDescription": "This will grant the organization access to resident Door Key Tree information during emergencies.",
+        "rejectTitle": "Reject Account?",
+        "rejectDescription": "Please provide a reason for rejection. This will be shared with the organization.",
+        "suspendTitle": "Suspend Account?",
+        "suspendDescription": "This will immediately revoke the organization's access. Please provide a reason.",
+        "reason": "Reason",
+        "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
+        "processing": "Processing..."
+      }
+    }
   }
 }
