@@ -92,7 +92,7 @@ export function FriendDashboard({
   const handleAddFriend = (tier: TierType) => (name: string, email?: string, roleModelReason?: string) => {
     const result = addFriend({ name, email, tier, roleModelReason });
     if (result.success) {
-      toast.success(`Added ${name} to your ${tier} circle`);
+      toast.success(t('dashboard.toasts.addedFriend', { name, tier: t(`tiers.${tier}`) }));
     } else {
       toast.error(result.error);
     }
@@ -106,9 +106,9 @@ export function FriendDashboard({
     const friend = lists.friends.find(f => f.id === id);
     const result = moveFriend(id, newTier);
     if (result.success && friend) {
-      toast.success(`Moved ${friend.name} to ${newTier}`);
+      toast.success(t('dashboard.toasts.movedFriend', { name: friend.name, tier: t(`tiers.${newTier}`) }));
     } else {
-      toast.error(result.error || 'Failed to move friend');
+      toast.error(result.error || t('dashboard.toasts.moveError'));
     }
   };
 
@@ -116,27 +116,27 @@ export function FriendDashboard({
     const friend = lists.friends.find(f => f.id === id);
     removeFriend(id);
     if (friend) {
-      toast.success(`Removed ${friend.name} from your lists`);
+      toast.success(t('dashboard.toasts.removedFriend', { name: friend.name }));
     }
   };
 
   const handleAddReservedGroup = (tier: TierType) => (count: number, note?: string) => {
     const result = addReservedGroup(tier, count, note);
     if (result.success) {
-      toast.success(`Added reserved group to ${tier}`);
+      toast.success(t('dashboard.toasts.addedReserved', { tier: t(`tiers.${tier}`) }));
     } else {
-      toast.error(result.error || 'Failed to add reserved group');
+      toast.error(result.error || t('dashboard.toasts.reservedError'));
     }
   };
 
   const handleUpdateReservedGroup = (tier: TierType) => (groupId: string, count: number, note?: string) => {
     updateReservedGroup(tier, groupId, count, note);
-    toast.success(`Updated reserved group`);
+    toast.success(t('dashboard.toasts.updatedReserved'));
   };
 
   const handleRemoveReservedGroup = (tier: TierType) => (groupId: string) => {
     removeReservedGroup(tier, groupId);
-    toast.success(`Removed reserved group`);
+    toast.success(t('dashboard.toasts.removedReserved'));
   };
 
   const handleReorderFriends = (tier: TierType) => (orderedIds: string[]) => {
@@ -211,10 +211,10 @@ export function FriendDashboard({
       });
 
       if (addedCount > 0) {
-        toast.success(`Imported ${addedCount} friend${addedCount !== 1 ? 's' : ''}`);
+        toast.success(t('dashboard.toasts.imported', { count: addedCount }));
       }
       if (skippedCount > 0) {
-        toast.info(`Skipped ${skippedCount} duplicate${skippedCount !== 1 ? 's' : ''}`);
+        toast.info(t('dashboard.toasts.skippedDuplicates', { count: skippedCount }));
       }
     },
     [lists.friends, addFriend, updateFriend]
@@ -289,7 +289,7 @@ export function FriendDashboard({
           transition={{ repeat: Infinity, duration: 1.5 }}
           className="text-muted-foreground"
         >
-          Loading your circles...
+          {t('dashboard.loading')}
         </motion.div>
       </div>
     );
@@ -335,10 +335,10 @@ export function FriendDashboard({
           <div className="flex items-start justify-between gap-4">
             <div>
               <h1 className="font-display text-3xl font-bold text-foreground mb-2">
-                Your Inner Circles
+                {t('dashboard.title')}
               </h1>
               <p className="text-muted-foreground">
-                Curate and tend to your closest relationships
+                {t('dashboard.subtitle')}
               </p>
             </div>
             <Button 
@@ -361,7 +361,7 @@ export function FriendDashboard({
                 <Heart className={`h-4 w-4 mr-2 ${needsUrgentTending ? 'text-destructive fill-destructive' : ''}`} />
               </motion.div>
               <span className="flex flex-col items-start">
-                <span>Tend</span>
+                <span>{t('dashboard.tend')}</span>
                 {lastTendedAt && (
                   <span className={`text-[10px] ${needsUrgentTending ? 'text-destructive' : 'text-muted-foreground'}`}>
                     {formatDistanceToNow(lastTendedAt, { addSuffix: true })}
@@ -375,12 +375,12 @@ export function FriendDashboard({
               className="shrink-0"
             >
               <Share2 className="h-4 w-4 mr-2" />
-              Share
+              {t('dashboard.share')}
             </Button>
           </div>
           {!isLoggedIn && (
             <p className="text-sm text-muted-foreground mt-4 bg-muted/50 rounded-lg px-4 py-2 inline-block">
-              💡 Your lists are saved locally. Create an account to sync across devices and enable mutual matching.
+              {t('dashboard.localStorageHint')}
             </p>
           )}
         </motion.div>
@@ -399,9 +399,7 @@ export function FriendDashboard({
           className="mt-8 text-center"
         >
           <p className="text-xs text-muted-foreground/70 italic max-w-2xl mx-auto">
-            Note: These Dunbar-inspired tier limits are subject to change as community conscience science evolves. 
-            Future modifications may include rules where certain tier counts affect others — for example, 
-            parasocial connections might reduce your allowable outer friend capacity.
+            {t('dashboard.dunbarDisclaimer')}
           </p>
         </motion.div>
 
@@ -460,7 +458,7 @@ export function FriendDashboard({
         onExportClick={() => setExportDialogOpen(true)}
         onLearnMore={() => {
           // Could navigate to a data portability info page
-          toast.info('Your data belongs to you. Export anytime to take it elsewhere.');
+          toast.info(t('dashboard.toasts.dataLiberation'));
         }}
       />
 

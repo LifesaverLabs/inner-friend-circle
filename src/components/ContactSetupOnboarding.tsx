@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Video, ArrowRight, Check, Plus, X, Info, Globe, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -53,6 +54,7 @@ export function ContactSetupOnboarding({
   onComplete,
   onSkip,
 }: ContactSetupOnboardingProps) {
+  const { t } = useTranslation();
   const [step, setStep] = useState(0);
   const [methods, setMethods] = useState<Array<{
     service: ServiceType;
@@ -71,25 +73,25 @@ export function ContactSetupOnboarding({
 
   const steps = [
     {
-      title: 'Stay Connected',
-      description: 'Add your contact methods so friends can reach you easily.',
+      title: t('onboarding.steps.connect.title'),
+      description: t('onboarding.steps.connect.description'),
       icon: <Phone className="w-12 h-12 text-primary" />,
     },
     {
-      title: 'Add Your Channels',
-      description: 'Which video call and messaging apps do you use?',
+      title: t('onboarding.steps.channels.title'),
+      description: t('onboarding.steps.channels.description'),
       icon: <Video className="w-12 h-12 text-primary" />,
     },
     {
-      title: 'All Set!',
-      description: 'Your friends can now start or schedule kalls with you.',
+      title: t('onboarding.steps.complete.title'),
+      description: t('onboarding.steps.complete.description'),
       icon: <Check className="w-12 h-12 text-green-500" />,
     },
   ];
 
   const handleAddMethod = () => {
     if (!currentIdentifier.trim()) {
-      toast.error('Please enter contact information');
+      toast.error(t('onboarding.toasts.enterContactInfo'));
       return;
     }
 
@@ -135,7 +137,7 @@ export function ContactSetupOnboarding({
       onComplete();
     } catch (error) {
       console.error('Error saving contact methods:', error);
-      toast.error('Failed to save contact methods');
+      toast.error(t('onboarding.toasts.saveFailed'));
     } finally {
       setIsSaving(false);
     }
@@ -187,10 +189,10 @@ export function ContactSetupOnboarding({
                   </div>
                   <div className="flex gap-2 justify-end pt-4">
                     <Button variant="ghost" onClick={handleSkip}>
-                      Skip for now
+                      {t('onboarding.skipForNow')}
                     </Button>
                     <Button onClick={() => setStep(1)}>
-                      Get Started
+                      {t('onboarding.getStarted')}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
@@ -234,7 +236,7 @@ export function ContactSetupOnboarding({
                   <div className="space-y-3 p-4 border rounded-lg">
                     <div className="space-y-3">
                       <div className="space-y-1">
-                        <Label className="text-xs">Service</Label>
+                        <Label className="text-xs">{t('onboarding.service')}</Label>
                         <Select
                           value={currentService}
                           onValueChange={(v) => setCurrentService(v as ServiceType)}
@@ -262,7 +264,7 @@ export function ContactSetupOnboarding({
                       </div>
                       
                       <div className="space-y-1">
-                        <Label className="text-xs">Your {SERVICES[currentService].name} Contact Info</Label>
+                        <Label className="text-xs">{t('onboarding.yourContactInfo', { service: SERVICES[currentService].name })}</Label>
                         <Input
                           className="h-9"
                           placeholder={SERVICES[currentService].placeholder}
@@ -284,7 +286,7 @@ export function ContactSetupOnboarding({
                           onCheckedChange={setForSpontaneous}
                           className="scale-75"
                         />
-                        <span className="text-muted-foreground">Spontaneous</span>
+                        <span className="text-muted-foreground">{t('onboarding.spontaneous')}</span>
                       </label>
                       <label className="flex items-center gap-2 cursor-pointer">
                         <Switch
@@ -292,7 +294,7 @@ export function ContactSetupOnboarding({
                           onCheckedChange={setForScheduled}
                           className="scale-75"
                         />
-                        <span className="text-muted-foreground">Scheduled</span>
+                        <span className="text-muted-foreground">{t('onboarding.scheduled')}</span>
                       </label>
                     </div>
                     <Button
@@ -303,19 +305,19 @@ export function ContactSetupOnboarding({
                       disabled={!currentIdentifier.trim() || (!forSpontaneous && !forScheduled)}
                     >
                       <Plus className="w-4 h-4 mr-2" />
-                      Add Method
+                      {t('onboarding.addMethod')}
                     </Button>
                   </div>
 
                   <div className="flex gap-2 justify-end pt-4">
                     <Button variant="ghost" onClick={() => setStep(0)}>
-                      Back
+                      {t('actions.back')}
                     </Button>
                     <Button
                       onClick={() => setStep(2)}
                       disabled={methods.length === 0}
                     >
-                      Continue
+                      {t('onboarding.continue')}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
@@ -326,7 +328,7 @@ export function ContactSetupOnboarding({
                 <div className="space-y-4">
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-sm text-center text-muted-foreground">
-                      You've added {methods.length} contact method{methods.length !== 1 ? 's' : ''}
+                      {t('onboarding.methodsAdded', { count: methods.length })}
                     </p>
                     <div className="flex justify-center gap-2 mt-2">
                       {methods.map((method, index) => (
@@ -348,12 +350,12 @@ export function ContactSetupOnboarding({
                         )}
                         <div>
                           <p className="text-sm font-medium">
-                            {isPublicProfile ? 'Public Profile' : 'Private Profile'}
+                            {isPublicProfile ? t('onboarding.publicProfile') : t('onboarding.privateProfile')}
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            {isPublicProfile 
-                              ? 'Anyone can find you by your handle' 
-                              : 'Only confirmed friends can see your profile'}
+                            {isPublicProfile
+                              ? t('onboarding.publicProfileHint')
+                              : t('onboarding.privateProfileHint')}
                           </p>
                         </div>
                       </div>
@@ -366,10 +368,10 @@ export function ContactSetupOnboarding({
 
                   <div className="flex gap-2 justify-end pt-4">
                     <Button variant="ghost" onClick={() => setStep(1)}>
-                      Add More
+                      {t('onboarding.addMore')}
                     </Button>
                     <Button onClick={handleSaveAndComplete} disabled={isSaving}>
-                      {isSaving ? 'Saving...' : 'Complete Setup'}
+                      {isSaving ? t('onboarding.saving') : t('onboarding.completeSetup')}
                     </Button>
                   </div>
                 </div>

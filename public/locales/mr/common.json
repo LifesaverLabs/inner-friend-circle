@@ -76,6 +76,10 @@
       "emailAlreadyRegistered": "हा ईमेल आधीच नोंदणीकृत आहे. त्याऐवजी साइन इन करण्याचा प्रयत्न करा.",
       "invalidCredentials": "अवैध ईमेल किंवा पासवर्ड. कृपया पुन्हा प्रयत्न करा.",
       "unexpectedError": "एक अनपेक्षित त्रुटी उद्भवली. कृपया पुन्हा प्रयत्न करा."
+    },
+    "toasts": {
+      "signOutError": "Failed to sign out",
+      "signOutSuccess": "Signed out successfully"
     }
   },
   "notFound": {
@@ -529,5 +533,167 @@
     "nayborPhoneHint": "आपत्कालीन परिस्थिती आणि परस्पर सहाय्यासाठी आपल्या शेजाऱ्यांची संपर्क माहिती असणे आवश्यक आहे.",
     "addPhoneButton": "फेस टाइमसाठी फोन जोडा",
     "addNayborPhoneButton": "आपत्कालीन परिस्थितीसाठी संपर्क माहिती जोडा"
+  },
+  "dashboard": {
+    "title": "Your Inner Circles",
+    "subtitle": "Curate and tend to your closest relationships",
+    "loading": "Loading your circles...",
+    "tend": "Tend",
+    "share": "Share",
+    "localStorageHint": "💡 Your lists are saved locally. Create an account to sync across devices and enable mutual matching.",
+    "dunbarDisclaimer": "Note: These Dunbar-inspired tier limits are subject to change as community conscience science evolves. Future modifications may include rules where certain tier counts affect others — for example, parasocial connections might reduce your allowable outer friend capacity.",
+    "toasts": {
+      "addedFriend": "Added {{name}} to your {{tier}} circle",
+      "movedFriend": "Moved {{name}} to {{tier}}",
+      "moveError": "Failed to move friend",
+      "removedFriend": "Removed {{name}} from your lists",
+      "addedReserved": "Added reserved group to {{tier}}",
+      "reservedError": "Failed to add reserved group",
+      "updatedReserved": "Updated reserved group",
+      "removedReserved": "Removed reserved group",
+      "imported": "Imported {{count}} friend",
+      "imported_plural": "Imported {{count}} friends",
+      "skippedDuplicates": "Skipped {{count}} duplicate",
+      "skippedDuplicates_plural": "Skipped {{count}} duplicates",
+      "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
+    }
+  },
+  "mission": {
+    "title": "Face Time, Not Ad Time",
+    "description": "We win when you leave our site — to share real moments with the people who matter most.",
+    "learnMore": "Learn more...",
+    "showLess": "Show less",
+    "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
+    "videoTitle": "Dentyne Ice - Face Time",
+    "quote": "\"Make Face Time\" — that's the ideal. When distance separates you, we'll help you bridge it with video kalls. But always remember: nothing beats being there.",
+    "features": {
+      "spark": {
+        "title": "Spark Video Kalls",
+        "description": "When you're apart, one click connects you"
+      },
+      "tend": {
+        "title": "Tend Your Circles",
+        "description": "Reminders to reach out before connections fade"
+      },
+      "pull": {
+        "title": "Pull Closer",
+        "description": "Move meaningful connections into tighter orbits"
+      }
+    }
+  },
+  "tierSection": {
+    "reserve": "Reserve",
+    "reservedCount": "{{count}} Reserved",
+    "link": "Link",
+    "followCreator": "Follow Creator",
+    "addRoleModel": "Add Role Model",
+    "add": "Add"
+  },
+  "tending": {
+    "title": "Tend Your Circles",
+    "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
+    "periods": {
+      "core": "this week",
+      "inner": "these two weeks",
+      "outer": "these two months"
+    },
+    "peopleCount": "{{count}} person",
+    "peopleCount_plural": "{{count}} people",
+    "noFriendsInTier": "No friends in this tier yet",
+    "checkInstruction": "✓ Check those you haven't talked to enough:",
+    "noPhone": "no phone",
+    "call": "Call",
+    "maybeLater": "Maybe Later",
+    "doneTending": "Done Tending",
+    "finish": "Finish",
+    "mobileHint": "Contact actions work best on mobile devices",
+    "reconnect": {
+      "title": "Time to Reconnect",
+      "description": "These friends could use some of your time"
+    },
+    "toasts": {
+      "allTended": "Amazing! You've tended to all your circles 🌱",
+      "noPhone": "No phone number for {{name}}",
+      "connecting": "Connecting with {{name}} via {{method}}",
+      "rememberReachOut": "Remember to reach out soon! 💛",
+      "friendsWaiting": "{{count}} friend waiting to hear from you",
+      "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
+    }
+  },
+  "nayborSOS": {
+    "title": "Naybor SOS™",
+    "steps": {
+      "category": "What kind of help do you need?",
+      "contacts": "Choose naybors to contact"
+    },
+    "critical": "Critical",
+    "emergencyWarning": "For life-threatening emergencies, call 911 first",
+    "suggestedActions": "Suggested actions:",
+    "addDetails": "Add details (optional)",
+    "describePlaceholder": "Describe your situation...",
+    "includeLocation": "Include location info",
+    "chooseNaybors": "Choose Naybors",
+    "chooseNayborsAria": "Continue to choose naybors to contact",
+    "nayborsSelected": "{{count}} naybor selected",
+    "nayborsSelected_plural": "{{count}} naybors selected",
+    "copyMessage": "Copy message",
+    "messageAll": "Message All ({{count}})",
+    "contacted": "Contacted {{count}} naybor",
+    "contacted_plural": "Contacted {{count}} naybors",
+    "toasts": {
+      "messageCopied": "Message copied to clipboard",
+      "noNayborsSelected": "No naybors with phone numbers selected"
+    }
+  },
+  "callActions": {
+    "startKall": "Start a kall",
+    "kallNow": "Kall {{name}} now",
+    "scheduleKall": "Schedule a kall",
+    "scheduleWith": "Schedule with {{name}}",
+    "sharedServices": "Shared services:",
+    "theirPreferences": "Their preferences:",
+    "noMethods": "No contact methods available",
+    "requestInfo": "Request contact info",
+    "toasts": {
+      "connecting": "Connecting via {{service}}",
+      "openService": "Open {{service}} to connect"
+    }
+  },
+  "onboarding": {
+    "steps": {
+      "connect": {
+        "title": "Stay Connected",
+        "description": "Add your contact methods so friends can reach you easily."
+      },
+      "channels": {
+        "title": "Add Your Channels",
+        "description": "Which video call and messaging apps do you use?"
+      },
+      "complete": {
+        "title": "All Set!",
+        "description": "Your friends can now start or schedule kalls with you."
+      }
+    },
+    "skipForNow": "Skip for now",
+    "getStarted": "Get Started",
+    "service": "Service",
+    "yourContactInfo": "Your {{service}} Contact Info",
+    "spontaneous": "Spontaneous",
+    "scheduled": "Scheduled",
+    "addMethod": "Add Method",
+    "continue": "Continue",
+    "methodsAdded": "You've added {{count}} contact method",
+    "methodsAdded_plural": "You've added {{count}} contact methods",
+    "publicProfile": "Public Profile",
+    "privateProfile": "Private Profile",
+    "publicProfileHint": "Anyone can find you by your handle",
+    "privateProfileHint": "Only confirmed friends can see your profile",
+    "addMore": "Add More",
+    "saving": "Saving...",
+    "completeSetup": "Complete Setup",
+    "toasts": {
+      "enterContactInfo": "Please enter contact information",
+      "saveFailed": "Failed to save contact methods"
+    }
   }
 }
