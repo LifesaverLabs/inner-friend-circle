@@ -9,7 +9,8 @@ export interface FriendConnection {
   id: string;
   requester_id: string;
   target_user_id: string;
-  circle_tier: CircleTier;
+  circle_tier: CircleTier; // How the REQUESTER classifies the TARGET
+  target_circle_tier: CircleTier | null; // How the TARGET classifies the REQUESTER (set on confirmation)
   status: ConnectionStatus;
   disclose_circle: boolean;
   matched_contact_method_id: string | null;
@@ -179,17 +180,35 @@ export function useFriendConnections(userId: string | undefined) {
   }, [userId, connections]);
 
   // Respond to a connection request (confirm or decline)
+  // When accepting, the target can optionally specify their own tier for the requester
+  // This enables asymmetric tier classification (e.g., A considers B "core" but B considers A "outer")
   const respondToRequest = useCallback(async (
     connectionId: string,
-    accept: boolean
+    accept: boolean,
+    targetTier?: CircleTier // The tier that the TARGET places the REQUESTER in
   ): Promise<{ success: boolean; error?: string }> => {
     try {
+      const updateData: Record<string, unknown> = {
+        status: accept ? 'confirmed' : 'declined',
+        confirmed_at: accept ? new Date().toISOString() : null,
+      };
+
+      // If accepting and a tier is specified, set target_circle_tier
+      // If not specified, we'll need to get the original circle_tier from the pending request
+      if (accept && targetTier) {
+        updateData.target_circle_tier = targetTier;
+      } else if (accept) {
+        // Default: target classifies requester in the same tier requester used
+        // Find the pending request to get the original tier
+        const pendingRequest = pendingRequests.find(r => r.id === connectionId);
+        if (pendingRequest) {
+          updateData.target_circle_tier = pendingRequest.circle_tier;
+        }
+      }
+
       const { error } = await supabase
         .from('friend_connections')
-        .update({
-          status: accept ? 'confirmed' : 'declined',
-          confirmed_at: accept ? new Date().toISOString() : null,
-        })
+        .update(updateData)
         .eq('id', connectionId);
 
       if (error) throw error;
@@ -200,7 +219,7 @@ export function useFriendConnections(userId: string | undefined) {
       console.error('Error responding to request:', error);
       return { success: false, error: 'Failed to respond to request' };
     }
-  }, []);
+  }, [pendingRequests]);
 
   // Delete a connection
   const deleteConnection = useCallback(async (
@@ -222,14 +241,58 @@ export function useFriendConnections(userId: string | undefined) {
     }
   }, []);
 
-  // Get confirmed friends for a specific tier
+  // Get confirmed friends for a specific tier from this user's perspective
+  // This handles asymmetric tier classification:
+  // - If I'm the requester, I see target in circle_tier
+  // - If I'm the target, I see requester in target_circle_tier
   const getConfirmedFriendsInTier = useCallback((tier: CircleTier): FriendConnection[] => {
     return connections.filter(c => {
-      // Only show connections where this user is the requester and they set this tier
+      if (c.status !== 'confirmed') return false;
+
       const isRequester = c.requester_id === userId;
-      return c.status === 'confirmed' && isRequester && c.circle_tier === tier;
+      const isTarget = c.target_user_id === userId;
+
+      if (isRequester) {
+        // I'm the requester - check my tier classification (circle_tier)
+        return c.circle_tier === tier;
+      } else if (isTarget) {
+        // I'm the target - check my tier classification (target_circle_tier)
+        return c.target_circle_tier === tier;
+      }
+
+      return false;
     });
   }, [connections, userId]);
+
+  // Get the friend user ID from a connection (the "other" person)
+  const getFriendIdFromConnection = useCallback((connection: FriendConnection): string => {
+    if (connection.requester_id === userId) {
+      return connection.target_user_id;
+    }
+    return connection.requester_id;
+  }, [userId]);
+
+  // Get my tier classification for a connected friend
+  const getMyTierForFriend = useCallback((connection: FriendConnection): CircleTier | null => {
+    if (connection.requester_id === userId) {
+      return connection.circle_tier;
+    }
+    if (connection.target_user_id === userId) {
+      return connection.target_circle_tier;
+    }
+    return null;
+  }, [userId]);
+
+  // Get the friend's tier classification for me
+  const getFriendTierForMe = useCallback((connection: FriendConnection): CircleTier | null => {
+    if (connection.requester_id === userId) {
+      return connection.target_circle_tier;
+    }
+    if (connection.target_user_id === userId) {
+      return connection.circle_tier;
+    }
+    return null;
+  }, [userId]);
 
   // Check if a user is already connected
   const isConnectedTo = useCallback((otherUserId: string): FriendConnection | null => {
@@ -249,5 +312,8 @@ export function useFriendConnections(userId: string | undefined) {
     deleteConnection,
     getConfirmedFriendsInTier,
     isConnectedTo,
+    getFriendIdFromConnection,
+    getMyTierForFriend,
+    getFriendTierForMe,
   };
 }
