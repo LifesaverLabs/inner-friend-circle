@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "ইনারফ্রেন্ড",
+    "tagline": "আপনার ঘনিষ্ঠ সম্পর্কগুলো লালন করুন",
+    "description": "ডানবার সংখ্যা গবেষণার উপর ভিত্তি করে অর্থপূর্ণ বন্ধুত্ব বজায় রাখার জন্য একটি গোপনীয়তা-প্রথম টুল"
+  },
+  "nav": {
+    "home": "হোম",
+    "dashboard": "ড্যাশবোর্ড",
+    "settings": "সেটিংস",
+    "signIn": "সাইন ইন",
+    "signOut": "সাইন আউট",
+    "profile": "প্রোফাইল"
+  },
+  "tiers": {
+    "core": "কোর",
+    "coreDescription": "আপনার সবচেয়ে ঘনিষ্ঠ বিশ্বস্ত (৫ জন পর্যন্ত)",
+    "inner": "ইনার",
+    "innerDescription": "ঘনিষ্ঠ বন্ধু যাদের সাথে নিয়মিত দেখা হয় (১৫ জন পর্যন্ত)",
+    "outer": "আউটার",
+    "outerDescription": "ভালো বন্ধু এবং বর্ধিত বৃত্ত (৫০ জন পর্যন্ত)",
+    "acquainted": "পরিচিত",
+    "acquaintedDescription": "যাদের আপনি অভিবাদন জানানোর মতো চেনেন",
+    "naybor": "প্রতিবেশী",
+    "nayborDescription": "জরুরি অবস্থা ও পারস্পরিক সাহায্যের জন্য বিশ্বস্ত প্রতিবেশী",
+    "parasocial": "অনুসরণ",
+    "parasocialDescription": "যে পাবলিক ফিগার ও কন্টেন্ট ক্রিয়েটরদের আপনি অনুসরণ করেন"
+  },
+  "actions": {
+    "add": "যোগ করুন",
+    "edit": "সম্পাদনা",
+    "delete": "মুছুন",
+    "save": "সংরক্ষণ",
+    "cancel": "বাতিল",
+    "confirm": "নিশ্চিত",
+    "close": "বন্ধ",
+    "back": "পেছনে",
+    "next": "পরবর্তী",
+    "done": "সম্পন্ন",
+    "search": "খুঁজুন",
+    "filter": "ফিল্টার",
+    "export": "রপ্তানি",
+    "import": "আমদানি"
+  },
+  "friend": {
+    "addFriend": "বন্ধু যোগ করুন",
+    "editFriend": "যোগাযোগ সম্পাদনা",
+    "removeFriend": "বন্ধু সরান",
+    "moveTo": "{{tier}}-এ সরান",
+    "name": "নাম",
+    "email": "ইমেইল",
+    "phone": "ফোন",
+    "notes": "নোট",
+    "preferredContact": "পছন্দের যোগাযোগ পদ্ধতি",
+    "lastContact": "শেষ যোগাযোগ",
+    "daysSince": "{{days}} দিন আগে",
+    "neverContacted": "কখনো যোগাযোগ হয়নি"
+  },
+  "feed": {
+    "coreFeed": "কোর ফিড",
+    "innerFeed": "ইনার ফিড",
+    "outerFeed": "আউটার+",
+    "manage": "পরিচালনা",
+    "emptyCore": "তাদের পোস্ট দেখতে কোর বন্ধু যোগ করুন",
+    "emptyInner": "তাদের পোস্ট দেখতে ইনার বন্ধু যোগ করুন",
+    "emptyOuter": "তাদের পোস্ট দেখতে আউটার বন্ধু যোগ করুন",
+    "compose": "আপনার মনে কী আছে?",
+    "post": "পোস্ট",
+    "like": "লাইক",
+    "unlike": "লাইক সরান",
+    "comment": "মন্তব্য",
+    "share": "শেয়ার",
+    "voiceReply": "ভয়েস রিপ্লাই",
+    "scheduleCall": "কল শিডিউল করুন",
+    "planMeetup": "মিটআপ পরিকল্পনা"
+  },
+  "nudge": {
+    "timeToReconnect": "পুনরায় সংযোগের সময়",
+    "friendsNeedAttention": "{{count}} বন্ধুর যোগাযোগ প্রয়োজন",
+    "friendsNeedAttention_plural": "{{count}} বন্ধুদের যোগাযোগ প্রয়োজন",
+    "daysSinceContact": "শেষ যোগাযোগের {{days}} দিন পর",
+    "neverContacted": "কখনো যোগাযোগ হয়নি",
+    "connected": "সংযুক্ত",
+    "connectedToday": "আজ সংযুক্ত হিসেবে চিহ্নিত করুন",
+    "selectDate": "কবে সংযুক্ত হয়েছেন নির্বাচন করুন",
+    "dismiss": "বাতিল"
+  },
+  "contact": {
+    "call": "কল",
+    "message": "বার্তা",
+    "email": "ইমেইল",
+    "methods": {
+      "tel": "ফোন কল",
+      "sms": "টেক্সট মেসেজ",
+      "whatsapp": "হোয়াটসঅ্যাপ",
+      "signal": "সিগন্যাল",
+      "telegram": "টেলিগ্রাম",
+      "facetime": "ফেসটাইম"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "মূল বিষয়বস্তুতে যান",
+    "openMenu": "মেনু খুলুন",
+    "closeMenu": "মেনু বন্ধ করুন",
+    "expandPanel": "প্যানেল প্রসারিত করুন",
+    "collapsePanel": "প্যানেল সংকুচিত করুন",
+    "loading": "লোড হচ্ছে...",
+    "loadingFeed": "ফিড বিষয়বস্তু লোড হচ্ছে",
+    "error": "ত্রুটি",
+    "success": "সফল",
+    "selected": "নির্বাচিত",
+    "notSelected": "নির্বাচিত নয়",
+    "required": "আবশ্যক",
+    "optional": "ঐচ্ছিক",
+
+    "feed": {
+      "tabList": "বন্ধু বৃত্ত ফিড",
+      "coreTab": "কোর ফিড - আপনার সবচেয়ে ঘনিষ্ঠ বন্ধু",
+      "innerTab": "ইনার ফিড - ঘনিষ্ঠ বন্ধু",
+      "outerTab": "আউটার প্লাস ফিড - প্রতিবেশী সহ বর্ধিত বৃত্ত",
+      "manageTab": "আপনার বন্ধু বৃত্ত পরিচালনা করুন"
+    },
+
+    "post": {
+      "likeButton": "এই পোস্টে লাইক দিন",
+      "unlikeButton": "এই পোস্ট থেকে লাইক সরান",
+      "commentButton": "একটি মন্তব্য যোগ করুন",
+      "shareButton": "এই পোস্ট শেয়ার করুন",
+      "voiceReplyButton": "ভয়েস রিপ্লাই",
+      "meetupButton": "একটি মিটআপ শিডিউল করুন",
+      "callButton": "{{method}} দিয়ে কল করুন",
+      "selectContactMethod": "যোগাযোগ পদ্ধতি নির্বাচন করুন",
+      "photoAlt": "ছবি: {{description}}",
+      "photoFallback": "শেয়ার করা ছবি",
+      "videoLabel": "ভিডিও: {{description}}",
+      "videoFallback": "শেয়ার করা ভিডিও",
+      "voiceNoteLabel": "ভয়েস নোট: {{description}}",
+      "voiceNoteFallback": "ভয়েস নোট",
+      "joinCall": "কলে যোগ দিন",
+      "rsvpYes": "মিটআপে উপস্থিতি নিশ্চিত করুন",
+      "rsvpMaybe": "মিটআপে হয়তো উপস্থিত",
+      "rsvpOptions": "RSVP অপশন"
+    },
+
+    "nudge": {
+      "panelExpanded": "নাজ প্যানেল প্রসারিত",
+      "panelCollapsed": "নাজ প্যানেল সংকুচিত",
+      "friendsList": "যে বন্ধুদের পুনরায় সংযোগ প্রয়োজন",
+      "actionGroup": "{{name}}-এর জন্য অ্যাকশন",
+      "actionButton": "{{name}}-এর সাথে {{action}}",
+      "dismissButton": "{{name}}-এর জন্য রিমাইন্ডার বাতিল করুন",
+      "connectedButton": "{{name}}-কে আজ সংযুক্ত হিসেবে চিহ্নিত করুন",
+      "selectDateButton": "{{name}}-এর সাথে কবে সংযুক্ত হয়েছেন নির্বাচন করুন"
+    },
+
+    "naybor": {
+      "sosRegion": "দ্রুত SOS যোগাযোগ",
+      "sosContactsList": "দ্রুত যোগাযোগ:",
+      "contactOptions": "{{name}}-এর জন্য যোগাযোগ অপশন",
+      "callButton": "{{name}}-কে কল করুন",
+      "messageButton": "{{name}}-কে মেসেজ করুন",
+      "sosDialogButton": "প্রতিবেশী SOS জরুরি যোগাযোগ ডায়ালগ খুলুন",
+      "showQuickContacts": "দ্রুত যোগাযোগ দেখান",
+      "hideQuickContacts": "দ্রুত যোগাযোগ লুকান",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - জরুরি",
+      "backToCategory": "ক্যাটাগরি নির্বাচনে ফিরে যান",
+      "chooseNaybors": "যোগাযোগের জন্য প্রতিবেশী নির্বাচন করতে এগিয়ে যান",
+      "backToCompose": "বার্তা রচনায় ফিরে যান",
+      "copyMessage": "SOS বার্তা ক্লিপবোর্ডে কপি করুন",
+      "nayborsList": "প্রতিবেশী যোগাযোগ",
+      "selectNaybor": "{{name}} নির্বাচন করুন",
+      "alreadyContacted": "(ইতিমধ্যে যোগাযোগ করা হয়েছে)",
+      "messageAll": "{{count}} জন নির্বাচিত প্রতিবেশীকে মেসেজ করুন",
+      "messageAll_plural": "{{count}} জন নির্বাচিত প্রতিবেশীদের মেসেজ করুন",
+      "locationDescription": "সক্রিয় থাকলে, আপনার আনুমানিক অবস্থান আপনার প্রতিবেশীদের সাথে শেয়ার করা হবে"
+    },
+
+    "dialog": {
+      "close": "ডায়ালগ বন্ধ করুন",
+      "back": "পেছনে যান",
+      "confirm": "অ্যাকশন নিশ্চিত করুন"
+    },
+
+    "form": {
+      "showPassword": "পাসওয়ার্ড দেখান",
+      "hidePassword": "পাসওয়ার্ড লুকান",
+      "clearInput": "ইনপুট মুছুন",
+      "selectCountry": "দেশ নির্বাচন করুন",
+      "phoneNumber": "ফোন নম্বর"
+    },
+
+    "status": {
+      "online": "অনলাইন",
+      "offline": "অফলাইন",
+      "away": "দূরে",
+      "busy": "ব্যস্ত"
+    }
+  },
+  "language": {
+    "select": "ভাষা নির্বাচন করুন",
+    "current": "বর্তমান ভাষা: {{language}}",
+    "helpTranslate": "ইনারফ্রেন্ড অনুবাদে সাহায্য করুন",
+    "communityTranslation": "বিশ্বজুড়ে আরও মানুষের কাছে ইনারফ্রেন্ড পৌঁছে দিতে আমাদের অনুবাদক সম্প্রদায়ে যোগ দিন।"
+  },
+  "errors": {
+    "generic": "কিছু ভুল হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "network": "নেটওয়ার্ক ত্রুটি। অনুগ্রহ করে আপনার সংযোগ পরীক্ষা করুন।",
+    "notFound": "পেজ পাওয়া যায়নি",
+    "unauthorized": "অনুগ্রহ করে চালিয়ে যেতে সাইন ইন করুন"
+  },
+  "footer": {
+    "privacy": "গোপনীয়তা",
+    "terms": "শর্তাবলী",
+    "about": "সম্পর্কে",
+    "contribute": "অবদান রাখুন",
+    "openSource": "ওপেন সোর্স"
+  }
+}

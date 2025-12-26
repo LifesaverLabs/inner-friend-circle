@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "ఇన్నర్‌ఫ్రెండ్",
+    "tagline": "మీ సన్నిహిత సంబంధాలను పెంచుకోండి",
+    "description": "డన్‌బార్ సంఖ్య పరిశోధన ఆధారంగా అర్థవంతమైన స్నేహాలను నిర్వహించడానికి గోప్యత-మొదటి సాధనం"
+  },
+  "nav": {
+    "home": "హోమ్",
+    "dashboard": "డ్యాష్‌బోర్డ్",
+    "settings": "సెట్టింగ్‌లు",
+    "signIn": "సైన్ ఇన్",
+    "signOut": "సైన్ అవుట్",
+    "profile": "ప్రొఫైల్"
+  },
+  "tiers": {
+    "core": "కోర్",
+    "coreDescription": "మీ అత్యంత సన్నిహిత విశ్వసనీయులు (5 వరకు)",
+    "inner": "ఇన్నర్",
+    "innerDescription": "క్రమం తప్పకుండా కలుసుకునే సన్నిహిత స్నేహితులు (15 వరకు)",
+    "outer": "ఔటర్",
+    "outerDescription": "మంచి స్నేహితులు మరియు విస్తరించిన వలయం (50 వరకు)",
+    "acquainted": "పరిచయస్తులు",
+    "acquaintedDescription": "పలకరించగలిగేంత తెలిసిన వ్యక్తులు",
+    "naybor": "పొరుగువారు",
+    "nayborDescription": "పరస్పర సహాయం మరియు అత్యవసర పరిస్థితులకు నమ్మకమైన పొరుగువారు",
+    "parasocial": "ఫాలో",
+    "parasocialDescription": "మీరు అనుసరించే ప్రసిద్ధ వ్యక్తులు మరియు కంటెంట్ క్రియేటర్లు"
+  },
+  "actions": {
+    "add": "జోడించు",
+    "edit": "సవరించు",
+    "delete": "తొలగించు",
+    "save": "సేవ్ చేయి",
+    "cancel": "రద్దు చేయి",
+    "confirm": "నిర్ధారించు",
+    "close": "మూసివేయి",
+    "back": "వెనక్కి",
+    "next": "తదుపరి",
+    "done": "పూర్తయింది",
+    "search": "వెతుకు",
+    "filter": "ఫిల్టర్",
+    "export": "ఎక్స్‌పోర్ట్",
+    "import": "ఇంపోర్ట్"
+  },
+  "friend": {
+    "addFriend": "స్నేహితుడిని జోడించు",
+    "editFriend": "పరిచయాన్ని సవరించు",
+    "removeFriend": "స్నేహితుడిని తొలగించు",
+    "moveTo": "{{tier}}కి తరలించు",
+    "name": "పేరు",
+    "email": "ఇమెయిల్",
+    "phone": "ఫోన్",
+    "notes": "నోట్స్",
+    "preferredContact": "ఇష్టపడే సంప్రదింపు పద్ధతి",
+    "lastContact": "చివరి సంప్రదింపు",
+    "daysSince": "{{days}} రోజుల క్రితం",
+    "neverContacted": "ఎప్పుడూ సంప్రదించలేదు"
+  },
+  "feed": {
+    "coreFeed": "కోర్ ఫీడ్",
+    "innerFeed": "ఇన్నర్ ఫీడ్",
+    "outerFeed": "ఔటర్+",
+    "manage": "నిర్వహించు",
+    "emptyCore": "వారి పోస్ట్‌లు చూడటానికి కోర్ స్నేహితులను జోడించండి",
+    "emptyInner": "వారి పోస్ట్‌లు చూడటానికి ఇన్నర్ స్నేహితులను జోడించండి",
+    "emptyOuter": "వారి పోస్ట్‌లు చూడటానికి ఔటర్ స్నేహితులను జోడించండి",
+    "compose": "మీరు ఏమి ఆలోచిస్తున్నారు?",
+    "post": "పోస్ట్ చేయి",
+    "like": "ఇష్టం",
+    "unlike": "ఇష్టం లేదు",
+    "comment": "వ్యాఖ్య",
+    "share": "షేర్ చేయి",
+    "voiceReply": "వాయిస్ రిప్లై",
+    "scheduleCall": "కాల్ షెడ్యూల్ చేయి",
+    "planMeetup": "కలుసుకోవడం ప్లాన్ చేయి"
+  },
+  "nudge": {
+    "timeToReconnect": "మళ్ళీ కనెక్ట్ అయ్యే సమయం",
+    "friendsNeedAttention": "{{count}} స్నేహితుడికి సంప్రదింపు అవసరం",
+    "friendsNeedAttention_plural": "{{count}} స్నేహితులకు సంప్రదింపు అవసరం",
+    "daysSinceContact": "చివరి సంప్రదింపు నుండి {{days}} రోజులు",
+    "neverContacted": "ఎప్పుడూ సంప్రదించలేదు",
+    "connected": "కనెక్ట్ అయ్యారు",
+    "connectedToday": "ఈరోజు కనెక్ట్ అయినట్లు గుర్తించు",
+    "selectDate": "మీరు ఎప్పుడు కనెక్ట్ అయ్యారో ఎంచుకోండి",
+    "dismiss": "తోసిపుచ్చు"
+  },
+  "contact": {
+    "call": "కాల్",
+    "message": "సందేశం",
+    "email": "ఇమెయిల్",
+    "methods": {
+      "tel": "ఫోన్ కాల్",
+      "sms": "టెక్స్ట్ మెసేజ్",
+      "whatsapp": "వాట్సాప్",
+      "signal": "సిగ్నల్",
+      "telegram": "టెలిగ్రామ్",
+      "facetime": "ఫేస్‌టైమ్"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "ప్రధాన కంటెంట్‌కు వెళ్ళు",
+    "openMenu": "మెనూ తెరువు",
+    "closeMenu": "మెనూ మూసివేయి",
+    "expandPanel": "ప్యానెల్ విస్తరించు",
+    "collapsePanel": "ప్యానెల్ కుదించు",
+    "loading": "లోడ్ అవుతోంది...",
+    "loadingFeed": "ఫీడ్ కంటెంట్ లోడ్ అవుతోంది",
+    "error": "లోపం",
+    "success": "విజయం",
+    "selected": "ఎంచుకోబడింది",
+    "notSelected": "ఎంచుకోబడలేదు",
+    "required": "తప్పనిసరి",
+    "optional": "ఐచ్ఛికం",
+
+    "feed": {
+      "tabList": "స్నేహితుల వలయ ఫీడ్‌లు",
+      "coreTab": "కోర్ ఫీడ్ - మీ అత్యంత సన్నిహిత స్నేహితులు",
+      "innerTab": "ఇన్నర్ ఫీడ్ - సన్నిహిత స్నేహితులు",
+      "outerTab": "ఔటర్ ప్లస్ ఫీడ్ - పొరుగువారితో సహా విస్తరించిన వలయం",
+      "manageTab": "మీ స్నేహితుల వలయాన్ని నిర్వహించండి"
+    },
+
+    "post": {
+      "likeButton": "ఈ పోస్ట్‌ను ఇష్టపడు",
+      "unlikeButton": "ఈ పోస్ట్‌ను ఇష్టపడవద్దు",
+      "commentButton": "వ్యాఖ్య జోడించు",
+      "shareButton": "ఈ పోస్ట్‌ను షేర్ చేయి",
+      "voiceReplyButton": "వాయిస్ రిప్లై",
+      "meetupButton": "కలుసుకోవడం షెడ్యూల్ చేయి",
+      "callButton": "{{method}} ద్వారా కాల్ చేయి",
+      "selectContactMethod": "సంప్రదింపు పద్ధతి ఎంచుకోండి",
+      "photoAlt": "ఫోటో: {{description}}",
+      "photoFallback": "షేర్ చేసిన ఫోటో",
+      "videoLabel": "వీడియో: {{description}}",
+      "videoFallback": "షేర్ చేసిన వీడియో",
+      "voiceNoteLabel": "వాయిస్ నోట్: {{description}}",
+      "voiceNoteFallback": "వాయిస్ నోట్",
+      "joinCall": "కాల్‌లో చేరు",
+      "rsvpYes": "కలుసుకోవడానికి హాజరు నిర్ధారించు",
+      "rsvpMaybe": "కలుసుకోవడానికి బహుశా",
+      "rsvpOptions": "RSVP ఎంపికలు"
+    },
+
+    "nudge": {
+      "panelExpanded": "నడ్జ్ ప్యానెల్ విస్తరించబడింది",
+      "panelCollapsed": "నడ్జ్ ప్యానెల్ కుదించబడింది",
+      "friendsList": "మళ్ళీ కనెక్ట్ అవసరమైన స్నేహితులు",
+      "actionGroup": "{{name}} కోసం చర్యలు",
+      "actionButton": "{{name}} తో {{action}}",
+      "dismissButton": "{{name}} కోసం రిమైండర్ తోసిపుచ్చు",
+      "connectedButton": "{{name}}ని ఈరోజు కనెక్ట్ అయినట్లు గుర్తించు",
+      "selectDateButton": "{{name}} తో ఎప్పుడు కనెక్ట్ అయ్యారో ఎంచుకోండి"
+    },
+
+    "naybor": {
+      "sosRegion": "త్వరిత SOS పరిచయాలు",
+      "sosContactsList": "త్వరిత పరిచయాలు:",
+      "contactOptions": "{{name}} కోసం సంప్రదింపు ఎంపికలు",
+      "callButton": "{{name}}కి కాల్ చేయి",
+      "messageButton": "{{name}}కి మెసేజ్ పంపు",
+      "sosDialogButton": "పొరుగువారి SOS అత్యవసర సంప్రదింపు డైలాగ్ తెరువు",
+      "showQuickContacts": "త్వరిత పరిచయాలు చూపించు",
+      "hideQuickContacts": "త్వరిత పరిచయాలు దాచు",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - అత్యవసరం",
+      "backToCategory": "వర్గం ఎంపికకు తిరిగి వెళ్ళు",
+      "chooseNaybors": "సంప్రదించడానికి పొరుగువారిని ఎంచుకోవడానికి కొనసాగించు",
+      "backToCompose": "మెసేజ్ రాయడానికి తిరిగి వెళ్ళు",
+      "copyMessage": "SOS మెసేజ్‌ను క్లిప్‌బోర్డ్‌కు కాపీ చేయి",
+      "nayborsList": "పొరుగువారి పరిచయాలు",
+      "selectNaybor": "{{name}}ని ఎంచుకో",
+      "alreadyContacted": "(ఇప్పటికే సంప్రదించబడింది)",
+      "messageAll": "ఎంచుకున్న {{count}} పొరుగువారికి మెసేజ్ పంపు",
+      "messageAll_plural": "ఎంచుకున్న {{count}} పొరుగువారికి మెసేజ్ పంపు",
+      "locationDescription": "ఎనేబుల్ చేసినప్పుడు, మీ సుమారు స్థానం మీ పొరుగువారితో షేర్ చేయబడుతుంది"
+    },
+
+    "dialog": {
+      "close": "డైలాగ్ మూసివేయి",
+      "back": "వెనక్కి వెళ్ళు",
+      "confirm": "చర్యను నిర్ధారించు"
+    },
+
+    "form": {
+      "showPassword": "పాస్‌వర్డ్ చూపించు",
+      "hidePassword": "పాస్‌వర్డ్ దాచు",
+      "clearInput": "ఇన్‌పుట్ క్లియర్ చేయి",
+      "selectCountry": "దేశం ఎంచుకో",
+      "phoneNumber": "ఫోన్ నంబర్"
+    },
+
+    "status": {
+      "online": "ఆన్‌లైన్",
+      "offline": "ఆఫ్‌లైన్",
+      "away": "దూరంగా",
+      "busy": "బిజీ"
+    }
+  },
+  "language": {
+    "select": "భాష ఎంచుకో",
+    "current": "ప్రస్తుత భాష: {{language}}",
+    "helpTranslate": "ఇన్నర్‌ఫ్రెండ్‌ను అనువదించడంలో సహాయపడండి",
+    "communityTranslation": "ప్రపంచవ్యాప్తంగా ఎక్కువ మందికి ఇన్నర్‌ఫ్రెండ్‌ను అందుబాటులో ఉంచడానికి మా అనువాదకుల సమాజంలో చేరండి."
+  },
+  "errors": {
+    "generic": "ఏదో తప్పు జరిగింది. దయచేసి మళ్ళీ ప్రయత్నించండి.",
+    "network": "నెట్‌వర్క్ లోపం. దయచేసి మీ కనెక్షన్ తనిఖీ చేయండి.",
+    "notFound": "పేజీ కనుగొనబడలేదు",
+    "unauthorized": "కొనసాగించడానికి దయచేసి సైన్ ఇన్ చేయండి"
+  },
+  "footer": {
+    "privacy": "గోప్యత",
+    "terms": "నిబంధనలు",
+    "about": "గురించి",
+    "contribute": "సహకరించు",
+    "openSource": "ఓపెన్ సోర్స్"
+  }
+}

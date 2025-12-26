@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "इनरफ्रेंड",
+    "tagline": "तुमच्या जवळच्या नातेसंबंधांची काळजी घ्या",
+    "description": "डनबार क्रमांक संशोधनावर आधारित अर्थपूर्ण मैत्री टिकवून ठेवण्यासाठी गोपनीयता-प्रथम साधन"
+  },
+  "nav": {
+    "home": "होम",
+    "dashboard": "डॅशबोर्ड",
+    "settings": "सेटिंग्ज",
+    "signIn": "साइन इन",
+    "signOut": "साइन आउट",
+    "profile": "प्रोफाइल"
+  },
+  "tiers": {
+    "core": "कोर",
+    "coreDescription": "तुमचे सर्वात जवळचे विश्वासू (५ पर्यंत)",
+    "inner": "इनर",
+    "innerDescription": "जवळचे मित्र ज्यांना नियमित भेटता (१५ पर्यंत)",
+    "outer": "आउटर",
+    "outerDescription": "चांगले मित्र आणि विस्तारित वर्तुळ (५० पर्यंत)",
+    "acquainted": "ओळखीचे",
+    "acquaintedDescription": "ज्यांना तुम्ही अभिवादन करण्याइतके ओळखता",
+    "naybor": "शेजारी",
+    "nayborDescription": "आणीबाणी आणि परस्पर मदतीसाठी विश्वासू शेजारी",
+    "parasocial": "फॉलो",
+    "parasocialDescription": "तुम्ही फॉलो करता त्या प्रसिद्ध व्यक्ती आणि कंटेंट क्रिएटर"
+  },
+  "actions": {
+    "add": "जोडा",
+    "edit": "संपादित करा",
+    "delete": "हटवा",
+    "save": "सेव्ह करा",
+    "cancel": "रद्द करा",
+    "confirm": "पुष्टी करा",
+    "close": "बंद करा",
+    "back": "मागे",
+    "next": "पुढे",
+    "done": "झाले",
+    "search": "शोधा",
+    "filter": "फिल्टर",
+    "export": "निर्यात",
+    "import": "आयात"
+  },
+  "friend": {
+    "addFriend": "मित्र जोडा",
+    "editFriend": "संपर्क संपादित करा",
+    "removeFriend": "मित्र काढा",
+    "moveTo": "{{tier}} मध्ये हलवा",
+    "name": "नाव",
+    "email": "ईमेल",
+    "phone": "फोन",
+    "notes": "नोट्स",
+    "preferredContact": "पसंतीची संपर्क पद्धत",
+    "lastContact": "शेवटचा संपर्क",
+    "daysSince": "{{days}} दिवसांपूर्वी",
+    "neverContacted": "कधीही संपर्क केला नाही"
+  },
+  "feed": {
+    "coreFeed": "कोर फीड",
+    "innerFeed": "इनर फीड",
+    "outerFeed": "आउटर+",
+    "manage": "व्यवस्थापित करा",
+    "emptyCore": "त्यांच्या पोस्ट पाहण्यासाठी कोर मित्र जोडा",
+    "emptyInner": "त्यांच्या पोस्ट पाहण्यासाठी इनर मित्र जोडा",
+    "emptyOuter": "त्यांच्या पोस्ट पाहण्यासाठी आउटर मित्र जोडा",
+    "compose": "तुमच्या मनात काय आहे?",
+    "post": "पोस्ट करा",
+    "like": "आवडले",
+    "unlike": "आवडले नाही",
+    "comment": "प्रतिक्रिया",
+    "share": "शेअर करा",
+    "voiceReply": "व्हॉइस रिप्लाय",
+    "scheduleCall": "कॉल शेड्यूल करा",
+    "planMeetup": "भेट नियोजित करा"
+  },
+  "nudge": {
+    "timeToReconnect": "पुन्हा जोडण्याची वेळ",
+    "friendsNeedAttention": "{{count}} मित्राला संपर्काची गरज आहे",
+    "friendsNeedAttention_plural": "{{count}} मित्रांना संपर्काची गरज आहे",
+    "daysSinceContact": "शेवटच्या संपर्कापासून {{days}} दिवस",
+    "neverContacted": "कधीही संपर्क केला नाही",
+    "connected": "जोडले",
+    "connectedToday": "आज जोडले म्हणून चिन्हांकित करा",
+    "selectDate": "तुम्ही कधी जोडले ते निवडा",
+    "dismiss": "नाकारा"
+  },
+  "contact": {
+    "call": "कॉल",
+    "message": "संदेश",
+    "email": "ईमेल",
+    "methods": {
+      "tel": "फोन कॉल",
+      "sms": "मजकूर संदेश",
+      "whatsapp": "व्हॉट्सअॅप",
+      "signal": "सिग्नल",
+      "telegram": "टेलिग्राम",
+      "facetime": "फेसटाइम"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "मुख्य सामग्रीवर जा",
+    "openMenu": "मेनू उघडा",
+    "closeMenu": "मेनू बंद करा",
+    "expandPanel": "पॅनेल विस्तारित करा",
+    "collapsePanel": "पॅनेल संकुचित करा",
+    "loading": "लोड होत आहे...",
+    "loadingFeed": "फीड सामग्री लोड होत आहे",
+    "error": "त्रुटी",
+    "success": "यश",
+    "selected": "निवडले",
+    "notSelected": "निवडले नाही",
+    "required": "आवश्यक",
+    "optional": "पर्यायी",
+
+    "feed": {
+      "tabList": "मित्र वर्तुळ फीड",
+      "coreTab": "कोर फीड - तुमचे सर्वात जवळचे मित्र",
+      "innerTab": "इनर फीड - जवळचे मित्र",
+      "outerTab": "आउटर प्लस फीड - शेजाऱ्यांसह विस्तारित वर्तुळ",
+      "manageTab": "तुमचे मित्र वर्तुळ व्यवस्थापित करा"
+    },
+
+    "post": {
+      "likeButton": "या पोस्टला आवडले",
+      "unlikeButton": "या पोस्टला आवडले नाही",
+      "commentButton": "प्रतिक्रिया जोडा",
+      "shareButton": "ही पोस्ट शेअर करा",
+      "voiceReplyButton": "व्हॉइस रिप्लाय",
+      "meetupButton": "भेट शेड्यूल करा",
+      "callButton": "{{method}} द्वारे कॉल करा",
+      "selectContactMethod": "संपर्क पद्धत निवडा",
+      "photoAlt": "फोटो: {{description}}",
+      "photoFallback": "शेअर केलेला फोटो",
+      "videoLabel": "व्हिडिओ: {{description}}",
+      "videoFallback": "शेअर केलेला व्हिडिओ",
+      "voiceNoteLabel": "व्हॉइस नोट: {{description}}",
+      "voiceNoteFallback": "व्हॉइस नोट",
+      "joinCall": "कॉलमध्ये सामील व्हा",
+      "rsvpYes": "भेटीसाठी होय",
+      "rsvpMaybe": "भेटीसाठी कदाचित",
+      "rsvpOptions": "RSVP पर्याय"
+    },
+
+    "nudge": {
+      "panelExpanded": "नज पॅनेल विस्तारित",
+      "panelCollapsed": "नज पॅनेल संकुचित",
+      "friendsList": "पुन्हा जोडण्याची गरज असलेले मित्र",
+      "actionGroup": "{{name}} साठी क्रिया",
+      "actionButton": "{{name}} सोबत {{action}}",
+      "dismissButton": "{{name}} साठी स्मरणपत्र नाकारा",
+      "connectedButton": "{{name}} ला आज जोडले म्हणून चिन्हांकित करा",
+      "selectDateButton": "{{name}} सोबत कधी जोडले ते निवडा"
+    },
+
+    "naybor": {
+      "sosRegion": "जलद SOS संपर्क",
+      "sosContactsList": "जलद संपर्क:",
+      "contactOptions": "{{name}} साठी संपर्क पर्याय",
+      "callButton": "{{name}} ला कॉल करा",
+      "messageButton": "{{name}} ला संदेश पाठवा",
+      "sosDialogButton": "शेजारी SOS आणीबाणी संपर्क डायलॉग उघडा",
+      "showQuickContacts": "जलद संपर्क दाखवा",
+      "hideQuickContacts": "जलद संपर्क लपवा",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - अत्यंत तातडीचे",
+      "backToCategory": "श्रेणी निवडीवर परत जा",
+      "chooseNaybors": "संपर्कासाठी शेजारी निवडण्यासाठी पुढे जा",
+      "backToCompose": "संदेश तयार करण्यावर परत जा",
+      "copyMessage": "SOS संदेश क्लिपबोर्डवर कॉपी करा",
+      "nayborsList": "शेजारी संपर्क",
+      "selectNaybor": "{{name}} निवडा",
+      "alreadyContacted": "(आधीच संपर्क केला)",
+      "messageAll": "सर्व {{count}} निवडलेल्या शेजाऱ्यांना संदेश पाठवा",
+      "messageAll_plural": "सर्व {{count}} निवडलेल्या शेजाऱ्यांना संदेश पाठवा",
+      "locationDescription": "सक्षम केल्यावर, तुमचे अंदाजे स्थान तुमच्या शेजाऱ्यांशी शेअर केले जाईल"
+    },
+
+    "dialog": {
+      "close": "डायलॉग बंद करा",
+      "back": "मागे जा",
+      "confirm": "क्रिया पुष्टी करा"
+    },
+
+    "form": {
+      "showPassword": "पासवर्ड दाखवा",
+      "hidePassword": "पासवर्ड लपवा",
+      "clearInput": "इनपुट साफ करा",
+      "selectCountry": "देश निवडा",
+      "phoneNumber": "फोन नंबर"
+    },
+
+    "status": {
+      "online": "ऑनलाइन",
+      "offline": "ऑफलाइन",
+      "away": "दूर",
+      "busy": "व्यस्त"
+    }
+  },
+  "language": {
+    "select": "भाषा निवडा",
+    "current": "सध्याची भाषा: {{language}}",
+    "helpTranslate": "इनरफ्रेंडचे भाषांतर करण्यात मदत करा",
+    "communityTranslation": "जगभरातील अधिक लोकांपर्यंत इनरफ्रेंड पोहोचवण्यासाठी आमच्या अनुवादक समुदायात सामील व्हा."
+  },
+  "errors": {
+    "generic": "काहीतरी चूक झाली. कृपया पुन्हा प्रयत्न करा.",
+    "network": "नेटवर्क त्रुटी. कृपया तुमचे कनेक्शन तपासा.",
+    "notFound": "पेज सापडले नाही",
+    "unauthorized": "कृपया सुरू ठेवण्यासाठी साइन इन करा"
+  },
+  "footer": {
+    "privacy": "गोपनीयता",
+    "terms": "अटी",
+    "about": "विषयी",
+    "contribute": "योगदान द्या",
+    "openSource": "ओपन सोर्स"
+  }
+}

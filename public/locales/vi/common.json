@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Vun đắp những mối quan hệ thân thiết",
+    "description": "Công cụ ưu tiên quyền riêng tư để duy trì tình bạn có ý nghĩa dựa trên nghiên cứu số Dunbar"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "dashboard": "Bảng điều khiển",
+    "settings": "Cài đặt",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "profile": "Hồ sơ"
+  },
+  "tiers": {
+    "core": "Lõi",
+    "coreDescription": "Những người thân thiết nhất (tối đa 5)",
+    "inner": "Trong",
+    "innerDescription": "Bạn thân gặp thường xuyên (tối đa 15)",
+    "outer": "Ngoài",
+    "outerDescription": "Bạn tốt và vòng mở rộng (tối đa 50)",
+    "acquainted": "Quen biết",
+    "acquaintedDescription": "Những người bạn biết đủ để chào hỏi",
+    "naybor": "Hàng xóm",
+    "nayborDescription": "Hàng xóm đáng tin cậy để giúp đỡ và tình huống khẩn cấp",
+    "parasocial": "Theo dõi",
+    "parasocialDescription": "Người nổi tiếng và nhà sáng tạo nội dung bạn theo dõi"
+  },
+  "actions": {
+    "add": "Thêm",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp",
+    "done": "Xong",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "export": "Xuất",
+    "import": "Nhập"
+  },
+  "friend": {
+    "addFriend": "Thêm bạn",
+    "editFriend": "Sửa liên hệ",
+    "removeFriend": "Xóa bạn",
+    "moveTo": "Chuyển đến {{tier}}",
+    "name": "Tên",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "notes": "Ghi chú",
+    "preferredContact": "Phương thức liên hệ ưa thích",
+    "lastContact": "Liên hệ lần cuối",
+    "daysSince": "{{days}} ngày trước",
+    "neverContacted": "Chưa liên hệ"
+  },
+  "feed": {
+    "coreFeed": "Feed Lõi",
+    "innerFeed": "Feed Trong",
+    "outerFeed": "Ngoài+",
+    "manage": "Quản lý",
+    "emptyCore": "Thêm bạn Lõi để xem bài đăng của họ",
+    "emptyInner": "Thêm bạn Trong để xem bài đăng của họ",
+    "emptyOuter": "Thêm bạn Ngoài để xem bài đăng của họ",
+    "compose": "Bạn đang nghĩ gì?",
+    "post": "Đăng",
+    "like": "Thích",
+    "unlike": "Bỏ thích",
+    "comment": "Bình luận",
+    "share": "Chia sẻ",
+    "voiceReply": "Trả lời giọng nói",
+    "scheduleCall": "Đặt lịch gọi",
+    "planMeetup": "Lên kế hoạch gặp"
+  },
+  "nudge": {
+    "timeToReconnect": "Đã đến lúc kết nối lại",
+    "friendsNeedAttention": "{{count}} bạn cần liên hệ",
+    "friendsNeedAttention_plural": "{{count}} bạn bè cần liên hệ",
+    "daysSinceContact": "{{days}} ngày từ lần liên hệ cuối",
+    "neverContacted": "Chưa liên hệ",
+    "connected": "Đã kết nối",
+    "connectedToday": "Đánh dấu đã kết nối hôm nay",
+    "selectDate": "Chọn ngày bạn đã kết nối",
+    "dismiss": "Bỏ qua"
+  },
+  "contact": {
+    "call": "Gọi",
+    "message": "Nhắn tin",
+    "email": "Email",
+    "methods": {
+      "tel": "Gọi điện",
+      "sms": "Tin nhắn SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Chuyển đến nội dung chính",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "expandPanel": "Mở rộng bảng",
+    "collapsePanel": "Thu gọn bảng",
+    "loading": "Đang tải...",
+    "loadingFeed": "Đang tải nội dung feed",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "selected": "Đã chọn",
+    "notSelected": "Chưa chọn",
+    "required": "Bắt buộc",
+    "optional": "Tùy chọn",
+
+    "feed": {
+      "tabList": "Feed vòng bạn bè",
+      "coreTab": "Feed Lõi - Bạn thân nhất",
+      "innerTab": "Feed Trong - Bạn thân",
+      "outerTab": "Feed Ngoài Plus - Vòng mở rộng bao gồm hàng xóm",
+      "manageTab": "Quản lý vòng bạn bè"
+    },
+
+    "post": {
+      "likeButton": "Thích bài đăng này",
+      "unlikeButton": "Bỏ thích bài đăng này",
+      "commentButton": "Thêm bình luận",
+      "shareButton": "Chia sẻ bài đăng này",
+      "voiceReplyButton": "Trả lời giọng nói",
+      "meetupButton": "Đặt lịch gặp mặt",
+      "callButton": "Gọi qua {{method}}",
+      "selectContactMethod": "Chọn phương thức liên hệ",
+      "photoAlt": "Ảnh: {{description}}",
+      "photoFallback": "Ảnh được chia sẻ",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Video được chia sẻ",
+      "voiceNoteLabel": "Ghi âm: {{description}}",
+      "voiceNoteFallback": "Ghi âm",
+      "joinCall": "Tham gia cuộc gọi",
+      "rsvpYes": "Xác nhận tham gia",
+      "rsvpMaybe": "Có thể tham gia",
+      "rsvpOptions": "Tùy chọn phản hồi"
+    },
+
+    "nudge": {
+      "panelExpanded": "Bảng nhắc nhở đã mở",
+      "panelCollapsed": "Bảng nhắc nhở đã đóng",
+      "friendsList": "Bạn bè cần kết nối lại",
+      "actionGroup": "Hành động cho {{name}}",
+      "actionButton": "{{action}} với {{name}}",
+      "dismissButton": "Bỏ qua nhắc nhở cho {{name}}",
+      "connectedButton": "Đánh dấu {{name}} đã kết nối hôm nay",
+      "selectDateButton": "Chọn ngày bạn đã kết nối với {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Liên hệ SOS nhanh",
+      "sosContactsList": "Liên hệ nhanh:",
+      "contactOptions": "Tùy chọn liên hệ cho {{name}}",
+      "callButton": "Gọi {{name}}",
+      "messageButton": "Nhắn tin cho {{name}}",
+      "sosDialogButton": "Mở hộp thoại liên hệ khẩn cấp Hàng xóm SOS",
+      "showQuickContacts": "Hiện liên hệ nhanh",
+      "hideQuickContacts": "Ẩn liên hệ nhanh",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Khẩn cấp",
+      "backToCategory": "Quay lại chọn danh mục",
+      "chooseNaybors": "Tiếp tục chọn hàng xóm để liên hệ",
+      "backToCompose": "Quay lại soạn tin nhắn",
+      "copyMessage": "Sao chép tin nhắn SOS vào clipboard",
+      "nayborsList": "Danh bạ hàng xóm",
+      "selectNaybor": "Chọn {{name}}",
+      "alreadyContacted": "(đã liên hệ)",
+      "messageAll": "Nhắn tin cho {{count}} hàng xóm đã chọn",
+      "messageAll_plural": "Nhắn tin cho {{count}} hàng xóm đã chọn",
+      "locationDescription": "Khi bật, vị trí gần đúng của bạn sẽ được chia sẻ với hàng xóm"
+    },
+
+    "dialog": {
+      "close": "Đóng hộp thoại",
+      "back": "Quay lại",
+      "confirm": "Xác nhận hành động"
+    },
+
+    "form": {
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "clearInput": "Xóa nhập liệu",
+      "selectCountry": "Chọn quốc gia",
+      "phoneNumber": "Số điện thoại"
+    },
+
+    "status": {
+      "online": "Trực tuyến",
+      "offline": "Ngoại tuyến",
+      "away": "Vắng mặt",
+      "busy": "Bận"
+    }
+  },
+  "language": {
+    "select": "Chọn ngôn ngữ",
+    "current": "Ngôn ngữ hiện tại: {{language}}",
+    "helpTranslate": "Giúp dịch InnerFriend",
+    "communityTranslation": "Tham gia cộng đồng dịch thuật để đưa InnerFriend đến nhiều người hơn trên thế giới."
+  },
+  "errors": {
+    "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "network": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
+    "notFound": "Không tìm thấy trang",
+    "unauthorized": "Vui lòng đăng nhập để tiếp tục"
+  },
+  "footer": {
+    "privacy": "Riêng tư",
+    "terms": "Điều khoản",
+    "about": "Giới thiệu",
+    "contribute": "Đóng góp",
+    "openSource": "Mã nguồn mở"
+  }
+}

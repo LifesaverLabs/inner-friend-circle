@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Jaganen sesambungan sing cedhak",
+    "description": "Piranti sing ngutamakake privasi kanggo njaga persahabatan sing migunani adhedhasar riset nomer Dunbar"
+  },
+  "nav": {
+    "home": "Omah",
+    "dashboard": "Dasbor",
+    "settings": "Setelan",
+    "signIn": "Mlebu",
+    "signOut": "Metu",
+    "profile": "Profil"
+  },
+  "tiers": {
+    "core": "Inti",
+    "coreDescription": "Wong sing paling dipercaya (nganti 5)",
+    "inner": "Cedhak",
+    "innerDescription": "Kanca raket sing kerep ketemu (nganti 15)",
+    "outer": "Njaba",
+    "outerDescription": "Kanca apik lan lingkaran amba (nganti 50)",
+    "acquainted": "Kenal",
+    "acquaintedDescription": "Wong sing kenal kanggo disapa",
+    "naybor": "Tangga",
+    "nayborDescription": "Tangga sing dipercaya kanggo tulung-tinulung lan darurat",
+    "parasocial": "Ngikuti",
+    "parasocialDescription": "Tokoh publik lan kreator konten sing diikuti"
+  },
+  "actions": {
+    "add": "Tambah",
+    "edit": "Sunting",
+    "delete": "Busak",
+    "save": "Simpen",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "close": "Tutup",
+    "back": "Bali",
+    "next": "Sabanjure",
+    "done": "Rampung",
+    "search": "Telusuri",
+    "filter": "Filter",
+    "export": "Ekspor",
+    "import": "Impor"
+  },
+  "friend": {
+    "addFriend": "Tambah Kanca",
+    "editFriend": "Sunting Kontak",
+    "removeFriend": "Busak Kanca",
+    "moveTo": "Pindhah menyang {{tier}}",
+    "name": "Jeneng",
+    "email": "Email",
+    "phone": "Telpon",
+    "notes": "Cathetan",
+    "preferredContact": "Cara kontak sing disenengi",
+    "lastContact": "Kontak pungkasan",
+    "daysSince": "{{days}} dina kepungkur",
+    "neverContacted": "Durung tau dihubungi"
+  },
+  "feed": {
+    "coreFeed": "Feed Inti",
+    "innerFeed": "Feed Cedhak",
+    "outerFeed": "Njaba+",
+    "manage": "Kelola",
+    "emptyCore": "Tambah kanca inti kanggo ndeleng posting-e kene",
+    "emptyInner": "Tambah kanca cedhak kanggo ndeleng posting-e kene",
+    "emptyOuter": "Tambah kanca njaba kanggo ndeleng posting-e kene",
+    "compose": "Apa sing lagi dipikir?",
+    "post": "Posting",
+    "like": "Seneng",
+    "unlike": "Ora seneng",
+    "comment": "Komentar",
+    "share": "Bagekake",
+    "voiceReply": "Balesan Swara",
+    "scheduleCall": "Jadwalake Telpon",
+    "planMeetup": "Rencanakake Ketemu"
+  },
+  "nudge": {
+    "timeToReconnect": "Wektune nyambung maneh",
+    "friendsNeedAttention": "{{count}} kanca butuh dihubungi",
+    "friendsNeedAttention_plural": "{{count}} kanca butuh dihubungi",
+    "daysSinceContact": "{{days}} dina wiwit kontak pungkasan",
+    "neverContacted": "Durung tau dihubungi",
+    "connected": "Wis nyambung",
+    "connectedToday": "Tandai nyambung dina iki",
+    "selectDate": "Pilih kapan kowe nyambung",
+    "dismiss": "Buang"
+  },
+  "contact": {
+    "call": "Telpon",
+    "message": "Pesen",
+    "email": "Email",
+    "methods": {
+      "tel": "Telpon",
+      "sms": "SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Langsung menyang isi utama",
+    "openMenu": "Bukak menu",
+    "closeMenu": "Tutup menu",
+    "expandPanel": "Ambakake panel",
+    "collapsePanel": "Cilikake panel",
+    "loading": "Lagi dimuat...",
+    "loadingFeed": "Lagi dimuat isi feed",
+    "error": "Salah",
+    "success": "Sukses",
+    "selected": "Dipilih",
+    "notSelected": "Ora dipilih",
+    "required": "Wajib",
+    "optional": "Opsional",
+
+    "feed": {
+      "tabList": "Feed lingkaran kanca",
+      "coreTab": "Feed Inti - Kanca paling cedhak",
+      "innerTab": "Feed Cedhak - Kanca raket",
+      "outerTab": "Feed Njaba Plus - Lingkaran amba kalebu tangga",
+      "manageTab": "Kelola lingkaran kanca"
+    },
+
+    "post": {
+      "likeButton": "Seneng posting iki",
+      "unlikeButton": "Busak seneng posting iki",
+      "commentButton": "Tambah komentar",
+      "shareButton": "Bagekake posting iki",
+      "voiceReplyButton": "Balesan Swara",
+      "meetupButton": "Jadwalake ketemu",
+      "callButton": "Telpon lewat {{method}}",
+      "selectContactMethod": "Pilih cara kontak",
+      "photoAlt": "Foto: {{description}}",
+      "photoFallback": "Foto sing dibagekake",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Video sing dibagekake",
+      "voiceNoteLabel": "Cathetan swara: {{description}}",
+      "voiceNoteFallback": "Cathetan swara",
+      "joinCall": "Gabung telpon",
+      "rsvpYes": "Konfirmasi teka ketemu",
+      "rsvpMaybe": "Mungkin teka ketemu",
+      "rsvpOptions": "Pilihan jawaban"
+    },
+
+    "nudge": {
+      "panelExpanded": "Panel pengeling dibukak",
+      "panelCollapsed": "Panel pengeling ditutup",
+      "friendsList": "Kanca sing butuh dihubungi maneh",
+      "actionGroup": "Aksi kanggo {{name}}",
+      "actionButton": "{{action}} karo {{name}}",
+      "dismissButton": "Buang pengeling kanggo {{name}}",
+      "connectedButton": "Tandai {{name}} nyambung dina iki",
+      "selectDateButton": "Pilih kapan nyambung karo {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Kontak SOS cepet",
+      "sosContactsList": "Kontak cepet:",
+      "contactOptions": "Pilihan kontak kanggo {{name}}",
+      "callButton": "Telpon {{name}}",
+      "messageButton": "Kirim pesen menyang {{name}}",
+      "sosDialogButton": "Bukak dialog kontak darurat Tangga SOS",
+      "showQuickContacts": "Tuduhake kontak cepet",
+      "hideQuickContacts": "Delikake kontak cepet",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Darurat kritis",
+      "backToCategory": "Bali menyang pilihan kategori",
+      "chooseNaybors": "Terusake kanggo milih tangga sing arep dihubungi",
+      "backToCompose": "Bali menyang nulis pesen",
+      "copyMessage": "Salin pesen SOS menyang clipboard",
+      "nayborsList": "Kontak tangga",
+      "selectNaybor": "Pilih {{name}}",
+      "alreadyContacted": "(wis dihubungi)",
+      "messageAll": "Kirim pesen menyang {{count}} tangga sing dipilih",
+      "messageAll_plural": "Kirim pesen menyang {{count}} tangga sing dipilih",
+      "locationDescription": "Yen diaktifake, lokasi kira-kira bakal dibagekake karo tangga"
+    },
+
+    "dialog": {
+      "close": "Tutup dialog",
+      "back": "Bali",
+      "confirm": "Konfirmasi aksi"
+    },
+
+    "form": {
+      "showPassword": "Tuduhake sandi",
+      "hidePassword": "Delikake sandi",
+      "clearInput": "Busak input",
+      "selectCountry": "Pilih negara",
+      "phoneNumber": "Nomer telpon"
+    },
+
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Adoh",
+      "busy": "Sibuk"
+    }
+  },
+  "language": {
+    "select": "Pilih basa",
+    "current": "Basa saiki: {{language}}",
+    "helpTranslate": "Rewangi nerjemahake InnerFriend",
+    "communityTranslation": "Gabung karo komunitas penerjemah kanggo nggawe InnerFriend bisa diakses wong akeh ing saindenging jagad."
+  },
+  "errors": {
+    "generic": "Ana sing salah. Mangga coba maneh.",
+    "network": "Kesalahan jaringan. Mangga priksa koneksi.",
+    "notFound": "Halaman ora ketemu",
+    "unauthorized": "Mangga mlebu kanggo nerusake"
+  },
+  "footer": {
+    "privacy": "Privasi",
+    "terms": "Ketentuan",
+    "about": "Babagan",
+    "contribute": "Kontribusi",
+    "openSource": "Open Source"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "ਇਨਰਫ੍ਰੈਂਡ",
+    "tagline": "ਆਪਣੇ ਨਜ਼ਦੀਕੀ ਰਿਸ਼ਤਿਆਂ ਨੂੰ ਸੰਭਾਲੋ",
+    "description": "ਡਨਬਾਰ ਨੰਬਰ ਖੋਜ 'ਤੇ ਅਧਾਰਤ ਅਰਥਪੂਰਨ ਦੋਸਤੀ ਬਣਾਈ ਰੱਖਣ ਲਈ ਗੋਪਨੀਯਤਾ-ਪਹਿਲਾਂ ਟੂਲ"
+  },
+  "nav": {
+    "home": "ਹੋਮ",
+    "dashboard": "ਡੈਸ਼ਬੋਰਡ",
+    "settings": "ਸੈਟਿੰਗਾਂ",
+    "signIn": "ਸਾਈਨ ਇਨ",
+    "signOut": "ਸਾਈਨ ਆਉਟ",
+    "profile": "ਪ੍ਰੋਫਾਈਲ"
+  },
+  "tiers": {
+    "core": "ਕੋਰ",
+    "coreDescription": "ਤੁਹਾਡੇ ਸਭ ਤੋਂ ਨਜ਼ਦੀਕੀ ਭਰੋਸੇਮੰਦ (5 ਤੱਕ)",
+    "inner": "ਇਨਰ",
+    "innerDescription": "ਨਜ਼ਦੀਕੀ ਦੋਸਤ ਜਿਨ੍ਹਾਂ ਨੂੰ ਨਿਯਮਿਤ ਮਿਲਦੇ ਹੋ (15 ਤੱਕ)",
+    "outer": "ਆਊਟਰ",
+    "outerDescription": "ਚੰਗੇ ਦੋਸਤ ਅਤੇ ਵਿਸਤਾਰਿਤ ਘੇਰਾ (50 ਤੱਕ)",
+    "acquainted": "ਜਾਣ-ਪਛਾਣ",
+    "acquaintedDescription": "ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ ਸਲਾਮ ਕਰਨ ਜੋਗੇ ਜਾਣਦੇ ਹੋ",
+    "naybor": "ਗੁਆਂਢੀ",
+    "nayborDescription": "ਐਮਰਜੈਂਸੀ ਅਤੇ ਆਪਸੀ ਮਦਦ ਲਈ ਭਰੋਸੇਮੰਦ ਗੁਆਂਢੀ",
+    "parasocial": "ਫਾਲੋ",
+    "parasocialDescription": "ਜਿਨ੍ਹਾਂ ਮਸ਼ਹੂਰ ਹਸਤੀਆਂ ਨੂੰ ਤੁਸੀਂ ਫਾਲੋ ਕਰਦੇ ਹੋ"
+  },
+  "actions": {
+    "add": "ਸ਼ਾਮਲ ਕਰੋ",
+    "edit": "ਸੰਪਾਦਿਤ ਕਰੋ",
+    "delete": "ਮਿਟਾਓ",
+    "save": "ਸੇਵ ਕਰੋ",
+    "cancel": "ਰੱਦ ਕਰੋ",
+    "confirm": "ਪੁਸ਼ਟੀ ਕਰੋ",
+    "close": "ਬੰਦ ਕਰੋ",
+    "back": "ਪਿੱਛੇ",
+    "next": "ਅਗਲਾ",
+    "done": "ਹੋ ਗਿਆ",
+    "search": "ਖੋਜੋ",
+    "filter": "ਫਿਲਟਰ",
+    "export": "ਐਕਸਪੋਰਟ",
+    "import": "ਇੰਪੋਰਟ"
+  },
+  "friend": {
+    "addFriend": "ਦੋਸਤ ਸ਼ਾਮਲ ਕਰੋ",
+    "editFriend": "ਸੰਪਰਕ ਸੰਪਾਦਿਤ ਕਰੋ",
+    "removeFriend": "ਦੋਸਤ ਹਟਾਓ",
+    "moveTo": "{{tier}} ਵਿੱਚ ਲੈ ਜਾਓ",
+    "name": "ਨਾਮ",
+    "email": "ਈਮੇਲ",
+    "phone": "ਫ਼ੋਨ",
+    "notes": "ਨੋਟਸ",
+    "preferredContact": "ਪਸੰਦੀਦਾ ਸੰਪਰਕ ਤਰੀਕਾ",
+    "lastContact": "ਆਖਰੀ ਸੰਪਰਕ",
+    "daysSince": "{{days}} ਦਿਨ ਪਹਿਲਾਂ",
+    "neverContacted": "ਕਦੇ ਸੰਪਰਕ ਨਹੀਂ ਕੀਤਾ"
+  },
+  "feed": {
+    "coreFeed": "ਕੋਰ ਫੀਡ",
+    "innerFeed": "ਇਨਰ ਫੀਡ",
+    "outerFeed": "ਆਊਟਰ+",
+    "manage": "ਪ੍ਰਬੰਧਨ",
+    "emptyCore": "ਉਨ੍ਹਾਂ ਦੀਆਂ ਪੋਸਟਾਂ ਦੇਖਣ ਲਈ ਕੋਰ ਦੋਸਤ ਸ਼ਾਮਲ ਕਰੋ",
+    "emptyInner": "ਉਨ੍ਹਾਂ ਦੀਆਂ ਪੋਸਟਾਂ ਦੇਖਣ ਲਈ ਇਨਰ ਦੋਸਤ ਸ਼ਾਮਲ ਕਰੋ",
+    "emptyOuter": "ਉਨ੍ਹਾਂ ਦੀਆਂ ਪੋਸਟਾਂ ਦੇਖਣ ਲਈ ਆਊਟਰ ਦੋਸਤ ਸ਼ਾਮਲ ਕਰੋ",
+    "compose": "ਤੁਹਾਡੇ ਮਨ ਵਿੱਚ ਕੀ ਹੈ?",
+    "post": "ਪੋਸਟ ਕਰੋ",
+    "like": "ਪਸੰਦ",
+    "unlike": "ਨਾਪਸੰਦ",
+    "comment": "ਟਿੱਪਣੀ",
+    "share": "ਸਾਂਝਾ ਕਰੋ",
+    "voiceReply": "ਵੌਇਸ ਰਿਪਲਾਈ",
+    "scheduleCall": "ਕਾਲ ਤੈਅ ਕਰੋ",
+    "planMeetup": "ਮਿਲਣੀ ਤੈਅ ਕਰੋ"
+  },
+  "nudge": {
+    "timeToReconnect": "ਮੁੜ ਜੁੜਨ ਦਾ ਸਮਾਂ",
+    "friendsNeedAttention": "{{count}} ਦੋਸਤ ਨੂੰ ਸੰਪਰਕ ਦੀ ਲੋੜ ਹੈ",
+    "friendsNeedAttention_plural": "{{count}} ਦੋਸਤਾਂ ਨੂੰ ਸੰਪਰਕ ਦੀ ਲੋੜ ਹੈ",
+    "daysSinceContact": "ਆਖਰੀ ਸੰਪਰਕ ਤੋਂ {{days}} ਦਿਨ",
+    "neverContacted": "ਕਦੇ ਸੰਪਰਕ ਨਹੀਂ ਕੀਤਾ",
+    "connected": "ਜੁੜੇ",
+    "connectedToday": "ਅੱਜ ਜੁੜੇ ਵਜੋਂ ਮਾਰਕ ਕਰੋ",
+    "selectDate": "ਚੁਣੋ ਕਦੋਂ ਤੁਸੀਂ ਜੁੜੇ",
+    "dismiss": "ਖਾਰਜ ਕਰੋ"
+  },
+  "contact": {
+    "call": "ਕਾਲ",
+    "message": "ਸੁਨੇਹਾ",
+    "email": "ਈਮੇਲ",
+    "methods": {
+      "tel": "ਫ਼ੋਨ ਕਾਲ",
+      "sms": "ਟੈਕਸਟ ਸੁਨੇਹਾ",
+      "whatsapp": "ਵਟਸਐਪ",
+      "signal": "ਸਿਗਨਲ",
+      "telegram": "ਟੈਲੀਗ੍ਰਾਮ",
+      "facetime": "ਫੇਸਟਾਈਮ"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "ਮੁੱਖ ਸਮੱਗਰੀ 'ਤੇ ਜਾਓ",
+    "openMenu": "ਮੀਨੂ ਖੋਲ੍ਹੋ",
+    "closeMenu": "ਮੀਨੂ ਬੰਦ ਕਰੋ",
+    "expandPanel": "ਪੈਨਲ ਵਿਸਤਾਰ ਕਰੋ",
+    "collapsePanel": "ਪੈਨਲ ਸੁੰਗੇੜੋ",
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    "loadingFeed": "ਫੀਡ ਸਮੱਗਰੀ ਲੋਡ ਹੋ ਰਹੀ ਹੈ",
+    "error": "ਗਲਤੀ",
+    "success": "ਸਫਲਤਾ",
+    "selected": "ਚੁਣਿਆ ਗਿਆ",
+    "notSelected": "ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ",
+    "required": "ਲੋੜੀਂਦਾ",
+    "optional": "ਵਿਕਲਪਿਕ",
+
+    "feed": {
+      "tabList": "ਦੋਸਤ ਘੇਰਾ ਫੀਡ",
+      "coreTab": "ਕੋਰ ਫੀਡ - ਤੁਹਾਡੇ ਸਭ ਤੋਂ ਨਜ਼ਦੀਕੀ ਦੋਸਤ",
+      "innerTab": "ਇਨਰ ਫੀਡ - ਨਜ਼ਦੀਕੀ ਦੋਸਤ",
+      "outerTab": "ਆਊਟਰ ਪਲੱਸ ਫੀਡ - ਗੁਆਂਢੀਆਂ ਸਮੇਤ ਵਿਸਤਾਰਿਤ ਘੇਰਾ",
+      "manageTab": "ਆਪਣਾ ਦੋਸਤ ਘੇਰਾ ਪ੍ਰਬੰਧਿਤ ਕਰੋ"
+    },
+
+    "post": {
+      "likeButton": "ਇਸ ਪੋਸਟ ਨੂੰ ਪਸੰਦ ਕਰੋ",
+      "unlikeButton": "ਇਸ ਪੋਸਟ ਨੂੰ ਨਾਪਸੰਦ ਕਰੋ",
+      "commentButton": "ਟਿੱਪਣੀ ਸ਼ਾਮਲ ਕਰੋ",
+      "shareButton": "ਇਸ ਪੋਸਟ ਨੂੰ ਸਾਂਝਾ ਕਰੋ",
+      "voiceReplyButton": "ਵੌਇਸ ਰਿਪਲਾਈ",
+      "meetupButton": "ਮਿਲਣੀ ਤੈਅ ਕਰੋ",
+      "callButton": "{{method}} ਰਾਹੀਂ ਕਾਲ ਕਰੋ",
+      "selectContactMethod": "ਸੰਪਰਕ ਤਰੀਕਾ ਚੁਣੋ",
+      "photoAlt": "ਫੋਟੋ: {{description}}",
+      "photoFallback": "ਸਾਂਝੀ ਕੀਤੀ ਫੋਟੋ",
+      "videoLabel": "ਵੀਡੀਓ: {{description}}",
+      "videoFallback": "ਸਾਂਝੀ ਕੀਤੀ ਵੀਡੀਓ",
+      "voiceNoteLabel": "ਵੌਇਸ ਨੋਟ: {{description}}",
+      "voiceNoteFallback": "ਵੌਇਸ ਨੋਟ",
+      "joinCall": "ਕਾਲ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ",
+      "rsvpYes": "ਮਿਲਣੀ ਲਈ ਹਾਂ",
+      "rsvpMaybe": "ਮਿਲਣੀ ਲਈ ਸ਼ਾਇਦ",
+      "rsvpOptions": "RSVP ਵਿਕਲਪ"
+    },
+
+    "nudge": {
+      "panelExpanded": "ਨੱਜ ਪੈਨਲ ਵਿਸਤਾਰਿਤ",
+      "panelCollapsed": "ਨੱਜ ਪੈਨਲ ਸੁੰਗੇੜਿਆ",
+      "friendsList": "ਜਿਨ੍ਹਾਂ ਦੋਸਤਾਂ ਨੂੰ ਮੁੜ ਜੁੜਨ ਦੀ ਲੋੜ ਹੈ",
+      "actionGroup": "{{name}} ਲਈ ਕਾਰਵਾਈਆਂ",
+      "actionButton": "{{name}} ਨਾਲ {{action}}",
+      "dismissButton": "{{name}} ਲਈ ਯਾਦ-ਦਹਾਨੀ ਖਾਰਜ ਕਰੋ",
+      "connectedButton": "{{name}} ਨੂੰ ਅੱਜ ਜੁੜੇ ਵਜੋਂ ਮਾਰਕ ਕਰੋ",
+      "selectDateButton": "{{name}} ਨਾਲ ਕਦੋਂ ਜੁੜੇ ਚੁਣੋ"
+    },
+
+    "naybor": {
+      "sosRegion": "ਤੇਜ਼ SOS ਸੰਪਰਕ",
+      "sosContactsList": "ਤੇਜ਼ ਸੰਪਰਕ:",
+      "contactOptions": "{{name}} ਲਈ ਸੰਪਰਕ ਵਿਕਲਪ",
+      "callButton": "{{name}} ਨੂੰ ਕਾਲ ਕਰੋ",
+      "messageButton": "{{name}} ਨੂੰ ਸੁਨੇਹਾ ਭੇਜੋ",
+      "sosDialogButton": "ਗੁਆਂਢੀ SOS ਐਮਰਜੈਂਸੀ ਸੰਪਰਕ ਡਾਇਲਾਗ ਖੋਲ੍ਹੋ",
+      "showQuickContacts": "ਤੇਜ਼ ਸੰਪਰਕ ਦਿਖਾਓ",
+      "hideQuickContacts": "ਤੇਜ਼ ਸੰਪਰਕ ਲੁਕਾਓ",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - ਗੰਭੀਰ ਜ਼ਰੂਰਤ",
+      "backToCategory": "ਸ਼੍ਰੇਣੀ ਚੋਣ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+      "chooseNaybors": "ਸੰਪਰਕ ਕਰਨ ਲਈ ਗੁਆਂਢੀ ਚੁਣਨ ਲਈ ਅੱਗੇ ਵਧੋ",
+      "backToCompose": "ਸੁਨੇਹਾ ਲਿਖਣ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+      "copyMessage": "SOS ਸੁਨੇਹਾ ਕਲਿੱਪਬੋਰਡ 'ਤੇ ਕਾਪੀ ਕਰੋ",
+      "nayborsList": "ਗੁਆਂਢੀ ਸੰਪਰਕ",
+      "selectNaybor": "{{name}} ਚੁਣੋ",
+      "alreadyContacted": "(ਪਹਿਲਾਂ ਹੀ ਸੰਪਰਕ ਕੀਤਾ)",
+      "messageAll": "ਸਾਰੇ {{count}} ਚੁਣੇ ਗੁਆਂਢੀ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜੋ",
+      "messageAll_plural": "ਸਾਰੇ {{count}} ਚੁਣੇ ਗੁਆਂਢੀਆਂ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜੋ",
+      "locationDescription": "ਸਮਰੱਥ ਹੋਣ 'ਤੇ, ਤੁਹਾਡੀ ਅੰਦਾਜ਼ਨ ਥਾਂ ਤੁਹਾਡੇ ਗੁਆਂਢੀਆਂ ਨਾਲ ਸਾਂਝੀ ਕੀਤੀ ਜਾਵੇਗੀ"
+    },
+
+    "dialog": {
+      "close": "ਡਾਇਲਾਗ ਬੰਦ ਕਰੋ",
+      "back": "ਵਾਪਸ ਜਾਓ",
+      "confirm": "ਕਾਰਵਾਈ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
+    },
+
+    "form": {
+      "showPassword": "ਪਾਸਵਰਡ ਦਿਖਾਓ",
+      "hidePassword": "ਪਾਸਵਰਡ ਲੁਕਾਓ",
+      "clearInput": "ਇਨਪੁਟ ਸਾਫ਼ ਕਰੋ",
+      "selectCountry": "ਦੇਸ਼ ਚੁਣੋ",
+      "phoneNumber": "ਫ਼ੋਨ ਨੰਬਰ"
+    },
+
+    "status": {
+      "online": "ਔਨਲਾਈਨ",
+      "offline": "ਔਫਲਾਈਨ",
+      "away": "ਦੂਰ",
+      "busy": "ਰੁੱਝੇ"
+    }
+  },
+  "language": {
+    "select": "ਭਾਸ਼ਾ ਚੁਣੋ",
+    "current": "ਮੌਜੂਦਾ ਭਾਸ਼ਾ: {{language}}",
+    "helpTranslate": "ਇਨਰਫ੍ਰੈਂਡ ਦਾ ਅਨੁਵਾਦ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰੋ",
+    "communityTranslation": "ਸਾਡੇ ਅਨੁਵਾਦਕ ਭਾਈਚਾਰੇ ਨਾਲ ਜੁੜੋ ਅਤੇ ਇਨਰਫ੍ਰੈਂਡ ਨੂੰ ਦੁਨੀਆ ਭਰ ਦੇ ਹੋਰ ਲੋਕਾਂ ਤੱਕ ਪਹੁੰਚਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰੋ।"
+  },
+  "errors": {
+    "generic": "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "network": "ਨੈੱਟਵਰਕ ਗਲਤੀ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਕਨੈਕਸ਼ਨ ਚੈੱਕ ਕਰੋ।",
+    "notFound": "ਪੇਜ ਨਹੀਂ ਮਿਲਿਆ",
+    "unauthorized": "ਕਿਰਪਾ ਕਰਕੇ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ"
+  },
+  "footer": {
+    "privacy": "ਗੋਪਨੀਯਤਾ",
+    "terms": "ਸ਼ਰਤਾਂ",
+    "about": "ਬਾਰੇ",
+    "contribute": "ਯੋਗਦਾਨ",
+    "openSource": "ਓਪਨ ਸੋਰਸ"
+  }
+}
