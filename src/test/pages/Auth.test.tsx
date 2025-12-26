@@ -3,6 +3,23 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 
+// Mock react-i18next
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+    i18n: { language: 'en', changeLanguage: vi.fn() },
+  }),
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
+// Mock LanguageSelector to simplify testing
+vi.mock('@/components/i18n/LanguageSelector', () => ({
+  LanguageSelector: () => <div data-testid="language-selector">EN</div>,
+}));
+
 // Mock useAuth
 const mockSignIn = vi.fn();
 const mockSignUp = vi.fn();

@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';
+import { LanguageSelector } from '@/components/i18n/LanguageSelector';
 import { z } from 'zod';
 
 const emailSchema = z.string().email('Please enter a valid email address');
@@ -96,15 +97,16 @@ export default function Auth() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="container mx-auto px-4 py-6">
-        <Button 
-          variant="ghost" 
+      <header className="container mx-auto px-4 py-6 flex items-center justify-between">
+        <Button
+          variant="ghost"
           onClick={() => navigate('/')}
           className="gap-2"
         >
           <ArrowLeft className="h-4 w-4" />
           Back
         </Button>
+        <LanguageSelector variant="prominent" />
       </header>
 
       {/* Auth Form */}
