@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Plus, Lock, Users, Link2, Star, UserPlus } from 'lucide-react';
+import { Plus, Lock, Users, Link2, Star, UserPlus, Key } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -29,6 +29,8 @@ import { ReservedSpotsDialog } from './ReservedSpotsDialog';
 import { ParasocialFeed } from './ParasocialFeed';
 import { FollowCreatorDialog } from './FollowCreatorDialog';
 import { NayborSOSBanner } from './naybor/NayborSOSBanner';
+import { KeysSharedDialog } from './naybor/KeysSharedDialog';
+import { HomeEntryPreferences } from '@/types/keysShared';
 import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
 import { ParasocialShare } from '@/hooks/useParasocial';
@@ -64,6 +66,9 @@ interface TierSectionProps {
   parasocialSeenShares?: Set<string>;
   onParasocialEngage?: (shareId: string) => void;
   userId?: string;
+  // Keys shared props (naybor tier only)
+  keysSharedPreferences?: HomeEntryPreferences;
+  onSaveKeysShared?: (preferences: HomeEntryPreferences) => void;
 }
 
 export function TierSection({
@@ -86,6 +91,8 @@ export function TierSection({
   parasocialSeenShares,
   onParasocialEngage,
   userId,
+  keysSharedPreferences,
+  onSaveKeysShared,
 }: TierSectionProps) {
   const { t } = useTranslation();
   const [addDialogOpen, setAddDialogOpen] = useState(false);
@@ -93,6 +100,7 @@ export function TierSection({
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
   const [roleModelDialogOpen, setRoleModelDialogOpen] = useState(false);
   const [followCreatorDialogOpen, setFollowCreatorDialogOpen] = useState(false);
+  const [keysSharedDialogOpen, setKeysSharedDialogOpen] = useState(false);
 
   // Only core, inner, outer can have linked friends (not naybor, parasocial, rolemodel, or acquainted)
   const canHaveLinkedFriends =
@@ -222,6 +230,19 @@ export function TierSection({
             >
               <Link2 className="w-4 h-4" />
               {t('tierSection.link')}
+            </Button>
+          )}
+          {tier === 'naybor' && isLoggedIn && userId && onSaveKeysShared && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setKeysSharedDialogOpen(true)}
+              className="gap-1"
+            >
+              <Key className="w-4 h-4" />
+              {keysSharedPreferences?.keyHolders.length
+                ? t('tierSection.keysSharedCount', { count: keysSharedPreferences.keyHolders.length })
+                : t('tierSection.keysShared')}
             </Button>
           )}
           {tier === 'parasocial' && isLoggedIn && userId && (
@@ -428,6 +449,17 @@ export function TierSection({
           open={followCreatorDialogOpen}
           onOpenChange={setFollowCreatorDialogOpen}
           userId={userId}
+        />
+      )}
+
+      {tier === 'naybor' && userId && onSaveKeysShared && (
+        <KeysSharedDialog
+          open={keysSharedDialogOpen}
+          onOpenChange={setKeysSharedDialogOpen}
+          naybors={friends}
+          userId={userId}
+          preferences={keysSharedPreferences}
+          onSave={onSaveKeysShared}
         />
       )}
     </motion.section>

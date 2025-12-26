@@ -25,6 +25,7 @@ import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
 import { useParasocial } from '@/hooks/useParasocial';
+import { useKeysShared } from '@/hooks/useKeysShared';
 import { TierType } from '@/types/friend';
 import { ExportableSocialGraph } from '@/types/feed';
 import { convertImportedFriends } from '@/lib/dataPortability';
@@ -64,7 +65,12 @@ export function FriendDashboard({
     seenShares,
     recordEngagement,
   } = useParasocial(user?.id);
-  
+
+  const {
+    preferences: keysSharedPreferences,
+    savePreferences: saveKeysShared,
+  } = useKeysShared(user?.id);
+
   const {
     lists,
     isLoaded,
@@ -270,6 +276,8 @@ export function FriendDashboard({
           parasocialSeenShares={tier === 'parasocial' ? seenShares : undefined}
           onParasocialEngage={tier === 'parasocial' ? recordEngagement : undefined}
           userId={user?.id}
+          keysSharedPreferences={tier === 'naybor' ? keysSharedPreferences : undefined}
+          onSaveKeysShared={tier === 'naybor' ? saveKeysShared : undefined}
         />
       ))}
     </div>
@@ -278,7 +286,7 @@ export function FriendDashboard({
     handleRemoveFriend, handleAddReservedGroup, handleUpdateReservedGroup,
     handleRemoveReservedGroup, handleReorderFriends, getTierCapacity, isLoggedIn,
     handleAddLinkedFriend, updateFriend, getAllowedMoves, feedShares, seenShares,
-    recordEngagement, user?.id, t
+    recordEngagement, user?.id, t, keysSharedPreferences, saveKeysShared
   ]);
 
   if (!isLoaded) {

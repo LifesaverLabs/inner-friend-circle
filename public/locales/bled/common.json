@@ -592,7 +592,9 @@
     "link": "Link",
     "followCreator": "Follow Creator",
     "addRoleModel": "Add Role Model",
-    "add": "Add"
+    "add": "Add",
+    "keysShared": "Keys Shared",
+    "keysSharedCount": "Keys ({{count}})"
   },
   "tending": {
     "title": "Tend Your Sirkles",
@@ -699,6 +701,139 @@
     "toasts": {
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
+    }
+  },
+  "keysShared": {
+    "title": "Keys Shared",
+    "steps": {
+      "address": {
+        "title": "Your Address",
+        "description": "Konfirm your home address for emergensy responders"
+      },
+      "keyholders": {
+        "title": "Key Holders",
+        "description": "Selekt which naybors have keys or kodes to your home"
+      },
+      "permissions": {
+        "title": "Entry Permissions",
+        "description": "Choose when naybors kan enter your home in emergensies"
+      },
+      "review": {
+        "title": "Review & Save",
+        "description": "Konfirm your emergensy home akses settings"
+      }
+    },
+    "addressHelp": "This address will be shared with emergensy responders when your naybors request help on your behalf.",
+    "address": "Street Address",
+    "addressPlaceholder": "123 Main Street",
+    "unitNumber": "Unit/Apt Number",
+    "unitPlaceholder": "Apt 4B",
+    "entryInstructions": "Speshal Entry Instrukshons",
+    "instructionsPlaceholder": "Keypad is to the right of door, ring twis...",
+    "instructionsHint": "Inklude any details responders should know about aksessing your home",
+    "keyType": "Type of Akses",
+    "keyTypes": {
+      "physical": "Physikal Key",
+      "digital": "Digital Kode",
+      "both": "Both"
+    },
+    "digitalCodeType": "Kode Type",
+    "codeTypes": {
+      "keypad": "Door Keypad",
+      "smart_lock": "Smart Lok App",
+      "garage": "Garage Kode",
+      "other": "Other"
+    },
+    "notes": "Notes (opshunal)",
+    "notesPlaceholder": "Key is under the blue flowerpot...",
+    "confirmKeyHolder": "Konfirm",
+    "currentKeyHolders": "Kurrent Key Holders",
+    "selectNaybors": "Add a naybor who has akses:",
+    "noNaybors": "Add naybors first to share keys with them",
+    "allNayborsAssigned": "All your naybors have been assigned",
+    "mandatoryScenarios": "Mandatory Entry Permissions",
+    "mandatoryScenariosHelp": "These life-threatening or safety-kritikal senarios always allow entry. They kannot be disabled bekause they protekt life, limb, and innosent humans from trauma.",
+    "optionalScenarios": "Opshunal Entry Permissions",
+    "optionalScenariosHelp": "You kan choose whether naybors kan enter for these senarios.",
+    "scenarios": {
+      "cardiac_arrest": {
+        "name": "Kardiak Arrest",
+        "description": "Heart attak or sudden kardiak arrest — every sekond kounts"
+      },
+      "choking": {
+        "name": "Choking",
+        "description": "Choking emergensy — airway bloked, needs immediate help"
+      },
+      "drowning": {
+        "name": "Drowning",
+        "description": "Drowning in pool, bathtub, or other water"
+      },
+      "anaphylaxis": {
+        "name": "Anaphylaktik Shok",
+        "description": "Severe allergik reakshon from bee sting, food, medikashon"
+      },
+      "elderly_fall": {
+        "name": "Elderly Fall",
+        "description": "Elderly person fallen, unable to get up, possibly injured"
+      },
+      "fire": {
+        "name": "Fire",
+        "description": "Fire detekted — threat to life, limb, tissue, anyone immobilized or asleep"
+      },
+      "gas_leak": {
+        "name": "Gas Leak",
+        "description": "Gas leak detekted — explosion/poisoning risk"
+      },
+      "carbon_monoxide": {
+        "name": "Karbon Monoxide",
+        "description": "CO detektor alarm — silent killer, okupants may be unkonshus"
+      },
+      "childhood_corporal": {
+        "name": "Childhood Korporal Punishment",
+        "description": "Child alerting naybors to korporal punishment. Research shows kommunity intervenshon prevents future violense."
+      },
+      "take10_spiral": {
+        "name": "Take 10 Shouting Spiral",
+        "description": "Domestik shouting eskalating unakseptably. De-eskalashon intervenshon needed."
+      },
+      "bedroom_consent": {
+        "name": "Bedroom Konsent Konflikt",
+        "description": "Detekted bedroom konsent konflikt emergensy — immediate intervenshon required"
+      },
+      "medical_other": {
+        "name": "Other Medikal Emergensy",
+        "description": "Other medikal emergensy requiring home entry"
+      },
+      "intruder_check": {
+        "name": "Intruder Chek",
+        "description": "Chek on suspekted intruder when you kannot respond"
+      },
+      "welfare_check": {
+        "name": "Welfare Chek",
+        "description": "General welfare chek when you are unresponsive for extended period"
+      },
+      "flooding": {
+        "name": "Flooding/Water Leak",
+        "description": "Water leak or flooding — property damage prevenshon (not life-threatening)"
+      }
+    },
+    "yourAddress": "Your Address",
+    "noAddressSet": "No address set",
+    "unit": "Unit",
+    "keyHoldersSummary": "{{count}} naybor(s) have keys",
+    "keyHoldersSummary_plural": "{{count}} naybors have keys",
+    "noKeyHolders": "No key holders assigned",
+    "permissionsSummary": "Entry Permissions",
+    "mandatoryCount": "{{count}}",
+    "mandatoryLabel": "mandatory (always allowed)",
+    "optionalCount": "{{count}}",
+    "optionalLabel": "opshunal enabled",
+    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selekted emergensy senarios. Make sure you trust these people with akses to your home.",
+    "savePreferences": "Save Preferenses",
+    "toasts": {
+      "keyHolderAdded": "Key holder added",
+      "keyHolderRemoved": "Key holder removed",
+      "saved": "Keys shared preferenses saved"
     }
   }
 }
