@@ -84,6 +84,9 @@ export function TierFeed({
     DEFAULT_CONTACT_METHODS[tier]
   );
 
+  // Compose post dialog state (shared between FeedHeader and EmptyFeedState)
+  const [composeOpen, setComposeOpen] = useState(false);
+
   // Get posts for this tier
   const posts = useMemo(() => {
     return getTierFeed(tier);
@@ -282,6 +285,7 @@ export function TierFeed({
         hasFriends={hasFriendsInTier}
         isLoggedIn={isLoggedIn}
         onGoToManage={onGoToManage}
+        onCreatePost={() => setComposeOpen(true)}
       />
     </div>
   ) : (
@@ -309,6 +313,8 @@ export function TierFeed({
         postCount={posts.length}
         defaultContactMethod={defaultContactMethod}
         onDefaultContactMethodChange={setDefaultContactMethod}
+        composeOpen={composeOpen}
+        onComposeOpenChange={setComposeOpen}
       />
 
       {/*
