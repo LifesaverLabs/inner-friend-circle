@@ -14,11 +14,18 @@ import { MissionBanner } from '@/components/MissionBanner';
 import { ConnectionRequestsPanel } from '@/components/ConnectionRequestsPanel';
 import { Footer } from '@/components/Footer';
 import { FeedTabs } from '@/components/feed';
+import {
+  DataLiberationBanner,
+  DataExportDialog,
+  DataImportDialog,
+} from '@/components/dataLiberation';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
 import { useParasocial } from '@/hooks/useParasocial';
 import { TierType } from '@/types/friend';
+import { ExportableSocialGraph } from '@/types/feed';
+import { convertImportedFriends } from '@/lib/dataPortability';
 
 interface FriendDashboardProps {
   isLoggedIn: boolean;
@@ -36,6 +43,8 @@ export function FriendDashboard({
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [tendingDialogOpen, setTendingDialogOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [exportDialogOpen, setExportDialogOpen] = useState(false);
+  const [importDialogOpen, setImportDialogOpen] = useState(false);
   
   const { user } = useAuth();
   const { needsSetup, setNeedsSetup } = useContactSetupNeeded(user?.id);
@@ -146,6 +155,46 @@ export function FriendDashboard({
   const handleDeclineRequest = async (connectionId: string) => {
     await respondToRequest(connectionId, false);
   };
+
+  // Data Liberation handlers
+  const handleDataImport = useCallback(
+    (data: ExportableSocialGraph, options: { mergeStrategy: string }) => {
+      const importedFriends = convertImportedFriends(data.friends);
+
+      let addedCount = 0;
+      let skippedCount = 0;
+
+      importedFriends.forEach((friend) => {
+        // Check if friend already exists (by name or email)
+        const existingFriend = lists.friends.find(
+          (f) => f.name === friend.name || (friend.email && f.email === friend.email)
+        );
+
+        if (existingFriend) {
+          if (options.mergeStrategy === 'overwrite') {
+            updateFriend(existingFriend.id, friend);
+            addedCount++;
+          } else if (options.mergeStrategy === 'keep_both') {
+            addFriend(friend);
+            addedCount++;
+          } else {
+            skippedCount++;
+          }
+        } else {
+          addFriend(friend);
+          addedCount++;
+        }
+      });
+
+      if (addedCount > 0) {
+        toast.success(`Imported ${addedCount} friend${addedCount !== 1 ? 's' : ''}`);
+      }
+      if (skippedCount > 0) {
+        toast.info(`Skipped ${skippedCount} duplicate${skippedCount !== 1 ? 's' : ''}`);
+      }
+    },
+    [lists.friends, addFriend, updateFriend]
+  );
 
   if (!isLoaded) {
     return (
@@ -350,7 +399,32 @@ export function FriendDashboard({
             userId={user.id}
           />
         )}
+
+        {/* Data Liberation Dialogs */}
+        <DataExportDialog
+          open={exportDialogOpen}
+          onOpenChange={setExportDialogOpen}
+          userId={user?.id || 'anonymous'}
+          friends={lists.friends}
+          posts={[]} // Feed posts would come from useFeed if needed
+        />
+
+        <DataImportDialog
+          open={importDialogOpen}
+          onOpenChange={setImportDialogOpen}
+          onImport={handleDataImport}
+          existingFriendCount={lists.friends.length}
+        />
       </main>
+
+      {/* Data Liberation Banner - shows at bottom */}
+      <DataLiberationBanner
+        onExportClick={() => setExportDialogOpen(true)}
+        onLearnMore={() => {
+          // Could navigate to a data portability info page
+          toast.info('Your data belongs to you. Export anytime to take it elsewhere.');
+        }}
+      />
 
       <Footer />
     </div>
