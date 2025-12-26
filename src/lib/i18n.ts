@@ -211,7 +211,13 @@ i18n
     // React-specific options
     react: {
       useSuspense: true,
+      // Bind i18n instance to react-i18next for proper re-renders
+      bindI18n: 'languageChanged loaded',
+      bindI18nStore: 'added removed',
     },
+
+    // Load all namespaces on language change
+    load: 'currentOnly',
   });
 
 export default i18n;

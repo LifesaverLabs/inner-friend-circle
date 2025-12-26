@@ -31,13 +31,15 @@ export function LanguageSelector({
   const currentLang = i18n.language.split('-')[0] as SupportedLanguage;
   const currentLangInfo = SUPPORTED_LANGUAGES[currentLang] || SUPPORTED_LANGUAGES.en;
 
-  const handleLanguageChange = (lang: SupportedLanguage) => {
-    i18n.changeLanguage(lang);
-
-    // Update document direction for RTL languages
+  const handleLanguageChange = async (lang: SupportedLanguage) => {
+    // Update document direction for RTL languages immediately
     const direction = getLanguageDirection(lang);
     document.documentElement.dir = direction;
     document.documentElement.lang = lang;
+
+    // Change language and wait for translations to load
+    // react-i18next will automatically re-render all components using useTranslation
+    await i18n.changeLanguage(lang);
   };
 
   return (
