@@ -37,7 +37,79 @@
     "settings": "Configuración",
     "signIn": "Iniciar sesión",
     "signOut": "Cerrar sesión",
-    "profile": "Perfil"
+    "profile": "Perfil",
+    "back": "Volver"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión para acceder a tus círculos",
+      "button": "Iniciar sesión",
+      "submitting": "Iniciando sesión..."
+    },
+    "signUp": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Comienza a cultivar tus amistades más cercanas",
+      "button": "Crear cuenta",
+      "submitting": "Creando cuenta..."
+    },
+    "form": {
+      "displayName": "Nombre para mostrar",
+      "displayNameOptional": "Nombre para mostrar (opcional)",
+      "displayNamePlaceholder": "Tu nombre",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "password": "Contraseña",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Por favor ingresa un correo electrónico válido",
+      "passwordTooShort": "La contraseña debe tener al menos 6 caracteres"
+    },
+    "switch": {
+      "haveAccount": "¿Ya tienes cuenta? Inicia sesión",
+      "noAccount": "¿No tienes cuenta? Regístrate"
+    },
+    "toast": {
+      "signInSuccess": "¡Bienvenido de nuevo!",
+      "signUpSuccess": "¡Cuenta creada! Ya has iniciado sesión.",
+      "emailAlreadyRegistered": "Este correo ya está registrado. Intenta iniciar sesión.",
+      "invalidCredentials": "Correo o contraseña inválidos. Por favor intenta de nuevo.",
+      "unexpectedError": "Ocurrió un error inesperado. Por favor intenta de nuevo."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "¡Ups! Página no encontrada",
+    "returnHome": "Volver al inicio"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Perfil no encontrado",
+      "message": "No existe un usuario con el identificador @{{handle}}",
+      "goHome": "Ir al inicio"
+    },
+    "private": {
+      "title": "Perfil privado",
+      "message": "@{{handle}} ha configurado su perfil como privado",
+      "goHome": "Ir al inicio"
+    },
+    "back": "Volver",
+    "anonymous": "Anónimo",
+    "creator": "Creador",
+    "joined": "Se unió {{time}}",
+    "followerCount": "{{count}} seguidor",
+    "followerCount_plural": "{{count}} seguidores",
+    "follow": "Seguir",
+    "unfollow": "Dejar de seguir",
+    "latestShares": "Últimas publicaciones",
+    "contentSharedBy": "Contenido compartido por {{name}}",
+    "noShares": "Sin publicaciones aún",
+    "toast": {
+      "followed": "Siguiendo a @{{handle}}",
+      "unfollowed": "Dejaste de seguir a @{{handle}}",
+      "followFailed": "Error al seguir"
+    }
   },
   "tiers": {
     "core": "Núcleo",
@@ -52,6 +124,13 @@
     "nayborDescription": "Vecinos de confianza para ayuda mutua y emergencias",
     "parasocial": "Siguiendo",
     "parasocialDescription": "Figuras públicas y creadores de contenido que sigues"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Núcleo",
+    "innerLabel": "{{count}} Íntimos",
+    "outerLabel": "{{count}} Externos",
+    "nayborLabel": "{{count}} Vecinos",
+    "parasocialLabel": "{{count}} Siguiendo"
   },
   "actions": {
     "add": "Agregar",

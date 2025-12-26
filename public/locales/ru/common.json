@@ -37,7 +37,79 @@
     "settings": "Настройки",
     "signIn": "Войти",
     "signOut": "Выйти",
-    "profile": "Профиль"
+    "profile": "Профиль",
+    "back": "Назад"
+  },
+  "auth": {
+    "signIn": {
+      "title": "С возвращением",
+      "subtitle": "Войдите, чтобы получить доступ к вашим кругам",
+      "button": "Войти",
+      "submitting": "Вход..."
+    },
+    "signUp": {
+      "title": "Создайте аккаунт",
+      "subtitle": "Начните заботиться о самых близких дружбах",
+      "button": "Создать аккаунт",
+      "submitting": "Создание аккаунта..."
+    },
+    "form": {
+      "displayName": "Отображаемое имя",
+      "displayNameOptional": "Отображаемое имя (необязательно)",
+      "displayNamePlaceholder": "Ваше имя",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Пароль",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Пожалуйста, введите действительный email",
+      "passwordTooShort": "Пароль должен содержать минимум 6 символов"
+    },
+    "switch": {
+      "haveAccount": "Уже есть аккаунт? Войти",
+      "noAccount": "Нет аккаунта? Зарегистрируйтесь"
+    },
+    "toast": {
+      "signInSuccess": "С возвращением!",
+      "signUpSuccess": "Аккаунт создан! Вы вошли в систему.",
+      "emailAlreadyRegistered": "Этот email уже зарегистрирован. Попробуйте войти.",
+      "invalidCredentials": "Неверный email или пароль. Пожалуйста, попробуйте снова.",
+      "unexpectedError": "Произошла непредвиденная ошибка. Пожалуйста, попробуйте снова."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Упс! Страница не найдена",
+    "returnHome": "Вернуться на главную"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Профиль не найден",
+      "message": "Пользователь с именем @{{handle}} не существует",
+      "goHome": "На главную"
+    },
+    "private": {
+      "title": "Приватный профиль",
+      "message": "@{{handle}} сделал свой профиль приватным",
+      "goHome": "На главную"
+    },
+    "back": "Назад",
+    "anonymous": "Аноним",
+    "creator": "Создатель",
+    "joined": "Присоединился {{time}}",
+    "followerCount": "{{count}} подписчик",
+    "followerCount_plural": "{{count}} подписчиков",
+    "follow": "Подписаться",
+    "unfollow": "Отписаться",
+    "latestShares": "Последние публикации",
+    "contentSharedBy": "Контент от {{name}}",
+    "noShares": "Пока нет публикаций",
+    "toast": {
+      "followed": "Вы подписались на @{{handle}}",
+      "unfollowed": "Вы отписались от @{{handle}}",
+      "followFailed": "Не удалось подписаться"
+    }
   },
   "tiers": {
     "core": "Ядро",
@@ -52,6 +124,13 @@
     "nayborDescription": "Надёжные соседи для взаимопомощи и экстренных ситуаций",
     "parasocial": "Подписки",
     "parasocialDescription": "Публичные личности и создатели контента, на которых вы подписаны"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Ядро",
+    "innerLabel": "{{count}} Внутренний",
+    "outerLabel": "{{count}} Внешний",
+    "nayborLabel": "{{count}} Соседи",
+    "parasocialLabel": "{{count}} Подписки"
   },
   "actions": {
     "add": "Добавить",

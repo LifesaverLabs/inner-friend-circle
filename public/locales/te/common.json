@@ -37,7 +37,79 @@
     "settings": "సెట్టింగ్‌లు",
     "signIn": "సైన్ ఇన్",
     "signOut": "సైన్ అవుట్",
-    "profile": "ప్రొఫైల్"
+    "profile": "ప్రొఫైల్",
+    "back": "వెనుకకు"
+  },
+  "auth": {
+    "signIn": {
+      "title": "తిరిగి స్వాగతం",
+      "subtitle": "మీ సర్కిల్స్‌ను యాక్సెస్ చేయడానికి సైన్ ఇన్ చేయండి",
+      "button": "సైన్ ఇన్",
+      "submitting": "సైన్ ఇన్ అవుతోంది..."
+    },
+    "signUp": {
+      "title": "మీ ఖాతాను సృష్టించండి",
+      "subtitle": "మీ సన్నిహిత స్నేహాలను పెంపొందించడం ప్రారంభించండి",
+      "button": "ఖాతా సృష్టించండి",
+      "submitting": "ఖాతా సృష్టించబడుతోంది..."
+    },
+    "form": {
+      "displayName": "ప్రదర్శన పేరు",
+      "displayNameOptional": "ప్రదర్శన పేరు (ఐచ్ఛికం)",
+      "displayNamePlaceholder": "మీ పేరు",
+      "email": "ఇమెయిల్",
+      "emailPlaceholder": "you@example.com",
+      "password": "పాస్‌వర్డ్",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి",
+      "passwordTooShort": "పాస్‌వర్డ్ కనీసం 6 అక్షరాలు ఉండాలి"
+    },
+    "switch": {
+      "haveAccount": "ఇప్పటికే ఖాతా ఉందా? సైన్ ఇన్ చేయండి",
+      "noAccount": "ఖాతా లేదా? సైన్ అప్ చేయండి"
+    },
+    "toast": {
+      "signInSuccess": "తిరిగి స్వాగతం!",
+      "signUpSuccess": "ఖాతా సృష్టించబడింది! మీరు ఇప్పుడు సైన్ ఇన్ అయ్యారు.",
+      "emailAlreadyRegistered": "ఈ ఇమెయిల్ ఇప్పటికే నమోదు చేయబడింది. బదులుగా సైన్ ఇన్ ప్రయత్నించండి.",
+      "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్‌వర్డ్. దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "unexpectedError": "ఊహించని లోపం సంభవించింది. దయచేసి మళ్లీ ప్రయత్నించండి."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "అయ్యో! పేజీ కనుగొనబడలేదు",
+    "returnHome": "హోమ్‌కి తిరిగి వెళ్లండి"
+  },
+  "profile": {
+    "notFound": {
+      "title": "ప్రొఫైల్ కనుగొనబడలేదు",
+      "message": "@{{handle}} హ్యాండిల్ తో వినియోగదారు లేరు",
+      "goHome": "హోమ్‌కు వెళ్లండి"
+    },
+    "private": {
+      "title": "ప్రైవేట్ ప్రొఫైల్",
+      "message": "@{{handle}} వారి ప్రొఫైల్‌ను ప్రైవేట్‌గా సెట్ చేసారు",
+      "goHome": "హోమ్‌కు వెళ్లండి"
+    },
+    "back": "వెనుకకు",
+    "anonymous": "అనామక",
+    "creator": "సృష్టికర్త",
+    "joined": "{{time}} కి చేరారు",
+    "followerCount": "{{count}} అనుచరుడు",
+    "followerCount_plural": "{{count}} అనుచరులు",
+    "follow": "అనుసరించండి",
+    "unfollow": "అనుసరించవద్దు",
+    "latestShares": "తాజా షేర్‌లు",
+    "contentSharedBy": "{{name}} భాగస్వామ్యం చేసిన కంటెంట్",
+    "noShares": "ఇంకా షేర్‌లు లేవు",
+    "toast": {
+      "followed": "@{{handle}} అనుసరిస్తోంది",
+      "unfollowed": "@{{handle}} అనుసరించడం మానేసారు",
+      "followFailed": "అనుసరించడం విఫలమైంది"
+    }
   },
   "tiers": {
     "core": "కోర్",
@@ -52,6 +124,13 @@
     "nayborDescription": "పరస్పర సహాయం మరియు అత్యవసర పరిస్థితులకు నమ్మకమైన పొరుగువారు",
     "parasocial": "ఫాలో",
     "parasocialDescription": "మీరు అనుసరించే ప్రసిద్ధ వ్యక్తులు మరియు కంటెంట్ క్రియేటర్లు"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} కోర్",
+    "innerLabel": "{{count}} ఇన్నర్",
+    "outerLabel": "{{count}} ఔటర్",
+    "nayborLabel": "{{count}} పొరుగువారు",
+    "parasocialLabel": "{{count}} ఫాలో"
   },
   "actions": {
     "add": "జోడించు",

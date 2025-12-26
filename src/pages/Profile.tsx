@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { User, Star, Link2, ExternalLink, Calendar, Users, ArrowLeft, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -35,6 +36,7 @@ interface PublicShare {
 export default function Profile() {
   const { handle } = useParams<{ handle: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { followParasocial, unfollowParasocial } = useParasocial(user?.id);
   
@@ -139,16 +141,16 @@ export default function Profile() {
       if (result.success) {
         setIsFollowing(false);
         setFollowerCount(prev => prev - 1);
-        toast.success(`Unfollowed @${profile.user_handle}`);
+        toast.success(t('profile.toast.unfollowed', { handle: profile.user_handle }));
       }
     } else {
       const result = await followParasocial(profile.user_id);
       if (result.success) {
         setIsFollowing(true);
         setFollowerCount(prev => prev + 1);
-        toast.success(`Following @${profile.user_handle}`);
+        toast.success(t('profile.toast.followed', { handle: profile.user_handle }));
       } else {
-        toast.error(result.error || 'Failed to follow');
+        toast.error(result.error || t('profile.toast.followFailed'));
       }
     }
   };
@@ -170,22 +172,22 @@ export default function Profile() {
   if (notFound) {
     return (
       <div className="min-h-screen bg-background flex flex-col">
-        <AppHeader 
-          isLoggedIn={!!user} 
+        <AppHeader
+          isLoggedIn={!!user}
           userEmail={user?.email}
           onSignIn={handleSignIn}
           onSignOut={handleSignOut}
         />
-        <main className="flex-1 flex items-center justify-center">
+        <main className="flex-1 flex items-center justify-center" role="main">
           <div className="text-center space-y-4">
-            <User className="h-16 w-16 mx-auto text-muted-foreground" />
-            <h1 className="text-2xl font-display font-bold">Profile Not Found</h1>
+            <User className="h-16 w-16 mx-auto text-muted-foreground" aria-hidden="true" />
+            <h1 className="text-2xl font-display font-bold">{t('profile.notFound.title')}</h1>
             <p className="text-muted-foreground">
-              No user exists with the handle @{handle}
+              {t('profile.notFound.message', { handle })}
             </p>
-            <Button onClick={() => navigate('/')}>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Go Home
+            <Button onClick={() => navigate('/')} aria-label={t('profile.notFound.goHome')}>
+              <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('profile.notFound.goHome')}
             </Button>
           </div>
         </main>
@@ -197,22 +199,22 @@ export default function Profile() {
   if (isPrivate && profile) {
     return (
       <div className="min-h-screen bg-background flex flex-col">
-        <AppHeader 
-          isLoggedIn={!!user} 
+        <AppHeader
+          isLoggedIn={!!user}
           userEmail={user?.email}
           onSignIn={handleSignIn}
           onSignOut={handleSignOut}
         />
-        <main className="flex-1 flex items-center justify-center">
+        <main className="flex-1 flex items-center justify-center" role="main">
           <div className="text-center space-y-4">
-            <Lock className="h-16 w-16 mx-auto text-muted-foreground" />
-            <h1 className="text-2xl font-display font-bold">Private Profile</h1>
+            <Lock className="h-16 w-16 mx-auto text-muted-foreground" aria-hidden="true" />
+            <h1 className="text-2xl font-display font-bold">{t('profile.private.title')}</h1>
             <p className="text-muted-foreground">
-              @{profile.user_handle} has set their profile to private
+              {t('profile.private.message', { handle: profile.user_handle })}
             </p>
-            <Button onClick={() => navigate('/')}>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Go Home
+            <Button onClick={() => navigate('/')} aria-label={t('profile.private.goHome')}>
+              <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('profile.private.goHome')}
             </Button>
           </div>
         </main>
@@ -225,21 +227,22 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <AppHeader 
-        isLoggedIn={!!user} 
+      <AppHeader
+        isLoggedIn={!!user}
         userEmail={user?.email}
         onSignIn={handleSignIn}
         onSignOut={handleSignOut}
       />
-      
-      <main className="flex-1 container mx-auto px-4 py-8 max-w-3xl">
-        <Button 
-          variant="ghost" 
+
+      <main className="flex-1 container mx-auto px-4 py-8 max-w-3xl" role="main">
+        <Button
+          variant="ghost"
           onClick={() => navigate('/')}
           className="mb-6"
+          aria-label={t('profile.back')}
         >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
+          <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('profile.back')}
         </Button>
 
         <motion.div
@@ -261,12 +264,12 @@ export default function Profile() {
                 <div className="flex-1 text-center sm:text-left">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <h1 className="text-2xl font-display font-bold">
-                      {profile.display_name || 'Anonymous'}
+                      {profile.display_name || t('profile.anonymous')}
                     </h1>
                     {profile.is_parasocial_personality && (
                       <Badge variant="secondary" className="w-fit mx-auto sm:mx-0">
-                        <Star className="h-3 w-3 mr-1" />
-                        Creator
+                        <Star className="h-3 w-3 mr-1" aria-hidden="true" />
+                        {t('profile.creator')}
                       </Badge>
                     )}
                   </div>
@@ -275,13 +278,13 @@ export default function Profile() {
 
                   <div className="flex items-center justify-center sm:justify-start gap-4 mt-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      Joined {formatDistanceToNow(new Date(profile.created_at), { addSuffix: true })}
+                      <Calendar className="h-4 w-4" aria-hidden="true" />
+                      {t('profile.joined', { time: formatDistanceToNow(new Date(profile.created_at), { addSuffix: true }) })}
                     </span>
                     {profile.is_parasocial_personality && (
                       <span className="flex items-center gap-1">
-                        <Users className="h-4 w-4" />
-                        {followerCount} {followerCount === 1 ? 'follower' : 'followers'}
+                        <Users className="h-4 w-4" aria-hidden="true" />
+                        {t('profile.followerCount', { count: followerCount })}
                       </span>
                     )}
                   </div>
@@ -291,9 +294,10 @@ export default function Profile() {
                       onClick={handleFollow}
                       variant={isFollowing ? 'outline' : 'default'}
                       className="mt-4"
+                      aria-label={isFollowing ? t('profile.unfollow') : t('profile.follow')}
                     >
-                      <Link2 className="h-4 w-4 mr-2" />
-                      {isFollowing ? 'Unfollow' : 'Follow'}
+                      <Link2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                      {isFollowing ? t('profile.unfollow') : t('profile.follow')}
                     </Button>
                   )}
                 </div>
@@ -305,9 +309,9 @@ export default function Profile() {
           {profile.is_parasocial_personality && shares.length > 0 && (
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Latest Shares</CardTitle>
+                <CardTitle className="text-lg">{t('profile.latestShares')}</CardTitle>
                 <CardDescription>
-                  Content shared by {profile.display_name || `@${profile.user_handle}`}
+                  {t('profile.contentSharedBy', { name: profile.display_name || `@${profile.user_handle}` })}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -345,7 +349,7 @@ export default function Profile() {
           {profile.is_parasocial_personality && shares.length === 0 && (
             <Card>
               <CardContent className="py-8 text-center text-muted-foreground">
-                No shares yet
+                {t('profile.noShares')}
               </CardContent>
             </Card>
           )}

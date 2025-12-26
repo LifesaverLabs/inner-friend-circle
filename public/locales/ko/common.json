@@ -37,7 +37,79 @@
     "settings": "설정",
     "signIn": "로그인",
     "signOut": "로그아웃",
-    "profile": "프로필"
+    "profile": "프로필",
+    "back": "뒤로"
+  },
+  "auth": {
+    "signIn": {
+      "title": "다시 오신 것을 환영합니다",
+      "subtitle": "서클에 액세스하려면 로그인하세요",
+      "button": "로그인",
+      "submitting": "로그인 중..."
+    },
+    "signUp": {
+      "title": "계정 만들기",
+      "subtitle": "가장 가까운 우정 가꾸기 시작",
+      "button": "계정 만들기",
+      "submitting": "계정 생성 중..."
+    },
+    "form": {
+      "displayName": "표시 이름",
+      "displayNameOptional": "표시 이름 (선택사항)",
+      "displayNamePlaceholder": "이름",
+      "email": "이메일",
+      "emailPlaceholder": "you@example.com",
+      "password": "비밀번호",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "유효한 이메일 주소를 입력하세요",
+      "passwordTooShort": "비밀번호는 최소 6자 이상이어야 합니다"
+    },
+    "switch": {
+      "haveAccount": "이미 계정이 있나요? 로그인",
+      "noAccount": "계정이 없나요? 가입하기"
+    },
+    "toast": {
+      "signInSuccess": "다시 오신 것을 환영합니다!",
+      "signUpSuccess": "계정이 생성되었습니다! 지금 로그인되었습니다.",
+      "emailAlreadyRegistered": "이 이메일은 이미 등록되어 있습니다. 로그인을 시도하세요.",
+      "invalidCredentials": "잘못된 이메일 또는 비밀번호입니다. 다시 시도하세요.",
+      "unexpectedError": "예기치 않은 오류가 발생했습니다. 다시 시도하세요."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "죄송합니다! 페이지를 찾을 수 없습니다",
+    "returnHome": "홈으로 돌아가기"
+  },
+  "profile": {
+    "notFound": {
+      "title": "프로필을 찾을 수 없음",
+      "message": "@{{handle}} 핸들을 가진 사용자가 없습니다",
+      "goHome": "홈으로 가기"
+    },
+    "private": {
+      "title": "비공개 프로필",
+      "message": "@{{handle}}님이 프로필을 비공개로 설정했습니다",
+      "goHome": "홈으로 가기"
+    },
+    "back": "뒤로",
+    "anonymous": "익명",
+    "creator": "크리에이터",
+    "joined": "{{time}}에 가입",
+    "followerCount": "팔로워 {{count}}명",
+    "followerCount_plural": "팔로워 {{count}}명",
+    "follow": "팔로우",
+    "unfollow": "언팔로우",
+    "latestShares": "최근 공유",
+    "contentSharedBy": "{{name}}님이 공유한 콘텐츠",
+    "noShares": "아직 공유 없음",
+    "toast": {
+      "followed": "@{{handle}}님을 팔로우합니다",
+      "unfollowed": "@{{handle}}님 팔로우 취소",
+      "followFailed": "팔로우 실패"
+    }
   },
   "tiers": {
     "core": "코어",
@@ -52,6 +124,13 @@
     "nayborDescription": "상호 도움과 긴급 상황을 위한 믿을 수 있는 이웃",
     "parasocial": "팔로잉",
     "parasocialDescription": "팔로우하는 공인과 콘텐츠 크리에이터"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} 코어",
+    "innerLabel": "{{count}} 이너",
+    "outerLabel": "{{count}} 아우터",
+    "nayborLabel": "{{count}} 이웃",
+    "parasocialLabel": "{{count}} 팔로잉"
   },
   "actions": {
     "add": "추가",

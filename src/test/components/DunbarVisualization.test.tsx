@@ -2,6 +2,37 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { DunbarVisualization } from '@/components/DunbarVisualization';
 
+// Mock react-i18next with tier translations
+const mockTierTranslations: Record<string, string> = {
+  'tiers.core': 'Core',
+  'tiers.inner': 'Inner',
+  'tiers.outer': 'Outer',
+  'tiers.naybor': 'Naybor',
+  'tiers.parasocial': 'Parasocial',
+  'visualization.coreLabel': '{{count}} Core',
+  'visualization.innerLabel': '{{count}} Inner',
+  'visualization.outerLabel': '{{count}} Outer',
+  'visualization.nayborLabel': '{{count}} Naybor',
+  'visualization.parasocialLabel': '{{count}} Parasocial',
+};
+
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, options?: { count?: number }) => {
+      const template = mockTierTranslations[key] || key;
+      if (options?.count !== undefined) {
+        return template.replace('{{count}}', String(options.count));
+      }
+      return template;
+    },
+    i18n: { language: 'en', changeLanguage: vi.fn() },
+  }),
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
 // Mock framer-motion to avoid animation issues in tests
 vi.mock('framer-motion', () => ({
   motion: {

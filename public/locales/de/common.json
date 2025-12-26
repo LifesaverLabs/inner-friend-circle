@@ -37,7 +37,79 @@
     "settings": "Einstellungen",
     "signIn": "Anmelden",
     "signOut": "Abmelden",
-    "profile": "Profil"
+    "profile": "Profil",
+    "back": "Zurück"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melde dich an, um auf deine Kreise zuzugreifen",
+      "button": "Anmelden",
+      "submitting": "Anmeldung läuft..."
+    },
+    "signUp": {
+      "title": "Erstelle dein Konto",
+      "subtitle": "Beginne, deine engsten Freundschaften zu pflegen",
+      "button": "Konto erstellen",
+      "submitting": "Konto wird erstellt..."
+    },
+    "form": {
+      "displayName": "Anzeigename",
+      "displayNameOptional": "Anzeigename (optional)",
+      "displayNamePlaceholder": "Dein Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "du@beispiel.de",
+      "password": "Passwort",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein",
+      "passwordTooShort": "Das Passwort muss mindestens 6 Zeichen lang sein"
+    },
+    "switch": {
+      "haveAccount": "Bereits ein Konto? Anmelden",
+      "noAccount": "Noch kein Konto? Registrieren"
+    },
+    "toast": {
+      "signInSuccess": "Willkommen zurück!",
+      "signUpSuccess": "Konto erstellt! Du bist jetzt angemeldet.",
+      "emailAlreadyRegistered": "Diese E-Mail ist bereits registriert. Versuche, dich anzumelden.",
+      "invalidCredentials": "Ungültige E-Mail oder Passwort. Bitte versuche es erneut.",
+      "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Hoppla! Seite nicht gefunden",
+    "returnHome": "Zurück zur Startseite"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profil nicht gefunden",
+      "message": "Kein Benutzer mit dem Handle @{{handle}} vorhanden",
+      "goHome": "Zur Startseite"
+    },
+    "private": {
+      "title": "Privates Profil",
+      "message": "@{{handle}} hat sein Profil auf privat gesetzt",
+      "goHome": "Zur Startseite"
+    },
+    "back": "Zurück",
+    "anonymous": "Anonym",
+    "creator": "Creator",
+    "joined": "Beigetreten {{time}}",
+    "followerCount": "{{count}} Follower",
+    "followerCount_plural": "{{count}} Follower",
+    "follow": "Folgen",
+    "unfollow": "Nicht mehr folgen",
+    "latestShares": "Neueste Beiträge",
+    "contentSharedBy": "Inhalte geteilt von {{name}}",
+    "noShares": "Noch keine Beiträge",
+    "toast": {
+      "followed": "Du folgst jetzt @{{handle}}",
+      "unfollowed": "Du folgst @{{handle}} nicht mehr",
+      "followFailed": "Folgen fehlgeschlagen"
+    }
   },
   "tiers": {
     "core": "Kern",
@@ -52,6 +124,13 @@
     "nayborDescription": "Vertrauenswürdige Nachbarn für gegenseitige Hilfe und Notfälle",
     "parasocial": "Folgen",
     "parasocialDescription": "Öffentliche Persönlichkeiten und Content-Creator, denen du folgst"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Kern",
+    "innerLabel": "{{count}} Inner",
+    "outerLabel": "{{count}} Outer",
+    "nayborLabel": "{{count}} Nachbarn",
+    "parasocialLabel": "{{count}} Folgen"
   },
   "actions": {
     "add": "Hinzufügen",

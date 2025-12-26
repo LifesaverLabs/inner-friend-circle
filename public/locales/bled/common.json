@@ -42,7 +42,79 @@
     "settings": "Settings",
     "signIn": "Sign In",
     "signOut": "Sign Out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "back": "Bakk"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welkome Bakk",
+      "subtitle": "Sign in to akkess your kirkles",
+      "button": "Sign In",
+      "submitting": "Signing in..."
+    },
+    "signUp": {
+      "title": "Kreate Your Akkaunt",
+      "subtitle": "Start kurating your klosest friendships",
+      "button": "Kreate Akkaunt",
+      "submitting": "Kreating akkaunt..."
+    },
+    "form": {
+      "displayName": "Display Name",
+      "displayNameOptional": "Display Name (optsional)",
+      "displayNamePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address",
+      "passwordTooShort": "Password must be at least 6 karakters"
+    },
+    "switch": {
+      "haveAccount": "Already have an akkaunt? Sign in",
+      "noAccount": "Don't have an akkaunt? Sign up"
+    },
+    "toast": {
+      "signInSuccess": "Welkome bakk!",
+      "signUpSuccess": "Akkaunt kreated! You are now signed in.",
+      "emailAlreadyRegistered": "This email is already registered. Try signing in instead.",
+      "invalidCredentials": "Invalid email or password. Please try again.",
+      "unexpectedError": "An unexpekted error okkurred. Please try again."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profile Not Found",
+      "message": "No user exists with the handle @{{handle}}",
+      "goHome": "Go Home"
+    },
+    "private": {
+      "title": "Private Profile",
+      "message": "@{{handle}} has set their profile to private",
+      "goHome": "Go Home"
+    },
+    "back": "Bakk",
+    "anonymous": "Anonymous",
+    "creator": "Kreator",
+    "joined": "Joined {{time}}",
+    "followerCount": "{{count}} follower",
+    "followerCount_plural": "{{count}} followers",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "latestShares": "Latest Shares",
+    "contentSharedBy": "Kontent shared by {{name}}",
+    "noShares": "No shares yet",
+    "toast": {
+      "followed": "Following @{{handle}}",
+      "unfollowed": "Unfollowed @{{handle}}",
+      "followFailed": "Failed to follow"
+    }
   },
   "tiers": {
     "core": "Kore",
@@ -57,6 +129,13 @@
     "nayborDescription": "Trusted naybors for mutual aid and emergensies",
     "parasocial": "Following",
     "parasocialDescription": "Publik figures and kontent kreators you follow"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Kore",
+    "innerLabel": "{{count}} Inner",
+    "outerLabel": "{{count}} Outer",
+    "nayborLabel": "{{count}} Naybors",
+    "parasocialLabel": "{{count}} Following"
   },
   "actions": {
     "add": "Add",

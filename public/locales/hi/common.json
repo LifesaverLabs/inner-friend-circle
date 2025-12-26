@@ -37,7 +37,79 @@
     "settings": "सेटिंग्स",
     "signIn": "साइन इन",
     "signOut": "साइन आउट",
-    "profile": "प्रोफाइल"
+    "profile": "प्रोफाइल",
+    "back": "वापस"
+  },
+  "auth": {
+    "signIn": {
+      "title": "वापस स्वागत है",
+      "subtitle": "अपने सर्कल्स तक पहुंचने के लिए साइन इन करें",
+      "button": "साइन इन",
+      "submitting": "साइन इन हो रहा है..."
+    },
+    "signUp": {
+      "title": "अपना खाता बनाएं",
+      "subtitle": "अपनी करीबी दोस्ती को संजोना शुरू करें",
+      "button": "खाता बनाएं",
+      "submitting": "खाता बना रहे हैं..."
+    },
+    "form": {
+      "displayName": "प्रदर्शन नाम",
+      "displayNameOptional": "प्रदर्शन नाम (वैकल्पिक)",
+      "displayNamePlaceholder": "आपका नाम",
+      "email": "ईमेल",
+      "emailPlaceholder": "you@example.com",
+      "password": "पासवर्ड",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "कृपया एक मान्य ईमेल पता दर्ज करें",
+      "passwordTooShort": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए"
+    },
+    "switch": {
+      "haveAccount": "पहले से खाता है? साइन इन करें",
+      "noAccount": "खाता नहीं है? साइन अप करें"
+    },
+    "toast": {
+      "signInSuccess": "वापस स्वागत है!",
+      "signUpSuccess": "खाता बनाया गया! आप अब साइन इन हैं।",
+      "emailAlreadyRegistered": "यह ईमेल पहले से पंजीकृत है। साइन इन करने का प्रयास करें।",
+      "invalidCredentials": "अमान्य ईमेल या पासवर्ड। कृपया पुनः प्रयास करें।",
+      "unexpectedError": "एक अप्रत्याशित त्रुटि हुई। कृपया पुनः प्रयास करें।"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "उफ्फ! पेज नहीं मिला",
+    "returnHome": "होम पर वापस जाएं"
+  },
+  "profile": {
+    "notFound": {
+      "title": "प्रोफाइल नहीं मिली",
+      "message": "@{{handle}} हैंडल वाला कोई उपयोगकर्ता नहीं है",
+      "goHome": "होम जाएं"
+    },
+    "private": {
+      "title": "निजी प्रोफाइल",
+      "message": "@{{handle}} ने अपनी प्रोफाइल निजी रखी है",
+      "goHome": "होम जाएं"
+    },
+    "back": "वापस",
+    "anonymous": "अनाम",
+    "creator": "क्रिएटर",
+    "joined": "{{time}} में शामिल हुए",
+    "followerCount": "{{count}} फॉलोअर",
+    "followerCount_plural": "{{count}} फॉलोअर्स",
+    "follow": "फॉलो करें",
+    "unfollow": "अनफॉलो करें",
+    "latestShares": "नवीनतम शेयर",
+    "contentSharedBy": "{{name}} द्वारा साझा की गई सामग्री",
+    "noShares": "अभी तक कोई शेयर नहीं",
+    "toast": {
+      "followed": "@{{handle}} को फॉलो कर रहे हैं",
+      "unfollowed": "@{{handle}} को अनफॉलो किया",
+      "followFailed": "फॉलो करने में विफल"
+    }
   },
   "tiers": {
     "core": "कोर",
@@ -52,6 +124,13 @@
     "nayborDescription": "आपातकाल और पारस्परिक सहायता के लिए विश्वसनीय पड़ोसी",
     "parasocial": "फॉलो",
     "parasocialDescription": "जिन सार्वजनिक हस्तियों को आप फॉलो करते हैं"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} कोर",
+    "innerLabel": "{{count}} इनर",
+    "outerLabel": "{{count}} आउटर",
+    "nayborLabel": "{{count}} पड़ोसी",
+    "parasocialLabel": "{{count}} फॉलो"
   },
   "actions": {
     "add": "जोड़ें",

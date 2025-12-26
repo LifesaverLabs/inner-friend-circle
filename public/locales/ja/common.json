@@ -37,7 +37,79 @@
     "settings": "設定",
     "signIn": "サインイン",
     "signOut": "サインアウト",
-    "profile": "プロフィール"
+    "profile": "プロフィール",
+    "back": "戻る"
+  },
+  "auth": {
+    "signIn": {
+      "title": "おかえりなさい",
+      "subtitle": "サークルにアクセスするにはサインイン",
+      "button": "サインイン",
+      "submitting": "サインイン中..."
+    },
+    "signUp": {
+      "title": "アカウントを作成",
+      "subtitle": "大切な友情を育て始めましょう",
+      "button": "アカウント作成",
+      "submitting": "アカウント作成中..."
+    },
+    "form": {
+      "displayName": "表示名",
+      "displayNameOptional": "表示名（任意）",
+      "displayNamePlaceholder": "あなたの名前",
+      "email": "メールアドレス",
+      "emailPlaceholder": "you@example.com",
+      "password": "パスワード",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "有効なメールアドレスを入力してください",
+      "passwordTooShort": "パスワードは6文字以上必要です"
+    },
+    "switch": {
+      "haveAccount": "アカウントをお持ちですか？サインイン",
+      "noAccount": "アカウントがありませんか？新規登録"
+    },
+    "toast": {
+      "signInSuccess": "おかえりなさい！",
+      "signUpSuccess": "アカウント作成完了！サインインしました。",
+      "emailAlreadyRegistered": "このメールアドレスは既に登録されています。サインインしてください。",
+      "invalidCredentials": "メールアドレスまたはパスワードが無効です。もう一度お試しください。",
+      "unexpectedError": "予期しないエラーが発生しました。もう一度お試しください。"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "おっと！ページが見つかりません",
+    "returnHome": "ホームに戻る"
+  },
+  "profile": {
+    "notFound": {
+      "title": "プロフィールが見つかりません",
+      "message": "@{{handle}}というユーザーは存在しません",
+      "goHome": "ホームへ"
+    },
+    "private": {
+      "title": "非公開プロフィール",
+      "message": "@{{handle}}はプロフィールを非公開にしています",
+      "goHome": "ホームへ"
+    },
+    "back": "戻る",
+    "anonymous": "匿名",
+    "creator": "クリエイター",
+    "joined": "{{time}}に参加",
+    "followerCount": "{{count}}フォロワー",
+    "followerCount_plural": "{{count}}フォロワー",
+    "follow": "フォロー",
+    "unfollow": "フォロー解除",
+    "latestShares": "最新の共有",
+    "contentSharedBy": "{{name}}が共有したコンテンツ",
+    "noShares": "まだ共有がありません",
+    "toast": {
+      "followed": "@{{handle}}をフォローしました",
+      "unfollowed": "@{{handle}}のフォローを解除しました",
+      "followFailed": "フォローに失敗しました"
+    }
   },
   "tiers": {
     "core": "コア",
@@ -52,6 +124,13 @@
     "nayborDescription": "相互扶助や緊急時のための信頼できる近隣住民",
     "parasocial": "フォロー",
     "parasocialDescription": "フォローしている著名人やコンテンツクリエイター"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} コア",
+    "innerLabel": "{{count}} インナー",
+    "outerLabel": "{{count}} アウター",
+    "nayborLabel": "{{count}} ご近所",
+    "parasocialLabel": "{{count}} フォロー"
   },
   "actions": {
     "add": "追加",

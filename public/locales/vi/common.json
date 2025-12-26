@@ -37,7 +37,79 @@
     "settings": "Cài đặt",
     "signIn": "Đăng nhập",
     "signOut": "Đăng xuất",
-    "profile": "Hồ sơ"
+    "profile": "Hồ sơ",
+    "back": "Quay lại"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Chào mừng trở lại",
+      "subtitle": "Đăng nhập để truy cập vòng tròn của bạn",
+      "button": "Đăng nhập",
+      "submitting": "Đang đăng nhập..."
+    },
+    "signUp": {
+      "title": "Tạo tài khoản của bạn",
+      "subtitle": "Bắt đầu vun đắp những tình bạn thân thiết nhất",
+      "button": "Tạo tài khoản",
+      "submitting": "Đang tạo tài khoản..."
+    },
+    "form": {
+      "displayName": "Tên hiển thị",
+      "displayNameOptional": "Tên hiển thị (tùy chọn)",
+      "displayNamePlaceholder": "Tên của bạn",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự"
+    },
+    "switch": {
+      "haveAccount": "Đã có tài khoản? Đăng nhập",
+      "noAccount": "Chưa có tài khoản? Đăng ký"
+    },
+    "toast": {
+      "signInSuccess": "Chào mừng trở lại!",
+      "signUpSuccess": "Tài khoản đã được tạo! Bạn hiện đã đăng nhập.",
+      "emailAlreadyRegistered": "Email này đã được đăng ký. Thử đăng nhập thay thế.",
+      "invalidCredentials": "Email hoặc mật khẩu không hợp lệ. Vui lòng thử lại.",
+      "unexpectedError": "Đã xảy ra lỗi không mong đợi. Vui lòng thử lại."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Rất tiếc! Không tìm thấy trang",
+    "returnHome": "Quay lại trang chủ"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Không tìm thấy hồ sơ",
+      "message": "Không có người dùng nào với tên @{{handle}}",
+      "goHome": "Về trang chủ"
+    },
+    "private": {
+      "title": "Hồ sơ riêng tư",
+      "message": "@{{handle}} đã đặt hồ sơ của họ ở chế độ riêng tư",
+      "goHome": "Về trang chủ"
+    },
+    "back": "Quay lại",
+    "anonymous": "Ẩn danh",
+    "creator": "Người tạo",
+    "joined": "Đã tham gia {{time}}",
+    "followerCount": "{{count}} người theo dõi",
+    "followerCount_plural": "{{count}} người theo dõi",
+    "follow": "Theo dõi",
+    "unfollow": "Bỏ theo dõi",
+    "latestShares": "Chia sẻ mới nhất",
+    "contentSharedBy": "Nội dung được chia sẻ bởi {{name}}",
+    "noShares": "Chưa có chia sẻ",
+    "toast": {
+      "followed": "Đang theo dõi @{{handle}}",
+      "unfollowed": "Đã bỏ theo dõi @{{handle}}",
+      "followFailed": "Không thể theo dõi"
+    }
   },
   "tiers": {
     "core": "Lõi",
@@ -52,6 +124,13 @@
     "nayborDescription": "Hàng xóm đáng tin cậy để giúp đỡ và tình huống khẩn cấp",
     "parasocial": "Theo dõi",
     "parasocialDescription": "Người nổi tiếng và nhà sáng tạo nội dung bạn theo dõi"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Lõi",
+    "innerLabel": "{{count}} Trong",
+    "outerLabel": "{{count}} Ngoài",
+    "nayborLabel": "{{count}} Hàng xóm",
+    "parasocialLabel": "{{count}} Theo dõi"
   },
   "actions": {
     "add": "Thêm",

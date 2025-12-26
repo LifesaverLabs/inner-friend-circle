@@ -37,7 +37,79 @@
     "settings": "设置",
     "signIn": "登录",
     "signOut": "退出",
-    "profile": "个人资料"
+    "profile": "个人资料",
+    "back": "返回"
+  },
+  "auth": {
+    "signIn": {
+      "title": "欢迎回来",
+      "subtitle": "登录以访问您的好友圈",
+      "button": "登录",
+      "submitting": "登录中..."
+    },
+    "signUp": {
+      "title": "创建账户",
+      "subtitle": "开始精心培养您的亲密友谊",
+      "button": "创建账户",
+      "submitting": "创建中..."
+    },
+    "form": {
+      "displayName": "显示名称",
+      "displayNameOptional": "显示名称（可选）",
+      "displayNamePlaceholder": "您的名字",
+      "email": "邮箱",
+      "emailPlaceholder": "you@example.com",
+      "password": "密码",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "请输入有效的邮箱地址",
+      "passwordTooShort": "密码至少需要6个字符"
+    },
+    "switch": {
+      "haveAccount": "已有账户？登录",
+      "noAccount": "没有账户？注册"
+    },
+    "toast": {
+      "signInSuccess": "欢迎回来！",
+      "signUpSuccess": "账户已创建！您已登录。",
+      "emailAlreadyRegistered": "此邮箱已注册。请尝试登录。",
+      "invalidCredentials": "邮箱或密码无效。请重试。",
+      "unexpectedError": "发生意外错误。请重试。"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "哎呀！页面未找到",
+    "returnHome": "返回首页"
+  },
+  "profile": {
+    "notFound": {
+      "title": "用户未找到",
+      "message": "不存在用户名为 @{{handle}} 的用户",
+      "goHome": "返回首页"
+    },
+    "private": {
+      "title": "私密资料",
+      "message": "@{{handle}} 已将其资料设为私密",
+      "goHome": "返回首页"
+    },
+    "back": "返回",
+    "anonymous": "匿名用户",
+    "creator": "创作者",
+    "joined": "加入于 {{time}}",
+    "followerCount": "{{count}} 位关注者",
+    "followerCount_plural": "{{count}} 位关注者",
+    "follow": "关注",
+    "unfollow": "取消关注",
+    "latestShares": "最新分享",
+    "contentSharedBy": "{{name}} 分享的内容",
+    "noShares": "暂无分享",
+    "toast": {
+      "followed": "已关注 @{{handle}}",
+      "unfollowed": "已取消关注 @{{handle}}",
+      "followFailed": "关注失败"
+    }
   },
   "tiers": {
     "core": "核心圈",
@@ -52,6 +124,13 @@
     "nayborDescription": "可信赖的邻居，用于互助和紧急情况",
     "parasocial": "关注",
     "parasocialDescription": "您关注的公众人物和内容创作者"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} 核心",
+    "innerLabel": "{{count}} 亲密",
+    "outerLabel": "{{count}} 外围",
+    "nayborLabel": "{{count}} 邻里",
+    "parasocialLabel": "{{count}} 关注"
   },
   "actions": {
     "add": "添加",

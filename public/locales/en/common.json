@@ -37,7 +37,79 @@
     "settings": "Settings",
     "signIn": "Sign In",
     "signOut": "Sign Out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "back": "Back"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to access your circles",
+      "button": "Sign In",
+      "submitting": "Signing in..."
+    },
+    "signUp": {
+      "title": "Create your account",
+      "subtitle": "Start curating your closest friendships",
+      "button": "Create Account",
+      "submitting": "Creating account..."
+    },
+    "form": {
+      "displayName": "Display Name",
+      "displayNameOptional": "Display Name (optional)",
+      "displayNamePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address",
+      "passwordTooShort": "Password must be at least 6 characters"
+    },
+    "switch": {
+      "haveAccount": "Already have an account? Sign in",
+      "noAccount": "Don't have an account? Sign up"
+    },
+    "toast": {
+      "signInSuccess": "Welcome back!",
+      "signUpSuccess": "Account created! You are now signed in.",
+      "emailAlreadyRegistered": "This email is already registered. Try signing in instead.",
+      "invalidCredentials": "Invalid email or password. Please try again.",
+      "unexpectedError": "An unexpected error occurred. Please try again."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "profile": {
+    "notFound": {
+      "title": "Profile Not Found",
+      "message": "No user exists with the handle @{{handle}}",
+      "goHome": "Go Home"
+    },
+    "private": {
+      "title": "Private Profile",
+      "message": "@{{handle}} has set their profile to private",
+      "goHome": "Go Home"
+    },
+    "back": "Back",
+    "anonymous": "Anonymous",
+    "creator": "Creator",
+    "joined": "Joined {{time}}",
+    "followerCount": "{{count}} follower",
+    "followerCount_plural": "{{count}} followers",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "latestShares": "Latest Shares",
+    "contentSharedBy": "Content shared by {{name}}",
+    "noShares": "No shares yet",
+    "toast": {
+      "followed": "Following @{{handle}}",
+      "unfollowed": "Unfollowed @{{handle}}",
+      "followFailed": "Failed to follow"
+    }
   },
   "tiers": {
     "core": "Core",
@@ -52,6 +124,13 @@
     "nayborDescription": "Trusted neighbors for mutual aid and emergencies",
     "parasocial": "Following",
     "parasocialDescription": "Public figures and content creators you follow"
+  },
+  "visualization": {
+    "coreLabel": "{{count}} Core",
+    "innerLabel": "{{count}} Inner",
+    "outerLabel": "{{count}} Outer",
+    "nayborLabel": "{{count}} Naybors",
+    "parasocialLabel": "{{count}} Following"
   },
   "actions": {
     "add": "Add",
