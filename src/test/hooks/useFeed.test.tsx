@@ -484,26 +484,26 @@ describe('useFeed Hook - Bridging Protocol', () => {
       expect(threshold).toBe(Infinity);
     });
 
-    it('should suggest appropriate action based on tier', () => {
+    it('should suggest appropriate action based on tier (bridging protocol)', () => {
+      // Follows bridging protocol fidelity hierarchy:
+      // - Core: Plan meetup (face-to-face is highest fidelity)
+      // - Inner: Schedule call (real-time voice/video)
+      // - Outer+: Send voice note (async high-fidelity)
       const getSuggestedAction = (tier: TierType): 'schedule_call' | 'send_voice_note' | 'plan_meetup' => {
         switch (tier) {
           case 'core':
-            return 'schedule_call'; // Core friends deserve a call
+            return 'plan_meetup'; // Core friends deserve face-to-face
           case 'inner':
-            return 'send_voice_note'; // Voice note for inner
-          case 'outer':
-          case 'naybor':
-          case 'acquainted':
-            return 'plan_meetup'; // Plan to meet up
+            return 'schedule_call'; // Call for inner circle
           default:
-            return 'send_voice_note';
+            return 'send_voice_note'; // Voice note for outer+
         }
       };
 
-      expect(getSuggestedAction('core')).toBe('schedule_call');
-      expect(getSuggestedAction('inner')).toBe('send_voice_note');
-      expect(getSuggestedAction('outer')).toBe('plan_meetup');
-      expect(getSuggestedAction('naybor')).toBe('plan_meetup');
+      expect(getSuggestedAction('core')).toBe('plan_meetup');
+      expect(getSuggestedAction('inner')).toBe('schedule_call');
+      expect(getSuggestedAction('outer')).toBe('send_voice_note');
+      expect(getSuggestedAction('naybor')).toBe('send_voice_note');
     });
 
     it('should include friend name in nudge message', () => {
@@ -1249,7 +1249,7 @@ describe('Feed Integration Scenarios', () => {
             daysSinceContact: f.lastContacted
               ? Math.floor((now - f.lastContacted.getTime()) / (24 * 60 * 60 * 1000))
               : Infinity,
-            suggestedAction: f.tier === 'core' ? 'schedule_call' : 'send_voice_note',
+            suggestedAction: f.tier === 'core' ? 'plan_meetup' : f.tier === 'inner' ? 'schedule_call' : 'send_voice_note',
             dismissed: false,
           }));
       };

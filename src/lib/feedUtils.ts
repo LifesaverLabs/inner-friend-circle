@@ -199,15 +199,19 @@ export function shouldNudgeFriend(friend: Friend, now: Date = new Date()): boole
 
 /**
  * Get suggested action for a nudge based on tier
+ * Follows bridging protocol fidelity hierarchy:
+ * - Core: Plan meetup (face-to-face is highest fidelity)
+ * - Inner: Schedule call (real-time voice/video)
+ * - Outer+: Send voice note (async high-fidelity)
  */
 export function getSuggestedNudgeAction(tier: TierType): 'schedule_call' | 'send_voice_note' | 'plan_meetup' {
   switch (tier) {
     case 'core':
-      return 'schedule_call';
-    case 'inner':
-      return 'send_voice_note';
-    default:
       return 'plan_meetup';
+    case 'inner':
+      return 'schedule_call';
+    default:
+      return 'send_voice_note';
   }
 }
 

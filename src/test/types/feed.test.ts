@@ -371,6 +371,7 @@ describe('Feed Types and Constants', () => {
 
   describe('SunsetNudge Type Structure', () => {
     it('should accept valid SunsetNudge', () => {
+      // Core friends get 'plan_meetup' as highest-fidelity action per bridging protocol
       const nudge: SunsetNudge = {
         id: 'nudge-1',
         friendId: 'friend-1',
@@ -378,12 +379,12 @@ describe('Feed Types and Constants', () => {
         friendTier: 'core',
         lastDeepContact: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000), // 15 days ago
         daysSinceContact: 15,
-        suggestedAction: 'schedule_call',
+        suggestedAction: 'plan_meetup',
         dismissed: false,
       };
 
       expect(nudge.daysSinceContact).toBe(15);
-      expect(nudge.suggestedAction).toBe('schedule_call');
+      expect(nudge.suggestedAction).toBe('plan_meetup');
     });
 
     it('should accept nudge with null last contact', () => {
