@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "إنرفريند",
+    "tagline": "رعاية علاقاتك الأقرب",
+    "description": "أداة تحترم الخصوصية للحفاظ على الصداقات الهادفة بناءً على أبحاث رقم دنبار"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "dashboard": "لوحة التحكم",
+    "settings": "الإعدادات",
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "profile": "الملف الشخصي"
+  },
+  "tiers": {
+    "core": "النواة",
+    "coreDescription": "أقرب المقربين إليك (حتى 5)",
+    "inner": "الدائرة الداخلية",
+    "innerDescription": "الأصدقاء المقربون الذين تلتقي بهم بانتظام (حتى 15)",
+    "outer": "الدائرة الخارجية",
+    "outerDescription": "الأصدقاء الجيدون والدائرة الموسعة (حتى 50)",
+    "acquainted": "المعارف",
+    "acquaintedDescription": "الأشخاص الذين تعرفهم بما يكفي للتحية",
+    "naybor": "الجيران",
+    "nayborDescription": "جيران موثوقون للمساعدة المتبادلة وحالات الطوارئ",
+    "parasocial": "متابَعون",
+    "parasocialDescription": "الشخصيات العامة وصناع المحتوى الذين تتابعهم"
+  },
+  "actions": {
+    "add": "إضافة",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "done": "تم",
+    "search": "بحث",
+    "filter": "تصفية",
+    "export": "تصدير",
+    "import": "استيراد"
+  },
+  "friend": {
+    "addFriend": "إضافة صديق",
+    "editFriend": "تعديل جهة الاتصال",
+    "removeFriend": "إزالة صديق",
+    "moveTo": "نقل إلى {{tier}}",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "notes": "ملاحظات",
+    "preferredContact": "طريقة الاتصال المفضلة",
+    "lastContact": "آخر تواصل",
+    "daysSince": "منذ {{days}} يوم",
+    "neverContacted": "لم يتم التواصل أبداً"
+  },
+  "feed": {
+    "coreFeed": "خلاصة النواة",
+    "innerFeed": "الخلاصة الداخلية",
+    "outerFeed": "الخارجية+",
+    "manage": "إدارة",
+    "emptyCore": "أضف أصدقاء النواة لرؤية منشوراتهم هنا",
+    "emptyInner": "أضف أصدقاء الدائرة الداخلية لرؤية منشوراتهم هنا",
+    "emptyOuter": "أضف أصدقاء الدائرة الخارجية لرؤية منشوراتهم هنا",
+    "compose": "ما الذي يدور في ذهنك؟",
+    "post": "نشر",
+    "like": "إعجاب",
+    "unlike": "إلغاء الإعجاب",
+    "comment": "تعليق",
+    "share": "مشاركة",
+    "voiceReply": "رد صوتي",
+    "scheduleCall": "جدولة مكالمة",
+    "planMeetup": "تخطيط لقاء"
+  },
+  "nudge": {
+    "timeToReconnect": "حان وقت إعادة التواصل",
+    "friendsNeedAttention": "{{count}} صديق يحتاج إلى تواصل",
+    "friendsNeedAttention_plural": "{{count}} أصدقاء يحتاجون إلى تواصل",
+    "daysSinceContact": "{{days}} يوم منذ آخر تواصل",
+    "neverContacted": "لم يتم التواصل أبداً",
+    "connected": "تم التواصل",
+    "connectedToday": "تحديد كمتواصل اليوم",
+    "selectDate": "اختر متى تواصلت",
+    "dismiss": "تجاهل"
+  },
+  "contact": {
+    "call": "اتصال",
+    "message": "رسالة",
+    "email": "بريد",
+    "methods": {
+      "tel": "مكالمة هاتفية",
+      "sms": "رسالة نصية",
+      "whatsapp": "واتساب",
+      "signal": "سيجنال",
+      "telegram": "تيليجرام",
+      "facetime": "فيس تايم"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "تخطي إلى المحتوى الرئيسي",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "expandPanel": "توسيع اللوحة",
+    "collapsePanel": "طي اللوحة",
+    "loading": "جاري التحميل...",
+    "loadingFeed": "جاري تحميل محتوى الخلاصة",
+    "error": "خطأ",
+    "success": "نجاح",
+    "selected": "محدد",
+    "notSelected": "غير محدد",
+    "required": "مطلوب",
+    "optional": "اختياري",
+
+    "feed": {
+      "tabList": "خلاصات دائرة الأصدقاء",
+      "coreTab": "خلاصة النواة - أقرب أصدقائك",
+      "innerTab": "الخلاصة الداخلية - الأصدقاء المقربون",
+      "outerTab": "الخلاصة الخارجية بلس - الدائرة الموسعة بما في ذلك الجيران",
+      "manageTab": "إدارة دائرة أصدقائك"
+    },
+
+    "post": {
+      "likeButton": "إعجاب بهذا المنشور",
+      "unlikeButton": "إلغاء الإعجاب بهذا المنشور",
+      "commentButton": "إضافة تعليق",
+      "shareButton": "مشاركة هذا المنشور",
+      "voiceReplyButton": "رد صوتي",
+      "meetupButton": "جدولة لقاء",
+      "callButton": "اتصال عبر {{method}}",
+      "selectContactMethod": "اختر طريقة الاتصال",
+      "photoAlt": "صورة: {{description}}",
+      "photoFallback": "صورة مشتركة",
+      "videoLabel": "فيديو: {{description}}",
+      "videoFallback": "فيديو مشترك",
+      "voiceNoteLabel": "رسالة صوتية: {{description}}",
+      "voiceNoteFallback": "رسالة صوتية",
+      "joinCall": "انضم للمكالمة",
+      "rsvpYes": "تأكيد الحضور للقاء",
+      "rsvpMaybe": "ربما أحضر اللقاء",
+      "rsvpOptions": "خيارات الرد على الدعوة"
+    },
+
+    "nudge": {
+      "panelExpanded": "لوحة التذكير موسعة",
+      "panelCollapsed": "لوحة التذكير مطوية",
+      "friendsList": "الأصدقاء الذين يحتاجون إلى تواصل",
+      "actionGroup": "إجراءات لـ {{name}}",
+      "actionButton": "{{action}} مع {{name}}",
+      "dismissButton": "تجاهل التذكير لـ {{name}}",
+      "connectedButton": "تحديد {{name}} كمتواصل اليوم",
+      "selectDateButton": "اختر متى تواصلت مع {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "جهات اتصال SOS السريعة",
+      "sosContactsList": "جهات الاتصال السريعة:",
+      "contactOptions": "خيارات الاتصال لـ {{name}}",
+      "callButton": "اتصل بـ {{name}}",
+      "messageButton": "أرسل رسالة إلى {{name}}",
+      "sosDialogButton": "فتح نافذة جهة اتصال طوارئ الجار SOS",
+      "showQuickContacts": "إظهار جهات الاتصال السريعة",
+      "hideQuickContacts": "إخفاء جهات الاتصال السريعة",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - عاجل جداً",
+      "backToCategory": "العودة لاختيار الفئة",
+      "chooseNaybors": "المتابعة لاختيار الجيران للتواصل",
+      "backToCompose": "العودة لكتابة الرسالة",
+      "copyMessage": "نسخ رسالة SOS إلى الحافظة",
+      "nayborsList": "جهات اتصال الجيران",
+      "selectNaybor": "اختر {{name}}",
+      "alreadyContacted": "(تم التواصل مسبقاً)",
+      "messageAll": "مراسلة {{count}} جار محدد",
+      "messageAll_plural": "مراسلة {{count}} جيران محددين",
+      "locationDescription": "عند التفعيل، سيتم مشاركة موقعك التقريبي مع جيرانك"
+    },
+
+    "dialog": {
+      "close": "إغلاق النافذة",
+      "back": "العودة",
+      "confirm": "تأكيد الإجراء"
+    },
+
+    "form": {
+      "showPassword": "إظهار كلمة المرور",
+      "hidePassword": "إخفاء كلمة المرور",
+      "clearInput": "مسح المدخل",
+      "selectCountry": "اختر الدولة",
+      "phoneNumber": "رقم الهاتف"
+    },
+
+    "status": {
+      "online": "متصل",
+      "offline": "غير متصل",
+      "away": "بعيد",
+      "busy": "مشغول"
+    }
+  },
+  "language": {
+    "select": "اختر اللغة",
+    "current": "اللغة الحالية: {{language}}",
+    "helpTranslate": "ساعد في ترجمة إنرفريند",
+    "communityTranslation": "انضم إلى مجتمع المترجمين لدينا لجعل إنرفريند متاحاً لمزيد من الناس حول العالم."
+  },
+  "errors": {
+    "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "network": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
+    "notFound": "الصفحة غير موجودة",
+    "unauthorized": "يرجى تسجيل الدخول للمتابعة"
+  },
+  "footer": {
+    "privacy": "الخصوصية",
+    "terms": "الشروط",
+    "about": "حول",
+    "contribute": "المساهمة",
+    "openSource": "مفتوح المصدر"
+  }
+}

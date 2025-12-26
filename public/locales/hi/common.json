@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "इनरफ्रेंड",
+    "tagline": "अपने करीबी रिश्तों को संजोएं",
+    "description": "डनबार संख्या शोध पर आधारित गोपनीयता-प्रथम मित्रता प्रबंधन उपकरण"
+  },
+  "nav": {
+    "home": "होम",
+    "dashboard": "डैशबोर्ड",
+    "settings": "सेटिंग्स",
+    "signIn": "साइन इन",
+    "signOut": "साइन आउट",
+    "profile": "प्रोफाइल"
+  },
+  "tiers": {
+    "core": "कोर",
+    "coreDescription": "आपके सबसे करीबी विश्वासपात्र (5 तक)",
+    "inner": "इनर",
+    "innerDescription": "करीबी दोस्त जिनसे नियमित मिलते हैं (15 तक)",
+    "outer": "आउटर",
+    "outerDescription": "अच्छे दोस्त और विस्तारित मंडली (50 तक)",
+    "acquainted": "परिचित",
+    "acquaintedDescription": "जिन्हें आप अभिवादन करने जितना जानते हैं",
+    "naybor": "पड़ोसी",
+    "nayborDescription": "आपातकाल और पारस्परिक सहायता के लिए विश्वसनीय पड़ोसी",
+    "parasocial": "फॉलो",
+    "parasocialDescription": "जिन सार्वजनिक हस्तियों को आप फॉलो करते हैं"
+  },
+  "actions": {
+    "add": "जोड़ें",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "close": "बंद करें",
+    "back": "वापस",
+    "next": "अगला",
+    "done": "पूर्ण",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "export": "निर्यात",
+    "import": "आयात"
+  },
+  "friend": {
+    "addFriend": "मित्र जोड़ें",
+    "editFriend": "संपर्क संपादित करें",
+    "removeFriend": "मित्र हटाएं",
+    "moveTo": "{{tier}} में ले जाएं",
+    "name": "नाम",
+    "email": "ईमेल",
+    "phone": "फोन",
+    "notes": "नोट्स",
+    "preferredContact": "पसंदीदा संपर्क विधि",
+    "lastContact": "अंतिम संपर्क",
+    "daysSince": "{{days}} दिन पहले",
+    "neverContacted": "कभी संपर्क नहीं किया"
+  },
+  "feed": {
+    "coreFeed": "कोर फीड",
+    "innerFeed": "इनर फीड",
+    "outerFeed": "आउटर+",
+    "manage": "प्रबंधित करें",
+    "emptyCore": "उनकी पोस्ट देखने के लिए कोर मित्र जोड़ें",
+    "emptyInner": "उनकी पोस्ट देखने के लिए इनर मित्र जोड़ें",
+    "emptyOuter": "उनकी पोस्ट देखने के लिए आउटर मित्र जोड़ें",
+    "compose": "आपके मन में क्या है?",
+    "post": "पोस्ट करें",
+    "like": "पसंद करें",
+    "unlike": "नापसंद करें",
+    "comment": "टिप्पणी",
+    "share": "साझा करें",
+    "voiceReply": "वॉयस रिप्लाई",
+    "scheduleCall": "कॉल शेड्यूल करें",
+    "planMeetup": "मिलन योजना"
+  },
+  "nudge": {
+    "timeToReconnect": "फिर से जुड़ने का समय",
+    "friendsNeedAttention": "{{count}} मित्र को संपर्क की जरूरत है",
+    "friendsNeedAttention_plural": "{{count}} मित्रों को संपर्क की जरूरत है",
+    "daysSinceContact": "अंतिम संपर्क के {{days}} दिन बाद",
+    "neverContacted": "कभी संपर्क नहीं किया",
+    "connected": "जुड़े",
+    "connectedToday": "आज जुड़े के रूप में चिह्नित करें",
+    "selectDate": "जुड़ने की तारीख चुनें",
+    "dismiss": "खारिज करें"
+  },
+  "contact": {
+    "call": "कॉल",
+    "message": "संदेश",
+    "email": "ईमेल",
+    "methods": {
+      "tel": "फोन कॉल",
+      "sms": "टेक्स्ट संदेश",
+      "whatsapp": "व्हाट्सएप",
+      "signal": "सिग्नल",
+      "telegram": "टेलीग्राम",
+      "facetime": "फेसटाइम"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "मुख्य सामग्री पर जाएं",
+    "openMenu": "मेनू खोलें",
+    "closeMenu": "मेनू बंद करें",
+    "expandPanel": "पैनल विस्तारित करें",
+    "collapsePanel": "पैनल संक्षिप्त करें",
+    "loading": "लोड हो रहा है...",
+    "loadingFeed": "फीड सामग्री लोड हो रही है",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "selected": "चयनित",
+    "notSelected": "अचयनित",
+    "required": "आवश्यक",
+    "optional": "वैकल्पिक",
+
+    "feed": {
+      "tabList": "मित्र मंडली फीड्स",
+      "coreTab": "कोर फीड - आपके सबसे करीबी मित्र",
+      "innerTab": "इनर फीड - करीबी मित्र",
+      "outerTab": "आउटर प्लस फीड - पड़ोसियों सहित विस्तारित मंडली",
+      "manageTab": "अपनी मित्र मंडली प्रबंधित करें"
+    },
+
+    "post": {
+      "likeButton": "इस पोस्ट को पसंद करें",
+      "unlikeButton": "इस पोस्ट को नापसंद करें",
+      "commentButton": "टिप्पणी जोड़ें",
+      "shareButton": "इस पोस्ट को साझा करें",
+      "voiceReplyButton": "वॉयस रिप्लाई",
+      "meetupButton": "मिलन शेड्यूल करें",
+      "callButton": "{{method}} से कॉल करें",
+      "selectContactMethod": "संपर्क विधि चुनें",
+      "photoAlt": "फोटो: {{description}}",
+      "photoFallback": "साझा की गई फोटो",
+      "videoLabel": "वीडियो: {{description}}",
+      "videoFallback": "साझा किया गया वीडियो",
+      "voiceNoteLabel": "वॉयस नोट: {{description}}",
+      "voiceNoteFallback": "वॉयस नोट",
+      "joinCall": "कॉल में शामिल हों",
+      "rsvpYes": "मिलन के लिए हां",
+      "rsvpMaybe": "मिलन के लिए शायद",
+      "rsvpOptions": "RSVP विकल्प"
+    },
+
+    "nudge": {
+      "panelExpanded": "नज पैनल विस्तारित",
+      "panelCollapsed": "नज पैनल संक्षिप्त",
+      "friendsList": "जिन मित्रों से संपर्क जरूरी है",
+      "actionGroup": "{{name}} के लिए कार्रवाई",
+      "actionButton": "{{name}} के साथ {{action}}",
+      "dismissButton": "{{name}} के लिए रिमाइंडर खारिज करें",
+      "connectedButton": "{{name}} को आज जुड़े के रूप में चिह्नित करें",
+      "selectDateButton": "{{name}} से कब जुड़े चुनें"
+    },
+
+    "naybor": {
+      "sosRegion": "त्वरित SOS संपर्क",
+      "sosContactsList": "त्वरित संपर्क:",
+      "contactOptions": "{{name}} के लिए संपर्क विकल्प",
+      "callButton": "{{name}} को कॉल करें",
+      "messageButton": "{{name}} को संदेश भेजें",
+      "sosDialogButton": "पड़ोसी SOS आपातकालीन संपर्क डायलॉग खोलें",
+      "showQuickContacts": "त्वरित संपर्क दिखाएं",
+      "hideQuickContacts": "त्वरित संपर्क छिपाएं",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - अत्यावश्यक",
+      "backToCategory": "श्रेणी चयन पर वापस जाएं",
+      "chooseNaybors": "संपर्क के लिए पड़ोसी चुनने के लिए आगे बढ़ें",
+      "backToCompose": "संदेश लिखने पर वापस जाएं",
+      "copyMessage": "SOS संदेश क्लिपबोर्ड पर कॉपी करें",
+      "nayborsList": "पड़ोसी संपर्क",
+      "selectNaybor": "{{name}} चुनें",
+      "alreadyContacted": "(पहले से संपर्क किया)",
+      "messageAll": "सभी {{count}} चयनित पड़ोसी को संदेश भेजें",
+      "messageAll_plural": "सभी {{count}} चयनित पड़ोसियों को संदेश भेजें",
+      "locationDescription": "सक्षम होने पर, आपका अनुमानित स्थान आपके पड़ोसियों के साथ साझा किया जाएगा"
+    },
+
+    "dialog": {
+      "close": "डायलॉग बंद करें",
+      "back": "वापस जाएं",
+      "confirm": "कार्रवाई की पुष्टि करें"
+    },
+
+    "form": {
+      "showPassword": "पासवर्ड दिखाएं",
+      "hidePassword": "पासवर्ड छिपाएं",
+      "clearInput": "इनपुट साफ करें",
+      "selectCountry": "देश चुनें",
+      "phoneNumber": "फोन नंबर"
+    },
+
+    "status": {
+      "online": "ऑनलाइन",
+      "offline": "ऑफलाइन",
+      "away": "दूर",
+      "busy": "व्यस्त"
+    }
+  },
+  "language": {
+    "select": "भाषा चुनें",
+    "current": "वर्तमान भाषा: {{language}}",
+    "helpTranslate": "इनरफ्रेंड का अनुवाद करने में मदद करें",
+    "communityTranslation": "हमारे अनुवादक समुदाय से जुड़ें और इनरफ्रेंड को दुनिया भर के अधिक लोगों तक पहुंचाने में मदद करें।"
+  },
+  "errors": {
+    "generic": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
+    "network": "नेटवर्क त्रुटि। कृपया अपना कनेक्शन जांचें।",
+    "notFound": "पृष्ठ नहीं मिला",
+    "unauthorized": "जारी रखने के लिए कृपया साइन इन करें"
+  },
+  "footer": {
+    "privacy": "गोपनीयता",
+    "terms": "शर्तें",
+    "about": "हमारे बारे में",
+    "contribute": "योगदान करें",
+    "openSource": "ओपन सोर्स"
+  }
+}
