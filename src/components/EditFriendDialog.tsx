@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { PhoneInput } from '@/components/ui/phone-input';
 import { Friend, ContactMethod, CONTACT_METHODS } from '@/types/friend';
 
 interface EditFriendDialogProps {
@@ -76,12 +77,10 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
 
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
-            <Input
+            <PhoneInput
               id="phone"
-              type="tel"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="+1 555 123 4567"
+              onChange={(e164) => setPhone(e164 || '')}
             />
           </div>
 
