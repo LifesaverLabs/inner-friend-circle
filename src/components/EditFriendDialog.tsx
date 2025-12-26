@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import {
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogHeader,
+  ResponsiveDialogTitle,
+  ResponsiveDialogDescription,
+  ResponsiveDialogFooter,
+} from '@/components/ui/responsive-dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -44,14 +51,14 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Edit Contact</DialogTitle>
-          <DialogDescription>
+    <ResponsiveDialog open={open} onOpenChange={onOpenChange}>
+      <ResponsiveDialogContent className="sm:max-w-md">
+        <ResponsiveDialogHeader>
+          <ResponsiveDialogTitle>Edit Contact</ResponsiveDialogTitle>
+          <ResponsiveDialogDescription>
             Update contact information for {friend.name}
-          </DialogDescription>
-        </DialogHeader>
+          </ResponsiveDialogDescription>
+        </ResponsiveDialogHeader>
 
         <div className="space-y-4 py-4">
           <div className="space-y-2">
@@ -61,6 +68,7 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Friend's name"
+              className="text-base" // Prevent iOS zoom
             />
           </div>
 
@@ -72,6 +80,7 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="friend@example.com"
+              className="text-base" // Prevent iOS zoom
             />
           </div>
 
@@ -87,16 +96,16 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
           {phone && (
             <div className="space-y-2">
               <Label htmlFor="preferredContact">Preferred Contact Method</Label>
-              <Select 
-                value={preferredContact} 
+              <Select
+                value={preferredContact}
                 onValueChange={(val) => setPreferredContact(val as ContactMethod)}
               >
-                <SelectTrigger>
+                <SelectTrigger className="h-11"> {/* Touch-friendly height */}
                   <SelectValue placeholder="Choose how to reach them" />
                 </SelectTrigger>
                 <SelectContent>
                   {(Object.entries(CONTACT_METHODS) as [ContactMethod, typeof CONTACT_METHODS[ContactMethod]][]).map(([key, method]) => (
-                    <SelectItem key={key} value={key}>
+                    <SelectItem key={key} value={key} className="h-11"> {/* Touch-friendly height */}
                       {method.icon} {method.name}
                     </SelectItem>
                   ))}
@@ -112,19 +121,20 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Any notes about this person..."
+              className="text-base" // Prevent iOS zoom
             />
           </div>
         </div>
 
-        <DialogFooter>
-          <Button variant="ghost" onClick={() => onOpenChange(false)}>
+        <ResponsiveDialogFooter>
+          <Button variant="ghost" onClick={() => onOpenChange(false)} className="h-11">
             Cancel
           </Button>
-          <Button onClick={handleSave} disabled={!name.trim()}>
+          <Button onClick={handleSave} disabled={!name.trim()} className="h-11">
             Save Changes
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </ResponsiveDialogFooter>
+      </ResponsiveDialogContent>
+    </ResponsiveDialog>
   );
 }

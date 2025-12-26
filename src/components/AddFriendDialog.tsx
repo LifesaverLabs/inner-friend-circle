@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, X, User, Mail, Lock, Phone } from "lucide-react";
+import { Plus, User, Mail, Lock, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogHeader,
+  ResponsiveDialogTitle,
+  ResponsiveDialogDescription,
+} from "@/components/ui/responsive-dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { TierType, TIER_INFO, ContactMethod, CONTACT_METHODS } from "@/types/friend";
@@ -62,19 +68,19 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
   };
 
   return (
-    <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2 font-display text-xl">
+    <ResponsiveDialog open={open} onOpenChange={handleClose}>
+      <ResponsiveDialogContent className="sm:max-w-md">
+        <ResponsiveDialogHeader>
+          <ResponsiveDialogTitle className="flex items-center gap-2 font-display text-xl">
             <div className={`w-3 h-3 rounded-full bg-${tierInfo.color}`} />
             {isNaybor
               ? t('addFriend.addNaybor')
               : isParasocial
               ? t('addFriend.addParasocial')
               : t('addFriend.addFriend', { tier: t(`tiers.${tier}`) })}
-          </DialogTitle>
-          <DialogDescription className="text-muted-foreground">{t(`tiers.${tier}Description`)}</DialogDescription>
-        </DialogHeader>
+          </ResponsiveDialogTitle>
+          <ResponsiveDialogDescription className="text-muted-foreground">{t(`tiers.${tier}Description`)}</ResponsiveDialogDescription>
+        </ResponsiveDialogHeader>
 
         {isFull ? (
           <div className="py-6 text-center">
@@ -219,7 +225,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
             </div>
           </form>
         )}
-      </DialogContent>
-    </Dialog>
+      </ResponsiveDialogContent>
+    </ResponsiveDialog>
   );
 }
