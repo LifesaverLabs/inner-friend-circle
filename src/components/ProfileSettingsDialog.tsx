@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
 import {
   Dialog,
   DialogContent,
@@ -11,9 +12,10 @@ import {
 } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ContactMethodsManager } from '@/components/ContactMethodsManager';
+import { ParasocialDashboard } from '@/components/ParasocialDashboard';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { User, Phone, AtSign } from 'lucide-react';
+import { User, Phone, AtSign, Star, Globe, Lock, Copy, ExternalLink } from 'lucide-react';
 
 interface ProfileSettingsDialogProps {
   open: boolean;
@@ -28,6 +30,8 @@ export function ProfileSettingsDialog({
 }: ProfileSettingsDialogProps) {
   const [displayName, setDisplayName] = useState('');
   const [userHandle, setUserHandle] = useState('');
+  const [isPublic, setIsPublic] = useState(true);
+  const [isParasocialPersonality, setIsParasocialPersonality] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [handleError, setHandleError] = useState('');
@@ -43,7 +47,7 @@ export function ProfileSettingsDialog({
     try {
       const { data, error } = await supabase
         .from('profiles')
-        .select('display_name, user_handle')
+        .select('display_name, user_handle, is_parasocial_personality, is_public')
         .eq('user_id', userId)
         .single();
 
@@ -52,6 +56,8 @@ export function ProfileSettingsDialog({
       if (data) {
         setDisplayName(data.display_name || '');
         setUserHandle(data.user_handle || '');
+        setIsParasocialPersonality(data.is_parasocial_personality || false);
+        setIsPublic(data.is_public ?? true);
       }
     } catch (error) {
       console.error('Error fetching profile:', error);
@@ -121,6 +127,8 @@ export function ProfileSettingsDialog({
           user_id: userId,
           display_name: displayName.trim() || null,
           user_handle: userHandle.trim() || null,
+          is_parasocial_personality: isParasocialPersonality,
+          is_public: isPublic,
         }, { onConflict: 'user_id' });
 
       if (error) throw error;
@@ -159,14 +167,18 @@ export function ProfileSettingsDialog({
           </div>
         ) : (
           <Tabs defaultValue="profile" className="mt-4">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="profile">
                 <User className="w-4 h-4 mr-2" />
                 Profile
               </TabsTrigger>
               <TabsTrigger value="contact">
                 <Phone className="w-4 h-4 mr-2" />
-                Contact Methods
+                Contact
+              </TabsTrigger>
+              <TabsTrigger value="creator">
+                <Star className="w-4 h-4 mr-2" />
+                Creator
               </TabsTrigger>
             </TabsList>
 
@@ -206,6 +218,62 @@ export function ProfileSettingsDialog({
                 </p>
               </div>
 
+              {/* Public Profile Link */}
+              {userHandle && (
+                <div className="p-3 rounded-lg border bg-muted/30 space-y-2">
+                  <Label className="text-sm font-medium">Your Public Profile</Label>
+                  <div className="flex items-center gap-2">
+                    <code className="flex-1 text-sm bg-background px-3 py-2 rounded border truncate">
+                      {window.location.origin}/u/{userHandle}
+                    </code>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        navigator.clipboard.writeText(`${window.location.origin}/u/${userHandle}`);
+                        toast.success('Link copied!');
+                      }}
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open(`/u/${userHandle}`, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* Privacy Toggle */}
+              <div className="flex items-center justify-between p-3 rounded-lg border bg-muted/30">
+                <div className="flex items-center gap-3">
+                  {isPublic ? (
+                    <Globe className="h-5 w-5 text-muted-foreground" />
+                  ) : (
+                    <Lock className="h-5 w-5 text-muted-foreground" />
+                  )}
+                  <div>
+                    <Label htmlFor="public-toggle" className="text-sm font-medium">
+                      {isPublic ? 'Public Profile' : 'Private Profile'}
+                    </Label>
+                    <p className="text-xs text-muted-foreground">
+                      {isPublic 
+                        ? 'Anyone can view your profile page' 
+                        : 'Only you and confirmed friends can view your profile'
+                      }
+                    </p>
+                  </div>
+                </div>
+                <Switch
+                  id="public-toggle"
+                  checked={isPublic}
+                  onCheckedChange={setIsPublic}
+                />
+              </div>
+
               <div className="flex justify-end pt-4">
                 <Button onClick={handleSave} disabled={isSaving}>
                   {isSaving ? 'Saving...' : 'Save Profile'}
@@ -215,6 +283,45 @@ export function ProfileSettingsDialog({
 
             <TabsContent value="contact" className="mt-4">
               <ContactMethodsManager userId={userId} />
+            </TabsContent>
+
+            <TabsContent value="creator" className="space-y-4 mt-4">
+              <div className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
+                <div className="space-y-1">
+                  <Label htmlFor="parasocial-toggle" className="text-base font-medium">
+                    Parasocial Personality Mode
+                  </Label>
+                  <p className="text-sm text-muted-foreground">
+                    Enable this if you're a public figure, creator, or celebrity who wants to receive
+                    parasocial connections from fans and share content with them.
+                  </p>
+                </div>
+                <Switch
+                  id="parasocial-toggle"
+                  checked={isParasocialPersonality}
+                  onCheckedChange={(checked) => setIsParasocialPersonality(checked)}
+                />
+              </div>
+
+              {isParasocialPersonality && (
+                <div className="space-y-4">
+                  <p className="text-sm text-muted-foreground">
+                    When enabled, other users can add you to their Parasocials circle and see content you share.
+                    Save your profile to apply this change.
+                  </p>
+                  <div className="flex justify-end">
+                    <Button onClick={handleSave} disabled={isSaving}>
+                      {isSaving ? 'Saving...' : 'Save Settings'}
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {isParasocialPersonality && (
+                <div className="pt-4 border-t">
+                  <ParasocialDashboard userId={userId} />
+                </div>
+              )}
             </TabsContent>
           </Tabs>
         )}

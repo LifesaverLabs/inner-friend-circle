@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Lock, Users, Link2, Star, AlertTriangle } from "lucide-react";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Lock, Users, Link2, Star, UserPlus } from 'lucide-react';
 import {
   DndContext,
   closestCenter,
@@ -9,25 +9,27 @@ import {
   useSensor,
   useSensors,
   DragEndEvent,
-} from "@dnd-kit/core";
+} from '@dnd-kit/core';
 import {
   arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { FriendCard } from "./FriendCard";
-import { RoleModelCard } from "./RoleModelCard";
-import { ReservedGroupCard } from "./ReservedGroupCard";
-import { AddFriendDialog } from "./AddFriendDialog";
-import { AddLinkedFriendDialog } from "./AddLinkedFriendDialog";
-import { AddRoleModelDialog } from "./AddRoleModelDialog";
-import { ReservedSpotsDialog } from "./ReservedSpotsDialog";
-import { NayborVideo } from "./NayborVideo";
-import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup, NAYBOR_MINIMUM } from "@/types/friend";
-import { CircleTier } from "@/hooks/useFriendConnections";
+} from '@dnd-kit/sortable';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { FriendCard } from './FriendCard';
+import { RoleModelCard } from './RoleModelCard';
+import { ReservedGroupCard } from './ReservedGroupCard';
+import { AddFriendDialog } from './AddFriendDialog';
+import { AddLinkedFriendDialog } from './AddLinkedFriendDialog';
+import { AddRoleModelDialog } from './AddRoleModelDialog';
+import { ReservedSpotsDialog } from './ReservedSpotsDialog';
+import { ParasocialFeed } from './ParasocialFeed';
+import { FollowCreatorDialog } from './FollowCreatorDialog';
+import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
+import { CircleTier } from '@/hooks/useFriendConnections';
+import { ParasocialShare } from '@/hooks/useParasocial';
 
 interface TierSectionProps {
   tier: TierType;
@@ -55,6 +57,11 @@ interface TierSectionProps {
     discloseCircle: boolean,
   ) => Promise<{ success: boolean; error?: string }>;
   getAllowedMoves: (fromTier: TierType) => TierType[];
+  // Parasocial feed props
+  parasocialShares?: ParasocialShare[];
+  parasocialSeenShares?: Set<string>;
+  onParasocialEngage?: (shareId: string) => void;
+  userId?: string;
 }
 
 export function TierSection({
@@ -73,21 +80,26 @@ export function TierSection({
   isLoggedIn,
   onAddLinkedFriend,
   getAllowedMoves,
+  parasocialShares,
+  parasocialSeenShares,
+  onParasocialEngage,
+  userId,
 }: TierSectionProps) {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
   const [roleModelDialogOpen, setRoleModelDialogOpen] = useState(false);
+  const [followCreatorDialogOpen, setFollowCreatorDialogOpen] = useState(false);
 
   // Only core, inner, outer can have linked friends (not naybor, parasocial, rolemodel, or acquainted)
   const canHaveLinkedFriends =
-    tier !== "naybor" && tier !== "parasocial" && tier !== "rolemodel" && tier !== "acquainted";
+    tier !== 'naybor' && tier !== 'parasocial' && tier !== 'rolemodel' && tier !== 'acquainted';
 
   // Acquainted tier cannot have direct adds, role models has special add
-  const canAddDirectly = tier !== "acquainted" && tier !== "rolemodel";
+  const canAddDirectly = tier !== 'acquainted' && tier !== 'rolemodel';
 
   // Role models tier has special behavior
-  const isRoleModelTier = tier === "rolemodel";
+  const isRoleModelTier = tier === 'rolemodel';
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -105,7 +117,7 @@ export function TierSection({
   const progressPercent = (capacity.used / capacity.limit) * 100;
   const reservedTotal = reservedGroups.reduce((sum, g) => sum + g.count, 0);
 
-  const tierOrder: TierType[] = ["core", "inner", "outer", "naybor", "parasocial", "rolemodel", "acquainted"];
+  const tierOrder: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
   const currentIndex = tierOrder.indexOf(tier);
 
   const canMoveUp = (friendTier: TierType) => {
@@ -138,33 +150,33 @@ export function TierSection({
   };
 
   const bgColors: Record<TierType, string> = {
-    core: "bg-tier-core/5",
-    inner: "bg-tier-inner/5",
-    outer: "bg-tier-outer/5",
-    naybor: "bg-tier-naybor/5",
-    parasocial: "bg-tier-parasocial/5",
-    rolemodel: "bg-tier-rolemodel/5",
-    acquainted: "bg-tier-acquainted/5",
+    core: 'bg-tier-core/5',
+    inner: 'bg-tier-inner/5',
+    outer: 'bg-tier-outer/5',
+    naybor: 'bg-tier-naybor/5',
+    parasocial: 'bg-tier-parasocial/5',
+    rolemodel: 'bg-tier-rolemodel/5',
+    acquainted: 'bg-tier-acquainted/5',
   };
 
   const borderColors: Record<TierType, string> = {
-    core: "border-tier-core/20",
-    inner: "border-tier-inner/20",
-    outer: "border-tier-outer/20",
-    naybor: "border-tier-naybor/20",
-    parasocial: "border-tier-parasocial/20",
-    rolemodel: "border-tier-rolemodel/20",
-    acquainted: "border-tier-acquainted/20",
+    core: 'border-tier-core/20',
+    inner: 'border-tier-inner/20',
+    outer: 'border-tier-outer/20',
+    naybor: 'border-tier-naybor/20',
+    parasocial: 'border-tier-parasocial/20',
+    rolemodel: 'border-tier-rolemodel/20',
+    acquainted: 'border-tier-acquainted/20',
   };
 
   const progressColors: Record<TierType, string> = {
-    core: "[&>div]:bg-tier-core",
-    inner: "[&>div]:bg-tier-inner",
-    outer: "[&>div]:bg-tier-outer",
-    naybor: "[&>div]:bg-tier-naybor",
-    parasocial: "[&>div]:bg-tier-parasocial",
-    rolemodel: "[&>div]:bg-tier-rolemodel",
-    acquainted: "[&>div]:bg-tier-acquainted",
+    core: '[&>div]:bg-tier-core',
+    inner: '[&>div]:bg-tier-inner',
+    outer: '[&>div]:bg-tier-outer',
+    naybor: '[&>div]:bg-tier-naybor',
+    parasocial: '[&>div]:bg-tier-parasocial',
+    rolemodel: '[&>div]:bg-tier-rolemodel',
+    acquainted: '[&>div]:bg-tier-acquainted',
   };
 
   return (
@@ -184,26 +196,6 @@ export function TierSection({
             </span>
           </div>
           <p className="text-sm text-muted-foreground">{tierInfo.description}</p>
-
-          {/* Naybor safety warning */}
-          {tier === "naybor" && friends.length < NAYBOR_MINIMUM && (
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-3 p-4 rounded-lg bg-amber-500/10 border border-amber-500/30"
-            >
-              <div className="flex items-start gap-2 mb-3">
-                <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <div className="text-sm">
-                  <p className="font-medium text-amber-700 dark:text-amber-400 mb-1">
-                    You only know {friends.length} of 10 recommended necessary⁵ naybors
-                  </p>
-                  <p className="text-amber-600 dark:text-amber-500">{tierInfo.warning}</p>
-                </div>
-              </div>
-              <NayborVideo />
-            </motion.div>
-          )}
         </div>
 
         <div className="flex gap-2">
@@ -215,7 +207,7 @@ export function TierSection({
             className="gap-1"
           >
             <Lock className="w-4 h-4" />
-            {reservedTotal > 0 ? `${reservedTotal} Reserved` : "Reserve"}
+            {reservedTotal > 0 ? `${reservedTotal} Reserved` : 'Reserve'}
           </Button>
           {isLoggedIn && canHaveLinkedFriends && onAddLinkedFriend && (
             <Button
@@ -227,6 +219,17 @@ export function TierSection({
             >
               <Link2 className="w-4 h-4" />
               Link
+            </Button>
+          )}
+          {tier === 'parasocial' && isLoggedIn && userId && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setFollowCreatorDialogOpen(true)}
+              className="gap-1"
+            >
+              <UserPlus className="w-4 h-4" />
+              Follow Creator
             </Button>
           )}
           {isRoleModelTier && (
@@ -256,26 +259,62 @@ export function TierSection({
 
       <Progress value={progressPercent} className={`h-2 mb-4 ${progressColors[tier]}`} />
 
+      {/* Naybor under-minimum warning with Mr. Rogers video */}
+      {tier === 'naybor' && tierInfo.recommendedMin && friends.length < tierInfo.recommendedMin && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-4 p-4 rounded-xl bg-destructive/10 border border-destructive/20"
+        >
+          <div className="flex flex-col lg:flex-row gap-4 items-start">
+            <div className="flex-1">
+              <p className="text-sm text-destructive font-medium mb-2">
+                You only know {friends.length} of your naybors!
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {tierInfo.underMinWarning}
+              </p>
+              <p className="text-xs text-muted-foreground mt-2 italic">
+                Everyone ought to have a nayborhood-konnekted life; it's really important not just for us but for grandchildren and children growing up anywhere near us and for the elderly and the lonely.
+              </p>
+            </div>
+            <div className="w-full lg:w-80 aspect-video rounded-lg overflow-hidden bg-black shrink-0">
+              <iframe
+                src="https://www.youtube.com/embed/AQS3JGqx46U"
+                title="Mr. Rogers - Won't You Be My Naybor?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </motion.div>
+      )}
+
       {friends.length === 0 && reservedGroups.length === 0 ? (
         <div className="text-center py-8 text-muted-foreground">
           <Users className="w-12 h-12 mx-auto mb-2 opacity-30" />
           <p className="text-sm">
-            {tier === "parasocial"
-              ? "No parasocials yet"
-              : tier === "acquainted"
-                ? "No acquainted cousins yet"
-                : tier === "rolemodel"
-                  ? "No role models yet"
-                  : `No ${tierInfo.name.toLowerCase()} friends yet`}
+            {tier === 'parasocial'
+              ? 'No parasocials yet'
+              : tier === 'acquainted'
+              ? 'No acquainted cousins yet'
+              : tier === 'rolemodel'
+              ? 'No role models yet'
+              : tier === 'naybor'
+              ? 'No naybors yet'
+              : `No ${tierInfo.name.toLowerCase()} friends yet`}
           </p>
           <p className="text-xs mt-1">
-            {tier === "parasocial"
-              ? "Add creators, celebrities, or figures you follow"
-              : tier === "acquainted"
-                ? "Friends are reclassified here through lack of contact over time"
-                : tier === "rolemodel"
-                  ? "Add people whose life stories inspire you to be good, better, best"
-                  : "Add someone to your closest circle"}
+            {tier === 'parasocial'
+              ? 'Add creators, celebrities, or figures you follow'
+              : tier === 'acquainted'
+              ? 'Friends are reclassified here through lack of contact over time'
+              : tier === 'rolemodel'
+              ? 'Add people whose life stories inspire you to be good, better, best'
+              : tier === 'naybor'
+              ? 'Introduse yourself to your naybors and add them here'
+              : 'Add someone to your closest circle'}
           </p>
         </div>
       ) : (
@@ -332,6 +371,15 @@ export function TierSection({
         </div>
       )}
 
+      {/* Show parasocial feed in the parasocial tier */}
+      {tier === 'parasocial' && parasocialShares && parasocialSeenShares && onParasocialEngage && (
+        <ParasocialFeed
+          shares={parasocialShares}
+          seenShares={parasocialSeenShares}
+          onEngage={onParasocialEngage}
+        />
+      )}
+
       <AddFriendDialog
         open={addDialogOpen}
         onOpenChange={setAddDialogOpen}
@@ -366,6 +414,14 @@ export function TierSection({
         currentReservedTotal={reservedTotal}
         onSave={onAddReservedGroup}
       />
+
+      {tier === 'parasocial' && userId && (
+        <FollowCreatorDialog
+          open={followCreatorDialogOpen}
+          onOpenChange={setFollowCreatorDialogOpen}
+          userId={userId}
+        />
+      )}
     </motion.section>
   );
 }

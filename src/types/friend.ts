@@ -63,12 +63,13 @@ export const TIER_LIMITS: Record<TierType, number> = {
 // Minimum recommended naybors for safety
 export const NAYBOR_MINIMUM = 10;
 
-export const TIER_INFO: Record<TierType, { 
-  name: string; 
-  description: string; 
+export const TIER_INFO: Record<TierType, {
+  name: string;
+  description: string;
   limit: number;
   color: string;
-  warning?: string;
+  recommendedMin?: number;
+  underMinWarning?: string;
 }> = {
   core: {
     name: 'Core',
@@ -90,10 +91,11 @@ export const TIER_INFO: Record<TierType, {
   },
   naybor: {
     name: 'Naybors',
-    description: 'Your nayborhood konnektions — people akross the blok or down the hall. Knowing your naybors keeps you safe, informed, and ready to help each other in emergencies. Integrates with Naybor SOS via InnerFriend.org',
+    description: 'Your nayborhood konnektions — people akross the blok or down the hall. Knowing your naybors keeps you safe, informed, and ready to help each other in emergencies.',
     limit: 25,
     color: 'tier-naybor',
-    warning: "It's unsafe not to know your naybors! How will you know what's happening around you? What if an emergency happens? Introduse yourself to your naybors — learn their names, where they live, a little about their lives, and their kontakt info so you kan be of service to each other.",
+    recommendedMin: 10,
+    underMinWarning: "It's unsafe not to know your naybors! How are you going to know what's happening around you, what life is like for the people akross the blok or down the hall, and what if an emergency happens? Introduse yourself to your naybors, get to know their names, where they live, a little bit about their lives, and their kontakt info.",
   },
   parasocial: {
     name: 'Parasocials',

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Video, ArrowRight, Check, Plus, X, Info } from 'lucide-react';
+import { Phone, Video, ArrowRight, Check, Plus, X, Info, Globe, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -65,6 +65,7 @@ export function ContactSetupOnboarding({
   const [forSpontaneous, setForSpontaneous] = useState(true);
   const [forScheduled, setForScheduled] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [isPublicProfile, setIsPublicProfile] = useState(true);
 
   const { addContactMethod } = useContactMethods(userId);
 
@@ -122,10 +123,13 @@ export function ContactSetupOnboarding({
         });
       }
 
-      // Mark contact setup as complete
+      // Mark contact setup as complete and save privacy preference
       await supabase
         .from('profiles')
-        .update({ contact_setup_complete: true })
+        .update({ 
+          contact_setup_complete: true,
+          is_public: isPublicProfile 
+        })
         .eq('user_id', userId);
 
       onComplete();
@@ -332,6 +336,34 @@ export function ContactSetupOnboarding({
                       ))}
                     </div>
                   </div>
+
+                  {/* Profile Privacy Setting */}
+                  <div className="border rounded-lg p-4 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        {isPublicProfile ? (
+                          <Globe className="w-5 h-5 text-primary" />
+                        ) : (
+                          <Lock className="w-5 h-5 text-muted-foreground" />
+                        )}
+                        <div>
+                          <p className="text-sm font-medium">
+                            {isPublicProfile ? 'Public Profile' : 'Private Profile'}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {isPublicProfile 
+                              ? 'Anyone can find you by your handle' 
+                              : 'Only confirmed friends can see your profile'}
+                          </p>
+                        </div>
+                      </div>
+                      <Switch
+                        checked={isPublicProfile}
+                        onCheckedChange={setIsPublicProfile}
+                      />
+                    </div>
+                  </div>
+
                   <div className="flex gap-2 justify-end pt-4">
                     <Button variant="ghost" onClick={() => setStep(1)}>
                       Add More

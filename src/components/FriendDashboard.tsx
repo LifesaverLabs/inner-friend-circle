@@ -12,9 +12,11 @@ import { ProfileSettingsDialog } from '@/components/ProfileSettingsDialog';
 import { ContactSetupOnboarding, useContactSetupNeeded } from '@/components/ContactSetupOnboarding';
 import { MissionBanner } from '@/components/MissionBanner';
 import { ConnectionRequestsPanel } from '@/components/ConnectionRequestsPanel';
+import { Footer } from '@/components/Footer';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
+import { useParasocial } from '@/hooks/useParasocial';
 import { TierType } from '@/types/friend';
 
 interface FriendDashboardProps {
@@ -42,6 +44,12 @@ export function FriendDashboard({
     createConnectionRequest,
     respondToRequest,
   } = useFriendConnections(user?.id);
+
+  const {
+    feedShares,
+    seenShares,
+    recordEngagement,
+  } = useParasocial(user?.id);
   
   const {
     lists,
@@ -156,15 +164,16 @@ export function FriendDashboard({
 
   // Define allowed move transitions
   // acquainted can only move to outer; outer can move to inner or acquainted
-  // rolemodel is standalone - no moves allowed
-  // naybor is standalone - neighbors stay neighbors
+  // rolemodel, parasocial, and naybor are standalone - no moves allowed
+  // naybor: neighbors stay neighbors
+  // parasocial: one-sided relationships can't convert to mutual; re-enter manually if they become real friends
   const getAllowedMoves = (fromTier: TierType): TierType[] => {
     switch (fromTier) {
       case 'core': return ['inner'];
       case 'inner': return ['core', 'outer'];
       case 'outer': return ['inner', 'acquainted'];
       case 'naybor': return []; // Naybors stay as naybors
-      case 'parasocial': return ['outer'];
+      case 'parasocial': return []; // Parasocials are one-sided; can't convert to mutual relationships
       case 'rolemodel': return []; // Role models don't move between tiers
       case 'acquainted': return ['outer'];
       default: return [];
@@ -280,6 +289,10 @@ export function FriendDashboard({
               onAddLinkedFriend={handleAddLinkedFriend}
               onUpdateFriend={updateFriend}
               getAllowedMoves={getAllowedMoves}
+              parasocialShares={tier === 'parasocial' ? feedShares : undefined}
+              parasocialSeenShares={tier === 'parasocial' ? seenShares : undefined}
+              onParasocialEngage={tier === 'parasocial' ? recordEngagement : undefined}
+              userId={user?.id}
             />
           ))}
         </div>
@@ -321,6 +334,8 @@ export function FriendDashboard({
           />
         )}
       </main>
+
+      <Footer />
     </div>
   );
 }
