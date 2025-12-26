@@ -156,9 +156,7 @@ export function FriendDashboard({
     await respondToRequest(connectionId, false);
   };
 
-  const tiers: TierType[] = useMemo(() =>
-    ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'] as TierType[],
-  []);
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
 
   // Define allowed move transitions
   // acquainted can only move to outer; outer can move to inner or acquainted

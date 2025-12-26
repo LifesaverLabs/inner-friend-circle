@@ -51,17 +51,6 @@ export function useAuth() {
     return { error };
   };
 
-  const signInWithGoogle = async () => {
-    const redirectUrl = `${window.location.origin}/`;
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: redirectUrl,
-      },
-    });
-    return { error };
-  };
-
   const signOut = async () => {
     const { error } = await supabase.auth.signOut({ scope: 'local' });
     // Always clear local state even if server returns an error
@@ -77,7 +66,6 @@ export function useAuth() {
     loading,
     signUp,
     signIn,
-    signInWithGoogle,
     signOut,
     isAuthenticated: !!user,
   };

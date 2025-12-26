@@ -15,6 +15,7 @@ import {
   parsePhoneNumber,
   parsePhoneNumberFromString,
   isValidPhoneNumber,
+  formatPhoneNumber,
   getCountryCallingCode,
   CountryCode,
   AsYouType,
