@@ -1,35 +1,24 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
-import { ChevronDown, Check } from 'lucide-react';
+import { forwardRef } from 'react';
+import PhoneInputWithCountry from 'react-phone-number-input';
+import type { Props as PhoneInputProps } from 'react-phone-number-input';
+import { parsePhoneNumberFromString, CountryCode } from 'libphonenumber-js';
 import { cn } from '@/lib/utils';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/command';
-import { CountryCode } from 'libphonenumber-js';
-import {
-  COUNTRY_OPTIONS,
-  detectUserCountry,
-  formatAsYouType,
-  parsePhone,
-  getCountryFlag,
-  getExamplePhone,
-  getDialCode,
-} from '@/lib/phoneUtils';
+import 'react-phone-number-input/style.css';
 
-interface PhoneInputProps {
+// Detect user's country from browser locale
+function detectUserCountry(): CountryCode {
+  const language = navigator.language || (navigator as { userLanguage?: string }).userLanguage || '';
+  const parts = language.split('-');
+  if (parts.length >= 2) {
+    const countryFromLocale = parts[1].toUpperCase();
+    return countryFromLocale as CountryCode;
+  }
+  return 'US';
+}
+
+interface CustomPhoneInputProps {
   value?: string;
-  onChange?: (e164Phone: string | undefined, displayPhone: string) => void;
+  onChange?: (value: string | undefined) => void;
   onBlur?: () => void;
   defaultCountry?: CountryCode;
   placeholder?: string;
@@ -41,133 +30,107 @@ interface PhoneInputProps {
   error?: string;
 }
 
-export function PhoneInput({
-  value,
-  onChange,
-  onBlur,
-  defaultCountry,
-  placeholder,
-  disabled,
-  className,
-  id,
-  name,
-  required,
-  error,
-}: PhoneInputProps) {
-  // Detect user's country on mount
-  const detectedCountry = useMemo(() => defaultCountry || detectUserCountry(), [defaultCountry]);
-  const [selectedCountry, setSelectedCountry] = useState<CountryCode>(detectedCountry);
-  const [inputValue, setInputValue] = useState('');
-  const [open, setOpen] = useState(false);
+export const PhoneInput = forwardRef<HTMLInputElement, CustomPhoneInputProps>(
+  (
+    {
+      value,
+      onChange,
+      onBlur,
+      defaultCountry,
+      placeholder = 'Phone number',
+      disabled,
+      className,
+      id,
+      name,
+      error,
+    },
+    ref
+  ) => {
+    const country = defaultCountry || detectUserCountry();
 
-  // Initialize input value from prop
-  useEffect(() => {
-    if (value) {
-      const parsed = parsePhone(value, selectedCountry);
-      if (parsed.national) {
-        setInputValue(parsed.national);
-      } else {
-        setInputValue(value);
-      }
-    } else {
-      setInputValue('');
-    }
-  }, [value, selectedCountry]);
+    return (
+      <div className={cn('phone-input-container', className)}>
+        <PhoneInputWithCountry
+          international
+          countryCallingCodeEditable={false}
+          defaultCountry={country}
+          value={value || ''}
+          onChange={(val) => onChange?.(val || undefined)}
+          onBlur={onBlur}
+          placeholder={placeholder}
+          disabled={disabled}
+          id={id}
+          name={name}
+          className={cn(
+            'flex h-10 w-full rounded-md border border-input bg-background text-sm ring-offset-background',
+            'focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
+            error && 'border-destructive focus-within:ring-destructive',
+            disabled && 'cursor-not-allowed opacity-50'
+          )}
+        />
+        <style>{`
+          .phone-input-container .PhoneInput {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+          .phone-input-container .PhoneInputCountry {
+            display: flex;
+            align-items: center;
+            padding-left: 0.75rem;
+          }
+          .phone-input-container .PhoneInputCountryIcon {
+            width: 1.5rem;
+            height: 1rem;
+            border-radius: 2px;
+            overflow: hidden;
+          }
+          .phone-input-container .PhoneInputCountryIcon--border {
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+          }
+          .phone-input-container .PhoneInputCountrySelectArrow {
+            margin-left: 0.25rem;
+            width: 0.35rem;
+            height: 0.35rem;
+            border-style: solid;
+            border-color: currentColor;
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+            opacity: 0.5;
+          }
+          .phone-input-container .PhoneInputCountrySelect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            border: 0;
+            opacity: 0;
+            cursor: pointer;
+          }
+          .phone-input-container .PhoneInputInput {
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+            padding: 0.5rem 0.75rem;
+            padding-left: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: inherit;
+            font-family: inherit;
+          }
+          .phone-input-container .PhoneInputInput::placeholder {
+            color: hsl(var(--muted-foreground));
+          }
+        `}</style>
+      </div>
+    );
+  }
+);
 
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const raw = e.target.value;
-
-    // Format as user types
-    const formatted = formatAsYouType(raw, selectedCountry);
-    setInputValue(formatted);
-
-    // Parse and notify parent with E.164 format
-    const parsed = parsePhone(formatted, selectedCountry);
-    onChange?.(parsed.e164 || undefined, formatted);
-  }, [selectedCountry, onChange]);
-
-  const handleCountryChange = useCallback((country: CountryCode) => {
-    setSelectedCountry(country);
-    setOpen(false);
-
-    // Re-parse current input with new country
-    if (inputValue) {
-      const parsed = parsePhone(inputValue, country);
-      onChange?.(parsed.e164 || undefined, inputValue);
-    }
-  }, [inputValue, onChange]);
-
-  const examplePlaceholder = placeholder || getExamplePhone(selectedCountry);
-  const currentCountryInfo = COUNTRY_OPTIONS.find(c => c.code === selectedCountry);
-
-  return (
-    <div className={cn('flex gap-1', className)}>
-      {/* Country selector */}
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={open}
-            aria-label="Select country"
-            disabled={disabled}
-            className="w-[85px] justify-between px-2 shrink-0"
-          >
-            <span className="flex items-center gap-1.5">
-              <span className="text-base leading-none">{getCountryFlag(selectedCountry)}</span>
-              <span className="text-xs text-muted-foreground">{getDialCode(selectedCountry)}</span>
-            </span>
-            <ChevronDown className="h-3 w-3 opacity-50" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-[280px] p-0" align="start">
-          <Command>
-            <CommandInput placeholder="Search country..." />
-            <CommandList>
-              <CommandEmpty>No country found.</CommandEmpty>
-              <CommandGroup>
-                {COUNTRY_OPTIONS.map((country) => (
-                  <CommandItem
-                    key={country.code}
-                    value={`${country.name} ${country.code} ${country.dialCode}`}
-                    onSelect={() => handleCountryChange(country.code)}
-                    className="flex items-center gap-2"
-                  >
-                    <span className="text-base">{getCountryFlag(country.code)}</span>
-                    <span className="flex-1 truncate">{country.name}</span>
-                    <span className="text-xs text-muted-foreground">{country.dialCode}</span>
-                    {country.code === selectedCountry && (
-                      <Check className="h-4 w-4 text-primary" />
-                    )}
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
-
-      {/* Phone input */}
-      <Input
-        id={id}
-        name={name}
-        type="tel"
-        inputMode="tel"
-        autoComplete="tel"
-        value={inputValue}
-        onChange={handleInputChange}
-        onBlur={onBlur}
-        placeholder={examplePlaceholder}
-        disabled={disabled}
-        required={required}
-        className={cn(
-          'flex-1',
-          error && 'border-destructive focus-visible:ring-destructive'
-        )}
-      />
-    </div>
-  );
-}
+PhoneInput.displayName = 'PhoneInput';
 
 /**
  * Simplified phone display component
@@ -187,24 +150,36 @@ export function PhoneDisplay({
   showFlag = true,
 }: PhoneDisplayProps) {
   const country = viewerCountry || detectUserCountry();
-  const parsed = parsePhone(phone, country);
 
-  if (!parsed.isValid && !parsed.national) {
-    // Show raw phone if can't parse
+  try {
+    const parsed = parsePhoneNumberFromString(phone);
+    if (!parsed) {
+      return <span className={className}>{phone}</span>;
+    }
+
+    const phoneCountry = parsed.country;
+    const displayPhone = phoneCountry === country
+      ? parsed.formatNational()
+      : parsed.formatInternational();
+
+    // Get country flag emoji
+    const getCountryFlag = (code: CountryCode): string => {
+      const codePoints = code
+        .toUpperCase()
+        .split('')
+        .map(char => 127397 + char.charCodeAt(0));
+      return String.fromCodePoint(...codePoints);
+    };
+
+    return (
+      <span className={cn('inline-flex items-center gap-1', className)}>
+        {showFlag && phoneCountry && (
+          <span className="text-sm">{getCountryFlag(phoneCountry)}</span>
+        )}
+        <span>{displayPhone || phone}</span>
+      </span>
+    );
+  } catch {
     return <span className={className}>{phone}</span>;
   }
-
-  const phoneCountry = parsed.country;
-  const displayPhone = phoneCountry === country
-    ? parsed.national
-    : parsed.international;
-
-  return (
-    <span className={cn('inline-flex items-center gap-1', className)}>
-      {showFlag && phoneCountry && (
-        <span className="text-sm">{getCountryFlag(phoneCountry)}</span>
-      )}
-      <span>{displayPhone || phone}</span>
-    </span>
-  );
 }
