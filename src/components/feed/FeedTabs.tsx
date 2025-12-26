@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TierFeed } from './TierFeed';
 import { Friend, TierType } from '@/types/friend';
@@ -22,6 +23,7 @@ export function FeedTabs({
   userId,
   renderManageContent,
 }: FeedTabsProps) {
+  const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Determine default tab based on user state
@@ -70,37 +72,37 @@ export function FeedTabs({
 
   return (
     <Tabs value={currentTab} onValueChange={handleTabChange} className="w-full">
-      <TabsList className="grid w-full grid-cols-4 mb-6" aria-label="Friend circle feeds">
+      <TabsList className="grid w-full grid-cols-4 mb-6" aria-label={t('accessibility.feed.tabList')}>
         <TabsTrigger
           value="core"
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-core"
-          aria-label="Core Feed - Your closest friends"
+          aria-label={t('accessibility.feed.coreTab')}
         >
           <div className="w-2 h-2 rounded-full bg-tier-core" aria-hidden="true" />
-          Core Feed
+          {t('feed.coreFeed')}
         </TabsTrigger>
         <TabsTrigger
           value="inner"
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-inner"
-          aria-label="Inner Feed - Close friends"
+          aria-label={t('accessibility.feed.innerTab')}
         >
           <div className="w-2 h-2 rounded-full bg-tier-inner" aria-hidden="true" />
-          Inner Feed
+          {t('feed.innerFeed')}
         </TabsTrigger>
         <TabsTrigger
           value="outer"
           className="flex items-center gap-2 data-[state=active]:border-b-2 data-[state=active]:border-tier-outer"
-          aria-label="Outer Plus Feed - Extended circle including naybors"
+          aria-label={t('accessibility.feed.outerTab')}
         >
           <div className="w-2 h-2 rounded-full bg-tier-outer" aria-hidden="true" />
-          Outer+
+          {t('feed.outerFeed')}
         </TabsTrigger>
         <TabsTrigger
           value="manage"
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary"
-          aria-label="Manage your friend circle"
+          aria-label={t('accessibility.feed.manageTab')}
         >
-          Manage
+          {t('feed.manage')}
         </TabsTrigger>
       </TabsList>
 

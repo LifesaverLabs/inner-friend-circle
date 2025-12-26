@@ -146,7 +146,9 @@
     "search": "Ara",
     "filter": "Filtrele",
     "export": "Dışa Aktar",
-    "import": "İçe Aktar"
+    "import": "İçe Aktar",
+    "remove": "Kaldır",
+    "accept": "Kabul Et"
   },
   "friend": {
     "addFriend": "Arkadaş Ekle",
@@ -218,7 +220,6 @@
     "notSelected": "Seçilmedi",
     "required": "Gerekli",
     "optional": "İsteğe bağlı",
-
     "feed": {
       "tabList": "Arkadaş çevresi akışları",
       "coreTab": "Çekirdek Akışı - En yakın arkadaşlarınız",
@@ -226,7 +227,6 @@
       "outerTab": "Dış Plus Akışı - Komşular dahil genişletilmiş çevre",
       "manageTab": "Arkadaş çevrenizi yönetin"
     },
-
     "post": {
       "likeButton": "Bu gönderiyi beğen",
       "unlikeButton": "Bu gönderinin beğenisini kaldır",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "Buluşmaya belki",
       "rsvpOptions": "Yanıt seçenekleri"
     },
-
     "nudge": {
       "panelExpanded": "Hatırlatıcı paneli genişletildi",
       "panelCollapsed": "Hatırlatıcı paneli daraltıldı",
@@ -258,7 +257,6 @@
       "connectedButton": "{{name}} bugün bağlandı olarak işaretle",
       "selectDateButton": "{{name}} ile ne zaman bağlandığınızı seçin"
     },
-
     "naybor": {
       "sosRegion": "Hızlı SOS kişileri",
       "sosContactsList": "Hızlı kişiler:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "Seçilen {{count}} komşuya mesaj gönder",
       "locationDescription": "Etkinleştirildiğinde, yaklaşık konumunuz komşularınızla paylaşılacak"
     },
-
     "dialog": {
       "close": "Diyaloğu kapat",
       "back": "Geri dön",
       "confirm": "Eylemi onayla"
     },
-
     "form": {
       "showPassword": "Şifreyi göster",
       "hidePassword": "Şifreyi gizle",
@@ -295,7 +291,6 @@
       "selectCountry": "Ülke seçin",
       "phoneNumber": "Telefon numarası"
     },
-
     "status": {
       "online": "Çevrimiçi",
       "offline": "Çevrimdışı",
@@ -425,5 +420,114 @@
     "mobileOnly": "Kişi seçici sadece mobil cihazlarda kullanılabilir. Bunun yerine vCard veya CSV içe aktarma kullanın.",
     "browserNotSupported": "Tarayıcınız kişi seçiciyi desteklemiyor. Bunun yerine vCard veya CSV içe aktarma kullanın.",
     "useFileImport": "Bunun yerine bir vCard veya CSV dosyasından içe aktarmayı deneyin."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "İsim"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}} yerden {{available}} tanesi mevcut",
+    "spotsUsed": "{{used}}/{{limit}} yer kullanılıyor"
+  },
+  "friendCard": {
+    "dragToReorder": "Yeniden sıralamak için sürükle",
+    "connectingVia": "{{method}} ile bağlanıyor",
+    "callVia": "{{method}} ile ara",
+    "editContactInfo": "İletişim bilgisini düzenle",
+    "promoteTo": "Şuna terfi ettir",
+    "moveTo": "{{tier}}'e taşı"
+  },
+  "connections": {
+    "requests": "Bağlantı İstekleri",
+    "requestsDescription": "Sizinle bağlantı kurmak isteyen kişiler",
+    "unknownUser": "Bilinmeyen Kullanıcı",
+    "addedYouAs": "Seni {{tier}} olarak ekledi",
+    "circleHidden": "Çember gizli",
+    "viaService": "{{service}} aracılığıyla"
+  },
+  "roleModel": {
+    "addTitle": "Rol Model Ekle",
+    "addDescription": "Hayat hikayesi size ilham veren birini ekleyin — yaşayan veya vefat etmiş.",
+    "namePlaceholder": "ör., Marcus Aurelius, Maya Angelou...",
+    "whyRoleModel": "Bu kişi neden rol model?",
+    "reasonPlaceholder": "Onlar hakkında neye hayran olduğunuzu, hangi özellikleri benimsemek istediğinizi veya hikayelerinin sizi iyi, daha iyi, en iyi olmaya nasıl ilham verdiğini açıklayın...",
+    "visibilityNote": "Bu, onaylanmış bağlantılarınıza görünür olacaktır.",
+    "editReason": "Nedeni Düzenle",
+    "editReasonTitle": "Rol Model Nedenini Düzenle",
+    "editReasonDescription": "{{name}}'ın sizin için neden rol model olduğunu güncelleyin."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Ayrılmış Yer",
+    "spotsLabel": "ayrılmış yer",
+    "editGroup": "Grubu Düzenle",
+    "deleteGroup": "Grubu Sil",
+    "deleteConfirmTitle": "Ayrılmış Grubu Sil?",
+    "deleteConfirmDescription": "Bu, {{tier}} seviyenizden {{count}} ayrılmış yeri{{note}} kaldıracaktır.",
+    "editTitle": "Ayrılmış Grubu Düzenle — {{tier}}",
+    "editDescription": "Bu ayrılmış grup için yer sayısını ve notu güncelleyin.",
+    "maxAvailable": "Maks müsait: {{count}} yer",
+    "privateNoteLabel": "Özel Not (isteğe bağlı)",
+    "notePlaceholder": "Bunu sadece sen görebilirsin. Örn., 'Yürüyüş grubundan insanlar'",
+    "notePlaceholderLong": "Bunu sadece sen görebilirsin. Örn., 'Yürüyüş grubundan insanlar' veya 'Gizliliği tercih eden aile üyeleri'",
+    "addTitle": "Ayrılmış Grup Ekle — {{tier}}",
+    "addDescription": "Açıkça listelemek istemediğiniz kişiler için yer ayırın. Her grup {{tier}} limitinize sayılır ama özel kalır.",
+    "capacitySummary": "{{named}} adlandırılmış + {{reserved}} zaten ayrılmış + {{new}} yeni = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Grup Ekle"
+  },
+  "addFriend": {
+    "addNaybor": "Komşu Ekle",
+    "addParasocial": "Parasosyal Ekle",
+    "addFriend": "{{tier}} Arkadaş Ekle",
+    "addFriendButton": "Arkadaş Ekle",
+    "circleFull": "{{tier}} çemberin dolu",
+    "circleFullHint": "Buraya birini eklemek için önce mevcut bir {{tier}} arkadaşını başka bir seviyeye taşıman gerekecek.",
+    "namePlaceholder": "Adları",
+    "emailOptional": "E-posta (isteğe bağlı)",
+    "emailPlaceholder": "Karşılıklı eşleşme bildirimleri için",
+    "emailHint": "Onlar da seni {{tier}} arkadaş olarak listelerse ve ikinizin de bildirimleri açıksa, karşılıklı bağlantınız hakkında ikiniz de bilgilendirileceksiniz.",
+    "addEmailButton": "Karşılıklı eşleşme için e-posta ekle",
+    "phoneOptional": "Telefon (isteğe bağlı)",
+    "preferredContactMethod": "Tercih edilen iletişim yöntemi",
+    "phoneHint": "Arkadaşlarla iletişime geçmek için Bakım özelliği için bunu kullan.",
+    "nayborPhoneHint": "Acil durumlar ve karşılıklı destek için komşularının iletişim bilgilerine sahip olmak önemlidir.",
+    "addPhoneButton": "Görüntülü arama için telefon ekle",
+    "addNayborPhoneButton": "Acil durumlar için iletişim bilgisi ekle"
   }
 }

@@ -1,15 +1,16 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { UserPlus, Check, X, Eye, EyeOff } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { UserPlus, Check, X, EyeOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { FriendConnection, CircleTier } from '@/hooks/useFriendConnections';
 
-const TIER_LABELS: Record<CircleTier, { name: string; color: string }> = {
-  core: { name: 'Core', color: 'bg-tier-core text-white' },
-  inner: { name: 'Inner', color: 'bg-tier-inner text-white' },
-  outer: { name: 'Outer', color: 'bg-tier-outer text-white' },
+const TIER_COLORS: Record<CircleTier, string> = {
+  core: 'bg-tier-core text-white',
+  inner: 'bg-tier-inner text-white',
+  outer: 'bg-tier-outer text-white',
 };
 
 interface ConnectionRequestsPanelProps {
@@ -23,6 +24,8 @@ export function ConnectionRequestsPanel({
   onAccept,
   onDecline,
 }: ConnectionRequestsPanelProps) {
+  const { t } = useTranslation();
+
   if (requests.length === 0) return null;
 
   return (
@@ -30,13 +33,13 @@ export function ConnectionRequestsPanel({
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-lg">
           <UserPlus className="h-5 w-5 text-primary" />
-          Connection Requests
+          {t('connections.requests')}
           <Badge variant="secondary" className="ml-2">
             {requests.length}
           </Badge>
         </CardTitle>
         <CardDescription>
-          People who want to connect with you. Accept to share contact info.
+          {t('connections.requestsDescription')}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -58,7 +61,7 @@ export function ConnectionRequestsPanel({
                 </Avatar>
                 <div>
                   <p className="font-medium">
-                    {request.requester_profile?.display_name || 'Unknown User'}
+                    {request.requester_profile?.display_name || t('connections.unknownUser')}
                   </p>
                   {request.requester_profile?.user_handle && (
                     <p className="text-sm text-muted-foreground">
@@ -67,18 +70,18 @@ export function ConnectionRequestsPanel({
                   )}
                   <div className="flex items-center gap-2 mt-1">
                     {request.disclose_circle ? (
-                      <Badge className={TIER_LABELS[request.circle_tier].color}>
-                        Added you as {TIER_LABELS[request.circle_tier].name}
+                      <Badge className={TIER_COLORS[request.circle_tier]}>
+                        {t('connections.addedYouAs', { tier: t(`tiers.${request.circle_tier}`) })}
                       </Badge>
                     ) : (
                       <Badge variant="outline" className="text-muted-foreground">
                         <EyeOff className="h-3 w-3 mr-1" />
-                        Circle hidden
+                        {t('connections.circleHidden')}
                       </Badge>
                     )}
                     {request.matched_contact_method && (
                       <span className="text-xs text-muted-foreground">
-                        via {request.matched_contact_method.service_type}
+                        {t('connections.viaService', { service: request.matched_contact_method.service_type })}
                       </span>
                     )}
                   </div>
@@ -99,7 +102,7 @@ export function ConnectionRequestsPanel({
                   className="bg-primary"
                 >
                   <Check className="h-4 w-4 mr-1" />
-                  Accept
+                  {t('actions.accept')}
                 </Button>
               </div>
             </motion.div>

@@ -146,7 +146,9 @@
     "search": "検索",
     "filter": "フィルター",
     "export": "エクスポート",
-    "import": "インポート"
+    "import": "インポート",
+    "remove": "削除",
+    "accept": "承諾"
   },
   "friend": {
     "addFriend": "友達を追加",
@@ -218,7 +220,6 @@
     "notSelected": "未選択",
     "required": "必須",
     "optional": "任意",
-
     "feed": {
       "tabList": "友達サークルフィード",
       "coreTab": "コアフィード - 最も親しい友達",
@@ -226,7 +227,6 @@
       "outerTab": "アウタープラスフィード - ご近所を含む拡大サークル",
       "manageTab": "友達サークルを管理"
     },
-
     "post": {
       "likeButton": "この投稿にいいね",
       "unlikeButton": "いいねを取り消す",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "たぶん参加",
       "rsvpOptions": "返答オプション"
     },
-
     "nudge": {
       "panelExpanded": "リマインダーパネル展開中",
       "panelCollapsed": "リマインダーパネル折りたたみ中",
@@ -258,7 +257,6 @@
       "connectedButton": "{{name}}を今日連絡済みにする",
       "selectDateButton": "{{name}}と連絡した日を選択"
     },
-
     "naybor": {
       "sosRegion": "クイックSOS連絡先",
       "sosContactsList": "クイック連絡先:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "選択した{{count}}人のご近所にメッセージ",
       "locationDescription": "有効にすると、おおよその位置情報がご近所と共有されます"
     },
-
     "dialog": {
       "close": "ダイアログを閉じる",
       "back": "戻る",
       "confirm": "アクションを確認"
     },
-
     "form": {
       "showPassword": "パスワードを表示",
       "hidePassword": "パスワードを非表示",
@@ -295,7 +291,6 @@
       "selectCountry": "国を選択",
       "phoneNumber": "電話番号"
     },
-
     "status": {
       "online": "オンライン",
       "offline": "オフライン",
@@ -425,5 +420,114 @@
     "mobileOnly": "連絡先ピッカーはモバイルデバイスでのみ使用可能です。代わりにvCardまたはCSVインポートを使用してください。",
     "browserNotSupported": "お使いのブラウザは連絡先ピッカーをサポートしていません。代わりにvCardまたはCSVインポートを使用してください。",
     "useFileImport": "代わりにvCardまたはCSVファイルからインポートしてみてください。"
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "名前"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}}中{{available}}件利用可能",
+    "spotsUsed": "{{used}}/{{limit}}件使用中"
+  },
+  "friendCard": {
+    "dragToReorder": "ドラッグして並べ替え",
+    "connectingVia": "{{method}}で接続中",
+    "callVia": "{{method}}で通話",
+    "editContactInfo": "連絡先情報を編集",
+    "promoteTo": "昇格先",
+    "moveTo": "{{tier}}に移動"
+  },
+  "connections": {
+    "requests": "接続リクエスト",
+    "requestsDescription": "あなたとつながりたい人",
+    "unknownUser": "不明なユーザー",
+    "addedYouAs": "{{tier}}としてあなたを追加しました",
+    "circleHidden": "サークル非表示",
+    "viaService": "{{service}}経由"
+  },
+  "roleModel": {
+    "addTitle": "ロールモデルを追加",
+    "addDescription": "あなたに感銘を与える人生を送った人を追加 — 存命または故人。",
+    "namePlaceholder": "例：マルクス・アウレリウス、マヤ・アンジェロウ...",
+    "whyRoleModel": "なぜこの人がロールモデルなのですか？",
+    "reasonPlaceholder": "彼らの何を尊敬するか、どんな特性を取り入れたいか、彼らの物語があなたを良く、より良く、最高になるようにどう励ますかを説明してください...",
+    "visibilityNote": "これは確認済みのつながりに表示されます。",
+    "editReason": "理由を編集",
+    "editReasonTitle": "ロールモデルの理由を編集",
+    "editReasonDescription": "{{name}}があなたのロールモデルである理由を更新してください。"
+  },
+  "reserved": {
+    "spotsCount": "{{count}}件の予約済みスポット",
+    "spotsLabel": "予約済みスポット",
+    "editGroup": "グループを編集",
+    "deleteGroup": "グループを削除",
+    "deleteConfirmTitle": "予約済みグループを削除しますか？",
+    "deleteConfirmDescription": "これにより、{{tier}}から{{count}}件の予約済みスポット{{note}}が削除されます。",
+    "editTitle": "予約済みグループを編集 — {{tier}}",
+    "editDescription": "この予約済みグループのスポット数とメモを更新してください。",
+    "maxAvailable": "最大利用可能: {{count}}件",
+    "privateNoteLabel": "プライベートメモ（オプション）",
+    "notePlaceholder": "これはあなただけに見えます。例：「ハイキンググループの人々」",
+    "notePlaceholderLong": "これはあなただけに見えます。例：「ハイキンググループの人々」または「プライバシーを好む家族」",
+    "addTitle": "予約済みグループを追加 — {{tier}}",
+    "addDescription": "明示的にリストしたくない人のためにスポットを予約してください。各グループは{{tier}}制限にカウントされますが、プライベートのままです。",
+    "capacitySummary": "{{named}}件命名済み + {{reserved}}件予約済み + {{new}}件新規 = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "グループを追加"
+  },
+  "addFriend": {
+    "addNaybor": "近所の人を追加",
+    "addParasocial": "パラソーシャルを追加",
+    "addFriend": "{{tier}}フレンドを追加",
+    "addFriendButton": "友達を追加",
+    "circleFull": "{{tier}}サークルがいっぱいです",
+    "circleFullHint": "ここに誰かを追加するには、まず現在の{{tier}}フレンドを別のティアに移動する必要があります。",
+    "namePlaceholder": "相手の名前",
+    "emailOptional": "メール（オプション）",
+    "emailPlaceholder": "相互マッチング通知用",
+    "emailHint": "相手もあなたを{{tier}}フレンドとしてリストし、両者が通知を有効にしている場合、相互接続について両者に通知されます。",
+    "addEmailButton": "相互マッチング用のメールを追加",
+    "phoneOptional": "電話（オプション）",
+    "preferredContactMethod": "希望する連絡方法",
+    "phoneHint": "友達に連絡するためのテンディング機能に使用してください。",
+    "nayborPhoneHint": "緊急事態や相互支援のために、近所の人の連絡先情報を持っていることは不可欠です。",
+    "addPhoneButton": "ビデオ通話用の電話を追加",
+    "addNayborPhoneButton": "緊急時の連絡先情報を追加"
   }
 }

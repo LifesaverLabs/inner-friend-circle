@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Minus, Plus, Lock, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,6 +25,7 @@ export function EditReservedGroupDialog({
   maxCount,
   onSave,
 }: EditReservedGroupDialogProps) {
+  const { t } = useTranslation();
   const [count, setCount] = useState(group.count);
   const [note, setNote] = useState(group.note || '');
 
@@ -53,10 +55,10 @@ export function EditReservedGroupDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <Lock className="w-5 h-5 text-muted-foreground" />
-            Edit Reserved Group — {tierInfo.name}
+            {t('reserved.editTitle', { tier: t(`tiers.${tier}`) })}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Update the number of spots and note for this reserved group.
+            {t('reserved.editDescription')}
           </DialogDescription>
         </DialogHeader>
 
@@ -82,10 +84,10 @@ export function EditReservedGroupDialog({
                 {count}
               </div>
               <div className="text-sm text-muted-foreground">
-                reserved spot{count !== 1 ? 's' : ''}
+                {t('reserved.spotsLabel', { count })}
               </div>
             </motion.div>
-            
+
             <Button
               variant="outline"
               size="icon"
@@ -98,29 +100,29 @@ export function EditReservedGroupDialog({
           </div>
 
           <div className="text-center text-sm text-muted-foreground">
-            Max available: {maxCount} spots
+            {t('reserved.maxAvailable', { count: maxCount })}
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="note" className="flex items-center gap-2">
               <MessageSquare className="w-4 h-4" />
-              Private Note (optional)
+              {t('reserved.privateNoteLabel')}
             </Label>
             <Textarea
               id="note"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              placeholder="Only you can see this. E.g., 'People from the hiking group'"
+              placeholder={t('reserved.notePlaceholder')}
               rows={3}
             />
           </div>
 
           <div className="flex justify-end gap-2">
             <Button variant="outline" onClick={handleClose}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button onClick={handleSave}>
-              Save
+              {t('actions.save')}
             </Button>
           </div>
         </div>

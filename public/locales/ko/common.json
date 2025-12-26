@@ -146,7 +146,9 @@
     "search": "검색",
     "filter": "필터",
     "export": "내보내기",
-    "import": "가져오기"
+    "import": "가져오기",
+    "remove": "제거",
+    "accept": "수락"
   },
   "friend": {
     "addFriend": "친구 추가",
@@ -218,7 +220,6 @@
     "notSelected": "선택 안됨",
     "required": "필수",
     "optional": "선택사항",
-
     "feed": {
       "tabList": "친구 서클 피드",
       "coreTab": "코어 피드 - 가장 친한 친구들",
@@ -226,7 +227,6 @@
       "outerTab": "아우터 플러스 피드 - 이웃 포함 확장 서클",
       "manageTab": "친구 서클 관리"
     },
-
     "post": {
       "likeButton": "이 게시물에 좋아요",
       "unlikeButton": "이 게시물 좋아요 취소",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "만남 참석 미정",
       "rsvpOptions": "응답 옵션"
     },
-
     "nudge": {
       "panelExpanded": "알림 패널 펼쳐짐",
       "panelCollapsed": "알림 패널 접힘",
@@ -258,7 +257,6 @@
       "connectedButton": "{{name}}을(를) 오늘 연락한 것으로 표시",
       "selectDateButton": "{{name}}와(과) 연락한 날짜 선택"
     },
-
     "naybor": {
       "sosRegion": "빠른 SOS 연락처",
       "sosContactsList": "빠른 연락처:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "선택한 {{count}}명의 이웃들에게 메시지",
       "locationDescription": "활성화 시, 대략적인 위치가 이웃과 공유됩니다"
     },
-
     "dialog": {
       "close": "대화상자 닫기",
       "back": "뒤로 가기",
       "confirm": "작업 확인"
     },
-
     "form": {
       "showPassword": "비밀번호 표시",
       "hidePassword": "비밀번호 숨기기",
@@ -295,7 +291,6 @@
       "selectCountry": "국가 선택",
       "phoneNumber": "전화번호"
     },
-
     "status": {
       "online": "온라인",
       "offline": "오프라인",
@@ -425,5 +420,114 @@
     "mobileOnly": "연락처 선택기는 모바일 기기에서만 사용할 수 있습니다. vCard 또는 CSV 가져오기를 사용하세요.",
     "browserNotSupported": "브라우저가 연락처 선택기를 지원하지 않습니다. vCard 또는 CSV 가져오기를 사용하세요.",
     "useFileImport": "vCard 또는 CSV 파일에서 가져오기를 시도해 보세요."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "이름"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}}개 중 {{available}}개 사용 가능",
+    "spotsUsed": "{{used}}/{{limit}}개 사용 중"
+  },
+  "friendCard": {
+    "dragToReorder": "드래그하여 재정렬",
+    "connectingVia": "{{method}}(으)로 연결 중",
+    "callVia": "{{method}}(으)로 전화",
+    "editContactInfo": "연락처 정보 편집",
+    "promoteTo": "승격 대상",
+    "moveTo": "{{tier}}(으)로 이동"
+  },
+  "connections": {
+    "requests": "연결 요청",
+    "requestsDescription": "연결을 원하는 사람들",
+    "unknownUser": "알 수 없는 사용자",
+    "addedYouAs": "{{tier}}(으)로 추가함",
+    "circleHidden": "서클 숨김",
+    "viaService": "{{service}} 통해"
+  },
+  "roleModel": {
+    "addTitle": "롤 모델 추가",
+    "addDescription": "삶의 이야기가 당신에게 영감을 주는 사람을 추가하세요 — 생존자 또는 고인.",
+    "namePlaceholder": "예: 마르쿠스 아우렐리우스, 마야 안젤루...",
+    "whyRoleModel": "이 사람이 롤 모델인 이유는?",
+    "reasonPlaceholder": "그들에 대해 감탄하는 점, 받아들이고 싶은 특성, 또는 그들의 이야기가 어떻게 좋은, 더 나은, 최고가 되도록 영감을 주는지 설명하세요...",
+    "visibilityNote": "확인된 연결에 표시됩니다.",
+    "editReason": "이유 편집",
+    "editReasonTitle": "롤 모델 이유 편집",
+    "editReasonDescription": "{{name}}이(가) 당신에게 롤 모델인 이유를 업데이트하세요."
+  },
+  "reserved": {
+    "spotsCount": "{{count}}개 예약된 자리",
+    "spotsLabel": "예약된 자리",
+    "editGroup": "그룹 편집",
+    "deleteGroup": "그룹 삭제",
+    "deleteConfirmTitle": "예약된 그룹을 삭제하시겠습니까?",
+    "deleteConfirmDescription": "{{tier}} 등급에서 예약된 자리 {{count}}개{{note}}가 삭제됩니다.",
+    "editTitle": "예약된 그룹 편집 — {{tier}}",
+    "editDescription": "이 예약된 그룹의 자리 수와 메모를 업데이트하세요.",
+    "maxAvailable": "최대 사용 가능: {{count}}개",
+    "privateNoteLabel": "비공개 메모 (선택사항)",
+    "notePlaceholder": "본인만 볼 수 있습니다. 예: '하이킹 그룹 사람들'",
+    "notePlaceholderLong": "본인만 볼 수 있습니다. 예: '하이킹 그룹 사람들' 또는 '프라이버시를 선호하는 가족'",
+    "addTitle": "예약된 그룹 추가 — {{tier}}",
+    "addDescription": "명시적으로 나열하고 싶지 않은 사람들을 위해 자리를 예약하세요. 각 그룹은 {{tier}} 제한에 포함되지만 비공개로 유지됩니다.",
+    "capacitySummary": "{{named}}명 이름 지정 + {{reserved}}개 예약됨 + {{new}}개 신규 = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "그룹 추가"
+  },
+  "addFriend": {
+    "addNaybor": "이웃 추가",
+    "addParasocial": "준사회적 추가",
+    "addFriend": "{{tier}} 친구 추가",
+    "addFriendButton": "친구 추가",
+    "circleFull": "{{tier}} 서클이 가득 찼습니다",
+    "circleFullHint": "여기에 누군가를 추가하려면 먼저 현재 {{tier}} 친구를 다른 등급으로 이동해야 합니다.",
+    "namePlaceholder": "이름",
+    "emailOptional": "이메일 (선택사항)",
+    "emailPlaceholder": "상호 매칭 알림용",
+    "emailHint": "그들도 당신을 {{tier}} 친구로 등록하고 둘 다 알림이 활성화되어 있으면 상호 연결에 대해 두 분 모두에게 알림이 전송됩니다.",
+    "addEmailButton": "상호 매칭용 이메일 추가",
+    "phoneOptional": "전화 (선택사항)",
+    "preferredContactMethod": "선호하는 연락 방법",
+    "phoneHint": "친구에게 연락하기 위한 돌봄 기능에 사용하세요.",
+    "nayborPhoneHint": "비상 상황과 상호 지원을 위해 이웃의 연락처 정보가 필수적입니다.",
+    "addPhoneButton": "영상 통화용 전화 추가",
+    "addNayborPhoneButton": "비상 연락처 정보 추가"
   }
 }

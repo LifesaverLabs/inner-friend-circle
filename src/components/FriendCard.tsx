@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { MoreVertical, ArrowUp, ArrowDown, Trash2, User, GripVertical, Phone, Pencil, ArrowRightCircle } from 'lucide-react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -30,16 +31,17 @@ interface FriendCardProps {
 
 const tierOrder: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
 
-export function FriendCard({ 
-  friend, 
-  onMove, 
+export function FriendCard({
+  friend,
+  onMove,
   onRemove,
   onUpdate,
-  canMoveUp, 
+  canMoveUp,
   canMoveDown,
   getAllowedMoves,
   getTierCapacity,
 }: FriendCardProps) {
+  const { t } = useTranslation();
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   
   const {
@@ -99,7 +101,7 @@ export function FriendCard({
           {...attributes}
           {...listeners}
           className="touch-none p-1 -ml-1 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing"
-          aria-label="Drag to reorder"
+          aria-label={t('friendCard.dragToReorder')}
         >
           <GripVertical className="w-4 h-4" />
         </button>
@@ -131,7 +133,7 @@ export function FriendCard({
                     const method = friend.preferredContact || 'tel';
                     const contactInfo = CONTACT_METHODS[method];
                     window.open(contactInfo.getUrl(friend.phone!), '_blank');
-                    toast.success(`Connecting via ${contactInfo.name}`);
+                    toast.success(t('friendCard.connectingVia', { method: contactInfo.name }));
                   }}
                 >
                   <Phone className="w-4 h-4" />
@@ -139,9 +141,9 @@ export function FriendCard({
               </TooltipTrigger>
               <TooltipContent>
                 <p>
-                  {friend.preferredContact 
-                    ? `Call via ${CONTACT_METHODS[friend.preferredContact].name}` 
-                    : 'Call'}
+                  {friend.preferredContact
+                    ? t('friendCard.callVia', { method: CONTACT_METHODS[friend.preferredContact].name })
+                    : t('contact.call')}
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -158,7 +160,7 @@ export function FriendCard({
             {onUpdate && (
               <DropdownMenuItem onClick={() => setEditDialogOpen(true)}>
                 <Pencil className="w-4 h-4 mr-2" />
-                Edit Contact Info
+                {t('friendCard.editContactInfo')}
               </DropdownMenuItem>
             )}
 
@@ -166,7 +168,7 @@ export function FriendCard({
             {isAcquainted && availableMovesWithCapacity.length > 0 && (
               <>
                 <DropdownMenuLabel className="text-xs text-muted-foreground">
-                  Promote to
+                  {t('friendCard.promoteTo')}
                 </DropdownMenuLabel>
                 {availableMovesWithCapacity.map(targetTier => (
                   <DropdownMenuItem
@@ -174,7 +176,7 @@ export function FriendCard({
                     onClick={() => onMove(friend.id, targetTier)}
                   >
                     <ArrowRightCircle className="w-4 h-4 mr-2" />
-                    {TIER_INFO[targetTier].name}
+                    {t(`tiers.${targetTier}`)}
                   </DropdownMenuItem>
                 ))}
               </>
@@ -184,13 +186,13 @@ export function FriendCard({
             {!isAcquainted && tierAbove && canActuallyMoveUp && (
               <DropdownMenuItem onClick={() => onMove(friend.id, tierAbove)}>
                 <ArrowUp className="w-4 h-4 mr-2" />
-                Move to {TIER_INFO[tierAbove].name}
+                {t('friendCard.moveTo', { tier: t(`tiers.${tierAbove}`) })}
               </DropdownMenuItem>
             )}
             {!isAcquainted && tierBelow && canActuallyMoveDown && (
               <DropdownMenuItem onClick={() => onMove(friend.id, tierBelow)}>
                 <ArrowDown className="w-4 h-4 mr-2" />
-                Move to {TIER_INFO[tierBelow].name}
+                {t('friendCard.moveTo', { tier: t(`tiers.${tierBelow}`) })}
               </DropdownMenuItem>
             )}
 
@@ -200,7 +202,7 @@ export function FriendCard({
               className="text-destructive focus:text-destructive"
             >
               <Trash2 className="w-4 h-4 mr-2" />
-              Remove
+              {t('actions.delete')}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

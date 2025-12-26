@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X, User, Mail, Lock, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,7 @@ interface AddFriendDialogProps {
 }
 
 export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: AddFriendDialogProps) {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(""); // E.164 format for storage
@@ -65,10 +67,13 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <div className={`w-3 h-3 rounded-full bg-${tierInfo.color}`} />
-            Add {isNaybor ? "Naybor" : tierInfo.name}
-            {isParasocial ? "" : isNaybor ? "" : " Friend"}
+            {isNaybor
+              ? t('addFriend.addNaybor')
+              : isParasocial
+              ? t('addFriend.addParasocial')
+              : t('addFriend.addFriend', { tier: t(`tiers.${tier}`) })}
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground">{tierInfo.description}</DialogDescription>
+          <DialogDescription className="text-muted-foreground">{t(`tiers.${tier}Description`)}</DialogDescription>
         </DialogHeader>
 
         {isFull ? (
@@ -76,10 +81,9 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
               <Lock className="w-8 h-8 text-muted-foreground" />
             </div>
-            <p className="font-medium text-foreground mb-2">Your {tierInfo.name} circle is full</p>
+            <p className="font-medium text-foreground mb-2">{t('addFriend.circleFull', { tier: t(`tiers.${tier}`) })}</p>
             <p className="text-sm text-muted-foreground">
-              To add someone here, you'll need to move a current {tierInfo.name.toLowerCase()} friend to another tier
-              first.
+              {t('addFriend.circleFullHint', { tier: t(`tiers.${tier}`).toLowerCase() })}
             </p>
           </div>
         ) : (
@@ -87,13 +91,13 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
             <div className="space-y-2">
               <Label htmlFor="name" className="flex items-center gap-2">
                 <User className="w-4 h-4" />
-                Name
+                {t('labels.name')}
               </Label>
               <Input
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Their name"
+                placeholder={t('addFriend.namePlaceholder')}
                 autoFocus
               />
             </div>
@@ -109,18 +113,17 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                   >
                     <Label htmlFor="email" className="flex items-center gap-2">
                       <Mail className="w-4 h-4" />
-                      Email (optional)
+                      {t('addFriend.emailOptional')}
                     </Label>
                     <Input
                       id="email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="For mutual match notifications"
+                      placeholder={t('addFriend.emailPlaceholder')}
                     />
                     <p className="text-xs text-muted-foreground">
-                      If they also list you as a {tierInfo.name.toLowerCase()} friend and you both have notifications
-                      enabled, you'll both be notified of your mutual connection.
+                      {t('addFriend.emailHint', { tier: t(`tiers.${tier}`).toLowerCase() })}
                     </p>
                   </motion.div>
                 ) : (
@@ -132,7 +135,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                     animate={{ opacity: 1 }}
                   >
                     <Plus className="w-4 h-4" />
-                    Add email for mutual matching
+                    {t('addFriend.addEmailButton')}
                   </motion.button>
                 )}
               </AnimatePresence>
@@ -150,7 +153,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                     <div className="space-y-2">
                       <Label htmlFor="phone" className="flex items-center gap-2">
                         <Phone className="w-4 h-4" />
-                        Phone (optional)
+                        {t('addFriend.phoneOptional')}
                       </Label>
                       <PhoneInput
                         id="phone"
@@ -160,7 +163,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="contact-method">Preferred contact method</Label>
+                      <Label htmlFor="contact-method">{t('addFriend.preferredContactMethod')}</Label>
                       <Select value={preferredContact} onValueChange={(v) => setPreferredContact(v as ContactMethod)}>
                         <SelectTrigger>
                           <SelectValue />
@@ -179,9 +182,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                     </div>
 
                     <p className="text-xs text-muted-foreground">
-                      {isNaybor
-                        ? "Having kontakt info for your naybors is essential for emergencies and mutual support."
-                        : "Use this for the Tending feature to reach out to friends."}
+                      {isNaybor ? t('addFriend.nayborPhoneHint') : t('addFriend.phoneHint')}
                     </p>
                   </motion.div>
                 ) : (
@@ -193,7 +194,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                     animate={{ opacity: 1 }}
                   >
                     <Plus className="w-4 h-4" />
-                    {isNaybor ? "Add kontakt info for emergencies" : "Add phone for face time"}
+                    {isNaybor ? t('addFriend.addNayborPhoneButton') : t('addFriend.addPhoneButton')}
                   </motion.button>
                 )}
               </AnimatePresence>
@@ -201,14 +202,18 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
 
             <div className="flex justify-between items-center pt-2">
               <span className="text-sm text-muted-foreground">
-                {capacity.used}/{capacity.limit} spots used
+                {t('capacity.spotsUsed', { used: capacity.used, limit: capacity.limit })}
               </span>
               <div className="flex gap-2">
                 <Button type="button" variant="outline" onClick={handleClose}>
-                  Cancel
+                  {t('actions.cancel')}
                 </Button>
                 <Button type="submit" disabled={!name.trim()}>
-                  {isParasocial ? "Add" : isNaybor ? "Add Naybor" : "Add Friend"}
+                  {isParasocial
+                    ? t('actions.add')
+                    : isNaybor
+                    ? t('addFriend.addNaybor')
+                    : t('addFriend.addFriendButton')}
                 </Button>
               </div>
             </div>

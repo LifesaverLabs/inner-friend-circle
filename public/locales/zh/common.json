@@ -146,7 +146,9 @@
     "search": "搜索",
     "filter": "筛选",
     "export": "导出",
-    "import": "导入"
+    "import": "导入",
+    "remove": "移除",
+    "accept": "接受"
   },
   "friend": {
     "addFriend": "添加好友",
@@ -218,7 +220,6 @@
     "notSelected": "未选择",
     "required": "必填",
     "optional": "可选",
-
     "feed": {
       "tabList": "好友圈动态",
       "coreTab": "核心动态 - 最亲密的好友",
@@ -226,7 +227,6 @@
       "outerTab": "外围动态 - 扩展圈包括邻里",
       "manageTab": "管理你的好友圈"
     },
-
     "post": {
       "likeButton": "点赞此帖",
       "unlikeButton": "取消点赞",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "可能参加聚会",
       "rsvpOptions": "回复选项"
     },
-
     "nudge": {
       "panelExpanded": "提醒面板已展开",
       "panelCollapsed": "提醒面板已收起",
@@ -258,7 +257,6 @@
       "connectedButton": "标记今天已联系{{name}}",
       "selectDateButton": "选择与{{name}}联系的日期"
     },
-
     "naybor": {
       "sosRegion": "快速SOS联系人",
       "sosContactsList": "快速联系人：",
@@ -281,13 +279,11 @@
       "messageAll_plural": "向{{count}}位选中的邻里发送消息",
       "locationDescription": "启用后，您的大致位置将与邻里共享"
     },
-
     "dialog": {
       "close": "关闭对话框",
       "back": "返回",
       "confirm": "确认操作"
     },
-
     "form": {
       "showPassword": "显示密码",
       "hidePassword": "隐藏密码",
@@ -295,7 +291,6 @@
       "selectCountry": "选择国家",
       "phoneNumber": "电话号码"
     },
-
     "status": {
       "online": "在线",
       "offline": "离线",
@@ -425,5 +420,114 @@
     "mobileOnly": "联系人选择器仅在移动设备上可用。请使用vCard或CSV导入。",
     "browserNotSupported": "您的浏览器不支持联系人选择器。请使用vCard或CSV导入。",
     "useFileImport": "请尝试从vCard或CSV文件导入。"
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "姓名"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}}个位置中{{available}}个可用",
+    "spotsUsed": "{{used}}/{{limit}}个位置已使用"
+  },
+  "friendCard": {
+    "dragToReorder": "拖动以重新排序",
+    "connectingVia": "通过{{method}}连接",
+    "callVia": "通过{{method}}通话",
+    "editContactInfo": "编辑联系信息",
+    "promoteTo": "提升至",
+    "moveTo": "移动到{{tier}}"
+  },
+  "connections": {
+    "requests": "连接请求",
+    "requestsDescription": "想要与您联系的人",
+    "unknownUser": "未知用户",
+    "addedYouAs": "将您添加为{{tier}}",
+    "circleHidden": "圈子已隐藏",
+    "viaService": "通过{{service}}"
+  },
+  "roleModel": {
+    "addTitle": "添加榜样",
+    "addDescription": "添加一个生活故事激励您的人——在世或已故。",
+    "namePlaceholder": "例如，马可·奥勒留，玛雅·安杰洛...",
+    "whyRoleModel": "为什么这个人是榜样？",
+    "reasonPlaceholder": "描述您欣赏他们什么，您想接受什么特质，或者他们的故事如何激励您变得更好、更优秀、最优秀...",
+    "visibilityNote": "这将对您确认的联系人可见。",
+    "editReason": "编辑原因",
+    "editReasonTitle": "编辑榜样原因",
+    "editReasonDescription": "更新{{name}}成为您榜样的原因。"
+  },
+  "reserved": {
+    "spotsCount": "{{count}}个预留位置",
+    "spotsLabel": "预留位置",
+    "editGroup": "编辑分组",
+    "deleteGroup": "删除分组",
+    "deleteConfirmTitle": "删除预留分组？",
+    "deleteConfirmDescription": "这将从您的{{tier}}层级中删除{{count}}个预留位置{{note}}。",
+    "editTitle": "编辑预留分组 — {{tier}}",
+    "editDescription": "更新此预留分组的位置数和备注。",
+    "maxAvailable": "最多可用：{{count}}个位置",
+    "privateNoteLabel": "私人备注（可选）",
+    "notePlaceholder": "只有您可以看到这个。例如，'徒步旅行群的人'",
+    "notePlaceholderLong": "只有您可以看到这个。例如，'徒步旅行群的人'或'喜欢隐私的家人'",
+    "addTitle": "添加预留分组 — {{tier}}",
+    "addDescription": "为您不想明确列出的人预留位置。每个分组计入您的{{tier}}限额但保持私密。",
+    "capacitySummary": "{{named}}个已命名 + {{reserved}}个已预留 + {{new}}个新增 = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "添加分组"
+  },
+  "addFriend": {
+    "addNaybor": "添加邻居",
+    "addParasocial": "添加准社会关系",
+    "addFriend": "添加{{tier}}朋友",
+    "addFriendButton": "添加朋友",
+    "circleFull": "您的{{tier}}圈已满",
+    "circleFullHint": "要在这里添加某人，您需要先将当前的{{tier}}朋友移到另一个层级。",
+    "namePlaceholder": "他们的名字",
+    "emailOptional": "电子邮件（可选）",
+    "emailPlaceholder": "用于互相匹配通知",
+    "emailHint": "如果他们也将您列为{{tier}}朋友，并且你们双方都启用了通知，你们都将收到相互连接的通知。",
+    "addEmailButton": "添加电子邮件用于互相匹配",
+    "phoneOptional": "电话（可选）",
+    "preferredContactMethod": "首选联系方式",
+    "phoneHint": "使用此功能与朋友保持联系。",
+    "nayborPhoneHint": "拥有邻居的联系信息对于紧急情况和互助至关重要。",
+    "addPhoneButton": "添加电话用于视频通话",
+    "addNayborPhoneButton": "添加紧急联系信息"
   }
 }

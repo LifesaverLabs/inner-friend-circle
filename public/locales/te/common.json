@@ -146,7 +146,9 @@
     "search": "వెతుకు",
     "filter": "ఫిల్టర్",
     "export": "ఎక్స్‌పోర్ట్",
-    "import": "ఇంపోర్ట్"
+    "import": "ఇంపోర్ట్",
+    "remove": "తొలగించు",
+    "accept": "అంగీకరించు"
   },
   "friend": {
     "addFriend": "స్నేహితుడిని జోడించు",
@@ -218,7 +220,6 @@
     "notSelected": "ఎంచుకోబడలేదు",
     "required": "తప్పనిసరి",
     "optional": "ఐచ్ఛికం",
-
     "feed": {
       "tabList": "స్నేహితుల వలయ ఫీడ్‌లు",
       "coreTab": "కోర్ ఫీడ్ - మీ అత్యంత సన్నిహిత స్నేహితులు",
@@ -226,7 +227,6 @@
       "outerTab": "ఔటర్ ప్లస్ ఫీడ్ - పొరుగువారితో సహా విస్తరించిన వలయం",
       "manageTab": "మీ స్నేహితుల వలయాన్ని నిర్వహించండి"
     },
-
     "post": {
       "likeButton": "ఈ పోస్ట్‌ను ఇష్టపడు",
       "unlikeButton": "ఈ పోస్ట్‌ను ఇష్టపడవద్దు",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "కలుసుకోవడానికి బహుశా",
       "rsvpOptions": "RSVP ఎంపికలు"
     },
-
     "nudge": {
       "panelExpanded": "నడ్జ్ ప్యానెల్ విస్తరించబడింది",
       "panelCollapsed": "నడ్జ్ ప్యానెల్ కుదించబడింది",
@@ -258,7 +257,6 @@
       "connectedButton": "{{name}}ని ఈరోజు కనెక్ట్ అయినట్లు గుర్తించు",
       "selectDateButton": "{{name}} తో ఎప్పుడు కనెక్ట్ అయ్యారో ఎంచుకోండి"
     },
-
     "naybor": {
       "sosRegion": "త్వరిత SOS పరిచయాలు",
       "sosContactsList": "త్వరిత పరిచయాలు:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "ఎంచుకున్న {{count}} పొరుగువారికి మెసేజ్ పంపు",
       "locationDescription": "ఎనేబుల్ చేసినప్పుడు, మీ సుమారు స్థానం మీ పొరుగువారితో షేర్ చేయబడుతుంది"
     },
-
     "dialog": {
       "close": "డైలాగ్ మూసివేయి",
       "back": "వెనక్కి వెళ్ళు",
       "confirm": "చర్యను నిర్ధారించు"
     },
-
     "form": {
       "showPassword": "పాస్‌వర్డ్ చూపించు",
       "hidePassword": "పాస్‌వర్డ్ దాచు",
@@ -295,7 +291,6 @@
       "selectCountry": "దేశం ఎంచుకో",
       "phoneNumber": "ఫోన్ నంబర్"
     },
-
     "status": {
       "online": "ఆన్‌లైన్",
       "offline": "ఆఫ్‌లైన్",
@@ -425,5 +420,114 @@
     "mobileOnly": "Contact Picker మొబైల్ పరికరాల్లో మాత్రమే అందుబాటులో ఉంది. బదులుగా vCard లేదా CSV ఇంపోర్ట్ ఉపయోగించండి.",
     "browserNotSupported": "మీ బ్రౌజర్ Contact Picker మద్దతు ఇవ్వదు. బదులుగా vCard లేదా CSV ఇంపోర్ట్ ఉపయోగించండి.",
     "useFileImport": "బదులుగా vCard లేదా CSV ఫైల్ నుండి ఇంపోర్ట్ చేయడానికి ప్రయత్నించండి."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "పేరు"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}}లో {{available}} స్థానాలు అందుబాటులో ఉన్నాయి",
+    "spotsUsed": "{{used}}/{{limit}} స్థానాలు వాడబడ్డాయి"
+  },
+  "friendCard": {
+    "dragToReorder": "పునఃక్రమం చేయడానికి లాగండి",
+    "connectingVia": "{{method}} ద్వారా కనెక్ట్ అవుతోంది",
+    "callVia": "{{method}} ద్వారా కాల్ చేయండి",
+    "editContactInfo": "సంప్రదింపు సమాచారం సవరించండి",
+    "promoteTo": "ప్రమోట్ చేయండి",
+    "moveTo": "{{tier}}కి తరలించు"
+  },
+  "connections": {
+    "requests": "కనెక్షన్ అభ్యర్థనలు",
+    "requestsDescription": "మీతో కనెక్ట్ కావాలనుకునే వ్యక్తులు",
+    "unknownUser": "తెలియని వినియోగదారు",
+    "addedYouAs": "మిమ్మల్ని {{tier}}గా జోడించారు",
+    "circleHidden": "సర్కిల్ దాచబడింది",
+    "viaService": "{{service}} ద్వారా"
+  },
+  "roleModel": {
+    "addTitle": "రోల్ మోడల్ జోడించండి",
+    "addDescription": "మీకు స్ఫూర్తినిచ్చే వ్యక్తిని జోడించండి — సజీవంగా లేదా మరణించిన.",
+    "namePlaceholder": "ఉదా., మార్కస్ ఆరెలియస్, మాయా ఏంజెలో...",
+    "whyRoleModel": "ఈ వ్యక్తి రోల్ మోడల్ ఎందుకు?",
+    "reasonPlaceholder": "మీరు వారి గురించి ఏమి ప్రశంసిస్తారో, మీరు ఏ లక్షణాలను స్వీకరించాలనుకుంటున్నారో, లేదా వారి కథ మిమ్మల్ని మంచి, మెరుగైన, ఉత్తమంగా ఎలా ప్రేరేపిస్తుందో వివరించండి...",
+    "visibilityNote": "ఇది మీ నిర్ధారించిన కనెక్షన్‌లకు కనిపిస్తుంది.",
+    "editReason": "కారణం సవరించండి",
+    "editReasonTitle": "రోల్ మోడల్ కారణం సవరించండి",
+    "editReasonDescription": "{{name}} మీకు రోల్ మోడల్ ఎందుకో నవీకరించండి."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} రిజర్వ్ చేసిన స్థానం",
+    "spotsLabel": "రిజర్వ్ చేసిన స్థానం",
+    "editGroup": "గ్రూప్ సవరించండి",
+    "deleteGroup": "గ్రూప్ తొలగించండి",
+    "deleteConfirmTitle": "రిజర్వ్ చేసిన గ్రూప్ తొలగించాలా?",
+    "deleteConfirmDescription": "ఇది మీ {{tier}} టైర్ నుండి {{count}} రిజర్వ్ చేసిన స్థానాలను{{note}} తొలగిస్తుంది.",
+    "editTitle": "రిజర్వ్ చేసిన గ్రూప్ సవరించండి — {{tier}}",
+    "editDescription": "ఈ రిజర్వ్ చేసిన గ్రూప్ కోసం స్థానాల సంఖ్య మరియు గమనికను అప్‌డేట్ చేయండి.",
+    "maxAvailable": "గరిష్టంగా అందుబాటులో: {{count}} స్థానాలు",
+    "privateNoteLabel": "ప్రైవేట్ నోట్ (ఐచ్ఛికం)",
+    "notePlaceholder": "మీరు మాత్రమే ఇది చూడగలరు. ఉదా., 'హైకింగ్ గ్రూప్ నుండి వ్యక్తులు'",
+    "notePlaceholderLong": "మీరు మాత్రమే ఇది చూడగలరు. ఉదా., 'హైకింగ్ గ్రూప్ నుండి వ్యక్తులు' లేదా 'గోప్యతను ఇష్టపడే కుటుంబ సభ్యులు'",
+    "addTitle": "రిజర్వ్ చేసిన గ్రూప్ జోడించండి — {{tier}}",
+    "addDescription": "మీరు స్పష్టంగా జాబితా చేయకూడదనుకునే వ్యక్తుల కోసం స్థానాలను రిజర్వ్ చేయండి. ప్రతి గ్రూప్ మీ {{tier}} పరిమితిలో లెక్కించబడుతుంది కానీ ప్రైవేట్‌గా ఉంటుంది.",
+    "capacitySummary": "{{named}} పేరు పెట్టబడినవి + {{reserved}} ఇప్పటికే రిజర్వ్ చేయబడినవి + {{new}} కొత్తవి = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "గ్రూప్ జోడించండి"
+  },
+  "addFriend": {
+    "addNaybor": "పొరుగువాడిని జోడించండి",
+    "addParasocial": "పారాసోషల్ జోడించండి",
+    "addFriend": "{{tier}} స్నేహితుడిని జోడించండి",
+    "addFriendButton": "స్నేహితుడిని జోడించండి",
+    "circleFull": "మీ {{tier}} సర్కిల్ నిండింది",
+    "circleFullHint": "ఇక్కడ ఎవరినైనా జోడించడానికి, మీరు మొదట ప్రస్తుత {{tier}} స్నేహితుడిని మరొక టైర్‌కు తరలించాలి.",
+    "namePlaceholder": "వారి పేరు",
+    "emailOptional": "ఇమెయిల్ (ఐచ్ఛికం)",
+    "emailPlaceholder": "పరస్పర మ్యాచ్ నోటిఫికేషన్ల కోసం",
+    "emailHint": "వారు కూడా మిమ్మల్ని {{tier}} స్నేహితుడిగా జాబితా చేసి, మీ ఇద్దరికీ నోటిఫికేషన్‌లు ఎనేబుల్ చేయబడితే, మీ పరస్పర కనెక్షన్ గురించి మీ ఇద్దరికీ తెలియజేయబడుతుంది.",
+    "addEmailButton": "పరస్పర మ్యాచింగ్ కోసం ఇమెయిల్ జోడించండి",
+    "phoneOptional": "ఫోన్ (ఐచ్ఛికం)",
+    "preferredContactMethod": "ప్రాధాన్య సంప్రదింపు పద్ధతి",
+    "phoneHint": "స్నేహితులను సంప్రదించడానికి టెండింగ్ ఫీచర్ కోసం దీనిని ఉపయోగించండి.",
+    "nayborPhoneHint": "అత్యవసర పరిస్థితులు మరియు పరస్పర మద్దతు కోసం మీ పొరుగువారి సంప్రదింపు సమాచారం అవసరం.",
+    "addPhoneButton": "వీడియో కాల్ కోసం ఫోన్ జోడించండి",
+    "addNayborPhoneButton": "అత్యవసర పరిస్థితుల కోసం సంప్రదింపు సమాచారం జోడించండి"
   }
 }

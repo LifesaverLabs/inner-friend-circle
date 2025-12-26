@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Lock, Pencil, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,6 +41,7 @@ export function ReservedGroupCard({
   onUpdate,
   onRemove,
 }: ReservedGroupCardProps) {
+  const { t } = useTranslation();
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
 
@@ -56,7 +58,7 @@ export function ReservedGroupCard({
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-medium text-muted-foreground">
-            {group.count} Reserved Spot{group.count !== 1 ? 's' : ''}
+            {t('reserved.spotsCount', { count: group.count })}
           </h4>
           {group.note && (
             <p className="text-xs text-muted-foreground/70 truncate italic">
@@ -73,14 +75,14 @@ export function ReservedGroupCard({
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setEditDialogOpen(true)}>
               <Pencil className="w-4 h-4 mr-2" />
-              Edit Group
+              {t('reserved.editGroup')}
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => setDeleteDialogOpen(true)}
               className="text-destructive focus:text-destructive"
             >
               <Trash2 className="w-4 h-4 mr-2" />
-              Delete Group
+              {t('reserved.deleteGroup')}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -101,19 +103,22 @@ export function ReservedGroupCard({
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete Reserved Group?</AlertDialogTitle>
+            <AlertDialogTitle>{t('reserved.deleteConfirmTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
-              This will remove {group.count} reserved spot{group.count !== 1 ? 's' : ''}
-              {group.note ? ` (${group.note})` : ''} from your {tier} tier.
+              {t('reserved.deleteConfirmDescription', {
+                count: group.count,
+                note: group.note ? ` (${group.note})` : '',
+                tier: t(`tiers.${tier}`)
+              })}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{t('actions.cancel')}</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => onRemove(group.id)}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Delete
+              {t('actions.delete')}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
