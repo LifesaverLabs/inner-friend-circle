@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { Share2, Heart } from 'lucide-react';
@@ -13,6 +13,7 @@ import { ContactSetupOnboarding, useContactSetupNeeded } from '@/components/Cont
 import { MissionBanner } from '@/components/MissionBanner';
 import { ConnectionRequestsPanel } from '@/components/ConnectionRequestsPanel';
 import { Footer } from '@/components/Footer';
+import { FeedTabs } from '@/components/feed';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
@@ -180,6 +181,42 @@ export function FriendDashboard({
     }
   };
 
+  // Render prop for manage tab content
+  const renderManageContent = useCallback(() => (
+    <div className="space-y-6">
+      {tiers.map(tier => (
+        <TierSection
+          key={tier}
+          tier={tier}
+          friends={getFriendsInTier(tier)}
+          reservedGroups={lists.reservedSpots[tier] || []}
+          onAddFriend={handleAddFriend(tier)}
+          onMoveFriend={handleMoveFriend}
+          onRemoveFriend={handleRemoveFriend}
+          onAddReservedGroup={handleAddReservedGroup(tier)}
+          onUpdateReservedGroup={handleUpdateReservedGroup(tier)}
+          onRemoveReservedGroup={handleRemoveReservedGroup(tier)}
+          onReorderFriends={handleReorderFriends(tier)}
+          getTierCapacity={getTierCapacity}
+          isLoggedIn={isLoggedIn}
+          onAddLinkedFriend={handleAddLinkedFriend}
+          onUpdateFriend={updateFriend}
+          getAllowedMoves={getAllowedMoves}
+          parasocialShares={tier === 'parasocial' ? feedShares : undefined}
+          parasocialSeenShares={tier === 'parasocial' ? seenShares : undefined}
+          onParasocialEngage={tier === 'parasocial' ? recordEngagement : undefined}
+          userId={user?.id}
+        />
+      ))}
+    </div>
+  ), [
+    tiers, getFriendsInTier, lists.reservedSpots, handleAddFriend, handleMoveFriend,
+    handleRemoveFriend, handleAddReservedGroup, handleUpdateReservedGroup,
+    handleRemoveReservedGroup, handleReorderFriends, getTierCapacity, isLoggedIn,
+    handleAddLinkedFriend, updateFriend, getAllowedMoves, feedShares, seenShares,
+    recordEngagement, user?.id
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
       {isLoggedIn && user && needsSetup && (
@@ -270,32 +307,12 @@ export function FriendDashboard({
           )}
         </motion.div>
 
-        <div className="space-y-6">
-          {tiers.map(tier => (
-            <TierSection
-              key={tier}
-              tier={tier}
-              friends={getFriendsInTier(tier)}
-              reservedGroups={lists.reservedSpots[tier] || []}
-              onAddFriend={handleAddFriend(tier)}
-              onMoveFriend={handleMoveFriend}
-              onRemoveFriend={handleRemoveFriend}
-              onAddReservedGroup={handleAddReservedGroup(tier)}
-              onUpdateReservedGroup={handleUpdateReservedGroup(tier)}
-              onRemoveReservedGroup={handleRemoveReservedGroup(tier)}
-              onReorderFriends={handleReorderFriends(tier)}
-              getTierCapacity={getTierCapacity}
-              isLoggedIn={isLoggedIn}
-              onAddLinkedFriend={handleAddLinkedFriend}
-              onUpdateFriend={updateFriend}
-              getAllowedMoves={getAllowedMoves}
-              parasocialShares={tier === 'parasocial' ? feedShares : undefined}
-              parasocialSeenShares={tier === 'parasocial' ? seenShares : undefined}
-              onParasocialEngage={tier === 'parasocial' ? recordEngagement : undefined}
-              userId={user?.id}
-            />
-          ))}
-        </div>
+        <FeedTabs
+          friends={lists.friends}
+          isLoggedIn={isLoggedIn}
+          userId={user?.id}
+          renderManageContent={renderManageContent}
+        />
 
         <motion.div
           initial={{ opacity: 0 }}
