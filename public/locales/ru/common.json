@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Берегите самые близкие отношения",
+    "description": "Инструмент с приоритетом конфиденциальности для поддержания значимых дружеских отношений на основе исследования числа Данбара"
+  },
+  "nav": {
+    "home": "Главная",
+    "dashboard": "Панель",
+    "settings": "Настройки",
+    "signIn": "Войти",
+    "signOut": "Выйти",
+    "profile": "Профиль"
+  },
+  "tiers": {
+    "core": "Ядро",
+    "coreDescription": "Ваши самые близкие доверенные лица (до 5)",
+    "inner": "Внутренний",
+    "innerDescription": "Близкие друзья, с которыми вы видитесь регулярно (до 15)",
+    "outer": "Внешний",
+    "outerDescription": "Хорошие друзья и расширенный круг (до 50)",
+    "acquainted": "Знакомые",
+    "acquaintedDescription": "Люди, которых вы знаете достаточно, чтобы поздороваться",
+    "naybor": "Соседи",
+    "nayborDescription": "Надёжные соседи для взаимопомощи и экстренных ситуаций",
+    "parasocial": "Подписки",
+    "parasocialDescription": "Публичные личности и создатели контента, на которых вы подписаны"
+  },
+  "actions": {
+    "add": "Добавить",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "close": "Закрыть",
+    "back": "Назад",
+    "next": "Далее",
+    "done": "Готово",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "export": "Экспорт",
+    "import": "Импорт"
+  },
+  "friend": {
+    "addFriend": "Добавить друга",
+    "editFriend": "Редактировать контакт",
+    "removeFriend": "Удалить друга",
+    "moveTo": "Переместить в {{tier}}",
+    "name": "Имя",
+    "email": "Эл. почта",
+    "phone": "Телефон",
+    "notes": "Заметки",
+    "preferredContact": "Предпочтительный способ связи",
+    "lastContact": "Последний контакт",
+    "daysSince": "{{days}} дней назад",
+    "neverContacted": "Никогда не связывались"
+  },
+  "feed": {
+    "coreFeed": "Лента Ядра",
+    "innerFeed": "Внутренняя лента",
+    "outerFeed": "Внешняя+",
+    "manage": "Управление",
+    "emptyCore": "Добавьте друзей из Ядра, чтобы видеть их публикации здесь",
+    "emptyInner": "Добавьте друзей из Внутреннего круга, чтобы видеть их публикации здесь",
+    "emptyOuter": "Добавьте друзей из Внешнего круга, чтобы видеть их публикации здесь",
+    "compose": "О чём вы думаете?",
+    "post": "Опубликовать",
+    "like": "Нравится",
+    "unlike": "Убрать лайк",
+    "comment": "Комментировать",
+    "share": "Поделиться",
+    "voiceReply": "Голосовой ответ",
+    "scheduleCall": "Запланировать звонок",
+    "planMeetup": "Запланировать встречу"
+  },
+  "nudge": {
+    "timeToReconnect": "Время восстановить связь",
+    "friendsNeedAttention": "{{count}} друг нуждается в общении",
+    "friendsNeedAttention_plural": "{{count}} друзей нуждаются в общении",
+    "daysSinceContact": "{{days}} дней с последнего контакта",
+    "neverContacted": "Никогда не связывались",
+    "connected": "На связи",
+    "connectedToday": "Отметить как связавшихся сегодня",
+    "selectDate": "Выберите, когда вы связывались",
+    "dismiss": "Отклонить"
+  },
+  "contact": {
+    "call": "Позвонить",
+    "message": "Сообщение",
+    "email": "Эл. почта",
+    "methods": {
+      "tel": "Телефонный звонок",
+      "sms": "SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Перейти к основному содержанию",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню",
+    "expandPanel": "Развернуть панель",
+    "collapsePanel": "Свернуть панель",
+    "loading": "Загрузка...",
+    "loadingFeed": "Загрузка содержимого ленты",
+    "error": "Ошибка",
+    "success": "Успешно",
+    "selected": "Выбрано",
+    "notSelected": "Не выбрано",
+    "required": "Обязательно",
+    "optional": "Необязательно",
+
+    "feed": {
+      "tabList": "Ленты круга друзей",
+      "coreTab": "Лента Ядра - Ваши самые близкие друзья",
+      "innerTab": "Внутренняя лента - Близкие друзья",
+      "outerTab": "Внешняя лента Плюс - Расширенный круг включая соседей",
+      "manageTab": "Управление кругом друзей"
+    },
+
+    "post": {
+      "likeButton": "Поставить лайк этой публикации",
+      "unlikeButton": "Убрать лайк с этой публикации",
+      "commentButton": "Добавить комментарий",
+      "shareButton": "Поделиться этой публикацией",
+      "voiceReplyButton": "Голосовой ответ",
+      "meetupButton": "Запланировать встречу",
+      "callButton": "Позвонить через {{method}}",
+      "selectContactMethod": "Выберите способ связи",
+      "photoAlt": "Фото: {{description}}",
+      "photoFallback": "Опубликованное фото",
+      "videoLabel": "Видео: {{description}}",
+      "videoFallback": "Опубликованное видео",
+      "voiceNoteLabel": "Голосовое сообщение: {{description}}",
+      "voiceNoteFallback": "Голосовое сообщение",
+      "joinCall": "Присоединиться к звонку",
+      "rsvpYes": "Подтвердить участие во встрече",
+      "rsvpMaybe": "Возможно приду на встречу",
+      "rsvpOptions": "Варианты ответа"
+    },
+
+    "nudge": {
+      "panelExpanded": "Панель напоминаний развёрнута",
+      "panelCollapsed": "Панель напоминаний свёрнута",
+      "friendsList": "Друзья, которым нужно позвонить",
+      "actionGroup": "Действия для {{name}}",
+      "actionButton": "{{action}} с {{name}}",
+      "dismissButton": "Отклонить напоминание для {{name}}",
+      "connectedButton": "Отметить {{name}} как связавшихся сегодня",
+      "selectDateButton": "Выберите, когда вы связывались с {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Быстрые SOS-контакты",
+      "sosContactsList": "Быстрые контакты:",
+      "contactOptions": "Варианты связи с {{name}}",
+      "callButton": "Позвонить {{name}}",
+      "messageButton": "Написать {{name}}",
+      "sosDialogButton": "Открыть диалог экстренной связи с соседями SOS",
+      "showQuickContacts": "Показать быстрые контакты",
+      "hideQuickContacts": "Скрыть быстрые контакты",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Критическая срочность",
+      "backToCategory": "Вернуться к выбору категории",
+      "chooseNaybors": "Продолжить выбор соседей для связи",
+      "backToCompose": "Вернуться к написанию сообщения",
+      "copyMessage": "Скопировать SOS-сообщение в буфер обмена",
+      "nayborsList": "Контакты соседей",
+      "selectNaybor": "Выбрать {{name}}",
+      "alreadyContacted": "(уже связались)",
+      "messageAll": "Написать {{count}} выбранному соседу",
+      "messageAll_plural": "Написать {{count}} выбранным соседям",
+      "locationDescription": "При включении ваше приблизительное местоположение будет передано соседям"
+    },
+
+    "dialog": {
+      "close": "Закрыть диалог",
+      "back": "Назад",
+      "confirm": "Подтвердить действие"
+    },
+
+    "form": {
+      "showPassword": "Показать пароль",
+      "hidePassword": "Скрыть пароль",
+      "clearInput": "Очистить ввод",
+      "selectCountry": "Выбрать страну",
+      "phoneNumber": "Номер телефона"
+    },
+
+    "status": {
+      "online": "В сети",
+      "offline": "Не в сети",
+      "away": "Отошёл",
+      "busy": "Занят"
+    }
+  },
+  "language": {
+    "select": "Выбрать язык",
+    "current": "Текущий язык: {{language}}",
+    "helpTranslate": "Помогите перевести InnerFriend",
+    "communityTranslation": "Присоединяйтесь к нашему сообществу переводчиков, чтобы сделать InnerFriend доступным для большего числа людей по всему миру."
+  },
+  "errors": {
+    "generic": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
+    "network": "Ошибка сети. Пожалуйста, проверьте подключение.",
+    "notFound": "Страница не найдена",
+    "unauthorized": "Пожалуйста, войдите, чтобы продолжить"
+  },
+  "footer": {
+    "privacy": "Конфиденциальность",
+    "terms": "Условия",
+    "about": "О нас",
+    "contribute": "Участвовать",
+    "openSource": "Открытый код"
+  }
+}

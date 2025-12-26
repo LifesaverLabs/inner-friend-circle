@@ -12,7 +12,8 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from 'i18next-http-backend';
 
-// Supported languages with metadata
+// Supported languages with metadata - Top 20 languages by speaker count (Tier 1)
+// Language names use endonyms (native names) as the primary identifier
 export const SUPPORTED_LANGUAGES = {
   en: {
     name: 'English',
@@ -21,28 +22,130 @@ export const SUPPORTED_LANGUAGES = {
     flag: '🇺🇸',
   },
   zh: {
-    name: 'Chinese (Simplified)',
+    name: '简体中文',
     nativeName: '简体中文',
     direction: 'ltr' as const,
     flag: '🇨🇳',
   },
   hi: {
-    name: 'Hindi',
+    name: 'हिन्दी',
     nativeName: 'हिन्दी',
     direction: 'ltr' as const,
     flag: '🇮🇳',
   },
   es: {
-    name: 'Spanish',
+    name: 'Español',
     nativeName: 'Español',
     direction: 'ltr' as const,
     flag: '🇪🇸',
   },
+  fr: {
+    name: 'Français',
+    nativeName: 'Français',
+    direction: 'ltr' as const,
+    flag: '🇫🇷',
+  },
   ar: {
-    name: 'Arabic',
+    name: 'العربية',
     nativeName: 'العربية',
     direction: 'rtl' as const,
     flag: '🇸🇦',
+  },
+  bn: {
+    name: 'বাংলা',
+    nativeName: 'বাংলা',
+    direction: 'ltr' as const,
+    flag: '🇧🇩',
+  },
+  pt: {
+    name: 'Português',
+    nativeName: 'Português',
+    direction: 'ltr' as const,
+    flag: '🇧🇷',
+  },
+  ru: {
+    name: 'Русский',
+    nativeName: 'Русский',
+    direction: 'ltr' as const,
+    flag: '🇷🇺',
+  },
+  ja: {
+    name: '日本語',
+    nativeName: '日本語',
+    direction: 'ltr' as const,
+    flag: '🇯🇵',
+  },
+  pa: {
+    name: 'ਪੰਜਾਬੀ',
+    nativeName: 'ਪੰਜਾਬੀ',
+    direction: 'ltr' as const,
+    flag: '🇮🇳',
+  },
+  de: {
+    name: 'Deutsch',
+    nativeName: 'Deutsch',
+    direction: 'ltr' as const,
+    flag: '🇩🇪',
+  },
+  jv: {
+    name: 'Basa Jawa',
+    nativeName: 'Basa Jawa',
+    direction: 'ltr' as const,
+    flag: '🇮🇩',
+  },
+  ko: {
+    name: '한국어',
+    nativeName: '한국어',
+    direction: 'ltr' as const,
+    flag: '🇰🇷',
+  },
+  te: {
+    name: 'తెలుగు',
+    nativeName: 'తెలుగు',
+    direction: 'ltr' as const,
+    flag: '🇮🇳',
+  },
+  vi: {
+    name: 'Tiếng Việt',
+    nativeName: 'Tiếng Việt',
+    direction: 'ltr' as const,
+    flag: '🇻🇳',
+  },
+  mr: {
+    name: 'मराठी',
+    nativeName: 'मराठी',
+    direction: 'ltr' as const,
+    flag: '🇮🇳',
+  },
+  ta: {
+    name: 'தமிழ்',
+    nativeName: 'தமிழ்',
+    direction: 'ltr' as const,
+    flag: '🇮🇳',
+  },
+  tr: {
+    name: 'Türkçe',
+    nativeName: 'Türkçe',
+    direction: 'ltr' as const,
+    flag: '🇹🇷',
+  },
+  it: {
+    name: 'Italiano',
+    nativeName: 'Italiano',
+    direction: 'ltr' as const,
+    flag: '🇮🇹',
+  },
+  ur: {
+    name: 'اردو',
+    nativeName: 'اردو',
+    direction: 'rtl' as const,
+    flag: '🇵🇰',
+  },
+  bled: {
+    name: 'Blesséd',
+    nativeName: 'Blesséd',
+    direction: 'ltr' as const,
+    flag: '✨',
   },
 } as const;
 

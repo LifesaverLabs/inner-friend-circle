@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "大切な人との絆を育む",
+    "description": "ダンバー数の研究に基づいた、意味のある友情を維持するためのプライバシー重視ツール"
+  },
+  "nav": {
+    "home": "ホーム",
+    "dashboard": "ダッシュボード",
+    "settings": "設定",
+    "signIn": "サインイン",
+    "signOut": "サインアウト",
+    "profile": "プロフィール"
+  },
+  "tiers": {
+    "core": "コア",
+    "coreDescription": "最も親しい信頼できる人（最大5人）",
+    "inner": "インナー",
+    "innerDescription": "定期的に会う親しい友人（最大15人）",
+    "outer": "アウター",
+    "outerDescription": "良い友人と拡大サークル（最大50人）",
+    "acquainted": "知り合い",
+    "acquaintedDescription": "挨拶できる程度に知っている人",
+    "naybor": "ご近所",
+    "nayborDescription": "相互扶助や緊急時のための信頼できる近隣住民",
+    "parasocial": "フォロー",
+    "parasocialDescription": "フォローしている著名人やコンテンツクリエイター"
+  },
+  "actions": {
+    "add": "追加",
+    "edit": "編集",
+    "delete": "削除",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "close": "閉じる",
+    "back": "戻る",
+    "next": "次へ",
+    "done": "完了",
+    "search": "検索",
+    "filter": "フィルター",
+    "export": "エクスポート",
+    "import": "インポート"
+  },
+  "friend": {
+    "addFriend": "友達を追加",
+    "editFriend": "連絡先を編集",
+    "removeFriend": "友達を削除",
+    "moveTo": "{{tier}}に移動",
+    "name": "名前",
+    "email": "メール",
+    "phone": "電話",
+    "notes": "メモ",
+    "preferredContact": "希望の連絡方法",
+    "lastContact": "最後の連絡",
+    "daysSince": "{{days}}日前",
+    "neverContacted": "未連絡"
+  },
+  "feed": {
+    "coreFeed": "コアフィード",
+    "innerFeed": "インナーフィード",
+    "outerFeed": "アウター+",
+    "manage": "管理",
+    "emptyCore": "コアの友達を追加して投稿を見る",
+    "emptyInner": "インナーの友達を追加して投稿を見る",
+    "emptyOuter": "アウターの友達を追加して投稿を見る",
+    "compose": "何を考えていますか？",
+    "post": "投稿",
+    "like": "いいね",
+    "unlike": "いいね解除",
+    "comment": "コメント",
+    "share": "シェア",
+    "voiceReply": "ボイスリプライ",
+    "scheduleCall": "通話予約",
+    "planMeetup": "会う約束"
+  },
+  "nudge": {
+    "timeToReconnect": "再接続の時間",
+    "friendsNeedAttention": "{{count}}人の友達に連絡が必要",
+    "friendsNeedAttention_plural": "{{count}}人の友達に連絡が必要",
+    "daysSinceContact": "最後の連絡から{{days}}日",
+    "neverContacted": "未連絡",
+    "connected": "連絡済み",
+    "connectedToday": "今日連絡したとマーク",
+    "selectDate": "連絡した日を選択",
+    "dismiss": "閉じる"
+  },
+  "contact": {
+    "call": "通話",
+    "message": "メッセージ",
+    "email": "メール",
+    "methods": {
+      "tel": "電話",
+      "sms": "SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "メインコンテンツへスキップ",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "expandPanel": "パネルを展開",
+    "collapsePanel": "パネルを折りたたむ",
+    "loading": "読み込み中...",
+    "loadingFeed": "フィードを読み込み中",
+    "error": "エラー",
+    "success": "成功",
+    "selected": "選択済み",
+    "notSelected": "未選択",
+    "required": "必須",
+    "optional": "任意",
+
+    "feed": {
+      "tabList": "友達サークルフィード",
+      "coreTab": "コアフィード - 最も親しい友達",
+      "innerTab": "インナーフィード - 親しい友達",
+      "outerTab": "アウタープラスフィード - ご近所を含む拡大サークル",
+      "manageTab": "友達サークルを管理"
+    },
+
+    "post": {
+      "likeButton": "この投稿にいいね",
+      "unlikeButton": "いいねを取り消す",
+      "commentButton": "コメントを追加",
+      "shareButton": "この投稿をシェア",
+      "voiceReplyButton": "ボイスリプライ",
+      "meetupButton": "会う約束をする",
+      "callButton": "{{method}}で通話",
+      "selectContactMethod": "連絡方法を選択",
+      "photoAlt": "写真: {{description}}",
+      "photoFallback": "共有された写真",
+      "videoLabel": "動画: {{description}}",
+      "videoFallback": "共有された動画",
+      "voiceNoteLabel": "ボイスメモ: {{description}}",
+      "voiceNoteFallback": "ボイスメモ",
+      "joinCall": "通話に参加",
+      "rsvpYes": "参加を確定",
+      "rsvpMaybe": "たぶん参加",
+      "rsvpOptions": "返答オプション"
+    },
+
+    "nudge": {
+      "panelExpanded": "リマインダーパネル展開中",
+      "panelCollapsed": "リマインダーパネル折りたたみ中",
+      "friendsList": "再接続が必要な友達",
+      "actionGroup": "{{name}}のアクション",
+      "actionButton": "{{name}}と{{action}}",
+      "dismissButton": "{{name}}のリマインダーを閉じる",
+      "connectedButton": "{{name}}を今日連絡済みにする",
+      "selectDateButton": "{{name}}と連絡した日を選択"
+    },
+
+    "naybor": {
+      "sosRegion": "クイックSOS連絡先",
+      "sosContactsList": "クイック連絡先:",
+      "contactOptions": "{{name}}の連絡オプション",
+      "callButton": "{{name}}に電話",
+      "messageButton": "{{name}}にメッセージ",
+      "sosDialogButton": "ご近所SOS緊急連絡ダイアログを開く",
+      "showQuickContacts": "クイック連絡先を表示",
+      "hideQuickContacts": "クイック連絡先を非表示",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - 緊急",
+      "backToCategory": "カテゴリ選択に戻る",
+      "chooseNaybors": "連絡するご近所を選択",
+      "backToCompose": "メッセージ作成に戻る",
+      "copyMessage": "SOSメッセージをコピー",
+      "nayborsList": "ご近所連絡先",
+      "selectNaybor": "{{name}}を選択",
+      "alreadyContacted": "（連絡済み）",
+      "messageAll": "選択した{{count}}人のご近所にメッセージ",
+      "messageAll_plural": "選択した{{count}}人のご近所にメッセージ",
+      "locationDescription": "有効にすると、おおよその位置情報がご近所と共有されます"
+    },
+
+    "dialog": {
+      "close": "ダイアログを閉じる",
+      "back": "戻る",
+      "confirm": "アクションを確認"
+    },
+
+    "form": {
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを非表示",
+      "clearInput": "入力をクリア",
+      "selectCountry": "国を選択",
+      "phoneNumber": "電話番号"
+    },
+
+    "status": {
+      "online": "オンライン",
+      "offline": "オフライン",
+      "away": "離席中",
+      "busy": "取り込み中"
+    }
+  },
+  "language": {
+    "select": "言語を選択",
+    "current": "現在の言語: {{language}}",
+    "helpTranslate": "InnerFriendの翻訳を手伝う",
+    "communityTranslation": "翻訳者コミュニティに参加して、InnerFriendをより多くの人々に届けましょう。"
+  },
+  "errors": {
+    "generic": "エラーが発生しました。もう一度お試しください。",
+    "network": "ネットワークエラー。接続を確認してください。",
+    "notFound": "ページが見つかりません",
+    "unauthorized": "続行するにはサインインしてください"
+  },
+  "footer": {
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "about": "概要",
+    "contribute": "貢献する",
+    "openSource": "オープンソース"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Cultivez vos relations les plus proches",
+    "description": "Un outil respectueux de la vie privée pour maintenir des amitiés significatives basé sur la recherche du nombre de Dunbar"
+  },
+  "nav": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "settings": "Paramètres",
+    "signIn": "Connexion",
+    "signOut": "Déconnexion",
+    "profile": "Profil"
+  },
+  "tiers": {
+    "core": "Noyau",
+    "coreDescription": "Vos confidents les plus proches (jusqu'à 5)",
+    "inner": "Cercle intime",
+    "innerDescription": "Amis proches que vous voyez régulièrement (jusqu'à 15)",
+    "outer": "Cercle élargi",
+    "outerDescription": "Bons amis et cercle étendu (jusqu'à 50)",
+    "acquainted": "Connaissances",
+    "acquaintedDescription": "Personnes que vous connaissez assez pour saluer",
+    "naybor": "Voisins",
+    "nayborDescription": "Voisins de confiance pour l'entraide et les urgences",
+    "parasocial": "Suivis",
+    "parasocialDescription": "Personnalités publiques et créateurs de contenu que vous suivez"
+  },
+  "actions": {
+    "add": "Ajouter",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "done": "Terminé",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "export": "Exporter",
+    "import": "Importer"
+  },
+  "friend": {
+    "addFriend": "Ajouter un ami",
+    "editFriend": "Modifier le contact",
+    "removeFriend": "Supprimer l'ami",
+    "moveTo": "Déplacer vers {{tier}}",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "notes": "Notes",
+    "preferredContact": "Méthode de contact préférée",
+    "lastContact": "Dernier contact",
+    "daysSince": "il y a {{days}} jours",
+    "neverContacted": "Jamais contacté"
+  },
+  "feed": {
+    "coreFeed": "Fil Noyau",
+    "innerFeed": "Fil Intime",
+    "outerFeed": "Élargi+",
+    "manage": "Gérer",
+    "emptyCore": "Ajoutez des amis du Noyau pour voir leurs publications ici",
+    "emptyInner": "Ajoutez des amis du Cercle intime pour voir leurs publications ici",
+    "emptyOuter": "Ajoutez des amis du Cercle élargi pour voir leurs publications ici",
+    "compose": "Qu'avez-vous en tête ?",
+    "post": "Publier",
+    "like": "J'aime",
+    "unlike": "Je n'aime plus",
+    "comment": "Commenter",
+    "share": "Partager",
+    "voiceReply": "Réponse vocale",
+    "scheduleCall": "Planifier un appel",
+    "planMeetup": "Planifier une rencontre"
+  },
+  "nudge": {
+    "timeToReconnect": "C'est le moment de renouer",
+    "friendsNeedAttention": "{{count}} ami a besoin de contact",
+    "friendsNeedAttention_plural": "{{count}} amis ont besoin de contact",
+    "daysSinceContact": "{{days}} jours depuis le dernier contact",
+    "neverContacted": "Jamais contacté",
+    "connected": "Contacté",
+    "connectedToday": "Marquer comme contacté aujourd'hui",
+    "selectDate": "Sélectionnez quand vous vous êtes contactés",
+    "dismiss": "Ignorer"
+  },
+  "contact": {
+    "call": "Appeler",
+    "message": "Message",
+    "email": "E-mail",
+    "methods": {
+      "tel": "Appel téléphonique",
+      "sms": "SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "expandPanel": "Développer le panneau",
+    "collapsePanel": "Réduire le panneau",
+    "loading": "Chargement...",
+    "loadingFeed": "Chargement du fil d'actualité",
+    "error": "Erreur",
+    "success": "Succès",
+    "selected": "Sélectionné",
+    "notSelected": "Non sélectionné",
+    "required": "Obligatoire",
+    "optional": "Facultatif",
+
+    "feed": {
+      "tabList": "Fils du cercle d'amis",
+      "coreTab": "Fil Noyau - Vos amis les plus proches",
+      "innerTab": "Fil Intime - Amis proches",
+      "outerTab": "Fil Élargi Plus - Cercle étendu incluant les voisins",
+      "manageTab": "Gérer votre cercle d'amis"
+    },
+
+    "post": {
+      "likeButton": "Aimer cette publication",
+      "unlikeButton": "Ne plus aimer cette publication",
+      "commentButton": "Ajouter un commentaire",
+      "shareButton": "Partager cette publication",
+      "voiceReplyButton": "Réponse vocale",
+      "meetupButton": "Planifier une rencontre",
+      "callButton": "Appeler via {{method}}",
+      "selectContactMethod": "Sélectionner la méthode de contact",
+      "photoAlt": "Photo : {{description}}",
+      "photoFallback": "Photo partagée",
+      "videoLabel": "Vidéo : {{description}}",
+      "videoFallback": "Vidéo partagée",
+      "voiceNoteLabel": "Note vocale : {{description}}",
+      "voiceNoteFallback": "Note vocale",
+      "joinCall": "Rejoindre l'appel",
+      "rsvpYes": "Confirmer la présence à la rencontre",
+      "rsvpMaybe": "Peut-être à la rencontre",
+      "rsvpOptions": "Options de réponse"
+    },
+
+    "nudge": {
+      "panelExpanded": "Panneau de rappels développé",
+      "panelCollapsed": "Panneau de rappels réduit",
+      "friendsList": "Amis qui ont besoin de contact",
+      "actionGroup": "Actions pour {{name}}",
+      "actionButton": "{{action}} avec {{name}}",
+      "dismissButton": "Ignorer le rappel pour {{name}}",
+      "connectedButton": "Marquer {{name}} comme contacté aujourd'hui",
+      "selectDateButton": "Sélectionner quand vous avez contacté {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Contacts SOS rapides",
+      "sosContactsList": "Contacts rapides :",
+      "contactOptions": "Options de contact pour {{name}}",
+      "callButton": "Appeler {{name}}",
+      "messageButton": "Envoyer un message à {{name}}",
+      "sosDialogButton": "Ouvrir le dialogue de contact d'urgence Voisin SOS",
+      "showQuickContacts": "Afficher les contacts rapides",
+      "hideQuickContacts": "Masquer les contacts rapides",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Urgence critique",
+      "backToCategory": "Retour à la sélection de catégorie",
+      "chooseNaybors": "Continuer pour choisir les voisins à contacter",
+      "backToCompose": "Retour à la rédaction du message",
+      "copyMessage": "Copier le message SOS dans le presse-papiers",
+      "nayborsList": "Contacts voisins",
+      "selectNaybor": "Sélectionner {{name}}",
+      "alreadyContacted": "(déjà contacté)",
+      "messageAll": "Envoyer un message à {{count}} voisin sélectionné",
+      "messageAll_plural": "Envoyer un message aux {{count}} voisins sélectionnés",
+      "locationDescription": "Lorsque activé, votre position approximative sera partagée avec vos voisins"
+    },
+
+    "dialog": {
+      "close": "Fermer le dialogue",
+      "back": "Retour",
+      "confirm": "Confirmer l'action"
+    },
+
+    "form": {
+      "showPassword": "Afficher le mot de passe",
+      "hidePassword": "Masquer le mot de passe",
+      "clearInput": "Effacer la saisie",
+      "selectCountry": "Sélectionner le pays",
+      "phoneNumber": "Numéro de téléphone"
+    },
+
+    "status": {
+      "online": "En ligne",
+      "offline": "Hors ligne",
+      "away": "Absent",
+      "busy": "Occupé"
+    }
+  },
+  "language": {
+    "select": "Sélectionner la langue",
+    "current": "Langue actuelle : {{language}}",
+    "helpTranslate": "Aidez à traduire InnerFriend",
+    "communityTranslation": "Rejoignez notre communauté de traducteurs pour rendre InnerFriend accessible à plus de personnes dans le monde."
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "network": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "notFound": "Page non trouvée",
+    "unauthorized": "Veuillez vous connecter pour continuer"
+  },
+  "footer": {
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "about": "À propos",
+    "contribute": "Contribuer",
+    "openSource": "Open Source"
+  }
+}

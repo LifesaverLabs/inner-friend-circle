@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "note": "Blesséd (BLED) Dialekt Translation - Koming Soon! This translation is in aktive development. We welkome kontributions from the kalmunity to help refine and expand this translation.",
+    "status": "draft",
+    "lastUpdated": "2025-12-26"
+  },
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Nurture your klosest relationships",
+    "description": "A privaxy-first tool for maintaining meaningful friendships based on Dunbar's number researkh"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "profile": "Profile"
+  },
+  "tiers": {
+    "core": "Kore",
+    "coreDescription": "Your klosest konfidants (up to 5)",
+    "inner": "Inner",
+    "innerDescription": "Klose friends you see regularly (up to 15)",
+    "outer": "Outer",
+    "outerDescription": "Good friends and extended kirkle (up to 50)",
+    "acquainted": "Akquainted",
+    "acquaintedDescription": "People you know well enough to greet",
+    "naybor": "Naybor",
+    "nayborDescription": "Trusted naybors for mutual aid and emergensies",
+    "parasocial": "Following",
+    "parasocialDescription": "Publik figures and kontent kreators you follow"
+  },
+  "actions": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Kansel",
+    "confirm": "Konfirm",
+    "close": "Klose",
+    "back": "Bakk",
+    "next": "Next",
+    "done": "Done",
+    "search": "Searkh",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import"
+  },
+  "friend": {
+    "addFriend": "Add Friend",
+    "editFriend": "Edit Kontakt",
+    "removeFriend": "Remove Friend",
+    "moveTo": "Move to {{tier}}",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "notes": "Notes",
+    "preferredContact": "Preferred Kontakt Method",
+    "lastContact": "Last Kontakt",
+    "daysSince": "{{days}} days ago",
+    "neverContacted": "Never kontakted"
+  },
+  "feed": {
+    "coreFeed": "Kore Feed",
+    "innerFeed": "Inner Feed",
+    "outerFeed": "Outer+",
+    "manage": "Manage",
+    "emptyCore": "Add some Kore friends to see their posts here",
+    "emptyInner": "Add some Inner friends to see their posts here",
+    "emptyOuter": "Add some Outer friends to see their posts here",
+    "compose": "What's on your mind?",
+    "post": "Post",
+    "like": "Like",
+    "unlike": "Unlike",
+    "comment": "Komment",
+    "share": "Share",
+    "voiceReply": "Voise Reply",
+    "scheduleCall": "Skhedule Kall",
+    "planMeetup": "Plan Meetup"
+  },
+  "nudge": {
+    "timeToReconnect": "Time to Rekonnekt",
+    "friendsNeedAttention": "{{count}} friend needs rekonneksion",
+    "friendsNeedAttention_plural": "{{count}} friends need rekonneksion",
+    "daysSinceContact": "{{days}} days sinse last kontakt",
+    "neverContacted": "Never kontakted",
+    "connected": "Konnekted",
+    "connectedToday": "Mark as konnekted today",
+    "selectDate": "Selekt when you konnekted",
+    "dismiss": "Dismiss"
+  },
+  "contact": {
+    "call": "Kall",
+    "message": "Message",
+    "email": "Email",
+    "methods": {
+      "tel": "Phone Kall",
+      "sms": "Text Message",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaseTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main kontent",
+    "openMenu": "Open menu",
+    "closeMenu": "Klose menu",
+    "expandPanel": "Expand panel",
+    "collapsePanel": "Kollapse panel",
+    "loading": "Loading...",
+    "loadingFeed": "Loading feed kontent",
+    "error": "Error",
+    "success": "Sukkess",
+    "selected": "Selekted",
+    "notSelected": "Not selekted",
+    "required": "Required",
+    "optional": "Optsional",
+
+    "feed": {
+      "tabList": "Friend kirkle feeds",
+      "coreTab": "Kore Feed - Your klosest friends",
+      "innerTab": "Inner Feed - Klose friends",
+      "outerTab": "Outer Plus Feed - Extended kirkle inkluding naybors",
+      "manageTab": "Manage your friend kirkle"
+    },
+
+    "post": {
+      "likeButton": "Like this post",
+      "unlikeButton": "Unlike this post",
+      "commentButton": "Add a komment",
+      "shareButton": "Share this post",
+      "voiceReplyButton": "Voise Reply",
+      "meetupButton": "Skhedule a meetup",
+      "callButton": "Kall via {{method}}",
+      "selectContactMethod": "Selekt kontakt method",
+      "photoAlt": "Photo: {{description}}",
+      "photoFallback": "Shared photo",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Shared video",
+      "voiceNoteLabel": "Voise note: {{description}}",
+      "voiceNoteFallback": "Voise note",
+      "joinCall": "Join kall",
+      "rsvpYes": "RSVP yes to meetup",
+      "rsvpMaybe": "RSVP maybe to meetup",
+      "rsvpOptions": "RSVP optsions"
+    },
+
+    "nudge": {
+      "panelExpanded": "Nudge panel expanded",
+      "panelCollapsed": "Nudge panel kollapsed",
+      "friendsList": "Friends who need rekonneksion",
+      "actionGroup": "Aktsions for {{name}}",
+      "actionButton": "{{action}} with {{name}}",
+      "dismissButton": "Dismiss reminder for {{name}}",
+      "connectedButton": "Mark {{name}} as konnekted today",
+      "selectDateButton": "Selekt when you konnekted with {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Kwik SOS kontakts",
+      "sosContactsList": "Kwik kontakts:",
+      "contactOptions": "Kontakt optsions for {{name}}",
+      "callButton": "Kall {{name}}",
+      "messageButton": "Message {{name}}",
+      "sosDialogButton": "Open Naybor SOS emergensy kontakt dialog",
+      "showQuickContacts": "Show kwik kontakts",
+      "hideQuickContacts": "Hide kwik kontakts",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Kritikal urgensy",
+      "backToCategory": "Go bakk to kategory seleksion",
+      "chooseNaybors": "Kontinue to khoose naybors to kontakt",
+      "backToCompose": "Go bakk to kompose message",
+      "copyMessage": "Kopy SOS message to klipboard",
+      "nayborsList": "Naybor kontakts",
+      "selectNaybor": "Selekt {{name}}",
+      "alreadyContacted": "(already kontakted)",
+      "messageAll": "Message all {{count}} selekted naybor",
+      "messageAll_plural": "Message all {{count}} selekted naybors",
+      "locationDescription": "When enabled, your approximate lokation will be shared with your naybors"
+    },
+
+    "dialog": {
+      "close": "Klose dialog",
+      "back": "Go bakk",
+      "confirm": "Konfirm aksion"
+    },
+
+    "form": {
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "clearInput": "Klear input",
+      "selectCountry": "Selekt kountry",
+      "phoneNumber": "Phone number"
+    },
+
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Away",
+      "busy": "Busy"
+    }
+  },
+  "language": {
+    "select": "Selekt Language",
+    "current": "Kurrent language: {{language}}",
+    "helpTranslate": "Help translate InnerFriend",
+    "communityTranslation": "Join our kalmunity of translators to make InnerFriend aksessible to more people around the world."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please khekk your konneksion.",
+    "notFound": "Page not found",
+    "unauthorized": "Please sign in to kontinue"
+  },
+  "footer": {
+    "privacy": "Privaxy",
+    "terms": "Terms",
+    "about": "About",
+    "contribute": "Kontribute",
+    "openSource": "Open Sourse"
+  }
+}

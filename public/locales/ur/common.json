@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "انرفرینڈ",
+    "tagline": "اپنے قریبی رشتوں کی پرورش کریں",
+    "description": "ڈنبار نمبر ریسرچ پر مبنی معنی خیز دوستی کو برقرار رکھنے کے لیے پرائیویسی فرسٹ ٹول"
+  },
+  "nav": {
+    "home": "ہوم",
+    "dashboard": "ڈیش بورڈ",
+    "settings": "سیٹنگز",
+    "signIn": "سائن ان",
+    "signOut": "سائن آؤٹ",
+    "profile": "پروفائل"
+  },
+  "tiers": {
+    "core": "کور",
+    "coreDescription": "آپ کے سب سے قریبی معتمد (5 تک)",
+    "inner": "اندرونی",
+    "innerDescription": "قریبی دوست جن سے باقاعدگی سے ملتے ہیں (15 تک)",
+    "outer": "بیرونی",
+    "outerDescription": "اچھے دوست اور وسیع حلقہ (50 تک)",
+    "acquainted": "واقف",
+    "acquaintedDescription": "جنہیں آپ سلام کرنے کے لیے کافی جانتے ہیں",
+    "naybor": "پڑوسی",
+    "nayborDescription": "ہنگامی حالات اور باہمی مدد کے لیے قابل اعتماد پڑوسی",
+    "parasocial": "فالو",
+    "parasocialDescription": "مشہور شخصیات اور کنٹینٹ کریٹرز جنہیں آپ فالو کرتے ہیں"
+  },
+  "actions": {
+    "add": "شامل کریں",
+    "edit": "ترمیم کریں",
+    "delete": "حذف کریں",
+    "save": "محفوظ کریں",
+    "cancel": "منسوخ کریں",
+    "confirm": "تصدیق کریں",
+    "close": "بند کریں",
+    "back": "واپس",
+    "next": "اگلا",
+    "done": "ہو گیا",
+    "search": "تلاش کریں",
+    "filter": "فلٹر",
+    "export": "برآمد کریں",
+    "import": "درآمد کریں"
+  },
+  "friend": {
+    "addFriend": "دوست شامل کریں",
+    "editFriend": "رابطہ ترمیم کریں",
+    "removeFriend": "دوست ہٹائیں",
+    "moveTo": "{{tier}} میں منتقل کریں",
+    "name": "نام",
+    "email": "ای میل",
+    "phone": "فون",
+    "notes": "نوٹس",
+    "preferredContact": "ترجیحی رابطہ طریقہ",
+    "lastContact": "آخری رابطہ",
+    "daysSince": "{{days}} دن پہلے",
+    "neverContacted": "کبھی رابطہ نہیں ہوا"
+  },
+  "feed": {
+    "coreFeed": "کور فیڈ",
+    "innerFeed": "اندرونی فیڈ",
+    "outerFeed": "بیرونی+",
+    "manage": "انتظام",
+    "emptyCore": "ان کی پوسٹس دیکھنے کے لیے کور دوست شامل کریں",
+    "emptyInner": "ان کی پوسٹس دیکھنے کے لیے اندرونی دوست شامل کریں",
+    "emptyOuter": "ان کی پوسٹس دیکھنے کے لیے بیرونی دوست شامل کریں",
+    "compose": "آپ کے ذہن میں کیا ہے?",
+    "post": "پوسٹ کریں",
+    "like": "پسند",
+    "unlike": "ناپسند",
+    "comment": "تبصرہ",
+    "share": "شیئر کریں",
+    "voiceReply": "آواز کا جواب",
+    "scheduleCall": "کال شیڈول کریں",
+    "planMeetup": "ملاقات کی منصوبہ بندی"
+  },
+  "nudge": {
+    "timeToReconnect": "دوبارہ جڑنے کا وقت",
+    "friendsNeedAttention": "{{count}} دوست کو رابطے کی ضرورت ہے",
+    "friendsNeedAttention_plural": "{{count}} دوستوں کو رابطے کی ضرورت ہے",
+    "daysSinceContact": "آخری رابطے سے {{days}} دن",
+    "neverContacted": "کبھی رابطہ نہیں ہوا",
+    "connected": "جڑے ہوئے",
+    "connectedToday": "آج جڑے کے طور پر نشان لگائیں",
+    "selectDate": "منتخب کریں کب آپ جڑے",
+    "dismiss": "خارج کریں"
+  },
+  "contact": {
+    "call": "کال",
+    "message": "پیغام",
+    "email": "ای میل",
+    "methods": {
+      "tel": "فون کال",
+      "sms": "ٹیکسٹ پیغام",
+      "whatsapp": "واٹس ایپ",
+      "signal": "سگنل",
+      "telegram": "ٹیلیگرام",
+      "facetime": "فیس ٹائم"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "مرکزی مواد پر جائیں",
+    "openMenu": "مینو کھولیں",
+    "closeMenu": "مینو بند کریں",
+    "expandPanel": "پینل پھیلائیں",
+    "collapsePanel": "پینل سکیڑیں",
+    "loading": "لوڈ ہو رہا ہے...",
+    "loadingFeed": "فیڈ مواد لوڈ ہو رہا ہے",
+    "error": "خرابی",
+    "success": "کامیابی",
+    "selected": "منتخب",
+    "notSelected": "غیر منتخب",
+    "required": "ضروری",
+    "optional": "اختیاری",
+
+    "feed": {
+      "tabList": "دوستوں کے حلقے کی فیڈز",
+      "coreTab": "کور فیڈ - آپ کے سب سے قریبی دوست",
+      "innerTab": "اندرونی فیڈ - قریبی دوست",
+      "outerTab": "بیرونی پلس فیڈ - پڑوسیوں سمیت وسیع حلقہ",
+      "manageTab": "اپنے دوستوں کے حلقے کا انتظام کریں"
+    },
+
+    "post": {
+      "likeButton": "اس پوسٹ کو پسند کریں",
+      "unlikeButton": "اس پوسٹ کو ناپسند کریں",
+      "commentButton": "تبصرہ شامل کریں",
+      "shareButton": "اس پوسٹ کو شیئر کریں",
+      "voiceReplyButton": "آواز کا جواب",
+      "meetupButton": "ملاقات شیڈول کریں",
+      "callButton": "{{method}} سے کال کریں",
+      "selectContactMethod": "رابطہ طریقہ منتخب کریں",
+      "photoAlt": "تصویر: {{description}}",
+      "photoFallback": "شیئر کی گئی تصویر",
+      "videoLabel": "ویڈیو: {{description}}",
+      "videoFallback": "شیئر کی گئی ویڈیو",
+      "voiceNoteLabel": "آواز نوٹ: {{description}}",
+      "voiceNoteFallback": "آواز نوٹ",
+      "joinCall": "کال میں شامل ہوں",
+      "rsvpYes": "ملاقات کے لیے ہاں",
+      "rsvpMaybe": "ملاقات کے لیے شاید",
+      "rsvpOptions": "جواب کے اختیارات"
+    },
+
+    "nudge": {
+      "panelExpanded": "نج پینل پھیلا ہوا",
+      "panelCollapsed": "نج پینل سکڑا ہوا",
+      "friendsList": "دوست جنہیں دوبارہ جڑنے کی ضرورت ہے",
+      "actionGroup": "{{name}} کے لیے کارروائیاں",
+      "actionButton": "{{name}} کے ساتھ {{action}}",
+      "dismissButton": "{{name}} کے لیے یاد دہانی خارج کریں",
+      "connectedButton": "{{name}} کو آج جڑے کے طور پر نشان لگائیں",
+      "selectDateButton": "{{name}} سے کب جڑے منتخب کریں"
+    },
+
+    "naybor": {
+      "sosRegion": "تیز SOS رابطے",
+      "sosContactsList": "تیز رابطے:",
+      "contactOptions": "{{name}} کے لیے رابطہ اختیارات",
+      "callButton": "{{name}} کو کال کریں",
+      "messageButton": "{{name}} کو پیغام بھیجیں",
+      "sosDialogButton": "پڑوسی SOS ہنگامی رابطہ ڈائیلاگ کھولیں",
+      "showQuickContacts": "تیز رابطے دکھائیں",
+      "hideQuickContacts": "تیز رابطے چھپائیں",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - انتہائی فوری",
+      "backToCategory": "زمرہ انتخاب پر واپس جائیں",
+      "chooseNaybors": "رابطہ کرنے کے لیے پڑوسی منتخب کرنے کے لیے جاری رکھیں",
+      "backToCompose": "پیغام لکھنے پر واپس جائیں",
+      "copyMessage": "SOS پیغام کلپ بورڈ پر کاپی کریں",
+      "nayborsList": "پڑوسی رابطے",
+      "selectNaybor": "{{name}} منتخب کریں",
+      "alreadyContacted": "(پہلے سے رابطہ ہو چکا)",
+      "messageAll": "تمام {{count}} منتخب پڑوسی کو پیغام بھیجیں",
+      "messageAll_plural": "تمام {{count}} منتخب پڑوسیوں کو پیغام بھیجیں",
+      "locationDescription": "فعال ہونے پر، آپ کا تقریبی مقام آپ کے پڑوسیوں کے ساتھ شیئر کیا جائے گا"
+    },
+
+    "dialog": {
+      "close": "ڈائیلاگ بند کریں",
+      "back": "واپس جائیں",
+      "confirm": "کارروائی کی تصدیق کریں"
+    },
+
+    "form": {
+      "showPassword": "پاس ورڈ دکھائیں",
+      "hidePassword": "پاس ورڈ چھپائیں",
+      "clearInput": "ان پٹ صاف کریں",
+      "selectCountry": "ملک منتخب کریں",
+      "phoneNumber": "فون نمبر"
+    },
+
+    "status": {
+      "online": "آن لائن",
+      "offline": "آف لائن",
+      "away": "دور",
+      "busy": "مصروف"
+    }
+  },
+  "language": {
+    "select": "زبان منتخب کریں",
+    "current": "موجودہ زبان: {{language}}",
+    "helpTranslate": "انرفرینڈ کا ترجمہ کرنے میں مدد کریں",
+    "communityTranslation": "دنیا بھر میں مزید لوگوں تک انرفرینڈ پہنچانے کے لیے ہماری مترجمین کی کمیونٹی میں شامل ہوں۔"
+  },
+  "errors": {
+    "generic": "کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔",
+    "network": "نیٹ ورک خرابی۔ براہ کرم اپنا کنکشن چیک کریں۔",
+    "notFound": "صفحہ نہیں ملا",
+    "unauthorized": "جاری رکھنے کے لیے براہ کرم سائن ان کریں"
+  },
+  "footer": {
+    "privacy": "رازداری",
+    "terms": "شرائط",
+    "about": "کے بارے میں",
+    "contribute": "تعاون کریں",
+    "openSource": "اوپن سورس"
+  }
+}

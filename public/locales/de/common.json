@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Pflege deine engsten Beziehungen",
+    "description": "Ein datenschutzfreundliches Tool zur Pflege bedeutungsvoller Freundschaften basierend auf der Dunbar-Zahl-Forschung"
+  },
+  "nav": {
+    "home": "Startseite",
+    "dashboard": "Dashboard",
+    "settings": "Einstellungen",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "profile": "Profil"
+  },
+  "tiers": {
+    "core": "Kern",
+    "coreDescription": "Deine engsten Vertrauten (bis zu 5)",
+    "inner": "Inner",
+    "innerDescription": "Enge Freunde, die du regelmäßig siehst (bis zu 15)",
+    "outer": "Outer",
+    "outerDescription": "Gute Freunde und erweiterter Kreis (bis zu 50)",
+    "acquainted": "Bekannte",
+    "acquaintedDescription": "Menschen, die du gut genug kennst, um sie zu grüßen",
+    "naybor": "Nachbarn",
+    "nayborDescription": "Vertrauenswürdige Nachbarn für gegenseitige Hilfe und Notfälle",
+    "parasocial": "Folgen",
+    "parasocialDescription": "Öffentliche Persönlichkeiten und Content-Creator, denen du folgst"
+  },
+  "actions": {
+    "add": "Hinzufügen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "done": "Fertig",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "export": "Exportieren",
+    "import": "Importieren"
+  },
+  "friend": {
+    "addFriend": "Freund hinzufügen",
+    "editFriend": "Kontakt bearbeiten",
+    "removeFriend": "Freund entfernen",
+    "moveTo": "Verschieben nach {{tier}}",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "notes": "Notizen",
+    "preferredContact": "Bevorzugte Kontaktmethode",
+    "lastContact": "Letzter Kontakt",
+    "daysSince": "vor {{days}} Tagen",
+    "neverContacted": "Nie kontaktiert"
+  },
+  "feed": {
+    "coreFeed": "Kern-Feed",
+    "innerFeed": "Inner-Feed",
+    "outerFeed": "Outer+",
+    "manage": "Verwalten",
+    "emptyCore": "Füge Kern-Freunde hinzu, um ihre Beiträge hier zu sehen",
+    "emptyInner": "Füge Inner-Freunde hinzu, um ihre Beiträge hier zu sehen",
+    "emptyOuter": "Füge Outer-Freunde hinzu, um ihre Beiträge hier zu sehen",
+    "compose": "Was denkst du gerade?",
+    "post": "Posten",
+    "like": "Gefällt mir",
+    "unlike": "Gefällt mir nicht mehr",
+    "comment": "Kommentieren",
+    "share": "Teilen",
+    "voiceReply": "Sprachantwort",
+    "scheduleCall": "Anruf planen",
+    "planMeetup": "Treffen planen"
+  },
+  "nudge": {
+    "timeToReconnect": "Zeit, sich wieder zu melden",
+    "friendsNeedAttention": "{{count}} Freund braucht Kontakt",
+    "friendsNeedAttention_plural": "{{count}} Freunde brauchen Kontakt",
+    "daysSinceContact": "{{days}} Tage seit dem letzten Kontakt",
+    "neverContacted": "Nie kontaktiert",
+    "connected": "Verbunden",
+    "connectedToday": "Als heute verbunden markieren",
+    "selectDate": "Wähle, wann ihr in Kontakt wart",
+    "dismiss": "Verwerfen"
+  },
+  "contact": {
+    "call": "Anrufen",
+    "message": "Nachricht",
+    "email": "E-Mail",
+    "methods": {
+      "tel": "Telefonanruf",
+      "sms": "SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Zum Hauptinhalt springen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "expandPanel": "Panel erweitern",
+    "collapsePanel": "Panel einklappen",
+    "loading": "Wird geladen...",
+    "loadingFeed": "Feed-Inhalt wird geladen",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "selected": "Ausgewählt",
+    "notSelected": "Nicht ausgewählt",
+    "required": "Erforderlich",
+    "optional": "Optional",
+
+    "feed": {
+      "tabList": "Freundeskreis-Feeds",
+      "coreTab": "Kern-Feed - Deine engsten Freunde",
+      "innerTab": "Inner-Feed - Enge Freunde",
+      "outerTab": "Outer Plus Feed - Erweiterter Kreis inklusive Nachbarn",
+      "manageTab": "Deinen Freundeskreis verwalten"
+    },
+
+    "post": {
+      "likeButton": "Diesen Beitrag liken",
+      "unlikeButton": "Like entfernen",
+      "commentButton": "Einen Kommentar hinzufügen",
+      "shareButton": "Diesen Beitrag teilen",
+      "voiceReplyButton": "Sprachantwort",
+      "meetupButton": "Ein Treffen planen",
+      "callButton": "Über {{method}} anrufen",
+      "selectContactMethod": "Kontaktmethode wählen",
+      "photoAlt": "Foto: {{description}}",
+      "photoFallback": "Geteiltes Foto",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Geteiltes Video",
+      "voiceNoteLabel": "Sprachnotiz: {{description}}",
+      "voiceNoteFallback": "Sprachnotiz",
+      "joinCall": "Anruf beitreten",
+      "rsvpYes": "Teilnahme am Treffen bestätigen",
+      "rsvpMaybe": "Vielleicht am Treffen teilnehmen",
+      "rsvpOptions": "Antwortoptionen"
+    },
+
+    "nudge": {
+      "panelExpanded": "Erinnerungspanel erweitert",
+      "panelCollapsed": "Erinnerungspanel eingeklappt",
+      "friendsList": "Freunde, die Kontakt brauchen",
+      "actionGroup": "Aktionen für {{name}}",
+      "actionButton": "{{action}} mit {{name}}",
+      "dismissButton": "Erinnerung für {{name}} verwerfen",
+      "connectedButton": "{{name}} als heute verbunden markieren",
+      "selectDateButton": "Wähle, wann du mit {{name}} in Kontakt warst"
+    },
+
+    "naybor": {
+      "sosRegion": "Schnelle SOS-Kontakte",
+      "sosContactsList": "Schnellkontakte:",
+      "contactOptions": "Kontaktoptionen für {{name}}",
+      "callButton": "{{name}} anrufen",
+      "messageButton": "{{name}} eine Nachricht senden",
+      "sosDialogButton": "Nachbar-SOS-Notfallkontakt-Dialog öffnen",
+      "showQuickContacts": "Schnellkontakte anzeigen",
+      "hideQuickContacts": "Schnellkontakte verbergen",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Kritische Dringlichkeit",
+      "backToCategory": "Zurück zur Kategorieauswahl",
+      "chooseNaybors": "Fortfahren, um Nachbarn zum Kontaktieren auszuwählen",
+      "backToCompose": "Zurück zum Verfassen der Nachricht",
+      "copyMessage": "SOS-Nachricht in Zwischenablage kopieren",
+      "nayborsList": "Nachbar-Kontakte",
+      "selectNaybor": "{{name}} auswählen",
+      "alreadyContacted": "(bereits kontaktiert)",
+      "messageAll": "Nachricht an {{count}} ausgewählten Nachbarn senden",
+      "messageAll_plural": "Nachricht an alle {{count}} ausgewählten Nachbarn senden",
+      "locationDescription": "Wenn aktiviert, wird dein ungefährer Standort mit deinen Nachbarn geteilt"
+    },
+
+    "dialog": {
+      "close": "Dialog schließen",
+      "back": "Zurück",
+      "confirm": "Aktion bestätigen"
+    },
+
+    "form": {
+      "showPassword": "Passwort anzeigen",
+      "hidePassword": "Passwort verbergen",
+      "clearInput": "Eingabe löschen",
+      "selectCountry": "Land auswählen",
+      "phoneNumber": "Telefonnummer"
+    },
+
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Abwesend",
+      "busy": "Beschäftigt"
+    }
+  },
+  "language": {
+    "select": "Sprache auswählen",
+    "current": "Aktuelle Sprache: {{language}}",
+    "helpTranslate": "Hilf bei der Übersetzung von InnerFriend",
+    "communityTranslation": "Werde Teil unserer Übersetzer-Community und hilf dabei, InnerFriend für mehr Menschen weltweit zugänglich zu machen."
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "network": "Netzwerkfehler. Bitte überprüfe deine Verbindung.",
+    "notFound": "Seite nicht gefunden",
+    "unauthorized": "Bitte melde dich an, um fortzufahren"
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "about": "Über uns",
+    "contribute": "Mitwirken",
+    "openSource": "Open Source"
+  }
+}

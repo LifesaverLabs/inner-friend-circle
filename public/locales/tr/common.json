@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "En yakın ilişkilerinizi besleyin",
+    "description": "Dunbar sayısı araştırmasına dayalı anlamlı dostlukları sürdürmek için gizlilik öncelikli araç"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "dashboard": "Gösterge Paneli",
+    "settings": "Ayarlar",
+    "signIn": "Giriş Yap",
+    "signOut": "Çıkış Yap",
+    "profile": "Profil"
+  },
+  "tiers": {
+    "core": "Çekirdek",
+    "coreDescription": "En yakın güvendiğiniz kişiler (5'e kadar)",
+    "inner": "İç",
+    "innerDescription": "Düzenli görüştüğünüz yakın arkadaşlar (15'e kadar)",
+    "outer": "Dış",
+    "outerDescription": "İyi arkadaşlar ve genişletilmiş çevre (50'ye kadar)",
+    "acquainted": "Tanıdıklar",
+    "acquaintedDescription": "Selamlaşacak kadar tanıdığınız kişiler",
+    "naybor": "Komşular",
+    "nayborDescription": "Acil durumlar ve karşılıklı yardım için güvenilir komşular",
+    "parasocial": "Takip",
+    "parasocialDescription": "Takip ettiğiniz ünlüler ve içerik oluşturucular"
+  },
+  "actions": {
+    "add": "Ekle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "done": "Bitti",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar"
+  },
+  "friend": {
+    "addFriend": "Arkadaş Ekle",
+    "editFriend": "Kişiyi Düzenle",
+    "removeFriend": "Arkadaşı Kaldır",
+    "moveTo": "{{tier}}'a Taşı",
+    "name": "Ad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "notes": "Notlar",
+    "preferredContact": "Tercih Edilen İletişim Yöntemi",
+    "lastContact": "Son İletişim",
+    "daysSince": "{{days}} gün önce",
+    "neverContacted": "Hiç iletişim kurulmadı"
+  },
+  "feed": {
+    "coreFeed": "Çekirdek Akışı",
+    "innerFeed": "İç Akış",
+    "outerFeed": "Dış+",
+    "manage": "Yönet",
+    "emptyCore": "Gönderilerini görmek için Çekirdek arkadaşlar ekleyin",
+    "emptyInner": "Gönderilerini görmek için İç arkadaşlar ekleyin",
+    "emptyOuter": "Gönderilerini görmek için Dış arkadaşlar ekleyin",
+    "compose": "Aklınızdan ne geçiyor?",
+    "post": "Paylaş",
+    "like": "Beğen",
+    "unlike": "Beğeniyi Kaldır",
+    "comment": "Yorum",
+    "share": "Paylaş",
+    "voiceReply": "Sesli Yanıt",
+    "scheduleCall": "Arama Planla",
+    "planMeetup": "Buluşma Planla"
+  },
+  "nudge": {
+    "timeToReconnect": "Yeniden Bağlanma Zamanı",
+    "friendsNeedAttention": "{{count}} arkadaş iletişim gerektiriyor",
+    "friendsNeedAttention_plural": "{{count}} arkadaş iletişim gerektiriyor",
+    "daysSinceContact": "Son iletişimden {{days}} gün geçti",
+    "neverContacted": "Hiç iletişim kurulmadı",
+    "connected": "Bağlandı",
+    "connectedToday": "Bugün bağlandı olarak işaretle",
+    "selectDate": "Ne zaman bağlandığınızı seçin",
+    "dismiss": "Kapat"
+  },
+  "contact": {
+    "call": "Ara",
+    "message": "Mesaj",
+    "email": "E-posta",
+    "methods": {
+      "tel": "Telefon Araması",
+      "sms": "SMS",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Ana içeriğe atla",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "expandPanel": "Paneli genişlet",
+    "collapsePanel": "Paneli daralt",
+    "loading": "Yükleniyor...",
+    "loadingFeed": "Akış içeriği yükleniyor",
+    "error": "Hata",
+    "success": "Başarılı",
+    "selected": "Seçildi",
+    "notSelected": "Seçilmedi",
+    "required": "Gerekli",
+    "optional": "İsteğe bağlı",
+
+    "feed": {
+      "tabList": "Arkadaş çevresi akışları",
+      "coreTab": "Çekirdek Akışı - En yakın arkadaşlarınız",
+      "innerTab": "İç Akış - Yakın arkadaşlar",
+      "outerTab": "Dış Plus Akışı - Komşular dahil genişletilmiş çevre",
+      "manageTab": "Arkadaş çevrenizi yönetin"
+    },
+
+    "post": {
+      "likeButton": "Bu gönderiyi beğen",
+      "unlikeButton": "Bu gönderinin beğenisini kaldır",
+      "commentButton": "Yorum ekle",
+      "shareButton": "Bu gönderiyi paylaş",
+      "voiceReplyButton": "Sesli Yanıt",
+      "meetupButton": "Buluşma planla",
+      "callButton": "{{method}} ile ara",
+      "selectContactMethod": "İletişim yöntemini seçin",
+      "photoAlt": "Fotoğraf: {{description}}",
+      "photoFallback": "Paylaşılan fotoğraf",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Paylaşılan video",
+      "voiceNoteLabel": "Sesli not: {{description}}",
+      "voiceNoteFallback": "Sesli not",
+      "joinCall": "Aramaya katıl",
+      "rsvpYes": "Buluşmaya katılım onayı",
+      "rsvpMaybe": "Buluşmaya belki",
+      "rsvpOptions": "Yanıt seçenekleri"
+    },
+
+    "nudge": {
+      "panelExpanded": "Hatırlatıcı paneli genişletildi",
+      "panelCollapsed": "Hatırlatıcı paneli daraltıldı",
+      "friendsList": "Yeniden bağlantı gereken arkadaşlar",
+      "actionGroup": "{{name}} için eylemler",
+      "actionButton": "{{name}} ile {{action}}",
+      "dismissButton": "{{name}} için hatırlatıcıyı kapat",
+      "connectedButton": "{{name}} bugün bağlandı olarak işaretle",
+      "selectDateButton": "{{name}} ile ne zaman bağlandığınızı seçin"
+    },
+
+    "naybor": {
+      "sosRegion": "Hızlı SOS kişileri",
+      "sosContactsList": "Hızlı kişiler:",
+      "contactOptions": "{{name}} için iletişim seçenekleri",
+      "callButton": "{{name}}'ı ara",
+      "messageButton": "{{name}}'a mesaj gönder",
+      "sosDialogButton": "Komşu SOS acil durum kişi diyaloğunu aç",
+      "showQuickContacts": "Hızlı kişileri göster",
+      "hideQuickContacts": "Hızlı kişileri gizle",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Kritik aciliyet",
+      "backToCategory": "Kategori seçimine geri dön",
+      "chooseNaybors": "İletişim kuracak komşuları seçmeye devam et",
+      "backToCompose": "Mesaj yazmaya geri dön",
+      "copyMessage": "SOS mesajını panoya kopyala",
+      "nayborsList": "Komşu kişileri",
+      "selectNaybor": "{{name}}'ı seç",
+      "alreadyContacted": "(zaten iletişim kuruldu)",
+      "messageAll": "Seçilen {{count}} komşuya mesaj gönder",
+      "messageAll_plural": "Seçilen {{count}} komşuya mesaj gönder",
+      "locationDescription": "Etkinleştirildiğinde, yaklaşık konumunuz komşularınızla paylaşılacak"
+    },
+
+    "dialog": {
+      "close": "Diyaloğu kapat",
+      "back": "Geri dön",
+      "confirm": "Eylemi onayla"
+    },
+
+    "form": {
+      "showPassword": "Şifreyi göster",
+      "hidePassword": "Şifreyi gizle",
+      "clearInput": "Girişi temizle",
+      "selectCountry": "Ülke seçin",
+      "phoneNumber": "Telefon numarası"
+    },
+
+    "status": {
+      "online": "Çevrimiçi",
+      "offline": "Çevrimdışı",
+      "away": "Uzakta",
+      "busy": "Meşgul"
+    }
+  },
+  "language": {
+    "select": "Dil seçin",
+    "current": "Mevcut dil: {{language}}",
+    "helpTranslate": "InnerFriend'i çevirmeye yardım edin",
+    "communityTranslation": "Dünya genelinde daha fazla insana InnerFriend'i ulaştırmak için çevirmen topluluğumuza katılın."
+  },
+  "errors": {
+    "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "network": "Ağ hatası. Lütfen bağlantınızı kontrol edin.",
+    "notFound": "Sayfa bulunamadı",
+    "unauthorized": "Devam etmek için lütfen giriş yapın"
+  },
+  "footer": {
+    "privacy": "Gizlilik",
+    "terms": "Şartlar",
+    "about": "Hakkında",
+    "contribute": "Katkıda Bulun",
+    "openSource": "Açık Kaynak"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "가까운 관계를 소중히 가꾸세요",
+    "description": "던바의 수 연구에 기반한 의미 있는 우정을 유지하기 위한 프라이버시 우선 도구"
+  },
+  "nav": {
+    "home": "홈",
+    "dashboard": "대시보드",
+    "settings": "설정",
+    "signIn": "로그인",
+    "signOut": "로그아웃",
+    "profile": "프로필"
+  },
+  "tiers": {
+    "core": "코어",
+    "coreDescription": "가장 가까운 신뢰할 수 있는 사람들 (최대 5명)",
+    "inner": "이너",
+    "innerDescription": "정기적으로 만나는 친한 친구들 (최대 15명)",
+    "outer": "아우터",
+    "outerDescription": "좋은 친구들과 확장된 서클 (최대 50명)",
+    "acquainted": "아는 사이",
+    "acquaintedDescription": "인사할 정도로 아는 사람들",
+    "naybor": "이웃",
+    "nayborDescription": "상호 도움과 긴급 상황을 위한 믿을 수 있는 이웃",
+    "parasocial": "팔로잉",
+    "parasocialDescription": "팔로우하는 공인과 콘텐츠 크리에이터"
+  },
+  "actions": {
+    "add": "추가",
+    "edit": "편집",
+    "delete": "삭제",
+    "save": "저장",
+    "cancel": "취소",
+    "confirm": "확인",
+    "close": "닫기",
+    "back": "뒤로",
+    "next": "다음",
+    "done": "완료",
+    "search": "검색",
+    "filter": "필터",
+    "export": "내보내기",
+    "import": "가져오기"
+  },
+  "friend": {
+    "addFriend": "친구 추가",
+    "editFriend": "연락처 편집",
+    "removeFriend": "친구 삭제",
+    "moveTo": "{{tier}}로 이동",
+    "name": "이름",
+    "email": "이메일",
+    "phone": "전화",
+    "notes": "메모",
+    "preferredContact": "선호하는 연락 방법",
+    "lastContact": "마지막 연락",
+    "daysSince": "{{days}}일 전",
+    "neverContacted": "연락한 적 없음"
+  },
+  "feed": {
+    "coreFeed": "코어 피드",
+    "innerFeed": "이너 피드",
+    "outerFeed": "아우터+",
+    "manage": "관리",
+    "emptyCore": "코어 친구를 추가하여 게시물을 확인하세요",
+    "emptyInner": "이너 친구를 추가하여 게시물을 확인하세요",
+    "emptyOuter": "아우터 친구를 추가하여 게시물을 확인하세요",
+    "compose": "무슨 생각을 하고 계세요?",
+    "post": "게시",
+    "like": "좋아요",
+    "unlike": "좋아요 취소",
+    "comment": "댓글",
+    "share": "공유",
+    "voiceReply": "음성 답장",
+    "scheduleCall": "통화 예약",
+    "planMeetup": "만남 계획"
+  },
+  "nudge": {
+    "timeToReconnect": "다시 연락할 시간",
+    "friendsNeedAttention": "{{count}}명의 친구에게 연락이 필요합니다",
+    "friendsNeedAttention_plural": "{{count}}명의 친구들에게 연락이 필요합니다",
+    "daysSinceContact": "마지막 연락 후 {{days}}일",
+    "neverContacted": "연락한 적 없음",
+    "connected": "연결됨",
+    "connectedToday": "오늘 연락한 것으로 표시",
+    "selectDate": "연락한 날짜 선택",
+    "dismiss": "무시"
+  },
+  "contact": {
+    "call": "전화",
+    "message": "메시지",
+    "email": "이메일",
+    "methods": {
+      "tel": "전화 통화",
+      "sms": "문자 메시지",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "메인 콘텐츠로 건너뛰기",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기",
+    "expandPanel": "패널 펼치기",
+    "collapsePanel": "패널 접기",
+    "loading": "로딩 중...",
+    "loadingFeed": "피드 콘텐츠 로딩 중",
+    "error": "오류",
+    "success": "성공",
+    "selected": "선택됨",
+    "notSelected": "선택 안됨",
+    "required": "필수",
+    "optional": "선택사항",
+
+    "feed": {
+      "tabList": "친구 서클 피드",
+      "coreTab": "코어 피드 - 가장 친한 친구들",
+      "innerTab": "이너 피드 - 친한 친구들",
+      "outerTab": "아우터 플러스 피드 - 이웃 포함 확장 서클",
+      "manageTab": "친구 서클 관리"
+    },
+
+    "post": {
+      "likeButton": "이 게시물에 좋아요",
+      "unlikeButton": "이 게시물 좋아요 취소",
+      "commentButton": "댓글 추가",
+      "shareButton": "이 게시물 공유",
+      "voiceReplyButton": "음성 답장",
+      "meetupButton": "만남 예약",
+      "callButton": "{{method}}로 전화",
+      "selectContactMethod": "연락 방법 선택",
+      "photoAlt": "사진: {{description}}",
+      "photoFallback": "공유된 사진",
+      "videoLabel": "동영상: {{description}}",
+      "videoFallback": "공유된 동영상",
+      "voiceNoteLabel": "음성 메모: {{description}}",
+      "voiceNoteFallback": "음성 메모",
+      "joinCall": "통화 참여",
+      "rsvpYes": "만남 참석 확정",
+      "rsvpMaybe": "만남 참석 미정",
+      "rsvpOptions": "응답 옵션"
+    },
+
+    "nudge": {
+      "panelExpanded": "알림 패널 펼쳐짐",
+      "panelCollapsed": "알림 패널 접힘",
+      "friendsList": "다시 연락이 필요한 친구들",
+      "actionGroup": "{{name}}에 대한 작업",
+      "actionButton": "{{name}}와(과) {{action}}",
+      "dismissButton": "{{name}}에 대한 알림 무시",
+      "connectedButton": "{{name}}을(를) 오늘 연락한 것으로 표시",
+      "selectDateButton": "{{name}}와(과) 연락한 날짜 선택"
+    },
+
+    "naybor": {
+      "sosRegion": "빠른 SOS 연락처",
+      "sosContactsList": "빠른 연락처:",
+      "contactOptions": "{{name}}에 대한 연락 옵션",
+      "callButton": "{{name}}에게 전화",
+      "messageButton": "{{name}}에게 메시지",
+      "sosDialogButton": "이웃 SOS 긴급 연락처 대화상자 열기",
+      "showQuickContacts": "빠른 연락처 표시",
+      "hideQuickContacts": "빠른 연락처 숨기기",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - 긴급",
+      "backToCategory": "카테고리 선택으로 돌아가기",
+      "chooseNaybors": "연락할 이웃 선택 계속",
+      "backToCompose": "메시지 작성으로 돌아가기",
+      "copyMessage": "SOS 메시지를 클립보드에 복사",
+      "nayborsList": "이웃 연락처",
+      "selectNaybor": "{{name}} 선택",
+      "alreadyContacted": "(이미 연락함)",
+      "messageAll": "선택한 {{count}}명의 이웃에게 메시지",
+      "messageAll_plural": "선택한 {{count}}명의 이웃들에게 메시지",
+      "locationDescription": "활성화 시, 대략적인 위치가 이웃과 공유됩니다"
+    },
+
+    "dialog": {
+      "close": "대화상자 닫기",
+      "back": "뒤로 가기",
+      "confirm": "작업 확인"
+    },
+
+    "form": {
+      "showPassword": "비밀번호 표시",
+      "hidePassword": "비밀번호 숨기기",
+      "clearInput": "입력 지우기",
+      "selectCountry": "국가 선택",
+      "phoneNumber": "전화번호"
+    },
+
+    "status": {
+      "online": "온라인",
+      "offline": "오프라인",
+      "away": "자리 비움",
+      "busy": "바쁨"
+    }
+  },
+  "language": {
+    "select": "언어 선택",
+    "current": "현재 언어: {{language}}",
+    "helpTranslate": "InnerFriend 번역 도움",
+    "communityTranslation": "번역 커뮤니티에 참여하여 전 세계 더 많은 사람들이 InnerFriend를 사용할 수 있도록 도와주세요."
+  },
+  "errors": {
+    "generic": "문제가 발생했습니다. 다시 시도해 주세요.",
+    "network": "네트워크 오류. 연결을 확인해 주세요.",
+    "notFound": "페이지를 찾을 수 없습니다",
+    "unauthorized": "계속하려면 로그인해 주세요"
+  },
+  "footer": {
+    "privacy": "개인정보",
+    "terms": "이용약관",
+    "about": "소개",
+    "contribute": "기여",
+    "openSource": "오픈소스"
+  }
+}

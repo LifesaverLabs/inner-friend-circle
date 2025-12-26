@@ -7,14 +7,32 @@ import {
 
 describe('i18n Configuration', () => {
   describe('SUPPORTED_LANGUAGES', () => {
-    it('should include all 5 major languages', () => {
+    it('should include all 22 Tier 1 languages plus Blesséd', () => {
       const languages = Object.keys(SUPPORTED_LANGUAGES);
+      // Top 20 languages by speaker count + English + Blesséd
       expect(languages).toContain('en'); // English
-      expect(languages).toContain('zh'); // Chinese
-      expect(languages).toContain('hi'); // Hindi
-      expect(languages).toContain('es'); // Spanish
-      expect(languages).toContain('ar'); // Arabic
-      expect(languages).toHaveLength(5);
+      expect(languages).toContain('zh'); // 简体中文
+      expect(languages).toContain('hi'); // हिन्दी
+      expect(languages).toContain('es'); // Español
+      expect(languages).toContain('fr'); // Français
+      expect(languages).toContain('ar'); // العربية
+      expect(languages).toContain('bn'); // বাংলা
+      expect(languages).toContain('pt'); // Português
+      expect(languages).toContain('ru'); // Русский
+      expect(languages).toContain('ja'); // 日本語
+      expect(languages).toContain('pa'); // ਪੰਜਾਬੀ
+      expect(languages).toContain('de'); // Deutsch
+      expect(languages).toContain('jv'); // Basa Jawa
+      expect(languages).toContain('ko'); // 한국어
+      expect(languages).toContain('te'); // తెలుగు
+      expect(languages).toContain('vi'); // Tiếng Việt
+      expect(languages).toContain('mr'); // मराठी
+      expect(languages).toContain('ta'); // தமிழ்
+      expect(languages).toContain('tr'); // Türkçe
+      expect(languages).toContain('it'); // Italiano
+      expect(languages).toContain('ur'); // اردو
+      expect(languages).toContain('bled'); // Blesséd
+      expect(languages).toHaveLength(22);
     });
 
     it('should have name and nativeName for each language', () => {
@@ -28,6 +46,24 @@ describe('i18n Configuration', () => {
       });
     });
 
+    it('should use endonyms (native names) as primary name', () => {
+      // Verify that language names are endonyms, not English exonyms
+      expect(SUPPORTED_LANGUAGES.zh.name).toBe('简体中文');
+      expect(SUPPORTED_LANGUAGES.hi.name).toBe('हिन्दी');
+      expect(SUPPORTED_LANGUAGES.ar.name).toBe('العربية');
+      expect(SUPPORTED_LANGUAGES.ja.name).toBe('日本語');
+      expect(SUPPORTED_LANGUAGES.ko.name).toBe('한국어');
+      expect(SUPPORTED_LANGUAGES.ru.name).toBe('Русский');
+      expect(SUPPORTED_LANGUAGES.de.name).toBe('Deutsch');
+      expect(SUPPORTED_LANGUAGES.fr.name).toBe('Français');
+      expect(SUPPORTED_LANGUAGES.es.name).toBe('Español');
+      expect(SUPPORTED_LANGUAGES.pt.name).toBe('Português');
+      expect(SUPPORTED_LANGUAGES.it.name).toBe('Italiano');
+      expect(SUPPORTED_LANGUAGES.tr.name).toBe('Türkçe');
+      expect(SUPPORTED_LANGUAGES.vi.name).toBe('Tiếng Việt');
+      expect(SUPPORTED_LANGUAGES.ur.name).toBe('اردو');
+    });
+
     it('should have direction for each language', () => {
       Object.values(SUPPORTED_LANGUAGES).forEach((lang) => {
         expect(lang.direction).toBeDefined();
@@ -39,20 +75,21 @@ describe('i18n Configuration', () => {
       Object.values(SUPPORTED_LANGUAGES).forEach((lang) => {
         expect(lang.flag).toBeDefined();
         expect(typeof lang.flag).toBe('string');
-        // Flag emojis are typically 2 code points (regional indicator symbols)
-        expect(lang.flag.length).toBeGreaterThanOrEqual(2);
+        // Flag emojis are typically 2+ code points
+        expect(lang.flag.length).toBeGreaterThanOrEqual(1);
       });
     });
 
-    it('should mark Arabic as RTL', () => {
+    it('should mark Arabic and Urdu as RTL', () => {
       expect(SUPPORTED_LANGUAGES.ar.direction).toBe('rtl');
+      expect(SUPPORTED_LANGUAGES.ur.direction).toBe('rtl');
     });
 
     it('should mark all other languages as LTR', () => {
-      expect(SUPPORTED_LANGUAGES.en.direction).toBe('ltr');
-      expect(SUPPORTED_LANGUAGES.zh.direction).toBe('ltr');
-      expect(SUPPORTED_LANGUAGES.hi.direction).toBe('ltr');
-      expect(SUPPORTED_LANGUAGES.es.direction).toBe('ltr');
+      const ltrLanguages = ['en', 'zh', 'hi', 'es', 'fr', 'bn', 'pt', 'ru', 'ja', 'pa', 'de', 'jv', 'ko', 'te', 'vi', 'mr', 'ta', 'tr', 'it', 'bled'];
+      ltrLanguages.forEach((code) => {
+        expect(SUPPORTED_LANGUAGES[code as keyof typeof SUPPORTED_LANGUAGES].direction).toBe('ltr');
+      });
     });
   });
 
@@ -61,6 +98,11 @@ describe('i18n Configuration', () => {
       expect(getLanguageDirection('ar')).toBe('rtl');
       expect(getLanguageDirection('ar-SA')).toBe('rtl');
       expect(getLanguageDirection('ar-EG')).toBe('rtl');
+    });
+
+    it('should return rtl for Urdu', () => {
+      expect(getLanguageDirection('ur')).toBe('rtl');
+      expect(getLanguageDirection('ur-PK')).toBe('rtl');
     });
 
     it('should return ltr for English', () => {
@@ -86,6 +128,12 @@ describe('i18n Configuration', () => {
       expect(getLanguageDirection('es-MX')).toBe('ltr');
     });
 
+    it('should return ltr for Japanese, Korean, and other Asian languages', () => {
+      expect(getLanguageDirection('ja')).toBe('ltr');
+      expect(getLanguageDirection('ko')).toBe('ltr');
+      expect(getLanguageDirection('vi')).toBe('ltr');
+    });
+
     it('should return ltr for unknown languages', () => {
       expect(getLanguageDirection('unknown')).toBe('ltr');
       expect(getLanguageDirection('')).toBe('ltr');
@@ -100,32 +148,46 @@ describe('i18n Configuration', () => {
       expect(info.flag).toBe('🇺🇸');
     });
 
-    it('should return correct info for Chinese', () => {
+    it('should return correct info for Chinese (using endonym)', () => {
       const info = getLanguageInfo('zh');
-      expect(info.name).toBe('Chinese (Simplified)');
+      expect(info.name).toBe('简体中文');
       expect(info.nativeName).toBe('简体中文');
       expect(info.flag).toBe('🇨🇳');
     });
 
-    it('should return correct info for Hindi', () => {
+    it('should return correct info for Hindi (using endonym)', () => {
       const info = getLanguageInfo('hi');
-      expect(info.name).toBe('Hindi');
+      expect(info.name).toBe('हिन्दी');
       expect(info.nativeName).toBe('हिन्दी');
       expect(info.flag).toBe('🇮🇳');
     });
 
-    it('should return correct info for Spanish', () => {
+    it('should return correct info for Spanish (using endonym)', () => {
       const info = getLanguageInfo('es');
-      expect(info.name).toBe('Spanish');
+      expect(info.name).toBe('Español');
       expect(info.nativeName).toBe('Español');
       expect(info.flag).toBe('🇪🇸');
     });
 
-    it('should return correct info for Arabic', () => {
+    it('should return correct info for Arabic (using endonym)', () => {
       const info = getLanguageInfo('ar');
-      expect(info.name).toBe('Arabic');
+      expect(info.name).toBe('العربية');
       expect(info.nativeName).toBe('العربية');
       expect(info.flag).toBe('🇸🇦');
+    });
+
+    it('should return correct info for Japanese (using endonym)', () => {
+      const info = getLanguageInfo('ja');
+      expect(info.name).toBe('日本語');
+      expect(info.nativeName).toBe('日本語');
+      expect(info.flag).toBe('🇯🇵');
+    });
+
+    it('should return correct info for Blesséd', () => {
+      const info = getLanguageInfo('bled');
+      expect(info.name).toBe('Blesséd');
+      expect(info.nativeName).toBe('Blesséd');
+      expect(info.flag).toBe('✨');
     });
 
     it('should handle language codes with region', () => {
@@ -142,7 +204,7 @@ describe('i18n Configuration', () => {
 
 describe('Translation Files', () => {
   // These tests validate the structure of translation files
-  const languages = ['en', 'zh', 'hi', 'es', 'ar'];
+  const languages = ['en', 'zh', 'hi', 'es', 'fr', 'ar', 'bn', 'pt', 'ru', 'ja', 'pa', 'de', 'jv', 'ko', 'te', 'vi', 'mr', 'ta', 'tr', 'it', 'ur', 'bled'];
 
   languages.forEach((lang) => {
     describe(`${lang} translations`, () => {
@@ -157,13 +219,14 @@ describe('Translation Files', () => {
 
 describe('RTL Support', () => {
   it('should identify RTL languages correctly', () => {
-    // Arabic is the only RTL language in our initial set
+    // Arabic and Urdu are RTL languages
     const rtlLanguages = Object.entries(SUPPORTED_LANGUAGES)
       .filter(([_, info]) => info.direction === 'rtl')
       .map(([code]) => code);
 
     expect(rtlLanguages).toContain('ar');
-    expect(rtlLanguages).toHaveLength(1);
+    expect(rtlLanguages).toContain('ur');
+    expect(rtlLanguages).toHaveLength(2);
   });
 
   it('should identify LTR languages correctly', () => {
@@ -175,6 +238,9 @@ describe('RTL Support', () => {
     expect(ltrLanguages).toContain('zh');
     expect(ltrLanguages).toContain('hi');
     expect(ltrLanguages).toContain('es');
-    expect(ltrLanguages).toHaveLength(4);
+    expect(ltrLanguages).toContain('ja');
+    expect(ltrLanguages).toContain('ko');
+    expect(ltrLanguages).toContain('bled');
+    expect(ltrLanguages).toHaveLength(20); // 22 total - 2 RTL = 20 LTR
   });
 });
