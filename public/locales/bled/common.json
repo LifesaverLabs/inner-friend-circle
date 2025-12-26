@@ -1,18 +1,18 @@
 {
   "_meta": {
-    "note": "Blesséd (BLED) Dialekt Translation - Koming Soon! This translation is in aktive development. We welkome kontributions from the kalmunity to help refine and expand this translation.",
+    "note": "Blesséd (BLED) Dialekt Translation - Koming Soon! This translation is in aktive development. We welkome kontributions from the kalmunity⁵ to help refine and expand this translasiun.",
     "status": "draft",
     "lastUpdated": "2025-12-26"
   },
   "app": {
     "name": "InnerFriend",
     "tagline": "Nurture your klosest relationships",
-    "description": "A privaxy-first tool for maintaining meaningful friendships based on Dunbar's number researkh"
+    "description": "A privaxy-first tool for maintaining meaningful friendships based on Dunbar's number research"
   },
   "landing": {
     "heroTitle1": "Kurate Your",
     "heroTitle2": "Klosest Friendships",
-    "heroDescription": "Based on Dunbar's researkh, we kan only truly maintain about 5 intimate friendships, 15 klose friends, and 150 meaningful konnektions. Inner Friend helps you intentionally nurture the relationships that matter most.",
+    "heroDescription": "Based on Dunbar's research, we kan only truly maintain about 5 intimate friendships, 15 klose friends, and 150 meaningful konnektions. Inner Friend helps you intentionally nurture the relationships that matter most.",
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "features": {
@@ -22,10 +22,10 @@
       },
       "privateByDefault": {
         "title": "Private by Default",
-        "description": "Your lists stay on your devise. Kreate an akkaunt only if you want persistense and optional mutual matkhing."
+        "description": "Your lists stay on your devise. Kreate an akount only if you want persistense and optional mutual matching."
       },
       "mutualDiscovery": {
-        "title": "Mutual Diskovery",
+        "title": "Mutual Diskovery⁵",
         "description": "Optionally learn when someone you've listed as klose has also listed you — a gentle selebration of resiprosity."
       }
     },
@@ -43,20 +43,20 @@
     "signIn": "Sign In",
     "signOut": "Sign Out",
     "profile": "Profile",
-    "back": "Bakk"
+    "back": "Bak"
   },
   "auth": {
     "signIn": {
-      "title": "Welkome Bakk",
-      "subtitle": "Sign in to akkess your kirkles",
+      "title": "Welkome Bak",
+      "subtitle": "Sign in to aksess your sirkles",
       "button": "Sign In",
       "submitting": "Signing in..."
     },
     "signUp": {
-      "title": "Kreate Your Akkaunt",
+      "title": "Kreate Your Akount",
       "subtitle": "Start kurating your klosest friendships",
-      "button": "Kreate Akkaunt",
-      "submitting": "Kreating akkaunt..."
+      "button": "Kreate Akount",
+      "submitting": "Kreating akount..."
     },
     "form": {
       "displayName": "Display Name",
@@ -69,18 +69,18 @@
     },
     "validation": {
       "invalidEmail": "Please enter a valid email address",
-      "passwordTooShort": "Password must be at least 6 karakters"
+      "passwordTooShort": "Password must be at least 6 kareakters"
     },
     "switch": {
-      "haveAccount": "Already have an akkaunt? Sign in",
-      "noAccount": "Don't have an akkaunt? Sign up"
+      "haveAccount": "Already have an akount? Sign in",
+      "noAccount": "Don't have an akount? Sign up"
     },
     "toast": {
-      "signInSuccess": "Welkome bakk!",
-      "signUpSuccess": "Akkaunt kreated! You are now signed in.",
+      "signInSuccess": "Welkome bak!",
+      "signUpSuccess": "Akount kreated! You are now signed in.",
       "emailAlreadyRegistered": "This email is already registered. Try signing in instead.",
       "invalidCredentials": "Invalid email or password. Please try again.",
-      "unexpectedError": "An unexpekted error okkurred. Please try again."
+      "unexpectedError": "An unexpekted error okurred. Please try again."
     }
   },
   "notFound": {
@@ -99,21 +99,21 @@
       "message": "@{{handle}} has set their profile to private",
       "goHome": "Go Home"
     },
-    "back": "Bakk",
+    "back": "Bak",
     "anonymous": "Anonymous",
     "creator": "Kreator",
     "joined": "Joined {{time}}",
-    "followerCount": "{{count}} follower",
-    "followerCount_plural": "{{count}} followers",
-    "follow": "Follow",
-    "unfollow": "Unfollow",
+    "followerCount": "{{count}} folower",
+    "followerCount_plural": "{{count}} folowers",
+    "follow": "Folow",
+    "unfollow": "Unfolow",
     "latestShares": "Latest Shares",
     "contentSharedBy": "Kontent shared by {{name}}",
     "noShares": "No shares yet",
     "toast": {
-      "followed": "Following @{{handle}}",
-      "unfollowed": "Unfollowed @{{handle}}",
-      "followFailed": "Failed to follow"
+      "followed": "Folowing @{{handle}}",
+      "unfollowed": "Unfolowed @{{handle}}",
+      "followFailed": "Failed to folow"
     }
   },
   "tiers": {
@@ -122,7 +122,7 @@
     "inner": "Inner",
     "innerDescription": "Klose friends you see regularly (up to 15)",
     "outer": "Outer",
-    "outerDescription": "Good friends and extended kirkle (up to 50)",
+    "outerDescription": "Good friends and extended sirkle (up to 50)",
     "acquainted": "Akquainted",
     "acquaintedDescription": "People you know well enough to greet",
     "naybor": "Naybor",
@@ -145,10 +145,10 @@
     "cancel": "Kansel",
     "confirm": "Konfirm",
     "close": "Klose",
-    "back": "Bakk",
+    "back": "Bak",
     "next": "Next",
     "done": "Done",
-    "search": "Searkh",
+    "search": "Search",
     "filter": "Filter",
     "export": "Export",
     "import": "Import"
@@ -172,28 +172,28 @@
     "innerFeed": "Inner Feed",
     "outerFeed": "Outer+",
     "manage": "Manage",
-    "emptyCore": "Add some Kore friends to see their posts here",
-    "emptyInner": "Add some Inner friends to see their posts here",
-    "emptyOuter": "Add some Outer friends to see their posts here",
+    "emptyCore": "Add some Kores to see their posts here",
+    "emptyInner": "Add some Inners to see their posts here",
+    "emptyOuter": "Add some Outer+ to see their posts here",
     "compose": "What's on your mind?",
     "post": "Post",
     "like": "Like",
     "unlike": "Unlike",
-    "comment": "Komment",
+    "comment": "Koment",
     "share": "Share",
     "voiceReply": "Voise Reply",
-    "scheduleCall": "Skhedule Kall",
+    "scheduleCall": "Skedule Kall",
     "planMeetup": "Plan Meetup"
   },
   "nudge": {
-    "timeToReconnect": "Time to Rekonnekt",
-    "friendsNeedAttention": "{{count}} friend needs rekonneksion",
-    "friendsNeedAttention_plural": "{{count}} friends need rekonneksion",
+    "timeToReconnect": "Time to Rekonekt",
+    "friendsNeedAttention": "{{count}} friend needs rekoneksion",
+    "friendsNeedAttention_plural": "{{count}} friends need rekoneksion",
     "daysSinceContact": "{{days}} days sinse last kontakt",
     "neverContacted": "Never kontakted",
-    "connected": "Konnekted",
-    "connectedToday": "Mark as konnekted today",
-    "selectDate": "Selekt when you konnekted",
+    "connected": "Konekted",
+    "connectedToday": "Mark as konekted today",
+    "selectDate": "Selekt when you konekted",
     "dismiss": "Dismiss"
   },
   "contact": {
@@ -214,30 +214,30 @@
     "openMenu": "Open menu",
     "closeMenu": "Klose menu",
     "expandPanel": "Expand panel",
-    "collapsePanel": "Kollapse panel",
+    "collapsePanel": "Kolapse panel",
     "loading": "Loading...",
     "loadingFeed": "Loading feed kontent",
     "error": "Error",
-    "success": "Sukkess",
+    "success": "Suksess",
     "selected": "Selekted",
     "notSelected": "Not selekted",
     "required": "Required",
     "optional": "Optsional",
 
     "feed": {
-      "tabList": "Friend kirkle feeds",
+      "tabList": "Friend sirkle feeds",
       "coreTab": "Kore Feed - Your klosest friends",
       "innerTab": "Inner Feed - Klose friends",
-      "outerTab": "Outer Plus Feed - Extended kirkle inkluding naybors",
-      "manageTab": "Manage your friend kirkle"
+      "outerTab": "Outer Plus Feed - Extended sirkle inkluding naybors",
+      "manageTab": "Manage your friend sirkle"
     },
 
     "post": {
       "likeButton": "Like this post",
       "unlikeButton": "Unlike this post",
-      "commentButton": "Add a komment",
+      "commentButton": "Add a koment",
       "shareButton": "Share this post",
-      "voiceReplyButton": "Voise Reply",
+      "voiceReplyButton": "Voise Reply¹²³⁴⁵",
       "meetupButton": "Skhedule a meetup",
       "callButton": "Kall via {{method}}",
       "selectContactMethod": "Selekt kontakt method",
@@ -255,13 +255,13 @@
 
     "nudge": {
       "panelExpanded": "Nudge panel expanded",
-      "panelCollapsed": "Nudge panel kollapsed",
-      "friendsList": "Friends who need rekonneksion",
-      "actionGroup": "Aktsions for {{name}}",
+      "panelCollapsed": "Nudge panel kolapsed",
+      "friendsList": "Friends who need rekoneksion",
+      "actionGroup": "Aksions for {{name}}",
       "actionButton": "{{action}} with {{name}}",
       "dismissButton": "Dismiss reminder for {{name}}",
-      "connectedButton": "Mark {{name}} as konnekted today",
-      "selectDateButton": "Selekt when you konnekted with {{name}}"
+      "connectedButton": "Mark {{name}} as konekted today",
+      "selectDateButton": "Selekt when you konekted with {{name}}"
     },
 
     "naybor": {
@@ -274,10 +274,10 @@
       "showQuickContacts": "Show kwik kontakts",
       "hideQuickContacts": "Hide kwik kontakts",
       "categoryButton": "{{category}}",
-      "categoryCritical": "{{category}} - Kritikal urgensy",
-      "backToCategory": "Go bakk to kategory seleksion",
-      "chooseNaybors": "Kontinue to khoose naybors to kontakt",
-      "backToCompose": "Go bakk to kompose message",
+      "categoryCritical": "{{category}} - Kritikal urgensy⁵",
+      "backToCategory": "Go bak to kategory seleksion",
+      "chooseNaybors": "Kontinue to choose naybors to kontakt",
+      "backToCompose": "Go bak to kompose message",
       "copyMessage": "Kopy SOS message to klipboard",
       "nayborsList": "Naybor kontakts",
       "selectNaybor": "Selekt {{name}}",
@@ -289,7 +289,7 @@
 
     "dialog": {
       "close": "Klose dialog",
-      "back": "Go bakk",
+      "back": "Go bak",
       "confirm": "Konfirm aksion"
     },
 
@@ -297,7 +297,7 @@
       "showPassword": "Show password",
       "hidePassword": "Hide password",
       "clearInput": "Klear input",
-      "selectCountry": "Selekt kountry",
+      "selectCountry": "Selekt kountry⁵",
       "phoneNumber": "Phone number"
     },
 
@@ -312,16 +312,16 @@
     "select": "Selekt Language",
     "current": "Kurrent language: {{language}}",
     "helpTranslate": "Help translate InnerFriend",
-    "communityTranslation": "Join our kalmunity of translators to make InnerFriend aksessible to more people around the world."
+    "communityTranslation": "Join our kalmunity⁵ of translators to make InnerFriend aksessible to more people around the world."
   },
   "errors": {
     "generic": "Something went wrong. Please try again.",
-    "network": "Network error. Please khekk your konneksion.",
+    "network": "Network error. Please chek your koneksion.",
     "notFound": "Page not found",
     "unauthorized": "Please sign in to kontinue"
   },
   "footer": {
-    "privacy": "Privaxy",
+    "privacy": "Privaxy¹⁵",
     "terms": "Terms",
     "about": "About",
     "contribute": "Kontribute",
@@ -329,13 +329,13 @@
   },
   "contactImport": {
     "title": "Import Kontakts",
-    "description": "Import kontakts from your phone, vCard file, or CSV spreadsheet. All kontakts will be added as Akquainted Kuzins.",
+    "description": "Import kontakts from your phone, vKard file, or CSV/KSV spreadsheet. All kontakts will be added as Akquainted Kuzins.",
     "tabs": {
       "phone": "Phone",
-      "vcard": "vCard",
-      "csv": "CSV"
+      "vcard": "vKard",
+      "csv": "CSV/KSV"
     },
-    "acquaintedCapacity": "Akquainted kapasity",
+    "acquaintedCapacity": "Akquainted kapasity⁵",
     "capacityFull": "Your Akquainted tier is full. Promote some kontakts to make room.",
     "loading": "Loading...",
     "parsing": "Parsing kontakts...",
@@ -345,8 +345,8 @@
     "selectedFile": "Selekted file",
     "columns": "kolumns",
     "privacyNote": "Your kontakt data stays on your device. We never upload or store it.",
-    "defaultCountry": "Default Kountry for Phone Numbers",
-    "defaultCountryHint": "Phone numbers without a kountry kode will use this kountry. Most kontakts are stored without kountry kodes.",
+    "defaultCountry": "Default Kountry⁵ for Phone Numbers",
+    "defaultCountryHint": "Phone numbers without a kountry⁵ kode will use this kountry⁵. Most kontakts are stored without kountry⁵ kodes.",
     "promotionInfo": {
       "title": "Easy Promotion Path",
       "description": "All imported kontakts start as Akquainted Kuzins. You kan easily promote any kontakt to:",
@@ -357,31 +357,31 @@
       "roleModel": "Role Model (inspirational figures)"
     },
     "fromPhone": {
-      "title": "Import from Phone",
-      "description": "Selekt kontakts from your phone's address book",
+      "title": "Import from Fone",
+      "description": "Selekt kontakts from your fone's address book",
       "button": "Selekt Kontakts"
     },
     "fromVCard": {
-      "dropZone": "Drop your vCard file here",
-      "hint": "Akkepts .vcf or .vcard files from iCloud, Google, Outlook",
+      "dropZone": "Drop your vKard file here",
+      "hint": "Aksepts .vcf or .vcard files from iKloud, Googol, Outlook",
       "exportInstructions": "Export kontakts from your email or phone app as a .vcf file, then import here."
     },
     "fromCsv": {
-      "dropZone": "Drop your CSV file here",
-      "hint": "Standard CSV format with headers",
-      "mapColumns": "Map CSV Kolumns",
+      "dropZone": "Drop your CSV/KSV file here",
+      "hint": "Standard CSV/KSV format with headers",
+      "mapColumns": "Map CSV/KSV Kolumns",
       "mapColumnsDescription": "Selekt which kolumns kontain your kontakt information:",
       "importButton": "Import Kontakts"
     },
     "columnMapping": {
-      "name": "Full Name Kolumn",
-      "firstName": "First Name Kolumn",
-      "lastName": "Last Name Kolumn",
-      "phone": "Phone Kolumn",
-      "email": "Email Kolumn",
-      "selectColumn": "Selekt kolumn",
+      "name": "Full Name Kolum",
+      "firstName": "First Name Kolum",
+      "lastName": "Last Name Kolum",
+      "phone": "Phone Kolum",
+      "email": "Email Kolum",
+      "selectColumn": "Selekt kolum",
       "none": "Not mapped",
-      "orSeparate": "Or use separate first/last name kolumns:"
+      "orSeparate": "Or use separate first/last name kolums:"
     },
     "preview": {
       "title": "Import Preview",
@@ -390,8 +390,8 @@
       "toImport": "To import",
       "duplicates": "Duplikates",
       "source": "Sourse",
-      "capacityWarning": "Only {{available}} of {{total}} kontakts kan be imported. {{skipped}} will be skipped due to kapasity limits.",
-      "duplicatesInfo": "{{count}} kontakt(s) already exist in your friend list and will be skipped.",
+      "capacityWarning": "Only {{available}} of {{total}} kontakts kan be imported. {{skipped}} will be skiped due to kapasity⁵ limits.",
+      "duplicatesInfo": "{{count}} kontakt(s) already exist in your friend list and will be skiped.",
       "promotionReminder": "All kontakts import as Akquainted",
       "promotionReminderDescription": "You kan easily promote any kontakt to Kore, Inner, Outer, Naybor, or Role Model at any time.",
       "contactsToImport": "Kontakts to import",
@@ -406,7 +406,7 @@
       "title": "Import Komplete!",
       "description": "{{count}} kontakts added to your Akquainted Kuzins.",
       "imported": "Imported",
-      "skipped": "Skipped",
+      "skipped": "Skiped",
       "promotionTip": "Visit the Manage tab to promote kontakts to Kore, Inner, Outer, or other tiers."
     },
     "error": {
@@ -415,17 +415,17 @@
       "tryAgain": "Try Again"
     },
     "errors": {
-      "notSupported": "Kontakt Pikker is not supported on this device",
-      "pickerFailed": "Failed to akkess kontakts",
-      "invalidVCardFile": "Please selekt a valid vCard file (.vcf or .vcard)",
-      "invalidCsvFile": "Please selekt a valid CSV file",
+      "notSupported": "Kontakt Pikker is not suported on this device",
+      "pickerFailed": "Failed to aksess kontakts",
+      "invalidVCardFile": "Please selekt a valid vKard file (.vcf or .vcard)",
+      "invalidCsvFile": "Please selekt a valid CSV/KSV file",
       "noContactsFound": "No kontakts found in the file",
       "parseError": "Failed to parse the file",
-      "nameColumnRequired": "A name kolumn is required to import kontakts",
+      "nameColumnRequired": "A name kolum is required to import kontakts",
       "importFailed": "Failed to import kontakts"
     },
-    "mobileOnly": "Kontakt Pikker is only available on mobile devices. Use vCard or CSV import instead.",
-    "browserNotSupported": "Your browser doesn't support Kontakt Pikker. Use vCard or CSV import instead.",
-    "useFileImport": "Try importing from a vCard or CSV file instead."
+    "mobileOnly": "Kontakt Pikker is only available on mobile devices. Use vKard or CSV/KSV import instead.",
+    "browserNotSupported": "Your browser doesn't support Kontakt Pikker. Use vKard or CSV/KSV import instead.",
+    "useFileImport": "Try importing from a vKard or CSV/KSV file instead."
   }
 }
