@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { TierType, TIER_INFO, ContactMethod, CONTACT_METHODS } from "@/types/friend";
 
 interface AddFriendDialogProps {
@@ -19,7 +20,8 @@ interface AddFriendDialogProps {
 export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: AddFriendDialogProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState(""); // E.164 format for storage
+  const [phoneDisplay, setPhoneDisplay] = useState(""); // Display format
   const [preferredContact, setPreferredContact] = useState<ContactMethod>("tel");
   const [showEmailField, setShowEmailField] = useState(false);
   const [showPhoneField, setShowPhoneField] = useState(false);
@@ -35,12 +37,13 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
       onAdd(
         name.trim(),
         email.trim() || undefined,
-        phone.trim() || undefined,
-        phone.trim() ? preferredContact : undefined,
+        phone || undefined, // Already in E.164 format
+        phone ? preferredContact : undefined,
       );
       setName("");
       setEmail("");
       setPhone("");
+      setPhoneDisplay("");
       setPreferredContact("tel");
       setShowEmailField(false);
       setShowPhoneField(false);
@@ -52,10 +55,16 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
     setName("");
     setEmail("");
     setPhone("");
+    setPhoneDisplay("");
     setPreferredContact("tel");
     setShowEmailField(false);
     setShowPhoneField(false);
     onOpenChange(false);
+  };
+
+  const handlePhoneChange = (e164: string | undefined, display: string) => {
+    setPhone(e164 || "");
+    setPhoneDisplay(display);
   };
 
   return (
@@ -151,12 +160,10 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                         <Phone className="w-4 h-4" />
                         Phone (optional)
                       </Label>
-                      <Input
+                      <PhoneInput
                         id="phone"
-                        type="tel"
                         value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+1 555-123-4567"
+                        onChange={handlePhoneChange}
                       />
                     </div>
 

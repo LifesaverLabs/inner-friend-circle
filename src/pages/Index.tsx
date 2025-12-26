@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LandingHero } from '@/components/LandingHero';
 import { FriendDashboard } from '@/components/FriendDashboard';
+import { DevPanel } from '@/components/DevPanel';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 
@@ -31,16 +32,24 @@ const Index = () => {
 
   if (showDashboard || isAuthenticated) {
     return (
-      <FriendDashboard
-        isLoggedIn={isAuthenticated}
-        userEmail={user?.email}
-        onSignIn={handleSignIn}
-        onSignOut={handleSignOut}
-      />
+      <>
+        <FriendDashboard
+          isLoggedIn={isAuthenticated}
+          userEmail={user?.email}
+          onSignIn={handleSignIn}
+          onSignOut={handleSignOut}
+        />
+        <DevPanel user={user} onSignOut={handleSignOut} />
+      </>
     );
   }
 
-  return <LandingHero onGetStarted={handleGetStarted} onSignIn={handleSignIn} />;
+  return (
+    <>
+      <LandingHero onGetStarted={handleGetStarted} onSignIn={handleSignIn} />
+      <DevPanel user={user} onSignOut={handleSignOut} />
+    </>
+  );
 };
 
 export default Index;

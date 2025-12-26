@@ -27,6 +27,7 @@ import { AddRoleModelDialog } from './AddRoleModelDialog';
 import { ReservedSpotsDialog } from './ReservedSpotsDialog';
 import { ParasocialFeed } from './ParasocialFeed';
 import { FollowCreatorDialog } from './FollowCreatorDialog';
+import { NayborSOSBanner } from './naybor/NayborSOSBanner';
 import { Friend, TierType, TIER_INFO, TIER_LIMITS, ReservedGroup } from '@/types/friend';
 import { CircleTier } from '@/hooks/useFriendConnections';
 import { ParasocialShare } from '@/hooks/useParasocial';
@@ -258,6 +259,11 @@ export function TierSection({
       </div>
 
       <Progress value={progressPercent} className={`h-2 mb-4 ${progressColors[tier]}`} />
+
+      {/* Naybor SOS Banner - shows when naybors exist */}
+      {tier === 'naybor' && friends.length > 0 && (
+        <NayborSOSBanner naybors={friends} />
+      )}
 
       {/* Naybor under-minimum warning with Mr. Rogers video */}
       {tier === 'naybor' && tierInfo.recommendedMin && friends.length < tierInfo.recommendedMin && (
