@@ -4,6 +4,33 @@
     "tagline": "Cultivez vos relations les plus proches",
     "description": "Un outil respectueux de la vie privée pour maintenir des amitiés significatives basé sur la recherche du nombre de Dunbar"
   },
+  "landing": {
+    "heroTitle1": "Cultivez Vos",
+    "heroTitle2": "Amitiés les Plus Proches",
+    "heroDescription": "Selon les recherches de Dunbar, nous ne pouvons vraiment maintenir qu'environ 5 amitiés intimes, 15 amis proches et 150 connexions significatives. Inner Friend vous aide à nourrir intentionnellement les relations qui comptent le plus.",
+    "getStarted": "Commencer",
+    "learnMore": "En Savoir Plus",
+    "features": {
+      "intentionalLimits": {
+        "title": "Limites Intentionnelles",
+        "description": "La science montre que nous avons des limites naturelles pour les relations significatives. Acceptez-les pour vous concentrer sur ceux qui comptent vraiment."
+      },
+      "privateByDefault": {
+        "title": "Privé par Défaut",
+        "description": "Vos listes restent sur votre appareil. Créez un compte uniquement si vous souhaitez la persistance et la correspondance mutuelle optionnelle."
+      },
+      "mutualDiscovery": {
+        "title": "Découverte Mutuelle",
+        "description": "Découvrez optionnellement quand quelqu'un que vous avez listé comme proche vous a également listé — une célébration douce de la réciprocité."
+      }
+    },
+    "mission": {
+      "title": "Du Temps Réel, Pas des Publicités",
+      "description": "Nous gagnons quand vous quittez notre site — pour partager de vrais moments avec les personnes qui comptent le plus. Quand la distance vous sépare, nous vous aiderons à lancer des appels vidéo. Mais rien ne vaut d'être là.",
+      "inspiration": "Notre inspiration : Dentyne Ice \"Faites du Face Time\""
+    },
+    "quote": "\"Toutes les relations ne sont pas symétriques — et c'est parfaitement naturel. L'objectif n'est pas l'équilibre parfait, mais la présence intentionnelle.\""
+  },
   "nav": {
     "home": "Accueil",
     "dashboard": "Tableau de bord",

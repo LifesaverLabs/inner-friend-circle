@@ -4,6 +4,33 @@
     "tagline": "Coltiva le tue relazioni più strette",
     "description": "Uno strumento incentrato sulla privacy per mantenere amicizie significative basato sulla ricerca del numero di Dunbar"
   },
+  "landing": {
+    "heroTitle1": "Coltiva Le Tue",
+    "heroTitle2": "Amicizie Più Strette",
+    "heroDescription": "Secondo la ricerca di Dunbar, possiamo davvero mantenere solo circa 5 amicizie intime, 15 amici stretti e 150 connessioni significative. Inner Friend ti aiuta a coltivare intenzionalmente le relazioni che contano di più.",
+    "getStarted": "Inizia",
+    "learnMore": "Scopri di Più",
+    "features": {
+      "intentionalLimits": {
+        "title": "Limiti Intenzionali",
+        "description": "La scienza dimostra che abbiamo limiti naturali per le relazioni significative. Accettali per concentrarti su chi conta davvero."
+      },
+      "privateByDefault": {
+        "title": "Privato di Default",
+        "description": "Le tue liste rimangono sul tuo dispositivo. Crea un account solo se desideri persistenza e abbinamento reciproco opzionale."
+      },
+      "mutualDiscovery": {
+        "title": "Scoperta Reciproca",
+        "description": "Scopri opzionalmente quando qualcuno che hai elencato come stretto ti ha anche elencato — una dolce celebrazione della reciprocità."
+      }
+    },
+    "mission": {
+      "title": "Tempo Reale, Non Pubblicità",
+      "description": "Vinciamo quando lasci il nostro sito — per condividere momenti reali con le persone che contano di più. Quando la distanza vi separa, ti aiuteremo ad avviare videochiamate. Ma niente batte esserci di persona.",
+      "inspiration": "La nostra ispirazione: Dentyne Ice \"Crea Tempo Reale\""
+    },
+    "quote": "\"Non tutte le relazioni sono simmetriche — e questo è perfettamente naturale. L'obiettivo non è l'equilibrio perfetto, ma la presenza intenzionale.\""
+  },
   "nav": {
     "home": "Home",
     "dashboard": "Pannello",

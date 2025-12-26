@@ -2,10 +2,30 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
-// Mock react-i18next
+// Mock react-i18next with actual translations for landing page
+const mockTranslations: Record<string, string> = {
+  'app.name': 'InnerFriend',
+  'nav.signIn': 'Sign In',
+  'landing.heroTitle1': 'Curate Your',
+  'landing.heroTitle2': 'Closest Friendships',
+  'landing.heroDescription': "Based on Dunbar's research, we can only truly maintain about 5 intimate friendships, 15 close friends, and 150 meaningful connections.",
+  'landing.getStarted': 'Get Started',
+  'landing.learnMore': 'Learn More',
+  'landing.features.intentionalLimits.title': 'Intentional Limits',
+  'landing.features.intentionalLimits.description': 'Science shows we have natural limits to meaningful relationships.',
+  'landing.features.privateByDefault.title': 'Private by Default',
+  'landing.features.privateByDefault.description': 'Your lists stay on your device.',
+  'landing.features.mutualDiscovery.title': 'Mutual Discovery',
+  'landing.features.mutualDiscovery.description': 'Optionally learn when someone you\'ve listed as close has also listed you.',
+  'landing.mission.title': 'Face Time, Not Ad Time',
+  'landing.mission.description': 'We win when you leave our site.',
+  'landing.mission.inspiration': 'Our inspiration: Dentyne Ice',
+  'landing.quote': 'Not all relationships are symmetrical.',
+};
+
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key: string) => key,
+    t: (key: string) => mockTranslations[key] || key,
     i18n: { language: 'en', changeLanguage: vi.fn() },
   }),
   initReactI18next: {

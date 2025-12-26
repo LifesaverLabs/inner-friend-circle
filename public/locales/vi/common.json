@@ -4,6 +4,33 @@
     "tagline": "Vun đắp những mối quan hệ thân thiết",
     "description": "Công cụ ưu tiên quyền riêng tư để duy trì tình bạn có ý nghĩa dựa trên nghiên cứu số Dunbar"
   },
+  "landing": {
+    "heroTitle1": "Vun Đắp",
+    "heroTitle2": "Tình Bạn Thân Thiết",
+    "heroDescription": "Theo nghiên cứu của Dunbar, chúng ta thực sự chỉ có thể duy trì khoảng 5 tình bạn thân mật, 15 bạn thân và 150 mối quan hệ có ý nghĩa. Inner Friend giúp bạn chủ đích vun đắp những mối quan hệ quan trọng nhất.",
+    "getStarted": "Bắt đầu",
+    "learnMore": "Tìm hiểu thêm",
+    "features": {
+      "intentionalLimits": {
+        "title": "Giới hạn có chủ đích",
+        "description": "Khoa học cho thấy chúng ta có giới hạn tự nhiên cho các mối quan hệ có ý nghĩa. Chấp nhận chúng để tập trung vào những người thực sự quan trọng."
+      },
+      "privateByDefault": {
+        "title": "Riêng tư theo mặc định",
+        "description": "Danh sách của bạn được lưu trên thiết bị. Chỉ tạo tài khoản nếu bạn muốn lưu trữ lâu dài và kết hợp tương hỗ tùy chọn."
+      },
+      "mutualDiscovery": {
+        "title": "Khám phá tương hỗ",
+        "description": "Tùy chọn biết khi ai đó bạn đã liệt kê là thân thiết cũng đã liệt kê bạn — một lễ kỷ niệm nhẹ nhàng về sự đối ứng."
+      }
+    },
+    "mission": {
+      "title": "Thời gian gặp mặt, không phải quảng cáo",
+      "description": "Chúng tôi thắng khi bạn rời trang web — để chia sẻ những khoảnh khắc thực sự với những người quan trọng nhất. Khi khoảng cách chia cắt bạn, chúng tôi sẽ giúp bạn bắt đầu cuộc gọi video. Nhưng không gì thay thế được sự hiện diện.",
+      "inspiration": "Nguồn cảm hứng: Dentyne Ice \"Tạo thời gian gặp mặt\""
+    },
+    "quote": "\"Không phải tất cả các mối quan hệ đều đối xứng — và điều đó hoàn toàn tự nhiên. Mục tiêu không phải là sự cân bằng hoàn hảo, mà là sự hiện diện có chủ đích.\""
+  },
   "nav": {
     "home": "Trang chủ",
     "dashboard": "Bảng điều khiển",

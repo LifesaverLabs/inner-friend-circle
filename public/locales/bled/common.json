@@ -9,6 +9,33 @@
     "tagline": "Nurture your klosest relationships",
     "description": "A privaxy-first tool for maintaining meaningful friendships based on Dunbar's number researkh"
   },
+  "landing": {
+    "heroTitle1": "Kurate Your",
+    "heroTitle2": "Klosest Friendships",
+    "heroDescription": "Based on Dunbar's researkh, we kan only truly maintain about 5 intimate friendships, 15 klose friends, and 150 meaningful konnektions. Inner Friend helps you intentionally nurture the relationships that matter most.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "features": {
+      "intentionalLimits": {
+        "title": "Intentional Limits",
+        "description": "Sience shows we have natural limits to meaningful relationships. Embrase them to fokus on who truly matters."
+      },
+      "privateByDefault": {
+        "title": "Private by Default",
+        "description": "Your lists stay on your devise. Kreate an akkaunt only if you want persistense and optional mutual matkhing."
+      },
+      "mutualDiscovery": {
+        "title": "Mutual Diskovery",
+        "description": "Optionally learn when someone you've listed as klose has also listed you — a gentle selebration of resiprosity."
+      }
+    },
+    "mission": {
+      "title": "Fase Time, Not Ad Time",
+      "description": "We win when you leave our site — to share real moments with the people who matter most. When distanse separates you, we'll help you spark video kalls. But nothing beats being there.",
+      "inspiration": "Our inspiration: Dentyne Ice \"Make Fase Time\""
+    },
+    "quote": "\"Not all relationships are symmetrikal — and that's perfektly natural. The goal isn't perfekt balanse, but intentional presense.\""
+  },
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",

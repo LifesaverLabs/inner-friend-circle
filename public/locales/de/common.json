@@ -4,6 +4,33 @@
     "tagline": "Pflege deine engsten Beziehungen",
     "description": "Ein datenschutzfreundliches Tool zur Pflege bedeutungsvoller Freundschaften basierend auf der Dunbar-Zahl-Forschung"
   },
+  "landing": {
+    "heroTitle1": "Pflege Deine",
+    "heroTitle2": "Engsten Freundschaften",
+    "heroDescription": "Nach Dunbars Forschung können wir nur etwa 5 enge Freundschaften, 15 gute Freunde und 150 bedeutsame Verbindungen wirklich pflegen. Inner Friend hilft dir dabei, die Beziehungen bewusst zu pflegen, die am wichtigsten sind.",
+    "getStarted": "Los geht's",
+    "learnMore": "Mehr erfahren",
+    "features": {
+      "intentionalLimits": {
+        "title": "Bewusste Grenzen",
+        "description": "Die Wissenschaft zeigt, dass wir natürliche Grenzen für bedeutsame Beziehungen haben. Akzeptiere sie, um dich auf die zu konzentrieren, die wirklich wichtig sind."
+      },
+      "privateByDefault": {
+        "title": "Standardmäßig privat",
+        "description": "Deine Listen bleiben auf deinem Gerät. Erstelle nur ein Konto, wenn du Persistenz und optionales gegenseitiges Matching möchtest."
+      },
+      "mutualDiscovery": {
+        "title": "Gegenseitige Entdeckung",
+        "description": "Erfahre optional, wenn jemand, den du als eng gelistet hast, dich ebenfalls gelistet hat — eine sanfte Feier der Gegenseitigkeit."
+      }
+    },
+    "mission": {
+      "title": "Echte Zeit, Keine Werbezeit",
+      "description": "Wir gewinnen, wenn du unsere Seite verlässt — um echte Momente mit den Menschen zu teilen, die am wichtigsten sind. Wenn die Entfernung euch trennt, helfen wir dir, Videoanrufe zu starten. Aber nichts ersetzt das Dasein.",
+      "inspiration": "Unsere Inspiration: Dentyne Ice \"Mach echte Zeit\""
+    },
+    "quote": "\"Nicht alle Beziehungen sind symmetrisch — und das ist völlig natürlich. Das Ziel ist nicht perfekte Balance, sondern bewusste Präsenz.\""
+  },
   "nav": {
     "home": "Startseite",
     "dashboard": "Dashboard",
