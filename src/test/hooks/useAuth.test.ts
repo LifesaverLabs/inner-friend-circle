@@ -383,6 +383,8 @@ describe('useAuth', () => {
       vi.mocked(supabase.auth.onAuthStateChange).mockReturnValue({
         data: {
           subscription: {
+            id: 'test-subscription-id',
+            callback: vi.fn(),
             unsubscribe: unsubscribeMock,
           },
         },
