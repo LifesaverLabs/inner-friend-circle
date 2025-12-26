@@ -1,9 +1,19 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { TierFeed } from '@/components/feed/TierFeed';
 import { Friend } from '@/types/friend';
 import { FeedPost, SunsetNudge } from '@/types/feed';
+
+// Mock toast
+vi.mock('sonner', () => ({
+  toast: {
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warning: vi.fn(),
+  },
+}));
 
 // Wrapper with required providers
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
@@ -504,5 +514,160 @@ describe('TierFeed - Tier-Specific Behavior', () => {
 
       expect(shouldShowLikeCountMock).toHaveBeenCalledWith('outer');
     });
+  });
+});
+
+describe('TierFeed - Connected Button', () => {
+  const defaultProps = {
+    tier: 'core' as const,
+    friends: [] as Friend[],
+    userId: 'user-123',
+    isLoggedIn: true,
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    mockUseFeed.mockReturnValue(defaultMockHookReturn);
+  });
+
+  it('should show Connected button when onUpdateLastContacted is provided', () => {
+    const onUpdateLastContacted = vi.fn();
+    const friend = createMockFriend({ id: 'friend-1', name: 'Alice', tier: 'core' });
+    const nudges = [
+      createMockNudge({ friendId: 'friend-1', friendName: 'Alice', friendTier: 'core' }),
+    ];
+
+    mockUseFeed.mockReturnValue({
+      ...defaultMockHookReturn,
+      nudges,
+      getTierFeed: vi.fn(() => []),
+    });
+
+    renderWithProviders(
+      <TierFeed
+        {...defaultProps}
+        friends={[friend]}
+        onUpdateLastContacted={onUpdateLastContacted}
+      />
+    );
+
+    expect(screen.getByTestId('connected-button')).toBeInTheDocument();
+  });
+
+  it('should not show Connected button when onUpdateLastContacted is not provided', () => {
+    const friend = createMockFriend({ id: 'friend-1', name: 'Alice', tier: 'core' });
+    const nudges = [
+      createMockNudge({ friendId: 'friend-1', friendName: 'Alice', friendTier: 'core' }),
+    ];
+
+    mockUseFeed.mockReturnValue({
+      ...defaultMockHookReturn,
+      nudges,
+      getTierFeed: vi.fn(() => []),
+    });
+
+    renderWithProviders(
+      <TierFeed
+        {...defaultProps}
+        friends={[friend]}
+      />
+    );
+
+    expect(screen.queryByTestId('connected-button')).not.toBeInTheDocument();
+  });
+
+  it('should call onUpdateLastContacted with today when Connected button is clicked', async () => {
+    const { toast } = await import('sonner');
+    const onUpdateLastContacted = vi.fn();
+    const dismissNudgeMock = vi.fn();
+    const friend = createMockFriend({ id: 'friend-1', name: 'Alice', tier: 'core' });
+    const nudges = [
+      createMockNudge({ id: 'nudge-1', friendId: 'friend-1', friendName: 'Alice', friendTier: 'core' }),
+    ];
+
+    mockUseFeed.mockReturnValue({
+      ...defaultMockHookReturn,
+      nudges,
+      dismissNudge: dismissNudgeMock,
+      getTierFeed: vi.fn(() => []),
+    });
+
+    renderWithProviders(
+      <TierFeed
+        {...defaultProps}
+        friends={[friend]}
+        onUpdateLastContacted={onUpdateLastContacted}
+      />
+    );
+
+    const connectedButton = screen.getByTestId('connected-button');
+    fireEvent.click(connectedButton);
+
+    // Should call onUpdateLastContacted with friend ID and today's date
+    expect(onUpdateLastContacted).toHaveBeenCalledWith('friend-1', expect.any(Date));
+
+    // The date should be today (midnight)
+    const calledDate = onUpdateLastContacted.mock.calls[0][1];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    expect(calledDate.getDate()).toBe(today.getDate());
+    expect(calledDate.getMonth()).toBe(today.getMonth());
+    expect(calledDate.getFullYear()).toBe(today.getFullYear());
+
+    // Should dismiss the nudge
+    expect(dismissNudgeMock).toHaveBeenCalledWith('nudge-1');
+
+    // Should show success toast
+    expect(toast.success).toHaveBeenCalledWith('Marked Alice as connected');
+  });
+
+  it('should show date dropdown trigger', () => {
+    const onUpdateLastContacted = vi.fn();
+    const friend = createMockFriend({ id: 'friend-1', name: 'Alice', tier: 'core' });
+    const nudges = [
+      createMockNudge({ friendId: 'friend-1', friendName: 'Alice', friendTier: 'core' }),
+    ];
+
+    mockUseFeed.mockReturnValue({
+      ...defaultMockHookReturn,
+      nudges,
+      getTierFeed: vi.fn(() => []),
+    });
+
+    renderWithProviders(
+      <TierFeed
+        {...defaultProps}
+        friends={[friend]}
+        onUpdateLastContacted={onUpdateLastContacted}
+      />
+    );
+
+    expect(screen.getByTestId('connected-date-dropdown')).toBeInTheDocument();
+  });
+
+  it('should show date dropdown trigger with aria-label', () => {
+    const onUpdateLastContacted = vi.fn();
+    const friend = createMockFriend({ id: 'friend-1', name: 'Alice', tier: 'core' });
+    const nudges = [
+      createMockNudge({ friendId: 'friend-1', friendName: 'Alice', friendTier: 'core' }),
+    ];
+
+    mockUseFeed.mockReturnValue({
+      ...defaultMockHookReturn,
+      nudges,
+      getTierFeed: vi.fn(() => []),
+    });
+
+    renderWithProviders(
+      <TierFeed
+        {...defaultProps}
+        friends={[friend]}
+        onUpdateLastContacted={onUpdateLastContacted}
+      />
+    );
+
+    // The dropdown trigger should have an accessible label
+    const dropdown = screen.getByTestId('connected-date-dropdown');
+    expect(dropdown).toHaveAttribute('aria-label', 'Select connection date');
   });
 });

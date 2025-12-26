@@ -1,15 +1,22 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, Phone, Mic, Calendar, X, Clock } from 'lucide-react';
+import { ChevronDown, ChevronUp, Phone, Mic, Calendar, X, Clock, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { SunsetNudge } from '@/types/feed';
 
 interface SunsetNudgePanelProps {
   nudges: SunsetNudge[];
   onDismiss: (nudgeId: string) => void;
   onAction?: (nudgeId: string, action: 'schedule_call' | 'send_voice_note' | 'plan_meetup') => void;
+  onMarkConnected?: (nudgeId: string, friendId: string, date: Date) => void;
 }
 
 const ACTION_ICONS = {
@@ -24,10 +31,41 @@ const ACTION_LABELS = {
   plan_meetup: 'Plan Meetup',
 };
 
+// Generate date options for the "Connected" dropdown
+function getConnectionDateOptions(): { label: string; date: Date }[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  const twoDaysAgo = new Date(today);
+  twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+
+  const threeDaysAgo = new Date(today);
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+
+  const oneWeekAgo = new Date(today);
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  const twoWeeksAgo = new Date(today);
+  twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+
+  return [
+    { label: 'Today', date: today },
+    { label: 'Yesterday', date: yesterday },
+    { label: '2 days ago', date: twoDaysAgo },
+    { label: '3 days ago', date: threeDaysAgo },
+    { label: '1 week ago', date: oneWeekAgo },
+    { label: '2 weeks ago', date: twoWeeksAgo },
+  ];
+}
+
 export function SunsetNudgePanel({
   nudges,
   onDismiss,
   onAction,
+  onMarkConnected,
 }: SunsetNudgePanelProps) {
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -77,6 +115,7 @@ export function SunsetNudgePanel({
                     nudge={nudge}
                     onDismiss={() => onDismiss(nudge.id)}
                     onAction={onAction ? (action) => onAction(nudge.id, action) : undefined}
+                    onMarkConnected={onMarkConnected ? (date) => onMarkConnected(nudge.id, nudge.friendId, date) : undefined}
                   />
                 ))}
               </div>
@@ -92,11 +131,20 @@ interface NudgeCardProps {
   nudge: SunsetNudge;
   onDismiss: () => void;
   onAction?: (action: 'schedule_call' | 'send_voice_note' | 'plan_meetup') => void;
+  onMarkConnected?: (date: Date) => void;
 }
 
-function NudgeCard({ nudge, onDismiss, onAction }: NudgeCardProps) {
+function NudgeCard({ nudge, onDismiss, onAction, onMarkConnected }: NudgeCardProps) {
   const ActionIcon = ACTION_ICONS[nudge.suggestedAction];
   const actionLabel = ACTION_LABELS[nudge.suggestedAction];
+  const dateOptions = getConnectionDateOptions();
+
+  // Handle clicking the main "Connected" button (defaults to today)
+  const handleConnectedClick = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    onMarkConnected?.(today);
+  };
 
   return (
     <motion.div
@@ -124,6 +172,7 @@ function NudgeCard({ nudge, onDismiss, onAction }: NudgeCardProps) {
 
       {/* Actions */}
       <div className="flex items-center gap-1 flex-shrink-0">
+        {/* Primary action button */}
         <Button
           size="sm"
           variant="default"
@@ -133,6 +182,52 @@ function NudgeCard({ nudge, onDismiss, onAction }: NudgeCardProps) {
           <ActionIcon className="w-3 h-3" />
           <span className="hidden sm:inline text-xs">{actionLabel}</span>
         </Button>
+
+        {/* Connected button with optional date picker */}
+        {onMarkConnected && (
+          <DropdownMenu>
+            <div className="flex items-center">
+              {/* Main Connected button - clicks default to today */}
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleConnectedClick}
+                className="gap-1 h-8 rounded-r-none pr-1 border-r-0"
+                data-testid="connected-button"
+              >
+                <Check className="w-3 h-3" />
+                <span className="hidden sm:inline text-xs">Connected</span>
+              </Button>
+
+              {/* Dropdown trigger for date selection */}
+              <DropdownMenuTrigger asChild>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="h-8 rounded-l-none pl-0 px-1"
+                  data-testid="connected-date-dropdown"
+                  aria-label="Select connection date"
+                >
+                  <ChevronDown className="w-3 h-3" />
+                </Button>
+              </DropdownMenuTrigger>
+            </div>
+
+            <DropdownMenuContent align="end">
+              {dateOptions.map((option) => (
+                <DropdownMenuItem
+                  key={option.label}
+                  onClick={() => onMarkConnected(option.date)}
+                  className="text-sm"
+                >
+                  {option.label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        )}
+
+        {/* Dismiss button */}
         <Button
           size="icon"
           variant="ghost"

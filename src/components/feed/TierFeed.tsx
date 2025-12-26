@@ -38,6 +38,7 @@ interface TierFeedProps {
   isLoggedIn: boolean;
   onGoToManage?: () => void;
   onRequestContactInfo?: (friendId: string) => void;
+  onUpdateLastContacted?: (friendId: string, date: Date) => void;
 }
 
 const TIER_BG_COLORS: Record<FeedTier, string> = {
@@ -66,6 +67,7 @@ export function TierFeed({
   isLoggedIn,
   onGoToManage,
   onRequestContactInfo,
+  onUpdateLastContacted,
 }: TierFeedProps) {
   const {
     nudges,
@@ -205,6 +207,24 @@ export function TierFeed({
     dismissNudge(nudgeId);
   }, [tierNudges, friends, defaultContactMethod, onRequestContactInfo, dismissNudge]);
 
+  // Handle marking a friend as connected (update lastContacted date)
+  const handleMarkConnected = useCallback((
+    nudgeId: string,
+    friendId: string,
+    date: Date
+  ) => {
+    const friend = friends.find(f => f.id === friendId);
+    if (!friend) return;
+
+    if (onUpdateLastContacted) {
+      onUpdateLastContacted(friendId, date);
+      toast.success(`Marked ${friend.name} as connected`);
+    }
+
+    // Dismiss the nudge
+    dismissNudge(nudgeId);
+  }, [friends, onUpdateLastContacted, dismissNudge]);
+
   const bgColor = TIER_BG_COLORS[tier];
   const borderColor = TIER_BORDER_COLORS[tier];
 
@@ -245,6 +265,7 @@ export function TierFeed({
       nudges={tierNudges}
       onDismiss={dismissNudge}
       onAction={handleNudgeAction}
+      onMarkConnected={onUpdateLastContacted ? handleMarkConnected : undefined}
     />
   );
 
