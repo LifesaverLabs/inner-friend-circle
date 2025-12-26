@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Heart, Video, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function MissionBanner() {
+  const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDismissed, setIsDismissed] = useState(() => {
     return localStorage.getItem('mission-banner-dismissed') === 'true';
@@ -32,17 +34,17 @@ export function MissionBanner() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <Heart className="w-5 h-5 text-primary fill-primary/30" />
-                <h3 className="font-semibold text-foreground">Face Time, Not Ad Time</h3>
+                <h3 className="font-semibold text-foreground">{t('mission.title')}</h3>
               </div>
-              
+
               <p className="text-sm text-muted-foreground leading-relaxed">
-                We win when you leave our site — to share real moments with the people who matter most.
+                {t('mission.description')}
                 {!isExpanded && (
-                  <button 
+                  <button
                     onClick={() => setIsExpanded(true)}
                     className="text-primary hover:underline ml-1"
                   >
-                    Learn more...
+                    {t('mission.learnMore')}
                   </button>
                 )}
               </p>
@@ -60,37 +62,36 @@ export function MissionBanner() {
                         <div className="flex items-start gap-2 p-3 bg-background/50 rounded-lg">
                           <Video className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                           <div>
-                            <p className="text-sm font-medium">Spark Video Kalls</p>
-                            <p className="text-xs text-muted-foreground">When you're apart, one click connects you</p>
+                            <p className="text-sm font-medium">{t('mission.features.spark.title')}</p>
+                            <p className="text-xs text-muted-foreground">{t('mission.features.spark.description')}</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2 p-3 bg-background/50 rounded-lg">
                           <Users className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                           <div>
-                            <p className="text-sm font-medium">Tend Your Circles</p>
-                            <p className="text-xs text-muted-foreground">Reminders to reach out before connections fade</p>
+                            <p className="text-sm font-medium">{t('mission.features.tend.title')}</p>
+                            <p className="text-xs text-muted-foreground">{t('mission.features.tend.description')}</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2 p-3 bg-background/50 rounded-lg">
                           <Heart className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                           <div>
-                            <p className="text-sm font-medium">Pull Closer</p>
-                            <p className="text-xs text-muted-foreground">Move meaningful connections into tighter orbits</p>
+                            <p className="text-sm font-medium">{t('mission.features.pull.title')}</p>
+                            <p className="text-xs text-muted-foreground">{t('mission.features.pull.description')}</p>
                           </div>
                         </div>
                       </div>
 
                       <div className="bg-background/80 rounded-lg p-4 border border-border">
                         <p className="text-sm text-muted-foreground mb-3">
-                          Our inspiration? This classic Dentyne Ice commercial — the perfect reminder 
-                          that the best moments happen when you put down the phone and show up:
+                          {t('mission.inspiration')}
                         </p>
                         <div className="aspect-video max-w-md rounded-lg overflow-hidden bg-black">
                           <iframe
                             width="100%"
                             height="100%"
                             src="https://www.youtube.com/embed/kAGoqhXtrX4"
-                            title="Dentyne Ice - Face Time"
+                            title={t('mission.videoTitle')}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
@@ -99,17 +100,15 @@ export function MissionBanner() {
                           />
                         </div>
                         <p className="text-xs text-muted-foreground mt-3 italic">
-                          "Make Face Time" — that's the ideal. When distance separates you, 
-                          we'll help you bridge it with video kalls. But always remember: 
-                          nothing beats being there.
+                          {t('mission.quote')}
                         </p>
                       </div>
 
-                      <button 
+                      <button
                         onClick={() => setIsExpanded(false)}
                         className="text-sm text-primary hover:underline"
                       >
-                        Show less
+                        {t('mission.showLess')}
                       </button>
                     </div>
                   </motion.div>

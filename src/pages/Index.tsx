@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { LandingHero } from '@/components/LandingHero';
 import { FriendDashboard } from '@/components/FriendDashboard';
@@ -7,6 +8,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 
 const Index = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user, signOut, isAuthenticated, loading } = useAuth();
   const [showDashboard, setShowDashboard] = useState(false);
@@ -24,9 +26,9 @@ const Index = () => {
     setShowDashboard(false);
     const { error } = await signOut();
     if (error) {
-      toast.error('Failed to sign out');
+      toast.error(t('auth.toasts.signOutError'));
     } else {
-      toast.success('Signed out successfully');
+      toast.success(t('auth.toasts.signOutSuccess'));
     }
   };
 

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -32,14 +33,15 @@ const tierEmoji: Record<TierType, string> = {
   acquainted: '🤝',
 };
 
-export function TendingDialog({ 
-  open, 
-  onOpenChange, 
-  friends, 
+export function TendingDialog({
+  open,
+  onOpenChange,
+  friends,
   getFriendsInTier,
   onUpdateLastContacted,
   onTendingComplete
 }: TendingDialogProps) {
+  const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(0);
   const [neglectedIds, setNeglectedIds] = useState<Set<string>>(new Set());
   const [showCallPrompt, setShowCallPrompt] = useState(false);
@@ -74,7 +76,7 @@ export function TendingDialog({
       if (neglectedIds.size > 0) {
         setShowCallPrompt(true);
       } else {
-        toast.success("Amazing! You've tended to all your circles 🌱");
+        toast.success(t('tending.toasts.allTended'));
         handleClose();
       }
     }
@@ -82,14 +84,14 @@ export function TendingDialog({
 
   const handleCall = (friend: Friend) => {
     if (!friend.phone) {
-      toast.error(`No phone number for ${friend.name}`);
+      toast.error(t('tending.toasts.noPhone', { name: friend.name }));
       return;
     }
-    
+
     const method = friend.preferredContact || 'tel';
     const contactInfo = CONTACT_METHODS[method];
     window.open(contactInfo.getUrl(friend.phone), '_blank');
-    
+
     // Mark as contacted
     onUpdateLastContacted(friend.id);
     setNeglectedIds(prev => {
@@ -97,8 +99,8 @@ export function TendingDialog({
       next.delete(friend.id);
       return next;
     });
-    
-    toast.success(`Connecting with ${friend.name} via ${contactInfo.name}`);
+
+    toast.success(t('tending.toasts.connecting', { name: friend.name, method: contactInfo.name }));
   };
 
   const handleClose = () => {
@@ -110,8 +112,8 @@ export function TendingDialog({
   };
 
   const handleSkipCalls = () => {
-    toast("Remember to reach out soon! 💛", { 
-      description: `${neglectedIds.size} friend${neglectedIds.size === 1 ? '' : 's'} waiting to hear from you`
+    toast(t('tending.toasts.rememberReachOut'), {
+      description: t('tending.toasts.friendsWaiting', { count: neglectedIds.size })
     });
     handleClose();
   };
@@ -123,10 +125,10 @@ export function TendingDialog({
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-primary" />
-              Time to Reconnect
+              {t('tending.reconnect.title')}
             </DialogTitle>
             <DialogDescription>
-              These friends could use some of your time
+              {t('tending.reconnect.description')}
             </DialogDescription>
           </DialogHeader>
 
@@ -134,7 +136,7 @@ export function TendingDialog({
             {/* Mobile recommendation note */}
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground pb-1">
               <Smartphone className="w-3 h-3" aria-hidden="true" />
-              <span>Contact actions work best on mobile devices</span>
+              <span>{t('tending.mobileHint')}</span>
             </div>
             {neglectedFriends.map(friend => {
               const tierInfo = TIER_INFO[friend.tier];
@@ -156,16 +158,16 @@ export function TendingDialog({
                   </div>
                   
                   {hasPhone ? (
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       onClick={() => handleCall(friend)}
                       className="gap-2"
                     >
                       <Phone className="h-4 w-4" />
-                      Call
+                      {t('tending.call')}
                     </Button>
                   ) : (
-                    <span className="text-xs text-muted-foreground">No phone</span>
+                    <span className="text-xs text-muted-foreground">{t('tending.noPhone')}</span>
                   )}
                 </motion.div>
               );
@@ -174,11 +176,11 @@ export function TendingDialog({
 
           <DialogFooter>
             <Button variant="ghost" onClick={handleSkipCalls}>
-              Maybe Later
+              {t('tending.maybeLater')}
             </Button>
             <Button onClick={handleClose}>
               <CheckCircle className="h-4 w-4 mr-2" />
-              Done Tending
+              {t('tending.doneTending')}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -192,15 +194,13 @@ export function TendingDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Heart className="h-5 w-5 text-primary" />
-            Tend Your Circles
+            {t('tending.title')}
           </DialogTitle>
           <DialogDescription>
-            {currentTier && (
-              <>
-                Mark your <strong>{TIER_INFO[currentTier.tier].name}</strong> friends 
-                you <em>haven't</em> connected with {currentTier.period}
-              </>
-            )}
+            {currentTier && t('tending.markDescription', {
+              tier: t(`tiers.${currentTier.tier}`),
+              period: t(`tending.periods.${currentTier.tier}`)
+            })}
           </DialogDescription>
         </DialogHeader>
 
@@ -225,18 +225,18 @@ export function TendingDialog({
                   {TIER_INFO[currentTier.tier].name}
                 </span>
                 <span className="text-sm text-muted-foreground">
-                  ({tierFriends.length} {tierFriends.length === 1 ? 'person' : 'people'})
+                  ({t('tending.peopleCount', { count: tierFriends.length })})
                 </span>
               </div>
 
               {tierFriends.length === 0 ? (
                 <p className="text-muted-foreground text-sm py-4 text-center">
-                  No friends in this tier yet
+                  {t('tending.noFriendsInTier')}
                 </p>
               ) : (
                 <div className="space-y-2 max-h-[300px] overflow-y-auto">
                   <p className="text-xs text-muted-foreground mb-2">
-                    ✓ Check those you <strong>haven't</strong> talked to enough:
+                    {t('tending.checkInstruction')}
                   </p>
                   {tierFriends.map(friend => (
                     <div 
@@ -250,7 +250,7 @@ export function TendingDialog({
                       />
                       <span className="text-foreground">{friend.name}</span>
                       {!friend.phone && (
-                        <span className="text-xs text-muted-foreground ml-auto">no phone</span>
+                        <span className="text-xs text-muted-foreground ml-auto">{t('tending.noPhone')}</span>
                       )}
                     </div>
                   ))}
@@ -263,18 +263,18 @@ export function TendingDialog({
         <DialogFooter>
           <Button variant="ghost" onClick={handleClose}>
             <X className="h-4 w-4 mr-2" />
-            Cancel
+            {t('actions.cancel')}
           </Button>
           <Button onClick={handleNext}>
             {currentStep < TENDING_TIERS.length - 1 ? (
               <>
-                Next
+                {t('actions.next')}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </>
             ) : (
               <>
                 <CheckCircle className="h-4 w-4 mr-2" />
-                Finish
+                {t('tending.finish')}
               </>
             )}
           </Button>

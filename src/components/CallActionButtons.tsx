@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Video, Calendar, AlertCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -28,6 +29,7 @@ export function CallActionButtons({
   theirMethods,
   onRequestContactInfo,
 }: CallActionButtonsProps) {
+  const { t } = useTranslation();
   const [spontaneousOpen, setSpontaneousOpen] = useState(false);
   const [scheduledOpen, setScheduledOpen] = useState(false);
 
@@ -76,9 +78,9 @@ export function CallActionButtons({
     if (service.getCallUrl) {
       const url = service.getCallUrl(method.contact_identifier);
       window.open(url, '_blank');
-      toast.success(`Connecting via ${service.name}`);
+      toast.success(t('callActions.toasts.connecting', { service: service.name }));
     } else {
-      toast.info(`Open ${service.name} to connect`);
+      toast.info(t('callActions.toasts.openService', { service: service.name }));
     }
     setSpontaneousOpen(false);
     setScheduledOpen(false);
@@ -110,11 +112,11 @@ export function CallActionButtons({
               </PopoverTrigger>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Start a kall</p>
+              <p>{t('callActions.startKall')}</p>
             </TooltipContent>
           </Tooltip>
           <PopoverContent className="w-64 p-2" align="end">
-            <p className="text-sm font-medium mb-2">Kall {friendName} now</p>
+            <p className="text-sm font-medium mb-2">{t('callActions.kallNow', { name: friendName })}</p>
             {!hasAnySpontaneous ? (
               <NoContactMethods onRequest={onRequestContactInfo} />
             ) : (
@@ -143,11 +145,11 @@ export function CallActionButtons({
               </PopoverTrigger>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Schedule a kall</p>
+              <p>{t('callActions.scheduleKall')}</p>
             </TooltipContent>
           </Tooltip>
           <PopoverContent className="w-64 p-2" align="end">
-            <p className="text-sm font-medium mb-2">Schedule with {friendName}</p>
+            <p className="text-sm font-medium mb-2">{t('callActions.scheduleWith', { name: friendName })}</p>
             {!hasAnyScheduled ? (
               <NoContactMethods onRequest={onRequestContactInfo} />
             ) : (
@@ -177,10 +179,11 @@ interface MethodListProps {
 }
 
 function MethodList({ compatible, fallback, onSelect, isCompatible }: MethodListProps) {
+  const { t } = useTranslation();
   if (isCompatible) {
     return (
       <div className="space-y-1">
-        <p className="text-xs text-muted-foreground mb-2">Shared services:</p>
+        <p className="text-xs text-muted-foreground mb-2">{t('callActions.sharedServices')}</p>
         {compatible.map(({ theirMethod, service }) => {
           const serviceInfo = SERVICES[service];
           return (
@@ -200,7 +203,7 @@ function MethodList({ compatible, fallback, onSelect, isCompatible }: MethodList
 
   return (
     <div className="space-y-1">
-      <p className="text-xs text-muted-foreground mb-2">Their preferences:</p>
+      <p className="text-xs text-muted-foreground mb-2">{t('callActions.theirPreferences')}</p>
       {fallback.map((method) => {
         const serviceInfo = SERVICES[method.service_type];
         return (
@@ -219,16 +222,17 @@ function MethodList({ compatible, fallback, onSelect, isCompatible }: MethodList
 }
 
 function NoContactMethods({ onRequest }: { onRequest?: () => void }) {
+  const { t } = useTranslation();
   return (
     <div className="text-center py-2">
       <AlertCircle className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
       <p className="text-sm text-muted-foreground mb-2">
-        No contact methods available
+        {t('callActions.noMethods')}
       </p>
       {onRequest && (
         <Button size="sm" variant="outline" onClick={onRequest} className="w-full">
           <MessageSquare className="w-4 h-4 mr-2" />
-          Request contact info
+          {t('callActions.requestInfo')}
         </Button>
       )}
     </div>

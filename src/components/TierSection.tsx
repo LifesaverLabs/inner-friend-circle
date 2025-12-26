@@ -210,7 +210,7 @@ export function TierSection({
             className="gap-1"
           >
             <Lock className="w-4 h-4" />
-            {reservedTotal > 0 ? `${reservedTotal} Reserved` : 'Reserve'}
+            {reservedTotal > 0 ? t('tierSection.reservedCount', { count: reservedTotal }) : t('tierSection.reserve')}
           </Button>
           {isLoggedIn && canHaveLinkedFriends && onAddLinkedFriend && (
             <Button
@@ -221,7 +221,7 @@ export function TierSection({
               className="gap-1"
             >
               <Link2 className="w-4 h-4" />
-              Link
+              {t('tierSection.link')}
             </Button>
           )}
           {tier === 'parasocial' && isLoggedIn && userId && (
@@ -232,7 +232,7 @@ export function TierSection({
               className="gap-1"
             >
               <UserPlus className="w-4 h-4" />
-              Follow Creator
+              {t('tierSection.followCreator')}
             </Button>
           )}
           {isRoleModelTier && (
@@ -243,7 +243,7 @@ export function TierSection({
               className="gap-1"
             >
               <Star className="w-4 h-4" />
-              Add Role Model
+              {t('tierSection.addRoleModel')}
             </Button>
           )}
           {canAddDirectly && (
@@ -254,7 +254,7 @@ export function TierSection({
               className="gap-1"
             >
               <Plus className="w-4 h-4" />
-              Add
+              {t('tierSection.add')}
             </Button>
           )}
         </div>
