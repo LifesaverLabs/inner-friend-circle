@@ -156,8 +156,8 @@ export function FriendDashboard({
     await respondToRequest(connectionId, false);
   };
 
-  const tiers: TierType[] = useMemo(() => 
-    ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'] as TierType[], 
+  const tiers: TierType[] = useMemo(() =>
+    ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'] as TierType[],
   []);
 
   // Define allowed move transitions
@@ -218,7 +218,7 @@ export function FriendDashboard({
     [lists.friends, addFriend, updateFriend]
   );
 
-  // Render prop for manage tab content
+  // Render prop for manage tab content - must be before early return to maintain hook order
   const renderManageContent = useCallback(() => (
     <div className="space-y-6">
       {tiers.map(tier => (
@@ -247,7 +247,7 @@ export function FriendDashboard({
       ))}
     </div>
   ), [
-    tiers, getFriendsInTier, lists.reservedSpots, handleAddFriend, handleMoveFriend,
+    getFriendsInTier, lists.reservedSpots, handleAddFriend, handleMoveFriend,
     handleRemoveFriend, handleAddReservedGroup, handleUpdateReservedGroup,
     handleRemoveReservedGroup, handleReorderFriends, getTierCapacity, isLoggedIn,
     handleAddLinkedFriend, updateFriend, getAllowedMoves, feedShares, seenShares,
@@ -257,7 +257,7 @@ export function FriendDashboard({
   if (!isLoaded) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <motion.div 
+        <motion.div
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
           className="text-muted-foreground"
