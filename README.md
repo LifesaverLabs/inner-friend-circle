@@ -15,24 +15,43 @@ Research by anthropologist Robin Dunbar shows humans can maintain meaningful rel
 - **Outer (50)** — Good friends and your extended circle
 - **Naybors (variable)** — Trusted neighbors for mutual aid and emergencies
 - **Acquainted (150)** — People you know well enough to greet
+- **Role Models (unlimited)** — People whose life stories inspire you
 - **Parasocial (unlimited)** — Celebrities and content creators you follow
 
 ## Features
 
+### Core Features
 - **Intentional Limits** — Science-backed caps on each tier help you focus on quality over quantity
 - **Private by Default** — Your lists stay on your device; account creation is optional
-- **Tending Reminders** — Get notified when you haven't contacted someone in a while (Core: 14 days, Inner: 30 days, Outer: 90 days)
-- **Naybor SOS** — Quick access to trusted neighbors for emergencies and mutual aid
-- **Mutual Discovery** — Optionally discover when friends have you on their list too
+- **Tending Reminders** — Get notified when you haven't contacted someone in a while
 - **Drag & Drop** — Easily reorder and tend to friends within tiers
 - **Multiple Contact Methods** — Phone, FaceTime, WhatsApp, Signal, Telegram, SMS
+
+### Naybor Features
+- **Naybor SOS** — Quick access to trusted neighbors for emergencies and mutual aid
+- **Keys Shared** — Securely track who has keys to your home for emergencies
+- **Emergency Entry Permissions** — Define when naybors can enter during emergencies
+
+### Privacy & Data Rights (GDPR Compliant)
+- **Cookie Consent** — Granular control over cookies (essential, functional, analytics, marketing)
+- **Data Export** — Export all your data anytime in JSON format (Data Liberation Front compliant)
+- **Account Deletion** — 30-day grace period with full data removal
+- **Consent Management** — View, manage, and withdraw consent at any time
+- **Age Verification** — GDPR Article 8 compliant for users under 16
+
+### Social Features
+- **Mutual Discovery** — Optionally discover when friends have you on their list too
 - **Bridging Protocol** — Core and Inner feeds emphasize calls and meetups over passive likes
-- **Data Liberation** — Export all your data anytime in JSON or CSV format
-- **22 Languages** — Full internationalization with accessibility support
+- **Bulk Contact Import** — Import contacts from phone, vCard, or CSV files
+
+### Internationalization
+- **23 Languages** — Full translations including accessibility labels
+- **RTL Support** — Arabic, Urdu, and Hebrew with proper right-to-left layout
+- **Prominent Language Selector** — Easily switch languages from any page
 
 ## Supported Languages
 
-Inner Friend supports 22 languages with complete translations including accessibility labels:
+Inner Friend supports 23 languages with complete translations including accessibility labels:
 
 | Language | Endonym | Direction |
 |----------|---------|-----------|
@@ -57,6 +76,7 @@ Inner Friend supports 22 languages with complete translations including accessib
 | Turkish | Türkçe | LTR |
 | Italian | Italiano | LTR |
 | Urdu | اردو | RTL |
+| Hebrew | עברית | RTL |
 | Blesséd | Blesséd | LTR |
 
 ## Tech Stack
@@ -69,7 +89,7 @@ Inner Friend supports 22 languages with complete translations including accessib
 - [Framer Motion](https://www.framer.com/motion/) for animations
 - [React Query](https://tanstack.com/query) for data fetching
 - [i18next](https://www.i18next.com/) for internationalization
-- [Vitest](https://vitest.dev/) for testing (1000+ tests)
+- [Vitest](https://vitest.dev/) for testing (1300+ tests)
 
 ## Getting Started
 

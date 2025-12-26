@@ -10,6 +10,8 @@ import Profile from "./pages/Profile";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import { CookieConsentBanner } from "@/components/gdpr/CookieConsentBanner";
+import { useGDPR } from "@/hooks/useGDPR";
 
 // Initialize i18n
 import "./lib/i18n";
@@ -23,6 +25,44 @@ const I18nLoadingFallback = () => (
   </div>
 );
 
+// Inner component that uses the GDPR hook (must be inside Suspense for i18n)
+const AppContent = () => {
+  const {
+    showCookieBanner,
+    dismissBanner,
+    acceptAllCookies,
+    acceptEssentialOnly,
+    updateCookieConsent,
+  } = useGDPR();
+
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/u/:handle" element={<Profile />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      {/* GDPR Cookie Consent Banner */}
+      {showCookieBanner && (
+        <CookieConsentBanner
+          onAcceptAll={acceptAllCookies}
+          onAcceptEssential={acceptEssentialOnly}
+          onCustomize={(consent) => {
+            updateCookieConsent(consent);
+            dismissBanner();
+          }}
+          onDismiss={dismissBanner}
+        />
+      )}
+    </>
+  );
+};
+
 const App = () => (
   <Suspense fallback={<I18nLoadingFallback />}>
     <QueryClientProvider client={queryClient}>
@@ -30,15 +70,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/u/:handle" element={<Profile />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppContent />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

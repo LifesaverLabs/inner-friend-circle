@@ -22,6 +22,18 @@
       "mutualDiscovery": {
         "title": "Mutual Discovery",
         "description": "Optionally learn when someone you've listed as close has also listed you — a gentle celebration of reciprocity."
+      },
+      "dataLiberation": {
+        "title": "Your Data, Your Way",
+        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+      },
+      "nayborNetwork": {
+        "title": "Naybor Network",
+        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+      },
+      "globalReach": {
+        "title": "23 Languages",
+        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
       }
     },
     "mission": {
@@ -890,5 +902,105 @@
     "underMinWarning": "You only have {{count}} naybor(s) — we recommend at least 3",
     "underMinDescription": "Having trusted naybors nearby is essential for emergencies, mutual aid, and building community resilience. Introduce yourself to your neighbors!",
     "mrRogersQuote": "\"Won't you be my neighbor?\" — Fred Rogers"
+  },
+  "gdpr": {
+    "cookies": {
+      "title": "We use cookies",
+      "description": "We use cookies to improve your experience. Essential cookies are required for the app to work.",
+      "learnMore": "Learn more",
+      "customize": "Customize",
+      "customizeAria": "Customize cookie preferences",
+      "essentialOnly": "Essential Only",
+      "essentialOnlyAria": "Accept only essential cookies",
+      "acceptAll": "Accept All",
+      "acceptAllAria": "Accept all cookies",
+      "settingsTitle": "Cookie Preferences",
+      "settingsDescription": "Choose which types of cookies you want to allow. Essential cookies are always enabled as they are required for the site to function.",
+      "savePreferences": "Save Preferences",
+      "required": "Required",
+      "essential": {
+        "title": "Essential Cookies",
+        "description": "Required for basic site functionality like authentication and security."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "description": "Remember your preferences like language settings and UI customizations."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors use our site to improve the experience."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "Used to deliver relevant advertisements and track campaign effectiveness."
+      }
+    },
+    "settings": {
+      "cookiePreferences": "Cookie Preferences",
+      "cookieDescription": "Manage which types of cookies you allow us to use.",
+      "consentHistory": "Consent History",
+      "consentHistoryDescription": "View and manage your consent records.",
+      "consentGiven": "Consent given on",
+      "consentVersion": "Terms version",
+      "noConsent": "No consent record found. Please accept the cookie policy.",
+      "withdrawConsent": "Withdraw Consent",
+      "withdrawWarning": "Withdrawing consent will reset your cookie preferences and may limit some features. Are you sure?",
+      "confirmWithdraw": "Yes, Withdraw Consent",
+      "dataRights": "Your Data Rights",
+      "dataRightsDescription": "Under GDPR, you have the right to access, export, and delete your data.",
+      "exportData": "Export My Data",
+      "exportDescription": "Download all your data in a portable format",
+      "deleteAccount": "Delete My Account",
+      "deleteDescription": "Permanently delete your account and all data"
+    },
+    "deletion": {
+      "title": "Delete Your Account",
+      "description": "This will permanently delete your account and all associated data.",
+      "warningTitle": "Warning: This cannot be undone",
+      "warningDescription": "Once deleted, your account and all data will be permanently removed. Make sure to export your data first if you want to keep it.",
+      "whatDeleted": "What will be deleted:",
+      "deletedItems": {
+        "profile": "Your profile and personal information",
+        "connections": "All your friend connections and circles",
+        "posts": "All your posts and shared content",
+        "preferences": "Your preferences and settings",
+        "keysShared": "Your Keys Shared emergency access settings"
+      },
+      "gracePeriodTitle": "30-Day Grace Period",
+      "gracePeriodDescription": "Your account will be scheduled for deletion in {{days}} days. You can cancel the deletion during this period by signing in.",
+      "exportFirst": "Export your data before deletion?",
+      "exportData": "Export Data",
+      "exported": "Data Exported",
+      "continue": "Continue to Deletion",
+      "confirmTitle": "Confirm Account Deletion",
+      "confirmDescription": "This is your final confirmation. Please verify your identity to proceed.",
+      "typeEmail": "Type your email to confirm: {{email}}",
+      "emailMismatch": "Email does not match your account",
+      "reasonLabel": "Reason for leaving",
+      "reasonPlaceholder": "Help us improve by sharing why you're leaving...",
+      "understandConsequences": "I understand that my account and all data will be permanently deleted after the grace period, and this action cannot be undone.",
+      "deleting": "Scheduling deletion...",
+      "confirmDelete": "Delete My Account",
+      "scheduledTitle": "Deletion Scheduled",
+      "scheduledDescription": "Your account has been scheduled for deletion.",
+      "scheduledDate": "Your account will be permanently deleted on:",
+      "cancelInfo": "To cancel the deletion, simply sign in to your account before the scheduled date."
+    },
+    "age": {
+      "title": "Age Verification",
+      "description": "We need to verify your age to comply with privacy regulations.",
+      "whyTitle": "Why we ask",
+      "whyDescription": "Under GDPR, users under {{age}} years old require parental consent to create an account.",
+      "birthYearLabel": "What year were you born?",
+      "selectYear": "Select year",
+      "privacyNote": "We only store your birth year for compliance purposes.",
+      "minorTitle": "Parental Consent Required",
+      "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
+      "parentalRequired": "Parental Consent Required",
+      "verify": "Verify Age"
+    }
+  },
+  "common": {
+    "optional": "optional"
   }
 }
