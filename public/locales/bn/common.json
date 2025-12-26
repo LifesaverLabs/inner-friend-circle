@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} ইনার",
     "outerLabel": "{{count}} আউটার",
     "nayborLabel": "{{count}} প্রতিবেশী",
-    "parasocialLabel": "{{count}} অনুসরণ"
+    "parasocialLabel": "{{count}} প্যারাসোশ্যাল"
   },
   "actions": {
     "add": "যোগ করুন",
@@ -320,7 +320,10 @@
     "terms": "শর্তাবলী",
     "about": "সম্পর্কে",
     "contribute": "অবদান রাখুন",
-    "openSource": "ওপেন সোর্স"
+    "openSource": "ওপেন সোর্স",
+    "lifesaverProject": "একটি Lifesaver Labs প্রকল্প",
+    "contributeGithub": "GitHub-এ অবদান রাখুন এবং সংশোধন করুন",
+    "tagline": "ওপেন সোর্স। অর্থবহ সংযোগের জন্য যত্ন সহকারে নির্মিত।"
   },
   "contactImport": {
     "title": "পরিচিতি আমদানি",

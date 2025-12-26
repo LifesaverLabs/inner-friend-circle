@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} Cedhak",
     "outerLabel": "{{count}} Njaba",
     "nayborLabel": "{{count}} Tangga",
-    "parasocialLabel": "{{count}} Ngikuti"
+    "parasocialLabel": "{{count}} Parasosial"
   },
   "actions": {
     "add": "Tambah",
@@ -320,7 +320,10 @@
     "terms": "Ketentuan",
     "about": "Babagan",
     "contribute": "Kontribusi",
-    "openSource": "Open Source"
+    "openSource": "Open Source",
+    "lifesaverProject": "Proyek Lifesaver Labs",
+    "contributeGithub": "Kontribusi lan Koreksi ing GitHub",
+    "tagline": "Open source. Digawe kanthi ati-ati kanggo hubungan sing bermakna."
   },
   "contactImport": {
     "title": "Impor Kontak",

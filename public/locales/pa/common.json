@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} ਇਨਰ",
     "outerLabel": "{{count}} ਆਊਟਰ",
     "nayborLabel": "{{count}} ਗੁਆਂਢੀ",
-    "parasocialLabel": "{{count}} ਫਾਲੋ"
+    "parasocialLabel": "{{count}} ਪੈਰਾਸੋਸ਼ਲ"
   },
   "actions": {
     "add": "ਸ਼ਾਮਲ ਕਰੋ",
@@ -320,7 +320,10 @@
     "terms": "ਸ਼ਰਤਾਂ",
     "about": "ਬਾਰੇ",
     "contribute": "ਯੋਗਦਾਨ",
-    "openSource": "ਓਪਨ ਸੋਰਸ"
+    "openSource": "ਓਪਨ ਸੋਰਸ",
+    "lifesaverProject": "ਇੱਕ Lifesaver Labs ਪ੍ਰੋਜੈਕਟ",
+    "contributeGithub": "GitHub ਤੇ ਯੋਗਦਾਨ ਦਿਓ ਅਤੇ ਸੁਧਾਰੋ",
+    "tagline": "ਓਪਨ ਸੋਰਸ। ਅਰਥਪੂਰਨ ਕਨੈਕਸ਼ਨਾਂ ਲਈ ਧਿਆਨ ਨਾਲ ਬਣਾਇਆ ਗਿਆ।"
   },
   "contactImport": {
     "title": "ਸੰਪਰਕ ਇੰਪੋਰਟ ਕਰੋ",

@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} الداخلية",
     "outerLabel": "{{count}} الخارجية",
     "nayborLabel": "{{count}} الجيران",
-    "parasocialLabel": "{{count}} متابَعون"
+    "parasocialLabel": "{{count}} باراسوشال"
   },
   "actions": {
     "add": "إضافة",
@@ -320,7 +320,10 @@
     "terms": "الشروط",
     "about": "حول",
     "contribute": "المساهمة",
-    "openSource": "مفتوح المصدر"
+    "openSource": "مفتوح المصدر",
+    "lifesaverProject": "مشروع من Lifesaver Labs",
+    "contributeGithub": "ساهم وصحح على GitHub",
+    "tagline": "مفتوح المصدر. مصمم بعناية للاتصالات الهادفة."
   },
   "contactImport": {
     "title": "استيراد جهات الاتصال",

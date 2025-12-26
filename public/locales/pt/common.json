@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} Íntimo",
     "outerLabel": "{{count}} Externo",
     "nayborLabel": "{{count}} Vizinhos",
-    "parasocialLabel": "{{count}} Seguindo"
+    "parasocialLabel": "{{count}} Parassociais"
   },
   "actions": {
     "add": "Adicionar",
@@ -320,7 +320,10 @@
     "terms": "Termos",
     "about": "Sobre",
     "contribute": "Contribuir",
-    "openSource": "Código Aberto"
+    "openSource": "Código Aberto",
+    "lifesaverProject": "Um Projeto Lifesaver Labs",
+    "contributeGithub": "Contribuir e Corrigir no GitHub",
+    "tagline": "Código aberto. Construído com cuidado para conexões significativas."
   },
   "contactImport": {
     "title": "Importar Contatos",

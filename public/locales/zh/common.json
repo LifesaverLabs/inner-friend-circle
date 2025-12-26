@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} 亲密",
     "outerLabel": "{{count}} 外围",
     "nayborLabel": "{{count}} 邻里",
-    "parasocialLabel": "{{count}} 关注"
+    "parasocialLabel": "{{count}} 准社交"
   },
   "actions": {
     "add": "添加",
@@ -320,7 +320,10 @@
     "terms": "服务条款",
     "about": "关于我们",
     "contribute": "参与贡献",
-    "openSource": "开源项目"
+    "openSource": "开源项目",
+    "lifesaverProject": "Lifesaver Labs 项目",
+    "contributeGithub": "在 GitHub 上贡献和纠正",
+    "tagline": "开源。为有意义的连接精心打造。"
   },
   "contactImport": {
     "title": "导入联系人",

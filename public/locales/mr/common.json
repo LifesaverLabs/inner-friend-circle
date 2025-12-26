@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} इनर",
     "outerLabel": "{{count}} आउटर",
     "nayborLabel": "{{count}} शेजारी",
-    "parasocialLabel": "{{count}} फॉलो"
+    "parasocialLabel": "{{count}} पॅरासोशल"
   },
   "actions": {
     "add": "जोडा",
@@ -320,7 +320,10 @@
     "terms": "अटी",
     "about": "विषयी",
     "contribute": "योगदान द्या",
-    "openSource": "ओपन सोर्स"
+    "openSource": "ओपन सोर्स",
+    "lifesaverProject": "एक Lifesaver Labs प्रोजेक्ट",
+    "contributeGithub": "GitHub वर योगदान द्या आणि दुरुस्त करा",
+    "tagline": "ओपन सोर्स. अर्थपूर्ण कनेक्शनसाठी काळजीपूर्वक बनवलेले."
   },
   "contactImport": {
     "title": "संपर्क आयात करा",

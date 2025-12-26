@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} 이너",
     "outerLabel": "{{count}} 아우터",
     "nayborLabel": "{{count}} 이웃",
-    "parasocialLabel": "{{count}} 팔로잉"
+    "parasocialLabel": "{{count}} 파라소셜"
   },
   "actions": {
     "add": "추가",
@@ -320,7 +320,10 @@
     "terms": "이용약관",
     "about": "소개",
     "contribute": "기여",
-    "openSource": "오픈소스"
+    "openSource": "오픈소스",
+    "lifesaverProject": "Lifesaver Labs 프로젝트",
+    "contributeGithub": "GitHub에서 기여하고 수정하기",
+    "tagline": "오픈 소스. 의미 있는 연결을 위해 정성껏 만들었습니다."
   },
   "contactImport": {
     "title": "연락처 가져오기",

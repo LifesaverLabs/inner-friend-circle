@@ -130,7 +130,7 @@
     "innerLabel": "{{count}} インナー",
     "outerLabel": "{{count}} アウター",
     "nayborLabel": "{{count}} ご近所",
-    "parasocialLabel": "{{count}} フォロー"
+    "parasocialLabel": "{{count}} パラソーシャル"
   },
   "actions": {
     "add": "追加",
@@ -320,7 +320,10 @@
     "terms": "利用規約",
     "about": "概要",
     "contribute": "貢献する",
-    "openSource": "オープンソース"
+    "openSource": "オープンソース",
+    "lifesaverProject": "Lifesaver Labsプロジェクト",
+    "contributeGithub": "GitHubで貢献・修正する",
+    "tagline": "オープンソース。意味のあるつながりのために心を込めて作られました。"
   },
   "contactImport": {
     "title": "連絡先をインポート",
