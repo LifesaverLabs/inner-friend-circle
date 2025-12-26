@@ -13,8 +13,13 @@ export const CONTACT_METHODS: Record<ContactMethod, ContactMethodInfo> = {
   tel: { name: 'Phone Call', icon: '📞', getUrl: (phone) => `tel:${phone}` },
   facetime: { name: 'FaceTime', icon: '📱', getUrl: (phone) => `facetime:${phone}` },
   whatsapp: { name: 'WhatsApp', icon: '💬', getUrl: (phone) => `https://wa.me/${phone.replace(/\D/g, '')}` },
-  signal: { name: 'Signal', icon: '🔐', getUrl: (phone) => `https://signal.me/#p/${phone.replace(/\D/g, '')}` },
-  telegram: { name: 'Telegram', icon: '✈️', getUrl: (phone) => `https://t.me/${phone.replace(/\D/g, '')}` },
+  signal: { name: 'Signal', icon: '🔐', getUrl: (phone) => `https://signal.me/#p/+${phone.replace(/\D/g, '')}` },
+  telegram: {
+    name: 'Telegram',
+    icon: '✈️',
+    getUrl: (phone) => `https://t.me/${phone.replace(/\D/g, '')}`,
+    warning: '⚠️ Caution: In our experience, Telegram has high levels of spam. We\'ll remove this warning when Telegram improves spam control.',
+  },
   wechat: {
     name: 'WeChat',
     icon: '💚',
