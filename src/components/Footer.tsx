@@ -26,7 +26,7 @@ export function Footer() {
 
           {/* GitHub Repository Link */}
           <a
-            href="https://github.com/LifesaverLabs/inner-friend"
+            href="https://github.com/LifesaverLabs/inner-friend-circle"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
