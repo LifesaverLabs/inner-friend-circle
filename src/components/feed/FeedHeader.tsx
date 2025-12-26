@@ -19,6 +19,8 @@ interface FeedHeaderProps {
   postCount: number;
   defaultContactMethod?: ContactMethod;
   onDefaultContactMethodChange?: (method: ContactMethod) => void;
+  composeOpen?: boolean;
+  onComposeOpenChange?: (open: boolean) => void;
 }
 
 const TIER_NAMES: Record<FeedTier, string> = {
@@ -46,8 +48,13 @@ export function FeedHeader({
   postCount,
   defaultContactMethod,
   onDefaultContactMethodChange,
+  composeOpen: externalComposeOpen,
+  onComposeOpenChange,
 }: FeedHeaderProps) {
-  const [composeOpen, setComposeOpen] = useState(false);
+  // Use internal state if no external control provided
+  const [internalComposeOpen, setInternalComposeOpen] = useState(false);
+  const composeOpen = externalComposeOpen ?? internalComposeOpen;
+  const setComposeOpen = onComposeOpenChange ?? setInternalComposeOpen;
 
   const effectiveDefaultMethod = defaultContactMethod || DEFAULT_CONTACT_METHODS[tier];
 
