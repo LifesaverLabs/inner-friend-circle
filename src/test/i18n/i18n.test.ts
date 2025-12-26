@@ -7,9 +7,9 @@ import {
 
 describe('i18n Configuration', () => {
   describe('SUPPORTED_LANGUAGES', () => {
-    it('should include all 22 Tier 1 languages plus Blesséd', () => {
+    it('should include all 23 Tier 1 languages plus Blesséd and Evereet', () => {
       const languages = Object.keys(SUPPORTED_LANGUAGES);
-      // Top 20 languages by speaker count + English + Blesséd
+      // Top 20 languages by speaker count + English + Blesséd + Evereet
       expect(languages).toContain('en'); // English
       expect(languages).toContain('zh'); // 简体中文
       expect(languages).toContain('hi'); // हिन्दी
@@ -31,8 +31,9 @@ describe('i18n Configuration', () => {
       expect(languages).toContain('tr'); // Türkçe
       expect(languages).toContain('it'); // Italiano
       expect(languages).toContain('ur'); // اردو
+      expect(languages).toContain('he'); // Evereet (עברית)
       expect(languages).toContain('bled'); // Blesséd
-      expect(languages).toHaveLength(22);
+      expect(languages).toHaveLength(23);
     });
 
     it('should have name and nativeName for each language', () => {
@@ -80,9 +81,10 @@ describe('i18n Configuration', () => {
       });
     });
 
-    it('should mark Arabic and Urdu as RTL', () => {
+    it('should mark Arabic, Urdu, and Evereet as RTL', () => {
       expect(SUPPORTED_LANGUAGES.ar.direction).toBe('rtl');
       expect(SUPPORTED_LANGUAGES.ur.direction).toBe('rtl');
+      expect(SUPPORTED_LANGUAGES.he.direction).toBe('rtl'); // Evereet
     });
 
     it('should mark all other languages as LTR', () => {
@@ -204,7 +206,7 @@ describe('i18n Configuration', () => {
 
 describe('Translation Files', () => {
   // These tests validate the structure of translation files
-  const languages = ['en', 'zh', 'hi', 'es', 'fr', 'ar', 'bn', 'pt', 'ru', 'ja', 'pa', 'de', 'jv', 'ko', 'te', 'vi', 'mr', 'ta', 'tr', 'it', 'ur', 'bled'];
+  const languages = ['en', 'zh', 'hi', 'es', 'fr', 'ar', 'bn', 'pt', 'ru', 'ja', 'pa', 'de', 'jv', 'ko', 'te', 'vi', 'mr', 'ta', 'tr', 'it', 'ur', 'he', 'bled'];
 
   languages.forEach((lang) => {
     describe(`${lang} translations`, () => {
@@ -219,14 +221,15 @@ describe('Translation Files', () => {
 
 describe('RTL Support', () => {
   it('should identify RTL languages correctly', () => {
-    // Arabic and Urdu are RTL languages
+    // Arabic, Urdu, and Evereet are RTL languages
     const rtlLanguages = Object.entries(SUPPORTED_LANGUAGES)
       .filter(([_, info]) => info.direction === 'rtl')
       .map(([code]) => code);
 
     expect(rtlLanguages).toContain('ar');
     expect(rtlLanguages).toContain('ur');
-    expect(rtlLanguages).toHaveLength(2);
+    expect(rtlLanguages).toContain('he'); // Evereet
+    expect(rtlLanguages).toHaveLength(3);
   });
 
   it('should identify LTR languages correctly', () => {
@@ -241,6 +244,6 @@ describe('RTL Support', () => {
     expect(ltrLanguages).toContain('ja');
     expect(ltrLanguages).toContain('ko');
     expect(ltrLanguages).toContain('bled');
-    expect(ltrLanguages).toHaveLength(20); // 22 total - 2 RTL = 20 LTR
+    expect(ltrLanguages).toHaveLength(20); // 23 total - 3 RTL = 20 LTR
   });
 });
