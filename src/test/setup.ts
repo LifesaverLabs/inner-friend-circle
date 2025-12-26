@@ -1,6 +1,9 @@
 import '@testing-library/jest-dom';
 import { vi, beforeEach } from 'vitest';
 
+// Define __APP_VERSION__ for tests (normally injected by Vite at build time)
+(globalThis as Record<string, unknown>).__APP_VERSION__ = '0.0.0-test';
+
 // Mock localStorage
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
