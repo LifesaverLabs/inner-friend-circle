@@ -21,7 +21,6 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(""); // E.164 format for storage
-  const [phoneDisplay, setPhoneDisplay] = useState(""); // Display format
   const [preferredContact, setPreferredContact] = useState<ContactMethod>("tel");
   const [showEmailField, setShowEmailField] = useState(false);
   const [showPhoneField, setShowPhoneField] = useState(false);
@@ -43,7 +42,6 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
       setName("");
       setEmail("");
       setPhone("");
-      setPhoneDisplay("");
       setPreferredContact("tel");
       setShowEmailField(false);
       setShowPhoneField(false);
@@ -55,16 +53,10 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
     setName("");
     setEmail("");
     setPhone("");
-    setPhoneDisplay("");
     setPreferredContact("tel");
     setShowEmailField(false);
     setShowPhoneField(false);
     onOpenChange(false);
-  };
-
-  const handlePhoneChange = (e164: string | undefined, display: string) => {
-    setPhone(e164 || "");
-    setPhoneDisplay(display);
   };
 
   return (
@@ -163,7 +155,7 @@ export function AddFriendDialog({ open, onOpenChange, tier, onAdd, capacity }: A
                       <PhoneInput
                         id="phone"
                         value={phone}
-                        onChange={handlePhoneChange}
+                        onChange={(e164) => setPhone(e164 || "")}
                       />
                     </div>
 
