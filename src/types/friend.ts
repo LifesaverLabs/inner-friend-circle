@@ -1,13 +1,38 @@
 export type TierType = 'core' | 'inner' | 'outer' | 'naybor' | 'parasocial' | 'rolemodel' | 'acquainted';
 
-export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram';
+export type ContactMethod = 'tel' | 'facetime' | 'whatsapp' | 'signal' | 'telegram' | 'wechat' | 'vk' | 'max';
 
-export const CONTACT_METHODS: Record<ContactMethod, { name: string; icon: string; getUrl: (phone: string) => string }> = {
+export interface ContactMethodInfo {
+  name: string;
+  icon: string;
+  getUrl: (phone: string) => string;
+  warning?: string; // Optional warning to display when selecting this method
+}
+
+export const CONTACT_METHODS: Record<ContactMethod, ContactMethodInfo> = {
   tel: { name: 'Phone Call', icon: '📞', getUrl: (phone) => `tel:${phone}` },
   facetime: { name: 'FaceTime', icon: '📱', getUrl: (phone) => `facetime:${phone}` },
   whatsapp: { name: 'WhatsApp', icon: '💬', getUrl: (phone) => `https://wa.me/${phone.replace(/\D/g, '')}` },
   signal: { name: 'Signal', icon: '🔐', getUrl: (phone) => `https://signal.me/#p/${phone.replace(/\D/g, '')}` },
   telegram: { name: 'Telegram', icon: '✈️', getUrl: (phone) => `https://t.me/${phone.replace(/\D/g, '')}` },
+  wechat: {
+    name: 'WeChat',
+    icon: '💚',
+    getUrl: (phone) => `weixin://dl/chat?${phone.replace(/\D/g, '')}`,
+    warning: '⚠️ WeChat is subject to Chinese government surveillance and censorship. Messages may be monitored, filtered, or stored. You can be punished—even severely—for sharing lifesaving liberty ideas. Consider using Signal for sensitive conversations. Learn more: https://TearDownThisFirewall.org',
+  },
+  vk: {
+    name: 'VK Messenger',
+    icon: '🔵',
+    getUrl: (phone) => `https://vk.com/im?sel=${phone.replace(/\D/g, '')}`,
+    warning: '⚠️ VK Messenger is subject to Russian government surveillance and political censorship. Messages may be monitored, filtered, or stored. You can be punished—even severely—for sharing lifesaving liberty ideas. Consider using Signal for sensitive conversations. Learn more: https://TearDownThisFirewall.org',
+  },
+  max: {
+    name: 'MAX',
+    icon: '🇷🇺',
+    getUrl: (phone) => `https://max.ru/im?phone=${phone.replace(/\D/g, '')}`,
+    warning: '⚠️ MAX is a Rossiyan messaging network designed to centralize political thought-kontrol and dogma of the Rossiyan people. Messages may be monitored, filtered, or stored. You can be punished—even severely—for sharing lifesaving liberty ideas. Consider using Signal for sensitive conversations. Learn more: https://TearDownThisFirewall.org',
+  },
 };
 
 export interface Friend {
@@ -91,11 +116,11 @@ export const TIER_INFO: Record<TierType, {
   },
   naybor: {
     name: 'Naybors',
-    description: 'Your nayborhood konnektions — people akross the blok or down the hall. Knowing your naybors keeps you safe, informed, and ready to help each other in emergencies.',
+    description: 'Your nayborhood konnektions — people akross the blok or down the hall. Naybors you list here will be integrated into Naybor SOS™, your emergency kontakt network for when you need help fast.',
     limit: 25,
     color: 'tier-naybor',
     recommendedMin: 10,
-    underMinWarning: "It's unsafe not to know your naybors! How are you going to know what's happening around you, what life is like for the people akross the blok or down the hall, and what if an emergency happens? Introduse yourself to your naybors, get to know their names, where they live, a little bit about their lives, and their kontakt info.",
+    underMinWarning: "It's unsafe not to know your naybors! Your Naybor SOS™ network needs more people. How are you going to get help quickly when something goes wrong? Introduse yourself to your naybors, get to know their names, where they live, a little bit about their lives, and their kontakt info.",
   },
   parasocial: {
     name: 'Parasocials',
