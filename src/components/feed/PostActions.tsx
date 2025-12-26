@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Heart, MessageCircle, Mic, Phone, Calendar, Share2, ChevronDown, Plus } from 'lucide-react';
+import { Heart, MessageCircle, Mic, Phone, Calendar, Share2, ChevronDown, Plus, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FeedPost, InteractionType } from '@/types/feed';
 import {
@@ -269,7 +269,15 @@ export function PostActions({
   };
 
   return (
-    <div className="flex items-center gap-1 mt-3 pt-3 border-t">
+    <div className="flex flex-col gap-1 mt-3 pt-3 border-t">
+      {/* Mobile recommendation for contact actions */}
+      {isHighFidelityTier && authorPhone && (
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
+          <Smartphone className="w-3 h-3" aria-hidden="true" />
+          <span>For best results, use your phone for calls</span>
+        </div>
+      )}
+      <div className="flex items-center gap-1">
       {/* High-fidelity actions - prominent in Core/Inner */}
       {isHighFidelityTier && (
         <>
@@ -393,6 +401,7 @@ export function PostActions({
           {renderCallButton(false)}
         </>
       )}
+      </div>
     </div>
   );
 }

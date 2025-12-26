@@ -215,5 +215,106 @@
     "about": "关于我们",
     "contribute": "参与贡献",
     "openSource": "开源项目"
+  },
+  "contactImport": {
+    "title": "导入联系人",
+    "description": "从手机、vCard文件或CSV表格导入联系人。所有联系人将添加为熟人。",
+    "tabs": {
+      "phone": "手机",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "熟人容量",
+    "capacityFull": "熟人圈已满。请升级一些联系人以腾出空间。",
+    "loading": "加载中...",
+    "parsing": "正在解析联系人...",
+    "importing": "正在导入...",
+    "importingDescription": "正在将联系人添加到熟人圈...",
+    "selectFile": "选择文件",
+    "selectedFile": "已选择的文件",
+    "columns": "列",
+    "privacyNote": "您的联系人数据保存在本地设备上。我们不会上传或存储它。",
+    "defaultCountry": "电话号码默认国家",
+    "defaultCountryHint": "没有国家代码的电话号码将使用此国家。大多数联系人存储时不包含国家代码。",
+    "promotionInfo": {
+      "title": "轻松升级路径",
+      "description": "所有导入的联系人都从熟人开始。您可以随时将任何联系人升级到：",
+      "core": "核心圈（您最亲密的5位知己）",
+      "inner": "亲密圈（最多15位好友）",
+      "outer": "外围圈（最多50位朋友）",
+      "naybor": "邻里（紧急情况下信任的邻居）",
+      "roleModel": "榜样（励志人物）"
+    },
+    "fromPhone": {
+      "title": "从手机导入",
+      "description": "从您手机的通讯录中选择联系人",
+      "button": "选择联系人"
+    },
+    "fromVCard": {
+      "dropZone": "将vCard文件拖放到此处",
+      "hint": "支持来自iCloud、Google、Outlook的.vcf或.vcard文件",
+      "exportInstructions": "从邮箱或手机应用导出联系人为.vcf文件，然后在此导入。"
+    },
+    "fromCsv": {
+      "dropZone": "将CSV文件拖放到此处",
+      "hint": "带标题的标准CSV格式",
+      "mapColumns": "映射CSV列",
+      "mapColumnsDescription": "选择包含联系人信息的列：",
+      "importButton": "导入联系人"
+    },
+    "columnMapping": {
+      "name": "全名列",
+      "firstName": "名字列",
+      "lastName": "姓氏列",
+      "phone": "电话列",
+      "email": "邮箱列",
+      "selectColumn": "选择列",
+      "none": "未映射",
+      "orSeparate": "或使用单独的名字/姓氏列："
+    },
+    "preview": {
+      "title": "导入预览",
+      "description": "导入前检查联系人",
+      "total": "总共解析",
+      "toImport": "待导入",
+      "duplicates": "重复",
+      "source": "来源",
+      "capacityWarning": "只能导入{{total}}个联系人中的{{available}}个。由于容量限制，{{skipped}}个将被跳过。",
+      "duplicatesInfo": "{{count}}个联系人已存在于您的好友列表中，将被跳过。",
+      "promotionReminder": "所有联系人导入为熟人",
+      "promotionReminderDescription": "您可以随时将任何联系人升级到核心圈、亲密圈、外围圈、邻里或榜样。",
+      "contactsToImport": "待导入的联系人",
+      "noContactsToImport": "没有可导入的联系人",
+      "andMore": "...还有{{count}}个",
+      "duplicatesSkipped": "重复（已跳过）",
+      "matchedWith": "通过{{by}}匹配{{name}}",
+      "andMoreDuplicates": "...还有{{count}}个重复",
+      "importButton": "导入{{count}}个联系人"
+    },
+    "success": {
+      "title": "导入完成！",
+      "description": "{{count}}个联系人已添加到熟人圈。",
+      "imported": "已导入",
+      "skipped": "已跳过",
+      "promotionTip": "访问管理标签页将联系人升级到核心圈、亲密圈、外围圈或其他层级。"
+    },
+    "error": {
+      "title": "导入失败",
+      "generic": "无法导入联系人。请重试。",
+      "tryAgain": "重试"
+    },
+    "errors": {
+      "notSupported": "此设备不支持联系人选择器",
+      "pickerFailed": "无法访问联系人",
+      "invalidVCardFile": "请选择有效的vCard文件（.vcf或.vcard）",
+      "invalidCsvFile": "请选择有效的CSV文件",
+      "noContactsFound": "文件中未找到联系人",
+      "parseError": "解析文件失败",
+      "nameColumnRequired": "导入联系人需要姓名列",
+      "importFailed": "导入联系人失败"
+    },
+    "mobileOnly": "联系人选择器仅在移动设备上可用。请使用vCard或CSV导入。",
+    "browserNotSupported": "您的浏览器不支持联系人选择器。请使用vCard或CSV导入。",
+    "useFileImport": "请尝试从vCard或CSV文件导入。"
   }
 }

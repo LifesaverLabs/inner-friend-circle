@@ -215,5 +215,106 @@
     "about": "Über uns",
     "contribute": "Mitwirken",
     "openSource": "Open Source"
+  },
+  "contactImport": {
+    "title": "Kontakte importieren",
+    "description": "Importieren Sie Kontakte von Ihrem Telefon, einer vCard-Datei oder CSV-Tabelle. Alle Kontakte werden als Bekannte hinzugefügt.",
+    "tabs": {
+      "phone": "Telefon",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "Bekannten-Kapazität",
+    "capacityFull": "Ihre Bekannten-Stufe ist voll. Befördern Sie einige Kontakte, um Platz zu schaffen.",
+    "loading": "Wird geladen...",
+    "parsing": "Kontakte werden analysiert...",
+    "importing": "Importiert...",
+    "importingDescription": "Kontakte werden zu Ihren Bekannten hinzugefügt...",
+    "selectFile": "Datei auswählen",
+    "selectedFile": "Ausgewählte Datei",
+    "columns": "Spalten",
+    "privacyNote": "Ihre Kontaktdaten bleiben auf Ihrem Gerät. Wir laden sie niemals hoch oder speichern sie.",
+    "defaultCountry": "Standardland für Telefonnummern",
+    "defaultCountryHint": "Telefonnummern ohne Ländervorwahl verwenden dieses Land. Die meisten Kontakte werden ohne Ländervorwahlen gespeichert.",
+    "promotionInfo": {
+      "title": "Einfacher Beförderungspfad",
+      "description": "Alle importierten Kontakte beginnen als Bekannte. Sie können jeden Kontakt einfach befördern zu:",
+      "core": "Kern (Ihre 5 engsten Vertrauten)",
+      "inner": "Innen (bis zu 15 enge Freunde)",
+      "outer": "Außen (bis zu 50 gute Freunde)",
+      "naybor": "Nachbar (vertrauenswürdige Nachbarn für Notfälle)",
+      "roleModel": "Vorbild (inspirierende Persönlichkeiten)"
+    },
+    "fromPhone": {
+      "title": "Vom Telefon importieren",
+      "description": "Wählen Sie Kontakte aus dem Adressbuch Ihres Telefons",
+      "button": "Kontakte auswählen"
+    },
+    "fromVCard": {
+      "dropZone": "Ziehen Sie Ihre vCard-Datei hierher",
+      "hint": "Akzeptiert .vcf oder .vcard Dateien von iCloud, Google, Outlook",
+      "exportInstructions": "Exportieren Sie Kontakte aus Ihrer E-Mail- oder Telefon-App als .vcf-Datei und importieren Sie sie hier."
+    },
+    "fromCsv": {
+      "dropZone": "Ziehen Sie Ihre CSV-Datei hierher",
+      "hint": "Standard-CSV-Format mit Kopfzeilen",
+      "mapColumns": "CSV-Spalten zuordnen",
+      "mapColumnsDescription": "Wählen Sie, welche Spalten Ihre Kontaktinformationen enthalten:",
+      "importButton": "Kontakte importieren"
+    },
+    "columnMapping": {
+      "name": "Vollständiger Name Spalte",
+      "firstName": "Vorname Spalte",
+      "lastName": "Nachname Spalte",
+      "phone": "Telefon Spalte",
+      "email": "E-Mail Spalte",
+      "selectColumn": "Spalte auswählen",
+      "none": "Nicht zugeordnet",
+      "orSeparate": "Oder verwenden Sie separate Vor-/Nachname-Spalten:"
+    },
+    "preview": {
+      "title": "Import-Vorschau",
+      "description": "Überprüfen Sie die Kontakte vor dem Import",
+      "total": "Gesamt analysiert",
+      "toImport": "Zu importieren",
+      "duplicates": "Duplikate",
+      "source": "Quelle",
+      "capacityWarning": "Nur {{available}} von {{total}} Kontakten können importiert werden. {{skipped}} werden aufgrund von Kapazitätsgrenzen übersprungen.",
+      "duplicatesInfo": "{{count}} Kontakt(e) existieren bereits in Ihrer Freundesliste und werden übersprungen.",
+      "promotionReminder": "Alle Kontakte werden als Bekannte importiert",
+      "promotionReminderDescription": "Sie können jeden Kontakt jederzeit einfach zu Kern, Innen, Außen, Nachbar oder Vorbild befördern.",
+      "contactsToImport": "Zu importierende Kontakte",
+      "noContactsToImport": "Keine Kontakte zum Importieren",
+      "andMore": "...und {{count}} weitere",
+      "duplicatesSkipped": "Duplikate (übersprungen)",
+      "matchedWith": "stimmt mit {{name}} über {{by}} überein",
+      "andMoreDuplicates": "...und {{count}} weitere Duplikate",
+      "importButton": "{{count}} Kontakte importieren"
+    },
+    "success": {
+      "title": "Import abgeschlossen!",
+      "description": "{{count}} Kontakte zu Ihren Bekannten hinzugefügt.",
+      "imported": "Importiert",
+      "skipped": "Übersprungen",
+      "promotionTip": "Besuchen Sie die Verwalten-Registerkarte, um Kontakte zu Kern, Innen, Außen oder anderen Stufen zu befördern."
+    },
+    "error": {
+      "title": "Import fehlgeschlagen",
+      "generic": "Kontakte konnten nicht importiert werden. Bitte versuchen Sie es erneut.",
+      "tryAgain": "Erneut versuchen"
+    },
+    "errors": {
+      "notSupported": "Kontaktauswahl wird auf diesem Gerät nicht unterstützt",
+      "pickerFailed": "Zugriff auf Kontakte fehlgeschlagen",
+      "invalidVCardFile": "Bitte wählen Sie eine gültige vCard-Datei (.vcf oder .vcard)",
+      "invalidCsvFile": "Bitte wählen Sie eine gültige CSV-Datei",
+      "noContactsFound": "Keine Kontakte in der Datei gefunden",
+      "parseError": "Datei konnte nicht analysiert werden",
+      "nameColumnRequired": "Eine Namensspalte ist zum Importieren von Kontakten erforderlich",
+      "importFailed": "Kontakte konnten nicht importiert werden"
+    },
+    "mobileOnly": "Kontaktauswahl ist nur auf Mobilgeräten verfügbar. Verwenden Sie stattdessen den vCard- oder CSV-Import.",
+    "browserNotSupported": "Ihr Browser unterstützt die Kontaktauswahl nicht. Verwenden Sie stattdessen den vCard- oder CSV-Import.",
+    "useFileImport": "Versuchen Sie stattdessen, aus einer vCard- oder CSV-Datei zu importieren."
   }
 }

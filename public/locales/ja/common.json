@@ -215,5 +215,106 @@
     "about": "概要",
     "contribute": "貢献する",
     "openSource": "オープンソース"
+  },
+  "contactImport": {
+    "title": "連絡先をインポート",
+    "description": "電話、vCardファイル、またはCSVスプレッドシートから連絡先をインポートします。すべての連絡先は知人として追加されます。",
+    "tabs": {
+      "phone": "電話",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "知人の容量",
+    "capacityFull": "知人レベルがいっぱいです。スペースを空けるために連絡先を昇格させてください。",
+    "loading": "読み込み中...",
+    "parsing": "連絡先を解析中...",
+    "importing": "インポート中...",
+    "importingDescription": "知人に連絡先を追加中...",
+    "selectFile": "ファイルを選択",
+    "selectedFile": "選択されたファイル",
+    "columns": "列",
+    "privacyNote": "連絡先データはあなたのデバイスに残ります。アップロードや保存は行いません。",
+    "defaultCountry": "電話番号のデフォルト国",
+    "defaultCountryHint": "国コードのない電話番号はこの国を使用します。ほとんどの連絡先は国コードなしで保存されています。",
+    "promotionInfo": {
+      "title": "簡単な昇格パス",
+      "description": "インポートされたすべての連絡先は知人として開始します。任意の連絡先を簡単に昇格できます：",
+      "core": "コア（最も親しい5人の信頼できる人）",
+      "inner": "インナー（最大15人の親しい友人）",
+      "outer": "アウター（最大50人の良い友人）",
+      "naybor": "ネイバー（緊急時に信頼できる隣人）",
+      "roleModel": "ロールモデル（インスピレーションを与える人物）"
+    },
+    "fromPhone": {
+      "title": "電話からインポート",
+      "description": "電話のアドレス帳から連絡先を選択",
+      "button": "連絡先を選択"
+    },
+    "fromVCard": {
+      "dropZone": "vCardファイルをここにドロップ",
+      "hint": "iCloud、Google、Outlookの.vcfまたは.vcardファイルを受け付けます",
+      "exportInstructions": "メールや電話アプリから連絡先を.vcfファイルとしてエクスポートし、ここでインポートします。"
+    },
+    "fromCsv": {
+      "dropZone": "CSVファイルをここにドロップ",
+      "hint": "ヘッダー付きの標準CSVフォーマット",
+      "mapColumns": "CSV列のマッピング",
+      "mapColumnsDescription": "連絡先情報を含む列を選択してください：",
+      "importButton": "連絡先をインポート"
+    },
+    "columnMapping": {
+      "name": "フルネーム列",
+      "firstName": "名列",
+      "lastName": "姓列",
+      "phone": "電話列",
+      "email": "メール列",
+      "selectColumn": "列を選択",
+      "none": "マッピングなし",
+      "orSeparate": "または別々の名/姓列を使用："
+    },
+    "preview": {
+      "title": "インポートプレビュー",
+      "description": "インポート前に連絡先を確認",
+      "total": "解析済み合計",
+      "toImport": "インポート予定",
+      "duplicates": "重複",
+      "source": "ソース",
+      "capacityWarning": "{{total}}件中{{available}}件のみインポート可能です。容量制限により{{skipped}}件がスキップされます。",
+      "duplicatesInfo": "{{count}}件の連絡先がすでに友達リストに存在するためスキップされます。",
+      "promotionReminder": "すべての連絡先は知人としてインポートされます",
+      "promotionReminderDescription": "いつでも任意の連絡先をコア、インナー、アウター、ネイバー、またはロールモデルに簡単に昇格できます。",
+      "contactsToImport": "インポートする連絡先",
+      "noContactsToImport": "インポートする連絡先がありません",
+      "andMore": "...他{{count}}件",
+      "duplicatesSkipped": "重複（スキップ）",
+      "matchedWith": "{{by}}で{{name}}と一致",
+      "andMoreDuplicates": "...他{{count}}件の重複",
+      "importButton": "{{count}}件の連絡先をインポート"
+    },
+    "success": {
+      "title": "インポート完了！",
+      "description": "{{count}}件の連絡先が知人に追加されました。",
+      "imported": "インポート済み",
+      "skipped": "スキップ",
+      "promotionTip": "管理タブにアクセスして、連絡先をコア、インナー、アウター、その他のレベルに昇格させてください。"
+    },
+    "error": {
+      "title": "インポート失敗",
+      "generic": "連絡先をインポートできませんでした。もう一度お試しください。",
+      "tryAgain": "再試行"
+    },
+    "errors": {
+      "notSupported": "このデバイスでは連絡先ピッカーがサポートされていません",
+      "pickerFailed": "連絡先へのアクセスに失敗しました",
+      "invalidVCardFile": "有効なvCardファイル（.vcfまたは.vcard）を選択してください",
+      "invalidCsvFile": "有効なCSVファイルを選択してください",
+      "noContactsFound": "ファイルに連絡先が見つかりませんでした",
+      "parseError": "ファイルの解析に失敗しました",
+      "nameColumnRequired": "連絡先をインポートするには名前列が必要です",
+      "importFailed": "連絡先のインポートに失敗しました"
+    },
+    "mobileOnly": "連絡先ピッカーはモバイルデバイスでのみ使用可能です。代わりにvCardまたはCSVインポートを使用してください。",
+    "browserNotSupported": "お使いのブラウザは連絡先ピッカーをサポートしていません。代わりにvCardまたはCSVインポートを使用してください。",
+    "useFileImport": "代わりにvCardまたはCSVファイルからインポートしてみてください。"
   }
 }

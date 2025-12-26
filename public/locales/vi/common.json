@@ -215,5 +215,106 @@
     "about": "Giới thiệu",
     "contribute": "Đóng góp",
     "openSource": "Mã nguồn mở"
+  },
+  "contactImport": {
+    "title": "Nhập Danh Bạ",
+    "description": "Nhập danh bạ từ điện thoại, tệp vCard hoặc bảng tính CSV. Tất cả danh bạ sẽ được thêm làm Người quen.",
+    "tabs": {
+      "phone": "Điện thoại",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "Dung lượng người quen",
+    "capacityFull": "Cấp Người quen đã đầy. Thăng cấp một số liên hệ để tạo chỗ.",
+    "loading": "Đang tải...",
+    "parsing": "Đang phân tích danh bạ...",
+    "importing": "Đang nhập...",
+    "importingDescription": "Đang thêm danh bạ vào Người quen...",
+    "selectFile": "Chọn Tệp",
+    "selectedFile": "Tệp đã chọn",
+    "columns": "cột",
+    "privacyNote": "Dữ liệu danh bạ của bạn được lưu trên thiết bị. Chúng tôi không bao giờ tải lên hoặc lưu trữ.",
+    "defaultCountry": "Quốc gia mặc định cho số điện thoại",
+    "defaultCountryHint": "Số điện thoại không có mã quốc gia sẽ sử dụng quốc gia này. Hầu hết danh bạ được lưu mà không có mã quốc gia.",
+    "promotionInfo": {
+      "title": "Lộ trình thăng cấp dễ dàng",
+      "description": "Tất cả danh bạ nhập vào bắt đầu là Người quen. Bạn có thể dễ dàng thăng cấp bất kỳ liên hệ nào lên:",
+      "core": "Hạt nhân (5 người tin cậy nhất của bạn)",
+      "inner": "Thân thiết (tối đa 15 bạn thân)",
+      "outer": "Quen biết (tối đa 50 bạn tốt)",
+      "naybor": "Hàng xóm (láng giềng tin cậy cho trường hợp khẩn cấp)",
+      "roleModel": "Tấm gương (nhân vật truyền cảm hứng)"
+    },
+    "fromPhone": {
+      "title": "Nhập từ Điện thoại",
+      "description": "Chọn danh bạ từ sổ địa chỉ điện thoại của bạn",
+      "button": "Chọn Danh bạ"
+    },
+    "fromVCard": {
+      "dropZone": "Thả tệp vCard của bạn vào đây",
+      "hint": "Chấp nhận tệp .vcf hoặc .vcard từ iCloud, Google, Outlook",
+      "exportInstructions": "Xuất danh bạ từ ứng dụng email hoặc điện thoại thành tệp .vcf, sau đó nhập tại đây."
+    },
+    "fromCsv": {
+      "dropZone": "Thả tệp CSV của bạn vào đây",
+      "hint": "Định dạng CSV chuẩn với tiêu đề",
+      "mapColumns": "Ánh xạ Cột CSV",
+      "mapColumnsDescription": "Chọn cột nào chứa thông tin liên hệ của bạn:",
+      "importButton": "Nhập Danh bạ"
+    },
+    "columnMapping": {
+      "name": "Cột Họ tên",
+      "firstName": "Cột Tên",
+      "lastName": "Cột Họ",
+      "phone": "Cột Điện thoại",
+      "email": "Cột Email",
+      "selectColumn": "Chọn cột",
+      "none": "Chưa ánh xạ",
+      "orSeparate": "Hoặc sử dụng cột tên/họ riêng biệt:"
+    },
+    "preview": {
+      "title": "Xem trước Nhập",
+      "description": "Xem lại danh bạ trước khi nhập",
+      "total": "Tổng số đã phân tích",
+      "toImport": "Sẽ nhập",
+      "duplicates": "Trùng lặp",
+      "source": "Nguồn",
+      "capacityWarning": "Chỉ có thể nhập {{available}} trong số {{total}} danh bạ. {{skipped}} sẽ bị bỏ qua do giới hạn dung lượng.",
+      "duplicatesInfo": "{{count}} liên hệ đã tồn tại trong danh sách bạn bè và sẽ bị bỏ qua.",
+      "promotionReminder": "Tất cả danh bạ được nhập làm Người quen",
+      "promotionReminderDescription": "Bạn có thể dễ dàng thăng cấp bất kỳ liên hệ nào lên Hạt nhân, Thân thiết, Quen biết, Hàng xóm hoặc Tấm gương bất cứ lúc nào.",
+      "contactsToImport": "Danh bạ sẽ nhập",
+      "noContactsToImport": "Không có danh bạ để nhập",
+      "andMore": "...và {{count}} nữa",
+      "duplicatesSkipped": "Trùng lặp (đã bỏ qua)",
+      "matchedWith": "khớp với {{name}} theo {{by}}",
+      "andMoreDuplicates": "...và {{count}} trùng lặp nữa",
+      "importButton": "Nhập {{count}} Danh bạ"
+    },
+    "success": {
+      "title": "Nhập Hoàn tất!",
+      "description": "{{count}} danh bạ đã được thêm vào Người quen.",
+      "imported": "Đã nhập",
+      "skipped": "Đã bỏ qua",
+      "promotionTip": "Truy cập tab Quản lý để thăng cấp danh bạ lên Hạt nhân, Thân thiết, Quen biết hoặc các cấp khác."
+    },
+    "error": {
+      "title": "Nhập Thất bại",
+      "generic": "Không thể nhập danh bạ. Vui lòng thử lại.",
+      "tryAgain": "Thử lại"
+    },
+    "errors": {
+      "notSupported": "Bộ chọn danh bạ không được hỗ trợ trên thiết bị này",
+      "pickerFailed": "Không thể truy cập danh bạ",
+      "invalidVCardFile": "Vui lòng chọn tệp vCard hợp lệ (.vcf hoặc .vcard)",
+      "invalidCsvFile": "Vui lòng chọn tệp CSV hợp lệ",
+      "noContactsFound": "Không tìm thấy danh bạ trong tệp",
+      "parseError": "Không thể phân tích tệp",
+      "nameColumnRequired": "Cần có cột tên để nhập danh bạ",
+      "importFailed": "Không thể nhập danh bạ"
+    },
+    "mobileOnly": "Bộ chọn danh bạ chỉ khả dụng trên thiết bị di động. Sử dụng nhập vCard hoặc CSV thay thế.",
+    "browserNotSupported": "Trình duyệt của bạn không hỗ trợ bộ chọn danh bạ. Sử dụng nhập vCard hoặc CSV thay thế.",
+    "useFileImport": "Thử nhập từ tệp vCard hoặc CSV thay thế."
   }
 }

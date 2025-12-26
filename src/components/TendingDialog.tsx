@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Phone, Heart, CheckCircle, ArrowRight, X } from 'lucide-react';
+import { Phone, Heart, CheckCircle, ArrowRight, X, Smartphone } from 'lucide-react';
 import { Friend, TierType, TIER_INFO, CONTACT_METHODS } from '@/types/friend';
 import { toast } from 'sonner';
 
@@ -131,6 +131,11 @@ export function TendingDialog({
           </DialogHeader>
 
           <div className="py-4 space-y-3 max-h-[400px] overflow-y-auto">
+            {/* Mobile recommendation note */}
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground pb-1">
+              <Smartphone className="w-3 h-3" aria-hidden="true" />
+              <span>Contact actions work best on mobile devices</span>
+            </div>
             {neglectedFriends.map(friend => {
               const tierInfo = TIER_INFO[friend.tier];
               const hasPhone = !!friend.phone;

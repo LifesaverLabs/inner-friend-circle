@@ -1,8 +1,9 @@
 import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
-import { Share2, Heart } from 'lucide-react';
+import { Share2, Heart, Upload } from 'lucide-react';
 import { formatDistanceToNow, differenceInDays } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { TierSection } from '@/components/TierSection';
 import { AppHeader } from '@/components/AppHeader';
@@ -19,6 +20,7 @@ import {
   DataExportDialog,
   DataImportDialog,
 } from '@/components/dataLiberation';
+import { ContactImportDialog } from '@/components/contactImport';
 import { useFriendLists } from '@/hooks/useFriendLists';
 import { useAuth } from '@/hooks/useAuth';
 import { useFriendConnections, CircleTier } from '@/hooks/useFriendConnections';
@@ -40,12 +42,14 @@ export function FriendDashboard({
   onSignIn, 
   onSignOut 
 }: FriendDashboardProps) {
+  const { t } = useTranslation();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [tendingDialogOpen, setTendingDialogOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [exportDialogOpen, setExportDialogOpen] = useState(false);
   const [importDialogOpen, setImportDialogOpen] = useState(false);
-  
+  const [contactImportDialogOpen, setContactImportDialogOpen] = useState(false);
+
   const { user } = useAuth();
   const { needsSetup, setNeedsSetup } = useContactSetupNeeded(user?.id);
   
@@ -159,8 +163,8 @@ export function FriendDashboard({
   const tiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
 
   // Define allowed move transitions
-  // acquainted can only move to outer; outer can move to inner or acquainted
-  // rolemodel, parasocial, and naybor are standalone - no moves allowed
+  // acquainted can promote to any "real friend" tier (core, inner, outer, naybor, rolemodel)
+  // rolemodel, parasocial, and naybor are standalone - no moves allowed once placed
   // naybor: neighbors stay neighbors
   // parasocial: one-sided relationships can't convert to mutual; re-enter manually if they become real friends
   const getAllowedMoves = useCallback((fromTier: TierType): TierType[] => {
@@ -171,7 +175,7 @@ export function FriendDashboard({
       case 'naybor': return []; // Naybors stay as naybors
       case 'parasocial': return []; // Parasocials are one-sided; can't convert to mutual relationships
       case 'rolemodel': return []; // Role models don't move between tiers
-      case 'acquainted': return ['outer'];
+      case 'acquainted': return ['core', 'inner', 'outer', 'naybor', 'rolemodel']; // Easy promotion path from bulk import
       default: return [];
     }
   }, []);
@@ -216,9 +220,34 @@ export function FriendDashboard({
     [lists.friends, addFriend, updateFriend]
   );
 
+  // Handler for adding friend from contact import
+  const handleContactImportAddFriend = useCallback(
+    (friendData: Omit<import('@/types/friend').Friend, 'id' | 'addedAt'>) => {
+      return addFriend(friendData);
+    },
+    [addFriend]
+  );
+
+  // Handler for import complete
+  const handleContactImportComplete = useCallback((count: number) => {
+    toast.success(t('contactImport.success.description', { count }));
+  }, [t]);
+
   // Render prop for manage tab content - must be before early return to maintain hook order
   const renderManageContent = useCallback(() => (
     <div className="space-y-6">
+      {/* Import Contacts Button */}
+      <div className="flex justify-end">
+        <Button
+          variant="outline"
+          onClick={() => setContactImportDialogOpen(true)}
+          className="gap-2"
+        >
+          <Upload className="h-4 w-4" />
+          {t('contactImport.title')}
+        </Button>
+      </div>
+
       {tiers.map(tier => (
         <TierSection
           key={tier}
@@ -249,7 +278,7 @@ export function FriendDashboard({
     handleRemoveFriend, handleAddReservedGroup, handleUpdateReservedGroup,
     handleRemoveReservedGroup, handleReorderFriends, getTierCapacity, isLoggedIn,
     handleAddLinkedFriend, updateFriend, getAllowedMoves, feedShares, seenShares,
-    recordEngagement, user?.id
+    recordEngagement, user?.id, t
   ]);
 
   if (!isLoaded) {
@@ -414,6 +443,15 @@ export function FriendDashboard({
           onOpenChange={setImportDialogOpen}
           onImport={handleDataImport}
           existingFriendCount={lists.friends.length}
+        />
+
+        {/* Contact Import Dialog */}
+        <ContactImportDialog
+          open={contactImportDialogOpen}
+          onOpenChange={setContactImportDialogOpen}
+          existingFriends={lists.friends}
+          onAddFriend={handleContactImportAddFriend}
+          onImportComplete={handleContactImportComplete}
         />
       </main>
 

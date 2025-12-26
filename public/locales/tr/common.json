@@ -215,5 +215,106 @@
     "about": "Hakkında",
     "contribute": "Katkıda Bulun",
     "openSource": "Açık Kaynak"
+  },
+  "contactImport": {
+    "title": "Kişileri İçe Aktar",
+    "description": "Telefonunuzdan, vCard dosyasından veya CSV tablosundan kişileri içe aktarın. Tüm kişiler Tanıdık olarak eklenecek.",
+    "tabs": {
+      "phone": "Telefon",
+      "vcard": "vCard",
+      "csv": "CSV"
+    },
+    "acquaintedCapacity": "Tanıdık kapasitesi",
+    "capacityFull": "Tanıdık seviyeniz dolu. Yer açmak için bazı kişileri terfi ettirin.",
+    "loading": "Yükleniyor...",
+    "parsing": "Kişiler analiz ediliyor...",
+    "importing": "İçe aktarılıyor...",
+    "importingDescription": "Kişiler Tanıdıklarınıza ekleniyor...",
+    "selectFile": "Dosya Seç",
+    "selectedFile": "Seçilen dosya",
+    "columns": "sütun",
+    "privacyNote": "Kişi verileriniz cihazınızda kalır. Asla yüklemez veya saklamayız.",
+    "defaultCountry": "Telefon numaraları için varsayılan ülke",
+    "defaultCountryHint": "Ülke kodu olmayan telefon numaraları bu ülkeyi kullanacak. Çoğu kişi ülke kodu olmadan kaydedilir.",
+    "promotionInfo": {
+      "title": "Kolay terfi yolu",
+      "description": "İçe aktarılan tüm kişiler Tanıdık olarak başlar. Herhangi bir kişiyi kolayca terfi ettirebilirsiniz:",
+      "core": "Çekirdek (en yakın 5 güvendiğiniz kişi)",
+      "inner": "İç (15'e kadar yakın arkadaş)",
+      "outer": "Dış (50'ye kadar iyi arkadaş)",
+      "naybor": "Komşu (acil durumlar için güvenilir komşular)",
+      "roleModel": "Rol Model (ilham veren kişiler)"
+    },
+    "fromPhone": {
+      "title": "Telefondan İçe Aktar",
+      "description": "Telefon rehberinizden kişileri seçin",
+      "button": "Kişileri Seç"
+    },
+    "fromVCard": {
+      "dropZone": "vCard dosyanızı buraya bırakın",
+      "hint": "iCloud, Google, Outlook'tan .vcf veya .vcard dosyaları kabul edilir",
+      "exportInstructions": "E-posta veya telefon uygulamanızdan kişileri .vcf dosyası olarak dışa aktarın, sonra buraya içe aktarın."
+    },
+    "fromCsv": {
+      "dropZone": "CSV dosyanızı buraya bırakın",
+      "hint": "Başlıklı standart CSV formatı",
+      "mapColumns": "CSV Sütunlarını Eşle",
+      "mapColumnsDescription": "Kişi bilgilerinizi içeren sütunları seçin:",
+      "importButton": "Kişileri İçe Aktar"
+    },
+    "columnMapping": {
+      "name": "Tam Ad Sütunu",
+      "firstName": "Ad Sütunu",
+      "lastName": "Soyad Sütunu",
+      "phone": "Telefon Sütunu",
+      "email": "E-posta Sütunu",
+      "selectColumn": "Sütun seç",
+      "none": "Eşlenmedi",
+      "orSeparate": "Veya ayrı ad/soyad sütunları kullanın:"
+    },
+    "preview": {
+      "title": "İçe Aktarma Önizlemesi",
+      "description": "İçe aktarmadan önce kişileri gözden geçirin",
+      "total": "Toplam analiz edilen",
+      "toImport": "İçe aktarılacak",
+      "duplicates": "Tekrarlar",
+      "source": "Kaynak",
+      "capacityWarning": "{{total}} kişiden sadece {{available}} tanesi içe aktarılabilir. Kapasite sınırları nedeniyle {{skipped}} tanesi atlanacak.",
+      "duplicatesInfo": "{{count}} kişi zaten arkadaş listenizde var ve atlanacak.",
+      "promotionReminder": "Tüm kişiler Tanıdık olarak içe aktarılır",
+      "promotionReminderDescription": "İstediğiniz zaman herhangi bir kişiyi Çekirdek, İç, Dış, Komşu veya Rol Model'e kolayca terfi ettirebilirsiniz.",
+      "contactsToImport": "İçe aktarılacak kişiler",
+      "noContactsToImport": "İçe aktarılacak kişi yok",
+      "andMore": "...ve {{count}} tane daha",
+      "duplicatesSkipped": "Tekrarlar (atlandı)",
+      "matchedWith": "{{by}} ile {{name}} eşleşiyor",
+      "andMoreDuplicates": "...ve {{count}} tekrar daha",
+      "importButton": "{{count}} Kişiyi İçe Aktar"
+    },
+    "success": {
+      "title": "İçe Aktarma Tamamlandı!",
+      "description": "{{count}} kişi Tanıdıklarınıza eklendi.",
+      "imported": "İçe aktarılan",
+      "skipped": "Atlanan",
+      "promotionTip": "Kişileri Çekirdek, İç, Dış veya diğer seviyelere terfi ettirmek için Yönet sekmesini ziyaret edin."
+    },
+    "error": {
+      "title": "İçe Aktarma Başarısız",
+      "generic": "Kişiler içe aktarılamadı. Lütfen tekrar deneyin.",
+      "tryAgain": "Tekrar Dene"
+    },
+    "errors": {
+      "notSupported": "Kişi seçici bu cihazda desteklenmiyor",
+      "pickerFailed": "Kişilere erişilemedi",
+      "invalidVCardFile": "Lütfen geçerli bir vCard dosyası seçin (.vcf veya .vcard)",
+      "invalidCsvFile": "Lütfen geçerli bir CSV dosyası seçin",
+      "noContactsFound": "Dosyada kişi bulunamadı",
+      "parseError": "Dosya analiz edilemedi",
+      "nameColumnRequired": "Kişileri içe aktarmak için bir ad sütunu gerekli",
+      "importFailed": "Kişiler içe aktarılamadı"
+    },
+    "mobileOnly": "Kişi seçici sadece mobil cihazlarda kullanılabilir. Bunun yerine vCard veya CSV içe aktarma kullanın.",
+    "browserNotSupported": "Tarayıcınız kişi seçiciyi desteklemiyor. Bunun yerine vCard veya CSV içe aktarma kullanın.",
+    "useFileImport": "Bunun yerine bir vCard veya CSV dosyasından içe aktarmayı deneyin."
   }
 }
