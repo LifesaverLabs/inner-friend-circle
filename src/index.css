@@ -175,3 +175,30 @@
     text-wrap: balance;
   }
 }
+
+/* RTL (Right-to-Left) Support for Arabic and other RTL languages */
+[dir="rtl"] {
+  /* Flip directional spacing */
+  .ml-auto { margin-left: 0; margin-right: auto; }
+  .mr-auto { margin-right: 0; margin-left: auto; }
+
+  /* Flip text alignment where needed */
+  .text-left { text-align: right; }
+  .text-right { text-align: left; }
+
+  /* Flip flex direction for horizontal layouts */
+  .rtl\:flex-row-reverse { flex-direction: row-reverse; }
+
+  /* Flip absolute positioning */
+  .left-0 { left: auto; right: 0; }
+  .right-0 { right: auto; left: 0; }
+
+  /* Flip padding and margin for specific RTL overrides */
+  .rtl\:pr-0 { padding-right: 0; }
+  .rtl\:pl-0 { padding-left: 0; }
+}
+
+/* RTL-aware icon flipping (for directional icons like arrows) */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}

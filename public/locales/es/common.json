@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Cultiva tus relaciones más cercanas",
+    "description": "Una herramienta de privacidad para mantener amistades significativas basada en la investigación del número de Dunbar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "dashboard": "Panel",
+    "settings": "Configuración",
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión",
+    "profile": "Perfil"
+  },
+  "tiers": {
+    "core": "Núcleo",
+    "coreDescription": "Tus confidentes más cercanos (hasta 5)",
+    "inner": "Íntimos",
+    "innerDescription": "Amigos cercanos que ves regularmente (hasta 15)",
+    "outer": "Externos",
+    "outerDescription": "Buenos amigos y círculo extendido (hasta 50)",
+    "acquainted": "Conocidos",
+    "acquaintedDescription": "Personas que conoces lo suficiente para saludar",
+    "naybor": "Vecinos",
+    "nayborDescription": "Vecinos de confianza para ayuda mutua y emergencias",
+    "parasocial": "Siguiendo",
+    "parasocialDescription": "Figuras públicas y creadores de contenido que sigues"
+  },
+  "actions": {
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "done": "Hecho",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar"
+  },
+  "friend": {
+    "addFriend": "Agregar Amigo",
+    "editFriend": "Editar Contacto",
+    "removeFriend": "Eliminar Amigo",
+    "moveTo": "Mover a {{tier}}",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "notes": "Notas",
+    "preferredContact": "Método de contacto preferido",
+    "lastContact": "Último contacto",
+    "daysSince": "hace {{days}} días",
+    "neverContacted": "Nunca contactado"
+  },
+  "feed": {
+    "coreFeed": "Feed Núcleo",
+    "innerFeed": "Feed Íntimos",
+    "outerFeed": "Externos+",
+    "manage": "Gestionar",
+    "emptyCore": "Agrega amigos de Núcleo para ver sus publicaciones aquí",
+    "emptyInner": "Agrega amigos Íntimos para ver sus publicaciones aquí",
+    "emptyOuter": "Agrega amigos Externos para ver sus publicaciones aquí",
+    "compose": "¿Qué tienes en mente?",
+    "post": "Publicar",
+    "like": "Me gusta",
+    "unlike": "Ya no me gusta",
+    "comment": "Comentar",
+    "share": "Compartir",
+    "voiceReply": "Respuesta de voz",
+    "scheduleCall": "Programar llamada",
+    "planMeetup": "Planear encuentro"
+  },
+  "nudge": {
+    "timeToReconnect": "Hora de reconectar",
+    "friendsNeedAttention": "{{count}} amigo necesita reconexión",
+    "friendsNeedAttention_plural": "{{count}} amigos necesitan reconexión",
+    "daysSinceContact": "{{days}} días desde el último contacto",
+    "neverContacted": "Nunca contactado",
+    "connected": "Conectado",
+    "connectedToday": "Marcar como conectado hoy",
+    "selectDate": "Selecciona cuándo te conectaste",
+    "dismiss": "Descartar"
+  },
+  "contact": {
+    "call": "Llamar",
+    "message": "Mensaje",
+    "email": "Correo",
+    "methods": {
+      "tel": "Llamada telefónica",
+      "sms": "Mensaje de texto",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "expandPanel": "Expandir panel",
+    "collapsePanel": "Contraer panel",
+    "loading": "Cargando...",
+    "loadingFeed": "Cargando contenido del feed",
+    "error": "Error",
+    "success": "Éxito",
+    "selected": "Seleccionado",
+    "notSelected": "No seleccionado",
+    "required": "Requerido",
+    "optional": "Opcional",
+
+    "feed": {
+      "tabList": "Feeds del círculo de amigos",
+      "coreTab": "Feed Núcleo - Tus amigos más cercanos",
+      "innerTab": "Feed Íntimos - Amigos cercanos",
+      "outerTab": "Feed Externos Plus - Círculo extendido incluyendo vecinos",
+      "manageTab": "Gestiona tu círculo de amigos"
+    },
+
+    "post": {
+      "likeButton": "Me gusta esta publicación",
+      "unlikeButton": "Ya no me gusta esta publicación",
+      "commentButton": "Agregar un comentario",
+      "shareButton": "Compartir esta publicación",
+      "voiceReplyButton": "Respuesta de voz",
+      "meetupButton": "Programar un encuentro",
+      "callButton": "Llamar vía {{method}}",
+      "selectContactMethod": "Seleccionar método de contacto",
+      "photoAlt": "Foto: {{description}}",
+      "photoFallback": "Foto compartida",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Video compartido",
+      "voiceNoteLabel": "Nota de voz: {{description}}",
+      "voiceNoteFallback": "Nota de voz",
+      "joinCall": "Unirse a la llamada",
+      "rsvpYes": "Confirmar asistencia al encuentro",
+      "rsvpMaybe": "Quizás asista al encuentro",
+      "rsvpOptions": "Opciones de confirmación"
+    },
+
+    "nudge": {
+      "panelExpanded": "Panel de recordatorios expandido",
+      "panelCollapsed": "Panel de recordatorios contraído",
+      "friendsList": "Amigos que necesitan reconexión",
+      "actionGroup": "Acciones para {{name}}",
+      "actionButton": "{{action}} con {{name}}",
+      "dismissButton": "Descartar recordatorio para {{name}}",
+      "connectedButton": "Marcar a {{name}} como conectado hoy",
+      "selectDateButton": "Seleccionar cuándo te conectaste con {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Contactos SOS rápidos",
+      "sosContactsList": "Contactos rápidos:",
+      "contactOptions": "Opciones de contacto para {{name}}",
+      "callButton": "Llamar a {{name}}",
+      "messageButton": "Enviar mensaje a {{name}}",
+      "sosDialogButton": "Abrir diálogo de contacto de emergencia Vecino SOS",
+      "showQuickContacts": "Mostrar contactos rápidos",
+      "hideQuickContacts": "Ocultar contactos rápidos",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Urgencia crítica",
+      "backToCategory": "Volver a selección de categoría",
+      "chooseNaybors": "Continuar para elegir vecinos a contactar",
+      "backToCompose": "Volver a redactar mensaje",
+      "copyMessage": "Copiar mensaje SOS al portapapeles",
+      "nayborsList": "Contactos vecinos",
+      "selectNaybor": "Seleccionar {{name}}",
+      "alreadyContacted": "(ya contactado)",
+      "messageAll": "Enviar mensaje a {{count}} vecino seleccionado",
+      "messageAll_plural": "Enviar mensaje a los {{count}} vecinos seleccionados",
+      "locationDescription": "Cuando está habilitado, tu ubicación aproximada se compartirá con tus vecinos"
+    },
+
+    "dialog": {
+      "close": "Cerrar diálogo",
+      "back": "Volver",
+      "confirm": "Confirmar acción"
+    },
+
+    "form": {
+      "showPassword": "Mostrar contraseña",
+      "hidePassword": "Ocultar contraseña",
+      "clearInput": "Limpiar entrada",
+      "selectCountry": "Seleccionar país",
+      "phoneNumber": "Número de teléfono"
+    },
+
+    "status": {
+      "online": "En línea",
+      "offline": "Desconectado",
+      "away": "Ausente",
+      "busy": "Ocupado"
+    }
+  },
+  "language": {
+    "select": "Seleccionar idioma",
+    "current": "Idioma actual: {{language}}",
+    "helpTranslate": "Ayuda a traducir InnerFriend",
+    "communityTranslation": "Únete a nuestra comunidad de traductores para hacer InnerFriend accesible a más personas en todo el mundo."
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "network": "Error de red. Por favor, verifica tu conexión.",
+    "notFound": "Página no encontrada",
+    "unauthorized": "Por favor, inicia sesión para continuar"
+  },
+  "footer": {
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "about": "Acerca de",
+    "contribute": "Contribuir",
+    "openSource": "Código Abierto"
+  }
+}

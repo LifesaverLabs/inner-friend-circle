@@ -1,0 +1,219 @@
+{
+  "app": {
+    "name": "InnerFriend",
+    "tagline": "Nurture your closest relationships",
+    "description": "A privacy-first tool for maintaining meaningful friendships based on Dunbar's number research"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "profile": "Profile"
+  },
+  "tiers": {
+    "core": "Core",
+    "coreDescription": "Your closest confidants (up to 5)",
+    "inner": "Inner",
+    "innerDescription": "Close friends you see regularly (up to 15)",
+    "outer": "Outer",
+    "outerDescription": "Good friends and extended circle (up to 50)",
+    "acquainted": "Acquainted",
+    "acquaintedDescription": "People you know well enough to greet",
+    "naybor": "Naybor",
+    "nayborDescription": "Trusted neighbors for mutual aid and emergencies",
+    "parasocial": "Following",
+    "parasocialDescription": "Public figures and content creators you follow"
+  },
+  "actions": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import"
+  },
+  "friend": {
+    "addFriend": "Add Friend",
+    "editFriend": "Edit Contact",
+    "removeFriend": "Remove Friend",
+    "moveTo": "Move to {{tier}}",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "notes": "Notes",
+    "preferredContact": "Preferred Contact Method",
+    "lastContact": "Last Contact",
+    "daysSince": "{{days}} days ago",
+    "neverContacted": "Never contacted"
+  },
+  "feed": {
+    "coreFeed": "Core Feed",
+    "innerFeed": "Inner Feed",
+    "outerFeed": "Outer+",
+    "manage": "Manage",
+    "emptyCore": "Add some Core friends to see their posts here",
+    "emptyInner": "Add some Inner friends to see their posts here",
+    "emptyOuter": "Add some Outer friends to see their posts here",
+    "compose": "What's on your mind?",
+    "post": "Post",
+    "like": "Like",
+    "unlike": "Unlike",
+    "comment": "Comment",
+    "share": "Share",
+    "voiceReply": "Voice Reply",
+    "scheduleCall": "Schedule Call",
+    "planMeetup": "Plan Meetup"
+  },
+  "nudge": {
+    "timeToReconnect": "Time to Reconnect",
+    "friendsNeedAttention": "{{count}} friend needs reconnection",
+    "friendsNeedAttention_plural": "{{count}} friends need reconnection",
+    "daysSinceContact": "{{days}} days since last contact",
+    "neverContacted": "Never contacted",
+    "connected": "Connected",
+    "connectedToday": "Mark as connected today",
+    "selectDate": "Select when you connected",
+    "dismiss": "Dismiss"
+  },
+  "contact": {
+    "call": "Call",
+    "message": "Message",
+    "email": "Email",
+    "methods": {
+      "tel": "Phone Call",
+      "sms": "Text Message",
+      "whatsapp": "WhatsApp",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "facetime": "FaceTime"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandPanel": "Expand panel",
+    "collapsePanel": "Collapse panel",
+    "loading": "Loading...",
+    "loadingFeed": "Loading feed content",
+    "error": "Error",
+    "success": "Success",
+    "selected": "Selected",
+    "notSelected": "Not selected",
+    "required": "Required",
+    "optional": "Optional",
+
+    "feed": {
+      "tabList": "Friend circle feeds",
+      "coreTab": "Core Feed - Your closest friends",
+      "innerTab": "Inner Feed - Close friends",
+      "outerTab": "Outer Plus Feed - Extended circle including naybors",
+      "manageTab": "Manage your friend circle"
+    },
+
+    "post": {
+      "likeButton": "Like this post",
+      "unlikeButton": "Unlike this post",
+      "commentButton": "Add a comment",
+      "shareButton": "Share this post",
+      "voiceReplyButton": "Voice Reply",
+      "meetupButton": "Schedule a meetup",
+      "callButton": "Call via {{method}}",
+      "selectContactMethod": "Select contact method",
+      "photoAlt": "Photo: {{description}}",
+      "photoFallback": "Shared photo",
+      "videoLabel": "Video: {{description}}",
+      "videoFallback": "Shared video",
+      "voiceNoteLabel": "Voice note: {{description}}",
+      "voiceNoteFallback": "Voice note",
+      "joinCall": "Join call",
+      "rsvpYes": "RSVP yes to meetup",
+      "rsvpMaybe": "RSVP maybe to meetup",
+      "rsvpOptions": "RSVP options"
+    },
+
+    "nudge": {
+      "panelExpanded": "Nudge panel expanded",
+      "panelCollapsed": "Nudge panel collapsed",
+      "friendsList": "Friends who need reconnection",
+      "actionGroup": "Actions for {{name}}",
+      "actionButton": "{{action}} with {{name}}",
+      "dismissButton": "Dismiss reminder for {{name}}",
+      "connectedButton": "Mark {{name}} as connected today",
+      "selectDateButton": "Select when you connected with {{name}}"
+    },
+
+    "naybor": {
+      "sosRegion": "Quick SOS contacts",
+      "sosContactsList": "Quick contacts:",
+      "contactOptions": "Contact options for {{name}}",
+      "callButton": "Call {{name}}",
+      "messageButton": "Message {{name}}",
+      "sosDialogButton": "Open Naybor SOS emergency contact dialog",
+      "showQuickContacts": "Show quick contacts",
+      "hideQuickContacts": "Hide quick contacts",
+      "categoryButton": "{{category}}",
+      "categoryCritical": "{{category}} - Critical urgency",
+      "backToCategory": "Go back to category selection",
+      "chooseNaybors": "Continue to choose naybors to contact",
+      "backToCompose": "Go back to compose message",
+      "copyMessage": "Copy SOS message to clipboard",
+      "nayborsList": "Naybor contacts",
+      "selectNaybor": "Select {{name}}",
+      "alreadyContacted": "(already contacted)",
+      "messageAll": "Message all {{count}} selected naybor",
+      "messageAll_plural": "Message all {{count}} selected naybors",
+      "locationDescription": "When enabled, your approximate location will be shared with your naybors"
+    },
+
+    "dialog": {
+      "close": "Close dialog",
+      "back": "Go back",
+      "confirm": "Confirm action"
+    },
+
+    "form": {
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "clearInput": "Clear input",
+      "selectCountry": "Select country",
+      "phoneNumber": "Phone number"
+    },
+
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Away",
+      "busy": "Busy"
+    }
+  },
+  "language": {
+    "select": "Select Language",
+    "current": "Current language: {{language}}",
+    "helpTranslate": "Help translate InnerFriend",
+    "communityTranslation": "Join our community of translators to make InnerFriend accessible to more people around the world."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "notFound": "Page not found",
+    "unauthorized": "Please sign in to continue"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "about": "About",
+    "contribute": "Contribute",
+    "openSource": "Open Source"
+  }
+}
