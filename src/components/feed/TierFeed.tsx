@@ -1,9 +1,9 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useFeed } from '@/hooks/useFeed';
-import { Friend, TierType } from '@/types/friend';
+import { Friend, TierType, ContactMethod } from '@/types/friend';
 import { FeedHeader } from './FeedHeader';
 import { FeedList } from './FeedList';
 import { EmptyFeedState } from './EmptyFeedState';
@@ -14,12 +14,24 @@ type FeedTier = 'core' | 'inner' | 'outer';
 // Outer+ includes these additional tiers beyond just 'outer'
 const OUTER_PLUS_TIERS: TierType[] = ['outer', 'naybor', 'parasocial', 'rolemodel'];
 
+// Threshold for "critical" reconnection needs (show nudges prominently above posts)
+// If more than this percentage of friends need reconnection, show nudges first
+const CRITICAL_NUDGE_THRESHOLD = 0.5; // 50% of tier friends
+
+// Thresholds for days overdue that indicate urgency
+const URGENT_DAYS_OVERDUE: Record<FeedTier, number> = {
+  core: 7,   // 1 week past threshold (21 days total for Core)
+  inner: 14, // 2 weeks past threshold (44 days total for Inner)
+  outer: 30, // 1 month past threshold (120 days total for Outer)
+};
+
 interface TierFeedProps {
   tier: FeedTier;
   friends: Friend[];
   userId?: string;
   isLoggedIn: boolean;
   onGoToManage?: () => void;
+  onRequestContactInfo?: (friendId: string) => void;
 }
 
 const TIER_BG_COLORS: Record<FeedTier, string> = {
@@ -34,12 +46,20 @@ const TIER_BORDER_COLORS: Record<FeedTier, string> = {
   outer: 'border-tier-outer/20',
 };
 
+// Default contact methods per tier (more intimate for Core)
+const DEFAULT_CONTACT_METHODS: Record<FeedTier, ContactMethod> = {
+  core: 'facetime',  // Core: Most intimate - FaceTime
+  inner: 'tel',      // Inner: Phone call
+  outer: 'tel',      // Outer: Phone call
+};
+
 export function TierFeed({
   tier,
   friends,
   userId,
   isLoggedIn,
   onGoToManage,
+  onRequestContactInfo,
 }: TierFeedProps) {
   const {
     nudges,
@@ -50,6 +70,11 @@ export function TierFeed({
     isLoading,
     error,
   } = useFeed({ userId, friends });
+
+  // Feed-level default contact method
+  const [defaultContactMethod, setDefaultContactMethod] = useState<ContactMethod>(
+    DEFAULT_CONTACT_METHODS[tier]
+  );
 
   // Get posts for this tier
   const posts = useMemo(() => {
@@ -71,6 +96,36 @@ export function TierFeed({
     }
     return friends.some(f => f.tier === tier);
   }, [friends, tier]);
+
+  // Count friends in this tier for percentage calculation
+  const friendsInTierCount = useMemo(() => {
+    if (tier === 'outer') {
+      return friends.filter(f => OUTER_PLUS_TIERS.includes(f.tier)).length;
+    }
+    return friends.filter(f => f.tier === tier).length;
+  }, [friends, tier]);
+
+  // Determine if nudges are "critical" (should show before posts)
+  // Critical means: high percentage of friends need reconnection OR there are urgent nudges
+  const isNudgeCritical = useMemo(() => {
+    if (tierNudges.length === 0) return false;
+
+    // Check percentage threshold
+    const nudgePercentage = friendsInTierCount > 0
+      ? tierNudges.length / friendsInTierCount
+      : 0;
+    if (nudgePercentage >= CRITICAL_NUDGE_THRESHOLD) return true;
+
+    // Check for urgent nudges (significantly overdue)
+    const urgentThreshold = URGENT_DAYS_OVERDUE[tier];
+    const hasUrgentNudge = tierNudges.some(n => {
+      const baseThreshold = tier === 'core' ? 14 : tier === 'inner' ? 30 : 90;
+      return n.daysSinceContact > baseThreshold + urgentThreshold;
+    });
+    if (hasUrgentNudge) return true;
+
+    return false;
+  }, [tierNudges, friendsInTierCount, tier]);
 
   // Get like count visibility for this tier
   const showLikeCount = shouldShowLikeCount(tier);
@@ -109,6 +164,36 @@ export function TierFeed({
     );
   }
 
+  // Render nudge panel
+  const nudgePanel = tierNudges.length > 0 && (
+    <SunsetNudgePanel
+      nudges={tierNudges}
+      onDismiss={dismissNudge}
+    />
+  );
+
+  // Render posts or empty state
+  const postsContent = posts.length === 0 ? (
+    <div className="p-4">
+      <EmptyFeedState
+        tier={tier}
+        hasFriends={hasFriendsInTier}
+        isLoggedIn={isLoggedIn}
+        onGoToManage={onGoToManage}
+      />
+    </div>
+  ) : (
+    <FeedList
+      posts={posts}
+      tier={tier}
+      showLikeCount={showLikeCount}
+      onInteract={addInteraction}
+      friends={friends}
+      feedDefaultContactMethod={defaultContactMethod}
+      onRequestContactInfo={onRequestContactInfo}
+    />
+  );
+
   return (
     <motion.div
       data-testid={`tier-feed-${tier}`}
@@ -120,31 +205,25 @@ export function TierFeed({
         tier={tier}
         isLoggedIn={isLoggedIn}
         postCount={posts.length}
+        defaultContactMethod={defaultContactMethod}
+        onDefaultContactMethodChange={setDefaultContactMethod}
       />
 
-      {tierNudges.length > 0 && (
-        <SunsetNudgePanel
-          nudges={tierNudges}
-          onDismiss={dismissNudge}
-        />
-      )}
-
-      {posts.length === 0 ? (
-        <div className="p-4">
-          <EmptyFeedState
-            tier={tier}
-            hasFriends={hasFriendsInTier}
-            isLoggedIn={isLoggedIn}
-            onGoToManage={onGoToManage}
-          />
-        </div>
+      {/*
+        Layout order depends on urgency:
+        - Critical nudges: Show Time to Reconnect ABOVE posts (urgent attention needed)
+        - Normal: Show posts ABOVE Time to Reconnect (natural browsing flow)
+      */}
+      {isNudgeCritical ? (
+        <>
+          {nudgePanel}
+          {postsContent}
+        </>
       ) : (
-        <FeedList
-          posts={posts}
-          tier={tier}
-          showLikeCount={showLikeCount}
-          onInteract={addInteraction}
-        />
+        <>
+          {postsContent}
+          {nudgePanel}
+        </>
       )}
     </motion.div>
   );
