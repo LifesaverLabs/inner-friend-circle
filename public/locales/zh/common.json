@@ -4,6 +4,33 @@
     "tagline": "用心维护最亲密的关系",
     "description": "基于邓巴数理论的隐私优先友谊维护工具"
   },
+  "landing": {
+    "heroTitle1": "精心培养",
+    "heroTitle2": "最亲密的友谊",
+    "heroDescription": "根据邓巴的研究，我们只能真正维持约5段亲密友谊、15位好友和150段有意义的关系。挚友圈帮助你有意识地培养最重要的关系。",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多",
+    "features": {
+      "intentionalLimits": {
+        "title": "有意识的限制",
+        "description": "科学表明，我们对有意义的关系有天然的限制。接受它们，专注于真正重要的人。"
+      },
+      "privateByDefault": {
+        "title": "默认隐私",
+        "description": "你的列表留在你的设备上。只有在需要持久化和可选的双向匹配时才创建账户。"
+      },
+      "mutualDiscovery": {
+        "title": "双向发现",
+        "description": "可选择了解当你列为亲密朋友的人也将你列入他们的列表时——这是对互惠的温柔庆祝。"
+      }
+    },
+    "mission": {
+      "title": "面对面，而非刷广告",
+      "description": "当你离开我们的网站去与最重要的人分享真实时刻时，我们就赢了。当距离分隔你们时，我们会帮助你发起视频通话。但没有什么能比得上亲自陪伴。",
+      "inspiration": "我们的灵感：Dentyne Ice \"面对面时光\""
+    },
+    "quote": "\"并非所有关系都是对称的——这完全是自然的。目标不是完美的平衡，而是有意识的陪伴。\""
+  },
   "nav": {
     "home": "首页",
     "dashboard": "仪表盘",

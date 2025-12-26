@@ -4,6 +4,33 @@
     "tagline": "Cultiva tus relaciones más cercanas",
     "description": "Una herramienta de privacidad para mantener amistades significativas basada en la investigación del número de Dunbar"
   },
+  "landing": {
+    "heroTitle1": "Cultiva Tus",
+    "heroTitle2": "Amistades Más Cercanas",
+    "heroDescription": "Según la investigación de Dunbar, solo podemos mantener verdaderamente unas 5 amistades íntimas, 15 amigos cercanos y 150 conexiones significativas. Inner Friend te ayuda a nutrir intencionalmente las relaciones que más importan.",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber Más",
+    "features": {
+      "intentionalLimits": {
+        "title": "Límites Intencionales",
+        "description": "La ciencia muestra que tenemos límites naturales para las relaciones significativas. Acéptalos para enfocarte en quienes realmente importan."
+      },
+      "privateByDefault": {
+        "title": "Privado por Defecto",
+        "description": "Tus listas permanecen en tu dispositivo. Crea una cuenta solo si deseas persistencia y coincidencia mutua opcional."
+      },
+      "mutualDiscovery": {
+        "title": "Descubrimiento Mutuo",
+        "description": "Opcionalmente descubre cuando alguien que has listado como cercano también te ha listado — una celebración gentil de la reciprocidad."
+      }
+    },
+    "mission": {
+      "title": "Tiempo Real, No Tiempo de Anuncios",
+      "description": "Ganamos cuando dejas nuestro sitio — para compartir momentos reales con las personas que más importan. Cuando la distancia los separa, te ayudaremos a iniciar videollamadas. Pero nada supera estar ahí.",
+      "inspiration": "Nuestra inspiración: Dentyne Ice \"Haz Tiempo Real\""
+    },
+    "quote": "\"No todas las relaciones son simétricas — y eso es perfectamente natural. El objetivo no es el equilibrio perfecto, sino la presencia intencional.\""
+  },
   "nav": {
     "home": "Inicio",
     "dashboard": "Panel",

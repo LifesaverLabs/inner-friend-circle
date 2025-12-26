@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Users, ArrowRight, Shield, Sparkles, Video, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { DunbarVisualization } from './DunbarVisualization';
 import { Footer } from './Footer';
@@ -12,17 +13,19 @@ interface LandingHeroProps {
 }
 
 export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
+  const { t } = useTranslation();
+
   return (
     <section className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-3"
         >
           <Heart className="w-8 h-8 text-primary fill-primary/20" />
-          <span className="font-display text-2xl font-bold text-foreground">Inner Friend</span>
+          <span className="font-display text-2xl font-bold text-foreground">{t('app.name')}</span>
           <VersionBadge />
         </motion.div>
         <motion.div
@@ -32,35 +35,33 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
         >
           <LanguageSelector variant="prominent" />
           <Button variant="outline" onClick={onSignIn || onGetStarted}>
-            Sign In
+            {t('nav.signIn')}
           </Button>
         </motion.div>
       </header>
 
       {/* Hero Content */}
       <main className="flex-1 container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-12 py-12">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="flex-1 max-w-xl text-center lg:text-left"
         >
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-            Curate Your
+            {t('landing.heroTitle1')}
             <br />
-            <span className="text-primary">Closest Friendships</span>
+            <span className="text-primary">{t('landing.heroTitle2')}</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 text-balance">
-            Based on Dunbar's research, we can only truly maintain about 5 intimate friendships, 
-            15 close friends, and 150 meaningful connections. Inner Friend helps you intentionally 
-            nurture the relationships that matter most.
+            {t('landing.heroDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button size="lg" onClick={onGetStarted} className="gap-2">
-              Get Started <ArrowRight className="w-4 h-4" />
+              {t('landing.getStarted')} <ArrowRight className="w-4 h-4" />
             </Button>
             <Button size="lg" variant="outline" onClick={onGetStarted}>
-              Learn More
+              {t('landing.learnMore')}
             </Button>
           </div>
         </motion.div>
@@ -77,7 +78,7 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
 
       {/* Features */}
       <section className="container mx-auto px-4 py-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
@@ -85,18 +86,18 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
         >
           <FeatureCard
             icon={<Users className="w-6 h-6" />}
-            title="Intentional Limits"
-            description="Science shows we have natural limits to meaningful relationships. Embrace them to focus on who truly matters."
+            title={t('landing.features.intentionalLimits.title')}
+            description={t('landing.features.intentionalLimits.description')}
           />
           <FeatureCard
             icon={<Shield className="w-6 h-6" />}
-            title="Private by Default"
-            description="Your lists stay on your device. Create an account only if you want persistence and optional mutual matching."
+            title={t('landing.features.privateByDefault.title')}
+            description={t('landing.features.privateByDefault.description')}
           />
           <FeatureCard
             icon={<Sparkles className="w-6 h-6" />}
-            title="Mutual Discovery"
-            description="Optionally learn when someone you've listed as close has also listed you — a gentle celebration of reciprocity."
+            title={t('landing.features.mutualDiscovery.title')}
+            description={t('landing.features.mutualDiscovery.description')}
           />
         </motion.div>
       </section>
@@ -112,11 +113,10 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
           <div className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 rounded-2xl p-8 text-center">
             <Video className="w-10 h-10 text-primary mx-auto mb-4" />
             <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-              Face Time, Not Ad Time
+              {t('landing.mission.title')}
             </h2>
             <p className="text-muted-foreground mb-6 text-balance">
-              We win when you leave our site — to share real moments with the people who matter most.
-              When distance separates you, we'll help you spark video kalls. But nothing beats being there.
+              {t('landing.mission.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
@@ -126,7 +126,7 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
                 <ExternalLink className="w-4 h-4" />
-                Our inspiration: Dentyne Ice "Make Face Time"
+                {t('landing.mission.inspiration')}
               </a>
             </div>
           </div>
@@ -142,8 +142,7 @@ export function LandingHero({ onGetStarted, onSignIn }: LandingHeroProps) {
           className="max-w-2xl mx-auto text-center"
         >
           <blockquote className="font-display text-xl md:text-2xl text-foreground/80 italic">
-            "Not all relationships are symmetrical — and that's perfectly natural. 
-            The goal isn't perfect balance, but intentional presence."
+            {t('landing.quote')}
           </blockquote>
         </motion.div>
       </section>

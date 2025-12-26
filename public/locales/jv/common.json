@@ -4,6 +4,33 @@
     "tagline": "Jaganen sesambungan sing cedhak",
     "description": "Piranti sing ngutamakake privasi kanggo njaga persahabatan sing migunani adhedhasar riset nomer Dunbar"
   },
+  "landing": {
+    "heroTitle1": "Jaganen",
+    "heroTitle2": "Persahabatan Sing Cedhak",
+    "heroDescription": "Miturut riset Dunbar, kita mung bisa njaga kurang luwih 5 persahabatan intim, 15 kanca cedhak, lan 150 hubungan sing migunani. Inner Friend mbantu sampeyan kanthi sengaja ngopeni hubungan sing paling penting.",
+    "getStarted": "Mulai",
+    "learnMore": "Sinau Luwih",
+    "features": {
+      "intentionalLimits": {
+        "title": "Wates Sing Disengaja",
+        "description": "Ilmu nuduhake yen kita duwe wates alami kanggo hubungan sing migunani. Tampa supaya fokus marang wong sing bener-bener penting."
+      },
+      "privateByDefault": {
+        "title": "Pribadi Kanthi Default",
+        "description": "Dhaftar sampeyan tetep ana ing piranti sampeyan. Gawe akun mung yen sampeyan pengin persistensi lan pencocokan mutual opsional."
+      },
+      "mutualDiscovery": {
+        "title": "Penemuan Mutual",
+        "description": "Opsional sinau nalika wong sing sampeyan dhaptar minangka cedhak uga wis ndhaptar sampeyan — rayaan alus saka timbal balik."
+      }
+    },
+    "mission": {
+      "title": "Wektu Adu Rai, Dudu Iklan",
+      "description": "Kita menang nalika sampeyan ninggalake situs kita — kanggo nuduhake momen nyata karo wong sing paling penting. Nalika jarak misahake sampeyan, kita bakal mbantu miwiti panggilan video. Nanging ora ana sing ngluwihi ana ing kono.",
+      "inspiration": "Inspirasi kita: Dentyne Ice \"Gawe Wektu Adu Rai\""
+    },
+    "quote": "\"Ora kabeh hubungan simetris — lan iku pancen wajar. Tujuane dudu keseimbangan sing sampurna, nanging kehadiran sing disengaja.\""
+  },
   "nav": {
     "home": "Omah",
     "dashboard": "Dasbor",

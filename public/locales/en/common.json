@@ -4,6 +4,33 @@
     "tagline": "Nurture your closest relationships",
     "description": "A privacy-first tool for maintaining meaningful friendships based on Dunbar's number research"
   },
+  "landing": {
+    "heroTitle1": "Curate Your",
+    "heroTitle2": "Closest Friendships",
+    "heroDescription": "Based on Dunbar's research, we can only truly maintain about 5 intimate friendships, 15 close friends, and 150 meaningful connections. Inner Friend helps you intentionally nurture the relationships that matter most.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "features": {
+      "intentionalLimits": {
+        "title": "Intentional Limits",
+        "description": "Science shows we have natural limits to meaningful relationships. Embrace them to focus on who truly matters."
+      },
+      "privateByDefault": {
+        "title": "Private by Default",
+        "description": "Your lists stay on your device. Create an account only if you want persistence and optional mutual matching."
+      },
+      "mutualDiscovery": {
+        "title": "Mutual Discovery",
+        "description": "Optionally learn when someone you've listed as close has also listed you — a gentle celebration of reciprocity."
+      }
+    },
+    "mission": {
+      "title": "Face Time, Not Ad Time",
+      "description": "We win when you leave our site — to share real moments with the people who matter most. When distance separates you, we'll help you spark video calls. But nothing beats being there.",
+      "inspiration": "Our inspiration: Dentyne Ice \"Make Face Time\""
+    },
+    "quote": "\"Not all relationships are symmetrical — and that's perfectly natural. The goal isn't perfect balance, but intentional presence.\""
+  },
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",

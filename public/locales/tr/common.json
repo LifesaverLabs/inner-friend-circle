@@ -4,6 +4,33 @@
     "tagline": "En yakın ilişkilerinizi besleyin",
     "description": "Dunbar sayısı araştırmasına dayalı anlamlı dostlukları sürdürmek için gizlilik öncelikli araç"
   },
+  "landing": {
+    "heroTitle1": "En Yakın",
+    "heroTitle2": "Dostluklarınızı Besleyin",
+    "heroDescription": "Dunbar'ın araştırmasına göre, gerçekten sadece yaklaşık 5 samimi dostluk, 15 yakın arkadaş ve 150 anlamlı bağlantı sürdürebiliriz. Inner Friend, en çok önem verdiğiniz ilişkileri bilinçli olarak beslemenize yardımcı olur.",
+    "getStarted": "Başla",
+    "learnMore": "Daha Fazla Bilgi",
+    "features": {
+      "intentionalLimits": {
+        "title": "Bilinçli Sınırlar",
+        "description": "Bilim, anlamlı ilişkiler için doğal sınırlarımız olduğunu gösteriyor. Gerçekten önemli olanlara odaklanmak için bunları kabullenin."
+      },
+      "privateByDefault": {
+        "title": "Varsayılan Olarak Gizli",
+        "description": "Listeleriniz cihazınızda kalır. Yalnızca kalıcılık ve isteğe bağlı karşılıklı eşleştirme istiyorsanız hesap oluşturun."
+      },
+      "mutualDiscovery": {
+        "title": "Karşılıklı Keşif",
+        "description": "İsteğe bağlı olarak, yakın olarak listelediğiniz birinin sizi de listelediğini öğrenin — karşılıklılığın nazik bir kutlaması."
+      }
+    },
+    "mission": {
+      "title": "Yüz Yüze Zaman, Reklam Değil",
+      "description": "Sitemizden ayrılıp en önemli insanlarla gerçek anları paylaştığınızda kazanırız. Mesafe sizi ayırdığında, görüntülü arama başlatmanıza yardımcı oluruz. Ama orada olmanın yerini hiçbir şey tutmaz.",
+      "inspiration": "İlham kaynağımız: Dentyne Ice \"Yüz Yüze Zaman Yarat\""
+    },
+    "quote": "\"Tüm ilişkiler simetrik değildir — ve bu tamamen doğaldır. Amaç mükemmel denge değil, bilinçli varlıktır.\""
+  },
   "nav": {
     "home": "Ana Sayfa",
     "dashboard": "Gösterge Paneli",
