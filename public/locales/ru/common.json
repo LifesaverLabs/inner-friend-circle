@@ -146,7 +146,9 @@
     "search": "Поиск",
     "filter": "Фильтр",
     "export": "Экспорт",
-    "import": "Импорт"
+    "import": "Импорт",
+    "remove": "Удалить",
+    "accept": "Принять"
   },
   "friend": {
     "addFriend": "Добавить друга",
@@ -218,7 +220,6 @@
     "notSelected": "Не выбрано",
     "required": "Обязательно",
     "optional": "Необязательно",
-
     "feed": {
       "tabList": "Ленты круга друзей",
       "coreTab": "Лента Ядра - Ваши самые близкие друзья",
@@ -226,7 +227,6 @@
       "outerTab": "Внешняя лента Плюс - Расширенный круг включая соседей",
       "manageTab": "Управление кругом друзей"
     },
-
     "post": {
       "likeButton": "Поставить лайк этой публикации",
       "unlikeButton": "Убрать лайк с этой публикации",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "Возможно приду на встречу",
       "rsvpOptions": "Варианты ответа"
     },
-
     "nudge": {
       "panelExpanded": "Панель напоминаний развёрнута",
       "panelCollapsed": "Панель напоминаний свёрнута",
@@ -258,7 +257,6 @@
       "connectedButton": "Отметить {{name}} как связавшихся сегодня",
       "selectDateButton": "Выберите, когда вы связывались с {{name}}"
     },
-
     "naybor": {
       "sosRegion": "Быстрые SOS-контакты",
       "sosContactsList": "Быстрые контакты:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "Написать {{count}} выбранным соседям",
       "locationDescription": "При включении ваше приблизительное местоположение будет передано соседям"
     },
-
     "dialog": {
       "close": "Закрыть диалог",
       "back": "Назад",
       "confirm": "Подтвердить действие"
     },
-
     "form": {
       "showPassword": "Показать пароль",
       "hidePassword": "Скрыть пароль",
@@ -295,7 +291,6 @@
       "selectCountry": "Выбрать страну",
       "phoneNumber": "Номер телефона"
     },
-
     "status": {
       "online": "В сети",
       "offline": "Не в сети",
@@ -425,5 +420,114 @@
     "mobileOnly": "Выбор контактов доступен только на мобильных устройствах. Используйте импорт vCard или CSV.",
     "browserNotSupported": "Ваш браузер не поддерживает выбор контактов. Используйте импорт vCard или CSV.",
     "useFileImport": "Попробуйте импортировать из файла vCard или CSV."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "Имя"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} из {{limit}} мест доступно",
+    "spotsUsed": "{{used}}/{{limit}} мест занято"
+  },
+  "friendCard": {
+    "dragToReorder": "Перетащите для изменения порядка",
+    "connectingVia": "Подключение через {{method}}",
+    "callVia": "Позвонить через {{method}}",
+    "editContactInfo": "Редактировать контактные данные",
+    "promoteTo": "Повысить до",
+    "moveTo": "Переместить в {{tier}}"
+  },
+  "connections": {
+    "requests": "Запросы на подключение",
+    "requestsDescription": "Люди, которые хотят связаться с вами",
+    "unknownUser": "Неизвестный пользователь",
+    "addedYouAs": "Добавил вас как {{tier}}",
+    "circleHidden": "Круг скрыт",
+    "viaService": "через {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "Добавить образец для подражания",
+    "addDescription": "Добавьте человека, чья история жизни вас вдохновляет — живого или ушедшего.",
+    "namePlaceholder": "напр., Марк Аврелий, Майя Энджелоу...",
+    "whyRoleModel": "Почему этот человек является образцом для подражания?",
+    "reasonPlaceholder": "Опишите, что вы восхищаетесь в них, какие черты хотите перенять, или как их история вдохновляет вас быть хорошим, лучшим, наилучшим...",
+    "visibilityNote": "Это будет видно вашим подтвержденным связям.",
+    "editReason": "Редактировать причину",
+    "editReasonTitle": "Редактировать причину образца",
+    "editReasonDescription": "Обновите, почему {{name}} является для вас образцом."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Зарезервированное место",
+    "spotsLabel": "зарезервированное место",
+    "editGroup": "Редактировать группу",
+    "deleteGroup": "Удалить группу",
+    "deleteConfirmTitle": "Удалить зарезервированную группу?",
+    "deleteConfirmDescription": "Это удалит {{count}} зарезервированных мест{{note}} из вашего уровня {{tier}}.",
+    "editTitle": "Редактировать зарезервированную группу — {{tier}}",
+    "editDescription": "Обновите количество мест и заметку для этой зарезервированной группы.",
+    "maxAvailable": "Макс доступно: {{count}} мест",
+    "privateNoteLabel": "Личная заметка (необязательно)",
+    "notePlaceholder": "Только вы можете это видеть. Напр., 'Люди из группы походов'",
+    "notePlaceholderLong": "Только вы можете это видеть. Напр., 'Люди из группы походов' или 'Члены семьи, предпочитающие конфиденциальность'",
+    "addTitle": "Добавить зарезервированную группу — {{tier}}",
+    "addDescription": "Зарезервируйте места для людей, которых вы не хотите явно указывать. Каждая группа учитывается в вашем лимите {{tier}}, но остается приватной.",
+    "capacitySummary": "{{named}} именованных + {{reserved}} уже зарезервировано + {{new}} новых = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Добавить группу"
+  },
+  "addFriend": {
+    "addNaybor": "Добавить соседа",
+    "addParasocial": "Добавить парасоциальный",
+    "addFriend": "Добавить друга {{tier}}",
+    "addFriendButton": "Добавить друга",
+    "circleFull": "Ваш круг {{tier}} заполнен",
+    "circleFullHint": "Чтобы добавить кого-то сюда, сначала нужно переместить текущего друга из {{tier}} на другой уровень.",
+    "namePlaceholder": "Их имя",
+    "emailOptional": "Email (необязательно)",
+    "emailPlaceholder": "Для уведомлений о взаимном совпадении",
+    "emailHint": "Если они тоже добавят вас как друга {{tier}} и у вас обоих включены уведомления, вы оба получите уведомление о взаимной связи.",
+    "addEmailButton": "Добавить email для взаимного совпадения",
+    "phoneOptional": "Телефон (необязательно)",
+    "preferredContactMethod": "Предпочтительный способ связи",
+    "phoneHint": "Используйте это для функции Заботы, чтобы связаться с друзьями.",
+    "nayborPhoneHint": "Наличие контактной информации соседей необходимо для экстренных случаев и взаимной поддержки.",
+    "addPhoneButton": "Добавить телефон для видеозвонков",
+    "addNayborPhoneButton": "Добавить контактную информацию для экстренных случаев"
   }
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,6 +15,7 @@ interface AddRoleModelDialogProps {
 }
 
 export function AddRoleModelDialog({ open, onOpenChange, onAdd, capacity }: AddRoleModelDialogProps) {
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [reason, setReason] = useState('');
 
@@ -41,22 +43,22 @@ export function AddRoleModelDialog({ open, onOpenChange, onAdd, capacity }: AddR
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Star className="w-5 h-5 text-tier-rolemodel" />
-            Add Role Model
+            {t('roleModel.addTitle')}
           </DialogTitle>
           <DialogDescription>
-            Add someone whose life story inspires you — living or departed.
+            {t('roleModel.addDescription')}
             <span className="block mt-1 text-xs">
-              {capacity.available} of {capacity.limit} spots available
+              {t('capacity.spotsAvailable', { available: capacity.available, limit: capacity.limit })}
             </span>
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">{t('labels.name')}</Label>
             <Input
               id="name"
-              placeholder="e.g., Marcus Aurelius, Maya Angelou..."
+              placeholder={t('roleModel.namePlaceholder')}
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
@@ -64,29 +66,29 @@ export function AddRoleModelDialog({ open, onOpenChange, onAdd, capacity }: AddR
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="reason">Why is this person a role model?</Label>
+            <Label htmlFor="reason">{t('roleModel.whyRoleModel')}</Label>
             <Textarea
               id="reason"
-              placeholder="Describe what you admire about them, what traits you want to embrace, or how their story inspires you to be good, better, best..."
+              placeholder={t('roleModel.reasonPlaceholder')}
               value={reason}
               onChange={(e) => setReason(e.target.value)}
               rows={4}
               className="resize-none"
             />
             <p className="text-xs text-muted-foreground">
-              This will be visible to your confirmed connections.
+              {t('roleModel.visibilityNote')}
             </p>
           </div>
 
           <DialogFooter>
             <Button type="button" variant="outline" onClick={() => handleOpenChange(false)}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={!name.trim() || !reason.trim() || capacity.available <= 0}
             >
-              Add Role Model
+              {t('roleModel.addTitle')}
             </Button>
           </DialogFooter>
         </form>

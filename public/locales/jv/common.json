@@ -146,7 +146,9 @@
     "search": "Telusuri",
     "filter": "Filter",
     "export": "Ekspor",
-    "import": "Impor"
+    "import": "Impor",
+    "remove": "Busak",
+    "accept": "Nampa"
   },
   "friend": {
     "addFriend": "Tambah Kanca",
@@ -218,7 +220,6 @@
     "notSelected": "Ora dipilih",
     "required": "Wajib",
     "optional": "Opsional",
-
     "feed": {
       "tabList": "Feed lingkaran kanca",
       "coreTab": "Feed Inti - Kanca paling cedhak",
@@ -226,7 +227,6 @@
       "outerTab": "Feed Njaba Plus - Lingkaran amba kalebu tangga",
       "manageTab": "Kelola lingkaran kanca"
     },
-
     "post": {
       "likeButton": "Seneng posting iki",
       "unlikeButton": "Busak seneng posting iki",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "Mungkin teka ketemu",
       "rsvpOptions": "Pilihan jawaban"
     },
-
     "nudge": {
       "panelExpanded": "Panel pengeling dibukak",
       "panelCollapsed": "Panel pengeling ditutup",
@@ -258,7 +257,6 @@
       "connectedButton": "Tandai {{name}} nyambung dina iki",
       "selectDateButton": "Pilih kapan nyambung karo {{name}}"
     },
-
     "naybor": {
       "sosRegion": "Kontak SOS cepet",
       "sosContactsList": "Kontak cepet:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "Kirim pesen menyang {{count}} tangga sing dipilih",
       "locationDescription": "Yen diaktifake, lokasi kira-kira bakal dibagekake karo tangga"
     },
-
     "dialog": {
       "close": "Tutup dialog",
       "back": "Bali",
       "confirm": "Konfirmasi aksi"
     },
-
     "form": {
       "showPassword": "Tuduhake sandi",
       "hidePassword": "Delikake sandi",
@@ -295,7 +291,6 @@
       "selectCountry": "Pilih negara",
       "phoneNumber": "Nomer telpon"
     },
-
     "status": {
       "online": "Online",
       "offline": "Offline",
@@ -425,5 +420,114 @@
     "mobileOnly": "Contact Picker mung kasedhiya ing perangkat mobile. Gunakake impor vCard utawa CSV.",
     "browserNotSupported": "Browser sampeyan ora ndhukung Contact Picker. Gunakake impor vCard utawa CSV.",
     "useFileImport": "Coba impor saka file vCard utawa CSV."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "Jeneng"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} saka {{limit}} papan kasedhiya",
+    "spotsUsed": "{{used}}/{{limit}} papan digunakake"
+  },
+  "friendCard": {
+    "dragToReorder": "Seret kanggo ngatur ulang",
+    "connectingVia": "Nyambung liwat {{method}}",
+    "callVia": "Telpon liwat {{method}}",
+    "editContactInfo": "Sunting info kontak",
+    "promoteTo": "Promosekake menyang",
+    "moveTo": "Pindhah menyang {{tier}}"
+  },
+  "connections": {
+    "requests": "Panjaluk Sambungan",
+    "requestsDescription": "Wong sing pengin nyambung karo sampeyan",
+    "unknownUser": "Pangguna Ora Dikenal",
+    "addedYouAs": "Nambah sampeyan minangka {{tier}}",
+    "circleHidden": "Lingkaran didhelikake",
+    "viaService": "liwat {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "Tambah Role Model",
+    "addDescription": "Tambah wong sing crita uripe ngilhami sampeyan — urip utawa wis seda.",
+    "namePlaceholder": "cth., Marcus Aurelius, Maya Angelou...",
+    "whyRoleModel": "Kenapa wong iki dadi role model?",
+    "reasonPlaceholder": "Jelasake apa sing sampeyan kagumi, sifat apa sing pengin sampeyan rangkul, utawa kepiye crita kasebut ngilhami sampeyan dadi apik, luwih apik, paling apik...",
+    "visibilityNote": "Iki bakal katon kanggo sambungan sing dikonfirmasi.",
+    "editReason": "Sunting Alasan",
+    "editReasonTitle": "Sunting Alasan Role Model",
+    "editReasonDescription": "Nganyari kenapa {{name}} dadi role model kanggo sampeyan."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Papan Direserfasi",
+    "spotsLabel": "papan direserfasi",
+    "editGroup": "Sunting Grup",
+    "deleteGroup": "Busak Grup",
+    "deleteConfirmTitle": "Busak Grup Direserfasi?",
+    "deleteConfirmDescription": "Iki bakal mbusak {{count}} papan direserfasi{{note}} saka tingkat {{tier}} sampeyan.",
+    "editTitle": "Sunting Grup Direserfasi — {{tier}}",
+    "editDescription": "Nganyari jumlah papan lan cathetan kanggo grup direserfasi iki.",
+    "maxAvailable": "Maks kasedhiya: {{count}} papan",
+    "privateNoteLabel": "Cathetan Pribadi (opsional)",
+    "notePlaceholder": "Mung sampeyan sing bisa ndeleng iki. Cth, 'Wong saka grup hiking'",
+    "notePlaceholderLong": "Mung sampeyan sing bisa ndeleng iki. Cth, 'Wong saka grup hiking' utawa 'Anggota kulawarga sing luwih seneng privasi'",
+    "addTitle": "Tambah Grup Direserfasi — {{tier}}",
+    "addDescription": "Reserfasi papan kanggo wong sing ora pengin sampeyan daftar kanthi jelas. Saben grup diitung menyang watesan {{tier}} sampeyan nanging tetep pribadi.",
+    "capacitySummary": "{{named}} dijenengi + {{reserved}} wis direserfasi + {{new}} anyar = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Tambah Grup"
+  },
+  "addFriend": {
+    "addNaybor": "Tambah Tangga",
+    "addParasocial": "Tambah Parasosial",
+    "addFriend": "Tambah Kanca {{tier}}",
+    "addFriendButton": "Tambah Kanca",
+    "circleFull": "Lingkaran {{tier}} sampeyan wis kebak",
+    "circleFullHint": "Kanggo nambah wong ing kene, sampeyan kudu mindhah kanca {{tier}} saiki menyang tingkat liyane dhisik.",
+    "namePlaceholder": "Jenenge",
+    "emailOptional": "Email (opsional)",
+    "emailPlaceholder": "Kanggo kabar cocog bebarengan",
+    "emailHint": "Yen dheweke uga ndhaptar sampeyan minangka kanca {{tier}} lan sampeyan loro wis ngaktifake kabar, sampeyan loro bakal diwenehi kabar babagan sambungan bebarengan.",
+    "addEmailButton": "Tambah email kanggo cocog bebarengan",
+    "phoneOptional": "Telpon (opsional)",
+    "preferredContactMethod": "Cara kontak sing disenengi",
+    "phoneHint": "Gunakake iki kanggo fitur Tending kanggo hubungi kanca.",
+    "nayborPhoneHint": "Nduwe info kontak kanggo tangga sampeyan penting kanggo darurat lan dhukungan bebarengan.",
+    "addPhoneButton": "Tambah telpon kanggo video call",
+    "addNayborPhoneButton": "Tambah info kontak kanggo darurat"
   }
 }

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Users, MessageCircle, PenLine } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 
 type FeedTier = 'core' | 'inner' | 'outer';
@@ -13,24 +14,6 @@ interface EmptyFeedStateProps {
   onCreatePost?: () => void;
   onGoToManage?: () => void;
 }
-
-const TIER_INFO: Record<FeedTier, { name: string; description: string; limit: string }> = {
-  core: {
-    name: 'Core',
-    description: 'Your 5 closest friends - the ones you trust with everything.',
-    limit: '5',
-  },
-  inner: {
-    name: 'Inner Circle',
-    description: 'Your 15 close friends who you regularly connect with.',
-    limit: '15',
-  },
-  outer: {
-    name: 'Outer Circle',
-    description: 'Your 150 meaningful connections - people who matter to you.',
-    limit: '150',
-  },
-};
 
 const TIER_ICON_COLORS: Record<FeedTier, string> = {
   core: 'text-tier-core',
@@ -47,7 +30,7 @@ export function EmptyFeedState({
   onCreatePost,
   onGoToManage,
 }: EmptyFeedStateProps) {
-  const tierInfo = TIER_INFO[tier];
+  const { t } = useTranslation();
   const iconColor = TIER_ICON_COLORS[tier];
 
   const handleAddClick = () => {
@@ -78,28 +61,22 @@ export function EmptyFeedState({
       </div>
 
       <h3 className="text-lg font-semibold mb-2">
-        {hasFriends ? (
-          'No posts yet'
-        ) : (
-          `No ${tierInfo.name.toLowerCase()} friends yet`
-        )}
+        {hasFriends
+          ? t('emptyState.noPostsYet')
+          : t(`emptyState.noFriendsYet.${tier}`)}
       </h3>
 
       <p className="text-muted-foreground mb-4 max-w-sm mx-auto">
-        {hasFriends ? (
-          `Your ${tierInfo.name.toLowerCase()} friends haven't shared anything yet. Be the first to share something!`
-        ) : (
-          tierInfo.description
-        )}
+        {hasFriends
+          ? t(`emptyState.noPostsDescription.${tier}`)
+          : t(`tiers.${tier}Description`)}
       </p>
 
       {!hasFriends && (
         <p className="text-sm text-muted-foreground mb-6">
-          {isNewUser ? (
-            `Get started by adding up to ${tierInfo.limit} friends to your ${tierInfo.name}.`
-          ) : (
-            `Add up to ${tierInfo.limit} friends to see their posts here.`
-          )}
+          {isNewUser
+            ? t(`emptyState.getStarted.${tier}`)
+            : t(`emptyState.addToSee.${tier}`)}
         </p>
       )}
 
@@ -107,14 +84,14 @@ export function EmptyFeedState({
         {!hasFriends && (
           <Button onClick={handleAddClick} variant="default">
             <Users className="w-4 h-4 mr-2" />
-            Add {tierInfo.name} Friends
+            {t(`emptyState.addFriends.${tier}`)}
           </Button>
         )}
 
         {hasFriends && isLoggedIn && (
           <Button onClick={onCreatePost} variant="default">
             <PenLine className="w-4 h-4 mr-2" />
-            Create a Post
+            {t('emptyState.createPost')}
           </Button>
         )}
       </div>

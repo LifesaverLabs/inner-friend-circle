@@ -151,7 +151,9 @@
     "search": "Search",
     "filter": "Filter",
     "export": "Export",
-    "import": "Import"
+    "import": "Import",
+    "remove": "Remove",
+    "accept": "Accept"
   },
   "friend": {
     "addFriend": "Add Friend",
@@ -223,7 +225,6 @@
     "notSelected": "Not selekted",
     "required": "Required",
     "optional": "Optsional",
-
     "feed": {
       "tabList": "Friend sirkle feeds",
       "coreTab": "Kore Feed - Your klosest friends",
@@ -231,7 +232,6 @@
       "outerTab": "Outer Plus Feed - Extended sirkle inkluding naybors",
       "manageTab": "Manage your friend sirkle"
     },
-
     "post": {
       "likeButton": "Like this post",
       "unlikeButton": "Unlike this post",
@@ -252,7 +252,6 @@
       "rsvpMaybe": "RSVP maybe to meetup",
       "rsvpOptions": "RSVP optsions"
     },
-
     "nudge": {
       "panelExpanded": "Nudge panel expanded",
       "panelCollapsed": "Nudge panel kolapsed",
@@ -263,7 +262,6 @@
       "connectedButton": "Mark {{name}} as konekted today",
       "selectDateButton": "Selekt when you konekted with {{name}}"
     },
-
     "naybor": {
       "sosRegion": "Kwik SOS kontakts",
       "sosContactsList": "Kwik kontakts:",
@@ -286,13 +284,11 @@
       "messageAll_plural": "Message all {{count}} selekted naybors",
       "locationDescription": "When enabled, your approximate lokation will be shared with your naybors"
     },
-
     "dialog": {
       "close": "Klose dialog",
       "back": "Go bak",
       "confirm": "Konfirm aksion"
     },
-
     "form": {
       "showPassword": "Show password",
       "hidePassword": "Hide password",
@@ -300,7 +296,6 @@
       "selectCountry": "Selekt kountry⁵",
       "phoneNumber": "Phone number"
     },
-
     "status": {
       "online": "Online",
       "offline": "Offline",
@@ -430,5 +425,114 @@
     "mobileOnly": "Kontakt Pikker is only available on mobile devices. Use vKard or CSV/KSV import instead.",
     "browserNotSupported": "Your browser doesn't support Kontakt Pikker. Use vKard or CSV/KSV import instead.",
     "useFileImport": "Try importing from a vKard or CSV/KSV file instead."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "Name"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} of {{limit}} spots available",
+    "spotsUsed": "{{used}}/{{limit}} spots used"
+  },
+  "friendCard": {
+    "dragToReorder": "Drag to reorder",
+    "connectingVia": "Connecting via {{method}}",
+    "callVia": "Call via {{method}}",
+    "editContactInfo": "Edit contact info",
+    "promoteTo": "Promote to",
+    "moveTo": "Move to {{tier}}"
+  },
+  "connections": {
+    "requests": "Connection Requests",
+    "requestsDescription": "People who want to connect with you",
+    "unknownUser": "Unknown User",
+    "addedYouAs": "Added you as {{tier}}",
+    "circleHidden": "Circle hidden",
+    "viaService": "via {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "Add Role Model",
+    "addDescription": "Add someone whose life story inspires you — living or departed.",
+    "namePlaceholder": "e.g., Marcus Aurelius, Maya Angelou...",
+    "whyRoleModel": "Why is this person a role model?",
+    "reasonPlaceholder": "Describe what you admire about them, what traits you want to embrace, or how their story inspires you to be good, better, best...",
+    "visibilityNote": "This will be visible to your confirmed connections.",
+    "editReason": "Edit Reason",
+    "editReasonTitle": "Edit Role Model Reason",
+    "editReasonDescription": "Update why {{name}} is a role model to you."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Reserved Spot",
+    "spotsLabel": "reserved spot",
+    "editGroup": "Edit Group",
+    "deleteGroup": "Delete Group",
+    "deleteConfirmTitle": "Delete Reserved Group?",
+    "deleteConfirmDescription": "This will remove {{count}} reserved spot{{note}} from your {{tier}} tier.",
+    "editTitle": "Edit Reserved Group — {{tier}}",
+    "editDescription": "Update the number of spots and note for this reserved group.",
+    "maxAvailable": "Max available: {{count}} spots",
+    "privateNoteLabel": "Private Note (optional)",
+    "notePlaceholder": "Only you can see this. E.g., 'People from the hiking group'",
+    "notePlaceholderLong": "Only you can see this. E.g., 'People from the hiking group' or 'Family members who prefer privacy'",
+    "addTitle": "Add Reserved Group — {{tier}}",
+    "addDescription": "Reserve spots for people you don't want to explicitly list. Each group counts toward your {{tier}} limit but stays private.",
+    "capacitySummary": "{{named}} named + {{reserved}} already reserved + {{new}} new = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Add Group"
+  },
+  "addFriend": {
+    "addNaybor": "Add Naybor",
+    "addParasocial": "Add Parasocial",
+    "addFriend": "Add {{tier}} Friend",
+    "addFriendButton": "Add Friend",
+    "circleFull": "Your {{tier}} circle is full",
+    "circleFullHint": "To add someone here, you'll need to move a current {{tier}} friend to another tier first.",
+    "namePlaceholder": "Their name",
+    "emailOptional": "Email (optional)",
+    "emailPlaceholder": "For mutual match notifications",
+    "emailHint": "If they also list you as a {{tier}} friend and you both have notifications enabled, you'll both be notified of your mutual connection.",
+    "addEmailButton": "Add email for mutual matching",
+    "phoneOptional": "Phone (optional)",
+    "preferredContactMethod": "Preferred contact method",
+    "phoneHint": "Use this for the Tending feature to reach out to friends.",
+    "nayborPhoneHint": "Having contact info for your naybors is essential for emergencies and mutual support.",
+    "addPhoneButton": "Add phone for face time",
+    "addNayborPhoneButton": "Add contact info for emergencies"
   }
 }

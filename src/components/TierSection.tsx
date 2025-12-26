@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Plus, Lock, Users, Link2, Star, UserPlus } from 'lucide-react';
 import {
   DndContext,
@@ -86,6 +87,7 @@ export function TierSection({
   onParasocialEngage,
   userId,
 }: TierSectionProps) {
+  const { t } = useTranslation();
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [linkedDialogOpen, setLinkedDialogOpen] = useState(false);
   const [reservedDialogOpen, setReservedDialogOpen] = useState(false);
@@ -275,13 +277,13 @@ export function TierSection({
           <div className="flex flex-col lg:flex-row gap-4 items-start">
             <div className="flex-1">
               <p className="text-sm text-destructive font-medium mb-2">
-                You only know {friends.length} of your naybors!
+                {t('naybor.underMinWarning', { count: friends.length })}
               </p>
               <p className="text-sm text-muted-foreground">
-                {tierInfo.underMinWarning}
+                {t('naybor.underMinDescription')}
               </p>
               <p className="text-xs text-muted-foreground mt-2 italic">
-                Everyone ought to have a nayborhood-konnekted life; it's really important not just for us but for grandchildren and children growing up anywhere near us and for the elderly and the lonely.
+                {t('naybor.mrRogersQuote')}
               </p>
             </div>
             <div className="w-full lg:w-80 aspect-video rounded-lg overflow-hidden bg-black shrink-0">
@@ -302,25 +304,25 @@ export function TierSection({
           <Users className="w-12 h-12 mx-auto mb-2 opacity-30" />
           <p className="text-sm">
             {tier === 'parasocial'
-              ? 'No parasocials yet'
+              ? t('emptyState.noParasoicalsYet')
               : tier === 'acquainted'
-              ? 'No acquainted cousins yet'
+              ? t('emptyState.noAcquaintedYet')
               : tier === 'rolemodel'
-              ? 'No role models yet'
+              ? t('emptyState.noRoleModelsYet')
               : tier === 'naybor'
-              ? 'No naybors yet'
-              : `No ${tierInfo.name.toLowerCase()} friends yet`}
+              ? t('emptyState.noNayborsYet')
+              : t(`emptyState.noFriendsYet.${tier}`, { defaultValue: `No ${tierInfo.name.toLowerCase()} friends yet` })}
           </p>
           <p className="text-xs mt-1">
             {tier === 'parasocial'
-              ? 'Add creators, celebrities, or figures you follow'
+              ? t('emptyState.addParasocialsHint')
               : tier === 'acquainted'
-              ? 'Friends are reclassified here through lack of contact over time'
+              ? t('emptyState.acquaintedHint')
               : tier === 'rolemodel'
-              ? 'Add people whose life stories inspire you to be good, better, best'
+              ? t('emptyState.roleModelsHint')
               : tier === 'naybor'
-              ? 'Introduse yourself to your naybors and add them here'
-              : 'Add someone to your closest circle'}
+              ? t('emptyState.nayborsHint')
+              : t('emptyState.addToCircleHint')}
           </p>
         </div>
       ) : (

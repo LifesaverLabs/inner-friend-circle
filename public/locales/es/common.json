@@ -146,7 +146,9 @@
     "search": "Buscar",
     "filter": "Filtrar",
     "export": "Exportar",
-    "import": "Importar"
+    "import": "Importar",
+    "remove": "Eliminar",
+    "accept": "Aceptar"
   },
   "friend": {
     "addFriend": "Agregar Amigo",
@@ -218,7 +220,6 @@
     "notSelected": "No seleccionado",
     "required": "Requerido",
     "optional": "Opcional",
-
     "feed": {
       "tabList": "Feeds del círculo de amigos",
       "coreTab": "Feed Núcleo - Tus amigos más cercanos",
@@ -226,7 +227,6 @@
       "outerTab": "Feed Externos Plus - Círculo extendido incluyendo vecinos",
       "manageTab": "Gestiona tu círculo de amigos"
     },
-
     "post": {
       "likeButton": "Me gusta esta publicación",
       "unlikeButton": "Ya no me gusta esta publicación",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "Quizás asista al encuentro",
       "rsvpOptions": "Opciones de confirmación"
     },
-
     "nudge": {
       "panelExpanded": "Panel de recordatorios expandido",
       "panelCollapsed": "Panel de recordatorios contraído",
@@ -258,7 +257,6 @@
       "connectedButton": "Marcar a {{name}} como conectado hoy",
       "selectDateButton": "Seleccionar cuándo te conectaste con {{name}}"
     },
-
     "naybor": {
       "sosRegion": "Contactos SOS rápidos",
       "sosContactsList": "Contactos rápidos:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "Enviar mensaje a los {{count}} vecinos seleccionados",
       "locationDescription": "Cuando está habilitado, tu ubicación aproximada se compartirá con tus vecinos"
     },
-
     "dialog": {
       "close": "Cerrar diálogo",
       "back": "Volver",
       "confirm": "Confirmar acción"
     },
-
     "form": {
       "showPassword": "Mostrar contraseña",
       "hidePassword": "Ocultar contraseña",
@@ -295,7 +291,6 @@
       "selectCountry": "Seleccionar país",
       "phoneNumber": "Número de teléfono"
     },
-
     "status": {
       "online": "En línea",
       "offline": "Desconectado",
@@ -425,5 +420,114 @@
     "mobileOnly": "El selector de contactos solo está disponible en dispositivos móviles. Usa la importación de vCard o CSV en su lugar.",
     "browserNotSupported": "Tu navegador no soporta el selector de contactos. Usa la importación de vCard o CSV en su lugar.",
     "useFileImport": "Intenta importar desde un archivo vCard o CSV en su lugar."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "Nombre"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} de {{limit}} lugares disponibles",
+    "spotsUsed": "{{used}}/{{limit}} lugares usados"
+  },
+  "friendCard": {
+    "dragToReorder": "Arrastra para reordenar",
+    "connectingVia": "Conectando vía {{method}}",
+    "callVia": "Llamar vía {{method}}",
+    "editContactInfo": "Editar información de contacto",
+    "promoteTo": "Promover a",
+    "moveTo": "Mover a {{tier}}"
+  },
+  "connections": {
+    "requests": "Solicitudes de conexión",
+    "requestsDescription": "Personas que quieren conectar contigo",
+    "unknownUser": "Usuario desconocido",
+    "addedYouAs": "Te agregó como {{tier}}",
+    "circleHidden": "Círculo oculto",
+    "viaService": "vía {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "Agregar modelo a seguir",
+    "addDescription": "Agrega a alguien cuya historia de vida te inspire — vivo o fallecido.",
+    "namePlaceholder": "p. ej., Marco Aurelio, Maya Angelou...",
+    "whyRoleModel": "¿Por qué es esta persona un modelo a seguir?",
+    "reasonPlaceholder": "Describe qué admiras de ellos, qué rasgos quieres adoptar, o cómo su historia te inspira a ser bueno, mejor, el mejor...",
+    "visibilityNote": "Esto será visible para tus conexiones confirmadas.",
+    "editReason": "Editar razón",
+    "editReasonTitle": "Editar razón del modelo a seguir",
+    "editReasonDescription": "Actualiza por qué {{name}} es un modelo a seguir para ti."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Lugar Reservado",
+    "spotsLabel": "lugar reservado",
+    "editGroup": "Editar grupo",
+    "deleteGroup": "Eliminar grupo",
+    "deleteConfirmTitle": "¿Eliminar grupo reservado?",
+    "deleteConfirmDescription": "Esto eliminará {{count}} lugares reservados{{note}} de tu nivel {{tier}}.",
+    "editTitle": "Editar grupo reservado — {{tier}}",
+    "editDescription": "Actualiza el número de lugares y la nota para este grupo reservado.",
+    "maxAvailable": "Máximo disponible: {{count}} lugares",
+    "privateNoteLabel": "Nota privada (opcional)",
+    "notePlaceholder": "Solo tú puedes ver esto. Ej: 'Gente del grupo de senderismo'",
+    "notePlaceholderLong": "Solo tú puedes ver esto. Ej: 'Gente del grupo de senderismo' o 'Familiares que prefieren privacidad'",
+    "addTitle": "Agregar grupo reservado — {{tier}}",
+    "addDescription": "Reserva lugares para personas que no quieres listar explícitamente. Cada grupo cuenta para tu límite de {{tier}} pero permanece privado.",
+    "capacitySummary": "{{named}} nombrados + {{reserved}} ya reservados + {{new}} nuevos = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Agregar grupo"
+  },
+  "addFriend": {
+    "addNaybor": "Agregar vecino",
+    "addParasocial": "Agregar parasocial",
+    "addFriend": "Agregar amigo {{tier}}",
+    "addFriendButton": "Agregar amigo",
+    "circleFull": "Tu círculo {{tier}} está lleno",
+    "circleFullHint": "Para agregar a alguien aquí, primero deberás mover a un amigo {{tier}} actual a otro nivel.",
+    "namePlaceholder": "Su nombre",
+    "emailOptional": "Email (opcional)",
+    "emailPlaceholder": "Para notificaciones de coincidencia mutua",
+    "emailHint": "Si también te listan como amigo {{tier}} y ambos tienen notificaciones habilitadas, ambos serán notificados de su conexión mutua.",
+    "addEmailButton": "Agregar email para coincidencia mutua",
+    "phoneOptional": "Teléfono (opcional)",
+    "preferredContactMethod": "Método de contacto preferido",
+    "phoneHint": "Usa esto para la función de Atención para comunicarte con amigos.",
+    "nayborPhoneHint": "Tener información de contacto de tus vecinos es esencial para emergencias y apoyo mutuo.",
+    "addPhoneButton": "Agregar teléfono para videollamadas",
+    "addNayborPhoneButton": "Agregar información de contacto para emergencias"
   }
 }

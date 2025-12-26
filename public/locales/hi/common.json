@@ -146,7 +146,9 @@
     "search": "खोजें",
     "filter": "फ़िल्टर",
     "export": "निर्यात",
-    "import": "आयात"
+    "import": "आयात",
+    "remove": "हटाएं",
+    "accept": "स्वीकार करें"
   },
   "friend": {
     "addFriend": "मित्र जोड़ें",
@@ -218,7 +220,6 @@
     "notSelected": "अचयनित",
     "required": "आवश्यक",
     "optional": "वैकल्पिक",
-
     "feed": {
       "tabList": "मित्र मंडली फीड्स",
       "coreTab": "कोर फीड - आपके सबसे करीबी मित्र",
@@ -226,7 +227,6 @@
       "outerTab": "आउटर प्लस फीड - पड़ोसियों सहित विस्तारित मंडली",
       "manageTab": "अपनी मित्र मंडली प्रबंधित करें"
     },
-
     "post": {
       "likeButton": "इस पोस्ट को पसंद करें",
       "unlikeButton": "इस पोस्ट को नापसंद करें",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "मिलन के लिए शायद",
       "rsvpOptions": "RSVP विकल्प"
     },
-
     "nudge": {
       "panelExpanded": "नज पैनल विस्तारित",
       "panelCollapsed": "नज पैनल संक्षिप्त",
@@ -258,7 +257,6 @@
       "connectedButton": "{{name}} को आज जुड़े के रूप में चिह्नित करें",
       "selectDateButton": "{{name}} से कब जुड़े चुनें"
     },
-
     "naybor": {
       "sosRegion": "त्वरित SOS संपर्क",
       "sosContactsList": "त्वरित संपर्क:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "सभी {{count}} चयनित पड़ोसियों को संदेश भेजें",
       "locationDescription": "सक्षम होने पर, आपका अनुमानित स्थान आपके पड़ोसियों के साथ साझा किया जाएगा"
     },
-
     "dialog": {
       "close": "डायलॉग बंद करें",
       "back": "वापस जाएं",
       "confirm": "कार्रवाई की पुष्टि करें"
     },
-
     "form": {
       "showPassword": "पासवर्ड दिखाएं",
       "hidePassword": "पासवर्ड छिपाएं",
@@ -295,7 +291,6 @@
       "selectCountry": "देश चुनें",
       "phoneNumber": "फोन नंबर"
     },
-
     "status": {
       "online": "ऑनलाइन",
       "offline": "ऑफलाइन",
@@ -425,5 +420,114 @@
     "mobileOnly": "संपर्क पिकर केवल मोबाइल डिवाइस पर उपलब्ध है। इसके बजाय vCard या CSV आयात का उपयोग करें।",
     "browserNotSupported": "आपका ब्राउज़र संपर्क पिकर का समर्थन नहीं करता। इसके बजाय vCard या CSV आयात का उपयोग करें।",
     "useFileImport": "इसके बजाय vCard या CSV फ़ाइल से आयात करने का प्रयास करें।"
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "नाम"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}} में से {{available}} स्थान उपलब्ध",
+    "spotsUsed": "{{used}}/{{limit}} स्थान उपयोग में"
+  },
+  "friendCard": {
+    "dragToReorder": "पुनर्व्यवस्थित करने के लिए खींचें",
+    "connectingVia": "{{method}} के माध्यम से कनेक्ट हो रहा है",
+    "callVia": "{{method}} के माध्यम से कॉल करें",
+    "editContactInfo": "संपर्क जानकारी संपादित करें",
+    "promoteTo": "पदोन्नति करें",
+    "moveTo": "{{tier}} में ले जाएं"
+  },
+  "connections": {
+    "requests": "कनेक्शन अनुरोध",
+    "requestsDescription": "जो लोग आपसे जुड़ना चाहते हैं",
+    "unknownUser": "अज्ञात उपयोगकर्ता",
+    "addedYouAs": "आपको {{tier}} के रूप में जोड़ा",
+    "circleHidden": "सर्कल छुपा हुआ है",
+    "viaService": "{{service}} के माध्यम से"
+  },
+  "roleModel": {
+    "addTitle": "रोल मॉडल जोड़ें",
+    "addDescription": "किसी ऐसे व्यक्ति को जोड़ें जिनकी जीवन कहानी आपको प्रेरित करती है — जीवित या दिवंगत।",
+    "namePlaceholder": "जैसे, मार्कस ऑरेलियस, माया एंजेलो...",
+    "whyRoleModel": "यह व्यक्ति रोल मॉडल क्यों है?",
+    "reasonPlaceholder": "वर्णन करें कि आप उनमें क्या प्रशंसा करते हैं, आप कौन से गुण अपनाना चाहते हैं, या उनकी कहानी आपको अच्छा, बेहतर, सर्वश्रेष्ठ बनने के लिए कैसे प्रेरित करती है...",
+    "visibilityNote": "यह आपके पुष्ट कनेक्शन को दिखाई देगा।",
+    "editReason": "कारण संपादित करें",
+    "editReasonTitle": "रोल मॉडल कारण संपादित करें",
+    "editReasonDescription": "अपडेट करें कि {{name}} आपके लिए रोल मॉडल क्यों है।"
+  },
+  "reserved": {
+    "spotsCount": "{{count}} आरक्षित स्थान",
+    "spotsLabel": "आरक्षित स्थान",
+    "editGroup": "समूह संपादित करें",
+    "deleteGroup": "समूह हटाएं",
+    "deleteConfirmTitle": "आरक्षित समूह हटाएं?",
+    "deleteConfirmDescription": "यह आपके {{tier}} टियर से {{count}} आरक्षित स्थान{{note}} हटा देगा।",
+    "editTitle": "आरक्षित समूह संपादित करें — {{tier}}",
+    "editDescription": "इस आरक्षित समूह के लिए स्थानों की संख्या और नोट अपडेट करें।",
+    "maxAvailable": "अधिकतम उपलब्ध: {{count}} स्थान",
+    "privateNoteLabel": "निजी नोट (वैकल्पिक)",
+    "notePlaceholder": "केवल आप ही इसे देख सकते हैं। जैसे, 'हाइकिंग ग्रुप के लोग'",
+    "notePlaceholderLong": "केवल आप ही इसे देख सकते हैं। जैसे, 'हाइकिंग ग्रुप के लोग' या 'परिवार के सदस्य जो गोपनीयता पसंद करते हैं'",
+    "addTitle": "आरक्षित समूह जोड़ें — {{tier}}",
+    "addDescription": "उन लोगों के लिए स्थान आरक्षित करें जिन्हें आप स्पष्ट रूप से सूचीबद्ध नहीं करना चाहते। प्रत्येक समूह आपकी {{tier}} सीमा में गिना जाता है लेकिन निजी रहता है।",
+    "capacitySummary": "{{named}} नामित + {{reserved}} पहले से आरक्षित + {{new}} नए = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "समूह जोड़ें"
+  },
+  "addFriend": {
+    "addNaybor": "पड़ोसी जोड़ें",
+    "addParasocial": "पैरासोशल जोड़ें",
+    "addFriend": "{{tier}} मित्र जोड़ें",
+    "addFriendButton": "मित्र जोड़ें",
+    "circleFull": "आपका {{tier}} सर्कल पूरा है",
+    "circleFullHint": "यहां किसी को जोड़ने के लिए, आपको पहले एक वर्तमान {{tier}} मित्र को दूसरे टियर में ले जाना होगा।",
+    "namePlaceholder": "उनका नाम",
+    "emailOptional": "ईमेल (वैकल्पिक)",
+    "emailPlaceholder": "आपसी मिलान सूचनाओं के लिए",
+    "emailHint": "यदि वे भी आपको {{tier}} मित्र के रूप में सूचीबद्ध करते हैं और आप दोनों के पास सूचनाएं सक्षम हैं, तो आप दोनों को आपके पारस्परिक कनेक्शन की सूचना दी जाएगी।",
+    "addEmailButton": "आपसी मिलान के लिए ईमेल जोड़ें",
+    "phoneOptional": "फोन (वैकल्पिक)",
+    "preferredContactMethod": "पसंदीदा संपर्क विधि",
+    "phoneHint": "मित्रों तक पहुंचने के लिए टेंडिंग सुविधा के लिए इसका उपयोग करें।",
+    "nayborPhoneHint": "आपके पड़ोसियों की संपर्क जानकारी आपातकालीन स्थितियों और पारस्परिक सहायता के लिए आवश्यक है।",
+    "addPhoneButton": "फेस टाइम के लिए फोन जोड़ें",
+    "addNayborPhoneButton": "आपातकाल के लिए संपर्क जानकारी जोड़ें"
   }
 }

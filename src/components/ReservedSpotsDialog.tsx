@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Minus, Plus, Lock, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,6 +25,7 @@ export function ReservedSpotsDialog({
   currentReservedTotal,
   onSave,
 }: ReservedSpotsDialogProps) {
+  const { t } = useTranslation();
   const [count, setCount] = useState(1);
   const [note, setNote] = useState('');
 
@@ -52,11 +54,10 @@ export function ReservedSpotsDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <Lock className="w-5 h-5 text-muted-foreground" />
-            Add Reserved Group — {tierInfo.name}
+            {t('reserved.addTitle', { tier: t(`tiers.${tier}`) })}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Reserve spots for people you don't want to explicitly list. 
-            Each group counts toward your {tierInfo.name.toLowerCase()} limit but stays private.
+            {t('reserved.addDescription', { tier: t(`tiers.${tier}`).toLowerCase() })}
           </DialogDescription>
         </DialogHeader>
 
@@ -82,10 +83,10 @@ export function ReservedSpotsDialog({
                 {count}
               </div>
               <div className="text-sm text-muted-foreground">
-                reserved spot{count !== 1 ? 's' : ''}
+                {t('reserved.spotsLabel', { count })}
               </div>
             </motion.div>
-            
+
             <Button
               variant="outline"
               size="icon"
@@ -98,29 +99,36 @@ export function ReservedSpotsDialog({
           </div>
 
           <div className="text-center text-sm text-muted-foreground">
-            {friendCount} named + {currentReservedTotal} already reserved + {count} new = {friendCount + currentReservedTotal + count}/{TIER_LIMITS[tier]} {tierInfo.name.toLowerCase()}
+            {t('reserved.capacitySummary', {
+              named: friendCount,
+              reserved: currentReservedTotal,
+              new: count,
+              total: friendCount + currentReservedTotal + count,
+              limit: TIER_LIMITS[tier],
+              tier: t(`tiers.${tier}`).toLowerCase()
+            })}
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="note" className="flex items-center gap-2">
               <MessageSquare className="w-4 h-4" />
-              Private Note (optional)
+              {t('reserved.privateNoteLabel')}
             </Label>
             <Textarea
               id="note"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              placeholder="Only you can see this. E.g., 'People from the hiking group' or 'Family members who prefer privacy'"
+              placeholder={t('reserved.notePlaceholderLong')}
               rows={3}
             />
           </div>
 
           <div className="flex justify-end gap-2">
             <Button variant="outline" onClick={handleClose}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button onClick={handleSave} disabled={maxNew <= 0}>
-              Add Group
+              {t('reserved.addGroup')}
             </Button>
           </div>
         </div>

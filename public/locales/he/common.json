@@ -146,7 +146,9 @@
     "search": "חפש",
     "filter": "סנן",
     "export": "ייצוא",
-    "import": "ייבוא"
+    "import": "ייבוא",
+    "remove": "הסר",
+    "accept": "קבל"
   },
   "friend": {
     "addFriend": "הוסף חבר",
@@ -218,7 +220,6 @@
     "notSelected": "לא נבחר",
     "required": "חובה",
     "optional": "אופציונלי",
-
     "feed": {
       "tabList": "פידים של מעגלי חברים",
       "coreTab": "פיד ליבה - החברים הכי קרובים שלך",
@@ -226,7 +227,6 @@
       "outerTab": "פיד חיצוני פלוס - מעגל מורחב כולל שכנים",
       "manageTab": "נהל את מעגל החברים שלך"
     },
-
     "post": {
       "likeButton": "אהב את הפוסט הזה",
       "unlikeButton": "הסר לייק מהפוסט הזה",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "אולי אגיע למפגש",
       "rsvpOptions": "אפשרויות אישור הגעה"
     },
-
     "nudge": {
       "panelExpanded": "פאנל תזכורת מורחב",
       "panelCollapsed": "פאנל תזכורת מצומצם",
@@ -258,7 +257,6 @@
       "connectedButton": "סמן את {{name}} כמחובר היום",
       "selectDateButton": "בחר מתי התחברת עם {{name}}"
     },
-
     "naybor": {
       "sosRegion": "אנשי קשר מהירים למקרי חירום",
       "sosContactsList": "אנשי קשר מהירים:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "שלח הודעה לכל {{count}} השכנים הנבחרים",
       "locationDescription": "כאשר מופעל, המיקום המשוער שלך ישותף עם השכנים שלך"
     },
-
     "dialog": {
       "close": "סגור דיאלוג",
       "back": "חזור",
       "confirm": "אשר פעולה"
     },
-
     "form": {
       "showPassword": "הצג סיסמה",
       "hidePassword": "הסתר סיסמה",
@@ -295,7 +291,6 @@
       "selectCountry": "בחר מדינה",
       "phoneNumber": "מספר טלפון"
     },
-
     "status": {
       "online": "מחובר",
       "offline": "לא מחובר",
@@ -425,5 +420,114 @@
     "mobileOnly": "בורר אנשי הקשר זמין רק במכשירים ניידים. השתמש בייבוא vCard או CSV במקום.",
     "browserNotSupported": "הדפדפן שלך אינו תומך בבורר אנשי קשר. השתמש בייבוא vCard או CSV במקום.",
     "useFileImport": "נסה לייבא מקובץ vCard או CSV במקום."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "שם"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} מתוך {{limit}} מקומות פנויים",
+    "spotsUsed": "{{used}}/{{limit}} מקומות בשימוש"
+  },
+  "friendCard": {
+    "dragToReorder": "גרור לסידור מחדש",
+    "connectingVia": "מתחבר דרך {{method}}",
+    "callVia": "התקשר דרך {{method}}",
+    "editContactInfo": "ערוך פרטי קשר",
+    "promoteTo": "קדם ל",
+    "moveTo": "העבר ל{{tier}}"
+  },
+  "connections": {
+    "requests": "בקשות חיבור",
+    "requestsDescription": "אנשים שרוצים להתחבר אליך",
+    "unknownUser": "משתמש לא ידוע",
+    "addedYouAs": "הוסיף אותך כ{{tier}}",
+    "circleHidden": "מעגל מוסתר",
+    "viaService": "דרך {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "הוסף דמות לחיקוי",
+    "addDescription": "הוסף מישהו שסיפור חייו מעורר בך השראה — חי או נפטר.",
+    "namePlaceholder": "לדוגמה, מרקוס אורליוס, מאיה אנג'לו...",
+    "whyRoleModel": "למה האדם הזה הוא דמות לחיקוי?",
+    "reasonPlaceholder": "תאר מה אתה מעריץ בהם, אילו תכונות אתה רוצה לאמץ, או איך הסיפור שלהם מעורר בך השראה להיות טוב, טוב יותר, הכי טוב...",
+    "visibilityNote": "זה יהיה גלוי לחיבורים המאושרים שלך.",
+    "editReason": "ערוך סיבה",
+    "editReasonTitle": "ערוך סיבת דמות לחיקוי",
+    "editReasonDescription": "עדכן למה {{name}} הוא דמות לחיקוי עבורך."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} מקום שמור",
+    "spotsLabel": "מקום שמור",
+    "editGroup": "ערוך קבוצה",
+    "deleteGroup": "מחק קבוצה",
+    "deleteConfirmTitle": "למחוק קבוצה שמורה?",
+    "deleteConfirmDescription": "זה יסיר {{count}} מקומות שמורים{{note}} מרמת ה{{tier}} שלך.",
+    "editTitle": "ערוך קבוצה שמורה — {{tier}}",
+    "editDescription": "עדכן את מספר המקומות והערה לקבוצה שמורה זו.",
+    "maxAvailable": "מקסימום זמין: {{count}} מקומות",
+    "privateNoteLabel": "הערה פרטית (אופציונלי)",
+    "notePlaceholder": "רק אתה יכול לראות את זה. למשל, 'אנשים מקבוצת הטיולים'",
+    "notePlaceholderLong": "רק אתה יכול לראות את זה. למשל, 'אנשים מקבוצת הטיולים' או 'בני משפחה שמעדיפים פרטיות'",
+    "addTitle": "הוסף קבוצה שמורה — {{tier}}",
+    "addDescription": "שמור מקומות לאנשים שאתה לא רוצה לרשום במפורש. כל קבוצה נספרת במגבלת ה{{tier}} שלך אבל נשארת פרטית.",
+    "capacitySummary": "{{named}} עם שם + {{reserved}} כבר שמורים + {{new}} חדשים = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "הוסף קבוצה"
+  },
+  "addFriend": {
+    "addNaybor": "הוסף שכן",
+    "addParasocial": "הוסף פרסוציאלי",
+    "addFriend": "הוסף חבר {{tier}}",
+    "addFriendButton": "הוסף חבר",
+    "circleFull": "מעגל ה{{tier}} שלך מלא",
+    "circleFullHint": "כדי להוסיף מישהו כאן, תצטרך להעביר קודם חבר {{tier}} נוכחי לרמה אחרת.",
+    "namePlaceholder": "השם שלהם",
+    "emailOptional": "אימייל (אופציונלי)",
+    "emailPlaceholder": "להתראות התאמה הדדית",
+    "emailHint": "אם הם גם רושמים אותך כחבר {{tier}} ולשניכם יש התראות מופעלות, שניכם תקבלו הודעה על החיבור ההדדי שלכם.",
+    "addEmailButton": "הוסף אימייל להתאמה הדדית",
+    "phoneOptional": "טלפון (אופציונלי)",
+    "preferredContactMethod": "אמצעי התקשרות מועדף",
+    "phoneHint": "השתמש בזה לפיצ'ר הטיפוח כדי לפנות לחברים.",
+    "nayborPhoneHint": "מידע ליצירת קשר עם השכנים שלך חיוני למקרי חירום ותמיכה הדדית.",
+    "addPhoneButton": "הוסף טלפון לשיחות וידאו",
+    "addNayborPhoneButton": "הוסף פרטי קשר למקרי חירום"
   }
 }

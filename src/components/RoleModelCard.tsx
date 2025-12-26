@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { MoreVertical, Trash2, Star, GripVertical, Edit, ChevronDown, ChevronUp } from 'lucide-react';
 import { useSortable } from '@dnd-kit/sortable';
@@ -29,12 +30,13 @@ interface RoleModelCardProps {
   onUpdateReason?: (id: string, reason: string) => void;
 }
 
-export function RoleModelCard({ 
-  friend, 
+export function RoleModelCard({
+  friend,
   rank,
   onRemove,
   onUpdateReason,
 }: RoleModelCardProps) {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [editedReason, setEditedReason] = useState(friend.roleModelReason || '');
@@ -78,7 +80,7 @@ export function RoleModelCard({
             {...attributes}
             {...listeners}
             className="touch-none p-1 -ml-1 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing"
-            aria-label="Drag to reorder"
+            aria-label={t('friendCard.dragToReorder')}
           >
             <GripVertical className="w-4 h-4" />
           </button>
@@ -127,15 +129,15 @@ export function RoleModelCard({
                   setEditDialogOpen(true);
                 }}>
                   <Edit className="w-4 h-4 mr-2" />
-                  Edit Reason
+                  {t('roleModel.editReason')}
                 </DropdownMenuItem>
               )}
-              <DropdownMenuItem 
+              <DropdownMenuItem
                 onClick={() => onRemove(friend.id)}
                 className="text-destructive focus:text-destructive"
               >
                 <Trash2 className="w-4 h-4 mr-2" />
-                Remove
+                {t('actions.remove')}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -160,16 +162,16 @@ export function RoleModelCard({
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Star className="w-5 h-5 text-tier-rolemodel" />
-              Edit Role Model Reason
+              {t('roleModel.editReasonTitle')}
             </DialogTitle>
             <DialogDescription>
-              Update why {friend.name} is a role model to you.
+              {t('roleModel.editReasonDescription', { name: friend.name })}
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <div className="space-y-2">
-              <Label htmlFor="editReason">Why is this person a role model?</Label>
+              <Label htmlFor="editReason">{t('roleModel.whyRoleModel')}</Label>
               <Textarea
                 id="editReason"
                 value={editedReason}
@@ -182,10 +184,10 @@ export function RoleModelCard({
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setEditDialogOpen(false)}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button onClick={handleSaveReason} disabled={!editedReason.trim()}>
-              Save
+              {t('actions.save')}
             </Button>
           </DialogFooter>
         </DialogContent>

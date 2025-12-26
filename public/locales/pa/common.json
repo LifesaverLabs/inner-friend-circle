@@ -146,7 +146,9 @@
     "search": "ਖੋਜੋ",
     "filter": "ਫਿਲਟਰ",
     "export": "ਐਕਸਪੋਰਟ",
-    "import": "ਇੰਪੋਰਟ"
+    "import": "ਇੰਪੋਰਟ",
+    "remove": "ਹਟਾਓ",
+    "accept": "ਸਵੀਕਾਰ ਕਰੋ"
   },
   "friend": {
     "addFriend": "ਦੋਸਤ ਸ਼ਾਮਲ ਕਰੋ",
@@ -218,7 +220,6 @@
     "notSelected": "ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ",
     "required": "ਲੋੜੀਂਦਾ",
     "optional": "ਵਿਕਲਪਿਕ",
-
     "feed": {
       "tabList": "ਦੋਸਤ ਘੇਰਾ ਫੀਡ",
       "coreTab": "ਕੋਰ ਫੀਡ - ਤੁਹਾਡੇ ਸਭ ਤੋਂ ਨਜ਼ਦੀਕੀ ਦੋਸਤ",
@@ -226,7 +227,6 @@
       "outerTab": "ਆਊਟਰ ਪਲੱਸ ਫੀਡ - ਗੁਆਂਢੀਆਂ ਸਮੇਤ ਵਿਸਤਾਰਿਤ ਘੇਰਾ",
       "manageTab": "ਆਪਣਾ ਦੋਸਤ ਘੇਰਾ ਪ੍ਰਬੰਧਿਤ ਕਰੋ"
     },
-
     "post": {
       "likeButton": "ਇਸ ਪੋਸਟ ਨੂੰ ਪਸੰਦ ਕਰੋ",
       "unlikeButton": "ਇਸ ਪੋਸਟ ਨੂੰ ਨਾਪਸੰਦ ਕਰੋ",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "ਮਿਲਣੀ ਲਈ ਸ਼ਾਇਦ",
       "rsvpOptions": "RSVP ਵਿਕਲਪ"
     },
-
     "nudge": {
       "panelExpanded": "ਨੱਜ ਪੈਨਲ ਵਿਸਤਾਰਿਤ",
       "panelCollapsed": "ਨੱਜ ਪੈਨਲ ਸੁੰਗੇੜਿਆ",
@@ -258,7 +257,6 @@
       "connectedButton": "{{name}} ਨੂੰ ਅੱਜ ਜੁੜੇ ਵਜੋਂ ਮਾਰਕ ਕਰੋ",
       "selectDateButton": "{{name}} ਨਾਲ ਕਦੋਂ ਜੁੜੇ ਚੁਣੋ"
     },
-
     "naybor": {
       "sosRegion": "ਤੇਜ਼ SOS ਸੰਪਰਕ",
       "sosContactsList": "ਤੇਜ਼ ਸੰਪਰਕ:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "ਸਾਰੇ {{count}} ਚੁਣੇ ਗੁਆਂਢੀਆਂ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜੋ",
       "locationDescription": "ਸਮਰੱਥ ਹੋਣ 'ਤੇ, ਤੁਹਾਡੀ ਅੰਦਾਜ਼ਨ ਥਾਂ ਤੁਹਾਡੇ ਗੁਆਂਢੀਆਂ ਨਾਲ ਸਾਂਝੀ ਕੀਤੀ ਜਾਵੇਗੀ"
     },
-
     "dialog": {
       "close": "ਡਾਇਲਾਗ ਬੰਦ ਕਰੋ",
       "back": "ਵਾਪਸ ਜਾਓ",
       "confirm": "ਕਾਰਵਾਈ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
     },
-
     "form": {
       "showPassword": "ਪਾਸਵਰਡ ਦਿਖਾਓ",
       "hidePassword": "ਪਾਸਵਰਡ ਲੁਕਾਓ",
@@ -295,7 +291,6 @@
       "selectCountry": "ਦੇਸ਼ ਚੁਣੋ",
       "phoneNumber": "ਫ਼ੋਨ ਨੰਬਰ"
     },
-
     "status": {
       "online": "ਔਨਲਾਈਨ",
       "offline": "ਔਫਲਾਈਨ",
@@ -425,5 +420,114 @@
     "mobileOnly": "Contact Picker ਸਿਰਫ਼ ਮੋਬਾਈਲ ਡਿਵਾਈਸਾਂ 'ਤੇ ਉਪਲਬਧ ਹੈ। ਇਸ ਦੀ ਬਜਾਏ vCard ਜਾਂ CSV ਇੰਪੋਰਟ ਵਰਤੋ।",
     "browserNotSupported": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ Contact Picker ਸਪੋਰਟ ਨਹੀਂ ਕਰਦਾ। ਇਸ ਦੀ ਬਜਾਏ vCard ਜਾਂ CSV ਇੰਪੋਰਟ ਵਰਤੋ।",
     "useFileImport": "ਇਸ ਦੀ ਬਜਾਏ vCard ਜਾਂ CSV ਫਾਈਲ ਤੋਂ ਇੰਪੋਰਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "ਨਾਮ"
+  },
+  "capacity": {
+    "spotsAvailable": "{{limit}} ਵਿੱਚੋਂ {{available}} ਸਥਾਨ ਉਪਲਬਧ",
+    "spotsUsed": "{{used}}/{{limit}} ਸਥਾਨ ਵਰਤੇ"
+  },
+  "friendCard": {
+    "dragToReorder": "ਮੁੜ ਕ੍ਰਮਬੱਧ ਕਰਨ ਲਈ ਖਿੱਚੋ",
+    "connectingVia": "{{method}} ਰਾਹੀਂ ਕਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ",
+    "callVia": "{{method}} ਰਾਹੀਂ ਕਾਲ ਕਰੋ",
+    "editContactInfo": "ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਸੋਧੋ",
+    "promoteTo": "ਤਰੱਕੀ ਦਿਓ",
+    "moveTo": "{{tier}} ਵਿੱਚ ਲੈ ਜਾਓ"
+  },
+  "connections": {
+    "requests": "ਕੁਨੈਕਸ਼ਨ ਬੇਨਤੀਆਂ",
+    "requestsDescription": "ਜੋ ਲੋਕ ਤੁਹਾਡੇ ਨਾਲ ਜੁੜਨਾ ਚਾਹੁੰਦੇ ਹਨ",
+    "unknownUser": "ਅਣਜਾਣ ਉਪਭੋਗਤਾ",
+    "addedYouAs": "ਤੁਹਾਨੂੰ {{tier}} ਵਜੋਂ ਜੋੜਿਆ",
+    "circleHidden": "ਸਰਕਲ ਲੁਕਿਆ ਹੋਇਆ",
+    "viaService": "{{service}} ਰਾਹੀਂ"
+  },
+  "roleModel": {
+    "addTitle": "ਰੋਲ ਮਾਡਲ ਜੋੜੋ",
+    "addDescription": "ਕਿਸੇ ਅਜਿਹੇ ਵਿਅਕਤੀ ਨੂੰ ਜੋੜੋ ਜਿਸਦੀ ਜੀਵਨ ਕਹਾਣੀ ਤੁਹਾਨੂੰ ਪ੍ਰੇਰਿਤ ਕਰਦੀ ਹੈ — ਜਿਉਂਦਾ ਜਾਂ ਮਰਿਆ।",
+    "namePlaceholder": "ਜਿਵੇਂ ਕਿ, ਮਾਰਕਸ ਔਰੇਲਿਅਸ, ਮਾਇਆ ਐਂਜਲੋ...",
+    "whyRoleModel": "ਇਹ ਵਿਅਕਤੀ ਰੋਲ ਮਾਡਲ ਕਿਉਂ ਹੈ?",
+    "reasonPlaceholder": "ਵਰਣਨ ਕਰੋ ਕਿ ਤੁਸੀਂ ਉਨ੍ਹਾਂ ਬਾਰੇ ਕੀ ਪ੍ਰਸ਼ੰਸਾ ਕਰਦੇ ਹੋ, ਤੁਸੀਂ ਕਿਹੜੇ ਗੁਣ ਅਪਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਜਾਂ ਉਨ੍ਹਾਂ ਦੀ ਕਹਾਣੀ ਤੁਹਾਨੂੰ ਚੰਗਾ, ਬਿਹਤਰ, ਸਭ ਤੋਂ ਵਧੀਆ ਬਣਨ ਲਈ ਕਿਵੇਂ ਪ੍ਰੇਰਿਤ ਕਰਦੀ ਹੈ...",
+    "visibilityNote": "ਇਹ ਤੁਹਾਡੇ ਪੁਸ਼ਟੀ ਕੀਤੇ ਕੁਨੈਕਸ਼ਨਾਂ ਨੂੰ ਦਿਖਾਈ ਦੇਵੇਗਾ।",
+    "editReason": "ਕਾਰਨ ਸੋਧੋ",
+    "editReasonTitle": "ਰੋਲ ਮਾਡਲ ਕਾਰਨ ਸੋਧੋ",
+    "editReasonDescription": "ਅੱਪਡੇਟ ਕਰੋ ਕਿ {{name}} ਤੁਹਾਡੇ ਲਈ ਰੋਲ ਮਾਡਲ ਕਿਉਂ ਹੈ।"
+  },
+  "reserved": {
+    "spotsCount": "{{count}} ਰਾਖਵਾਂ ਸਥਾਨ",
+    "spotsLabel": "ਰਾਖਵਾਂ ਸਥਾਨ",
+    "editGroup": "ਗਰੁੱਪ ਸੋਧੋ",
+    "deleteGroup": "ਗਰੁੱਪ ਮਿਟਾਓ",
+    "deleteConfirmTitle": "ਰਾਖਵਾਂ ਗਰੁੱਪ ਮਿਟਾਉਣਾ ਹੈ?",
+    "deleteConfirmDescription": "ਇਹ ਤੁਹਾਡੇ {{tier}} ਪੱਧਰ ਤੋਂ {{count}} ਰਾਖਵੇਂ ਸਥਾਨ{{note}} ਹਟਾ ਦੇਵੇਗਾ।",
+    "editTitle": "ਰਾਖਵਾਂ ਗਰੁੱਪ ਸੋਧੋ — {{tier}}",
+    "editDescription": "ਇਸ ਰਾਖਵੇਂ ਗਰੁੱਪ ਲਈ ਸਥਾਨਾਂ ਦੀ ਗਿਣਤੀ ਅਤੇ ਨੋਟ ਅੱਪਡੇਟ ਕਰੋ।",
+    "maxAvailable": "ਵੱਧ ਤੋਂ ਵੱਧ ਉਪਲਬਧ: {{count}} ਸਥਾਨ",
+    "privateNoteLabel": "ਨਿੱਜੀ ਨੋਟ (ਵਿਕਲਪਿਕ)",
+    "notePlaceholder": "ਸਿਰਫ਼ ਤੁਸੀਂ ਇਸਨੂੰ ਦੇਖ ਸਕਦੇ ਹੋ। ਜਿਵੇਂ ਕਿ, 'ਹਾਈਕਿੰਗ ਗਰੁੱਪ ਦੇ ਲੋਕ'",
+    "notePlaceholderLong": "ਸਿਰਫ਼ ਤੁਸੀਂ ਇਸਨੂੰ ਦੇਖ ਸਕਦੇ ਹੋ। ਜਿਵੇਂ ਕਿ, 'ਹਾਈਕਿੰਗ ਗਰੁੱਪ ਦੇ ਲੋਕ' ਜਾਂ 'ਪਰਿਵਾਰ ਦੇ ਮੈਂਬਰ ਜੋ ਗੋਪਨੀਯਤਾ ਪਸੰਦ ਕਰਦੇ ਹਨ'",
+    "addTitle": "ਰਾਖਵਾਂ ਗਰੁੱਪ ਜੋੜੋ — {{tier}}",
+    "addDescription": "ਉਨ੍ਹਾਂ ਲੋਕਾਂ ਲਈ ਸਥਾਨ ਰਾਖਵੇਂ ਕਰੋ ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ ਸਪੱਸ਼ਟ ਤੌਰ 'ਤੇ ਸੂਚੀਬੱਧ ਨਹੀਂ ਕਰਨਾ ਚਾਹੁੰਦੇ। ਹਰ ਗਰੁੱਪ ਤੁਹਾਡੀ {{tier}} ਸੀਮਾ ਵੱਲ ਗਿਣਿਆ ਜਾਂਦਾ ਹੈ ਪਰ ਨਿੱਜੀ ਰਹਿੰਦਾ ਹੈ।",
+    "capacitySummary": "{{named}} ਨਾਮ ਦਿੱਤੇ + {{reserved}} ਪਹਿਲਾਂ ਹੀ ਰਾਖਵੇਂ + {{new}} ਨਵੇਂ = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "ਗਰੁੱਪ ਜੋੜੋ"
+  },
+  "addFriend": {
+    "addNaybor": "ਗੁਆਂਢੀ ਜੋੜੋ",
+    "addParasocial": "ਪੈਰਾਸੋਸ਼ਲ ਜੋੜੋ",
+    "addFriend": "{{tier}} ਦੋਸਤ ਜੋੜੋ",
+    "addFriendButton": "ਦੋਸਤ ਜੋੜੋ",
+    "circleFull": "ਤੁਹਾਡਾ {{tier}} ਸਰਕਲ ਭਰਿਆ ਹੋਇਆ ਹੈ",
+    "circleFullHint": "ਇੱਥੇ ਕਿਸੇ ਨੂੰ ਜੋੜਨ ਲਈ, ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ ਮੌਜੂਦਾ {{tier}} ਦੋਸਤ ਨੂੰ ਕਿਸੇ ਹੋਰ ਪੱਧਰ 'ਤੇ ਲੈ ਜਾਣਾ ਹੋਵੇਗਾ।",
+    "namePlaceholder": "ਉਨ੍ਹਾਂ ਦਾ ਨਾਮ",
+    "emailOptional": "ਈਮੇਲ (ਵਿਕਲਪਿਕ)",
+    "emailPlaceholder": "ਆਪਸੀ ਮੇਲ ਸੂਚਨਾਵਾਂ ਲਈ",
+    "emailHint": "ਜੇਕਰ ਉਹ ਵੀ ਤੁਹਾਨੂੰ {{tier}} ਦੋਸਤ ਵਜੋਂ ਸੂਚੀਬੱਧ ਕਰਦੇ ਹਨ ਅਤੇ ਤੁਹਾਡੇ ਦੋਵਾਂ ਕੋਲ ਸੂਚਨਾਵਾਂ ਸਮਰੱਥ ਹਨ, ਤਾਂ ਤੁਹਾਨੂੰ ਦੋਵਾਂ ਨੂੰ ਤੁਹਾਡੇ ਆਪਸੀ ਕੁਨੈਕਸ਼ਨ ਬਾਰੇ ਸੂਚਿਤ ਕੀਤਾ ਜਾਵੇਗਾ।",
+    "addEmailButton": "ਆਪਸੀ ਮੇਲ ਲਈ ਈਮੇਲ ਜੋੜੋ",
+    "phoneOptional": "ਫ਼ੋਨ (ਵਿਕਲਪਿਕ)",
+    "preferredContactMethod": "ਪਸੰਦੀਦਾ ਸੰਪਰਕ ਤਰੀਕਾ",
+    "phoneHint": "ਦੋਸਤਾਂ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਲਈ ਟੈਂਡਿੰਗ ਵਿਸ਼ੇਸ਼ਤਾ ਲਈ ਇਸਦੀ ਵਰਤੋਂ ਕਰੋ।",
+    "nayborPhoneHint": "ਐਮਰਜੈਂਸੀ ਅਤੇ ਆਪਸੀ ਸਹਾਇਤਾ ਲਈ ਤੁਹਾਡੇ ਗੁਆਂਢੀਆਂ ਦੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ।",
+    "addPhoneButton": "ਫੇਸ ਟਾਈਮ ਲਈ ਫ਼ੋਨ ਜੋੜੋ",
+    "addNayborPhoneButton": "ਐਮਰਜੈਂਸੀ ਲਈ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਜੋੜੋ"
   }
 }

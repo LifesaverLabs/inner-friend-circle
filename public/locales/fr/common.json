@@ -146,7 +146,9 @@
     "search": "Rechercher",
     "filter": "Filtrer",
     "export": "Exporter",
-    "import": "Importer"
+    "import": "Importer",
+    "remove": "Supprimer",
+    "accept": "Accepter"
   },
   "friend": {
     "addFriend": "Ajouter un ami",
@@ -218,7 +220,6 @@
     "notSelected": "Non sélectionné",
     "required": "Obligatoire",
     "optional": "Facultatif",
-
     "feed": {
       "tabList": "Fils du cercle d'amis",
       "coreTab": "Fil Noyau - Vos amis les plus proches",
@@ -226,7 +227,6 @@
       "outerTab": "Fil Élargi Plus - Cercle étendu incluant les voisins",
       "manageTab": "Gérer votre cercle d'amis"
     },
-
     "post": {
       "likeButton": "Aimer cette publication",
       "unlikeButton": "Ne plus aimer cette publication",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "Peut-être à la rencontre",
       "rsvpOptions": "Options de réponse"
     },
-
     "nudge": {
       "panelExpanded": "Panneau de rappels développé",
       "panelCollapsed": "Panneau de rappels réduit",
@@ -258,7 +257,6 @@
       "connectedButton": "Marquer {{name}} comme contacté aujourd'hui",
       "selectDateButton": "Sélectionner quand vous avez contacté {{name}}"
     },
-
     "naybor": {
       "sosRegion": "Contacts SOS rapides",
       "sosContactsList": "Contacts rapides :",
@@ -281,13 +279,11 @@
       "messageAll_plural": "Envoyer un message aux {{count}} voisins sélectionnés",
       "locationDescription": "Lorsque activé, votre position approximative sera partagée avec vos voisins"
     },
-
     "dialog": {
       "close": "Fermer le dialogue",
       "back": "Retour",
       "confirm": "Confirmer l'action"
     },
-
     "form": {
       "showPassword": "Afficher le mot de passe",
       "hidePassword": "Masquer le mot de passe",
@@ -295,7 +291,6 @@
       "selectCountry": "Sélectionner le pays",
       "phoneNumber": "Numéro de téléphone"
     },
-
     "status": {
       "online": "En ligne",
       "offline": "Hors ligne",
@@ -425,5 +420,114 @@
     "mobileOnly": "Le sélecteur de contacts est uniquement disponible sur les appareils mobiles. Utilisez l'import vCard ou CSV à la place.",
     "browserNotSupported": "Votre navigateur ne prend pas en charge le sélecteur de contacts. Utilisez l'import vCard ou CSV à la place.",
     "useFileImport": "Essayez d'importer depuis un fichier vCard ou CSV à la place."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "Nom"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} sur {{limit}} places disponibles",
+    "spotsUsed": "{{used}}/{{limit}} places utilisées"
+  },
+  "friendCard": {
+    "dragToReorder": "Glisser pour réorganiser",
+    "connectingVia": "Connexion via {{method}}",
+    "callVia": "Appeler via {{method}}",
+    "editContactInfo": "Modifier les informations de contact",
+    "promoteTo": "Promouvoir à",
+    "moveTo": "Déplacer vers {{tier}}"
+  },
+  "connections": {
+    "requests": "Demandes de connexion",
+    "requestsDescription": "Personnes qui veulent se connecter avec vous",
+    "unknownUser": "Utilisateur inconnu",
+    "addedYouAs": "T'a ajouté comme {{tier}}",
+    "circleHidden": "Cercle masqué",
+    "viaService": "via {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "Ajouter un modèle",
+    "addDescription": "Ajoutez quelqu'un dont l'histoire de vie vous inspire — vivant ou décédé.",
+    "namePlaceholder": "par ex., Marc Aurèle, Maya Angelou...",
+    "whyRoleModel": "Pourquoi cette personne est-elle un modèle?",
+    "reasonPlaceholder": "Décrivez ce que vous admirez chez eux, les traits que vous voulez adopter, ou comment leur histoire vous inspire à être bon, meilleur, le meilleur...",
+    "visibilityNote": "Ceci sera visible par vos connexions confirmées.",
+    "editReason": "Modifier la raison",
+    "editReasonTitle": "Modifier la raison du modèle",
+    "editReasonDescription": "Mettez à jour pourquoi {{name}} est un modèle pour vous."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Place Réservée",
+    "spotsLabel": "place réservée",
+    "editGroup": "Modifier le groupe",
+    "deleteGroup": "Supprimer le groupe",
+    "deleteConfirmTitle": "Supprimer le groupe réservé?",
+    "deleteConfirmDescription": "Cela supprimera {{count}} places réservées{{note}} de votre niveau {{tier}}.",
+    "editTitle": "Modifier le groupe réservé — {{tier}}",
+    "editDescription": "Mettez à jour le nombre de places et la note pour ce groupe réservé.",
+    "maxAvailable": "Max disponible: {{count}} places",
+    "privateNoteLabel": "Note privée (optionnel)",
+    "notePlaceholder": "Vous seul pouvez voir ceci. Ex: 'Personnes du groupe de randonnée'",
+    "notePlaceholderLong": "Vous seul pouvez voir ceci. Ex: 'Personnes du groupe de randonnée' ou 'Membres de la famille qui préfèrent la confidentialité'",
+    "addTitle": "Ajouter un groupe réservé — {{tier}}",
+    "addDescription": "Réservez des places pour les personnes que vous ne voulez pas lister explicitement. Chaque groupe compte dans votre limite {{tier}} mais reste privé.",
+    "capacitySummary": "{{named}} nommés + {{reserved}} déjà réservés + {{new}} nouveaux = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Ajouter un groupe"
+  },
+  "addFriend": {
+    "addNaybor": "Ajouter un voisin",
+    "addParasocial": "Ajouter parasocial",
+    "addFriend": "Ajouter un ami {{tier}}",
+    "addFriendButton": "Ajouter un ami",
+    "circleFull": "Votre cercle {{tier}} est plein",
+    "circleFullHint": "Pour ajouter quelqu'un ici, vous devrez d'abord déplacer un ami {{tier}} actuel vers un autre niveau.",
+    "namePlaceholder": "Leur nom",
+    "emailOptional": "Email (optionnel)",
+    "emailPlaceholder": "Pour les notifications de correspondance mutuelle",
+    "emailHint": "S'ils vous listent également comme ami {{tier}} et que vous avez tous deux les notifications activées, vous serez tous deux notifiés de votre connexion mutuelle.",
+    "addEmailButton": "Ajouter email pour correspondance mutuelle",
+    "phoneOptional": "Téléphone (optionnel)",
+    "preferredContactMethod": "Méthode de contact préférée",
+    "phoneHint": "Utilisez ceci pour la fonction d'Entretien pour contacter des amis.",
+    "nayborPhoneHint": "Avoir les coordonnées de vos voisins est essentiel pour les urgences et le soutien mutuel.",
+    "addPhoneButton": "Ajouter téléphone pour appels vidéo",
+    "addNayborPhoneButton": "Ajouter info de contact pour urgences"
   }
 }

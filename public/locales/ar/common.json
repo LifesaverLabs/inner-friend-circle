@@ -146,7 +146,9 @@
     "search": "بحث",
     "filter": "تصفية",
     "export": "تصدير",
-    "import": "استيراد"
+    "import": "استيراد",
+    "remove": "إزالة",
+    "accept": "قبول"
   },
   "friend": {
     "addFriend": "إضافة صديق",
@@ -218,7 +220,6 @@
     "notSelected": "غير محدد",
     "required": "مطلوب",
     "optional": "اختياري",
-
     "feed": {
       "tabList": "خلاصات دائرة الأصدقاء",
       "coreTab": "خلاصة النواة - أقرب أصدقائك",
@@ -226,7 +227,6 @@
       "outerTab": "الخلاصة الخارجية بلس - الدائرة الموسعة بما في ذلك الجيران",
       "manageTab": "إدارة دائرة أصدقائك"
     },
-
     "post": {
       "likeButton": "إعجاب بهذا المنشور",
       "unlikeButton": "إلغاء الإعجاب بهذا المنشور",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "ربما أحضر اللقاء",
       "rsvpOptions": "خيارات الرد على الدعوة"
     },
-
     "nudge": {
       "panelExpanded": "لوحة التذكير موسعة",
       "panelCollapsed": "لوحة التذكير مطوية",
@@ -258,7 +257,6 @@
       "connectedButton": "تحديد {{name}} كمتواصل اليوم",
       "selectDateButton": "اختر متى تواصلت مع {{name}}"
     },
-
     "naybor": {
       "sosRegion": "جهات اتصال SOS السريعة",
       "sosContactsList": "جهات الاتصال السريعة:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "مراسلة {{count}} جيران محددين",
       "locationDescription": "عند التفعيل، سيتم مشاركة موقعك التقريبي مع جيرانك"
     },
-
     "dialog": {
       "close": "إغلاق النافذة",
       "back": "العودة",
       "confirm": "تأكيد الإجراء"
     },
-
     "form": {
       "showPassword": "إظهار كلمة المرور",
       "hidePassword": "إخفاء كلمة المرور",
@@ -295,7 +291,6 @@
       "selectCountry": "اختر الدولة",
       "phoneNumber": "رقم الهاتف"
     },
-
     "status": {
       "online": "متصل",
       "offline": "غير متصل",
@@ -425,5 +420,114 @@
     "mobileOnly": "منتقي جهات الاتصال متاح فقط على الأجهزة المحمولة. استخدم استيراد vCard أو CSV بدلاً من ذلك.",
     "browserNotSupported": "متصفحك لا يدعم منتقي جهات الاتصال. استخدم استيراد vCard أو CSV بدلاً من ذلك.",
     "useFileImport": "جرب الاستيراد من ملف vCard أو CSV بدلاً من ذلك."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "الاسم"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} من {{limit}} أماكن متاحة",
+    "spotsUsed": "{{used}}/{{limit}} أماكن مستخدمة"
+  },
+  "friendCard": {
+    "dragToReorder": "اسحب لإعادة الترتيب",
+    "connectingVia": "الاتصال عبر {{method}}",
+    "callVia": "اتصل عبر {{method}}",
+    "editContactInfo": "تعديل معلومات الاتصال",
+    "promoteTo": "ترقية إلى",
+    "moveTo": "نقل إلى {{tier}}"
+  },
+  "connections": {
+    "requests": "طلبات الاتصال",
+    "requestsDescription": "الأشخاص الذين يريدون التواصل معك",
+    "unknownUser": "مستخدم غير معروف",
+    "addedYouAs": "أضافك كـ {{tier}}",
+    "circleHidden": "الدائرة مخفية",
+    "viaService": "عبر {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "إضافة قدوة",
+    "addDescription": "أضف شخصًا تلهمك قصة حياته - حيًا أو متوفى.",
+    "namePlaceholder": "مثل: ماركوس أوريليوس، مايا أنجيلو...",
+    "whyRoleModel": "لماذا هذا الشخص قدوة؟",
+    "reasonPlaceholder": "صف ما تعجبك فيهم، والصفات التي تريد تبنيها، أو كيف تلهمك قصتهم لتكون جيدًا، أفضل، الأفضل...",
+    "visibilityNote": "سيكون هذا مرئيًا لاتصالاتك المؤكدة.",
+    "editReason": "تعديل السبب",
+    "editReasonTitle": "تعديل سبب القدوة",
+    "editReasonDescription": "حدث سبب اعتبار {{name}} قدوة لك."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} مكان محجوز",
+    "spotsLabel": "مكان محجوز",
+    "editGroup": "تعديل المجموعة",
+    "deleteGroup": "حذف المجموعة",
+    "deleteConfirmTitle": "حذف المجموعة المحجوزة؟",
+    "deleteConfirmDescription": "سيؤدي هذا إلى إزالة {{count}} مكان محجوز{{note}} من طبقتك {{tier}}.",
+    "editTitle": "تعديل المجموعة المحجوزة — {{tier}}",
+    "editDescription": "قم بتحديث عدد الأماكن والملاحظة لهذه المجموعة المحجوزة.",
+    "maxAvailable": "الحد الأقصى المتاح: {{count}} أماكن",
+    "privateNoteLabel": "ملاحظة خاصة (اختياري)",
+    "notePlaceholder": "أنت فقط من يمكنه رؤية هذا. مثل: 'أشخاص من مجموعة المشي'",
+    "notePlaceholderLong": "أنت فقط من يمكنه رؤية هذا. مثل: 'أشخاص من مجموعة المشي' أو 'أفراد العائلة الذين يفضلون الخصوصية'",
+    "addTitle": "إضافة مجموعة محجوزة — {{tier}}",
+    "addDescription": "احجز أماكن للأشخاص الذين لا تريد إدراجهم صراحة. تحتسب كل مجموعة ضمن حد {{tier}} الخاص بك ولكنها تظل خاصة.",
+    "capacitySummary": "{{named}} مسمى + {{reserved}} محجوز بالفعل + {{new}} جديد = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "إضافة مجموعة"
+  },
+  "addFriend": {
+    "addNaybor": "إضافة جار",
+    "addParasocial": "إضافة شخصية عامة",
+    "addFriend": "إضافة صديق {{tier}}",
+    "addFriendButton": "إضافة صديق",
+    "circleFull": "دائرة {{tier}} ممتلئة",
+    "circleFullHint": "لإضافة شخص هنا، ستحتاج إلى نقل صديق {{tier}} حالي إلى طبقة أخرى أولاً.",
+    "namePlaceholder": "اسمهم",
+    "emailOptional": "البريد الإلكتروني (اختياري)",
+    "emailPlaceholder": "لإشعارات المطابقة المتبادلة",
+    "emailHint": "إذا قاموا أيضًا بإدراجك كصديق {{tier}} وتم تمكين الإشعارات لكليكما، سيتم إخطاركما باتصالكما المتبادل.",
+    "addEmailButton": "إضافة بريد إلكتروني للمطابقة المتبادلة",
+    "phoneOptional": "الهاتف (اختياري)",
+    "preferredContactMethod": "طريقة الاتصال المفضلة",
+    "phoneHint": "استخدم هذا لميزة الرعاية للتواصل مع الأصدقاء.",
+    "nayborPhoneHint": "وجود معلومات الاتصال لجيرانك ضروري للطوارئ والدعم المتبادل.",
+    "addPhoneButton": "إضافة هاتف للتواصل المباشر",
+    "addNayborPhoneButton": "إضافة معلومات الاتصال للطوارئ"
   }
 }

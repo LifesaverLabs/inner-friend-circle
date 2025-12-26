@@ -146,7 +146,9 @@
     "search": "Tìm kiếm",
     "filter": "Lọc",
     "export": "Xuất",
-    "import": "Nhập"
+    "import": "Nhập",
+    "remove": "Xóa",
+    "accept": "Chấp nhận"
   },
   "friend": {
     "addFriend": "Thêm bạn",
@@ -218,7 +220,6 @@
     "notSelected": "Chưa chọn",
     "required": "Bắt buộc",
     "optional": "Tùy chọn",
-
     "feed": {
       "tabList": "Feed vòng bạn bè",
       "coreTab": "Feed Lõi - Bạn thân nhất",
@@ -226,7 +227,6 @@
       "outerTab": "Feed Ngoài Plus - Vòng mở rộng bao gồm hàng xóm",
       "manageTab": "Quản lý vòng bạn bè"
     },
-
     "post": {
       "likeButton": "Thích bài đăng này",
       "unlikeButton": "Bỏ thích bài đăng này",
@@ -247,7 +247,6 @@
       "rsvpMaybe": "Có thể tham gia",
       "rsvpOptions": "Tùy chọn phản hồi"
     },
-
     "nudge": {
       "panelExpanded": "Bảng nhắc nhở đã mở",
       "panelCollapsed": "Bảng nhắc nhở đã đóng",
@@ -258,7 +257,6 @@
       "connectedButton": "Đánh dấu {{name}} đã kết nối hôm nay",
       "selectDateButton": "Chọn ngày bạn đã kết nối với {{name}}"
     },
-
     "naybor": {
       "sosRegion": "Liên hệ SOS nhanh",
       "sosContactsList": "Liên hệ nhanh:",
@@ -281,13 +279,11 @@
       "messageAll_plural": "Nhắn tin cho {{count}} hàng xóm đã chọn",
       "locationDescription": "Khi bật, vị trí gần đúng của bạn sẽ được chia sẻ với hàng xóm"
     },
-
     "dialog": {
       "close": "Đóng hộp thoại",
       "back": "Quay lại",
       "confirm": "Xác nhận hành động"
     },
-
     "form": {
       "showPassword": "Hiện mật khẩu",
       "hidePassword": "Ẩn mật khẩu",
@@ -295,7 +291,6 @@
       "selectCountry": "Chọn quốc gia",
       "phoneNumber": "Số điện thoại"
     },
-
     "status": {
       "online": "Trực tuyến",
       "offline": "Ngoại tuyến",
@@ -425,5 +420,114 @@
     "mobileOnly": "Bộ chọn danh bạ chỉ khả dụng trên thiết bị di động. Sử dụng nhập vCard hoặc CSV thay thế.",
     "browserNotSupported": "Trình duyệt của bạn không hỗ trợ bộ chọn danh bạ. Sử dụng nhập vCard hoặc CSV thay thế.",
     "useFileImport": "Thử nhập từ tệp vCard hoặc CSV thay thế."
+  },
+  "emptyState": {
+    "noPostsYet": "No posts yet",
+    "noFriendsYet": {
+      "core": "No core friends yet",
+      "inner": "No inner circle friends yet",
+      "outer": "No outer circle friends yet"
+    },
+    "noPostsDescription": {
+      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
+      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
+      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+    },
+    "getStarted": {
+      "core": "Get started by adding up to 5 friends to your Core.",
+      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
+      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+    },
+    "addToSee": {
+      "core": "Add up to 5 friends to see their posts here.",
+      "inner": "Add up to 15 friends to see their posts here.",
+      "outer": "Add up to 150 friends to see their posts here."
+    },
+    "addFriends": {
+      "core": "Add Core Friends",
+      "inner": "Add Inner Circle Friends",
+      "outer": "Add Outer Circle Friends"
+    },
+    "createPost": "Create a Post",
+    "noParasoicalsYet": "No parasocials yet",
+    "noAcquaintedYet": "No acquainted cousins yet",
+    "noRoleModelsYet": "No role models yet",
+    "noNayborsYet": "No naybors yet",
+    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
+    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
+    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
+    "nayborsHint": "Introduce yourself to your naybors and add them here",
+    "addToCircleHint": "Add someone to your closest circle"
+  },
+  "labels": {
+    "name": "Tên"
+  },
+  "capacity": {
+    "spotsAvailable": "{{available}} trong {{limit}} chỗ trống",
+    "spotsUsed": "{{used}}/{{limit}} chỗ đã dùng"
+  },
+  "friendCard": {
+    "dragToReorder": "Kéo để sắp xếp lại",
+    "connectingVia": "Đang kết nối qua {{method}}",
+    "callVia": "Gọi qua {{method}}",
+    "editContactInfo": "Chỉnh sửa thông tin liên hệ",
+    "promoteTo": "Thăng cấp lên",
+    "moveTo": "Chuyển đến {{tier}}"
+  },
+  "connections": {
+    "requests": "Yêu cầu kết nối",
+    "requestsDescription": "Những người muốn kết nối với bạn",
+    "unknownUser": "Người dùng không xác định",
+    "addedYouAs": "Đã thêm bạn là {{tier}}",
+    "circleHidden": "Vòng tròn đã ẩn",
+    "viaService": "qua {{service}}"
+  },
+  "roleModel": {
+    "addTitle": "Thêm hình mẫu",
+    "addDescription": "Thêm ai đó mà câu chuyện cuộc đời truyền cảm hứng cho bạn — còn sống hoặc đã mất.",
+    "namePlaceholder": "ví dụ, Marcus Aurelius, Maya Angelou...",
+    "whyRoleModel": "Tại sao người này là hình mẫu?",
+    "reasonPlaceholder": "Mô tả những gì bạn ngưỡng mộ ở họ, những đặc điểm bạn muốn đón nhận, hoặc câu chuyện của họ truyền cảm hứng cho bạn trở nên tốt, tốt hơn, tốt nhất như thế nào...",
+    "visibilityNote": "Điều này sẽ hiển thị với các kết nối đã xác nhận của bạn.",
+    "editReason": "Chỉnh sửa lý do",
+    "editReasonTitle": "Chỉnh sửa lý do hình mẫu",
+    "editReasonDescription": "Cập nhật lý do {{name}} là hình mẫu cho bạn."
+  },
+  "reserved": {
+    "spotsCount": "{{count}} Chỗ Đã Đặt",
+    "spotsLabel": "chỗ đã đặt",
+    "editGroup": "Chỉnh sửa nhóm",
+    "deleteGroup": "Xóa nhóm",
+    "deleteConfirmTitle": "Xóa nhóm đã đặt?",
+    "deleteConfirmDescription": "Điều này sẽ xóa {{count}} chỗ đã đặt{{note}} khỏi cấp {{tier}} của bạn.",
+    "editTitle": "Chỉnh sửa nhóm đã đặt — {{tier}}",
+    "editDescription": "Cập nhật số lượng chỗ và ghi chú cho nhóm đã đặt này.",
+    "maxAvailable": "Tối đa có sẵn: {{count}} chỗ",
+    "privateNoteLabel": "Ghi chú riêng tư (tùy chọn)",
+    "notePlaceholder": "Chỉ bạn mới có thể thấy điều này. VD, 'Người từ nhóm đi bộ đường dài'",
+    "notePlaceholderLong": "Chỉ bạn mới có thể thấy điều này. VD, 'Người từ nhóm đi bộ đường dài' hoặc 'Thành viên gia đình thích riêng tư'",
+    "addTitle": "Thêm nhóm đã đặt — {{tier}}",
+    "addDescription": "Đặt trước chỗ cho những người bạn không muốn liệt kê rõ ràng. Mỗi nhóm được tính vào giới hạn {{tier}} của bạn nhưng vẫn riêng tư.",
+    "capacitySummary": "{{named}} đã đặt tên + {{reserved}} đã đặt trước + {{new}} mới = {{total}}/{{limit}} {{tier}}",
+    "addGroup": "Thêm nhóm"
+  },
+  "addFriend": {
+    "addNaybor": "Thêm hàng xóm",
+    "addParasocial": "Thêm quan hệ parasocial",
+    "addFriend": "Thêm bạn {{tier}}",
+    "addFriendButton": "Thêm bạn",
+    "circleFull": "Vòng tròn {{tier}} của bạn đã đầy",
+    "circleFullHint": "Để thêm ai đó vào đây, bạn cần chuyển một người bạn {{tier}} hiện tại sang cấp khác trước.",
+    "namePlaceholder": "Tên của họ",
+    "emailOptional": "Email (tùy chọn)",
+    "emailPlaceholder": "Cho thông báo khớp đôi",
+    "emailHint": "Nếu họ cũng thêm bạn là bạn {{tier}} và cả hai đều bật thông báo, cả hai sẽ được thông báo về kết nối chung.",
+    "addEmailButton": "Thêm email cho khớp đôi",
+    "phoneOptional": "Điện thoại (tùy chọn)",
+    "preferredContactMethod": "Phương thức liên hệ ưa thích",
+    "phoneHint": "Sử dụng cho tính năng Chăm sóc để liên hệ với bạn bè.",
+    "nayborPhoneHint": "Có thông tin liên hệ của hàng xóm là cần thiết cho trường hợp khẩn cấp và hỗ trợ lẫn nhau.",
+    "addPhoneButton": "Thêm điện thoại cho video call",
+    "addNayborPhoneButton": "Thêm thông tin liên hệ cho trường hợp khẩn cấp"
   }
 }
