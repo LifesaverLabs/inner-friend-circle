@@ -408,9 +408,11 @@ export function useFriendLists() {
     const friendsInTier = getFriendsInTier(tier).length;
     const currentReserved = (lists.reservedSpots[tier] || []).reduce((sum, g) => sum + g.count, 0);
     const maxNew = TIER_LIMITS[tier] - friendsInTier - currentReserved;
-    const validCount = Math.max(1, Math.min(count, maxNew));
 
-    if (validCount <= 0) return { success: false, error: 'No capacity for reserved spots' };
+    // Check if there's any capacity before proceeding
+    if (maxNew <= 0) return { success: false, error: 'No capacity for reserved spots' };
+
+    const validCount = Math.max(1, Math.min(count, maxNew));
 
     const newGroup: ReservedGroup = {
       id: crypto.randomUUID(),
