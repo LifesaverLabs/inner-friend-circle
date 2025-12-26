@@ -156,6 +156,26 @@ export function FriendDashboard({
     await respondToRequest(connectionId, false);
   };
 
+  const tiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
+
+  // Define allowed move transitions
+  // acquainted can only move to outer; outer can move to inner or acquainted
+  // rolemodel, parasocial, and naybor are standalone - no moves allowed
+  // naybor: neighbors stay neighbors
+  // parasocial: one-sided relationships can't convert to mutual; re-enter manually if they become real friends
+  const getAllowedMoves = useCallback((fromTier: TierType): TierType[] => {
+    switch (fromTier) {
+      case 'core': return ['inner'];
+      case 'inner': return ['core', 'outer'];
+      case 'outer': return ['inner', 'acquainted'];
+      case 'naybor': return []; // Naybors stay as naybors
+      case 'parasocial': return []; // Parasocials are one-sided; can't convert to mutual relationships
+      case 'rolemodel': return []; // Role models don't move between tiers
+      case 'acquainted': return ['outer'];
+      default: return [];
+    }
+  }, []);
+
   // Data Liberation handlers
   const handleDataImport = useCallback(
     (data: ExportableSocialGraph, options: { mergeStrategy: string }) => {
@@ -196,41 +216,7 @@ export function FriendDashboard({
     [lists.friends, addFriend, updateFriend]
   );
 
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <motion.div 
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="text-muted-foreground"
-        >
-          Loading your circles...
-        </motion.div>
-      </div>
-    );
-  }
-
-  const tiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
-
-  // Define allowed move transitions
-  // acquainted can only move to outer; outer can move to inner or acquainted
-  // rolemodel, parasocial, and naybor are standalone - no moves allowed
-  // naybor: neighbors stay neighbors
-  // parasocial: one-sided relationships can't convert to mutual; re-enter manually if they become real friends
-  const getAllowedMoves = (fromTier: TierType): TierType[] => {
-    switch (fromTier) {
-      case 'core': return ['inner'];
-      case 'inner': return ['core', 'outer'];
-      case 'outer': return ['inner', 'acquainted'];
-      case 'naybor': return []; // Naybors stay as naybors
-      case 'parasocial': return []; // Parasocials are one-sided; can't convert to mutual relationships
-      case 'rolemodel': return []; // Role models don't move between tiers
-      case 'acquainted': return ['outer'];
-      default: return [];
-    }
-  };
-
-  // Render prop for manage tab content
+  // Render prop for manage tab content - must be before early return to maintain hook order
   const renderManageContent = useCallback(() => (
     <div className="space-y-6">
       {tiers.map(tier => (
@@ -259,12 +245,26 @@ export function FriendDashboard({
       ))}
     </div>
   ), [
-    tiers, getFriendsInTier, lists.reservedSpots, handleAddFriend, handleMoveFriend,
+    getFriendsInTier, lists.reservedSpots, handleAddFriend, handleMoveFriend,
     handleRemoveFriend, handleAddReservedGroup, handleUpdateReservedGroup,
     handleRemoveReservedGroup, handleReorderFriends, getTierCapacity, isLoggedIn,
     handleAddLinkedFriend, updateFriend, getAllowedMoves, feedShares, seenShares,
     recordEngagement, user?.id
   ]);
+
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <motion.div
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+          className="text-muted-foreground"
+        >
+          Loading your circles...
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
