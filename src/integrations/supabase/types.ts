@@ -310,6 +310,285 @@ export type Database = {
         }
         Relationships: []
       }
+      emergency_dispatch_accounts: {
+        Row: {
+          id: string
+          organization_name: string
+          organization_type: Database["public"]["Enums"]["dispatch_organization_type"]
+          organization_code: string | null
+          jurisdictions: string[]
+          tax_id: string
+          insurance_carrier: string
+          insurance_policy_number: string
+          registered_agent_name: string
+          registered_agent_contact: string
+          primary_contact_name: string
+          primary_contact_email: string
+          primary_contact_phone: string
+          dispatch_center_phone: string | null
+          dispatch_center_address: string | null
+          verification_status: Database["public"]["Enums"]["dispatch_verification_status"]
+          verified_at: string | null
+          verified_by: string | null
+          rejection_reason: string | null
+          verification_notes: string | null
+          password_hash: string
+          api_key_hash: string | null
+          api_key_last_four: string | null
+          api_key_created_at: string | null
+          api_key_last_used_at: string | null
+          api_rate_limit: number
+          is_active: boolean
+          suspended_at: string | null
+          suspended_reason: string | null
+          suspended_by: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          organization_name: string
+          organization_type: Database["public"]["Enums"]["dispatch_organization_type"]
+          organization_code?: string | null
+          jurisdictions?: string[]
+          tax_id: string
+          insurance_carrier: string
+          insurance_policy_number: string
+          registered_agent_name: string
+          registered_agent_contact: string
+          primary_contact_name: string
+          primary_contact_email: string
+          primary_contact_phone: string
+          dispatch_center_phone?: string | null
+          dispatch_center_address?: string | null
+          verification_status?: Database["public"]["Enums"]["dispatch_verification_status"]
+          verified_at?: string | null
+          verified_by?: string | null
+          rejection_reason?: string | null
+          verification_notes?: string | null
+          password_hash: string
+          api_key_hash?: string | null
+          api_key_last_four?: string | null
+          api_key_created_at?: string | null
+          api_key_last_used_at?: string | null
+          api_rate_limit?: number
+          is_active?: boolean
+          suspended_at?: string | null
+          suspended_reason?: string | null
+          suspended_by?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          organization_name?: string
+          organization_type?: Database["public"]["Enums"]["dispatch_organization_type"]
+          organization_code?: string | null
+          jurisdictions?: string[]
+          tax_id?: string
+          insurance_carrier?: string
+          insurance_policy_number?: string
+          registered_agent_name?: string
+          registered_agent_contact?: string
+          primary_contact_name?: string
+          primary_contact_email?: string
+          primary_contact_phone?: string
+          dispatch_center_phone?: string | null
+          dispatch_center_address?: string | null
+          verification_status?: Database["public"]["Enums"]["dispatch_verification_status"]
+          verified_at?: string | null
+          verified_by?: string | null
+          rejection_reason?: string | null
+          verification_notes?: string | null
+          password_hash?: string
+          api_key_hash?: string | null
+          api_key_last_four?: string | null
+          api_key_created_at?: string | null
+          api_key_last_used_at?: string | null
+          api_rate_limit?: number
+          is_active?: boolean
+          suspended_at?: string | null
+          suspended_reason?: string | null
+          suspended_by?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "emergency_dispatch_accounts_verified_by_fkey"
+            columns: ["verified_by"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "emergency_dispatch_accounts_suspended_by_fkey"
+            columns: ["suspended_by"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      dispatch_access_requests: {
+        Row: {
+          id: string
+          request_id: string
+          dispatch_account_id: string
+          requesting_officer_name: string
+          requesting_officer_badge: string | null
+          resident_user_id: string
+          target_address: string
+          target_unit_number: string | null
+          emergency_scenario: string
+          emergency_description: string | null
+          is_life_threatening: boolean
+          legal_basis: Database["public"]["Enums"]["dispatch_legal_basis"]
+          case_number: string | null
+          warrant_number: string | null
+          warrant_issuing_judge: string | null
+          warrant_issued_at: string | null
+          warrant_expires_at: string | null
+          probable_cause_description: string | null
+          status: Database["public"]["Enums"]["dispatch_access_status"]
+          response_at: string | null
+          response_method: string | null
+          denial_reason: string | null
+          door_key_tree_data: Json | null
+          key_holders_returned: number | null
+          data_returned_at: string | null
+          accessed_at: string | null
+          expires_at: string | null
+          naybors_notified: string[] | null
+          naybor_notification_method: string | null
+          naybor_notification_sent_at: string | null
+          ip_address: string | null
+          user_agent: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          request_id?: string
+          dispatch_account_id: string
+          requesting_officer_name: string
+          requesting_officer_badge?: string | null
+          resident_user_id: string
+          target_address: string
+          target_unit_number?: string | null
+          emergency_scenario: string
+          emergency_description?: string | null
+          is_life_threatening?: boolean
+          legal_basis: Database["public"]["Enums"]["dispatch_legal_basis"]
+          case_number?: string | null
+          warrant_number?: string | null
+          warrant_issuing_judge?: string | null
+          warrant_issued_at?: string | null
+          warrant_expires_at?: string | null
+          probable_cause_description?: string | null
+          status?: Database["public"]["Enums"]["dispatch_access_status"]
+          response_at?: string | null
+          response_method?: string | null
+          denial_reason?: string | null
+          door_key_tree_data?: Json | null
+          key_holders_returned?: number | null
+          data_returned_at?: string | null
+          accessed_at?: string | null
+          expires_at?: string | null
+          naybors_notified?: string[] | null
+          naybor_notification_method?: string | null
+          naybor_notification_sent_at?: string | null
+          ip_address?: string | null
+          user_agent?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          request_id?: string
+          dispatch_account_id?: string
+          requesting_officer_name?: string
+          requesting_officer_badge?: string | null
+          resident_user_id?: string
+          target_address?: string
+          target_unit_number?: string | null
+          emergency_scenario?: string
+          emergency_description?: string | null
+          is_life_threatening?: boolean
+          legal_basis?: Database["public"]["Enums"]["dispatch_legal_basis"]
+          case_number?: string | null
+          warrant_number?: string | null
+          warrant_issuing_judge?: string | null
+          warrant_issued_at?: string | null
+          warrant_expires_at?: string | null
+          probable_cause_description?: string | null
+          status?: Database["public"]["Enums"]["dispatch_access_status"]
+          response_at?: string | null
+          response_method?: string | null
+          denial_reason?: string | null
+          door_key_tree_data?: Json | null
+          key_holders_returned?: number | null
+          data_returned_at?: string | null
+          accessed_at?: string | null
+          expires_at?: string | null
+          naybors_notified?: string[] | null
+          naybor_notification_method?: string | null
+          naybor_notification_sent_at?: string | null
+          ip_address?: string | null
+          user_agent?: string | null
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "dispatch_access_requests_dispatch_account_id_fkey"
+            columns: ["dispatch_account_id"]
+            isOneToOne: false
+            referencedRelation: "emergency_dispatch_accounts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "dispatch_access_requests_resident_user_id_fkey"
+            columns: ["resident_user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      admin_roles: {
+        Row: {
+          user_id: string
+          role: Database["public"]["Enums"]["admin_role_type"]
+          created_at: string
+          created_by: string | null
+        }
+        Insert: {
+          user_id: string
+          role: Database["public"]["Enums"]["admin_role_type"]
+          created_at?: string
+          created_by?: string | null
+        }
+        Update: {
+          user_id?: string
+          role?: Database["public"]["Enums"]["admin_role_type"]
+          created_at?: string
+          created_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "admin_roles_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "admin_roles_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -324,6 +603,11 @@ export type Database = {
     Enums: {
       circle_tier: "core" | "inner" | "outer"
       connection_status: "pending" | "confirmed" | "declined"
+      dispatch_organization_type: "police" | "fire" | "ems" | "combined" | "private_ems" | "hospital" | "crisis_center"
+      dispatch_verification_status: "pending" | "verified" | "rejected" | "suspended"
+      dispatch_access_status: "pending" | "approved" | "denied" | "expired"
+      dispatch_legal_basis: "consent" | "exigent_circumstances" | "court_order" | "welfare_check"
+      admin_role_type: "super_admin" | "dispatch_verifier"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -453,6 +737,11 @@ export const Constants = {
     Enums: {
       circle_tier: ["core", "inner", "outer"],
       connection_status: ["pending", "confirmed", "declined"],
+      dispatch_organization_type: ["police", "fire", "ems", "combined", "private_ems", "hospital", "crisis_center"],
+      dispatch_verification_status: ["pending", "verified", "rejected", "suspended"],
+      dispatch_access_status: ["pending", "approved", "denied", "expired"],
+      dispatch_legal_basis: ["consent", "exigent_circumstances", "court_order", "welfare_check"],
+      admin_role_type: ["super_admin", "dispatch_verifier"],
     },
   },
 } as const

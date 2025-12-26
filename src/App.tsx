@@ -10,6 +10,10 @@ import Profile from "./pages/Profile";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import DispatchRegistration from "./pages/dispatch/DispatchRegistration";
+import DispatchLogin from "./pages/dispatch/DispatchLogin";
+import DispatchDashboard from "./pages/dispatch/DispatchDashboard";
+import AdminDispatchPanel from "./pages/admin/AdminDispatchPanel";
 import { CookieConsentBanner } from "@/components/gdpr/CookieConsentBanner";
 import { useGDPR } from "@/hooks/useGDPR";
 
@@ -43,6 +47,12 @@ const AppContent = () => {
         <Route path="/u/:handle" element={<Profile />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        {/* Dispatch routes for emergency services */}
+        <Route path="/dispatch/register" element={<DispatchRegistration />} />
+        <Route path="/dispatch/login" element={<DispatchLogin />} />
+        <Route path="/dispatch" element={<DispatchDashboard />} />
+        {/* Admin routes */}
+        <Route path="/admin/dispatch" element={<AdminDispatchPanel />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
