@@ -33,16 +33,20 @@ describe('Friend Types and Constants', () => {
       expect(TIER_LIMITS.rolemodel).toBe(25);
     });
 
+    it('should have naybor limit of 25', () => {
+      expect(TIER_LIMITS.naybor).toBe(25);
+    });
+
     it('should have acquainted limit of 1000', () => {
       expect(TIER_LIMITS.acquainted).toBe(1000);
     });
 
-    it('should have exactly 6 tier limits', () => {
-      expect(Object.keys(TIER_LIMITS)).toHaveLength(6);
+    it('should have exactly 7 tier limits', () => {
+      expect(Object.keys(TIER_LIMITS)).toHaveLength(7);
     });
 
     it('should have all tiers defined', () => {
-      const expectedTiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
+      const expectedTiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
       expectedTiers.forEach(tier => {
         expect(TIER_LIMITS[tier]).toBeDefined();
         expect(typeof TIER_LIMITS[tier]).toBe('number');
@@ -62,7 +66,7 @@ describe('Friend Types and Constants', () => {
   });
 
   describe('TIER_INFO', () => {
-    const allTiers: TierType[] = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'];
+    const allTiers: TierType[] = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'];
 
     it('should have info for all tiers', () => {
       allTiers.forEach(tier => {
@@ -110,6 +114,10 @@ describe('Friend Types and Constants', () => {
 
     it('should have rolemodel tier properly named', () => {
       expect(TIER_INFO.rolemodel.name.toLowerCase()).toContain('role');
+    });
+
+    it('should have naybor tier properly named', () => {
+      expect(TIER_INFO.naybor.name.toLowerCase()).toContain('naybor');
     });
 
     it('should have acquainted tier properly named', () => {
@@ -252,6 +260,7 @@ describe('Friend Types and Constants', () => {
         core: [{ id: '1', count: 2 }],
         inner: [],
         outer: [],
+        naybor: [{ id: '2', count: 3, note: 'Neighbors' }],
         parasocial: [],
         rolemodel: [],
         acquainted: [],
@@ -259,6 +268,8 @@ describe('Friend Types and Constants', () => {
 
       expect(spots.core).toHaveLength(1);
       expect(spots.inner).toHaveLength(0);
+      expect(spots.naybor).toHaveLength(1);
+      expect(spots.naybor[0].count).toBe(3);
     });
 
     it('should accept valid FriendLists structure', () => {
@@ -275,6 +286,7 @@ describe('Friend Types and Constants', () => {
           core: [],
           inner: [],
           outer: [],
+          naybor: [],
           parasocial: [],
           rolemodel: [],
           acquainted: [],
@@ -283,6 +295,17 @@ describe('Friend Types and Constants', () => {
 
       expect(lists.friends).toHaveLength(1);
       expect(lists.reservedSpots).toBeDefined();
+    });
+
+    it('should accept Friend with naybor tier', () => {
+      const friend: Friend = {
+        id: 'naybor-friend',
+        name: 'Neighbor Friend',
+        tier: 'naybor',
+        addedAt: new Date(),
+      };
+
+      expect(friend.tier).toBe('naybor');
     });
   });
 
@@ -300,6 +323,11 @@ describe('Friend Types and Constants', () => {
     it('should include outer', () => {
       const tier: TierType = 'outer';
       expect(tier).toBe('outer');
+    });
+
+    it('should include naybor', () => {
+      const tier: TierType = 'naybor';
+      expect(tier).toBe('naybor');
     });
 
     it('should include parasocial', () => {

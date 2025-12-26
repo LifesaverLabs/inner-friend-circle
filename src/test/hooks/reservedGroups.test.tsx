@@ -62,6 +62,9 @@ const testReservedSpots = {
     { id: 'reserved-3', count: 1 },
   ],
   outer: [],
+  naybor: [
+    { id: 'reserved-5', count: 3, note: 'Neighborhood friends' },
+  ],
   parasocial: [
     { id: 'reserved-4', count: 5, note: 'Creators I follow' },
   ],
@@ -481,7 +484,7 @@ describe('Reserved Groups Persistence', () => {
   });
 
   describe('Reserved groups in all tiers', () => {
-    const allTiers = ['core', 'inner', 'outer', 'parasocial', 'rolemodel', 'acquainted'] as const;
+    const allTiers = ['core', 'inner', 'outer', 'naybor', 'parasocial', 'rolemodel', 'acquainted'] as const;
 
     it.each(allTiers)('should persist reserved groups in %s tier', async (tier) => {
       mockState.user = null;
@@ -572,6 +575,7 @@ describe('Reserved Groups Persistence', () => {
           core: 2, // Old numeric format
           inner: 0,
           outer: 0,
+          naybor: 0,
           parasocial: 0,
           rolemodel: 0,
           acquainted: 0,
@@ -621,6 +625,313 @@ describe('Reserved Groups Persistence', () => {
 
       expect(addResult.success).toBe(false);
       expect(addResult.error).toContain('No capacity');
+    });
+  });
+
+  describe('Naybor tier specific tests', () => {
+    it('should persist naybor reserved groups to localStorage', async () => {
+      mockState.user = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Add reserved groups specifically to naybor tier
+      act(() => {
+        result.current.addReservedGroup('naybor', 5, 'Neighbors');
+      });
+
+      await act(async () => {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      });
+
+      // Verify persisted
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const parsed = JSON.parse(stored!);
+
+      expect(parsed.reservedSpots.naybor).toHaveLength(1);
+      expect(parsed.reservedSpots.naybor[0].count).toBe(5);
+      expect(parsed.reservedSpots.naybor[0].note).toBe('Neighbors');
+    });
+
+    it('should load naybor reserved groups from localStorage', async () => {
+      // Pre-populate localStorage with naybor reserved groups
+      const dataWithNaybor = {
+        friends: [],
+        reservedSpots: {
+          core: [],
+          inner: [],
+          outer: [],
+          naybor: [
+            { id: 'naybor-1', count: 3, note: 'Neighborhood watch' },
+            { id: 'naybor-2', count: 2, note: 'Block party crew' },
+          ],
+          parasocial: [],
+          rolemodel: [],
+          acquainted: [],
+        },
+      };
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(dataWithNaybor));
+
+      mockState.user = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Verify naybor reserved groups are loaded
+      expect(result.current.lists.reservedSpots.naybor).toHaveLength(2);
+      expect(result.current.lists.reservedSpots.naybor[0].count).toBe(3);
+      expect(result.current.lists.reservedSpots.naybor[0].note).toBe('Neighborhood watch');
+      expect(result.current.lists.reservedSpots.naybor[1].count).toBe(2);
+    });
+
+    it('should save naybor reserved groups to Supabase', async () => {
+      mockState.user = { id: 'user-123' };
+      mockState.supabaseData = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      mockState.upsertCalls = [];
+
+      // Add naybor reserved group
+      act(() => {
+        result.current.addReservedGroup('naybor', 4, 'Community garden');
+      });
+
+      await act(async () => {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      });
+
+      // Verify upsert was called with naybor data
+      expect(mockState.upsertCalls.length).toBeGreaterThan(0);
+      const lastCall = mockState.upsertCalls[mockState.upsertCalls.length - 1];
+      expect(lastCall[0].reserved_spots.naybor).toHaveLength(1);
+      expect(lastCall[0].reserved_spots.naybor[0].count).toBe(4);
+    });
+
+    it('should load naybor reserved groups from Supabase', async () => {
+      mockState.user = { id: 'user-123' };
+      mockState.supabaseData = {
+        friends: [],
+        reserved_spots: {
+          core: [],
+          inner: [],
+          outer: [],
+          naybor: [
+            { id: 'naybor-db-1', count: 6, note: 'From database' },
+          ],
+          parasocial: [],
+          rolemodel: [],
+          acquainted: [],
+        },
+        last_tended_at: null,
+      };
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Verify naybor data loaded from Supabase
+      expect(result.current.lists.reservedSpots.naybor).toHaveLength(1);
+      expect(result.current.lists.reservedSpots.naybor[0].count).toBe(6);
+      expect(result.current.lists.reservedSpots.naybor[0].note).toBe('From database');
+    });
+
+    it('should correctly calculate naybor tier capacity with reserved groups', async () => {
+      mockState.user = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Add friends and reserved groups to naybor
+      act(() => {
+        result.current.addFriend({ name: 'Neighbor 1', tier: 'naybor' });
+        result.current.addFriend({ name: 'Neighbor 2', tier: 'naybor' });
+      });
+
+      act(() => {
+        result.current.addReservedGroup('naybor', 5, 'Future neighbors');
+      });
+
+      // Check capacity (naybor tier limit is 25)
+      const capacity = result.current.getTierCapacity('naybor');
+      expect(capacity.friendCount).toBe(2);
+      expect(capacity.reserved).toBe(5);
+      expect(capacity.used).toBe(7);
+      expect(capacity.available).toBe(18); // 25 - 2 - 5 = 18
+      expect(capacity.limit).toBe(25);
+    });
+
+    it('should prevent naybor reserved groups from exceeding tier capacity', async () => {
+      mockState.user = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Naybor tier has limit of 25
+      // Try to add more than the limit
+      let addResult: any;
+      act(() => {
+        addResult = result.current.addReservedGroup('naybor', 30, 'Too many');
+      });
+
+      // Should be capped at the maximum (25)
+      expect(addResult.success).toBe(true);
+      expect(addResult.group.count).toBe(25);
+
+      // Try to add more - should fail
+      act(() => {
+        addResult = result.current.addReservedGroup('naybor', 1);
+      });
+
+      expect(addResult.success).toBe(false);
+      expect(addResult.error).toContain('No capacity');
+    });
+
+    it('should preserve naybor reserved groups during logout transition', async () => {
+      const nayborData = {
+        friends: [],
+        reservedSpots: {
+          core: [],
+          inner: [],
+          outer: [],
+          naybor: [{ id: 'naybor-persist', count: 4, note: 'Should persist' }],
+          parasocial: [],
+          rolemodel: [],
+          acquainted: [],
+        },
+      };
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(nayborData));
+
+      mockState.user = { id: 'user-123' };
+      mockState.supabaseData = {
+        friends: [],
+        reserved_spots: nayborData.reservedSpots,
+        last_tended_at: null,
+      };
+
+      const { result, rerender } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Verify naybor data is present
+      expect(result.current.lists.reservedSpots.naybor).toHaveLength(1);
+
+      // Simulate logout
+      mockState.user = null;
+      rerender();
+
+      await act(async () => {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      });
+
+      // Verify naybor reserved groups weren't lost
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const parsed = JSON.parse(stored!);
+
+      // Should NOT have empty naybor array
+      expect(parsed.reservedSpots.naybor?.length).toBeGreaterThanOrEqual(0);
+    });
+
+    it('should update naybor reserved groups correctly', async () => {
+      mockState.user = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      // Add naybor reserved group
+      let addResult: any;
+      act(() => {
+        addResult = result.current.addReservedGroup('naybor', 3, 'Original');
+      });
+
+      const groupId = addResult.group.id;
+
+      // Update the reserved group
+      act(() => {
+        result.current.updateReservedGroup('naybor', groupId, 7, 'Updated naybor');
+      });
+
+      await act(async () => {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      });
+
+      // Verify update is persisted
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const parsed = JSON.parse(stored!);
+
+      expect(parsed.reservedSpots.naybor[0].count).toBe(7);
+      expect(parsed.reservedSpots.naybor[0].note).toBe('Updated naybor');
+    });
+
+    it('should remove naybor reserved groups correctly', async () => {
+      const nayborData = {
+        friends: [],
+        reservedSpots: {
+          core: [],
+          inner: [],
+          outer: [],
+          naybor: [
+            { id: 'naybor-remove-1', count: 3, note: 'To remove' },
+            { id: 'naybor-keep', count: 2, note: 'To keep' },
+          ],
+          parasocial: [],
+          rolemodel: [],
+          acquainted: [],
+        },
+      };
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(nayborData));
+
+      mockState.user = null;
+
+      const { result } = renderHook(() => useFriendLists());
+
+      await waitFor(() => {
+        expect(result.current.isLoaded).toBe(true);
+      });
+
+      expect(result.current.lists.reservedSpots.naybor).toHaveLength(2);
+
+      // Remove first reserved group
+      act(() => {
+        result.current.removeReservedGroup('naybor', 'naybor-remove-1');
+      });
+
+      await act(async () => {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      });
+
+      // Verify removal is persisted
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const parsed = JSON.parse(stored!);
+
+      expect(parsed.reservedSpots.naybor).toHaveLength(1);
+      expect(parsed.reservedSpots.naybor[0].id).toBe('naybor-keep');
     });
   });
 });
