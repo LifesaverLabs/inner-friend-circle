@@ -74,6 +74,16 @@ export function usePosts({ userId }: UsePostsOptions) {
         .rpc('get_visible_posts_for_user', { target_user_id: userId });
 
       if (postsError) {
+        // Check if the error is due to missing tables/functions (migration not applied)
+        if (postsError.message?.includes('function get_visible_posts_for_user') || 
+            postsError.message?.includes('relation "posts"') ||
+            postsError.message?.includes('does not exist')) {
+          console.warn('Posts tables not found - migration may not be applied yet. Using empty feed.');
+          setPosts([]);
+          setInteractions([]);
+          setLoading(false);
+          return;
+        }
         console.error('Error fetching posts:', postsError);
         throw postsError;
       }
@@ -145,6 +155,11 @@ export function usePosts({ userId }: UsePostsOptions) {
         .single();
 
       if (error) {
+        // Check if the error is due to missing tables (migration not applied)
+        if (error.message?.includes('relation "posts"') || error.message?.includes('does not exist')) {
+          console.warn('Posts table not found - migration may not be applied yet.');
+          return { success: false, error: 'Posts feature not available yet. Please contact support.' };
+        }
         console.error('Error creating post:', error);
         throw error;
       }
@@ -186,6 +201,11 @@ export function usePosts({ userId }: UsePostsOptions) {
         .single();
 
       if (error) {
+        // Check if the error is due to missing tables (migration not applied)
+        if (error.message?.includes('relation "post_interactions"') || error.message?.includes('does not exist')) {
+          console.warn('Post interactions table not found - migration may not be applied yet.');
+          return { success: false, error: 'Posts feature not available yet. Please contact support.' };
+        }
         console.error('Error adding interaction:', error);
         throw error;
       }
@@ -331,41 +351,50 @@ export function usePosts({ userId }: UsePostsOptions) {
 
     fetchPosts();
 
-    // Subscribe to posts changes
-    const postsChannel = supabase
-      .channel('posts-changes')
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'posts',
-        },
-        () => {
-          fetchPosts();
-        }
-      )
-      .subscribe();
+    // Only set up subscriptions if we're not in migration-pending state
+    let postsChannel: any = null;
+    let interactionsChannel: any = null;
 
-    // Subscribe to interactions changes
-    const interactionsChannel = supabase
-      .channel('interactions-changes')
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'post_interactions',
-        },
-        () => {
-          fetchPosts();
+    // Check if tables exist by trying a simple operation
+    supabase.from('posts').select('id').limit(1)
+      .then(({ error }) => {
+        if (!error) {
+          // Tables exist, set up subscriptions
+          postsChannel = supabase
+            .channel('posts-changes')
+            .on(
+              'postgres_changes',
+              {
+                event: '*',
+                schema: 'public',
+                table: 'posts',
+              },
+              () => {
+                fetchPosts();
+              }
+            )
+            .subscribe();
+
+          interactionsChannel = supabase
+            .channel('interactions-changes')
+            .on(
+              'postgres_changes',
+              {
+                event: '*',
+                schema: 'public',
+                table: 'post_interactions',
+              },
+              () => {
+                fetchPosts();
+              }
+            )
+            .subscribe();
         }
-      )
-      .subscribe();
+      });
 
     return () => {
-      supabase.removeChannel(postsChannel);
-      supabase.removeChannel(interactionsChannel);
+      if (postsChannel) supabase.removeChannel(postsChannel);
+      if (interactionsChannel) supabase.removeChannel(interactionsChannel);
     };
   }, [userId, fetchPosts]);
 

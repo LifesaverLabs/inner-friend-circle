@@ -24,16 +24,16 @@
         "description": "İsteğe bağlı olarak, yakın olarak listelediğiniz birinin sizi de listelediğini öğrenin — karşılıklılığın nazik bir kutlaması."
       },
       "dataLiberation": {
-        "title": "Your Data, Your Way",
-        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+        "title": "Verileriniz, Sizin Seçiminiz",
+        "description": "Tüm verilerinizi istediğiniz zaman dışa aktarın. Tam onay yönetimi, hesap silme ve veri taşınabilirliği ile GDPR uyumlu."
       },
       "nayborNetwork": {
-        "title": "Naybor Network",
-        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+        "title": "Komşu Ağı",
+        "description": "Güvenilir komşularla topluluk dayanıklılığı oluşturun. Hızlı SOS erişimi, paylaşılan acil durum kişileri ve karşılıklı yardım."
       },
       "globalReach": {
-        "title": "23 Languages",
-        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+        "title": "23 Dil",
+        "description": "Arapça, Urduca ve İbranice için RTL desteğiyle tam uluslararasılaştırma. Ana dilinizde mevcut."
       }
     },
     "mission": {
@@ -91,8 +91,8 @@
       "unexpectedError": "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin."
     },
     "toasts": {
-      "signOutError": "Failed to sign out",
-      "signOutSuccess": "Signed out successfully"
+      "signOutError": "Çıkış yapılamadı",
+      "signOutSuccess": "Başarıyla çıkış yapıldı"
     },
     "consent": {
       "agreeTo": "I agree to the",
@@ -175,15 +175,15 @@
     "import": "İçe Aktar",
     "remove": "Kaldır",
     "accept": "Kabul Et",
-    "refresh": "Refresh",
-    "retry": "Retry",
-    "share": "Share",
-    "sharing": "Sharing...",
-    "selectAll": "Select All",
-    "clear": "Clear",
-    "copy": "Copy",
-    "print": "Print",
-    "saving": "Saving..."
+    "refresh": "Yenile",
+    "retry": "Tekrar Dene",
+    "share": "Paylaş",
+    "sharing": "Paylaşılıyor...",
+    "selectAll": "Tümünü Seç",
+    "clear": "Temizle",
+    "copy": "Kopyala",
+    "print": "Yazdır",
+    "saving": "Kaydediliyor..."
   },
   "friend": {
     "addFriend": "Arkadaş Ekle",
@@ -470,49 +470,49 @@
     }
   },
   "emptyState": {
-    "noPostsYet": "No posts yet",
+    "noPostsYet": "Henüz gönderi yok",
     "noFriendsYet": {
-      "core": "No core friends yet",
-      "inner": "No inner circle friends yet",
-      "outer": "No outer circle friends yet"
+      "core": "Henüz çekirdek arkadaş yok",
+      "inner": "Henüz iç çember arkadaş yok",
+      "outer": "Henüz dış çember arkadaş yok"
     },
     "noPostsDescription": {
-      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
-      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
-      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+      "core": "Çekirdek arkadaşlarınız henüz bir şey paylaşmadı. İlk paylaşan siz olun!",
+      "inner": "İç çember arkadaşlarınız henüz bir şey paylaşmadı. İlk paylaşan siz olun!",
+      "outer": "Dış çember arkadaşlarınız henüz bir şey paylaşmadı. İlk paylaşan siz olun!"
     },
     "getStarted": {
-      "core": "Get started by adding up to 5 friends to your Core.",
-      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
-      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+      "core": "Çekirdeğinize 5 arkadaş ekleyerek başlayın.",
+      "inner": "İç Çemberinize 15 arkadaş ekleyerek başlayın.",
+      "outer": "Dış Çemberinize 150 arkadaş ekleyerek başlayın."
     },
     "addToSee": {
-      "core": "Add up to 5 friends to see their posts here.",
-      "inner": "Add up to 15 friends to see their posts here.",
-      "outer": "Add up to 150 friends to see their posts here."
+      "core": "Gönderilerini burada görmek için 5 arkadaş ekleyin.",
+      "inner": "Gönderilerini burada görmek için 15 arkadaş ekleyin.",
+      "outer": "Gönderilerini burada görmek için 150 arkadaş ekleyin."
     },
     "addFriends": {
-      "core": "Add Core Friends",
-      "inner": "Add Inner Circle Friends",
-      "outer": "Add Outer Circle Friends"
+      "core": "Çekirdek Arkadaş Ekle",
+      "inner": "İç Çember Arkadaş Ekle",
+      "outer": "Dış Çember Arkadaş Ekle"
     },
-    "createPost": "Create a Post",
-    "noParasoicalsYet": "No parasocials yet",
-    "noAcquaintedYet": "No acquainted cousins yet",
-    "noRoleModelsYet": "No role models yet",
-    "noNayborsYet": "No naybors yet",
-    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
-    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
-    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
-    "nayborsHint": "Introduce yourself to your naybors and add them here",
-    "addToCircleHint": "Add someone to your closest circle"
+    "createPost": "Gönderi Oluştur",
+    "noParasoicalsYet": "Henüz parasosyal yok",
+    "noAcquaintedYet": "Henüz tanıdık yok",
+    "noRoleModelsYet": "Henüz rol model yok",
+    "noNayborsYet": "Henüz komşu yok",
+    "addParasocialsHint": "Takip ettiğiniz içerik üreticileri, ünlüler veya figürler ekleyin",
+    "acquaintedHint": "Arkadaşlar zaman içinde temas eksikliğinden dolayı buraya yeniden sınıflandırılır",
+    "roleModelsHint": "Hayat hikayeleri sizi iyi, daha iyi, en iyi olmaya ilham veren insanları ekleyin",
+    "nayborsHint": "Komşularınızla tanışın ve buraya ekleyin",
+    "addToCircleHint": "En yakın çemberinize birini ekleyin"
   },
   "labels": {
     "name": "İsim",
     "email": "Email",
-    "phone": "Phone Number",
-    "notes": "Notes",
-    "handle": "Handle"
+    "phone": "Telefon Numarası",
+    "notes": "Notlar",
+    "handle": "Kullanıcı Adı"
   },
   "capacity": {
     "spotsAvailable": "{{limit}} yerden {{available}} tanesi mevcut",
@@ -578,8 +578,8 @@
     "addDescription": "Açıkça listelemek istemediğiniz kişiler için yer ayırın. Her grup {{tier}} limitinize sayılır ama özel kalır.",
     "capacitySummary": "{{named}} adlandırılmış + {{reserved}} zaten ayrılmış + {{new}} yeni = {{total}}/{{limit}} {{tier}}",
     "addGroup": "Grup Ekle",
-    "spotsCount_plural": "{{count}} Reserved Spots",
-    "spotsLabel_plural": "reserved spots"
+    "spotsCount_plural": "{{count}} Ayrılmış Yer",
+    "spotsLabel_plural": "ayrılmış yer"
   },
   "addFriend": {
     "addNaybor": "Komşu Ekle",
@@ -601,116 +601,116 @@
     "addNayborPhoneButton": "Acil durumlar için iletişim bilgisi ekle"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
-    "subtitle": "Curate and tend to your closest relationships",
-    "loading": "Loading your circles...",
-    "tend": "Tend",
-    "share": "Share",
-    "localStorageHint": "💡 Your lists are saved locally. Create an account to sync across devices and enable mutual matching.",
-    "dunbarDisclaimer": "Note: These Dunbar-inspired tier limits are subject to change as community conscience science evolves. Future modifications may include rules where certain tier counts affect others — for example, parasocial connections might reduce your allowable outer friend capacity.",
+    "title": "İç Çemberleriniz",
+    "subtitle": "En yakın ilişkilerinizi düzenleyin ve ilgilenin",
+    "loading": "Çemberleriniz yükleniyor...",
+    "tend": "İlgilen",
+    "share": "Paylaş",
+    "localStorageHint": "💡 Listeleriniz yerel olarak kaydedilir. Cihazlar arası senkronizasyon ve karşılıklı eşleştirme için hesap oluşturun.",
+    "dunbarDisclaimer": "Not: Bu Dunbar esinli seviye limitleri, topluluk bilinci bilimi geliştikçe değişebilir. Gelecekteki değişiklikler, belirli seviye sayılarının diğerlerini etkilediği kurallar içerebilir — örneğin, parasosyal bağlantılar izin verilen dış arkadaş kapasitenizi azaltabilir.",
     "toasts": {
-      "addedFriend": "Added {{name}} to your {{tier}} circle",
-      "movedFriend": "Moved {{name}} to {{tier}}",
-      "moveError": "Failed to move friend",
-      "removedFriend": "Removed {{name}} from your lists",
-      "addedReserved": "Added reserved group to {{tier}}",
-      "reservedError": "Failed to add reserved group",
-      "updatedReserved": "Updated reserved group",
-      "removedReserved": "Removed reserved group",
-      "imported": "Imported {{count}} friend",
-      "imported_plural": "Imported {{count}} friends",
-      "skippedDuplicates": "Skipped {{count}} duplicate",
-      "skippedDuplicates_plural": "Skipped {{count}} duplicates",
-      "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
+      "addedFriend": "{{name}} {{tier}} çemberinize eklendi",
+      "movedFriend": "{{name}} {{tier}}'a taşındı",
+      "moveError": "Arkadaş taşınamadı",
+      "removedFriend": "{{name}} listelerinizden kaldırıldı",
+      "addedReserved": "Ayrılmış grup {{tier}}'a eklendi",
+      "reservedError": "Ayrılmış grup eklenemedi",
+      "updatedReserved": "Ayrılmış grup güncellendi",
+      "removedReserved": "Ayrılmış grup kaldırıldı",
+      "imported": "{{count}} arkadaş içe aktarıldı",
+      "imported_plural": "{{count}} arkadaş içe aktarıldı",
+      "skippedDuplicates": "{{count}} kopya atlandı",
+      "skippedDuplicates_plural": "{{count}} kopya atlandı",
+      "dataLiberation": "Verileriniz size ait. Başka bir yere taşımak için istediğiniz zaman dışa aktarın."
     }
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
-    "learnMore": "Learn more...",
-    "showLess": "Show less",
-    "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
-    "videoTitle": "Dentyne Ice - Face Time",
-    "quote": "\"Make Face Time\" — that's the ideal. When distance separates you, we'll help you bridge it with video kalls. But always remember: nothing beats being there.",
+    "title": "Yüz Yüze Zaman, Reklam Zamanı Değil",
+    "description": "Sitemizden ayrıldığınızda kazanırız — en önemli insanlarla gerçek anları paylaşmak için.",
+    "learnMore": "Daha fazla bilgi...",
+    "showLess": "Daha az göster",
+    "inspiration": "İlham kaynağımız? Bu klasik Dentyne Ice reklamı — en iyi anların telefonu bırakıp orada olduğunuzda gerçekleştiğini mükemmel hatırlatıyor:",
+    "videoTitle": "Dentyne Ice - Yüz Yüze Zaman",
+    "quote": "\"Yüz Yüze Zaman Yarat\" — bu ideal. Mesafe sizi ayırdığında, video aramalarla köprü kurmanıza yardımcı olacağız. Ama her zaman unutmayın: orada olmak kadar iyi bir şey yok.",
     "features": {
       "spark": {
-        "title": "Spark Video Kalls",
-        "description": "When you're apart, one click connects you"
+        "title": "Video Aramalar Başlat",
+        "description": "Uzaktayken, bir tıkla bağlanın"
       },
       "tend": {
-        "title": "Tend Your Circles",
-        "description": "Reminders to reach out before connections fade"
+        "title": "Çemberlerinize İlgilenin",
+        "description": "Bağlantılar kaybolmadan önce ulaşma hatırlatmaları"
       },
       "pull": {
-        "title": "Pull Closer",
-        "description": "Move meaningful connections into tighter orbits"
+        "title": "Daha Yakına Çek",
+        "description": "Anlamlı bağlantıları daha yakın yörüngelere taşıyın"
       }
     }
   },
   "tierSection": {
-    "reserve": "Reserve",
-    "reservedCount": "{{count}} Reserved",
-    "link": "Link",
-    "followCreator": "Follow Creator",
-    "addRoleModel": "Add Role Model",
-    "add": "Add",
+    "reserve": "Ayır",
+    "reservedCount": "{{count}} Ayrılmış",
+    "link": "Bağla",
+    "followCreator": "İçerik Üreticisi Takip Et",
+    "addRoleModel": "Rol Model Ekle",
+    "add": "Ekle",
     "keysShared": "Paylaşılan Anahtarlar",
     "keysSharedCount": "Anahtarlar ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
-    "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
+    "title": "Çemberlerinize İlgilenin",
+    "markDescription": "{{period}} bağlantı kurmadığınız {{tier}} arkadaşlarınızı işaretleyin",
     "periods": {
       "core": "bu hafta",
       "inner": "bu iki hafta",
       "outer": "bu iki ay"
     },
-    "peopleCount": "{{count}} person",
-    "peopleCount_plural": "{{count}} people",
-    "noFriendsInTier": "No friends in this tier yet",
-    "checkInstruction": "✓ Check those you haven't talked to enough:",
-    "noPhone": "no phone",
-    "call": "Call",
-    "maybeLater": "Maybe Later",
-    "doneTending": "Done Tending",
-    "finish": "Finish",
-    "mobileHint": "Contact actions work best on mobile devices",
+    "peopleCount": "{{count}} kişi",
+    "peopleCount_plural": "{{count}} kişi",
+    "noFriendsInTier": "Bu seviyede henüz arkadaş yok",
+    "checkInstruction": "✓ Yeterince konuşmadıklarınızı işaretleyin:",
+    "noPhone": "telefon yok",
+    "call": "Ara",
+    "maybeLater": "Belki Sonra",
+    "doneTending": "İlgilenme Tamamlandı",
+    "finish": "Bitir",
+    "mobileHint": "İletişim eylemleri mobil cihazlarda en iyi şekilde çalışır",
     "reconnect": {
-      "title": "Time to Reconnect",
-      "description": "These friends could use some of your time"
+      "title": "Yeniden Bağlanma Zamanı",
+      "description": "Bu arkadaşlar biraz zamanınızı kullanabilir"
     },
     "toasts": {
-      "allTended": "Amazing! You've tended to all your circles 🌱",
-      "noPhone": "No phone number for {{name}}",
-      "connecting": "Connecting with {{name}} via {{method}}",
-      "rememberReachOut": "Remember to reach out soon! 💛",
-      "friendsWaiting": "{{count}} friend waiting to hear from you",
-      "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
+      "allTended": "Harika! Tüm çemberlerinize ilgilendiniz 🌱",
+      "noPhone": "{{name}} için telefon numarası yok",
+      "connecting": "{{method}} ile {{name}}'a bağlanılıyor",
+      "rememberReachOut": "Yakında ulaşmayı unutmayın! 💛",
+      "friendsWaiting": "{{count}} arkadaş sizden haber bekliyor",
+      "friendsWaiting_plural": "{{count}} arkadaş sizden haber bekliyor"
     }
   },
   "nayborSOS": {
     "title": "Naybor SOS™",
     "steps": {
-      "category": "What kind of help do you need?",
-      "contacts": "Choose naybors to contact"
+      "category": "Ne tür yardıma ihtiyacınız var?",
+      "contacts": "İletişim kurmak için komşu seçin"
     },
-    "critical": "Critical",
-    "emergencyWarning": "For life-threatening emergencies, call 911 first",
-    "suggestedActions": "Suggested actions:",
-    "addDetails": "Add details (optional)",
-    "describePlaceholder": "Describe your situation...",
-    "includeLocation": "Include location info",
-    "chooseNaybors": "Choose Naybors",
-    "chooseNayborsAria": "Continue to choose naybors to contact",
-    "nayborsSelected": "{{count}} naybor selected",
-    "nayborsSelected_plural": "{{count}} naybors selected",
-    "copyMessage": "Copy message",
-    "messageAll": "Message All ({{count}})",
-    "contacted": "Contacted {{count}} naybor",
-    "contacted_plural": "Contacted {{count}} naybors",
+    "critical": "Kritik",
+    "emergencyWarning": "Hayati tehlike durumlarında önce 112'yi arayın",
+    "suggestedActions": "Önerilen eylemler:",
+    "addDetails": "Ayrıntı ekle (isteğe bağlı)",
+    "describePlaceholder": "Durumunuzu açıklayın...",
+    "includeLocation": "Konum bilgisi ekle",
+    "chooseNaybors": "Komşu Seç",
+    "chooseNayborsAria": "İletişim kurmak için komşu seçmeye devam edin",
+    "nayborsSelected": "{{count}} komşu seçildi",
+    "nayborsSelected_plural": "{{count}} komşu seçildi",
+    "copyMessage": "Mesajı kopyala",
+    "messageAll": "Hepsine Mesaj ({{count}})",
+    "contacted": "{{count}} komşuyla iletişim kuruldu",
+    "contacted_plural": "{{count}} komşuyla iletişim kuruldu",
     "toasts": {
-      "messageCopied": "Message copied to clipboard",
-      "noNayborsSelected": "No naybors with phone numbers selected"
+      "messageCopied": "Mesaj panoya kopyalandı",
+      "noNayborsSelected": "Telefon numarası olan komşu seçilmedi"
     },
     "addMoreNaybors": "Daha fazla komşu ekle",
     "quick": "Hızlı",
@@ -719,54 +719,54 @@
     "criticalUrgency": "Kritik aciliyet"
   },
   "callActions": {
-    "startKall": "Start a kall",
-    "kallNow": "Kall {{name}} now",
-    "scheduleKall": "Schedule a kall",
-    "scheduleWith": "Schedule with {{name}}",
-    "sharedServices": "Shared services:",
-    "theirPreferences": "Their preferences:",
-    "noMethods": "No contact methods available",
-    "requestInfo": "Request contact info",
+    "startKall": "Arama başlat",
+    "kallNow": "Şimdi {{name}}'ı ara",
+    "scheduleKall": "Arama planla",
+    "scheduleWith": "{{name}} ile planla",
+    "sharedServices": "Paylaşılan hizmetler:",
+    "theirPreferences": "Tercihleri:",
+    "noMethods": "İletişim yöntemi yok",
+    "requestInfo": "İletişim bilgisi iste",
     "toasts": {
-      "connecting": "Connecting via {{service}}",
-      "openService": "Open {{service}} to connect"
+      "connecting": "{{service}} ile bağlanılıyor",
+      "openService": "Bağlanmak için {{service}}'i açın"
     }
   },
   "onboarding": {
     "steps": {
       "connect": {
-        "title": "Stay Connected",
-        "description": "Add your contact methods so friends can reach you easily."
+        "title": "Bağlı Kalın",
+        "description": "Arkadaşların size kolayca ulaşabilmesi için iletişim yöntemlerinizi ekleyin."
       },
       "channels": {
-        "title": "Add Your Channels",
-        "description": "Which video call and messaging apps do you use?"
+        "title": "Kanallarınızı Ekleyin",
+        "description": "Hangi video arama ve mesajlaşma uygulamalarını kullanıyorsunuz?"
       },
       "complete": {
-        "title": "All Set!",
-        "description": "Your friends can now start or schedule kalls with you."
+        "title": "Hazırsınız!",
+        "description": "Arkadaşlarınız artık sizinle arama başlatabilir veya planlayabilir."
       }
     },
-    "skipForNow": "Skip for now",
-    "getStarted": "Get Started",
-    "service": "Service",
-    "yourContactInfo": "Your {{service}} Contact Info",
-    "spontaneous": "Spontaneous",
-    "scheduled": "Scheduled",
-    "addMethod": "Add Method",
-    "continue": "Continue",
-    "methodsAdded": "You've added {{count}} contact method",
-    "methodsAdded_plural": "You've added {{count}} contact methods",
-    "publicProfile": "Public Profile",
-    "privateProfile": "Private Profile",
-    "publicProfileHint": "Anyone can find you by your handle",
-    "privateProfileHint": "Only confirmed friends can see your profile",
-    "addMore": "Add More",
-    "saving": "Saving...",
-    "completeSetup": "Complete Setup",
+    "skipForNow": "Şimdilik atla",
+    "getStarted": "Başla",
+    "service": "Hizmet",
+    "yourContactInfo": "{{service}} İletişim Bilginiz",
+    "spontaneous": "Anlık",
+    "scheduled": "Planlanmış",
+    "addMethod": "Yöntem Ekle",
+    "continue": "Devam",
+    "methodsAdded": "{{count}} iletişim yöntemi eklediniz",
+    "methodsAdded_plural": "{{count}} iletişim yöntemi eklediniz",
+    "publicProfile": "Herkese Açık Profil",
+    "privateProfile": "Özel Profil",
+    "publicProfileHint": "Herkes sizi kullanıcı adınızla bulabilir",
+    "privateProfileHint": "Sadece onaylanmış arkadaşlar profilinizi görebilir",
+    "addMore": "Daha Fazla Ekle",
+    "saving": "Kaydediliyor...",
+    "completeSetup": "Kurulumu Tamamla",
     "toasts": {
-      "enterContactInfo": "Please enter contact information",
-      "saveFailed": "Failed to save contact methods"
+      "enterContactInfo": "Lütfen iletişim bilgisi girin",
+      "saveFailed": "İletişim yöntemleri kaydedilemedi"
     },
     "hints": {
       "realFaceTime": "Şehrin veya favori buluşma yerin — yüz yüze görüşmenin yerini hiçbir şey tutmaz!",
@@ -804,117 +804,117 @@
         "description": "Acil ev erişim ayarlarınızı onaylayın"
       }
     },
-    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
-    "address": "Street Address",
-    "addressPlaceholder": "123 Main Street",
-    "unitNumber": "Unit/Apt Number",
-    "unitPlaceholder": "Apt 4B",
-    "entryInstructions": "Special Entry Instructions",
-    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
-    "instructionsHint": "Include any details responders should know about accessing your home",
-    "keyType": "Type of Access",
+    "addressHelp": "Bu adres, komşularınız sizin adınıza yardım istediğinde acil müdahale ekipleriyle paylaşılacaktır.",
+    "address": "Adres",
+    "addressPlaceholder": "Örnek Sokak No: 123",
+    "unitNumber": "Daire/Kapı No",
+    "unitPlaceholder": "Daire 4B",
+    "entryInstructions": "Özel Giriş Talimatları",
+    "instructionsPlaceholder": "Zil kapının sağında, iki kez çalın...",
+    "instructionsHint": "Evinize erişim hakkında müdahale ekiplerinin bilmesi gereken tüm ayrıntıları ekleyin",
+    "keyType": "Erişim Türü",
     "keyTypes": {
-      "physical": "Physical Key",
-      "digital": "Digital Code",
-      "both": "Both"
+      "physical": "Fiziksel Anahtar",
+      "digital": "Dijital Kod",
+      "both": "Her İkisi"
     },
-    "digitalCodeType": "Code Type",
+    "digitalCodeType": "Kod Türü",
     "codeTypes": {
-      "keypad": "Door Keypad",
-      "smart_lock": "Smart Lock App",
-      "garage": "Garage Code",
-      "other": "Other"
+      "keypad": "Kapı Tuş Takımı",
+      "smart_lock": "Akıllı Kilit Uygulaması",
+      "garage": "Garaj Kodu",
+      "other": "Diğer"
     },
-    "notes": "Notes (optional)",
-    "notesPlaceholder": "Key is under the blue flowerpot...",
-    "confirmKeyHolder": "Confirm",
-    "currentKeyHolders": "Current Key Holders",
-    "selectNaybors": "Add a naybor who has access:",
-    "noNaybors": "Add naybors first to share keys with them",
-    "allNayborsAssigned": "All your naybors have been assigned",
+    "notes": "Notlar (isteğe bağlı)",
+    "notesPlaceholder": "Anahtar mavi saksının altında...",
+    "confirmKeyHolder": "Onayla",
+    "currentKeyHolders": "Mevcut Anahtar Sahipleri",
+    "selectNaybors": "Erişimi olan bir komşu ekleyin:",
+    "noNaybors": "Anahtar paylaşmak için önce komşu ekleyin",
+    "allNayborsAssigned": "Tüm komşularınız atandı",
     "mandatoryScenarios": "Zorunlu Giriş İzinleri",
-    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
-    "optionalScenarios": "Optional Entry Permissions",
-    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "mandatoryScenariosHelp": "Bu hayati tehlike veya güvenlik açısından kritik senaryolar her zaman girişe izin verir. Hayatı, uzuvları ve masum insanları travmadan korudukları için devre dışı bırakılamazlar.",
+    "optionalScenarios": "İsteğe Bağlı Giriş İzinleri",
+    "optionalScenariosHelp": "Bu senaryolar için komşuların girip giremeyeceğini seçebilirsiniz.",
     "scenarios": {
       "cardiac_arrest": {
-        "name": "Cardiac Arrest",
-        "description": "Heart attack or sudden cardiac arrest — every second counts"
+        "name": "Kalp Durması",
+        "description": "Kalp krizi veya ani kalp durması — her saniye önemli"
       },
       "choking": {
-        "name": "Choking",
-        "description": "Choking emergency — airway blocked, needs immediate help"
+        "name": "Boğulma",
+        "description": "Boğulma acil durumu — hava yolu tıkalı, acil yardım gerekli"
       },
       "drowning": {
-        "name": "Drowning",
-        "description": "Drowning in pool, bathtub, or other water"
+        "name": "Suda Boğulma",
+        "description": "Havuz, küvet veya diğer suda boğulma"
       },
       "anaphylaxis": {
-        "name": "Anaphylactic Shock",
-        "description": "Severe allergic reaction from bee sting, food, medication"
+        "name": "Anafilaktik Şok",
+        "description": "Arı sokması, yiyecek, ilaçtan kaynaklanan şiddetli alerjik reaksiyon"
       },
       "elderly_fall": {
-        "name": "Elderly Fall",
-        "description": "Elderly person fallen, unable to get up, possibly injured"
+        "name": "Yaşlı Düşmesi",
+        "description": "Yaşlı kişi düştü, kalkamıyor, muhtemelen yaralı"
       },
       "fire": {
-        "name": "Fire",
-        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+        "name": "Yangın",
+        "description": "Yangın algılandı — hayat, uzuv, doku, hareketsiz veya uyuyan herkes için tehdit"
       },
       "gas_leak": {
-        "name": "Gas Leak",
-        "description": "Gas leak detected — explosion/poisoning risk"
+        "name": "Gaz Kaçağı",
+        "description": "Gaz kaçağı algılandı — patlama/zehirlenme riski"
       },
       "carbon_monoxide": {
-        "name": "Carbon Monoxide",
-        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+        "name": "Karbon Monoksit",
+        "description": "CO dedektör alarmı — sessiz katil, sakinler bilinçsiz olabilir"
       },
       "childhood_corporal": {
-        "name": "Childhood Corporal Punishment",
-        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+        "name": "Çocuklara Bedensel Ceza",
+        "description": "Çocuk bedensel ceza hakkında komşuları uyarıyor. Araştırmalar topluluk müdahalesinin gelecekteki şiddeti önlediğini gösteriyor."
       },
       "take10_spiral": {
-        "name": "Take 10 Shouting Spiral",
-        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+        "name": "Take 10 Bağırma Sarmalı",
+        "description": "Ev içi bağırma kabul edilemez şekilde tırmanıyor. Sakinleştirme müdahalesi gerekli."
       },
       "bedroom_consent": {
-        "name": "Bedroom Consent Conflict",
-        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+        "name": "Yatak Odası Rıza Çatışması",
+        "description": "Yatak odası rıza çatışması acil durumu algılandı — acil müdahale gerekli"
       },
       "medical_other": {
-        "name": "Other Medical Emergency",
-        "description": "Other medical emergency requiring home entry"
+        "name": "Diğer Tıbbi Acil",
+        "description": "Eve giriş gerektiren diğer tıbbi acil durum"
       },
       "intruder_check": {
-        "name": "Intruder Check",
-        "description": "Check on suspected intruder when you cannot respond"
+        "name": "Davetsiz Misafir Kontrolü",
+        "description": "Yanıt veremediğinizde şüpheli davetsiz misafir kontrolü"
       },
       "welfare_check": {
-        "name": "Welfare Check",
-        "description": "General welfare check when you are unresponsive for extended period"
+        "name": "Sağlık Kontrolü",
+        "description": "Uzun süre yanıt vermediğinizde genel sağlık kontrolü"
       },
       "flooding": {
-        "name": "Flooding/Water Leak",
-        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+        "name": "Su Baskını/Kaçağı",
+        "description": "Su kaçağı veya baskın — mülk hasarı önleme (hayati tehlike değil)"
       }
     },
-    "yourAddress": "Your Address",
-    "noAddressSet": "No address set",
-    "unit": "Unit",
-    "keyHoldersSummary": "{{count}} naybor(s) have keys",
-    "keyHoldersSummary_plural": "{{count}} naybors have keys",
-    "noKeyHolders": "No key holders assigned",
-    "permissionsSummary": "Entry Permissions",
+    "yourAddress": "Adresiniz",
+    "noAddressSet": "Adres belirlenmedi",
+    "unit": "Birim",
+    "keyHoldersSummary": "{{count}} komşunun anahtarı var",
+    "keyHoldersSummary_plural": "{{count}} komşunun anahtarı var",
+    "noKeyHolders": "Anahtar sahibi atanmadı",
+    "permissionsSummary": "Giriş İzinleri",
     "mandatoryCount": "{{count}}",
-    "mandatoryLabel": "mandatory (always allowed)",
+    "mandatoryLabel": "zorunlu (her zaman izinli)",
     "optionalCount": "{{count}}",
-    "optionalLabel": "optional enabled",
-    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "optionalLabel": "isteğe bağlı etkin",
+    "reviewWarning": "Bu ayarları kaydederek, belirlenen komşularınızı seçilen acil durum senaryolarında evinize girme yetkisi veriyorsunuz. Bu kişilere evinize erişim konusunda güvendiğinizden emin olun.",
     "savePreferences": "Tercihleri Kaydet",
     "toasts": {
-      "keyHolderAdded": "Key holder added",
-      "keyHolderRemoved": "Key holder removed",
-      "saved": "Keys shared preferences saved"
+      "keyHolderAdded": "Anahtar sahibi eklendi",
+      "keyHolderRemoved": "Anahtar sahibi kaldırıldı",
+      "saved": "Paylaşılan anahtar tercihleri kaydedildi"
     },
     "emergencyWorkerSharing": {
       "title": "Acil Durum Çalışanı Erişimi",
@@ -969,57 +969,57 @@
     "optional": "optional"
   },
   "parasocial": {
-    "creatorDashboard": "Creator Dashboard",
-    "shareContent": "Share Content",
-    "shareNewContent": "Share New Content",
-    "shareDescription": "Share a link with your parasocial followers",
-    "noContentShared": "No content shared yet",
-    "noContentHint": "Share links to engage with your followers",
-    "title": "Title",
-    "titlePlaceholder": "What are you sharing?",
+    "creatorDashboard": "İçerik Üreticisi Paneli",
+    "shareContent": "İçerik Paylaş",
+    "shareNewContent": "Yeni İçerik Paylaş",
+    "shareDescription": "Parasosyal takipçilerinizle bir bağlantı paylaşın",
+    "noContentShared": "Henüz içerik paylaşılmadı",
+    "noContentHint": "Takipçilerinizle etkileşim için bağlantılar paylaşın",
+    "title": "Başlık",
+    "titlePlaceholder": "Ne paylaşıyorsunuz?",
     "url": "URL",
     "urlPlaceholder": "https://...",
-    "description": "Description",
-    "descriptionPlaceholder": "Brief description (optional)",
-    "deleteTitle": "Delete this share?",
-    "deleteDescription": "This will remove the link from your followers feeds.",
-    "clicks": "{{count}} click",
-    "clicks_plural": "{{count}} clicks",
-    "engagement": "{{percent}}% engagement",
+    "description": "Açıklama",
+    "descriptionPlaceholder": "Kısa açıklama (isteğe bağlı)",
+    "deleteTitle": "Bu paylaşımı sil?",
+    "deleteDescription": "Bu, bağlantıyı takipçilerinizin akışlarından kaldıracaktır.",
+    "clicks": "{{count}} tıklama",
+    "clicks_plural": "{{count}} tıklama",
+    "engagement": "%{{percent}} etkileşim",
     "toasts": {
-      "titleAndUrlRequired": "Title and URL are required",
-      "invalidUrl": "Please enter a valid URL",
-      "sharedContent": "Content shared with your followers!",
-      "deleted": "Share deleted"
+      "titleAndUrlRequired": "Başlık ve URL gerekli",
+      "invalidUrl": "Lütfen geçerli bir URL girin",
+      "sharedContent": "İçerik takipçilerinizle paylaşıldı!",
+      "deleted": "Paylaşım silindi"
     }
   },
   "profileSettings": {
-    "title": "Profile Settings",
-    "description": "Manage your profile and contact preferences",
+    "title": "Profil Ayarları",
+    "description": "Profilinizi ve iletişim tercihlerinizi yönetin",
     "tabs": {
-      "profile": "Profile",
-      "contact": "Contact",
-      "creator": "Creator"
+      "profile": "Profil",
+      "contact": "İletişim",
+      "creator": "İçerik Üreticisi"
     },
-    "displayName": "Display Name",
-    "displayNamePlaceholder": "Your name",
-    "handle": "Handle",
-    "handlePlaceholder": "your_handle",
-    "handleHint": "3-30 characters. Letters, numbers, and underscores only.",
-    "publicProfile": "Your Public Profile",
-    "publicProfileLabel": "Public Profile",
-    "privateProfileLabel": "Private Profile",
-    "publicDescription": "Anyone can view your profile page",
-    "privateDescription": "Only you and confirmed friends can view your profile",
-    "parasocialMode": "Parasocial Personality Mode",
-    "parasocialModeDescription": "Enable this if you are a public figure, creator, or celebrity who wants to receive parasocial connections from fans and share content with them.",
-    "parasocialModeHint": "When enabled, other users can add you to their Parasocials circle and see content you share. Save your profile to apply this change.",
-    "saveProfile": "Save Profile",
-    "saveSettings": "Save Settings",
+    "displayName": "Görünen Ad",
+    "displayNamePlaceholder": "Adınız",
+    "handle": "Kullanıcı Adı",
+    "handlePlaceholder": "kullanici_adiniz",
+    "handleHint": "3-30 karakter. Sadece harfler, rakamlar ve alt çizgi.",
+    "publicProfile": "Herkese Açık Profiliniz",
+    "publicProfileLabel": "Herkese Açık Profil",
+    "privateProfileLabel": "Özel Profil",
+    "publicDescription": "Herkes profil sayfanızı görüntüleyebilir",
+    "privateDescription": "Sadece siz ve onaylanmış arkadaşlar profilinizi görüntüleyebilir",
+    "parasocialMode": "Parasosyal Kişilik Modu",
+    "parasocialModeDescription": "Hayranlardan parasosyal bağlantılar almak ve onlarla içerik paylaşmak isteyen bir kamusal figür, içerik üreticisi veya ünlüyseniz bunu etkinleştirin.",
+    "parasocialModeHint": "Etkinleştirildiğinde, diğer kullanıcılar sizi Parasosyaller çemberlerine ekleyebilir ve paylaştığınız içerikleri görebilir. Bu değişikliği uygulamak için profilinizi kaydedin.",
+    "saveProfile": "Profili Kaydet",
+    "saveSettings": "Ayarları Kaydet",
     "toasts": {
-      "updated": "Profile updated",
-      "updateFailed": "Failed to update profile",
-      "linkCopied": "Link copied!"
+      "updated": "Profil güncellendi",
+      "updateFailed": "Profil güncellenemedi",
+      "linkCopied": "Bağlantı kopyalandı!"
     },
     "errors": {
       "inappropriate": "This handle contains inappropriate language",
@@ -1032,54 +1032,54 @@
     }
   },
   "editFriend": {
-    "title": "Edit Contact",
-    "description": "Update contact information for {{name}}",
-    "namePlaceholder": "Friend s name",
-    "emailPlaceholder": "friend@example.com",
-    "preferredContactMethod": "Preferred Contact Method",
-    "selectContactMethod": "Choose how to reach them",
-    "notesPlaceholder": "Any notes about this person...",
-    "saveChanges": "Save Changes"
+    "title": "Kişiyi Düzenle",
+    "description": "{{name}} için iletişim bilgilerini güncelleyin",
+    "namePlaceholder": "Arkadaşın adı",
+    "emailPlaceholder": "arkadas@ornek.com",
+    "preferredContactMethod": "Tercih Edilen İletişim Yöntemi",
+    "selectContactMethod": "Nasıl ulaşılacağını seçin",
+    "notesPlaceholder": "Bu kişi hakkında notlar...",
+    "saveChanges": "Değişiklikleri Kaydet"
   },
   "post": {
-    "voiceNote": "Voice Note",
-    "audioUnavailable": "Audio unavailable",
-    "callInvitation": "Call Invitation",
-    "joinCall": "Join",
-    "meetupInvitation": "Meetup Invitation",
-    "location": "Location: {{name}}",
-    "rsvpYes": "RSVP Yes",
-    "rsvpMaybe": "Maybe",
-    "nearbyMessage": "I am nearby!",
-    "lifeUpdate": "Life Update",
-    "call": "Call",
-    "addContactInfo": "Add Contact Info",
-    "addContactInfoTooltip": "Add contact information for {{name}}",
-    "callViaHighFidelity": "Call via {{method}} (high-fidelity)",
-    "addMoreContactInfo": "Add more contact info",
-    "usePhoneRecommendation": "For best results, use your phone for calls",
-    "voiceReplyTooltip": "Send a voice reply (high-fidelity)",
-    "meetupTooltip": "Schedule a meetup (high-fidelity)",
-    "commentTooltip": "Add a comment",
-    "likeTooltip": "Like this post",
-    "likeTooltipHighFidelity": "Like (consider a more meaningful interaction)",
-    "shareTooltip": "Share",
+    "voiceNote": "Sesli Not",
+    "audioUnavailable": "Ses mevcut değil",
+    "callInvitation": "Arama Daveti",
+    "joinCall": "Katıl",
+    "meetupInvitation": "Buluşma Daveti",
+    "location": "Konum: {{name}}",
+    "rsvpYes": "Evet Katılacağım",
+    "rsvpMaybe": "Belki",
+    "nearbyMessage": "Yakınlardayım!",
+    "lifeUpdate": "Hayat Güncellemesi",
+    "call": "Ara",
+    "addContactInfo": "İletişim Bilgisi Ekle",
+    "addContactInfoTooltip": "{{name}} için iletişim bilgisi ekle",
+    "callViaHighFidelity": "{{method}} ile ara (yüksek kalite)",
+    "addMoreContactInfo": "Daha fazla iletişim bilgisi ekle",
+    "usePhoneRecommendation": "En iyi sonuçlar için aramalar için telefonunuzu kullanın",
+    "voiceReplyTooltip": "Sesli yanıt gönder (yüksek kalite)",
+    "meetupTooltip": "Buluşma planla (yüksek kalite)",
+    "commentTooltip": "Yorum ekle",
+    "likeTooltip": "Bu gönderiyi beğen",
+    "likeTooltipHighFidelity": "Beğen (daha anlamlı bir etkileşim düşünün)",
+    "shareTooltip": "Paylaş",
     "toasts": {
-      "noContact": "No contact information available",
-      "contactFailed": "Failed to initiate contact",
-      "noContactPerson": "No contact information available for this person"
+      "noContact": "İletişim bilgisi mevcut değil",
+      "contactFailed": "İletişim başlatılamadı",
+      "noContactPerson": "Bu kişi için iletişim bilgisi mevcut değil"
     },
-    "callVia": "Call via {{method}}",
-    "voiceReply": "Voice Reply",
-    "meetup": "Meetup",
-    "comment": "Comment",
-    "like": "Like",
-    "selectContactMethod": "Select contact method",
-    "warningPlatform": "Warning: platform may have surveillance concerns",
-    "currentlySelected": "Currently selected",
-    "dontShowMonth": "Don't show for 1 month",
-    "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "callVia": "{{method}} ile ara",
+    "voiceReply": "Sesli Yanıt",
+    "meetup": "Buluşma",
+    "comment": "Yorum",
+    "like": "Beğen",
+    "selectContactMethod": "İletişim yöntemi seç",
+    "warningPlatform": "Uyarı: platformun gözetim endişeleri olabilir",
+    "currentlySelected": "Şu anda seçili",
+    "dontShowMonth": "1 ay gösterme",
+    "warningSilenced": "{{method}} uyarıları gelecek aya kadar susturuldu",
+    "connectingVia": "{{method}} ile bağlanılıyor"
   },
   "compose": {
     "title": "Share with your circles",
@@ -1140,20 +1140,20 @@
     }
   },
   "followCreator": {
-    "title": "Follow a Creator",
-    "description": "Search for verified creators to follow and see their content in your feed.",
-    "searchLabel": "Search by name or handle",
-    "searchPlaceholder": "@creator_handle or Creator Name",
-    "creatorModeHint": "Only users who have enabled Creator Mode will appear in search results.",
+    "title": "İçerik Üreticisi Takip Et",
+    "description": "Takip etmek ve akışınızda içeriklerini görmek için doğrulanmış içerik üreticileri arayın.",
+    "searchLabel": "Ad veya kullanıcı adıyla ara",
+    "searchPlaceholder": "@ureticinin_kullanici_adi veya Üretici Adı",
+    "creatorModeHint": "Sadece İçerik Üreticisi Modunu etkinleştiren kullanıcılar arama sonuçlarında görünecektir.",
     "toasts": {
-      "following": "Now following {{name}}",
-      "alreadyFollowing": "You are already following this creator",
-      "followFailed": "Failed to follow"
+      "following": "Şimdi {{name}}'ı takip ediyorsunuz",
+      "alreadyFollowing": "Bu içerik üreticisini zaten takip ediyorsunuz",
+      "followFailed": "Takip edilemedi"
     },
     "errors": {
-      "searching": "An error occurred while searching.",
-      "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
-      "noCreatorsFound": "No creators found matching that search."
+      "searching": "Arama sırasında bir hata oluştu.",
+      "noCreators": "Bu aramayla eşleşen içerik üreticisi bulunamadı. Henüz içerik üreticisi modunu etkinleştirmemiş olabilirler.",
+      "noCreatorsFound": "Bu aramayla eşleşen içerik üreticisi bulunamadı."
     }
   },
   "contactMethods": {
@@ -1167,27 +1167,27 @@
       "removeFailed": "İletişim yöntemi kaldırılamadı",
       "reorderFailed": "Yeniden sıralama başarısız"
     },
-    "title": "Contact Methods",
-    "subtitle": "Add your preferred video call and messaging services so friends can reach you",
-    "addButton": "Add Contact Method",
-    "addButtonCompact": "Add",
-    "addDialogTitle": "Add Contact Method",
-    "addDialogDescription": "Add a way for your friends to reach you for video kalls",
-    "serviceLabel": "Service",
-    "contactInfoLabel": "Your {{service}} Contact Info",
-    "labelOptional": "Label (optional)",
-    "labelPlaceholder": "e.g., Personal, Work, Home",
-    "labelHint": "Helps you identify between multiple accounts on the same service",
-    "availableFor": "Available for",
-    "spontaneousKalls": "Spontaneous Kalls",
-    "spontaneousTooltip": "Instant, drop-in video calls when friends want to connect right now",
-    "scheduledKalls": "Scheduled Kalls",
-    "scheduledTooltip": "Planned video meetings set up in advance for a specific time",
-    "addMethod": "Add Method",
-    "dragToReorder": "Drag to reorder",
-    "dragReorderHint": "Drag to reorder priority. #1 is your preferred method.",
-    "noSpontaneousMethods": "No spontaneous call methods added yet",
-    "noScheduledMethods": "No scheduled call methods added yet",
+    "title": "İletişim Yöntemleri",
+    "subtitle": "Arkadaşların size ulaşabilmesi için tercih ettiğiniz video arama ve mesajlaşma hizmetlerini ekleyin",
+    "addButton": "İletişim Yöntemi Ekle",
+    "addButtonCompact": "Ekle",
+    "addDialogTitle": "İletişim Yöntemi Ekle",
+    "addDialogDescription": "Arkadaşların size video aramaları için ulaşması için bir yol ekleyin",
+    "serviceLabel": "Hizmet",
+    "contactInfoLabel": "{{service}} İletişim Bilginiz",
+    "labelOptional": "Etiket (isteğe bağlı)",
+    "labelPlaceholder": "örn., Kişisel, İş, Ev",
+    "labelHint": "Aynı hizmette birden fazla hesabı ayırt etmenize yardımcı olur",
+    "availableFor": "Şunlar için uygun",
+    "spontaneousKalls": "Anlık Aramalar",
+    "spontaneousTooltip": "Arkadaşlar hemen bağlanmak istediğinde anlık video aramalar",
+    "scheduledKalls": "Planlanmış Aramalar",
+    "scheduledTooltip": "Belirli bir saat için önceden planlanmış video toplantılar",
+    "addMethod": "Yöntem Ekle",
+    "dragToReorder": "Yeniden sıralamak için sürükleyin",
+    "dragReorderHint": "Önceliği yeniden sıralamak için sürükleyin. #1 tercih ettiğiniz yöntemdir.",
+    "noSpontaneousMethods": "Henüz anlık arama yöntemi eklenmedi",
+    "noScheduledMethods": "Henüz planlanmış arama yöntemi eklenmedi",
     "guidance": {
       "example": "Example",
       "tip": "Tip",
@@ -1260,58 +1260,58 @@
     }
   },
   "dev": {
-    "label": "Dev",
-    "panelTitle": "Dev Panel",
-    "mode": "Development Mode",
-    "authStatus": "Auth Status",
-    "notLoggedIn": "Not logged in",
-    "authActions": "Auth Actions",
-    "refreshButton": "Refresh",
-    "clearApp": "Clear App",
-    "clearAll": "Clear All",
-    "forceSignOut": "Force Sign Out",
+    "label": "Geliştirici",
+    "panelTitle": "Geliştirici Paneli",
+    "mode": "Geliştirme Modu",
+    "authStatus": "Kimlik Durumu",
+    "notLoggedIn": "Giriş yapılmadı",
+    "authActions": "Kimlik İşlemleri",
+    "refreshButton": "Yenile",
+    "clearApp": "Uygulamayı Temizle",
+    "clearAll": "Tümünü Temizle",
+    "forceSignOut": "Zorla Çıkış Yap",
     "toasts": {
-      "clearStorage": "Cleared {{count}} app-related localStorage keys",
-      "clearAll": "Cleared all localStorage and sessionStorage",
-      "signOut": "Force signed out and cleared auth storage",
-      "signOutFailed": "Failed to force sign out",
-      "refreshed": "Session refreshed",
-      "refreshFailed": "Failed to refresh session"
+      "clearStorage": "{{count}} uygulama localStorage anahtarı temizlendi",
+      "clearAll": "Tüm localStorage ve sessionStorage temizlendi",
+      "signOut": "Zorla çıkış yapıldı ve kimlik depolaması temizlendi",
+      "signOutFailed": "Zorla çıkış yapılamadı",
+      "refreshed": "Oturum yenilendi",
+      "refreshFailed": "Oturum yenilenemedi"
     },
-    "forceLogout": "Force Logout",
-    "storageActions": "Storage Actions",
-    "storageInspector": "Storage Inspector",
-    "noStorageData": "No localStorage data",
-    "chars": "chars",
+    "forceLogout": "Zorla Çıkış",
+    "storageActions": "Depolama İşlemleri",
+    "storageInspector": "Depolama Denetleyicisi",
+    "noStorageData": "localStorage verisi yok",
+    "chars": "karakter",
     "tips": {
-      "title": "Tips",
-      "sessions": "Sessions persist across page reloads",
-      "clearApp": "Use \"Clear App Data\" to reset friend lists",
-      "forceLogout": "Use \"Force Logout\" to fully clear auth state"
+      "title": "İpuçları",
+      "sessions": "Oturumlar sayfa yenilemelerinde kalıcıdır",
+      "clearApp": "Arkadaş listelerini sıfırlamak için \"Uygulama Verilerini Temizle\" kullanın",
+      "forceLogout": "Kimlik durumunu tamamen temizlemek için \"Zorla Çıkış\" kullanın"
     }
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
-    "findBy": "Find by",
-    "enterUsernameHint": "Enter their username exactly as they set it",
-    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "title": "{{tier}}'a Bağlı Arkadaş Ekle",
+    "description": "Bağlantı istemek için birini iletişim bilgisiyle bulun.",
+    "findBy": "Şununla bul",
+    "enterUsernameHint": "Kullanıcı adını tam olarak ayarladıkları gibi girin",
+    "enterContactHint": "{{type}}'ı tam olarak kaydettikleri gibi girin",
     "errors": {
-      "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
-      "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
-      "searchError": "An error occurred while searching. Please try again.",
-      "connectionFailed": "Failed to send connection request"
+      "noUserHandle": "Bu kullanıcı adıyla kullanıcı bulunamadı. Hesapları olduğundan ve kullanıcı adı ayarladıklarından emin olun.",
+      "noUserContact": "Bu {{type}} ile kullanıcı bulunamadı. Henüz profillerine eklememiş olabilirler.",
+      "searchError": "Arama sırasında bir hata oluştu. Lütfen tekrar deneyin.",
+      "connectionFailed": "Bağlantı isteği gönderilemedi"
     },
-    "userFound": "User Found",
-    "showCircleLevel": "Show circle level",
-    "circleVisibleHint": "They'll see you added them as {{tier}}",
-    "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
-    "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
+    "userFound": "Kullanıcı Bulundu",
+    "showCircleLevel": "Çember seviyesini göster",
+    "circleVisibleHint": "Onları {{tier}} olarak eklediğinizi görecekler",
+    "circleHiddenHint": "Hangi çembere eklediğinizi görmeyecekler",
+    "sendRequest": "Bağlantı İsteği Gönder",
+    "privacyNote": "Kabul edene kadar sadece onları bulmak için kullandığınız iletişim bilgisini görecekler. Kabul edildikten sonra, her ikiniz de birbirinizin tam iletişim yöntemlerini göreceksiniz.",
     "serviceTypes": {
-      "phone": "Phone Number",
-      "email": "Email Address",
-      "handle": "User Handle",
+      "phone": "Telefon Numarası",
+      "email": "E-posta Adresi",
+      "handle": "Kullanıcı Adı",
       "signal": "Signal",
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
@@ -1326,99 +1326,99 @@
   },
   "gdpr": {
     "cookies": {
-      "title": "We use cookies",
-      "description": "We use cookies to improve your experience. Essential cookies are required for the app to work.",
-      "learnMore": "Learn more",
-      "customize": "Customize",
-      "customizeAria": "Customize cookie preferences",
-      "essentialOnly": "Essential Only",
-      "essentialOnlyAria": "Accept only essential cookies",
-      "acceptAll": "Accept All",
-      "acceptAllAria": "Accept all cookies",
-      "settingsTitle": "Cookie Preferences",
-      "settingsDescription": "Choose which types of cookies you want to allow. Essential cookies are always enabled as they are required for the site to function.",
-      "savePreferences": "Save Preferences",
-      "required": "Required",
+      "title": "Çerez kullanıyoruz",
+      "description": "Deneyiminizi geliştirmek için çerez kullanıyoruz. Temel çerezler uygulamanın çalışması için gereklidir.",
+      "learnMore": "Daha fazla bilgi",
+      "customize": "Özelleştir",
+      "customizeAria": "Çerez tercihlerini özelleştir",
+      "essentialOnly": "Sadece Temel",
+      "essentialOnlyAria": "Sadece temel çerezleri kabul et",
+      "acceptAll": "Tümünü Kabul Et",
+      "acceptAllAria": "Tüm çerezleri kabul et",
+      "settingsTitle": "Çerez Tercihleri",
+      "settingsDescription": "Hangi çerez türlerine izin vermek istediğinizi seçin. Temel çerezler her zaman etkindir çünkü sitenin çalışması için gereklidir.",
+      "savePreferences": "Tercihleri Kaydet",
+      "required": "Gerekli",
       "essential": {
-        "title": "Essential Cookies",
-        "description": "Required for basic site functionality like authentication and security."
+        "title": "Temel Çerezler",
+        "description": "Kimlik doğrulama ve güvenlik gibi temel site işlevselliği için gereklidir."
       },
       "functional": {
-        "title": "Functional Cookies",
-        "description": "Remember your preferences like language settings and UI customizations."
+        "title": "İşlevsel Çerezler",
+        "description": "Dil ayarları ve UI özelleştirmeleri gibi tercihlerinizi hatırlar."
       },
       "analytics": {
-        "title": "Analytics Cookies",
-        "description": "Help us understand how visitors use our site to improve the experience."
+        "title": "Analitik Çerezler",
+        "description": "Deneyimi geliştirmek için ziyaretçilerin siteyi nasıl kullandığını anlamamıza yardımcı olur."
       },
       "marketing": {
-        "title": "Marketing Cookies",
-        "description": "Used to deliver relevant advertisements and track campaign effectiveness."
+        "title": "Pazarlama Çerezleri",
+        "description": "İlgili reklamlar sunmak ve kampanya etkinliğini izlemek için kullanılır."
       }
     },
     "settings": {
-      "cookiePreferences": "Cookie Preferences",
-      "cookieDescription": "Manage which types of cookies you allow us to use.",
-      "consentHistory": "Consent History",
-      "consentHistoryDescription": "View and manage your consent records.",
-      "consentGiven": "Consent given on",
-      "consentVersion": "Terms version",
-      "noConsent": "No consent record found. Please accept the cookie policy.",
-      "withdrawConsent": "Withdraw Consent",
-      "withdrawWarning": "Withdrawing consent will reset your cookie preferences and may limit some features. Are you sure?",
-      "confirmWithdraw": "Yes, Withdraw Consent",
-      "dataRights": "Your Data Rights",
-      "dataRightsDescription": "Under GDPR, you have the right to access, export, and delete your data.",
-      "exportData": "Export My Data",
-      "exportDescription": "Download all your data in a portable format",
-      "deleteAccount": "Delete My Account",
-      "deleteDescription": "Permanently delete your account and all data"
+      "cookiePreferences": "Çerez Tercihleri",
+      "cookieDescription": "Kullanmamıza izin verdiğiniz çerez türlerini yönetin.",
+      "consentHistory": "Onay Geçmişi",
+      "consentHistoryDescription": "Onay kayıtlarınızı görüntüleyin ve yönetin.",
+      "consentGiven": "Onay verildi",
+      "consentVersion": "Şartlar sürümü",
+      "noConsent": "Onay kaydı bulunamadı. Lütfen çerez politikasını kabul edin.",
+      "withdrawConsent": "Onayı Geri Çek",
+      "withdrawWarning": "Onayı geri çekmek çerez tercihlerinizi sıfırlayacak ve bazı özellikleri sınırlayabilir. Emin misiniz?",
+      "confirmWithdraw": "Evet, Onayı Geri Çek",
+      "dataRights": "Veri Haklarınız",
+      "dataRightsDescription": "GDPR kapsamında verilerinize erişme, dışa aktarma ve silme hakkına sahipsiniz.",
+      "exportData": "Verilerimi Dışa Aktar",
+      "exportDescription": "Tüm verilerinizi taşınabilir formatta indirin",
+      "deleteAccount": "Hesabımı Sil",
+      "deleteDescription": "Hesabınızı ve tüm verileri kalıcı olarak silin"
     },
     "deletion": {
-      "title": "Delete Your Account",
-      "description": "This will permanently delete your account and all associated data.",
-      "warningTitle": "Warning: This cannot be undone",
-      "warningDescription": "Once deleted, your account and all data will be permanently removed. Make sure to export your data first if you want to keep it.",
-      "whatDeleted": "What will be deleted:",
+      "title": "Hesabınızı Silin",
+      "description": "Bu, hesabınızı ve tüm ilişkili verileri kalıcı olarak silecektir.",
+      "warningTitle": "Uyarı: Bu geri alınamaz",
+      "warningDescription": "Silindikten sonra hesabınız ve tüm veriler kalıcı olarak kaldırılacaktır. Saklamak istiyorsanız önce verilerinizi dışa aktardığınızdan emin olun.",
+      "whatDeleted": "Ne silinecek:",
       "deletedItems": {
-        "profile": "Your profile and personal information",
-        "connections": "All your friend connections and circles",
-        "posts": "All your posts and shared content",
-        "preferences": "Your preferences and settings",
-        "keysShared": "Your Keys Shared emergency access settings"
+        "profile": "Profiliniz ve kişisel bilgileriniz",
+        "connections": "Tüm arkadaş bağlantılarınız ve çemberleriniz",
+        "posts": "Tüm gönderileriniz ve paylaşılan içerik",
+        "preferences": "Tercihleriniz ve ayarlarınız",
+        "keysShared": "Paylaşılan Anahtarlar acil erişim ayarlarınız"
       },
-      "gracePeriodTitle": "30-Day Grace Period",
-      "gracePeriodDescription": "Your account will be scheduled for deletion in {{days}} days. You can cancel the deletion during this period by signing in.",
-      "exportFirst": "Export your data before deletion?",
-      "exportData": "Export Data",
-      "exported": "Data Exported",
-      "continue": "Continue to Deletion",
-      "confirmTitle": "Confirm Account Deletion",
-      "confirmDescription": "This is your final confirmation. Please verify your identity to proceed.",
-      "typeEmail": "Type your email to confirm: {{email}}",
-      "emailMismatch": "Email does not match your account",
-      "reasonLabel": "Reason for leaving",
-      "reasonPlaceholder": "Help us improve by sharing why you're leaving...",
-      "understandConsequences": "I understand that my account and all data will be permanently deleted after the grace period, and this action cannot be undone.",
-      "deleting": "Scheduling deletion...",
-      "confirmDelete": "Delete My Account",
-      "scheduledTitle": "Deletion Scheduled",
-      "scheduledDescription": "Your account has been scheduled for deletion.",
-      "scheduledDate": "Your account will be permanently deleted on:",
-      "cancelInfo": "To cancel the deletion, simply sign in to your account before the scheduled date."
+      "gracePeriodTitle": "30 Günlük Bekleme Süresi",
+      "gracePeriodDescription": "Hesabınız {{days}} gün sonra silinmek üzere planlanacaktır. Bu süre içinde giriş yaparak silmeyi iptal edebilirsiniz.",
+      "exportFirst": "Silmeden önce verilerinizi dışa aktarmak ister misiniz?",
+      "exportData": "Verileri Dışa Aktar",
+      "exported": "Veriler Dışa Aktarıldı",
+      "continue": "Silmeye Devam Et",
+      "confirmTitle": "Hesap Silmeyi Onayla",
+      "confirmDescription": "Bu son onayınız. Devam etmek için kimliğinizi doğrulayın.",
+      "typeEmail": "Onaylamak için e-postanızı yazın: {{email}}",
+      "emailMismatch": "E-posta hesabınızla eşleşmiyor",
+      "reasonLabel": "Ayrılma nedeni",
+      "reasonPlaceholder": "Neden ayrıldığınızı paylaşarak gelişmemize yardımcı olun...",
+      "understandConsequences": "Hesabımın ve tüm verilerin bekleme süresinden sonra kalıcı olarak silineceğini ve bu işlemin geri alınamayacağını anlıyorum.",
+      "deleting": "Silme planlanıyor...",
+      "confirmDelete": "Hesabımı Sil",
+      "scheduledTitle": "Silme Planlandı",
+      "scheduledDescription": "Hesabınız silinmek üzere planlandı.",
+      "scheduledDate": "Hesabınız şu tarihte kalıcı olarak silinecek:",
+      "cancelInfo": "Silmeyi iptal etmek için planlanan tarihten önce hesabınıza giriş yapmanız yeterlidir."
     },
     "age": {
-      "title": "Age Verification",
-      "description": "We need to verify your age to comply with privacy regulations.",
-      "whyTitle": "Why we ask",
-      "whyDescription": "Under GDPR, users under {{age}} years old require parental consent to create an account.",
-      "birthYearLabel": "What year were you born?",
-      "selectYear": "Select year",
-      "privacyNote": "We only store your birth year for compliance purposes.",
-      "minorTitle": "Parental Consent Required",
-      "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
-      "parentalRequired": "Parental Consent Required",
-      "verify": "Verify Age"
+      "title": "Yaş Doğrulama",
+      "description": "Gizlilik düzenlemelerine uymak için yaşınızı doğrulamamız gerekiyor.",
+      "whyTitle": "Neden soruyoruz",
+      "whyDescription": "GDPR kapsamında {{age}} yaşın altındaki kullanıcıların hesap oluşturmak için ebeveyn onayı gerekir.",
+      "birthYearLabel": "Hangi yıl doğdunuz?",
+      "selectYear": "Yıl seçin",
+      "privacyNote": "Uyumluluk amacıyla sadece doğum yılınızı saklıyoruz.",
+      "minorTitle": "Ebeveyn Onayı Gerekli",
+      "minorDescription": "{{age}} yaşın altındaki kullanıcılar için ebeveyn onayı gereklidir. Lütfen bir ebeveyn veya vasiden hesap oluşturmanıza yardımcı olmalarını isteyin.",
+      "parentalRequired": "Ebeveyn Onayı Gerekli",
+      "verify": "Yaşı Doğrula"
     }
   },
   "dispatch": {
@@ -1609,6 +1609,21 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "organizationNameRequired": "Kuruluş adı gereklidir",
+      "jurisdictionRequired": "En az bir yetki alanı gereklidir",
+      "taxIdRequired": "Vergi kimlik numarası gereklidir",
+      "insuranceRequired": "Sigorta şirketi adı gereklidir",
+      "policyRequired": "Poliçe numarası gereklidir",
+      "agentNameRequired": "Kayıtlı temsilci adı gereklidir",
+      "agentContactRequired": "Kayıtlı temsilci iletişimi gereklidir",
+      "contactNameRequired": "Birincil iletişim adı gereklidir",
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+      "invalidPhone": "Lütfen geçerli bir telefon numarası girin",
+      "passwordMin": "Şifre en az 8 karakter olmalıdır",
+      "passwordMatch": "Şifreler eşleşmelidir",
+      "termsRequired": "Şartları kabul etmelisiniz"
     }
   },
   "dataImport": {
@@ -1647,60 +1662,60 @@
   },
   "admin": {
     "dispatch": {
-      "title": "Dispatch Account Verification",
-      "searchPlaceholder": "Search by organization, email, or contact name...",
+      "title": "Sevk Hesabı Doğrulama",
+      "searchPlaceholder": "Kuruluş, e-posta veya kişi adına göre ara...",
       "filters": {
-        "all": "All Accounts"
+        "all": "Tüm Hesaplar"
       },
-      "noAccounts": "No accounts found matching your criteria",
+      "noAccounts": "Kriterlerinize uyan hesap bulunamadı",
       "accessDenied": {
-        "title": "Access Denied",
-        "description": "You don't have permission to access the dispatch verification panel."
+        "title": "Erişim Reddedildi",
+        "description": "Sevk doğrulama paneline erişim izniniz yok."
       },
       "actions": {
-        "verify": "Verify",
-        "reject": "Reject",
-        "suspend": "Suspend"
+        "verify": "Doğrula",
+        "reject": "Reddet",
+        "suspend": "Askıya Al"
       },
       "success": {
-        "verify": "Account verified successfully",
-        "reject": "Account rejected",
-        "suspend": "Account suspended"
+        "verify": "Hesap başarıyla doğrulandı",
+        "reject": "Hesap reddedildi",
+        "suspend": "Hesap askıya alındı"
       },
       "errors": {
-        "fetchFailed": "Failed to fetch accounts",
-        "actionFailed": "Action failed. Please try again."
+        "fetchFailed": "Hesaplar alınamadı",
+        "actionFailed": "İşlem başarısız. Lütfen tekrar deneyin."
       },
       "detail": {
-        "description": "Review organization details and verification documents",
-        "organization": "Organization Details",
-        "name": "Name",
-        "type": "Type",
-        "jurisdictions": "Jurisdictions",
-        "legal": "Legal Information",
-        "taxId": "Tax ID",
-        "insurance": "Insurance Carrier",
-        "policyNumber": "Policy Number",
-        "registeredAgent": "Registered Agent",
-        "contact": "Contact Information",
-        "contactName": "Contact Name",
-        "contactEmail": "Email",
-        "contactPhone": "Phone",
-        "status": "Account Status",
-        "verificationStatus": "Status",
-        "createdAt": "Applied On",
-        "rejectionReason": "Rejection Reason"
+        "description": "Kuruluş ayrıntılarını ve doğrulama belgelerini inceleyin",
+        "organization": "Kuruluş Ayrıntıları",
+        "name": "Ad",
+        "type": "Tür",
+        "jurisdictions": "Yetki Alanları",
+        "legal": "Yasal Bilgiler",
+        "taxId": "Vergi Kimlik No",
+        "insurance": "Sigorta Şirketi",
+        "policyNumber": "Poliçe Numarası",
+        "registeredAgent": "Kayıtlı Temsilci",
+        "contact": "İletişim Bilgileri",
+        "contactName": "İletişim Adı",
+        "contactEmail": "E-posta",
+        "contactPhone": "Telefon",
+        "status": "Hesap Durumu",
+        "verificationStatus": "Durum",
+        "createdAt": "Başvuru Tarihi",
+        "rejectionReason": "Ret Nedeni"
       },
       "confirm": {
-        "verifyTitle": "Verify Account?",
-        "verifyDescription": "This will grant the organization access to resident Door Key Tree information during emergencies.",
-        "rejectTitle": "Reject Account?",
-        "rejectDescription": "Please provide a reason for rejection. This will be shared with the organization.",
-        "suspendTitle": "Suspend Account?",
-        "suspendDescription": "This will immediately revoke the organization's access. Please provide a reason.",
-        "reason": "Reason",
-        "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
-        "processing": "Processing..."
+        "verifyTitle": "Hesabı Doğrula?",
+        "verifyDescription": "Bu, kuruluşa acil durumlarda sakinlerin Kapı Anahtar Ağacı bilgilerine erişim hakkı verecektir.",
+        "rejectTitle": "Hesabı Reddet?",
+        "rejectDescription": "Lütfen ret için bir neden belirtin. Bu kuruluşla paylaşılacaktır.",
+        "suspendTitle": "Hesabı Askıya Al?",
+        "suspendDescription": "Bu, kuruluşun erişimini derhal iptal edecektir. Lütfen bir neden belirtin.",
+        "reason": "Neden",
+        "reasonPlaceholder": "Bu hesabın neden reddedildiğini/askıya alındığını açıklayın...",
+        "processing": "İşleniyor..."
       }
     }
   },
@@ -1775,5 +1790,91 @@
     "sharedPhoto": "Paylaşılan fotoğraf",
     "video": "Video",
     "sharedVideo": "Paylaşılan video"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 1 Ocak 2025",
+    "philosophy": {
+      "title": "Gizlilik Felsefemiz",
+      "description": "InnerFriend temel bir önerme üzerine kurulmuştur: ilişkileriniz sizindir. Dikkatinizi paraya çeviren veya verilerinizi satan bir sosyal ağ değiliz. En önemli insanlarla anlamlı bağlantıları sürdürmenize yardımcı olan bir araçız."
+    },
+    "dataCollection": {
+      "title": "Topladığımız Veriler",
+      "intro": "Sadece hizmeti sağlamak için gerekli olanı topluyoruz:",
+      "items": {
+        "account": "Hesap Bilgileri: Hesap oluşturduğunuzda e-posta ve şifre (şifreli)",
+        "friends": "Arkadaş Listeleri: Eklediğiniz kişilerin adları ve isteğe bağlı iletişim bilgileri",
+        "connections": "Bağlantı Verileri: Etkinleştirmeyi seçerseniz karşılıklı eşleştirme meta verileri",
+        "preferences": "Tercihler: Dil ve bildirim tercihleri gibi uygulama ayarlarınız"
+      }
+    },
+    "localStorage": {
+      "title": "Önce Yerel",
+      "description": "Varsayılan olarak arkadaş listeleriniz sadece cihazınızda saklanır. Cihazlar arası senkronizasyon veya karşılıklı eşleştirme gibi özellikler için hesap oluşturmayı seçmediğiniz sürece sunucularımıza asla dokunmayız."
+    },
+    "noSelling": {
+      "title": "Verilerinizi Asla Satmayız",
+      "description": "Verileriniz satılık değil. Nokta. Reklamcılar, veri simsarları veya pazarlama amaçlı üçüncü taraflarla paylaşmıyoruz."
+    },
+    "gdprRights": {
+      "title": "Haklarınız (GDPR Uyumluluğu)",
+      "intro": "Verileriniz üzerinde tam kontrole sahipsiniz:",
+      "items": {
+        "access": "Erişim: Tüm verilerinizi istediğiniz zaman taşınabilir formatta dışa aktarın",
+        "deletion": "Silme: Hesabınızı ve tüm ilişkili verileri tek tıkla silin",
+        "rectification": "Düzeltme: Bilgilerinizden herhangi birini güncelleyin veya düzeltin",
+        "portability": "Taşınabilirlik: Verilerinizi Dunbar uyumlu diğer sosyal ağlara taşıyın"
+      }
+    },
+    "security": {
+      "title": "Güvenlik",
+      "description": "Aktarım halinde ve dinlenme halindeki veriler için endüstri standardı şifreleme kullanıyoruz. Şifreler hashlenir ve asla düz metin olarak saklanmaz."
+    },
+    "contact": {
+      "title": "İletişim",
+      "description": "Gizlilik soruları? Bize ulaşın: privacy@lifesaverlabs.org"
+    }
+  },
+  "terms": {
+    "title": "Hizmet Şartları",
+    "lastUpdated": "Son güncelleme: 1 Ocak 2025",
+    "introduction": {
+      "title": "Giriş",
+      "description": "InnerFriend'e hoş geldiniz. Hizmetimizi kullanarak bu şartları kabul etmiş olursunuz. Basit ve okunabilir tuttuk."
+    },
+    "service": {
+      "title": "Hizmet",
+      "description": "InnerFriend, sosyal çemberlerinizi organize etmek ve bakımını yapmak için araçlar sağlayarak anlamlı ilişkileri sürdürmenize yardımcı olur. Sosyal bir platform değiliz — kamusal içerik barındırmıyor veya kamusal bağlantıları kolaylaştırmıyoruz."
+    },
+    "responsibilities": {
+      "title": "Sorumluluklarınız",
+      "intro": "InnerFriend kullanarak şunları kabul ediyorsunuz:",
+      "items": {
+        "accurate": "Hesap oluştururken doğru bilgi sağlamak",
+        "secure": "Giriş bilgilerinizi güvende tutmak",
+        "privacy": "Listelerinize eklediğiniz kişilerin gizliliğine saygı göstermek",
+        "lawful": "Hizmeti sadece yasal amaçlarla kullanmak"
+      }
+    },
+    "intellectualProperty": {
+      "title": "Fikri Mülkiyet",
+      "description": "InnerFriend MIT lisansı altında açık kaynaklıdır. Verileriniz size aittir — tam mülkiyeti siz korursunuz."
+    },
+    "liability": {
+      "title": "Sorumluluk Sınırlaması",
+      "description": "InnerFriend hiçbir garanti olmaksızın \"olduğu gibi\" sağlanır. Hizmeti kullanmanızdan kaynaklanan herhangi bir zarardan sorumlu değiliz."
+    },
+    "termination": {
+      "title": "Fesih",
+      "description": "Hesabınızı istediğiniz zaman silebilirsiniz. Bu şartları ihlal eden hesapları sonlandırma hakkımız saklıdır."
+    },
+    "changes": {
+      "title": "Şartlardaki Değişiklikler",
+      "description": "Bu şartları zaman zaman güncelleyebiliriz. Önemli değişiklikleri e-posta veya uygulama aracılığıyla size bildireceğiz."
+    },
+    "contact": {
+      "title": "İletişim",
+      "description": "Sorular? Bize ulaşın: support@lifesaverlabs.org"
+    }
   }
 }
