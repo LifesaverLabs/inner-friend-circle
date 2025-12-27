@@ -196,7 +196,84 @@ export function FriendDashboard({
         console.error('Error creating pending invitation:', insertError);
       }
       
-      // Send invitation email if we have an email
+      // Check if there's a reverse invitation (they already invited us)
+      // Look for pending_invitations where the invitee matches our current user's contact methods
+      const { data: ourContacts } = await supabase
+        .from('contact_methods')
+        .select('contact_identifier, user_id')
+        .eq('user_id', user.id);
+      
+      const ourContactIds = new Set((ourContacts || []).map(c => c.contact_identifier.toLowerCase()));
+      
+      // Find any pending invitations directed at our contact methods
+      const { data: reverseInvitations } = await supabase
+        .from('pending_invitations')
+        .select('*')
+        .is('matched_at', null)
+        .neq('inviter_id', user.id);
+      
+      // Check if any reverse invitation matches
+      for (const invite of reverseInvitations || []) {
+        const inviteContactLower = (invite.invitee_email || invite.invitee_phone || '').toLowerCase();
+        
+        // Does this invitation target one of our contact methods?
+        if (ourContactIds.has(inviteContactLower)) {
+          // Now check if the inviter has a contact method matching what we just tried to add
+          const { data: theirContacts } = await supabase
+            .from('contact_methods')
+            .select('id, user_id, contact_identifier')
+            .eq('user_id', invite.inviter_id);
+          
+          const theirContactMatch = (theirContacts || []).find(c => {
+            const cLower = c.contact_identifier.toLowerCase();
+            return (email && cLower === email.toLowerCase()) || (phone && cLower === phone);
+          });
+          
+          if (theirContactMatch) {
+            // Perfect match! Create friend_connections in both directions
+            const { error: conn1Error } = await supabase
+              .from('friend_connections')
+              .insert({
+                requester_id: invite.inviter_id,
+                target_user_id: user.id,
+                circle_tier: invite.circle_tier,
+                matched_contact_method_id: theirContactMatch.id,
+                status: 'pending',
+                disclose_circle: true
+              });
+            
+            const { error: conn2Error } = await supabase
+              .from('friend_connections')
+              .insert({
+                requester_id: user.id,
+                target_user_id: invite.inviter_id,
+                circle_tier: tier as CircleTier,
+                matched_contact_method_id: theirContactMatch.id,
+                status: 'pending',
+                disclose_circle: true
+              });
+            
+            if (!conn1Error && !conn2Error) {
+              // Mark both invitations as matched
+              await supabase
+                .from('pending_invitations')
+                .update({ matched_at: new Date().toISOString(), matched_user_id: user.id })
+                .eq('id', invite.id);
+              
+              await supabase
+                .from('pending_invitations')
+                .update({ matched_at: new Date().toISOString(), matched_user_id: invite.inviter_id })
+                .eq('inviter_id', user.id)
+                .is('matched_at', null);
+              
+              toast.success(t('connections.toasts.autoMatched'));
+              return;
+            }
+          }
+        }
+      }
+      
+      // No auto-match found, send invitation email if we have an email
       if (email) {
         try {
           const { error: invokeError } = await supabase.functions.invoke('send-friend-invite', {
