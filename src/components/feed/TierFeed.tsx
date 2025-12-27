@@ -248,11 +248,9 @@ export function TierFeed({
       authorTier: 'core', // Default, will be determined by connections
       contentType: postData.contentType,
       content: postData.content,
-      createdAt: new Date(),
       visibility: postData.visibility,
       isSuggested: false,
       isSponsored: false,
-      interactions: [],
     });
 
     if (result) {

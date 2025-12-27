@@ -292,8 +292,9 @@ describe('Index Page', () => {
 
       await waitFor(() => {
         // Should navigate or show auth
-        expect(mockNavigate).toHaveBeenCalled() ||
-          expect(document.body.textContent).toMatch(/email|password/i);
+        const didNavigate = mockNavigate.mock.calls.length > 0;
+        const hasAuthText = document.body.textContent?.match(/email|password/i);
+        expect(didNavigate || hasAuthText).toBeTruthy();
       });
     });
   });

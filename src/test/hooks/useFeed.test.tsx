@@ -212,12 +212,8 @@ describe('useFeed Hook - Zero-Algorithm Core Feed', () => {
         content: 'Sponsored meetup!',
       });
 
-      const coreFeedFilter = (post: FeedPost) =>
-        post.authorTier === 'core' && !p.isSponsored && !p.isSuggested;
-
-      // Fix: use the post variable
-      const filter = (p: FeedPost) =>
-        p.authorTier === 'core' && !p.isSponsored && !p.isSuggested;
+      const filter = (post: FeedPost) =>
+        post.authorTier === 'core' && !post.isSponsored && !post.isSuggested;
 
       expect(filter(adPost)).toBe(false);
     });
