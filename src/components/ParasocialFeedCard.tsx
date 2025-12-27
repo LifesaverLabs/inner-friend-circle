@@ -1,4 +1,5 @@
 import { formatDistanceToNow } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ExternalLink, Sparkles, Eye, EyeOff } from 'lucide-react';
 import { ParasocialShare } from '@/hooks/useParasocial';
@@ -10,7 +11,8 @@ interface ParasocialFeedCardProps {
 }
 
 export function ParasocialFeedCard({ share, isSeen, onEngage }: ParasocialFeedCardProps) {
-  const creatorName = share.creator_profile?.display_name || share.creator_profile?.user_handle || 'Unknown Creator';
+  const { t } = useTranslation();
+  const creatorName = share.creator_profile?.display_name || share.creator_profile?.user_handle || t('parasocialFeed.unknownCreator');
 
   const handleClick = () => {
     onEngage(share.id);
@@ -36,11 +38,11 @@ export function ParasocialFeedCard({ share, isSeen, onEngage }: ParasocialFeedCa
             {!isSeen && (
               <span className="inline-flex items-center gap-1 text-xs bg-tier-parasocial/20 text-tier-parasocial px-2 py-0.5 rounded-full">
                 <Sparkles className="w-3 h-3" />
-                New
+                {t('parasocialFeed.new')}
               </span>
             )}
             <span className="text-xs text-muted-foreground">
-              from {creatorName}
+              {t('parasocialFeed.from', { name: creatorName })}
             </span>
           </div>
           <h4 className="font-medium text-foreground flex items-center gap-1">
@@ -56,7 +58,7 @@ export function ParasocialFeedCard({ share, isSeen, onEngage }: ParasocialFeedCa
             <span>{formatDistanceToNow(new Date(share.created_at), { addSuffix: true })}</span>
             <span className="flex items-center gap-1">
               {isSeen ? <Eye className="w-3 h-3" /> : <EyeOff className="w-3 h-3" />}
-              {isSeen ? 'Seen' : 'Unseen'}
+              {isSeen ? t('parasocialFeed.seen') : t('parasocialFeed.unseen')}
             </span>
           </div>
         </div>

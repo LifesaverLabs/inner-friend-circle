@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { ContactMethod, ServiceType } from '@/types/contactMethod';
 import { toast } from 'sonner';
 
 export function useContactMethods(userId?: string) {
+  const { t } = useTranslation();
   const [contactMethods, setContactMethods] = useState<ContactMethod[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -49,7 +51,7 @@ export function useContactMethods(userId?: string) {
     } = {}
   ) => {
     if (!userId) {
-      toast.error('Please sign in to add contact methods');
+      toast.error(t('contactMethods.toasts.signInRequired'));
       return null;
     }
 
@@ -79,11 +81,11 @@ export function useContactMethods(userId?: string) {
 
       const newMethod = { ...data, service_type: data.service_type as ServiceType };
       setContactMethods(prev => [...prev, newMethod]);
-      toast.success('Contact method added');
+      toast.success(t('contactMethods.toasts.added'));
       return newMethod;
     } catch (error: any) {
       console.error('Error adding contact method:', error);
-      toast.error(error.message || 'Failed to add contact method');
+      toast.error(error.message || t('contactMethods.toasts.addFailed'));
       return null;
     }
   };
@@ -103,7 +105,7 @@ export function useContactMethods(userId?: string) {
       return true;
     } catch (error: any) {
       console.error('Error updating contact method:', error);
-      toast.error(error.message || 'Failed to update contact method');
+      toast.error(error.message || t('contactMethods.toasts.updateFailed'));
       return false;
     }
   };
@@ -118,11 +120,11 @@ export function useContactMethods(userId?: string) {
       if (error) throw error;
 
       setContactMethods(prev => prev.filter(m => m.id !== id));
-      toast.success('Contact method removed');
+      toast.success(t('contactMethods.toasts.removed'));
       return true;
     } catch (error: any) {
       console.error('Error removing contact method:', error);
-      toast.error(error.message || 'Failed to remove contact method');
+      toast.error(error.message || t('contactMethods.toasts.removeFailed'));
       return false;
     }
   };
@@ -159,7 +161,7 @@ export function useContactMethods(userId?: string) {
       return true;
     } catch (error: any) {
       console.error('Error reordering priorities:', error);
-      toast.error('Failed to reorder');
+      toast.error(t('contactMethods.toasts.reorderFailed'));
       return false;
     }
   };

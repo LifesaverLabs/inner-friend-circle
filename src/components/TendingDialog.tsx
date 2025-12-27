@@ -17,10 +17,10 @@ interface TendingDialogProps {
   onTendingComplete?: () => void;
 }
 
-const TENDING_TIERS: { tier: TierType; period: string; days: number }[] = [
-  { tier: 'core', period: 'this week', days: 7 },
-  { tier: 'inner', period: 'these two weeks', days: 14 },
-  { tier: 'outer', period: 'these two months', days: 60 },
+const TENDING_TIERS: { tier: TierType; days: number }[] = [
+  { tier: 'core', days: 7 },
+  { tier: 'inner', days: 14 },
+  { tier: 'outer', days: 60 },
 ];
 
 const tierEmoji: Record<TierType, string> = {

@@ -310,7 +310,7 @@ export function TierSection({
             <div className="w-full lg:w-80 aspect-video rounded-lg overflow-hidden bg-black shrink-0">
               <iframe
                 src="https://www.youtube.com/embed/AQS3JGqx46U"
-                title="Mr. Rogers - Won't You Be My Naybor?"
+                title={t('nayborVideo.iframeTitle')}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"

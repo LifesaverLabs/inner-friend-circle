@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, User, AtSign, Phone, Mail, Link2, Eye, EyeOff, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,13 +14,13 @@ import { CircleTier } from '@/hooks/useFriendConnections';
 import { TIER_INFO, TierType } from '@/types/friend';
 
 const SERVICE_TYPES = [
-  { value: 'phone', label: 'Phone Number', icon: Phone, placeholder: '+1 555-123-4567' },
-  { value: 'email', label: 'Email Address', icon: Mail, placeholder: 'friend@example.com' },
-  { value: 'handle', label: 'User Handle', icon: AtSign, placeholder: 'their_handle' },
-  { value: 'signal', label: 'Signal', icon: Phone, placeholder: '+1 555-123-4567' },
-  { value: 'telegram', label: 'Telegram', icon: AtSign, placeholder: '@username' },
-  { value: 'whatsapp', label: 'WhatsApp', icon: Phone, placeholder: '+1 555-123-4567' },
-  { value: 'facetime', label: 'FaceTime', icon: Phone, placeholder: 'email or phone' },
+  { value: 'phone', labelKey: 'addLinkedFriend.serviceTypes.phone', icon: Phone, placeholder: '+1 555-123-4567' },
+  { value: 'email', labelKey: 'addLinkedFriend.serviceTypes.email', icon: Mail, placeholder: 'friend@example.com' },
+  { value: 'handle', labelKey: 'addLinkedFriend.serviceTypes.handle', icon: AtSign, placeholder: 'their_handle' },
+  { value: 'signal', labelKey: 'addLinkedFriend.serviceTypes.signal', icon: Phone, placeholder: '+1 555-123-4567' },
+  { value: 'telegram', labelKey: 'addLinkedFriend.serviceTypes.telegram', icon: AtSign, placeholder: '@username' },
+  { value: 'whatsapp', labelKey: 'addLinkedFriend.serviceTypes.whatsapp', icon: Phone, placeholder: '+1 555-123-4567' },
+  { value: 'facetime', labelKey: 'addLinkedFriend.serviceTypes.facetime', icon: Phone, placeholder: 'email or phone' },
 ];
 
 interface FoundUser {
@@ -48,6 +49,7 @@ export function AddLinkedFriendDialog({
   tier,
   onAddConnection,
 }: AddLinkedFriendDialogProps) {
+  const { t } = useTranslation();
   const [serviceType, setServiceType] = useState('handle');
   const [contactIdentifier, setContactIdentifier] = useState('');
   const [discloseCircle, setDiscloseCircle] = useState(true);
@@ -58,6 +60,7 @@ export function AddLinkedFriendDialog({
 
   const tierInfo = TIER_INFO[tier as TierType];
   const selectedService = SERVICE_TYPES.find(s => s.value === serviceType);
+  const selectedServiceLabel = selectedService ? t(selectedService.labelKey) : '';
 
   const resetForm = () => {
     setContactIdentifier('');
@@ -89,7 +92,7 @@ export function AddLinkedFriendDialog({
           .single();
 
         if (error || !data) {
-          setSearchError('No user found with that handle. Make sure they have an account and have set their handle.');
+          setSearchError(t('addLinkedFriend.errors.noUserHandle'));
           return;
         }
 
@@ -110,7 +113,7 @@ export function AddLinkedFriendDialog({
           .single();
 
         if (error || !data) {
-          setSearchError(`No user found with that ${selectedService?.label.toLowerCase() || 'contact info'}. They may not have added it to their profile yet.`);
+          setSearchError(t('addLinkedFriend.errors.noUserContact', { type: selectedServiceLabel.toLowerCase() }));
           return;
         }
 
@@ -131,7 +134,7 @@ export function AddLinkedFriendDialog({
       }
     } catch (error) {
       console.error('Search error:', error);
-      setSearchError('An error occurred while searching. Please try again.');
+      setSearchError(t('addLinkedFriend.errors.searchError'));
     } finally {
       setSearching(false);
     }
@@ -151,7 +154,7 @@ export function AddLinkedFriendDialog({
     if (result.success) {
       handleClose();
     } else {
-      setSearchError(result.error || 'Failed to send connection request');
+      setSearchError(result.error || t('addLinkedFriend.errors.connectionFailed'));
     }
     setSubmitting(false);
   };
@@ -162,17 +165,17 @@ export function AddLinkedFriendDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <Link2 className="h-5 w-5" />
-            Add Linked Friend to {tierInfo.name}
+            {t('addLinkedFriend.title', { tier: tierInfo.name })}
           </DialogTitle>
           <DialogDescription>
-            Find someone by their contact info to request a connection.
+            {t('addLinkedFriend.description')}
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 pt-2">
           {/* Service Type Selection */}
           <div className="space-y-2">
-            <Label>Find by</Label>
+            <Label>{t('addLinkedFriend.findBy')}</Label>
             <Select value={serviceType} onValueChange={setServiceType}>
               <SelectTrigger>
                 <SelectValue />
@@ -182,7 +185,7 @@ export function AddLinkedFriendDialog({
                   <SelectItem key={service.value} value={service.value}>
                     <span className="flex items-center gap-2">
                       <service.icon className="h-4 w-4" />
-                      {service.label}
+                      {t(service.labelKey)}
                     </span>
                   </SelectItem>
                 ))}
@@ -193,14 +196,14 @@ export function AddLinkedFriendDialog({
           {/* Contact Identifier Input */}
           <div className="space-y-2">
             <Label htmlFor="contact-id">
-              {selectedService?.label || 'Contact Info'}
+              {selectedServiceLabel || t('labels.handle')}
             </Label>
             <div className="flex gap-2">
               <Input
                 id="contact-id"
                 value={contactIdentifier}
                 onChange={(e) => setContactIdentifier(e.target.value)}
-                placeholder={selectedService?.placeholder || 'Enter contact info'}
+                placeholder={selectedService?.placeholder || ''}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
               />
               <Button
@@ -216,9 +219,9 @@ export function AddLinkedFriendDialog({
               </Button>
             </div>
             <p className="text-xs text-muted-foreground">
-              {serviceType === 'handle' 
-                ? 'Enter their username exactly as they set it'
-                : `Enter their ${selectedService?.label.toLowerCase()} exactly as they registered it`
+              {serviceType === 'handle'
+                ? t('addLinkedFriend.enterUsernameHint')
+                : t('addLinkedFriend.enterContactHint', { type: selectedServiceLabel.toLowerCase() })
               }
             </p>
           </div>
@@ -255,7 +258,7 @@ export function AddLinkedFriendDialog({
                   <div className="flex-1">
                     <p className="font-medium flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      {foundUser.displayName || 'User Found'}
+                      {foundUser.displayName || t('addLinkedFriend.userFound')}
                     </p>
                     {foundUser.userHandle && (
                       <p className="text-sm text-muted-foreground">
@@ -274,11 +277,11 @@ export function AddLinkedFriendDialog({
                       <EyeOff className="h-4 w-4 text-muted-foreground" />
                     )}
                     <div>
-                      <p className="text-sm font-medium">Show circle level</p>
+                      <p className="text-sm font-medium">{t('addLinkedFriend.showCircleLevel')}</p>
                       <p className="text-xs text-muted-foreground">
-                        {discloseCircle 
-                          ? `They'll see you added them as ${tierInfo.name}`
-                          : "They won't see which circle you added them to"
+                        {discloseCircle
+                          ? t('addLinkedFriend.circleVisibleHint', { tier: tierInfo.name })
+                          : t('addLinkedFriend.circleHiddenHint')
                         }
                       </p>
                     </div>
@@ -292,7 +295,7 @@ export function AddLinkedFriendDialog({
                 {/* Submit */}
                 <div className="flex justify-end gap-2 pt-2">
                   <Button variant="outline" onClick={handleClose}>
-                    Cancel
+                    {t('actions.cancel')}
                   </Button>
                   <Button onClick={handleSubmit} disabled={submitting}>
                     {submitting ? (
@@ -300,13 +303,12 @@ export function AddLinkedFriendDialog({
                     ) : (
                       <Link2 className="h-4 w-4 mr-2" />
                     )}
-                    Send Connection Request
+                    {t('addLinkedFriend.sendRequest')}
                   </Button>
                 </div>
 
                 <p className="text-xs text-muted-foreground text-center">
-                  They'll see only the contact info you used to find them until they accept.
-                  Once accepted, you'll both see each other's full contact methods.
+                  {t('addLinkedFriend.privacyNote')}
                 </p>
               </motion.div>
             )}

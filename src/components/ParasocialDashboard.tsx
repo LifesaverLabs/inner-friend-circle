@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { formatDistanceToNow } from 'date-fns';
 import { Plus, Trash2, ExternalLink, BarChart3, Users, MousePointer } from 'lucide-react';
@@ -34,6 +35,7 @@ interface ParasocialDashboardProps {
 }
 
 export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
+  const { t } = useTranslation();
   const {
     isParasocialPersonality,
     myShares,
@@ -55,7 +57,7 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
 
   const handleCreateShare = async () => {
     if (!newTitle.trim() || !newUrl.trim()) {
-      toast.error('Title and URL are required');
+      toast.error(t('parasocial.toasts.titleAndUrlRequired'));
       return;
     }
 
@@ -63,7 +65,7 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
     try {
       new URL(newUrl);
     } catch {
-      toast.error('Please enter a valid URL');
+      toast.error(t('parasocial.toasts.invalidUrl'));
       return;
     }
 
@@ -72,22 +74,22 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
     setIsCreating(false);
 
     if (result.success) {
-      toast.success('Content shared with your followers!');
+      toast.success(t('parasocial.toasts.sharedContent'));
       setCreateDialogOpen(false);
       setNewTitle('');
       setNewUrl('');
       setNewDescription('');
     } else {
-      toast.error(result.error || 'Failed to share content');
+      toast.error(result.error || t('errors.generic'));
     }
   };
 
   const handleDeleteShare = async (shareId: string) => {
     const result = await deleteShare(shareId);
     if (result.success) {
-      toast.success('Share deleted');
+      toast.success(t('parasocial.toasts.deleted'));
     } else {
-      toast.error(result.error || 'Failed to delete share');
+      toast.error(result.error || t('errors.generic'));
     }
   };
 
@@ -107,51 +109,51 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
           <div>
             <CardTitle className="flex items-center gap-2">
               <BarChart3 className="w-5 h-5" />
-              Creator Dashboard
+              {t('parasocial.creatorDashboard')}
             </CardTitle>
             <CardDescription>
-              Share content with your {followerCount} parasocial follower{followerCount !== 1 ? 's' : ''}
+              {t('profile.followerCount', { count: followerCount })}
             </CardDescription>
           </div>
           <Dialog open={createDialogOpen} onOpenChange={setCreateDialogOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1">
                 <Plus className="w-4 h-4" />
-                Share Content
+                {t('parasocial.shareContent')}
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Share New Content</DialogTitle>
+                <DialogTitle>{t('parasocial.shareNewContent')}</DialogTitle>
                 <DialogDescription>
-                  Share a link with your parasocial followers
+                  {t('parasocial.shareDescription')}
                 </DialogDescription>
               </DialogHeader>
               <div className="space-y-4 pt-4">
                 <div className="space-y-2">
-                  <Label htmlFor="title">Title</Label>
+                  <Label htmlFor="title">{t('parasocial.title')}</Label>
                   <Input
                     id="title"
-                    placeholder="What are you sharing?"
+                    placeholder={t('parasocial.titlePlaceholder')}
                     value={newTitle}
                     onChange={(e) => setNewTitle(e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="url">URL</Label>
+                  <Label htmlFor="url">{t('parasocial.url')}</Label>
                   <Input
                     id="url"
                     type="url"
-                    placeholder="https://..."
+                    placeholder={t('parasocial.urlPlaceholder')}
                     value={newUrl}
                     onChange={(e) => setNewUrl(e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="description">Description (optional)</Label>
+                  <Label htmlFor="description">{t('parasocial.description')} ({t('common.optional')})</Label>
                   <Textarea
                     id="description"
-                    placeholder="Tell your followers what this is about..."
+                    placeholder={t('parasocial.descriptionPlaceholder')}
                     value={newDescription}
                     onChange={(e) => setNewDescription(e.target.value)}
                     rows={3}
@@ -159,10 +161,10 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
                 </div>
                 <div className="flex justify-end gap-2 pt-2">
                   <Button variant="outline" onClick={() => setCreateDialogOpen(false)}>
-                    Cancel
+                    {t('actions.cancel')}
                   </Button>
                   <Button onClick={handleCreateShare} disabled={isCreating}>
-                    {isCreating ? 'Sharing...' : 'Share'}
+                    {isCreating ? t('actions.sharing') : t('actions.share')}
                   </Button>
                 </div>
               </div>
@@ -174,8 +176,8 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
         {myShares.length === 0 ? (
           <div className="text-center py-8 text-muted-foreground">
             <ExternalLink className="w-12 h-12 mx-auto mb-2 opacity-30" />
-            <p className="text-sm">No content shared yet</p>
-            <p className="text-xs mt-1">Share links to engage with your followers</p>
+            <p className="text-sm">{t('parasocial.noContentShared')}</p>
+            <p className="text-xs mt-1">{t('parasocial.noContentHint')}</p>
           </div>
         ) : (
           <div className="space-y-3">
@@ -225,15 +227,15 @@ export function ParasocialDashboard({ userId }: ParasocialDashboardProps) {
                       </AlertDialogTrigger>
                       <AlertDialogContent>
                         <AlertDialogHeader>
-                          <AlertDialogTitle>Delete this share?</AlertDialogTitle>
+                          <AlertDialogTitle>{t('parasocial.deleteTitle')}</AlertDialogTitle>
                           <AlertDialogDescription>
-                            This will remove the link from your followers' feeds.
+                            {t('parasocial.deleteDescription')}
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
-                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogCancel>{t('actions.cancel')}</AlertDialogCancel>
                           <AlertDialogAction onClick={() => handleDeleteShare(share.id)}>
-                            Delete
+                            {t('actions.delete')}
                           </AlertDialogAction>
                         </AlertDialogFooter>
                       </AlertDialogContent>

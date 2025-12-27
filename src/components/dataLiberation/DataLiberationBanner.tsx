@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Download, Info, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,6 +16,7 @@ export function DataLiberationBanner({
   onExportClick,
   onLearnMore,
 }: DataLiberationBannerProps) {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -67,20 +69,19 @@ export function DataLiberationBanner({
               <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="font-semibold text-sm">
-                    Your Data, Your Choice
+                    {t('dataLiberation.banner.title')}
                   </h3>
                   <button
                     onClick={handleDismiss}
                     className="text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label="Dismiss banner"
+                    aria-label={t('dataLiberation.banner.dismiss')}
                   >
                     <X className="w-4 h-4" />
                   </button>
                 </div>
 
                 <p className="text-xs text-muted-foreground mt-1">
-                  Export your social graph anytime to use with other
-                  Dunbar-compliant networks. Your data belongs to you.
+                  {t('dataLiberation.banner.description')}
                 </p>
 
                 <div className="flex items-center gap-2 mt-3">
@@ -90,7 +91,7 @@ export function DataLiberationBanner({
                     className="gap-1.5"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    Export My Data
+                    {t('dataLiberation.banner.exportButton')}
                   </Button>
 
                   {onLearnMore && (
@@ -101,7 +102,7 @@ export function DataLiberationBanner({
                       className="gap-1.5 text-muted-foreground"
                     >
                       <Info className="w-3.5 h-3.5" />
-                      Learn More
+                      {t('dataLiberation.banner.learnMore')}
                     </Button>
                   )}
                 </div>

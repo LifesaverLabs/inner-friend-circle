@@ -192,7 +192,7 @@ describe('useFriendConnections', () => {
       });
 
       expect(response!.success).toBe(false);
-      expect(response!.error).toContain("can't add yourself");
+      expect(response!.error).toContain("cannotAddSelf");
     });
 
     it('should prevent duplicate connection requests', async () => {
@@ -224,7 +224,7 @@ describe('useFriendConnections', () => {
       });
 
       expect(response!.success).toBe(false);
-      expect(response!.error).toContain('already exists');
+      expect(response!.error).toContain('alreadyExists');
     });
 
     it('should allow different tier selections for requester', async () => {

@@ -94,26 +94,26 @@ describe('PostActions', () => {
   describe('Call Button - Basic Rendering', () => {
     it('should render call button when author has phone', () => {
       renderWithProviders(<PostActions {...defaultPropsWithPhone} />);
-      expect(screen.getByRole('button', { name: /call via/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.callVia/i })).toBeInTheDocument();
     });
 
     it('should show call button prominently in core tier when author has phone', () => {
       renderWithProviders(<PostActions {...defaultPropsWithPhone} tier="core" />);
-      const callButton = screen.getByRole('button', { name: /call via/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       // Core tier should have prominent styling (primary color)
       expect(callButton).toHaveClass('text-primary');
     });
 
     it('should show call button prominently in inner tier when author has phone', () => {
       renderWithProviders(<PostActions {...defaultPropsWithPhone} tier="inner" />);
-      const callButton = screen.getByRole('button', { name: /call via/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       expect(callButton).toHaveClass('text-primary');
     });
 
     it('should show call button in outer tier when author has phone', () => {
       renderWithProviders(<PostActions {...defaultPropsWithPhone} tier="outer" />);
       // In outer tier, call button should exist
-      const callButton = screen.getByRole('button', { name: /call via/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       expect(callButton).toBeInTheDocument();
     });
   });
@@ -134,7 +134,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith('tel:+15551234567', '_blank');
@@ -155,7 +155,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith('facetime:+15551234567', '_blank');
@@ -176,7 +176,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith(
@@ -200,7 +200,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith(
@@ -224,7 +224,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith(
@@ -245,7 +245,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith(
@@ -268,7 +268,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       // Should show warning toast about surveillance with action to suppress
@@ -292,7 +292,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       // Should show warning toast about Russian surveillance
@@ -316,7 +316,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       // Should show warning toast about Rossiyan thought-kontrol
@@ -342,7 +342,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       // Should NOT show warning toast when suppressed
@@ -371,7 +371,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(toast.warning).toHaveBeenCalledWith(
@@ -394,7 +394,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(toast.warning).toHaveBeenCalledWith(
@@ -417,7 +417,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockWindowOpen).toHaveBeenCalledWith('tel:+15551234567', '_blank');
@@ -568,7 +568,7 @@ describe('PostActions', () => {
         />
       );
 
-      expect(screen.getByText(/add contact info/i)).toBeInTheDocument();
+      expect(screen.getByText(/post\.addContactInfo/i)).toBeInTheDocument();
     });
 
     it('should call onRequestContactInfo when "Add Contact Info" is clicked', async () => {
@@ -586,7 +586,7 @@ describe('PostActions', () => {
         />
       );
 
-      const addContactButton = screen.getByText(/add contact info/i);
+      const addContactButton = screen.getByText(/post\.addContactInfo/i);
       await user.click(addContactButton);
 
       expect(mockOnRequestContactInfo).toHaveBeenCalledWith(post.authorId);
@@ -611,51 +611,51 @@ describe('PostActions', () => {
       await user.click(dropdownTrigger);
 
       // "Add Contact Info" should be in the dropdown
-      expect(screen.getByText(/add more contact info/i)).toBeInTheDocument();
+      expect(screen.getByText(/post\.addMoreContactInfo/i)).toBeInTheDocument();
     });
   });
 
   describe('Tier-Specific Default Actions', () => {
     it('should show Voice Reply prominently for Core tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="core" />);
-      const voiceButton = screen.getByRole('button', { name: /voice reply/i });
+      const voiceButton = screen.getByRole('button', { name: /post\.voiceReply/i });
       expect(voiceButton).toHaveClass('text-primary');
     });
 
     it('should show Voice Reply prominently for Inner tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="inner" />);
-      const voiceButton = screen.getByRole('button', { name: /voice reply/i });
+      const voiceButton = screen.getByRole('button', { name: /post\.voiceReply/i });
       expect(voiceButton).toHaveClass('text-primary');
     });
 
     it('should show Meetup button prominently for Core tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="core" />);
-      const meetupButton = screen.getByRole('button', { name: /meetup/i });
+      const meetupButton = screen.getByRole('button', { name: /post\.meetup/i });
       expect(meetupButton).toHaveClass('text-primary');
     });
 
     it('should show Meetup button prominently for Inner tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="inner" />);
-      const meetupButton = screen.getByRole('button', { name: /meetup/i });
+      const meetupButton = screen.getByRole('button', { name: /post\.meetup/i });
       expect(meetupButton).toHaveClass('text-primary');
     });
 
     it('should deprioritize Like button in Core tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="core" />);
-      const likeButton = screen.getByRole('button', { name: /like/i });
+      const likeButton = screen.getByRole('button', { name: /post\.like/i });
       // Like button should have muted styling
       expect(likeButton.className).toContain('text-muted-foreground/50');
     });
 
     it('should deprioritize Like button in Inner tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="inner" />);
-      const likeButton = screen.getByRole('button', { name: /like/i });
+      const likeButton = screen.getByRole('button', { name: /post\.like/i });
       expect(likeButton.className).toContain('text-muted-foreground/50');
     });
 
     it('should show Like button normally in Outer tier', () => {
       renderWithProviders(<PostActions {...defaultProps} tier="outer" />);
-      const likeButton = screen.getByRole('button', { name: /like/i });
+      const likeButton = screen.getByRole('button', { name: /post\.like/i });
       expect(likeButton.className).not.toContain('text-muted-foreground/50');
     });
   });
@@ -674,7 +674,7 @@ describe('PostActions', () => {
         />
       );
 
-      const callButton = screen.getByRole('button', { name: /call via/i });
+      const callButton = screen.getByRole('button', { name: /post\.callVia/i });
       fireEvent.click(callButton);
 
       expect(mockOnInteract).toHaveBeenCalledWith('call_accepted');
@@ -683,7 +683,7 @@ describe('PostActions', () => {
     it('should log like interaction', () => {
       renderWithProviders(<PostActions {...defaultProps} />);
 
-      const likeButton = screen.getByRole('button', { name: /like/i });
+      const likeButton = screen.getByRole('button', { name: /post\.like/i });
       fireEvent.click(likeButton);
 
       expect(mockOnInteract).toHaveBeenCalledWith('like');
@@ -692,7 +692,7 @@ describe('PostActions', () => {
     it('should log voice_reply interaction', () => {
       renderWithProviders(<PostActions {...defaultProps} />);
 
-      const voiceButton = screen.getByRole('button', { name: /voice/i });
+      const voiceButton = screen.getByRole('button', { name: /post\.voiceReply/i });
       fireEvent.click(voiceButton);
 
       expect(mockOnInteract).toHaveBeenCalledWith('voice_reply', '');
@@ -701,7 +701,7 @@ describe('PostActions', () => {
     it('should log meetup_rsvp interaction', () => {
       renderWithProviders(<PostActions {...defaultProps} />);
 
-      const meetupButton = screen.getByRole('button', { name: /meetup/i });
+      const meetupButton = screen.getByRole('button', { name: /post\.meetup/i });
       fireEvent.click(meetupButton);
 
       expect(mockOnInteract).toHaveBeenCalledWith('meetup_rsvp');
@@ -713,21 +713,21 @@ describe('PostActions', () => {
       renderWithProviders(<PostActions {...defaultPropsWithPhone} />);
 
       // With phone, we should see call button
-      expect(screen.getByRole('button', { name: /call via/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /voice/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /meetup/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /comment/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /like/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.callVia/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.voiceReply/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.meetup/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.comment/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.like/i })).toBeInTheDocument();
     });
 
     it('should have accessible labels for add contact info when no phone', () => {
       renderWithProviders(<PostActions {...defaultProps} />);
 
       // Without phone, we should see add contact info
-      expect(screen.getByRole('button', { name: /add contact info/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /voice/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /meetup/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /comment/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.addContactInfo/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.voiceReply/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.meetup/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /post\.comment/i })).toBeInTheDocument();
     });
 
     it('should be keyboard navigable', async () => {
@@ -771,7 +771,7 @@ describe('PostActions - Feed Default Contact Method', () => {
       />
     );
 
-    const callButton = screen.getByRole('button', { name: /call/i });
+    const callButton = screen.getByRole('button', { name: /post\.callVia/i });
     fireEvent.click(callButton);
 
     // Should use feed default (whatsapp) over author's preference
@@ -799,7 +799,7 @@ describe('PostActions - Feed Default Contact Method', () => {
       />
     );
 
-    const callButton = screen.getByRole('button', { name: /call/i });
+    const callButton = screen.getByRole('button', { name: /post\.callVia/i });
     fireEvent.click(callButton);
 
     expect(mockWindowOpen).toHaveBeenCalledWith(
@@ -830,7 +830,7 @@ describe('PostActions - Error Handling', () => {
       />
     );
 
-    const callButton = screen.getByRole('button', { name: /call via/i });
+    const callButton = screen.getByRole('button', { name: /post\.callVia/i });
     fireEvent.click(callButton);
 
     // Should still attempt to call
@@ -857,9 +857,9 @@ describe('PostActions - Error Handling', () => {
       />
     );
 
-    const callButton = screen.getByRole('button', { name: /call via/i });
+    const callButton = screen.getByRole('button', { name: /post\.callVia/i });
     fireEvent.click(callButton);
 
-    expect(toast.error).toHaveBeenCalledWith('Failed to initiate contact');
+    expect(toast.error).toHaveBeenCalledWith('post.toasts.contactFailed');
   });
 });

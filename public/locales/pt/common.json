@@ -22,6 +22,18 @@
       "mutualDiscovery": {
         "title": "Descoberta Mútua",
         "description": "Opcionalmente descubra quando alguém que você listou como próximo também te listou — uma celebração gentil da reciprocidade."
+      },
+      "dataLiberation": {
+        "title": "Your Data, Your Way",
+        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+      },
+      "nayborNetwork": {
+        "title": "Naybor Network",
+        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+      },
+      "globalReach": {
+        "title": "23 Languages",
+        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
       }
     },
     "mission": {
@@ -162,7 +174,16 @@
     "export": "Exportar",
     "import": "Importar",
     "remove": "Remover",
-    "accept": "Aceitar"
+    "accept": "Aceitar",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "share": "Share",
+    "sharing": "Sharing...",
+    "selectAll": "Select All",
+    "clear": "Clear",
+    "copy": "Copy",
+    "print": "Print",
+    "saving": "Saving..."
   },
   "friend": {
     "addFriend": "Adicionar Amigo",
@@ -194,11 +215,14 @@
     "share": "Compartilhar",
     "voiceReply": "Resposta de Voz",
     "scheduleCall": "Agendar Chamada",
-    "planMeetup": "Planejar Encontro"
+    "planMeetup": "Planejar Encontro",
+    "loading": "Carregando feed...",
+    "errorLoadFeed": "Falha ao carregar o feed",
+    "retryLoadFeed": "Tentar carregar o feed novamente"
   },
   "nudge": {
-    "timeToReconnect": "Hora de Reconectar",
-    "friendsNeedAttention": "{{count}} amigo precisa de contato",
+    "timeToReconnect": "Hora de reconectar",
+    "friendsNeedAttention": "{{count}} amigos precisam de atenção",
     "friendsNeedAttention_plural": "{{count}} amigos precisam de contato",
     "daysSinceContact": "{{days}} dias desde o último contato",
     "neverContacted": "Nunca contatado",
@@ -269,7 +293,7 @@
       "actionButton": "{{action}} com {{name}}",
       "dismissButton": "Dispensar lembrete para {{name}}",
       "connectedButton": "Marcar {{name}} como conectado hoje",
-      "selectDateButton": "Selecionar quando você se conectou com {{name}}"
+      "selectDateButton": "Selecione quando você se conectou com {{name}}"
     },
     "naybor": {
       "sosRegion": "Contatos SOS rápidos",
@@ -310,13 +334,18 @@
       "offline": "Offline",
       "away": "Ausente",
       "busy": "Ocupado"
-    }
+    },
+    "dragToReorder": "Arraste para reordenar"
   },
   "language": {
     "select": "Selecionar idioma",
     "current": "Idioma atual: {{language}}",
     "helpTranslate": "Ajude a traduzir o InnerFriend",
-    "communityTranslation": "Junte-se à nossa comunidade de tradutores para tornar o InnerFriend acessível a mais pessoas ao redor do mundo."
+    "communityTranslation": "Junte-se à nossa comunidade de tradutores para tornar o InnerFriend acessível a mais pessoas ao redor do mundo.",
+    "contribute": "Contribuir",
+    "currentlyAvailable": "Atualmente disponível em {{count}} idiomas. Ajude-nos a adicionar mais!",
+    "becomeTranslator": "Torne-se um Tradutor",
+    "openSourceNote": "InnerFriend é código aberto. Suas traduções ajudam a construir uma comunidade mais inclusiva."
   },
   "errors": {
     "generic": "Algo deu errado. Por favor, tente novamente.",
@@ -433,7 +462,12 @@
     },
     "mobileOnly": "O seletor de contatos está disponível apenas em dispositivos móveis. Use a importação de vCard ou CSV.",
     "browserNotSupported": "Seu navegador não suporta o seletor de contatos. Use a importação de vCard ou CSV.",
-    "useFileImport": "Tente importar de um arquivo vCard ou CSV."
+    "useFileImport": "Tente importar de um arquivo vCard ou CSV.",
+    "sources": {
+      "contactPicker": "Contatos do telefone",
+      "vcard": "Arquivo vCard",
+      "csv": "Arquivo CSV"
+    }
   },
   "emptyState": {
     "noPostsYet": "No posts yet",
@@ -474,7 +508,11 @@
     "addToCircleHint": "Add someone to your closest circle"
   },
   "labels": {
-    "name": "Nome"
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Phone Number",
+    "notes": "Notes",
+    "handle": "Handle"
   },
   "capacity": {
     "spotsAvailable": "{{available}} de {{limit}} vagas disponíveis",
@@ -486,7 +524,8 @@
     "callVia": "Ligar via {{method}}",
     "editContactInfo": "Editar informações de contato",
     "promoteTo": "Promover para",
-    "moveTo": "Mover para {{tier}}"
+    "moveTo": "Mover para {{tier}}",
+    "updated": "{{name}} atualizado"
   },
   "connections": {
     "requests": "Solicitações de conexão",
@@ -494,7 +533,22 @@
     "unknownUser": "Usuário desconhecido",
     "addedYouAs": "Adicionou você como {{tier}}",
     "circleHidden": "Círculo oculto",
-    "viaService": "via {{service}}"
+    "viaService": "via {{service}}",
+    "toasts": {
+      "requestSent": "Solicitação de conexão enviada!",
+      "confirmed": "Conexão confirmada! Agora vocês podem ver os métodos de contato um do outro.",
+      "declined": "Conexão recusada.",
+      "removed": "Conexão removida."
+    },
+    "errors": {
+      "notAuthenticated": "Não autenticado",
+      "cannotAddSelf": "Você não pode adicionar a si mesmo como amigo",
+      "alreadyExists": "A conexão já existe",
+      "requestExists": "A solicitação de conexão já existe",
+      "createFailed": "Falha ao criar solicitação de conexão",
+      "respondFailed": "Falha ao responder à solicitação",
+      "deleteFailed": "Falha ao excluir conexão"
+    }
   },
   "roleModel": {
     "addTitle": "Adicionar modelo",
@@ -523,7 +577,9 @@
     "addTitle": "Adicionar grupo reservado — {{tier}}",
     "addDescription": "Reserve vagas para pessoas que você não quer listar explicitamente. Cada grupo conta para seu limite de {{tier}} mas permanece privado.",
     "capacitySummary": "{{named}} nomeados + {{reserved}} já reservados + {{new}} novos = {{total}}/{{limit}} {{tier}}",
-    "addGroup": "Adicionar grupo"
+    "addGroup": "Adicionar grupo",
+    "spotsCount_plural": "{{count}} Reserved Spots",
+    "spotsLabel_plural": "reserved spots"
   },
   "addFriend": {
     "addNaybor": "Adicionar vizinho",
@@ -605,9 +661,9 @@
     "title": "Tend Your Circles",
     "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
     "periods": {
-      "core": "this week",
-      "inner": "these two weeks",
-      "outer": "these two months"
+      "core": "esta semana",
+      "inner": "estas duas semanas",
+      "outer": "estes dois meses"
     },
     "peopleCount": "{{count}} person",
     "peopleCount_plural": "{{count}} people",
@@ -655,7 +711,12 @@
     "toasts": {
       "messageCopied": "Message copied to clipboard",
       "noNayborsSelected": "No naybors with phone numbers selected"
-    }
+    },
+    "addMoreNaybors": "Adicionar mais vizinhos",
+    "quick": "Rápido",
+    "noPhone": "Sem telefone",
+    "tapSOSForMore": "Toque em SOS para mais opções e todos os vizinhos",
+    "criticalUrgency": "Urgência crítica"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -706,6 +767,21 @@
     "toasts": {
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
+    },
+    "hints": {
+      "realFaceTime": "Sua cidade ou local de encontro favorito — nada supera o encontro pessoal!",
+      "phone": "Seu número de telefone com código do país (ex: +55 11 99999-9999)",
+      "facetime": "Número de telefone ou email do Apple ID vinculado ao FaceTime",
+      "whatsapp": "Número de telefone com código do país, sem espaços (ex: +5511999999999)",
+      "signal": "Número de telefone registrado no app Signal",
+      "telegram": "Seu @usuário (sem @) ou número de telefone",
+      "zoom": "ID de reunião pessoal ou seu link zoom.us",
+      "googleMeet": "Seu endereço Gmail",
+      "teams": "Seu email de trabalho ou pessoal da Microsoft",
+      "discord": "Usuário#1234 ou seu ID de usuário",
+      "skype": "Seu nome do Skype (em Configurações → Conta)",
+      "webex": "Link da sala pessoal ou email Webex",
+      "slack": "Email de trabalho (ambas as partes precisam do mesmo workspace)"
     }
   },
   "keysShared": {
@@ -888,5 +964,816 @@
     "underMinWarning": "Você tem apenas {{count}} vizinho(s) — recomendamos pelo menos 3",
     "underMinDescription": "Ter vizinhos de confiança por perto é essencial para emergências, ajuda mútua e construção de resiliência comunitária. Apresente-se aos seus vizinhos!",
     "mrRogersQuote": "\"Você não quer ser meu vizinho?\" — Fred Rogers"
+  },
+  "common": {
+    "optional": "optional"
+  },
+  "parasocial": {
+    "creatorDashboard": "Creator Dashboard",
+    "shareContent": "Share Content",
+    "shareNewContent": "Share New Content",
+    "shareDescription": "Share a link with your parasocial followers",
+    "noContentShared": "No content shared yet",
+    "noContentHint": "Share links to engage with your followers",
+    "title": "Title",
+    "titlePlaceholder": "What are you sharing?",
+    "url": "URL",
+    "urlPlaceholder": "https://...",
+    "description": "Description",
+    "descriptionPlaceholder": "Brief description (optional)",
+    "deleteTitle": "Delete this share?",
+    "deleteDescription": "This will remove the link from your followers feeds.",
+    "clicks": "{{count}} click",
+    "clicks_plural": "{{count}} clicks",
+    "engagement": "{{percent}}% engagement",
+    "toasts": {
+      "titleAndUrlRequired": "Title and URL are required",
+      "invalidUrl": "Please enter a valid URL",
+      "sharedContent": "Content shared with your followers!",
+      "deleted": "Share deleted"
+    }
+  },
+  "profileSettings": {
+    "title": "Profile Settings",
+    "description": "Manage your profile and contact preferences",
+    "tabs": {
+      "profile": "Profile",
+      "contact": "Contact",
+      "creator": "Creator"
+    },
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Your name",
+    "handle": "Handle",
+    "handlePlaceholder": "your_handle",
+    "handleHint": "3-30 characters. Letters, numbers, and underscores only.",
+    "publicProfile": "Your Public Profile",
+    "publicProfileLabel": "Public Profile",
+    "privateProfileLabel": "Private Profile",
+    "publicDescription": "Anyone can view your profile page",
+    "privateDescription": "Only you and confirmed friends can view your profile",
+    "parasocialMode": "Parasocial Personality Mode",
+    "parasocialModeDescription": "Enable this if you are a public figure, creator, or celebrity who wants to receive parasocial connections from fans and share content with them.",
+    "parasocialModeHint": "When enabled, other users can add you to their Parasocials circle and see content you share. Save your profile to apply this change.",
+    "saveProfile": "Save Profile",
+    "saveSettings": "Save Settings",
+    "toasts": {
+      "updated": "Profile updated",
+      "updateFailed": "Failed to update profile",
+      "linkCopied": "Link copied!"
+    },
+    "errors": {
+      "inappropriate": "This handle contains inappropriate language",
+      "handleTaken": "This handle is already taken",
+      "checkingHandle": "Error checking handle availability",
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "O identificador deve ter 3-30 caracteres, apenas letras, números e underscores",
+      "checkAvailability": "Erro ao verificar disponibilidade do identificador",
+      "validationError": "Erro ao validar identificador"
+    }
+  },
+  "editFriend": {
+    "title": "Edit Contact",
+    "description": "Update contact information for {{name}}",
+    "namePlaceholder": "Friend s name",
+    "emailPlaceholder": "friend@example.com",
+    "preferredContactMethod": "Preferred Contact Method",
+    "selectContactMethod": "Choose how to reach them",
+    "notesPlaceholder": "Any notes about this person...",
+    "saveChanges": "Save Changes"
+  },
+  "post": {
+    "voiceNote": "Voice Note",
+    "audioUnavailable": "Audio unavailable",
+    "callInvitation": "Call Invitation",
+    "joinCall": "Join",
+    "meetupInvitation": "Meetup Invitation",
+    "location": "Location: {{name}}",
+    "rsvpYes": "RSVP Yes",
+    "rsvpMaybe": "Maybe",
+    "nearbyMessage": "I am nearby!",
+    "lifeUpdate": "Life Update",
+    "call": "Call",
+    "addContactInfo": "Add Contact Info",
+    "addContactInfoTooltip": "Add contact information for {{name}}",
+    "callViaHighFidelity": "Call via {{method}} (high-fidelity)",
+    "addMoreContactInfo": "Add more contact info",
+    "usePhoneRecommendation": "For best results, use your phone for calls",
+    "voiceReplyTooltip": "Send a voice reply (high-fidelity)",
+    "meetupTooltip": "Schedule a meetup (high-fidelity)",
+    "commentTooltip": "Add a comment",
+    "likeTooltip": "Like this post",
+    "likeTooltipHighFidelity": "Like (consider a more meaningful interaction)",
+    "shareTooltip": "Share",
+    "toasts": {
+      "noContact": "No contact information available",
+      "contactFailed": "Failed to initiate contact",
+      "noContactPerson": "No contact information available for this person"
+    },
+    "callVia": "Call via {{method}}",
+    "voiceReply": "Voice Reply",
+    "meetup": "Meetup",
+    "comment": "Comment",
+    "like": "Like",
+    "selectContactMethod": "Select contact method",
+    "warningPlatform": "Warning: platform may have surveillance concerns",
+    "currentlySelected": "Currently selected",
+    "dontShowMonth": "Don't show for 1 month",
+    "warningSilenced": "{{method}} warnings silenced until next month",
+    "connectingVia": "Connecting via {{method}}"
+  },
+  "compose": {
+    "title": "Share with your circles",
+    "type": "Type",
+    "content": "Content",
+    "voiceComingSoon": "Voice recording coming soon",
+    "visibility": "Who can see this?",
+    "shareButton": "Share",
+    "types": {
+      "text": "Text",
+      "photo": "Photo",
+      "voice": "Voice",
+      "video": "Video",
+      "call": "Call",
+      "meetup": "Meetup",
+      "nearby": "Nearby",
+      "update": "Update"
+    },
+    "visibilityOptions": {
+      "core": "Core (5 closest)",
+      "inner": "Inner Circle (15)",
+      "outer": "Outer Circle (150)"
+    },
+    "placeholders": {
+      "text": "O que você está pensando?",
+      "photo": "Adicione uma legenda à sua foto...",
+      "video": "Adicione uma descrição ao seu vídeo...",
+      "call": "Adicione detalhes sobre a chamada...",
+      "meetup": "O que você está planejando?",
+      "nearby": "Avise seus amigos que você está por perto...",
+      "update": "Compartilhe suas novidades empolgantes...",
+      "default": "Escreva algo..."
+    }
+  },
+  "shareDialog": {
+    "title": "Share Your Circles",
+    "healthcareTitle": "Healthcare Provider Share",
+    "description": "Select which tiers to include in your share",
+    "healthcareDescription": "Share with your healthcare provider or social worker (includes privacy protections)",
+    "healthcareButton": "Healthcare",
+    "healthcareMode": "Healthcare Mode",
+    "healthcareModeHint": "Document will include privacy law citations (HIPAA, GDPR, etc.) to protect this data under healthcare confidentiality.",
+    "privacyNote": "Privacy Note",
+    "privacyWarningAll": "Sharing all circles reveals your complete social graph.",
+    "privacyWarningMultiple": "Sharing multiple tiers reveals relationships between your circles that could be cross-referenced.",
+    "toasts": {
+      "selectTier": "Please select at least one tier to share",
+      "copied": "Copied to clipboard",
+      "healthcareCopied": "Healthcare document copied",
+      "copyFailed": "Failed to copy",
+      "selectTierPrint": "Please select at least one tier to print"
+    },
+    "export": {
+      "header": "Meus Círculos de Amigos Íntimos",
+      "healthcareHeader": "REDE CONFIDENCIAL DE APOIO SOCIAL DO PACIENTE",
+      "footer": "Criado com InnerFriend",
+      "empty": "vazio"
+    }
+  },
+  "followCreator": {
+    "title": "Follow a Creator",
+    "description": "Search for verified creators to follow and see their content in your feed.",
+    "searchLabel": "Search by name or handle",
+    "searchPlaceholder": "@creator_handle or Creator Name",
+    "creatorModeHint": "Only users who have enabled Creator Mode will appear in search results.",
+    "toasts": {
+      "following": "Now following {{name}}",
+      "alreadyFollowing": "You are already following this creator",
+      "followFailed": "Failed to follow"
+    },
+    "errors": {
+      "searching": "An error occurred while searching.",
+      "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
+      "noCreatorsFound": "No creators found matching that search."
+    }
+  },
+  "contactMethods": {
+    "toasts": {
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Faça login para adicionar métodos de contato",
+      "added": "Método de contato adicionado",
+      "addFailed": "Falha ao adicionar método de contato",
+      "updateFailed": "Falha ao atualizar método de contato",
+      "removed": "Método de contato removido",
+      "removeFailed": "Falha ao remover método de contato",
+      "reorderFailed": "Falha ao reordenar"
+    },
+    "title": "Contact Methods",
+    "subtitle": "Add your preferred video call and messaging services so friends can reach you",
+    "addButton": "Add Contact Method",
+    "addButtonCompact": "Add",
+    "addDialogTitle": "Add Contact Method",
+    "addDialogDescription": "Add a way for your friends to reach you for video kalls",
+    "serviceLabel": "Service",
+    "contactInfoLabel": "Your {{service}} Contact Info",
+    "labelOptional": "Label (optional)",
+    "labelPlaceholder": "e.g., Personal, Work, Home",
+    "labelHint": "Helps you identify between multiple accounts on the same service",
+    "availableFor": "Available for",
+    "spontaneousKalls": "Spontaneous Kalls",
+    "spontaneousTooltip": "Instant, drop-in video calls when friends want to connect right now",
+    "scheduledKalls": "Scheduled Kalls",
+    "scheduledTooltip": "Planned video meetings set up in advance for a specific time",
+    "addMethod": "Add Method",
+    "dragToReorder": "Drag to reorder",
+    "dragReorderHint": "Drag to reorder priority. #1 is your preferred method.",
+    "noSpontaneousMethods": "No spontaneous call methods added yet",
+    "noScheduledMethods": "No scheduled call methods added yet",
+    "guidance": {
+      "example": "Example",
+      "tip": "Tip",
+      "exampleLabel": "Exemplo",
+      "realFaceTime": {
+        "howToFind": "Compartilhe sua cidade ou local de encontro favorito — nada supera um encontro pessoal!",
+        "example": "\"São Paulo\" ou \"Café do Centro, Paulista\"",
+        "tip": "Seja tão específico quanto se sentir confortável. Geralmente o bairro é suficiente."
+      },
+      "phone": {
+        "howToFind": "Insira seu número de telefone com código do país.",
+        "example": "+55 11 98765-4321",
+        "tip": "Funciona para chamadas regulares e SMS."
+      },
+      "facetime": {
+        "howToFind": "Use seu email Apple ID ou número de telefone vinculado ao FaceTime.",
+        "example": "seunome@icloud.com ou +55 11 98765-4321",
+        "tip": "Ambas as partes precisam de dispositivos Apple para FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "Seu número de telefone com código do país (o registrado no WhatsApp).",
+        "example": "+5511987654321",
+        "tip": "Não inclua espaços ou hífens no número."
+      },
+      "signal": {
+        "howToFind": "Seu número de telefone registrado no app Signal.",
+        "example": "+55 11 98765-4321",
+        "tip": "Signal oferece criptografia de ponta a ponta para usuários preocupados com privacidade."
+      },
+      "telegram": {
+        "howToFind": "Seu @nome de usuário (sem @) ou número de telefone.",
+        "example": "nomedeusuario ou +5511987654321",
+        "tip": "Nomes de usuário são mais fáceis de compartilhar que números de telefone."
+      },
+      "zoom": {
+        "howToFind": "Seu ID de reunião pessoal ou link da sala pessoal.",
+        "example": "123 456 7890 ou https://zoom.us/j/1234567890",
+        "tip": "Encontre em Configurações do Zoom em Perfil > ID de reunião pessoal."
+      },
+      "googleMeet": {
+        "howToFind": "Seu endereço Gmail — amigos podem iniciar um Meet com você diretamente.",
+        "example": "seunome@gmail.com",
+        "tip": "Google Meet funciona melhor quando ambos têm contas Google."
+      },
+      "teams": {
+        "howToFind": "Seu endereço de email Microsoft de trabalho ou pessoal.",
+        "example": "seunome@empresa.com ou seunome@outlook.com",
+        "tip": "Para contas de trabalho, chamadas externas podem precisar de aprovação do admin."
+      },
+      "discord": {
+        "howToFind": "Seu nome de usuário Discord ou ID de usuário.",
+        "example": "nomedeusuario#1234 ou 123456789012345678",
+        "tip": "Encontre seu ID de usuário ativando o Modo Desenvolvedor nas configurações do Discord."
+      },
+      "skype": {
+        "howToFind": "Seu nome Skype (não seu nome de exibição).",
+        "example": "live:seuskypename",
+        "tip": "Encontre em Configurações Skype → Conta → Nome Skype."
+      },
+      "webex": {
+        "howToFind": "Seu link de sala pessoal ou email Webex.",
+        "example": "https://empresa.webex.com/meet/seunome",
+        "tip": "Links de sala pessoal são permanentes e fáceis de compartilhar."
+      },
+      "slack": {
+        "howToFind": "Seu email de trabalho (ambas as partes precisam de acesso ao mesmo workspace Slack).",
+        "example": "seunome@empresa.com",
+        "tip": "Chamadas Slack só funcionam entre membros do mesmo workspace."
+      }
+    }
+  },
+  "dev": {
+    "label": "Dev",
+    "panelTitle": "Dev Panel",
+    "mode": "Development Mode",
+    "authStatus": "Auth Status",
+    "notLoggedIn": "Not logged in",
+    "authActions": "Auth Actions",
+    "refreshButton": "Refresh",
+    "clearApp": "Clear App",
+    "clearAll": "Clear All",
+    "forceSignOut": "Force Sign Out",
+    "toasts": {
+      "clearStorage": "Cleared {{count}} app-related localStorage keys",
+      "clearAll": "Cleared all localStorage and sessionStorage",
+      "signOut": "Force signed out and cleared auth storage",
+      "signOutFailed": "Failed to force sign out",
+      "refreshed": "Session refreshed",
+      "refreshFailed": "Failed to refresh session"
+    },
+    "forceLogout": "Force Logout",
+    "storageActions": "Storage Actions",
+    "storageInspector": "Storage Inspector",
+    "noStorageData": "No localStorage data",
+    "chars": "chars",
+    "tips": {
+      "title": "Tips",
+      "sessions": "Sessions persist across page reloads",
+      "clearApp": "Use \"Clear App Data\" to reset friend lists",
+      "forceLogout": "Use \"Force Logout\" to fully clear auth state"
+    }
+  },
+  "addLinkedFriend": {
+    "title": "Add Linked Friend to {{tier}}",
+    "description": "Find someone by their contact info to request a connection.",
+    "findBy": "Find by",
+    "enterUsernameHint": "Enter their username exactly as they set it",
+    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "errors": {
+      "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
+      "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
+      "searchError": "An error occurred while searching. Please try again.",
+      "connectionFailed": "Failed to send connection request"
+    },
+    "userFound": "User Found",
+    "showCircleLevel": "Show circle level",
+    "circleVisibleHint": "They'll see you added them as {{tier}}",
+    "circleHiddenHint": "They won't see which circle you added them to",
+    "sendRequest": "Send Connection Request",
+    "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
+    "serviceTypes": {
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "handle": "User Handle",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "facetime": "FaceTime"
+    }
+  },
+  "feedPost": {
+    "likeCount": "{{count}} curtida",
+    "likeCount_plural": "{{count}} curtidas",
+    "commentCount": "{{count}} comentário",
+    "commentCount_plural": "{{count}} comentários"
+  },
+  "gdpr": {
+    "cookies": {
+      "title": "We use cookies",
+      "description": "We use cookies to improve your experience. Essential cookies are required for the app to work.",
+      "learnMore": "Learn more",
+      "customize": "Customize",
+      "customizeAria": "Customize cookie preferences",
+      "essentialOnly": "Essential Only",
+      "essentialOnlyAria": "Accept only essential cookies",
+      "acceptAll": "Accept All",
+      "acceptAllAria": "Accept all cookies",
+      "settingsTitle": "Cookie Preferences",
+      "settingsDescription": "Choose which types of cookies you want to allow. Essential cookies are always enabled as they are required for the site to function.",
+      "savePreferences": "Save Preferences",
+      "required": "Required",
+      "essential": {
+        "title": "Essential Cookies",
+        "description": "Required for basic site functionality like authentication and security."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "description": "Remember your preferences like language settings and UI customizations."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors use our site to improve the experience."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "Used to deliver relevant advertisements and track campaign effectiveness."
+      }
+    },
+    "settings": {
+      "cookiePreferences": "Cookie Preferences",
+      "cookieDescription": "Manage which types of cookies you allow us to use.",
+      "consentHistory": "Consent History",
+      "consentHistoryDescription": "View and manage your consent records.",
+      "consentGiven": "Consent given on",
+      "consentVersion": "Terms version",
+      "noConsent": "No consent record found. Please accept the cookie policy.",
+      "withdrawConsent": "Withdraw Consent",
+      "withdrawWarning": "Withdrawing consent will reset your cookie preferences and may limit some features. Are you sure?",
+      "confirmWithdraw": "Yes, Withdraw Consent",
+      "dataRights": "Your Data Rights",
+      "dataRightsDescription": "Under GDPR, you have the right to access, export, and delete your data.",
+      "exportData": "Export My Data",
+      "exportDescription": "Download all your data in a portable format",
+      "deleteAccount": "Delete My Account",
+      "deleteDescription": "Permanently delete your account and all data"
+    },
+    "deletion": {
+      "title": "Delete Your Account",
+      "description": "This will permanently delete your account and all associated data.",
+      "warningTitle": "Warning: This cannot be undone",
+      "warningDescription": "Once deleted, your account and all data will be permanently removed. Make sure to export your data first if you want to keep it.",
+      "whatDeleted": "What will be deleted:",
+      "deletedItems": {
+        "profile": "Your profile and personal information",
+        "connections": "All your friend connections and circles",
+        "posts": "All your posts and shared content",
+        "preferences": "Your preferences and settings",
+        "keysShared": "Your Keys Shared emergency access settings"
+      },
+      "gracePeriodTitle": "30-Day Grace Period",
+      "gracePeriodDescription": "Your account will be scheduled for deletion in {{days}} days. You can cancel the deletion during this period by signing in.",
+      "exportFirst": "Export your data before deletion?",
+      "exportData": "Export Data",
+      "exported": "Data Exported",
+      "continue": "Continue to Deletion",
+      "confirmTitle": "Confirm Account Deletion",
+      "confirmDescription": "This is your final confirmation. Please verify your identity to proceed.",
+      "typeEmail": "Type your email to confirm: {{email}}",
+      "emailMismatch": "Email does not match your account",
+      "reasonLabel": "Reason for leaving",
+      "reasonPlaceholder": "Help us improve by sharing why you're leaving...",
+      "understandConsequences": "I understand that my account and all data will be permanently deleted after the grace period, and this action cannot be undone.",
+      "deleting": "Scheduling deletion...",
+      "confirmDelete": "Delete My Account",
+      "scheduledTitle": "Deletion Scheduled",
+      "scheduledDescription": "Your account has been scheduled for deletion.",
+      "scheduledDate": "Your account will be permanently deleted on:",
+      "cancelInfo": "To cancel the deletion, simply sign in to your account before the scheduled date."
+    },
+    "age": {
+      "title": "Age Verification",
+      "description": "We need to verify your age to comply with privacy regulations.",
+      "whyTitle": "Why we ask",
+      "whyDescription": "Under GDPR, users under {{age}} years old require parental consent to create an account.",
+      "birthYearLabel": "What year were you born?",
+      "selectYear": "Select year",
+      "privacyNote": "We only store your birth year for compliance purposes.",
+      "minorTitle": "Parental Consent Required",
+      "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
+      "parentalRequired": "Parental Consent Required",
+      "verify": "Verify Age"
+    }
+  },
+  "dispatch": {
+    "registration": {
+      "pageTitle": "Emergency Dispatch Registration",
+      "pageDescription": "Register your emergency service organization to access Door Key Tree information during emergencies.",
+      "alreadyRegistered": "Already registered? Sign in",
+      "infoTitle": "What you'll need:",
+      "infoPoint1": "Organization legal information (Tax ID, insurance)",
+      "infoPoint2": "Registered agent contact details",
+      "infoPoint3": "Primary contact information",
+      "steps": {
+        "organization": {
+          "title": "Organization Info",
+          "description": "Tell us about your emergency service organization"
+        },
+        "legal": {
+          "title": "Legal Accountability",
+          "description": "Provide legal and insurance information for verification"
+        },
+        "contact": {
+          "title": "Primary Contact",
+          "description": "Designate a primary contact for your organization"
+        },
+        "account": {
+          "title": "Account Setup",
+          "description": "Create your dispatch account credentials"
+        },
+        "review": {
+          "title": "Review & Submit",
+          "description": "Review your information before submitting"
+        }
+      },
+      "fields": {
+        "organizationName": "Organization Name",
+        "organizationType": "Organization Type",
+        "organizationCode": "Organization Code",
+        "jurisdictions": "Jurisdictions Served",
+        "taxId": "Tax ID / EIN",
+        "insuranceCarrier": "Insurance Carrier",
+        "policyNumber": "Policy Number",
+        "registeredAgentName": "Registered Agent Name",
+        "registeredAgentContact": "Registered Agent Contact",
+        "primaryContactName": "Primary Contact Name",
+        "primaryContactEmail": "Primary Contact Email",
+        "primaryContactPhone": "Primary Contact Phone",
+        "dispatchCenterPhone": "Dispatch Center Phone (24/7)",
+        "dispatchCenterAddress": "Dispatch Center Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password"
+      },
+      "placeholders": {
+        "organizationName": "City Police Department",
+        "organizationCode": "e.g., NYPD, LAFD",
+        "jurisdiction": "Add jurisdiction (city, county, state)",
+        "taxId": "XX-XXXXXXX",
+        "insuranceCarrier": "Insurance company name",
+        "policyNumber": "Policy number",
+        "registeredAgentName": "Full legal name",
+        "registeredAgentContact": "Phone or email",
+        "primaryContactName": "Full name",
+        "primaryContactEmail": "dispatch@example.gov",
+        "dispatchCenterAddress": "123 Main St, City, State",
+        "password": "Minimum 8 characters",
+        "confirmPassword": "Re-enter password"
+      },
+      "hints": {
+        "organizationCode": "Internal department code (optional)",
+        "password": "Use a strong password with at least 8 characters"
+      },
+      "optionalFields": "Optional Information",
+      "legalNotice": "This information will be used for verification and legal accountability. All data is subject to audit.",
+      "terms": {
+        "agree": "I agree to the",
+        "termsOfService": "Emergency Services Terms of Service",
+        "and": "and",
+        "privacyPolicy": "Data Handling Policy",
+        "dataProcessing": "I understand that access requests will be logged and audited."
+      },
+      "review": {
+        "organization": "Organization",
+        "legal": "Legal Information",
+        "contact": "Contact Information",
+        "verificationTitle": "Verification Process",
+        "verificationDescription": "Your application will be reviewed by our team. You will receive an email when your account is verified or if additional information is needed."
+      },
+      "submitting": "Submitting...",
+      "submit": "Submit Application",
+      "success": "Application submitted successfully! You will receive an email when verified.",
+      "errors": {
+        "emailExists": "An account with this email already exists",
+        "generic": "Failed to submit application. Please try again."
+      },
+      "footer": {
+        "questions": "Questions about the verification process?"
+      }
+    },
+    "login": {
+      "title": "Dispatch Account Login",
+      "subtitle": "Sign in to access the Emergency Dispatch Dashboard",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "placeholders": {
+        "email": "dispatch@example.gov",
+        "password": "Your password"
+      },
+      "validation": {
+        "invalidEmail": "Please enter a valid email address",
+        "passwordRequired": "Password is required"
+      },
+      "button": "Sign In",
+      "submitting": "Signing in...",
+      "success": "Welcome back!",
+      "verificationNote": "Only verified dispatch accounts can access resident information. Pending accounts have limited access.",
+      "noAccount": "Don't have an account?",
+      "register": "Register your organization",
+      "forgotPassword": "Forgot password?",
+      "errors": {
+        "invalidCredentials": "Invalid email or password",
+        "suspended": "This account has been suspended. Contact support for assistance.",
+        "generic": "Sign in failed. Please try again."
+      }
+    },
+    "dashboard": {
+      "signOut": "Sign Out",
+      "verificationPending": {
+        "title": "Account Verification Pending",
+        "description": "Your organization's application is being reviewed. You will receive an email when verified. Full access to resident search is only available after verification."
+      },
+      "verificationRejected": {
+        "title": "Account Verification Rejected",
+        "description": "Your organization's application was not approved. Please contact support for more information."
+      },
+      "search": {
+        "title": "Resident Search",
+        "placeholder": "Enter address to search...",
+        "addressLabel": "Address",
+        "button": "Search",
+        "verificationRequired": "Search is only available for verified accounts",
+        "anonymous": "Anonymous Resident",
+        "keysAvailable": "Keys Available",
+        "requestAccess": "Request Access"
+      },
+      "recentRequests": {
+        "title": "Recent Access Requests",
+        "empty": "No access requests yet"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "denied": "Denied",
+        "expired": "Expired"
+      },
+      "accountInfo": {
+        "title": "Account Information",
+        "organization": "Organization",
+        "type": "Type",
+        "status": "Status"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "apiKeys": "Manage API Keys",
+        "accessLogs": "View Access Logs"
+      },
+      "requestDialog": {
+        "title": "Request Door Key Tree Access",
+        "description": "Provide emergency details and legal basis for accessing resident key holder information.",
+        "emergencyScenario": "Emergency Scenario",
+        "selectScenario": "Select emergency type",
+        "emergencyDescription": "Emergency Description",
+        "descriptionPlaceholder": "Describe the emergency situation...",
+        "legalBasis": "Legal Basis for Access",
+        "selectLegalBasis": "Select legal basis",
+        "caseNumber": "Case / Incident Number",
+        "caseNumberPlaceholder": "e.g., INC-2024-12345",
+        "officerName": "Requesting Officer Name",
+        "officerNamePlaceholder": "Full name",
+        "badgeNumber": "Badge Number",
+        "badgePlaceholder": "Optional",
+        "legalWarning": "All access requests are logged and audited. Unauthorized access may result in account suspension and legal action.",
+        "submitting": "Submitting...",
+        "submit": "Submit Access Request"
+      },
+      "requestSubmitted": "Access request submitted successfully",
+      "errors": {
+        "requiredFields": "Please fill in all required fields",
+        "requestFailed": "Failed to submit access request"
+      }
+    }
+  },
+  "dataImport": {
+    "title": "Importar Dados",
+    "description": "Importe seu grafo social de outra rede compatível com Dunbar.",
+    "dropZone": "Arraste seu arquivo de exportação aqui",
+    "orBrowse": "ou clique para procurar",
+    "selectFile": "Selecionar Arquivo",
+    "compatibilityNote": "Você pode importar dados exportados do Inner Friend Circles ou outras redes sociais compatíveis baseadas em Dunbar.",
+    "previewTitle": "Prévia da Importação",
+    "previewDescription": "Revise o que será importado de {{filename}}",
+    "warningsCount": "{{count}} aviso(s)",
+    "friendsToImport": "Amigos para importar",
+    "posts": "Publicações",
+    "interactions": "Interações",
+    "warnings": "Avisos",
+    "andMore": "...e mais {{count}}",
+    "duplicatesQuestion": "Como lidar com duplicatas?",
+    "keepExisting": "Manter amigos existentes (pular duplicatas)",
+    "overwrite": "Atualizar amigos existentes com dados importados",
+    "keepBoth": "Manter ambos (pode criar duplicatas)",
+    "importButton": "Importar Dados",
+    "importing": "Importando seus dados...",
+    "successTitle": "Importação Concluída",
+    "successDescription": "Seus dados foram importados com sucesso.",
+    "friendsImported": "{{count}} amigos importados",
+    "postsImported": "{{count}} publicações importadas",
+    "errorTitle": "Falha na Importação",
+    "tryAnother": "Tentar Outro Arquivo",
+    "errors": {
+      "selectJson": "Por favor, selecione um arquivo JSON.",
+      "readFailed": "Falha ao ler o arquivo",
+      "importFailed": "Falha na importação",
+      "generic": "Não foi possível importar o arquivo. Verifique o formato e tente novamente."
+    }
+  },
+  "admin": {
+    "dispatch": {
+      "title": "Dispatch Account Verification",
+      "searchPlaceholder": "Search by organization, email, or contact name...",
+      "filters": {
+        "all": "All Accounts"
+      },
+      "noAccounts": "No accounts found matching your criteria",
+      "accessDenied": {
+        "title": "Access Denied",
+        "description": "You don't have permission to access the dispatch verification panel."
+      },
+      "actions": {
+        "verify": "Verify",
+        "reject": "Reject",
+        "suspend": "Suspend"
+      },
+      "success": {
+        "verify": "Account verified successfully",
+        "reject": "Account rejected",
+        "suspend": "Account suspended"
+      },
+      "errors": {
+        "fetchFailed": "Failed to fetch accounts",
+        "actionFailed": "Action failed. Please try again."
+      },
+      "detail": {
+        "description": "Review organization details and verification documents",
+        "organization": "Organization Details",
+        "name": "Name",
+        "type": "Type",
+        "jurisdictions": "Jurisdictions",
+        "legal": "Legal Information",
+        "taxId": "Tax ID",
+        "insurance": "Insurance Carrier",
+        "policyNumber": "Policy Number",
+        "registeredAgent": "Registered Agent",
+        "contact": "Contact Information",
+        "contactName": "Contact Name",
+        "contactEmail": "Email",
+        "contactPhone": "Phone",
+        "status": "Account Status",
+        "verificationStatus": "Status",
+        "createdAt": "Applied On",
+        "rejectionReason": "Rejection Reason"
+      },
+      "confirm": {
+        "verifyTitle": "Verify Account?",
+        "verifyDescription": "This will grant the organization access to resident Door Key Tree information during emergencies.",
+        "rejectTitle": "Reject Account?",
+        "rejectDescription": "Please provide a reason for rejection. This will be shared with the organization.",
+        "suspendTitle": "Suspend Account?",
+        "suspendDescription": "This will immediately revoke the organization's access. Please provide a reason.",
+        "reason": "Reason",
+        "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
+        "processing": "Processing..."
+      }
+    }
+  },
+  "tierFeed": {
+    "toasts": {
+      "addContactInfo": "Adicionar informações de contato de {{name}}",
+      "noContactInfo": "Sem informações de contato para {{name}}",
+      "dontShowMonth": "Não mostrar por 1 mês",
+      "warningSilenced": "Avisos de {{method}} silenciados até o próximo mês",
+      "connecting": "Conectando com {{name}} via {{method}}",
+      "planMeetup": "Entre em contato com {{name}} para planejar um encontro",
+      "markedConnected": "{{name}} marcado como conectado"
+    }
+  },
+  "sunsetNudge": {
+    "actions": {
+      "scheduleCall": "Agendar chamada",
+      "sendVoiceNote": "Enviar nota de voz",
+      "planMeetup": "Planejar encontro"
+    },
+    "dateOptions": {
+      "today": "Hoje",
+      "yesterday": "Ontem",
+      "twoDaysAgo": "2 dias atrás",
+      "threeDaysAgo": "3 dias atrás",
+      "oneWeekAgo": "1 semana atrás",
+      "twoWeeksAgo": "2 semanas atrás"
+    }
+  },
+  "parasocialFeed": {
+    "new": "Novo",
+    "from": "de {{name}}",
+    "seen": "Visto",
+    "unseen": "Não visto",
+    "unknownCreator": "Criador desconhecido"
+  },
+  "nayborVideo": {
+    "title": "Quer ser meu vizinho?",
+    "clickToWatch": "Clique para assistir no YouTube",
+    "blocked": "Vídeo bloqueado pela sua rede?",
+    "learnMore": "Saiba mais",
+    "iframeTitle": "Quer ser meu vizinho? - Mr. Rogers"
+  },
+  "dataLiberation": {
+    "banner": {
+      "title": "Seus Dados, Sua Escolha",
+      "description": "Exporte seu gráfico social a qualquer momento para usar com outras redes compatíveis com Dunbar. Seus dados pertencem a você.",
+      "exportButton": "Exportar Meus Dados",
+      "learnMore": "Saiba Mais",
+      "dismiss": "Fechar banner"
+    }
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Próximo",
+    "goToPrevious": "Ir para página anterior",
+    "goToNext": "Ir para próxima página",
+    "morePages": "Mais páginas"
+  },
+  "sidebar": {
+    "toggle": "Alternar barra lateral"
+  },
+  "carousel": {
+    "previousSlide": "Slide anterior",
+    "nextSlide": "Próximo slide"
+  },
+  "breadcrumb": {
+    "more": "Mais"
+  },
+  "postContent": {
+    "photo": "Foto",
+    "sharedPhoto": "Foto compartilhada",
+    "video": "Vídeo",
+    "sharedVideo": "Vídeo compartilhado"
   }
 }

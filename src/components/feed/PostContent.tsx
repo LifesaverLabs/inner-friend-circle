@@ -1,4 +1,5 @@
 import { Calendar, MapPin, Phone, Video, Mic } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { FeedPost } from '@/types/feed';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -9,21 +10,23 @@ interface PostContentProps {
 }
 
 export function PostContent({ post }: PostContentProps) {
+  const { t } = useTranslation();
+
   switch (post.contentType) {
     case 'text':
       return <TextContent content={post.content} />;
 
     case 'photo':
-      return <PhotoContent content={post.content} mediaUrl={post.mediaUrl} />;
+      return <PhotoContent content={post.content} mediaUrl={post.mediaUrl} t={t} />;
 
     case 'video':
-      return <VideoContent content={post.content} mediaUrl={post.mediaUrl} />;
+      return <VideoContent content={post.content} mediaUrl={post.mediaUrl} t={t} />;
 
     case 'voice_note':
-      return <VoiceNoteContent content={post.content} mediaUrl={post.mediaUrl} />;
+      return <VoiceNoteContent content={post.content} mediaUrl={post.mediaUrl} t={t} />;
 
     case 'call_invite':
-      return <CallInviteContent content={post.content} scheduledAt={post.scheduledAt} />;
+      return <CallInviteContent content={post.content} scheduledAt={post.scheduledAt} t={t} />;
 
     case 'meetup_invite':
       return (
@@ -31,14 +34,15 @@ export function PostContent({ post }: PostContentProps) {
           content={post.content}
           scheduledAt={post.scheduledAt}
           location={post.location}
+          t={t}
         />
       );
 
     case 'proximity_ping':
-      return <ProximityPingContent content={post.content} location={post.location} />;
+      return <ProximityPingContent content={post.content} location={post.location} t={t} />;
 
     case 'life_update':
-      return <LifeUpdateContent content={post.content} />;
+      return <LifeUpdateContent content={post.content} t={t} />;
 
     default:
       return <TextContent content={post.content} />;
@@ -51,14 +55,14 @@ function TextContent({ content }: { content: string }) {
   );
 }
 
-function PhotoContent({ content, mediaUrl }: { content: string; mediaUrl?: string }) {
+function PhotoContent({ content, mediaUrl, t }: { content: string; mediaUrl?: string; t: (key: string) => string }) {
   return (
     <div className="space-y-2">
       {content && <p className="text-foreground">{content}</p>}
       {mediaUrl && (
         <img
           src={mediaUrl}
-          alt={content ? `Photo: ${content}` : 'Shared photo'}
+          alt={content ? `${t('postContent.photo')}: ${content}` : t('postContent.sharedPhoto')}
           className="rounded-lg max-h-96 w-full object-cover"
         />
       )}
@@ -66,7 +70,7 @@ function PhotoContent({ content, mediaUrl }: { content: string; mediaUrl?: strin
   );
 }
 
-function VideoContent({ content, mediaUrl }: { content: string; mediaUrl?: string }) {
+function VideoContent({ content, mediaUrl, t }: { content: string; mediaUrl?: string; t: (key: string) => string }) {
   return (
     <div className="space-y-2">
       {content && <p className="text-foreground">{content}</p>}
@@ -75,14 +79,14 @@ function VideoContent({ content, mediaUrl }: { content: string; mediaUrl?: strin
           src={mediaUrl}
           controls
           className="rounded-lg max-h-96 w-full"
-          aria-label={content ? `Video: ${content}` : 'Shared video'}
+          aria-label={content ? `${t('postContent.video')}: ${content}` : t('postContent.sharedVideo')}
         />
       )}
     </div>
   );
 }
 
-function VoiceNoteContent({ content, mediaUrl }: { content: string; mediaUrl?: string }) {
+function VoiceNoteContent({ content, mediaUrl, t }: { content: string; mediaUrl?: string; t: (key: string) => string }) {
   return (
     <div className="space-y-2">
       <Card className="p-4 bg-muted/50">
@@ -91,16 +95,16 @@ function VoiceNoteContent({ content, mediaUrl }: { content: string; mediaUrl?: s
             <Mic className="w-5 h-5 text-primary" />
           </div>
           <div className="flex-1">
-            <p className="text-sm font-medium">Voice Note</p>
+            <p className="text-sm font-medium">{t('postContent.voiceNote')}</p>
             {mediaUrl ? (
               <audio
                 src={mediaUrl}
                 controls
                 className="w-full mt-2"
-                aria-label={content ? `Voice note: ${content}` : 'Voice note'}
+                aria-label={content ? `${t('postContent.voiceNote')}: ${content}` : t('postContent.voiceNote')}
               />
             ) : (
-              <p className="text-xs text-muted-foreground">Audio unavailable</p>
+              <p className="text-xs text-muted-foreground">{t('postContent.audioUnavailable')}</p>
             )}
           </div>
         </div>
@@ -110,7 +114,7 @@ function VoiceNoteContent({ content, mediaUrl }: { content: string; mediaUrl?: s
   );
 }
 
-function CallInviteContent({ content, scheduledAt }: { content: string; scheduledAt?: Date }) {
+function CallInviteContent({ content, scheduledAt, t }: { content: string; scheduledAt?: Date; t: (key: string) => string }) {
   return (
     <Card className="p-4 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
       <div className="flex items-center gap-3">
@@ -118,7 +122,7 @@ function CallInviteContent({ content, scheduledAt }: { content: string; schedule
           <Phone className="w-6 h-6 text-primary" />
         </div>
         <div className="flex-1">
-          <p className="font-medium">Call Invitation</p>
+          <p className="font-medium">{t('postContent.callInvitation')}</p>
           {scheduledAt && (
             <p className="text-sm text-muted-foreground">
               <time dateTime={scheduledAt.toISOString()}>{format(scheduledAt, 'PPp')}</time>
@@ -126,9 +130,9 @@ function CallInviteContent({ content, scheduledAt }: { content: string; schedule
           )}
           {content && <p className="text-sm mt-1">{content}</p>}
         </div>
-        <Button size="sm" className="bg-primary hover:bg-primary/90" aria-label="Join call">
+        <Button size="sm" className="bg-primary hover:bg-primary/90" aria-label={t('postContent.joinCall')}>
           <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-          Join
+          {t('postContent.join')}
         </Button>
       </div>
     </Card>
@@ -139,10 +143,12 @@ function MeetupInviteContent({
   content,
   scheduledAt,
   location,
+  t,
 }: {
   content: string;
   scheduledAt?: Date;
   location?: { name: string; coordinates?: { lat: number; lng: number } };
+  t: (key: string, options?: Record<string, string>) => string;
 }) {
   return (
     <Card className="p-4 bg-gradient-to-r from-tier-core/10 to-tier-core/5 border-tier-core/20">
@@ -152,7 +158,7 @@ function MeetupInviteContent({
             <Calendar className="w-6 h-6 text-tier-core" />
           </div>
           <div className="flex-1">
-            <p className="font-medium">Meetup Invitation</p>
+            <p className="font-medium">{t('postContent.meetupInvitation')}</p>
             {scheduledAt && (
               <p className="text-sm text-muted-foreground">
                 <time dateTime={scheduledAt.toISOString()}>
@@ -166,18 +172,18 @@ function MeetupInviteContent({
         {location && (
           <div className="flex items-center gap-2 text-sm">
             <MapPin className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
-            <span>Location: {location.name}</span>
+            <span>{t('postContent.location', { name: location.name })}</span>
           </div>
         )}
 
         {content && <p className="text-sm">{content}</p>}
 
-        <div className="flex gap-2" role="group" aria-label="RSVP options">
-          <Button size="sm" variant="default" aria-label="RSVP yes to meetup">
-            RSVP Yes
+        <div className="flex gap-2" role="group" aria-label={t('postContent.rsvpOptions')}>
+          <Button size="sm" variant="default" aria-label={t('postContent.rsvpYesLabel')}>
+            {t('postContent.rsvpYes')}
           </Button>
-          <Button size="sm" variant="outline" aria-label="RSVP maybe to meetup">
-            Maybe
+          <Button size="sm" variant="outline" aria-label={t('postContent.rsvpMaybeLabel')}>
+            {t('postContent.maybe')}
           </Button>
         </div>
       </div>
@@ -188,9 +194,11 @@ function MeetupInviteContent({
 function ProximityPingContent({
   content,
   location,
+  t,
 }: {
   content: string;
   location?: { name: string; coordinates?: { lat: number; lng: number } };
+  t: (key: string, options?: Record<string, string>) => string;
 }) {
   return (
     <Card className="p-4 bg-gradient-to-r from-success/10 to-success/5 border-success/20">
@@ -199,28 +207,28 @@ function ProximityPingContent({
           <MapPin className="w-6 h-6 text-success" />
         </div>
         <div className="flex-1">
-          <p className="font-medium">I'm nearby!</p>
+          <p className="font-medium">{t('postContent.imNearby')}</p>
           {location && (
-            <p className="text-sm text-muted-foreground">Location: {location.name}</p>
+            <p className="text-sm text-muted-foreground">{t('postContent.location', { name: location.name })}</p>
           )}
           {content && <p className="text-sm mt-1">{content}</p>}
         </div>
-        <Button size="sm" variant="outline" aria-label="Call this person">
+        <Button size="sm" variant="outline" aria-label={t('postContent.callThisPerson')}>
           <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-          Call
+          {t('postContent.call')}
         </Button>
       </div>
     </Card>
   );
 }
 
-function LifeUpdateContent({ content }: { content: string }) {
+function LifeUpdateContent({ content, t }: { content: string; t: (key: string) => string }) {
   return (
     <Card className="p-4 bg-gradient-to-r from-tier-inner/10 to-tier-inner/5 border-tier-inner/20">
       <div className="flex items-start gap-3">
         <span className="text-2xl" aria-hidden="true">✨</span>
         <div>
-          <p className="font-medium text-sm text-tier-inner mb-1">Life Update</p>
+          <p className="font-medium text-sm text-tier-inner mb-1">{t('postContent.lifeUpdate')}</p>
           <p className="text-foreground">{content}</p>
         </div>
       </div>

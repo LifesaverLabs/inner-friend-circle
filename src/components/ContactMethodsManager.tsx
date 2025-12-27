@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Trash2, Video, Calendar, HelpCircle, Info, GripVertical } from 'lucide-react';
 import {
@@ -49,68 +50,68 @@ import { useContactMethods } from '@/hooks/useContactMethods';
 import { ServiceType, SERVICES, SERVICE_LIST, ContactMethod } from '@/types/contactMethod';
 import { toast } from 'sonner';
 
-// Detailed guidance for each service
-const SERVICE_GUIDANCE: Record<ServiceType, { howToFind: string; example: string; tip?: string }> = {
+// Translation keys for each service guidance
+const SERVICE_GUIDANCE_KEYS: Record<ServiceType, { howToFind: string; example: string; tip?: string }> = {
   real_face_time: {
-    howToFind: 'Specify your city, neighborhood, or favorite meeting spot. This helps friends know where you\'re available for in-person connection.',
-    example: 'San Francisco, CA or "Coffee at Blue Bottle"',
-    tip: 'Nothing beats real face time — prioritize meeting in person when possible!',
+    howToFind: 'contactMethods.guidance.realFaceTime.howToFind',
+    example: 'contactMethods.guidance.realFaceTime.example',
+    tip: 'contactMethods.guidance.realFaceTime.tip',
   },
   phone: {
-    howToFind: 'Use your mobile or landline phone number with country code.',
-    example: '+1 555-123-4567',
+    howToFind: 'contactMethods.guidance.phone.howToFind',
+    example: 'contactMethods.guidance.phone.example',
   },
   facetime: {
-    howToFind: 'Use the phone number or Apple ID email linked to your FaceTime account. Find it in Settings → FaceTime on your iPhone/Mac.',
-    example: '+1 555-123-4567 or you@icloud.com',
-    tip: 'FaceTime only works between Apple devices.',
+    howToFind: 'contactMethods.guidance.facetime.howToFind',
+    example: 'contactMethods.guidance.facetime.example',
+    tip: 'contactMethods.guidance.facetime.tip',
   },
   whatsapp: {
-    howToFind: 'Use the phone number registered with WhatsApp, including country code. Find it in WhatsApp → Settings → tap your profile.',
-    example: '+1 555-123-4567',
-    tip: 'Include the + and country code without spaces or dashes.',
+    howToFind: 'contactMethods.guidance.whatsapp.howToFind',
+    example: 'contactMethods.guidance.whatsapp.example',
+    tip: 'contactMethods.guidance.whatsapp.tip',
   },
   signal: {
-    howToFind: 'Use the phone number registered with Signal. Find it in Signal → Settings → tap your profile picture.',
-    example: '+1 555-123-4567',
-    tip: 'Signal requires both parties to have the app installed.',
+    howToFind: 'contactMethods.guidance.signal.howToFind',
+    example: 'contactMethods.guidance.signal.example',
+    tip: 'contactMethods.guidance.signal.tip',
   },
   telegram: {
-    howToFind: 'Use your Telegram username (without @) or phone number. Find your username in Telegram → Settings → Username.',
-    example: 'your_username or +1 555-123-4567',
-    tip: 'Usernames work better than phone numbers for privacy.',
+    howToFind: 'contactMethods.guidance.telegram.howToFind',
+    example: 'contactMethods.guidance.telegram.example',
+    tip: 'contactMethods.guidance.telegram.tip',
   },
   zoom: {
-    howToFind: 'Use your Personal Meeting ID (PMI) or personal meeting link. Find it in Zoom → Meetings → Personal Meeting ID.',
-    example: '123-456-7890 or https://zoom.us/j/1234567890',
-    tip: 'Your PMI stays the same across all meetings.',
+    howToFind: 'contactMethods.guidance.zoom.howToFind',
+    example: 'contactMethods.guidance.zoom.example',
+    tip: 'contactMethods.guidance.zoom.tip',
   },
   google_meet: {
-    howToFind: 'Use your Gmail address. Friends can start a Meet and invite you, or use your personal meeting link from Google Calendar.',
-    example: 'you@gmail.com',
-    tip: 'Works best when both parties have Google accounts.',
+    howToFind: 'contactMethods.guidance.googleMeet.howToFind',
+    example: 'contactMethods.guidance.googleMeet.example',
+    tip: 'contactMethods.guidance.googleMeet.tip',
   },
   teams: {
-    howToFind: 'Use your Microsoft work or personal email. Find it in Teams → click your profile picture.',
-    example: 'you@company.com or you@outlook.com',
+    howToFind: 'contactMethods.guidance.teams.howToFind',
+    example: 'contactMethods.guidance.teams.example',
   },
   discord: {
-    howToFind: 'Use your Discord username or User ID. Find your username in Discord → Settings → My Account.',
-    example: 'username#1234 or 123456789012345678',
-    tip: 'For User ID: Enable Developer Mode, right-click your name, Copy ID.',
+    howToFind: 'contactMethods.guidance.discord.howToFind',
+    example: 'contactMethods.guidance.discord.example',
+    tip: 'contactMethods.guidance.discord.tip',
   },
   skype: {
-    howToFind: 'Use your Skype Name. Find it in Skype → Settings → Account & Profile → Skype Name.',
-    example: 'live:your.name or your.skypename',
+    howToFind: 'contactMethods.guidance.skype.howToFind',
+    example: 'contactMethods.guidance.skype.example',
   },
   webex: {
-    howToFind: 'Use your Webex Personal Room link or email. Find your room link in Webex → Preferences → My Personal Room.',
-    example: 'https://meet.webex.com/your.room or you@company.com',
+    howToFind: 'contactMethods.guidance.webex.howToFind',
+    example: 'contactMethods.guidance.webex.example',
   },
   slack: {
-    howToFind: 'Use your Slack email or workspace member ID. Note: Slack Huddles only work within shared workspaces.',
-    example: 'you@company.com',
-    tip: 'Both parties must be in the same Slack workspace.',
+    howToFind: 'contactMethods.guidance.slack.howToFind',
+    example: 'contactMethods.guidance.slack.example',
+    tip: 'contactMethods.guidance.slack.tip',
   },
 };
 
@@ -120,6 +121,7 @@ interface ContactMethodsManagerProps {
 }
 
 export function ContactMethodsManager({ userId, compact = false }: ContactMethodsManagerProps) {
+  const { t } = useTranslation();
   const {
     contactMethods,
     isLoading,
@@ -150,7 +152,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
   const handleAdd = async () => {
     if (!newIdentifier.trim()) {
-      toast.error('Please enter contact information');
+      toast.error(t('contactMethods.toasts.enterInfo'));
       return;
     }
 
@@ -195,7 +197,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
   const spontaneousMethods = getSpontaneousMethods();
   const scheduledMethods = getScheduledMethods();
   const selectedService = SERVICES[newService];
-  const guidance = SERVICE_GUIDANCE[newService];
+  const guidanceKeys = SERVICE_GUIDANCE_KEYS[newService];
 
   if (isLoading) {
     return (
@@ -213,21 +215,21 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
       <DialogTrigger asChild>
         <Button size={compact ? 'sm' : 'default'} variant={compact ? 'outline' : 'default'}>
           <Plus className="w-4 h-4 mr-1" />
-          {compact ? 'Add' : 'Add Contact Method'}
+          {compact ? t('contactMethods.addButtonCompact') : t('contactMethods.addButton')}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Add Contact Method</DialogTitle>
+          <DialogTitle>{t('contactMethods.addDialogTitle')}</DialogTitle>
           <DialogDescription>
-            Add a way for your friends to reach you for video kalls
+            {t('contactMethods.addDialogDescription')}
           </DialogDescription>
         </DialogHeader>
-        
+
         <div className="space-y-4 py-4">
           {/* Service Selection */}
           <div className="space-y-2">
-            <Label>Service</Label>
+            <Label>{t('contactMethods.serviceLabel')}</Label>
             <Select value={newService} onValueChange={(v) => setNewService(v as ServiceType)}>
               <SelectTrigger>
                 <SelectValue />
@@ -250,13 +252,13 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
             <div className="flex items-start gap-2">
               <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
               <div className="text-sm">
-                <p className="text-foreground">{guidance.howToFind}</p>
+                <p className="text-foreground">{t(guidanceKeys.howToFind)}</p>
                 <p className="text-muted-foreground mt-1">
-                  <span className="font-medium">Example:</span> {guidance.example}
+                  <span className="font-medium">{t('contactMethods.guidance.exampleLabel')}:</span> {t(guidanceKeys.example)}
                 </p>
-                {guidance.tip && (
+                {guidanceKeys.tip && (
                   <p className="text-primary/80 mt-1 text-xs">
-                    💡 {guidance.tip}
+                    💡 {t(guidanceKeys.tip)}
                   </p>
                 )}
               </div>
@@ -266,7 +268,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
           {/* Contact Info Input */}
           <div className="space-y-2">
             <Label htmlFor="contact-identifier">
-              Your {selectedService.name} Contact Info
+              {t('contactMethods.contactInfoLabel', { service: selectedService.name })}
             </Label>
             <Input
               id="contact-identifier"
@@ -284,31 +286,31 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
           {/* Label Input */}
           <div className="space-y-2">
-            <Label htmlFor="contact-label">Label (optional)</Label>
+            <Label htmlFor="contact-label">{t('contactMethods.labelOptional')}</Label>
             <Input
               id="contact-label"
-              placeholder="e.g., Personal, Work, Home"
+              placeholder={t('contactMethods.labelPlaceholder')}
               value={newLabel}
               onChange={(e) => setNewLabel(e.target.value)}
             />
             <p className="text-xs text-muted-foreground">
-              Helps you identify between multiple accounts on the same service
+              {t('contactMethods.labelHint')}
             </p>
           </div>
 
           {/* Call Type Toggles */}
           <div className="space-y-3 pt-2">
-            <Label>Available for</Label>
+            <Label>{t('contactMethods.availableFor')}</Label>
             <TooltipProvider>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Spontaneous Kalls</span>
+                  <span className="text-sm text-muted-foreground">{t('contactMethods.spontaneousKalls')}</span>
                   <Tooltip>
                     <TooltipTrigger>
                       <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="max-w-xs">Instant, drop-in video calls when friends want to connect right now</p>
+                      <p className="max-w-xs">{t('contactMethods.spontaneousTooltip')}</p>
                     </TooltipContent>
                   </Tooltip>
                 </div>
@@ -316,13 +318,13 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Scheduled Kalls</span>
+                  <span className="text-sm text-muted-foreground">{t('contactMethods.scheduledKalls')}</span>
                   <Tooltip>
                     <TooltipTrigger>
                       <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="max-w-xs">Planned video meetings set up in advance for a specific time</p>
+                      <p className="max-w-xs">{t('contactMethods.scheduledTooltip')}</p>
                     </TooltipContent>
                   </Tooltip>
                 </div>
@@ -334,13 +336,13 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
         <DialogFooter>
           <Button variant="outline" onClick={handleCancel}>
-            Cancel
+            {t('actions.cancel')}
           </Button>
-          <Button 
-            onClick={handleAdd} 
+          <Button
+            onClick={handleAdd}
             disabled={!newIdentifier.trim() || (!forSpontaneous && !forScheduled)}
           >
-            Add Method
+            {t('contactMethods.addMethod')}
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -351,7 +353,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium text-foreground">Contact Methods</h3>
+          <h3 className="text-sm font-medium text-foreground">{t('contactMethods.title')}</h3>
           {AddMethodDialog}
         </div>
         <MethodsList methods={contactMethods} onRemove={removeContactMethod} />
@@ -363,9 +365,9 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold text-foreground">Contact Methods</h2>
+          <h2 className="text-xl font-semibold text-foreground">{t('contactMethods.title')}</h2>
           <p className="text-sm text-muted-foreground">
-            Add your preferred video call and messaging services so friends can reach you
+            {t('contactMethods.subtitle')}
           </p>
         </div>
         {AddMethodDialog}
@@ -376,16 +378,16 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Video className="w-5 h-5" />
-              Spontaneous Kalls
+              {t('contactMethods.spontaneousKalls')}
             </CardTitle>
             <CardDescription>
-              Drag to reorder priority. #1 is your preferred method.
+              {t('contactMethods.dragReorderHint')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {spontaneousMethods.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4 text-center">
-                No spontaneous call methods added yet
+                {t('contactMethods.noSpontaneousMethods')}
               </p>
             ) : (
               <DndContext
@@ -417,16 +419,16 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              Scheduled Kalls
+              {t('contactMethods.scheduledKalls')}
             </CardTitle>
             <CardDescription>
-              Drag to reorder priority. #1 is your preferred method.
+              {t('contactMethods.dragReorderHint')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {scheduledMethods.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4 text-center">
-                No scheduled call methods added yet
+                {t('contactMethods.noScheduledMethods')}
               </p>
             ) : (
               <DndContext
@@ -465,6 +467,7 @@ interface SortableMethodItemProps {
 }
 
 function SortableMethodItem({ method, index, onRemove }: SortableMethodItemProps) {
+  const { t } = useTranslation();
   const {
     attributes,
     listeners,
@@ -495,7 +498,7 @@ function SortableMethodItem({ method, index, onRemove }: SortableMethodItemProps
         {...attributes}
         {...listeners}
         className="touch-none p-1 -ml-1 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing"
-        aria-label="Drag to reorder"
+        aria-label={t('accessibility.dragToReorder')}
       >
         <GripVertical className="w-4 h-4" />
       </button>

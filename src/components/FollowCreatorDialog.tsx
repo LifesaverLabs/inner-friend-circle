@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, User, Star, Loader2, CheckCircle2, AlertCircle, Link2, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -31,6 +32,7 @@ export function FollowCreatorDialog({
   onOpenChange,
   userId,
 }: FollowCreatorDialogProps) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { followParasocial, refetch } = useParasocial(userId);
   const [searchQuery, setSearchQuery] = useState('');
@@ -73,26 +75,26 @@ export function FollowCreatorDialog({
 
       if (error) {
         console.error('Search error:', error);
-        setSearchError('An error occurred while searching.');
+        setSearchError(t('followCreator.errors.searching'));
         return;
       }
 
       if (!data || data.length === 0) {
-        setSearchError('No creators found matching that search. They may not have enabled creator mode yet.');
+        setSearchError(t('followCreator.errors.noCreators'));
         return;
       }
 
       // Filter out the current user
       const filtered = data.filter(p => p.user_id !== userId);
       if (filtered.length === 0) {
-        setSearchError('No creators found matching that search.');
+        setSearchError(t('followCreator.errors.noCreatorsFound'));
         return;
       }
 
       setResults(filtered);
     } catch (error) {
       console.error('Search error:', error);
-      setSearchError('An error occurred while searching.');
+      setSearchError(t('followCreator.errors.searching'));
     } finally {
       setSearching(false);
     }
@@ -100,21 +102,21 @@ export function FollowCreatorDialog({
 
   const handleFollow = async (creator: FoundCreator) => {
     setFollowingId(creator.user_id);
-    
+
     const result = await followParasocial(creator.user_id);
-    
+
     if (result.success) {
-      toast.success(`Now following ${creator.display_name || `@${creator.user_handle}`}`);
+      toast.success(t('followCreator.toasts.following', { name: creator.display_name || `@${creator.user_handle}` }));
       refetch();
       handleClose();
     } else {
       if (result.error === 'Already following') {
-        toast.info('You are already following this creator');
+        toast.info(t('followCreator.toasts.alreadyFollowing'));
       } else {
-        toast.error(result.error || 'Failed to follow');
+        toast.error(result.error || t('followCreator.toasts.followFailed'));
       }
     }
-    
+
     setFollowingId(null);
   };
 
@@ -129,23 +131,23 @@ export function FollowCreatorDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 font-display text-xl">
             <Star className="h-5 w-5" />
-            Follow a Creator
+            {t('followCreator.title')}
           </DialogTitle>
           <DialogDescription>
-            Search for verified creators to follow and see their content in your feed.
+            {t('followCreator.description')}
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 pt-2">
           {/* Search Input */}
           <div className="space-y-2">
-            <Label htmlFor="creator-search">Search by name or handle</Label>
+            <Label htmlFor="creator-search">{t('followCreator.searchLabel')}</Label>
             <div className="flex gap-2">
               <Input
                 id="creator-search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="@creator_handle or Creator Name"
+                placeholder={t('followCreator.searchPlaceholder')}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
               />
               <Button
@@ -161,7 +163,7 @@ export function FollowCreatorDialog({
               </Button>
             </div>
             <p className="text-xs text-muted-foreground">
-              Only users who have enabled Creator Mode will appear in search results.
+              {t('followCreator.creatorModeHint')}
             </p>
           </div>
 
@@ -200,10 +202,10 @@ export function FollowCreatorDialog({
                     
                     <div className="flex-1 min-w-0">
                       <p className="font-medium flex items-center gap-2 truncate">
-                        {creator.display_name || 'Creator'}
+                        {creator.display_name || t('profile.creator')}
                         <Badge variant="secondary" className="text-xs">
                           <Star className="h-2.5 w-2.5 mr-1" />
-                          Creator
+                          {t('profile.creator')}
                         </Badge>
                       </p>
                       {creator.user_handle && (
@@ -233,7 +235,7 @@ export function FollowCreatorDialog({
                         ) : (
                           <>
                             <Link2 className="h-4 w-4 mr-1" />
-                            Follow
+                            {t('profile.follow')}
                           </>
                         )}
                       </Button>

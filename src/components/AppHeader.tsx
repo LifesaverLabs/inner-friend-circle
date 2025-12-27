@@ -39,7 +39,7 @@ export function AppHeader({
           className="flex items-center gap-3"
         >
           <Heart className="w-7 h-7 text-primary fill-primary/20" />
-          <span className="font-display text-xl font-bold text-foreground">Inner Friend</span>
+          <span className="font-display text-xl font-bold text-foreground">{t('app.name')}</span>
           <VersionBadge />
         </motion.a>
 

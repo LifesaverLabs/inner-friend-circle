@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Phone, MessageCircle, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Friend, CONTACT_METHODS } from '@/types/friend';
@@ -8,6 +9,8 @@ interface NayborSOSQuickPanelProps {
 }
 
 export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanelProps) {
+  const { t } = useTranslation();
+
   const handleCall = (naybor: Friend) => {
     if (naybor.phone) {
       window.open(`tel:${naybor.phone}`, '_self');
@@ -29,8 +32,8 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
   };
 
   return (
-    <div className="p-3 bg-tier-naybor/5" role="region" aria-label="Quick SOS contacts">
-      <p className="text-xs text-muted-foreground mb-2" id="quick-contacts-label">Quick contacts:</p>
+    <div className="p-3 bg-tier-naybor/5" role="region" aria-label={t('accessibility.naybor.sosRegion')}>
+      <p className="text-xs text-muted-foreground mb-2" id="quick-contacts-label">{t('accessibility.naybor.sosContactsList')}</p>
       <div className="space-y-2" role="list" aria-labelledby="quick-contacts-label">
         {contacts.map((naybor) => (
           <div
@@ -50,7 +53,7 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
               </div>
             </div>
 
-            <div className="flex items-center gap-1 shrink-0" role="group" aria-label={`Contact options for ${naybor.name}`}>
+            <div className="flex items-center gap-1 shrink-0" role="group" aria-label={t('accessibility.naybor.contactOptions', { name: naybor.name })}>
               {naybor.phone ? (
                 <>
                   <Button
@@ -58,7 +61,7 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
                     size="icon"
                     className="h-8 w-8 text-tier-naybor hover:text-tier-naybor hover:bg-tier-naybor/10"
                     onClick={() => handleCall(naybor)}
-                    aria-label={`Call ${naybor.name}`}
+                    aria-label={t('accessibility.naybor.callButton', { name: naybor.name })}
                   >
                     <Phone className="w-4 h-4" aria-hidden="true" />
                   </Button>
@@ -67,20 +70,20 @@ export function NayborSOSQuickPanel({ contacts, onContact }: NayborSOSQuickPanel
                     size="icon"
                     className="h-8 w-8 text-tier-naybor hover:text-tier-naybor hover:bg-tier-naybor/10"
                     onClick={() => handleMessage(naybor)}
-                    aria-label={`Message ${naybor.name}`}
+                    aria-label={t('accessibility.naybor.messageButton', { name: naybor.name })}
                   >
                     <MessageCircle className="w-4 h-4" aria-hidden="true" />
                   </Button>
                 </>
               ) : (
-                <span className="text-xs text-muted-foreground px-2">No phone</span>
+                <span className="text-xs text-muted-foreground px-2">{t('nayborSOS.noPhone')}</span>
               )}
             </div>
           </div>
         ))}
       </div>
       <p className="text-xs text-muted-foreground mt-2 text-center">
-        Tap SOS for more options and all naybors
+        {t('nayborSOS.tapSOSForMore')}
       </p>
     </div>
   );

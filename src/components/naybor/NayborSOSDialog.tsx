@@ -202,7 +202,7 @@ export function NayborSOSDialog({
                         : 'hover:border-tier-naybor hover:bg-tier-naybor/5'
                     }`}
                     onClick={() => handleCategorySelect(category.id)}
-                    aria-label={`${category.name}${category.urgencyLevel === 'critical' ? ' - Critical urgency' : ''}`}
+                    aria-label={`${category.name}${category.urgencyLevel === 'critical' ? ` - ${t('nayborSOS.criticalUrgency')}` : ''}`}
                   >
                     <span className="text-lg" aria-hidden="true">{category.icon}</span>
                     <span className="font-medium text-sm">{category.name}</span>
@@ -341,7 +341,7 @@ export function NayborSOSDialog({
                               {wasContacted && (
                                 <>
                                   <Check className="w-3 h-3 text-green-500" aria-hidden="true" />
-                                  <span className="sr-only">(already contacted)</span>
+                                  <span className="sr-only">{t('accessibility.naybor.alreadyContacted')}</span>
                                 </>
                               )}
                             </p>

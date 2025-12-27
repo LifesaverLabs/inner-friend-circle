@@ -83,7 +83,7 @@ export function FriendCard({
 
   const handleSave = (id: string, updates: Partial<Friend>) => {
     onUpdate?.(id, updates);
-    toast.success(`Updated ${updates.name || friend.name}`);
+    toast.success(t('friendCard.updated', { name: updates.name || friend.name }));
   };
 
   return (
