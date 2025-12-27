@@ -334,7 +334,8 @@
       "offline": "离线",
       "away": "离开",
       "busy": "忙碌"
-    }
+    },
+    "dragToReorder": "拖动以重新排序"
   },
   "language": {
     "select": "选择语言",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "添加更多邻居",
     "quick": "快速",
     "noPhone": "无电话",
-    "tapSOSForMore": "点击SOS获取更多选项和所有邻居"
+    "tapSOSForMore": "点击SOS获取更多选项和所有邻居",
+    "criticalUrgency": "紧急情况"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "示例",
+      "realFaceTime": {
+        "howToFind": "分享你的城市或最喜欢的见面地点——没有什么比面对面交流更好！",
+        "example": "\"北京\" 或 \"星巴克，三里屯\"",
+        "tip": "在你觉得舒适的范围内尽量具体。通常提到区域就够了。"
+      },
+      "phone": {
+        "howToFind": "输入带国家代码的电话号码。",
+        "example": "+86 138 1234 5678",
+        "tip": "适用于普通通话和短信。"
+      },
+      "facetime": {
+        "howToFind": "使用你的 Apple ID 邮箱或与 FaceTime 关联的电话号码。",
+        "example": "yourname@icloud.com 或 +86 138 1234 5678",
+        "tip": "FaceTime 需要双方都使用 Apple 设备。"
+      },
+      "whatsapp": {
+        "howToFind": "带国家代码的电话号码（在 WhatsApp 注册的号码）。",
+        "example": "+8613812345678",
+        "tip": "号码中不要包含空格或连字符。"
+      },
+      "signal": {
+        "howToFind": "在 Signal 应用注册的电话号码。",
+        "example": "+86 138 1234 5678",
+        "tip": "Signal 为注重隐私的用户提供端到端加密。"
+      },
+      "telegram": {
+        "howToFind": "你的 @用户名（不带 @）或电话号码。",
+        "example": "username 或 +8613812345678",
+        "tip": "用户名比电话号码更容易分享。"
+      },
+      "zoom": {
+        "howToFind": "你的个人会议 ID 或个人会议室链接。",
+        "example": "123 456 7890 或 https://zoom.us/j/1234567890",
+        "tip": "在 Zoom 设置的个人资料 > 个人会议 ID 中找到。"
+      },
+      "googleMeet": {
+        "howToFind": "你的 Gmail 地址——朋友可以直接与你开始 Meet。",
+        "example": "yourname@gmail.com",
+        "tip": "当双方都有 Google 账户时，Google Meet 效果最好。"
+      },
+      "teams": {
+        "howToFind": "你的 Microsoft 工作或个人邮箱地址。",
+        "example": "yourname@company.com 或 yourname@outlook.com",
+        "tip": "对于工作账户，外部通话可能需要管理员批准。"
+      },
+      "discord": {
+        "howToFind": "你的 Discord 用户名或用户 ID。",
+        "example": "username#1234 或 123456789012345678",
+        "tip": "在 Discord 设置中启用开发者模式来找到你的用户 ID。"
+      },
+      "skype": {
+        "howToFind": "你的 Skype 名称（不是显示名称）。",
+        "example": "live:yourskypename",
+        "tip": "在 Skype 设置 → 账户 → Skype 名称中找到。"
+      },
+      "webex": {
+        "howToFind": "你的个人会议室链接或 Webex 邮箱。",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "个人会议室链接是永久的，易于分享。"
+      },
+      "slack": {
+        "howToFind": "你的工作邮箱（双方都需要访问同一个 Slack 工作区）。",
+        "example": "yourname@company.com",
+        "tip": "Slack 通话只在同一工作区的成员之间有效。"
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "更多"
+  },
+  "postContent": {
+    "photo": "照片",
+    "sharedPhoto": "分享的照片",
+    "video": "视频",
+    "sharedVideo": "分享的视频"
   }
 }

@@ -334,7 +334,8 @@
       "offline": "Не в сети",
       "away": "Отошёл",
       "busy": "Занят"
-    }
+    },
+    "dragToReorder": "Перетащите для изменения порядка"
   },
   "language": {
     "select": "Выбрать язык",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Добавить больше соседей",
     "quick": "Быстро",
     "noPhone": "Нет телефона",
-    "tapSOSForMore": "Нажмите SOS для дополнительных опций и всех соседей"
+    "tapSOSForMore": "Нажмите SOS для дополнительных опций и всех соседей",
+    "criticalUrgency": "Критическая срочность"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "Пример",
+      "realFaceTime": {
+        "howToFind": "Поделитесь своим городом или любимым местом встречи — ничто не сравнится с личной встречей!",
+        "example": "\"Москва\" или \"Кофемания, Тверская\"",
+        "tip": "Будьте настолько конкретны, насколько вам комфортно. Обычно района достаточно."
+      },
+      "phone": {
+        "howToFind": "Введите номер телефона с кодом страны.",
+        "example": "+7 (999) 123-45-67",
+        "tip": "Работает для обычных звонков и SMS."
+      },
+      "facetime": {
+        "howToFind": "Используйте email Apple ID или номер телефона, связанный с FaceTime.",
+        "example": "yourname@icloud.com или +7 999 123 45 67",
+        "tip": "Для FaceTime обеим сторонам нужны устройства Apple."
+      },
+      "whatsapp": {
+        "howToFind": "Ваш номер телефона с кодом страны (зарегистрированный в WhatsApp).",
+        "example": "+79991234567",
+        "tip": "Не включайте пробелы или дефисы в номер."
+      },
+      "signal": {
+        "howToFind": "Ваш номер телефона, зарегистрированный в приложении Signal.",
+        "example": "+7 999 123-45-67",
+        "tip": "Signal предлагает сквозное шифрование для пользователей, заботящихся о конфиденциальности."
+      },
+      "telegram": {
+        "howToFind": "Ваш @username (без @) или номер телефона.",
+        "example": "username или +79991234567",
+        "tip": "Имена пользователей легче делиться, чем номерами телефонов."
+      },
+      "zoom": {
+        "howToFind": "Ваш личный ID встречи или ссылка на личную комнату.",
+        "example": "123 456 7890 или https://zoom.us/j/1234567890",
+        "tip": "Найдите в настройках Zoom в разделе Профиль > Личный ID встречи."
+      },
+      "googleMeet": {
+        "howToFind": "Ваш адрес Gmail — друзья могут начать Meet с вами напрямую.",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet лучше работает, когда у обоих есть аккаунты Google."
+      },
+      "teams": {
+        "howToFind": "Ваш рабочий или личный email Microsoft.",
+        "example": "yourname@company.com или yourname@outlook.com",
+        "tip": "Для рабочих аккаунтов внешние звонки могут требовать одобрения админа."
+      },
+      "discord": {
+        "howToFind": "Ваше имя пользователя Discord или ID пользователя.",
+        "example": "username#1234 или 123456789012345678",
+        "tip": "Найдите свой ID пользователя, включив режим разработчика в настройках Discord."
+      },
+      "skype": {
+        "howToFind": "Ваше имя Skype (не отображаемое имя).",
+        "example": "live:yourskypename",
+        "tip": "Найдите в настройках Skype → Учетная запись → Имя Skype."
+      },
+      "webex": {
+        "howToFind": "Ссылка на вашу личную комнату или email Webex.",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "Ссылки на личные комнаты постоянные и легко делиться."
+      },
+      "slack": {
+        "howToFind": "Ваш рабочий email (обоим нужен доступ к одному рабочему пространству Slack).",
+        "example": "yourname@company.com",
+        "tip": "Звонки Slack работают только между членами одного рабочего пространства."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "Ещё"
+  },
+  "postContent": {
+    "photo": "Фото",
+    "sharedPhoto": "Общее фото",
+    "video": "Видео",
+    "sharedVideo": "Общее видео"
   }
 }

@@ -334,7 +334,8 @@
       "offline": "ऑफलाइन",
       "away": "दूर",
       "busy": "व्यस्त"
-    }
+    },
+    "dragToReorder": "पुनर्क्रमित करण्यासाठी ड्रॅग करा"
   },
   "language": {
     "select": "भाषा निवडा",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "अधिक शेजारी जोडा",
     "quick": "जलद",
     "noPhone": "फोन नाही",
-    "tapSOSForMore": "अधिक पर्याय आणि सर्व शेजार्‍यांसाठी SOS टॅप करा"
+    "tapSOSForMore": "अधिक पर्याय आणि सर्व शेजार्‍यांसाठी SOS टॅप करा",
+    "criticalUrgency": "गंभीर आणीबाणी"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1676,5 +1678,11 @@
   },
   "breadcrumb": {
     "more": "अधिक"
+  },
+  "postContent": {
+    "photo": "फोटो",
+    "sharedPhoto": "शेअर केलेला फोटो",
+    "video": "व्हिडिओ",
+    "sharedVideo": "शेअर केलेला व्हिडिओ"
   }
 }

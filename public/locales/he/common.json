@@ -334,7 +334,8 @@
       "offline": "לא מחובר",
       "away": "לא נמצא",
       "busy": "עסוק"
-    }
+    },
+    "dragToReorder": "גרור לסידור מחדש"
   },
   "language": {
     "select": "בחר שפה",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "הוסף עוד שכנים",
     "quick": "מהיר",
     "noPhone": "אין טלפון",
-    "tapSOSForMore": "הקש SOS לאפשרויות נוספות וכל השכנים"
+    "tapSOSForMore": "הקש SOS לאפשרויות נוספות וכל השכנים",
+    "criticalUrgency": "דחיפות קריטית"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "דוגמה",
+      "realFaceTime": {
+        "howToFind": "שתף את העיר שלך או מקום מפגש מועדף — שום דבר לא משתווה למפגש פנים אל פנים!",
+        "example": "\"תל אביב\" או \"קפה הגלריה, רוטשילד\"",
+        "tip": "היה ספציפי כמה שנוח לך. לרוב די בציון השכונה."
+      },
+      "phone": {
+        "howToFind": "הזן את מספר הטלפון שלך עם קידומת המדינה.",
+        "example": "+972 52 123 4567",
+        "tip": "עובד לשיחות רגילות ו-SMS."
+      },
+      "facetime": {
+        "howToFind": "השתמש באימייל Apple ID או במספר הטלפון המקושר ל-FaceTime.",
+        "example": "yourname@icloud.com או +972 52 123 4567",
+        "tip": "שני הצדדים צריכים מכשירי Apple ל-FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "מספר הטלפון שלך עם קידומת המדינה (הרשום ב-WhatsApp).",
+        "example": "+972521234567",
+        "tip": "אל תכלול רווחים או מקפים במספר."
+      },
+      "signal": {
+        "howToFind": "מספר הטלפון שלך הרשום באפליקציית Signal.",
+        "example": "+972 52 123 4567",
+        "tip": "Signal מציע הצפנה מקצה לקצה למשתמשים המודעים לפרטיות."
+      },
+      "telegram": {
+        "howToFind": "שם המשתמש שלך @ (ללא @) או מספר טלפון.",
+        "example": "username או +972521234567",
+        "tip": "שמות משתמש קלים יותר לשיתוף ממספרי טלפון."
+      },
+      "zoom": {
+        "howToFind": "מזהה הפגישה האישית שלך או קישור לחדר הפגישות האישי.",
+        "example": "123 456 7890 או https://zoom.us/j/1234567890",
+        "tip": "מצא זאת בהגדרות Zoom תחת פרופיל > מזהה פגישה אישית."
+      },
+      "googleMeet": {
+        "howToFind": "כתובת ה-Gmail שלך — חברים יכולים להתחיל Meet איתך ישירות.",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet עובד הכי טוב כששני הצדדים יש להם חשבונות Google."
+      },
+      "teams": {
+        "howToFind": "כתובת האימייל של Microsoft לעבודה או אישית.",
+        "example": "yourname@company.com או yourname@outlook.com",
+        "tip": "לחשבונות עבודה, שיחות חיצוניות עשויות לדרוש אישור מנהל."
+      },
+      "discord": {
+        "howToFind": "שם המשתמש שלך ב-Discord או מזהה משתמש.",
+        "example": "username#1234 או 123456789012345678",
+        "tip": "מצא את מזהה המשתמש שלך על ידי הפעלת מצב מפתח בהגדרות Discord."
+      },
+      "skype": {
+        "howToFind": "שם ה-Skype שלך (לא שם התצוגה).",
+        "example": "live:yourskypename",
+        "tip": "מצא זאת בהגדרות Skype → חשבון → שם Skype."
+      },
+      "webex": {
+        "howToFind": "קישור החדר האישי שלך או אימייל Webex.",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "קישורי חדר אישי הם קבועים וקלים לשיתוף."
+      },
+      "slack": {
+        "howToFind": "אימייל העבודה שלך (שני הצדדים צריכים גישה לאותו workspace של Slack).",
+        "example": "yourname@company.com",
+        "tip": "שיחות Slack עובדות רק בין חברי אותו workspace."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "עוד"
+  },
+  "postContent": {
+    "photo": "תמונה",
+    "sharedPhoto": "תמונה משותפת",
+    "video": "סרטון",
+    "sharedVideo": "סרטון משותף"
   }
 }

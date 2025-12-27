@@ -334,7 +334,8 @@
       "offline": "ఆఫ్‌లైన్",
       "away": "దూరంగా",
       "busy": "బిజీ"
-    }
+    },
+    "dragToReorder": "పునఃక్రమం చేయడానికి లాగండి"
   },
   "language": {
     "select": "భాష ఎంచుకో",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "మరిన్ని పొరుగువారిని జోడించండి",
     "quick": "త్వరగా",
     "noPhone": "ఫోన్ లేదు",
-    "tapSOSForMore": "మరిన్ని ఎంపికలు మరియు అన్ని పొరుగువారి కోసం SOS నొక్కండి"
+    "tapSOSForMore": "మరిన్ని ఎంపికలు మరియు అన్ని పొరుగువారి కోసం SOS నొక్కండి",
+    "criticalUrgency": "క్లిష్టమైన అత్యవసర పరిస్థితి"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1676,5 +1678,11 @@
   },
   "breadcrumb": {
     "more": "మరిన్ని"
+  },
+  "postContent": {
+    "photo": "ఫోటో",
+    "sharedPhoto": "షేర్ చేసిన ఫోటో",
+    "video": "వీడియో",
+    "sharedVideo": "షేర్ చేసిన వీడియో"
   }
 }

@@ -334,7 +334,8 @@
       "offline": "Hors ligne",
       "away": "Absent",
       "busy": "Occupé"
-    }
+    },
+    "dragToReorder": "Glisser pour réorganiser"
   },
   "language": {
     "select": "Sélectionner la langue",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Ajouter plus de voisins",
     "quick": "Rapide",
     "noPhone": "Pas de téléphone",
-    "tapSOSForMore": "Appuyez sur SOS pour plus d'options et tous les voisins"
+    "tapSOSForMore": "Appuyez sur SOS pour plus d'options et tous les voisins",
+    "criticalUrgency": "Urgence critique"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "Exemple",
+      "realFaceTime": {
+        "howToFind": "Partagez votre ville ou lieu de rencontre préféré — rien ne vaut une rencontre en personne !",
+        "example": "\"Paris\" ou \"Café de Flore, Saint-Germain\"",
+        "tip": "Soyez aussi précis que vous le souhaitez. Un quartier suffit souvent."
+      },
+      "phone": {
+        "howToFind": "Entrez votre numéro de téléphone avec l'indicatif du pays.",
+        "example": "+33 6 12 34 56 78",
+        "tip": "Fonctionne pour les appels réguliers et les SMS."
+      },
+      "facetime": {
+        "howToFind": "Utilisez votre email Apple ID ou le numéro de téléphone lié à FaceTime.",
+        "example": "votrenom@icloud.com ou +33 6 12 34 56 78",
+        "tip": "Les deux parties ont besoin d'appareils Apple pour FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "Votre numéro de téléphone avec l'indicatif du pays (celui enregistré sur WhatsApp).",
+        "example": "+33612345678",
+        "tip": "N'incluez pas d'espaces ou de tirets dans le numéro."
+      },
+      "signal": {
+        "howToFind": "Votre numéro de téléphone enregistré sur l'application Signal.",
+        "example": "+33 6 12 34 56 78",
+        "tip": "Signal offre un chiffrement de bout en bout pour les utilisateurs soucieux de leur vie privée."
+      },
+      "telegram": {
+        "howToFind": "Votre @nom d'utilisateur (sans @) ou numéro de téléphone.",
+        "example": "nomdutilisateur ou +33612345678",
+        "tip": "Les noms d'utilisateur sont plus faciles à partager que les numéros de téléphone."
+      },
+      "zoom": {
+        "howToFind": "Votre ID de réunion personnel ou lien de salle personnelle.",
+        "example": "123 456 7890 ou https://zoom.us/j/1234567890",
+        "tip": "Trouvez-le dans Paramètres Zoom sous Profil > ID de réunion personnel."
+      },
+      "googleMeet": {
+        "howToFind": "Votre adresse Gmail — vos amis peuvent démarrer un Meet avec vous directement.",
+        "example": "votrenom@gmail.com",
+        "tip": "Google Meet fonctionne mieux quand les deux parties ont des comptes Google."
+      },
+      "teams": {
+        "howToFind": "Votre adresse email Microsoft professionnelle ou personnelle.",
+        "example": "votrenom@entreprise.com ou votrenom@outlook.com",
+        "tip": "Pour les comptes professionnels, les appels externes peuvent nécessiter l'approbation de l'admin."
+      },
+      "discord": {
+        "howToFind": "Votre nom d'utilisateur Discord ou ID utilisateur.",
+        "example": "nomdutilisateur#1234 ou 123456789012345678",
+        "tip": "Trouvez votre ID utilisateur en activant le Mode développeur dans les paramètres Discord."
+      },
+      "skype": {
+        "howToFind": "Votre nom Skype (pas votre nom d'affichage).",
+        "example": "live:votreskypename",
+        "tip": "Trouvez-le dans Paramètres Skype → Compte → Nom Skype."
+      },
+      "webex": {
+        "howToFind": "Votre lien de salle personnelle ou email Webex.",
+        "example": "https://entreprise.webex.com/meet/votrenom",
+        "tip": "Les liens de salle personnelle sont permanents et faciles à partager."
+      },
+      "slack": {
+        "howToFind": "Votre email professionnel (les deux parties ont besoin d'accès au même espace Slack).",
+        "example": "votrenom@entreprise.com",
+        "tip": "Les appels Slack ne fonctionnent qu'entre membres du même espace de travail."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "Plus"
+  },
+  "postContent": {
+    "photo": "Photo",
+    "sharedPhoto": "Photo partagée",
+    "video": "Vidéo",
+    "sharedVideo": "Vidéo partagée"
   }
 }

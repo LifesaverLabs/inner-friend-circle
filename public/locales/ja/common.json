@@ -334,7 +334,8 @@
       "offline": "オフライン",
       "away": "離席中",
       "busy": "取り込み中"
-    }
+    },
+    "dragToReorder": "ドラッグして並べ替え"
   },
   "language": {
     "select": "言語を選択",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "隣人を追加",
     "quick": "クイック",
     "noPhone": "電話なし",
-    "tapSOSForMore": "SOSをタップしてオプションとすべての隣人を表示"
+    "tapSOSForMore": "SOSをタップしてオプションとすべての隣人を表示",
+    "criticalUrgency": "緊急度：重大"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "例",
+      "realFaceTime": {
+        "howToFind": "あなたの街やお気に入りの待ち合わせ場所を共有してください — 対面に勝るものはありません！",
+        "example": "「東京」または「スターバックス、渋谷」",
+        "tip": "心地よい範囲で具体的に。通常は地域名で十分です。"
+      },
+      "phone": {
+        "howToFind": "国コード付きの電話番号を入力してください。",
+        "example": "+81 90 1234 5678",
+        "tip": "通常の通話とSMSで機能します。"
+      },
+      "facetime": {
+        "howToFind": "Apple IDのメールまたはFaceTimeに紐付けられた電話番号を使用してください。",
+        "example": "yourname@icloud.com または +81 90 1234 5678",
+        "tip": "FaceTimeには両者ともAppleデバイスが必要です。"
+      },
+      "whatsapp": {
+        "howToFind": "国コード付きの電話番号（WhatsAppに登録されているもの）。",
+        "example": "+819012345678",
+        "tip": "番号にスペースやハイフンを含めないでください。"
+      },
+      "signal": {
+        "howToFind": "Signalアプリに登録されている電話番号。",
+        "example": "+81 90 1234 5678",
+        "tip": "Signalはプライバシーを重視するユーザー向けにエンドツーエンド暗号化を提供します。"
+      },
+      "telegram": {
+        "howToFind": "@ユーザー名（@なし）または電話番号。",
+        "example": "username または +819012345678",
+        "tip": "ユーザー名は電話番号より共有しやすいです。"
+      },
+      "zoom": {
+        "howToFind": "個人ミーティングIDまたは個人ミーティングルームのリンク。",
+        "example": "123 456 7890 または https://zoom.us/j/1234567890",
+        "tip": "Zoom設定のプロフィール > 個人ミーティングIDで見つけられます。"
+      },
+      "googleMeet": {
+        "howToFind": "Gmailアドレス — 友達は直接あなたとMeetを開始できます。",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meetは両者がGoogleアカウントを持っている場合に最適に機能します。"
+      },
+      "teams": {
+        "howToFind": "Microsoftの仕事用または個人用メールアドレス。",
+        "example": "yourname@company.com または yourname@outlook.com",
+        "tip": "仕事用アカウントの場合、外部通話には管理者の承認が必要な場合があります。"
+      },
+      "discord": {
+        "howToFind": "Discordのユーザー名またはユーザーID。",
+        "example": "username#1234 または 123456789012345678",
+        "tip": "Discord設定で開発者モードを有効にしてユーザーIDを見つけてください。"
+      },
+      "skype": {
+        "howToFind": "Skype名（表示名ではありません）。",
+        "example": "live:yourskypename",
+        "tip": "Skype設定 → アカウント → Skype名で見つけられます。"
+      },
+      "webex": {
+        "howToFind": "パーソナルルームのリンクまたはWebexメール。",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "パーソナルルームのリンクは永続的で共有しやすいです。"
+      },
+      "slack": {
+        "howToFind": "仕事用メール（両者が同じSlackワークスペースにアクセスできる必要があります）。",
+        "example": "yourname@company.com",
+        "tip": "Slack通話は同じワークスペースのメンバー間でのみ機能します。"
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "もっと見る"
+  },
+  "postContent": {
+    "photo": "写真",
+    "sharedPhoto": "共有された写真",
+    "video": "動画",
+    "sharedVideo": "共有された動画"
   }
 }

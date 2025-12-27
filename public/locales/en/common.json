@@ -144,6 +144,10 @@
   "postContent": {
     "voiceNote": "Voice Note",
     "audioUnavailable": "Audio unavailable",
+    "photo": "Photo",
+    "sharedPhoto": "Shared photo",
+    "video": "Video",
+    "sharedVideo": "Shared video",
     "callInvitation": "Call Invitation",
     "joinCall": "Join call",
     "join": "Join",
@@ -335,6 +339,7 @@
   },
   "accessibility": {
     "skipToContent": "Skip to main content",
+    "dragToReorder": "Drag to reorder",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "expandPanel": "Expand panel",
@@ -747,6 +752,7 @@
       "contacts": "Choose naybors to contact"
     },
     "critical": "Critical",
+    "criticalUrgency": "Critical urgency",
     "emergencyWarning": "For life-threatening emergencies, call 911 first",
     "suggestedActions": "Suggested actions:",
     "addDetails": "Add details (optional)",
@@ -1390,8 +1396,72 @@
     "noSpontaneousMethods": "No spontaneous call methods added yet",
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
-      "example": "Example",
-      "tip": "Tip"
+      "exampleLabel": "Example",
+      "realFaceTime": {
+        "howToFind": "Share your city or favorite meeting spot — nothing beats real face time!",
+        "example": "\"San Francisco, CA\" or \"Blue Bottle Coffee, Hayes Valley\"",
+        "tip": "Be as specific as you're comfortable with. A neighborhood is often enough."
+      },
+      "phone": {
+        "howToFind": "Enter your phone number with country code.",
+        "example": "+1 (555) 123-4567",
+        "tip": "Works for regular calls and SMS."
+      },
+      "facetime": {
+        "howToFind": "Use your Apple ID email or phone number linked to FaceTime.",
+        "example": "yourname@icloud.com or +1 555-123-4567",
+        "tip": "Both parties need Apple devices for FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "Your phone number with country code (the one registered with WhatsApp).",
+        "example": "+15551234567",
+        "tip": "Don't include spaces or dashes in the number."
+      },
+      "signal": {
+        "howToFind": "Your phone number registered with the Signal app.",
+        "example": "+1 555-123-4567",
+        "tip": "Signal offers end-to-end encryption for privacy-conscious users."
+      },
+      "telegram": {
+        "howToFind": "Your @username (without the @) or phone number.",
+        "example": "username or +15551234567",
+        "tip": "Usernames are easier to share than phone numbers."
+      },
+      "zoom": {
+        "howToFind": "Your Personal Meeting ID or personal meeting room link.",
+        "example": "123 456 7890 or https://zoom.us/j/1234567890",
+        "tip": "Find this in Zoom settings under Profile > Personal Meeting ID."
+      },
+      "googleMeet": {
+        "howToFind": "Your Gmail address — friends can start a Meet with you directly.",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet works best when both parties have Google accounts."
+      },
+      "teams": {
+        "howToFind": "Your Microsoft work or personal email address.",
+        "example": "yourname@company.com or yourname@outlook.com",
+        "tip": "For work accounts, external calls may need admin approval."
+      },
+      "discord": {
+        "howToFind": "Your Discord username or User ID.",
+        "example": "username#1234 or 123456789012345678",
+        "tip": "Find your User ID by enabling Developer Mode in Discord settings."
+      },
+      "skype": {
+        "howToFind": "Your Skype Name (not your display name).",
+        "example": "live:yourskypename",
+        "tip": "Find this in Skype Settings → Account → Skype Name."
+      },
+      "webex": {
+        "howToFind": "Your Personal Room link or Webex email.",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "Personal Room links are permanent and easy to share."
+      },
+      "slack": {
+        "howToFind": "Your work email (both parties need access to the same Slack workspace).",
+        "example": "yourname@company.com",
+        "tip": "Slack calls only work between members of the same workspace."
+      }
     },
     "toasts": {
       "enterInfo": "Please enter contact information"

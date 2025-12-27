@@ -334,7 +334,8 @@
       "offline": "오프라인",
       "away": "자리 비움",
       "busy": "바쁨"
-    }
+    },
+    "dragToReorder": "드래그하여 재정렬"
   },
   "language": {
     "select": "언어 선택",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "이웃 추가하기",
     "quick": "빠른",
     "noPhone": "전화 없음",
-    "tapSOSForMore": "더 많은 옵션과 모든 이웃을 보려면 SOS를 탭하세요"
+    "tapSOSForMore": "더 많은 옵션과 모든 이웃을 보려면 SOS를 탭하세요",
+    "criticalUrgency": "긴급 상황"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "예시",
+      "realFaceTime": {
+        "howToFind": "도시나 좋아하는 만남 장소를 공유하세요 — 직접 만나는 것보다 좋은 건 없습니다!",
+        "example": "\"서울\" 또는 \"스타벅스, 강남\"",
+        "tip": "편안한 만큼 구체적으로. 보통 동네면 충분합니다."
+      },
+      "phone": {
+        "howToFind": "국가 코드와 함께 전화번호를 입력하세요.",
+        "example": "+82 10 1234 5678",
+        "tip": "일반 통화와 SMS에 사용됩니다."
+      },
+      "facetime": {
+        "howToFind": "Apple ID 이메일 또는 FaceTime에 연결된 전화번호를 사용하세요.",
+        "example": "yourname@icloud.com 또는 +82 10 1234 5678",
+        "tip": "FaceTime을 사용하려면 양쪽 모두 Apple 기기가 필요합니다."
+      },
+      "whatsapp": {
+        "howToFind": "국가 코드가 포함된 전화번호 (WhatsApp에 등록된 번호).",
+        "example": "+821012345678",
+        "tip": "번호에 공백이나 대시를 포함하지 마세요."
+      },
+      "signal": {
+        "howToFind": "Signal 앱에 등록된 전화번호.",
+        "example": "+82 10 1234 5678",
+        "tip": "Signal은 개인정보를 중시하는 사용자를 위해 종단간 암호화를 제공합니다."
+      },
+      "telegram": {
+        "howToFind": "@사용자명 (@ 없이) 또는 전화번호.",
+        "example": "username 또는 +821012345678",
+        "tip": "사용자명이 전화번호보다 공유하기 쉽습니다."
+      },
+      "zoom": {
+        "howToFind": "개인 회의 ID 또는 개인 회의실 링크.",
+        "example": "123 456 7890 또는 https://zoom.us/j/1234567890",
+        "tip": "Zoom 설정의 프로필 > 개인 회의 ID에서 찾을 수 있습니다."
+      },
+      "googleMeet": {
+        "howToFind": "Gmail 주소 — 친구들이 직접 Meet을 시작할 수 있습니다.",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet은 양쪽 모두 Google 계정이 있을 때 가장 잘 작동합니다."
+      },
+      "teams": {
+        "howToFind": "Microsoft 업무용 또는 개인용 이메일 주소.",
+        "example": "yourname@company.com 또는 yourname@outlook.com",
+        "tip": "업무용 계정의 경우 외부 통화에 관리자 승인이 필요할 수 있습니다."
+      },
+      "discord": {
+        "howToFind": "Discord 사용자명 또는 사용자 ID.",
+        "example": "username#1234 또는 123456789012345678",
+        "tip": "Discord 설정에서 개발자 모드를 활성화하여 사용자 ID를 찾으세요."
+      },
+      "skype": {
+        "howToFind": "Skype 이름 (표시 이름이 아님).",
+        "example": "live:yourskypename",
+        "tip": "Skype 설정 → 계정 → Skype 이름에서 찾을 수 있습니다."
+      },
+      "webex": {
+        "howToFind": "개인 회의실 링크 또는 Webex 이메일.",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "개인 회의실 링크는 영구적이고 공유하기 쉽습니다."
+      },
+      "slack": {
+        "howToFind": "업무용 이메일 (양쪽 모두 같은 Slack 워크스페이스에 접근 필요).",
+        "example": "yourname@company.com",
+        "tip": "Slack 통화는 같은 워크스페이스 멤버 간에만 작동합니다."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "더보기"
+  },
+  "postContent": {
+    "photo": "사진",
+    "sharedPhoto": "공유된 사진",
+    "video": "동영상",
+    "sharedVideo": "공유된 동영상"
   }
 }

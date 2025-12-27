@@ -334,7 +334,8 @@
       "offline": "غير متصل",
       "away": "بعيد",
       "busy": "مشغول"
-    }
+    },
+    "dragToReorder": "اسحب لإعادة الترتيب"
   },
   "language": {
     "select": "اختر اللغة",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "أضف المزيد من الجيران",
     "quick": "سريع",
     "noPhone": "لا يوجد هاتف",
-    "tapSOSForMore": "اضغط SOS لمزيد من الخيارات وجميع الجيران"
+    "tapSOSForMore": "اضغط SOS لمزيد من الخيارات وجميع الجيران",
+    "criticalUrgency": "حالة طوارئ حرجة"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "مثال",
+      "realFaceTime": {
+        "howToFind": "شارك مدينتك أو مكان اللقاء المفضل — لا شيء يضاهي اللقاء الشخصي!",
+        "example": "\"الرياض\" أو \"مقهى ستاربكس، العليا\"",
+        "tip": "كن محدداً بقدر ما ترتاح. غالباً ما يكفي ذكر الحي."
+      },
+      "phone": {
+        "howToFind": "أدخل رقم هاتفك مع رمز البلد.",
+        "example": "+966 55 123 4567",
+        "tip": "يعمل للمكالمات العادية والرسائل النصية."
+      },
+      "facetime": {
+        "howToFind": "استخدم بريد Apple ID أو رقم الهاتف المرتبط بـ FaceTime.",
+        "example": "yourname@icloud.com أو +966 55 123 4567",
+        "tip": "يحتاج كلا الطرفين إلى أجهزة Apple لـ FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "رقم هاتفك مع رمز البلد (المسجل في WhatsApp).",
+        "example": "+966551234567",
+        "tip": "لا تضع مسافات أو شرطات في الرقم."
+      },
+      "signal": {
+        "howToFind": "رقم هاتفك المسجل في تطبيق Signal.",
+        "example": "+966 55 123 4567",
+        "tip": "Signal يوفر تشفيراً شاملاً للمستخدمين المهتمين بالخصوصية."
+      },
+      "telegram": {
+        "howToFind": "اسم المستخدم الخاص بك (بدون @) أو رقم الهاتف.",
+        "example": "username أو +966551234567",
+        "tip": "أسماء المستخدمين أسهل في المشاركة من أرقام الهواتف."
+      },
+      "zoom": {
+        "howToFind": "معرف الاجتماع الشخصي أو رابط غرفة الاجتماع الشخصية.",
+        "example": "123 456 7890 أو https://zoom.us/j/1234567890",
+        "tip": "تجده في إعدادات Zoom تحت الملف الشخصي > معرف الاجتماع الشخصي."
+      },
+      "googleMeet": {
+        "howToFind": "عنوان Gmail الخاص بك — يمكن للأصدقاء بدء Meet معك مباشرة.",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet يعمل بشكل أفضل عندما يكون لدى كلا الطرفين حسابات Google."
+      },
+      "teams": {
+        "howToFind": "عنوان بريد Microsoft للعمل أو الشخصي.",
+        "example": "yourname@company.com أو yourname@outlook.com",
+        "tip": "لحسابات العمل، قد تحتاج المكالمات الخارجية إلى موافقة المسؤول."
+      },
+      "discord": {
+        "howToFind": "اسم مستخدم Discord أو معرف المستخدم.",
+        "example": "username#1234 أو 123456789012345678",
+        "tip": "تجد معرف المستخدم بتفعيل وضع المطور في إعدادات Discord."
+      },
+      "skype": {
+        "howToFind": "اسم Skype الخاص بك (ليس اسم العرض).",
+        "example": "live:yourskypename",
+        "tip": "تجده في إعدادات Skype → الحساب → اسم Skype."
+      },
+      "webex": {
+        "howToFind": "رابط الغرفة الشخصية أو بريد Webex.",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "روابط الغرف الشخصية دائمة وسهلة المشاركة."
+      },
+      "slack": {
+        "howToFind": "بريد العمل (يحتاج كلا الطرفين الوصول لنفس مساحة Slack).",
+        "example": "yourname@company.com",
+        "tip": "مكالمات Slack تعمل فقط بين أعضاء نفس مساحة العمل."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "المزيد"
+  },
+  "postContent": {
+    "photo": "صورة",
+    "sharedPhoto": "صورة مشتركة",
+    "video": "فيديو",
+    "sharedVideo": "فيديو مشترك"
   }
 }

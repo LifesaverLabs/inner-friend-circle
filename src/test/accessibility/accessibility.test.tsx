@@ -337,7 +337,7 @@ describe('Accessibility Tests', () => {
       renderWithProviders(<PostContent post={post} />);
 
       const img = screen.getByRole('img');
-      expect(img).toHaveAttribute('alt', 'Photo: Beautiful sunset at the beach');
+      expect(img).toHaveAttribute('alt', 'postContent.photo: Beautiful sunset at the beach');
     });
 
     it('should use fallback alt text for images without content', () => {
@@ -350,7 +350,7 @@ describe('Accessibility Tests', () => {
       renderWithProviders(<PostContent post={post} />);
 
       const img = screen.getByRole('img');
-      expect(img).toHaveAttribute('alt', 'Shared photo');
+      expect(img).toHaveAttribute('alt', 'postContent.sharedPhoto');
     });
 
     it('should have aria-labels on call invite join button', () => {

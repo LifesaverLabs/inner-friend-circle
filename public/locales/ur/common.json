@@ -334,7 +334,8 @@
       "offline": "آف لائن",
       "away": "دور",
       "busy": "مصروف"
-    }
+    },
+    "dragToReorder": "ترتیب بدلنے کے لیے گھسیٹیں"
   },
   "language": {
     "select": "زبان منتخب کریں",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "مزید پڑوسی شامل کریں",
     "quick": "فوری",
     "noPhone": "کوئی فون نہیں",
-    "tapSOSForMore": "مزید اختیارات اور تمام پڑوسیوں کے لیے SOS ٹیپ کریں"
+    "tapSOSForMore": "مزید اختیارات اور تمام پڑوسیوں کے لیے SOS ٹیپ کریں",
+    "criticalUrgency": "شدید ہنگامی صورتحال"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1676,5 +1678,11 @@
   },
   "breadcrumb": {
     "more": "مزید"
+  },
+  "postContent": {
+    "photo": "تصویر",
+    "sharedPhoto": "شیئر کی گئی تصویر",
+    "video": "ویڈیو",
+    "sharedVideo": "شیئر کی گئی ویڈیو"
   }
 }

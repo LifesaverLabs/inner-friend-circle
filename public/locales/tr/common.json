@@ -334,7 +334,8 @@
       "offline": "Çevrimdışı",
       "away": "Uzakta",
       "busy": "Meşgul"
-    }
+    },
+    "dragToReorder": "Yeniden sıralamak için sürükleyin"
   },
   "language": {
     "select": "Dil seçin",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Daha fazla komşu ekle",
     "quick": "Hızlı",
     "noPhone": "Telefon yok",
-    "tapSOSForMore": "Daha fazla seçenek ve tüm komşular için SOS'a dokunun"
+    "tapSOSForMore": "Daha fazla seçenek ve tüm komşular için SOS'a dokunun",
+    "criticalUrgency": "Kritik aciliyet"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "Örnek",
+      "realFaceTime": {
+        "howToFind": "Şehrinizi veya favori buluşma yerinizi paylaşın — yüz yüze görüşmenin yerini hiçbir şey tutmaz!",
+        "example": "\"İstanbul\" veya \"Starbucks, Taksim\"",
+        "tip": "Kendinizi rahat hissettiğiniz kadar spesifik olun. Genellikle mahalle yeterlidir."
+      },
+      "phone": {
+        "howToFind": "Ülke koduyla telefon numaranızı girin.",
+        "example": "+90 532 123 45 67",
+        "tip": "Normal aramalar ve SMS için çalışır."
+      },
+      "facetime": {
+        "howToFind": "Apple ID e-postanızı veya FaceTime'a bağlı telefon numaranızı kullanın.",
+        "example": "adiniz@icloud.com veya +90 532 123 45 67",
+        "tip": "FaceTime için her iki tarafın da Apple cihazına ihtiyacı var."
+      },
+      "whatsapp": {
+        "howToFind": "Ülke koduyla telefon numaranız (WhatsApp'a kayıtlı olan).",
+        "example": "+905321234567",
+        "tip": "Numarada boşluk veya tire kullanmayın."
+      },
+      "signal": {
+        "howToFind": "Signal uygulamasına kayıtlı telefon numaranız.",
+        "example": "+90 532 123 45 67",
+        "tip": "Signal, gizlilik bilincine sahip kullanıcılar için uçtan uca şifreleme sunar."
+      },
+      "telegram": {
+        "howToFind": "@kullanıcı adınız (@ olmadan) veya telefon numarası.",
+        "example": "kullaniciadi veya +905321234567",
+        "tip": "Kullanıcı adları telefon numaralarından daha kolay paylaşılır."
+      },
+      "zoom": {
+        "howToFind": "Kişisel toplantı ID'niz veya kişisel toplantı odası linkiniz.",
+        "example": "123 456 7890 veya https://zoom.us/j/1234567890",
+        "tip": "Zoom ayarlarında Profil > Kişisel Toplantı ID altında bulun."
+      },
+      "googleMeet": {
+        "howToFind": "Gmail adresiniz — arkadaşlar doğrudan sizinle Meet başlatabilir.",
+        "example": "adiniz@gmail.com",
+        "tip": "Google Meet, her iki tarafın da Google hesabı olduğunda en iyi çalışır."
+      },
+      "teams": {
+        "howToFind": "Microsoft iş veya kişisel e-posta adresiniz.",
+        "example": "adiniz@sirket.com veya adiniz@outlook.com",
+        "tip": "İş hesapları için harici aramalar yönetici onayı gerektirebilir."
+      },
+      "discord": {
+        "howToFind": "Discord kullanıcı adınız veya Kullanıcı ID'niz.",
+        "example": "kullaniciadi#1234 veya 123456789012345678",
+        "tip": "Discord ayarlarında Geliştirici Modunu etkinleştirerek Kullanıcı ID'nizi bulun."
+      },
+      "skype": {
+        "howToFind": "Skype Adınız (görünen adınız değil).",
+        "example": "live:skypeadiniz",
+        "tip": "Skype Ayarları → Hesap → Skype Adı altında bulun."
+      },
+      "webex": {
+        "howToFind": "Kişisel Oda linkiniz veya Webex e-postanız.",
+        "example": "https://sirket.webex.com/meet/adiniz",
+        "tip": "Kişisel Oda linkleri kalıcıdır ve paylaşması kolaydır."
+      },
+      "slack": {
+        "howToFind": "İş e-postanız (her iki tarafın da aynı Slack çalışma alanına erişimi gerekir).",
+        "example": "adiniz@sirket.com",
+        "tip": "Slack aramaları yalnızca aynı çalışma alanının üyeleri arasında çalışır."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "Daha fazla"
+  },
+  "postContent": {
+    "photo": "Fotoğraf",
+    "sharedPhoto": "Paylaşılan fotoğraf",
+    "video": "Video",
+    "sharedVideo": "Paylaşılan video"
   }
 }

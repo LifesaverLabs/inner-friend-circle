@@ -334,7 +334,8 @@
       "offline": "ऑफलाइन",
       "away": "दूर",
       "busy": "व्यस्त"
-    }
+    },
+    "dragToReorder": "पुनर्क्रमित करने के लिए खींचें"
   },
   "language": {
     "select": "भाषा चुनें",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "और पड़ोसी जोड़ें",
     "quick": "त्वरित",
     "noPhone": "कोई फ़ोन नहीं",
-    "tapSOSForMore": "अधिक विकल्पों और सभी पड़ोसियों के लिए SOS टैप करें"
+    "tapSOSForMore": "अधिक विकल्पों और सभी पड़ोसियों के लिए SOS टैप करें",
+    "criticalUrgency": "गंभीर आपातकाल"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "उदाहरण",
+      "realFaceTime": {
+        "howToFind": "अपना शहर या पसंदीदा मिलन स्थान साझा करें — आमने-सामने मिलने से बेहतर कुछ नहीं!",
+        "example": "\"मुंबई\" या \"स्टारबक्स, बांद्रा\"",
+        "tip": "जितना आरामदायक हो उतना विशिष्ट बनें। आमतौर पर मोहल्ला काफी होता है।"
+      },
+      "phone": {
+        "howToFind": "देश कोड के साथ अपना फोन नंबर दर्ज करें।",
+        "example": "+91 98765 43210",
+        "tip": "सामान्य कॉल और SMS के लिए काम करता है।"
+      },
+      "facetime": {
+        "howToFind": "अपना Apple ID ईमेल या FaceTime से जुड़ा फोन नंबर उपयोग करें।",
+        "example": "yourname@icloud.com या +91 98765 43210",
+        "tip": "FaceTime के लिए दोनों पक्षों को Apple डिवाइस चाहिए।"
+      },
+      "whatsapp": {
+        "howToFind": "देश कोड के साथ आपका फोन नंबर (WhatsApp पर पंजीकृत)।",
+        "example": "+919876543210",
+        "tip": "नंबर में स्पेस या डैश न डालें।"
+      },
+      "signal": {
+        "howToFind": "Signal ऐप पर पंजीकृत आपका फोन नंबर।",
+        "example": "+91 98765 43210",
+        "tip": "Signal गोपनीयता-जागरूक उपयोगकर्ताओं के लिए एंड-टू-एंड एन्क्रिप्शन प्रदान करता है।"
+      },
+      "telegram": {
+        "howToFind": "आपका @username (@ के बिना) या फोन नंबर।",
+        "example": "username या +919876543210",
+        "tip": "यूजरनेम फोन नंबर से साझा करना आसान है।"
+      },
+      "zoom": {
+        "howToFind": "आपकी व्यक्तिगत मीटिंग ID या व्यक्तिगत मीटिंग रूम लिंक।",
+        "example": "123 456 7890 या https://zoom.us/j/1234567890",
+        "tip": "इसे Zoom सेटिंग्स में प्रोफ़ाइल > व्यक्तिगत मीटिंग ID में पाएं।"
+      },
+      "googleMeet": {
+        "howToFind": "आपका Gmail पता — दोस्त सीधे आपके साथ Meet शुरू कर सकते हैं।",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet तब बेहतर काम करता है जब दोनों के पास Google खाते हों।"
+      },
+      "teams": {
+        "howToFind": "आपका Microsoft कार्य या व्यक्तिगत ईमेल पता।",
+        "example": "yourname@company.com या yourname@outlook.com",
+        "tip": "कार्य खातों के लिए, बाहरी कॉल को व्यवस्थापक की मंजूरी की आवश्यकता हो सकती है।"
+      },
+      "discord": {
+        "howToFind": "आपका Discord username या User ID।",
+        "example": "username#1234 या 123456789012345678",
+        "tip": "Discord सेटिंग्स में डेवलपर मोड सक्षम करके अपनी User ID पाएं।"
+      },
+      "skype": {
+        "howToFind": "आपका Skype नाम (आपका प्रदर्शन नाम नहीं)।",
+        "example": "live:yourskypename",
+        "tip": "इसे Skype सेटिंग्स → खाता → Skype नाम में पाएं।"
+      },
+      "webex": {
+        "howToFind": "आपका व्यक्तिगत कक्ष लिंक या Webex ईमेल।",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "व्यक्तिगत कक्ष लिंक स्थायी और साझा करने में आसान होते हैं।"
+      },
+      "slack": {
+        "howToFind": "आपका कार्य ईमेल (दोनों पक्षों को एक ही Slack workspace तक पहुंच चाहिए)।",
+        "example": "yourname@company.com",
+        "tip": "Slack कॉल केवल एक ही workspace के सदस्यों के बीच काम करती हैं।"
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "और"
+  },
+  "postContent": {
+    "photo": "फोटो",
+    "sharedPhoto": "साझा की गई फोटो",
+    "video": "वीडियो",
+    "sharedVideo": "साझा किया गया वीडियो"
   }
 }

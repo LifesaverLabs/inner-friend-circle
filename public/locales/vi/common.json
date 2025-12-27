@@ -334,7 +334,8 @@
       "offline": "Ngoại tuyến",
       "away": "Vắng mặt",
       "busy": "Bận"
-    }
+    },
+    "dragToReorder": "Kéo để sắp xếp lại"
   },
   "language": {
     "select": "Chọn ngôn ngữ",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Thêm hàng xóm",
     "quick": "Nhanh",
     "noPhone": "Không có điện thoại",
-    "tapSOSForMore": "Nhấn SOS để có thêm tùy chọn và tất cả hàng xóm"
+    "tapSOSForMore": "Nhấn SOS để có thêm tùy chọn và tất cả hàng xóm",
+    "criticalUrgency": "Mức độ khẩn cấp nghiêm trọng"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "Ví dụ",
+      "realFaceTime": {
+        "howToFind": "Chia sẻ thành phố hoặc địa điểm gặp mặt yêu thích của bạn — không gì bằng gặp mặt trực tiếp!",
+        "example": "\"Hà Nội\" hoặc \"Highlands Coffee, Hoàn Kiếm\"",
+        "tip": "Hãy cụ thể như bạn cảm thấy thoải mái. Thường thì tên khu vực là đủ."
+      },
+      "phone": {
+        "howToFind": "Nhập số điện thoại với mã quốc gia.",
+        "example": "+84 98 765 4321",
+        "tip": "Hoạt động cho cuộc gọi thông thường và SMS."
+      },
+      "facetime": {
+        "howToFind": "Sử dụng email Apple ID hoặc số điện thoại liên kết với FaceTime.",
+        "example": "yourname@icloud.com hoặc +84 98 765 4321",
+        "tip": "Cả hai bên đều cần thiết bị Apple cho FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "Số điện thoại với mã quốc gia (số đã đăng ký với WhatsApp).",
+        "example": "+84987654321",
+        "tip": "Không bao gồm dấu cách hoặc gạch ngang trong số."
+      },
+      "signal": {
+        "howToFind": "Số điện thoại đã đăng ký với ứng dụng Signal.",
+        "example": "+84 98 765 4321",
+        "tip": "Signal cung cấp mã hóa đầu cuối cho người dùng quan tâm đến quyền riêng tư."
+      },
+      "telegram": {
+        "howToFind": "@tên người dùng (không có @) hoặc số điện thoại.",
+        "example": "username hoặc +84987654321",
+        "tip": "Tên người dùng dễ chia sẻ hơn số điện thoại."
+      },
+      "zoom": {
+        "howToFind": "ID cuộc họp cá nhân hoặc liên kết phòng họp cá nhân.",
+        "example": "123 456 7890 hoặc https://zoom.us/j/1234567890",
+        "tip": "Tìm trong Cài đặt Zoom dưới Hồ sơ > ID cuộc họp cá nhân."
+      },
+      "googleMeet": {
+        "howToFind": "Địa chỉ Gmail — bạn bè có thể bắt đầu Meet với bạn trực tiếp.",
+        "example": "yourname@gmail.com",
+        "tip": "Google Meet hoạt động tốt nhất khi cả hai bên đều có tài khoản Google."
+      },
+      "teams": {
+        "howToFind": "Địa chỉ email Microsoft công việc hoặc cá nhân.",
+        "example": "yourname@company.com hoặc yourname@outlook.com",
+        "tip": "Đối với tài khoản công việc, cuộc gọi bên ngoài có thể cần sự phê duyệt của quản trị viên."
+      },
+      "discord": {
+        "howToFind": "Tên người dùng Discord hoặc ID người dùng.",
+        "example": "username#1234 hoặc 123456789012345678",
+        "tip": "Tìm ID người dùng bằng cách bật Chế độ nhà phát triển trong cài đặt Discord."
+      },
+      "skype": {
+        "howToFind": "Tên Skype của bạn (không phải tên hiển thị).",
+        "example": "live:yourskypename",
+        "tip": "Tìm trong Cài đặt Skype → Tài khoản → Tên Skype."
+      },
+      "webex": {
+        "howToFind": "Liên kết phòng cá nhân hoặc email Webex.",
+        "example": "https://company.webex.com/meet/yourname",
+        "tip": "Liên kết phòng cá nhân là vĩnh viễn và dễ chia sẻ."
+      },
+      "slack": {
+        "howToFind": "Email công việc (cả hai bên cần quyền truy cập vào cùng một không gian làm việc Slack).",
+        "example": "yourname@company.com",
+        "tip": "Cuộc gọi Slack chỉ hoạt động giữa các thành viên của cùng một không gian làm việc."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "Thêm"
+  },
+  "postContent": {
+    "photo": "Ảnh",
+    "sharedPhoto": "Ảnh được chia sẻ",
+    "video": "Video",
+    "sharedVideo": "Video được chia sẻ"
   }
 }

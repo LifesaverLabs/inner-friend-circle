@@ -334,7 +334,8 @@
       "offline": "অফলাইন",
       "away": "দূরে",
       "busy": "ব্যস্ত"
-    }
+    },
+    "dragToReorder": "পুনঃক্রম করতে টানুন"
   },
   "language": {
     "select": "ভাষা নির্বাচন করুন",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "আরও প্রতিবেশী যোগ করুন",
     "quick": "দ্রুত",
     "noPhone": "ফোন নেই",
-    "tapSOSForMore": "আরও বিকল্প এবং সমস্ত প্রতিবেশীদের জন্য SOS ট্যাপ করুন"
+    "tapSOSForMore": "আরও বিকল্প এবং সমস্ত প্রতিবেশীদের জন্য SOS ট্যাপ করুন",
+    "criticalUrgency": "জরুরি জরুরী অবস্থা"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1676,5 +1678,11 @@
   },
   "breadcrumb": {
     "more": "আরও"
+  },
+  "postContent": {
+    "photo": "ছবি",
+    "sharedPhoto": "শেয়ার করা ছবি",
+    "video": "ভিডিও",
+    "sharedVideo": "শেয়ার করা ভিডিও"
   }
 }

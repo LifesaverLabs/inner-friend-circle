@@ -334,7 +334,8 @@
       "offline": "Offline",
       "away": "Adoh",
       "busy": "Sibuk"
-    }
+    },
+    "dragToReorder": "Seret kanggo ngatur ulang"
   },
   "language": {
     "select": "Pilih basa",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Tambah tangga luwih akeh",
     "quick": "Cepet",
     "noPhone": "Ora ana telpon",
-    "tapSOSForMore": "Tutul SOS kanggo pilihan luwih akeh lan kabeh tangga"
+    "tapSOSForMore": "Tutul SOS kanggo pilihan luwih akeh lan kabeh tangga",
+    "criticalUrgency": "Darurat kritis"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1676,5 +1678,11 @@
   },
   "breadcrumb": {
     "more": "Luwih akeh"
+  },
+  "postContent": {
+    "photo": "Foto",
+    "sharedPhoto": "Foto sing dibagikan",
+    "video": "Video",
+    "sharedVideo": "Video sing dibagikan"
   }
 }

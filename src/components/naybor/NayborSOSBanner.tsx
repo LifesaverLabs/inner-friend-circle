@@ -85,7 +85,7 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
               size="sm"
               onClick={() => setDialogOpen(true)}
               className="gap-1 bg-tier-naybor hover:bg-tier-naybor/90 text-white"
-              aria-label="Open Naybor SOS emergency contact dialog"
+              aria-label={t('accessibility.naybor.sosDialogButton')}
             >
               <AlertTriangle className="w-4 h-4" aria-hidden="true" />
               SOS

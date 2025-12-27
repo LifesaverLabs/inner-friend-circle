@@ -17,10 +17,10 @@ export function PostContent({ post }: PostContentProps) {
       return <TextContent content={post.content} />;
 
     case 'photo':
-      return <PhotoContent content={post.content} mediaUrl={post.mediaUrl} />;
+      return <PhotoContent content={post.content} mediaUrl={post.mediaUrl} t={t} />;
 
     case 'video':
-      return <VideoContent content={post.content} mediaUrl={post.mediaUrl} />;
+      return <VideoContent content={post.content} mediaUrl={post.mediaUrl} t={t} />;
 
     case 'voice_note':
       return <VoiceNoteContent content={post.content} mediaUrl={post.mediaUrl} t={t} />;
@@ -55,14 +55,14 @@ function TextContent({ content }: { content: string }) {
   );
 }
 
-function PhotoContent({ content, mediaUrl }: { content: string; mediaUrl?: string }) {
+function PhotoContent({ content, mediaUrl, t }: { content: string; mediaUrl?: string; t: (key: string) => string }) {
   return (
     <div className="space-y-2">
       {content && <p className="text-foreground">{content}</p>}
       {mediaUrl && (
         <img
           src={mediaUrl}
-          alt={content ? `Photo: ${content}` : 'Shared photo'}
+          alt={content ? `${t('postContent.photo')}: ${content}` : t('postContent.sharedPhoto')}
           className="rounded-lg max-h-96 w-full object-cover"
         />
       )}
@@ -70,7 +70,7 @@ function PhotoContent({ content, mediaUrl }: { content: string; mediaUrl?: strin
   );
 }
 
-function VideoContent({ content, mediaUrl }: { content: string; mediaUrl?: string }) {
+function VideoContent({ content, mediaUrl, t }: { content: string; mediaUrl?: string; t: (key: string) => string }) {
   return (
     <div className="space-y-2">
       {content && <p className="text-foreground">{content}</p>}
@@ -79,7 +79,7 @@ function VideoContent({ content, mediaUrl }: { content: string; mediaUrl?: strin
           src={mediaUrl}
           controls
           className="rounded-lg max-h-96 w-full"
-          aria-label={content ? `Video: ${content}` : 'Shared video'}
+          aria-label={content ? `${t('postContent.video')}: ${content}` : t('postContent.sharedVideo')}
         />
       )}
     </div>

@@ -334,7 +334,8 @@
       "offline": "Offline",
       "away": "Abwesend",
       "busy": "Beschäftigt"
-    }
+    },
+    "dragToReorder": "Ziehen zum Neuordnen"
   },
   "language": {
     "select": "Sprache auswählen",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Mehr Nachbarn hinzufügen",
     "quick": "Schnell",
     "noPhone": "Kein Telefon",
-    "tapSOSForMore": "SOS antippen für mehr Optionen und alle Nachbarn"
+    "tapSOSForMore": "SOS antippen für mehr Optionen und alle Nachbarn",
+    "criticalUrgency": "Kritische Dringlichkeit"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "Beispiel",
+      "realFaceTime": {
+        "howToFind": "Teile deine Stadt oder deinen Lieblingsort — nichts ist besser als persönliche Treffen!",
+        "example": "\"Berlin\" oder \"Café Einstein, Mitte\"",
+        "tip": "Sei so spezifisch, wie du dich wohl fühlst. Ein Stadtviertel reicht oft aus."
+      },
+      "phone": {
+        "howToFind": "Gib deine Telefonnummer mit Ländervorwahl ein.",
+        "example": "+49 (170) 123-4567",
+        "tip": "Funktioniert für normale Anrufe und SMS."
+      },
+      "facetime": {
+        "howToFind": "Verwende deine Apple ID E-Mail oder die mit FaceTime verknüpfte Telefonnummer.",
+        "example": "deinname@icloud.com oder +49 170 1234567",
+        "tip": "Beide Parteien benötigen Apple-Geräte für FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "Deine Telefonnummer mit Ländervorwahl (die bei WhatsApp registriert ist).",
+        "example": "+491701234567",
+        "tip": "Keine Leerzeichen oder Bindestriche in der Nummer."
+      },
+      "signal": {
+        "howToFind": "Deine bei der Signal-App registrierte Telefonnummer.",
+        "example": "+49 170 123-4567",
+        "tip": "Signal bietet Ende-zu-Ende-Verschlüsselung für datenschutzbewusste Nutzer."
+      },
+      "telegram": {
+        "howToFind": "Dein @Benutzername (ohne @) oder Telefonnummer.",
+        "example": "benutzername oder +491701234567",
+        "tip": "Benutzernamen sind einfacher zu teilen als Telefonnummern."
+      },
+      "zoom": {
+        "howToFind": "Deine persönliche Meeting-ID oder der Link zu deinem persönlichen Meeting-Raum.",
+        "example": "123 456 7890 oder https://zoom.us/j/1234567890",
+        "tip": "Findest du in den Zoom-Einstellungen unter Profil > Persönliche Meeting-ID."
+      },
+      "googleMeet": {
+        "howToFind": "Deine Gmail-Adresse — Freunde können direkt ein Meet mit dir starten.",
+        "example": "deinname@gmail.com",
+        "tip": "Google Meet funktioniert am besten, wenn beide Google-Konten haben."
+      },
+      "teams": {
+        "howToFind": "Deine Microsoft-Arbeits- oder persönliche E-Mail-Adresse.",
+        "example": "deinname@firma.com oder deinname@outlook.com",
+        "tip": "Bei Arbeitskonten benötigen externe Anrufe möglicherweise Admin-Genehmigung."
+      },
+      "discord": {
+        "howToFind": "Dein Discord-Benutzername oder Benutzer-ID.",
+        "example": "benutzername#1234 oder 123456789012345678",
+        "tip": "Finde deine Benutzer-ID durch Aktivieren des Entwicklermodus in den Discord-Einstellungen."
+      },
+      "skype": {
+        "howToFind": "Dein Skype-Name (nicht dein Anzeigename).",
+        "example": "live:deinskypename",
+        "tip": "Findest du in Skype Einstellungen → Konto → Skype-Name."
+      },
+      "webex": {
+        "howToFind": "Dein persönlicher Raum-Link oder Webex-E-Mail.",
+        "example": "https://firma.webex.com/meet/deinname",
+        "tip": "Persönliche Raum-Links sind dauerhaft und leicht zu teilen."
+      },
+      "slack": {
+        "howToFind": "Deine Arbeits-E-Mail (beide Parteien brauchen Zugang zum selben Slack-Workspace).",
+        "example": "deinname@firma.com",
+        "tip": "Slack-Anrufe funktionieren nur zwischen Mitgliedern desselben Workspaces."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "Mehr"
+  },
+  "postContent": {
+    "photo": "Foto",
+    "sharedPhoto": "Geteiltes Foto",
+    "video": "Video",
+    "sharedVideo": "Geteiltes Video"
   }
 }

@@ -334,7 +334,8 @@
       "offline": "Offline",
       "away": "Ausente",
       "busy": "Ocupado"
-    }
+    },
+    "dragToReorder": "Arraste para reordenar"
   },
   "language": {
     "select": "Selecionar idioma",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "Adicionar mais vizinhos",
     "quick": "Rápido",
     "noPhone": "Sem telefone",
-    "tapSOSForMore": "Toque em SOS para mais opções e todos os vizinhos"
+    "tapSOSForMore": "Toque em SOS para mais opções e todos os vizinhos",
+    "criticalUrgency": "Urgência crítica"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1163,7 +1165,73 @@
     "noScheduledMethods": "No scheduled call methods added yet",
     "guidance": {
       "example": "Example",
-      "tip": "Tip"
+      "tip": "Tip",
+      "exampleLabel": "Exemplo",
+      "realFaceTime": {
+        "howToFind": "Compartilhe sua cidade ou local de encontro favorito — nada supera um encontro pessoal!",
+        "example": "\"São Paulo\" ou \"Café do Centro, Paulista\"",
+        "tip": "Seja tão específico quanto se sentir confortável. Geralmente o bairro é suficiente."
+      },
+      "phone": {
+        "howToFind": "Insira seu número de telefone com código do país.",
+        "example": "+55 11 98765-4321",
+        "tip": "Funciona para chamadas regulares e SMS."
+      },
+      "facetime": {
+        "howToFind": "Use seu email Apple ID ou número de telefone vinculado ao FaceTime.",
+        "example": "seunome@icloud.com ou +55 11 98765-4321",
+        "tip": "Ambas as partes precisam de dispositivos Apple para FaceTime."
+      },
+      "whatsapp": {
+        "howToFind": "Seu número de telefone com código do país (o registrado no WhatsApp).",
+        "example": "+5511987654321",
+        "tip": "Não inclua espaços ou hífens no número."
+      },
+      "signal": {
+        "howToFind": "Seu número de telefone registrado no app Signal.",
+        "example": "+55 11 98765-4321",
+        "tip": "Signal oferece criptografia de ponta a ponta para usuários preocupados com privacidade."
+      },
+      "telegram": {
+        "howToFind": "Seu @nome de usuário (sem @) ou número de telefone.",
+        "example": "nomedeusuario ou +5511987654321",
+        "tip": "Nomes de usuário são mais fáceis de compartilhar que números de telefone."
+      },
+      "zoom": {
+        "howToFind": "Seu ID de reunião pessoal ou link da sala pessoal.",
+        "example": "123 456 7890 ou https://zoom.us/j/1234567890",
+        "tip": "Encontre em Configurações do Zoom em Perfil > ID de reunião pessoal."
+      },
+      "googleMeet": {
+        "howToFind": "Seu endereço Gmail — amigos podem iniciar um Meet com você diretamente.",
+        "example": "seunome@gmail.com",
+        "tip": "Google Meet funciona melhor quando ambos têm contas Google."
+      },
+      "teams": {
+        "howToFind": "Seu endereço de email Microsoft de trabalho ou pessoal.",
+        "example": "seunome@empresa.com ou seunome@outlook.com",
+        "tip": "Para contas de trabalho, chamadas externas podem precisar de aprovação do admin."
+      },
+      "discord": {
+        "howToFind": "Seu nome de usuário Discord ou ID de usuário.",
+        "example": "nomedeusuario#1234 ou 123456789012345678",
+        "tip": "Encontre seu ID de usuário ativando o Modo Desenvolvedor nas configurações do Discord."
+      },
+      "skype": {
+        "howToFind": "Seu nome Skype (não seu nome de exibição).",
+        "example": "live:seuskypename",
+        "tip": "Encontre em Configurações Skype → Conta → Nome Skype."
+      },
+      "webex": {
+        "howToFind": "Seu link de sala pessoal ou email Webex.",
+        "example": "https://empresa.webex.com/meet/seunome",
+        "tip": "Links de sala pessoal são permanentes e fáceis de compartilhar."
+      },
+      "slack": {
+        "howToFind": "Seu email de trabalho (ambas as partes precisam de acesso ao mesmo workspace Slack).",
+        "example": "seunome@empresa.com",
+        "tip": "Chamadas Slack só funcionam entre membros do mesmo workspace."
+      }
     }
   },
   "dev": {
@@ -1676,5 +1744,11 @@
   },
   "breadcrumb": {
     "more": "Mais"
+  },
+  "postContent": {
+    "photo": "Foto",
+    "sharedPhoto": "Foto compartilhada",
+    "video": "Vídeo",
+    "sharedVideo": "Vídeo compartilhado"
   }
 }

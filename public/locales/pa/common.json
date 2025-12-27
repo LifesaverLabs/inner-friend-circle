@@ -334,7 +334,8 @@
       "offline": "ਔਫਲਾਈਨ",
       "away": "ਦੂਰ",
       "busy": "ਰੁੱਝੇ"
-    }
+    },
+    "dragToReorder": "ਮੁੜ ਕ੍ਰਮਬੱਧ ਕਰਨ ਲਈ ਖਿੱਚੋ"
   },
   "language": {
     "select": "ਭਾਸ਼ਾ ਚੁਣੋ",
@@ -699,7 +700,8 @@
     "addMoreNaybors": "ਹੋਰ ਗੁਆਂਢੀ ਸ਼ਾਮਲ ਕਰੋ",
     "quick": "ਤੇਜ਼",
     "noPhone": "ਕੋਈ ਫ਼ੋਨ ਨਹੀਂ",
-    "tapSOSForMore": "ਹੋਰ ਵਿਕਲਪਾਂ ਅਤੇ ਸਾਰੇ ਗੁਆਂਢੀਆਂ ਲਈ SOS ਟੈਪ ਕਰੋ"
+    "tapSOSForMore": "ਹੋਰ ਵਿਕਲਪਾਂ ਅਤੇ ਸਾਰੇ ਗੁਆਂਢੀਆਂ ਲਈ SOS ਟੈਪ ਕਰੋ",
+    "criticalUrgency": "ਗੰਭੀਰ ਐਮਰਜੈਂਸੀ"
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -1676,5 +1678,11 @@
   },
   "breadcrumb": {
     "more": "ਹੋਰ"
+  },
+  "postContent": {
+    "photo": "ਫੋਟੋ",
+    "sharedPhoto": "ਸਾਂਝੀ ਕੀਤੀ ਫੋਟੋ",
+    "video": "ਵੀਡੀਓ",
+    "sharedVideo": "ਸਾਂਝੀ ਕੀਤੀ ਵੀਡੀਓ"
   }
 }
