@@ -141,11 +141,18 @@ export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
     return dbPosts.map((dbPost): FeedPost => {
       const postInteractions = getPostInteractions(dbPost.id);
       
+      // Determine author tier:
+      // - If it's the user's own post, mark as 'self' (will be shown in all feeds based on visibility)
+      // - Otherwise, look up the friend's tier
+      const isOwnPost = userId && dbPost.author_id === userId;
+      const friendTier = friends.find(f => f.id === dbPost.author_id)?.tier;
+      const authorTier = isOwnPost ? 'self' : (friendTier || 'acquainted');
+      
       return {
         id: dbPost.id,
         authorId: dbPost.author_id,
         authorName: dbPost.author_display_name || dbPost.author_user_handle || 'Unknown User',
-        authorTier: friends.find(f => f.id === dbPost.author_id)?.tier || 'acquainted',
+        authorTier: authorTier as TierType,
         contentType: dbPost.content_type,
         content: dbPost.content,
         mediaUrl: dbPost.media_url || undefined,
@@ -172,7 +179,7 @@ export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
         isSponsored: dbPost.is_sponsored,
       };
     });
-  }, [dbPosts, dbInteractions, friends, getPostInteractions]);
+  }, [dbPosts, dbInteractions, friends, getPostInteractions, userId]);
 
   // Update loading and error state based on posts hook
   useEffect(() => {
