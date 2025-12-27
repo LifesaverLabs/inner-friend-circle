@@ -34,6 +34,19 @@
       "globalReach": {
         "title": "23 Languages",
         "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+      },
+      "title": "Fitur",
+      "organize": {
+        "title": "Ngatur kanca",
+        "description": "Kategorikake kanca-kanca cedhak sampeyan dadi tingkat miturut jinis hubungan lan kecedhakan"
+      },
+      "remind": {
+        "title": "Tetep nyambung",
+        "description": "Entuk pengeling-eling nalika wis suwe ora kontak kanggo njaga hubungan"
+      },
+      "emergency": {
+        "title": "Jaringan darurat",
+        "description": "Gawe lingkaran kepercayaan kanggo dihubungi nalika darurat"
       }
     },
     "mission": {
@@ -41,7 +54,22 @@
       "description": "Kita menang nalika sampeyan ninggalake situs kita — kanggo nuduhake momen nyata karo wong sing paling penting. Nalika jarak misahake sampeyan, kita bakal mbantu miwiti panggilan video. Nanging ora ana sing ngluwihi ana ing kono.",
       "inspiration": "Inspirasi kita: Dentyne Ice \"Gawe Wektu Adu Rai\""
     },
-    "quote": "\"Ora kabeh hubungan simetris — lan iku pancen wajar. Tujuane dudu keseimbangan sing sampurna, nanging kehadiran sing disengaja.\""
+    "quote": "\"Ora kabeh hubungan simetris — lan iku pancen wajar. Tujuane dudu keseimbangan sing sampurna, nanging kehadiran sing disengaja.\"",
+    "hero": {
+      "title": "Nyambung karo wong-wong sing penting tenan",
+      "subtitle": "InnerFriend mbantu sampeyan ngatur hubungan sing paling cedhak lan tetep nyambung karo wong-wong sing sampeyan sayangi",
+      "cta": "Miwiti",
+      "learnMore": "Sinau luwih akeh"
+    },
+    "privacy": {
+      "title": "Privasi dhisik",
+      "description": "Data sampeyan duweke sampeyan. Njaga kontrol lengkap ing grafik sosial sampeyan."
+    },
+    "cta": {
+      "title": "Siap miwiti perjalanan sampeyan?",
+      "subtitle": "Mulai mbangun hubungan sing migunani karo InnerFriend dina iki",
+      "button": "Miwiti gratis"
+    }
   },
   "nav": {
     "home": "Omah",
@@ -53,18 +81,8 @@
     "back": "Bali"
   },
   "auth": {
-    "signIn": {
-      "title": "Sugeng rawuh maneh",
-      "subtitle": "Mlebu kanggo ngakses lingkaranmu",
-      "button": "Mlebu",
-      "submitting": "Lagi mlebu..."
-    },
-    "signUp": {
-      "title": "Gawe akunmu",
-      "subtitle": "Miwiti ngatur persahabatan sing cedhak",
-      "button": "Gawe Akun",
-      "submitting": "Lagi nggawe akun..."
-    },
+    "signIn": "Mlebu",
+    "signUp": "Daftar",
     "form": {
       "displayName": "Jeneng Tampilan",
       "displayNameOptional": "Jeneng Tampilan (opsional)",
@@ -100,6 +118,26 @@
       "and": "and",
       "termsOfService": "Terms of Service",
       "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
+    },
+    "signOut": "Metu",
+    "email": "Email",
+    "password": "Sandi",
+    "confirmPassword": "Konfirmasi sandi",
+    "forgotPassword": "Lali sandi?",
+    "resetPassword": "Reset sandi",
+    "noAccount": "Ora duwe akun?",
+    "hasAccount": "Wis duwe akun?",
+    "continueWith": "Lanjutake karo {{provider}}",
+    "orContinueWith": "Utawa lanjutake karo",
+    "signingIn": "Lagi mlebu...",
+    "signingUp": "Lagi daftar...",
+    "errors": {
+      "invalidEmail": "Mangga lebokake alamat email sing bener",
+      "invalidPassword": "Sandi kudu minimal 8 karakter",
+      "passwordMismatch": "Sandi ora cocog",
+      "emailInUse": "Email iki wis digunakake",
+      "invalidCredentials": "Email utawa sandi salah",
+      "generic": "Ana sing salah. Mangga coba maneh"
     }
   },
   "notFound": {
@@ -169,21 +207,31 @@
     "back": "Bali",
     "next": "Sabanjure",
     "done": "Rampung",
-    "search": "Telusuri",
+    "search": "Goleki",
     "filter": "Filter",
     "export": "Ekspor",
     "import": "Impor",
-    "remove": "Busak",
+    "remove": "Copot",
     "accept": "Nampa",
-    "refresh": "Refresh",
+    "refresh": "Segarake",
     "retry": "Retry",
     "share": "Share",
     "sharing": "Sharing...",
-    "selectAll": "Select All",
-    "clear": "Clear",
+    "selectAll": "Pilih kabeh",
+    "clear": "Resiki",
     "copy": "Copy",
     "print": "Print",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "finish": "Rampung",
+    "skip": "Lewati",
+    "sort": "Urut",
+    "loading": "Lagi dimuat...",
+    "submit": "Kirim",
+    "continue": "Lanjutake",
+    "apply": "Terapake",
+    "deselectAll": "Batalake kabeh pilihan",
+    "expandAll": "Ambakna kabeh",
+    "collapseAll": "Ciutake kabeh"
   },
   "friend": {
     "addFriend": "Tambah Kanca",
@@ -505,7 +553,27 @@
     "acquaintedHint": "Friends are reclassified here through lack of contact over time",
     "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
     "nayborsHint": "Introduce yourself to your naybors and add them here",
-    "addToCircleHint": "Add someone to your closest circle"
+    "addToCircleHint": "Add someone to your closest circle",
+    "noFriends": {
+      "title": "Durung ana kanca",
+      "description": "Mulai kanthi nambahake kanca pisanan sampeyan",
+      "action": "Tambah kanca"
+    },
+    "noResults": {
+      "title": "Ora ana asil",
+      "description": "Ora ana sing cocog karo kriteria panelusuran sampeyan",
+      "action": "Resiki filter"
+    },
+    "noNotifications": {
+      "title": "Ora ana notifikasi",
+      "description": "Sampeyan wis ndeleng kabeh!",
+      "action": "Segarake"
+    },
+    "noActivity": {
+      "title": "Ora ana aktivitas",
+      "description": "Aktivitas anyar sampeyan bakal muncul ing kene",
+      "action": "Miwiti"
+    }
   },
   "labels": {
     "name": "Jeneng",
@@ -579,7 +647,10 @@
     "capacitySummary": "{{named}} dijenengi + {{reserved}} wis direserfasi + {{new}} anyar = {{total}}/{{limit}} {{tier}}",
     "addGroup": "Tambah Grup",
     "spotsCount_plural": "{{count}} Reserved Spots",
-    "spotsLabel_plural": "reserved spots"
+    "spotsLabel_plural": "reserved spots",
+    "title": "Bagian sing dicadhangake",
+    "description": "Fitur iki dicadhangake kanggo pangguna premium",
+    "upgrade": "Upgrade kanggo mbukak"
   },
   "addFriend": {
     "addNaybor": "Tambah Tangga",
@@ -601,7 +672,7 @@
     "addNayborPhoneButton": "Tambah info kontak kanggo darurat"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
+    "title": "Dasbor",
     "subtitle": "Curate and tend to your closest relationships",
     "loading": "Loading your circles...",
     "tend": "Tend",
@@ -622,11 +693,26 @@
       "skippedDuplicates": "Skipped {{count}} duplicate",
       "skippedDuplicates_plural": "Skipped {{count}} duplicates",
       "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
+    },
+    "welcome": "Sugeng rawuh, {{name}}",
+    "overview": "Ringkesan",
+    "recentActivity": "Aktivitas anyar",
+    "quickActions": "Aksi cepet",
+    "stats": {
+      "totalFriends": "Total kanca",
+      "innerCircle": "Lingkaran njero",
+      "needsAttention": "Butuh kawigaten",
+      "lastContact": "Kontak pungkasan"
+    },
+    "widgets": {
+      "upcomingBirthdays": "Ulang taun sing arep teka",
+      "recentContacts": "Kontak anyar",
+      "suggestedActions": "Aksi sing disaranake"
     }
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
+    "title": "Misi",
+    "description": "Misi mbantu sampeyan tetep kontak karo kanca-kanca",
     "learnMore": "Learn more...",
     "showLess": "Show less",
     "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
@@ -645,6 +731,21 @@
         "title": "Pull Closer",
         "description": "Move meaningful connections into tighter orbits"
       }
+    },
+    "subtitle": "Tetep nyambung karo hubungan sing penting",
+    "complete": "Rampungake misi",
+    "skip": "Lewati misi",
+    "remind": "Eling-eling aku mengko",
+    "empty": {
+      "title": "Ora ana misi aktif",
+      "description": "Sampeyan wis ngrampungake kabeh! Misi anyar bakal teka."
+    },
+    "types": {
+      "call": "Misi nelpon",
+      "message": "Misi pesen",
+      "meetup": "Misi ketemu",
+      "birthday": "Misi ulang taun",
+      "checkin": "Misi check-in"
     }
   },
   "tierSection": {
@@ -658,7 +759,7 @@
     "keysSharedCount": "Kunci ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
+    "title": "Ngurus kanca",
     "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
     "periods": {
       "core": "minggu iki",
@@ -686,10 +787,48 @@
       "rememberReachOut": "Remember to reach out soon! 💛",
       "friendsWaiting": "{{count}} friend waiting to hear from you",
       "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
-    }
+    },
+    "subtitle": "Hubungan kaya taman - butuh perawatan rutin",
+    "description": "Kanca-kanca sing wektu ne kanggo dihubungi",
+    "actions": {
+      "markContacted": "Tandai wis dihubungi",
+      "snooze": "Snooze",
+      "viewProfile": "Deleng profil"
+    },
+    "filters": {
+      "all": "Kabeh",
+      "overdue": "Telat",
+      "upcoming": "Arep teka",
+      "byTier": "Miturut tingkat"
+    },
+    "frequency": {
+      "daily": "Saben dina",
+      "weekly": "Saben minggu",
+      "biweekly": "Saben rong minggu",
+      "monthly": "Saben wulan",
+      "quarterly": "Saben telung wulan",
+      "yearly": "Saben taun"
+    },
+    "status": {
+      "onTrack": "Ing jalur",
+      "dueSoon": "Wektu ne cedhak",
+      "overdue": "Telat",
+      "needsAttention": "Butuh kawigaten"
+    },
+    "reminderTypes": {
+      "call": "Telpon",
+      "text": "Pesen",
+      "visit": "Tilik",
+      "email": "Email"
+    },
+    "lastContact": "Kontak pungkasan",
+    "contactDue": "Kontak kudu",
+    "noContactYet": "Durung ana kontak",
+    "daysOverdue": "Telat {{count}} dina",
+    "dueIn": "Kudu ing {{count}} dina"
   },
   "nayborSOS": {
-    "title": "Naybor SOS™",
+    "title": "NayborSOS",
     "steps": {
       "category": "What kind of help do you need?",
       "contacts": "Choose naybors to contact"
@@ -716,7 +855,33 @@
     "quick": "Cepet",
     "noPhone": "Ora ana telpon",
     "tapSOSForMore": "Tutul SOS kanggo pilihan luwih akeh lan kabeh tangga",
-    "criticalUrgency": "Darurat kritis"
+    "criticalUrgency": "Darurat kritis",
+    "subtitle": "Hubungi lingkaran kepercayaan sampeyan nalika paling butuh",
+    "description": "Jaringan darurat yaiku kontak sing dipercaya sing bisa mbantu nalika krisis",
+    "activate": "Aktifake SOS",
+    "deactivate": "Nonaktifake SOS",
+    "status": {
+      "active": "SOS aktif",
+      "inactive": "SOS ora aktif",
+      "pending": "Lagi ngenteni..."
+    },
+    "contacts": {
+      "title": "Kontak darurat",
+      "add": "Tambah kontak darurat",
+      "remove": "Copot saka dhaptar darurat",
+      "empty": "Durung ana kontak darurat sing disetel"
+    },
+    "message": {
+      "title": "Pesen darurat",
+      "placeholder": "Lebokake pesen sing bakal dikirim menyang jaringan sampeyan",
+      "default": "Aku butuh bantuan. Mangga hubungi aku yen bisa."
+    },
+    "settings": {
+      "title": "Setelan SOS",
+      "autoLocation": "Bagekake lokasi otomatis",
+      "confirmActivation": "Konfirmasi sadurunge ngaktifake",
+      "cooldown": "Cooldown antarane aktivasi"
+    }
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -730,7 +895,16 @@
     "toasts": {
       "connecting": "Connecting via {{service}}",
       "openService": "Open {{service}} to connect"
-    }
+    },
+    "call": "Telpon",
+    "video": "Video call",
+    "message": "Kirim pesen",
+    "email": "Kirim email",
+    "directions": "Arah",
+    "schedule": "Jadwalake",
+    "addNote": "Tambah cathetan",
+    "recordCall": "Rekam telpon",
+    "shareContact": "Bagekake kontak"
   },
   "onboarding": {
     "steps": {
@@ -745,7 +919,11 @@
       "complete": {
         "title": "All Set!",
         "description": "Your friends can now start or schedule kalls with you."
-      }
+      },
+      "profile": "Gawe profil",
+      "import": "Impor kontak",
+      "categorize": "Kategorikake kanca",
+      "preferences": "Preferensi"
     },
     "skipForNow": "Skip for now",
     "getStarted": "Get Started",
@@ -782,10 +960,28 @@
       "skype": "Jeneng Skype-mu (ing Setelan → Akun)",
       "webex": "Link Ruang Pribadi utawa email Webex",
       "slack": "Email kerja (loro-lorone kudu ana ing workspace sing padha)"
+    },
+    "welcome": {
+      "title": "Sugeng rawuh ing InnerFriend",
+      "subtitle": "Ayo mulai ngatur hubungan sing migunani",
+      "description": "Kita bakal takon sawetara pitakonan kanggo nyesuaikan pengalaman lingkaran njero sampeyan"
+    },
+    "import": {
+      "title": "Impor kontak",
+      "description": "Mulai kanthi ngimpor kontak sampeyan sing wis ana",
+      "fromPhone": "Saka kontak telpon",
+      "fromGoogle": "Saka kontak Google",
+      "manual": "Tambah manual",
+      "skip": "Lewati saiki"
+    },
+    "complete": {
+      "title": "Kabeh wis siap!",
+      "subtitle": "Sampeyan siap mulai ngatur lingkaran njero sampeyan",
+      "action": "Menyang dasbor"
     }
   },
   "keysShared": {
-    "title": "Kunci Sing Diwenehake",
+    "title": "Kunci sing dibagekake",
     "steps": {
       "address": {
         "title": "Alamatmu",
@@ -943,7 +1139,33 @@
           "description": "Tulung mung nyerang lawang sawise pertimbangan sing ati-ati, minangka pilihan terakhir nalika sacara hukum perlu."
         }
       }
-    }
+    },
+    "subtitle": "Atur akses menyang lingkaran kepercayaan sampeyan",
+    "description": "Atur sapa sing bisa ngakses lingkaran njero sampeyan nalika darurat",
+    "grant": "Wenehake kunci",
+    "revoke": "Cabut kunci",
+    "manage": "Atur kunci sing dibagekake",
+    "permissions": {
+      "view": "Deleng kontak",
+      "contact": "Bisa dihubungi nalika darurat",
+      "location": "Akses lokasi"
+    },
+    "doorKeyTree": {
+      "title": "Wit kunci lawang",
+      "description": "Wong-wong sing dipercaya sing bisa ngakses lingkaran njero sampeyan nalika darurat",
+      "empty": "Durung ana kunci sing dibagekake"
+    },
+    "shareRequest": {
+      "title": "Panjalukan kunci",
+      "pending": "Panjalukan sing nunggu",
+      "accept": "Trima",
+      "decline": "Tolak"
+    },
+    "sharedWithYou": "Kunci sing dibagekake karo sampeyan",
+    "sharedByYou": "Kunci sing sampeyan bagekake",
+    "noSharedKeys": "Durung ana kunci sing dibagekake",
+    "expiresAt": "Kadaluwarsa: {{date}}",
+    "neverExpires": "Ora kadaluwarsa"
   },
   "legal": {
     "privacyPolicy": "Privacy Policy",
@@ -975,11 +1197,11 @@
     "shareDescription": "Share a link with your parasocial followers",
     "noContentShared": "No content shared yet",
     "noContentHint": "Share links to engage with your followers",
-    "title": "Title",
+    "title": "Tututake kreator",
     "titlePlaceholder": "What are you sharing?",
     "url": "URL",
     "urlPlaceholder": "https://...",
-    "description": "Description",
+    "description": "Tututake kreator favorit sampeyan lan entuk pembaruan saka wong-wong mau",
     "descriptionPlaceholder": "Brief description (optional)",
     "deleteTitle": "Delete this share?",
     "deleteDescription": "This will remove the link from your followers feeds.",
@@ -991,17 +1213,23 @@
       "invalidUrl": "Please enter a valid URL",
       "sharedContent": "Content shared with your followers!",
       "deleted": "Share deleted"
-    }
+    },
+    "subtitle": "Nyambung karo kreator favorit sampeyan",
+    "follow": "Tututake",
+    "unfollow": "Batal tututake",
+    "following": "Lagi nututake",
+    "followers": "Pengikut",
+    "noCreators": "Ora ana kreator sing ditemokake"
   },
   "profileSettings": {
-    "title": "Profile Settings",
+    "title": "Setelan profil",
     "description": "Manage your profile and contact preferences",
     "tabs": {
       "profile": "Profile",
       "contact": "Contact",
       "creator": "Creator"
     },
-    "displayName": "Display Name",
+    "displayName": "Jeneng tampilan",
     "displayNamePlaceholder": "Your name",
     "handle": "Handle",
     "handlePlaceholder": "your_handle",
@@ -1029,17 +1257,51 @@
       "handleFormat": "Handle kudu 3-30 karakter, mung huruf, angka lan garis ngisor",
       "checkAvailability": "Kesalahan mriksa kasedhiyan handle",
       "validationError": "Kesalahan validasi handle"
+    },
+    "personalInfo": "Informasi pribadi",
+    "bio": "Bio",
+    "avatar": "Avatar",
+    "changeAvatar": "Ganti avatar",
+    "removeAvatar": "Copot avatar",
+    "privacy": {
+      "title": "Setelan privasi",
+      "profileVisibility": "Visibilitas profil",
+      "showOnline": "Tuduhake status online",
+      "showLastSeen": "Tuduhake pungkasan katon"
+    },
+    "notifications": {
+      "title": "Setelan notifikasi",
+      "email": "Notifikasi email",
+      "push": "Notifikasi push",
+      "sms": "Notifikasi SMS"
+    },
+    "account": {
+      "title": "Setelan akun",
+      "changePassword": "Ganti sandi",
+      "twoFactor": "Otentikasi dua faktor",
+      "sessions": "Sesi aktif",
+      "deleteAccount": "Busak akun"
     }
   },
   "editFriend": {
-    "title": "Edit Contact",
+    "title": "Sunting kanca",
     "description": "Update contact information for {{name}}",
     "namePlaceholder": "Friend s name",
     "emailPlaceholder": "friend@example.com",
     "preferredContactMethod": "Preferred Contact Method",
     "selectContactMethod": "Choose how to reach them",
     "notesPlaceholder": "Any notes about this person...",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+    "basicInfo": "Informasi dasar",
+    "name": "Jeneng",
+    "nickname": "Jeneng sesingidan",
+    "birthday": "Ulang taun",
+    "notes": "Cathetan",
+    "tier": "Tingkat",
+    "contactFrequency": "Frekuensi kontak",
+    "save": "Simpen owah-owahan",
+    "delete": "Busak kanca",
+    "confirmDelete": "Sampeyan yakin arep mbusak kanca iki?"
   },
   "post": {
     "voiceNote": "Voice Note",
@@ -1079,7 +1341,21 @@
     "currentlySelected": "Currently selected",
     "dontShowMonth": "Don't show for 1 month",
     "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "connectingVia": "Connecting via {{method}}",
+    "title": "Gawe posting",
+    "placeholder": "Sampeyan lagi mikir apa?",
+    "submit": "Posting",
+    "visibility": {
+      "public": "Umum",
+      "friends": "Mung kanca",
+      "private": "Pribadi"
+    },
+    "actions": {
+      "like": "Seneng",
+      "comment": "Komentar",
+      "share": "Bagekake",
+      "save": "Simpen"
+    }
   },
   "compose": {
     "title": "Share with your circles",
@@ -1140,7 +1416,7 @@
     }
   },
   "followCreator": {
-    "title": "Follow a Creator",
+    "title": "Tututake kreator",
     "description": "Search for verified creators to follow and see their content in your feed.",
     "searchLabel": "Search by name or handle",
     "searchPlaceholder": "@creator_handle or Creator Name",
@@ -1154,7 +1430,11 @@
       "searching": "An error occurred while searching.",
       "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
       "noCreatorsFound": "No creators found matching that search."
-    }
+    },
+    "search": "Goleki kreator",
+    "suggested": "Disaranake kanggo sampeyan",
+    "categories": "Kategori",
+    "trending": "Trending"
   },
   "contactMethods": {
     "toasts": {
@@ -1167,7 +1447,7 @@
       "removeFailed": "Gagal mbusak cara kontak",
       "reorderFailed": "Gagal ngatur ulang"
     },
-    "title": "Contact Methods",
+    "title": "Metode kontak",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",
     "addButton": "Add Contact Method",
     "addButtonCompact": "Add",
@@ -1191,7 +1471,24 @@
     "guidance": {
       "example": "Example",
       "tip": "Tip"
-    }
+    },
+    "phone": "Telpon",
+    "email": "Email",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "signal": "Signal",
+    "messenger": "Messenger",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "discord": "Discord",
+    "slack": "Slack",
+    "other": "Liyane",
+    "preferred": "Metode pilihan",
+    "add": "Tambah metode kontak",
+    "primary": "Utama",
+    "secondary": "Sekunder"
   },
   "dev": {
     "label": "Dev",
@@ -1222,11 +1519,17 @@
       "sessions": "Sessions persist across page reloads",
       "clearApp": "Use \"Clear App Data\" to reset friend lists",
       "forceLogout": "Use \"Force Logout\" to fully clear auth state"
-    }
+    },
+    "title": "Setelan pengembang",
+    "apiKeys": "Kunci API",
+    "webhooks": "Webhook",
+    "logs": "Log pengembang",
+    "testing": "Mode pengujian",
+    "documentation": "Dokumentasi API"
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
+    "title": "Tambah kanca sing dilink",
+    "description": "Bagekake kode sampeyan ing ngisor iki utawa scan kode kanca",
     "findBy": "Find by",
     "enterUsernameHint": "Enter their username exactly as they set it",
     "enterContactHint": "Enter their {{type}} exactly as they registered it",
@@ -1240,7 +1543,7 @@
     "showCircleLevel": "Show circle level",
     "circleVisibleHint": "They'll see you added them as {{tier}}",
     "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
+    "sendRequest": "Kirim panjalukan koneksi",
     "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
     "serviceTypes": {
       "phone": "Phone Number",
@@ -1250,7 +1553,16 @@
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
       "facetime": "FaceTime"
-    }
+    },
+    "subtitle": "Nyambung karo kanca-kanca sing wis nggunakake InnerFriend",
+    "searchPlaceholder": "Goleki miturut jeneng utawa email",
+    "noResults": "Ora ana pangguna sing ditemokake",
+    "pending": "Panjalukan nunggu",
+    "connected": "Wis nyambung",
+    "yourCode": "Kode sampeyan",
+    "scanCode": "Scan kode",
+    "enterCode": "Lebokake kode",
+    "shareCode": "Bagekake kode"
   },
   "feedPost": {
     "likeCount": "{{count}} seneng",
@@ -1353,6 +1665,44 @@
       "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
       "parentalRequired": "Parental Consent Required",
       "verify": "Verify Age"
+    },
+    "title": "Privasi data",
+    "subtitle": "Sinau kepiye kita nglumpukake, nggunakake, lan nglindhungi data pribadi sampeyan",
+    "consent": {
+      "title": "Manajemen persetujuan",
+      "description": "Atur persetujuan pemrosesan data sampeyan",
+      "analytics": "Cookie analitik",
+      "marketing": "Komunikasi pemasaran",
+      "thirdParty": "Berbagi pihak ketiga",
+      "withdraw": "Cabut persetujuan"
+    },
+    "rights": {
+      "title": "Hak sampeyan",
+      "access": "Akses data",
+      "rectification": "Koreksi data",
+      "erasure": "Penghapusan data",
+      "portability": "Portabilitas data",
+      "restriction": "Pembatasan pemrosesan",
+      "objection": "Keberatan pemrosesan"
+    },
+    "export": {
+      "title": "Ekspor data",
+      "description": "Unduh salinan kabeh data pribadi sampeyan",
+      "button": "Ekspor data",
+      "processing": "Lagi nyiapake ekspor...",
+      "ready": "Data siap diunduh"
+    },
+    "delete": {
+      "title": "Busak akun",
+      "description": "Busak akun sampeyan lan kabeh data sing gegandhengan kanthi permanen. Aksi iki ora bisa dibatalake.",
+      "button": "Busak akun",
+      "confirm": "Ketik 'BUSAK' kanggo konfirmasi",
+      "warning": "Aksi iki ora bisa dibatalake"
+    },
+    "policy": {
+      "title": "Kebijakan privasi",
+      "lastUpdated": "Diperbarui pungkasan",
+      "readFull": "Waca kebijakan lengkap"
     }
   },
   "dispatch": {
@@ -1543,6 +1893,18 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "required": "Kolom iki dibutuhake",
+      "invalidEmail": "Mangga lebokake alamat email sing bener",
+      "invalidPhone": "Mangga lebokake nomor telpon sing bener",
+      "minLength": "Kudu minimal {{min}} karakter",
+      "maxLength": "Ora bisa luwih saka {{max}} karakter",
+      "passwordMatch": "Sandi kudu cocog",
+      "invalidUrl": "Mangga lebokake URL sing bener",
+      "invalidDate": "Mangga lebokake tanggal sing bener",
+      "futureDate": "Tanggal kudu ing mangsa ngarep",
+      "pastDate": "Tanggal kudu ing jaman kepungkur"
     }
   },
   "dataImport": {
@@ -1636,6 +1998,33 @@
         "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
         "processing": "Processing..."
       }
+    },
+    "title": "Panel admin",
+    "dashboard": "Dasbor admin",
+    "users": {
+      "title": "Manajemen pangguna",
+      "list": "Kabeh pangguna",
+      "active": "Pangguna aktif",
+      "suspended": "Pangguna sing dihentikan",
+      "invite": "Undang pangguna"
+    },
+    "settings": {
+      "title": "Setelan sistem",
+      "general": "Setelan umum",
+      "security": "Setelan keamanan",
+      "notifications": "Setelan notifikasi"
+    },
+    "logs": {
+      "title": "Log sistem",
+      "audit": "Log audit",
+      "error": "Log kesalahan",
+      "access": "Log akses"
+    },
+    "analytics": {
+      "title": "Analitik",
+      "overview": "Ringkesan",
+      "users": "Analitik pangguna",
+      "engagement": "Metrik keterlibatan"
     }
   },
   "tierFeed": {
@@ -1709,5 +2098,97 @@
     "sharedPhoto": "Foto sing dibagikan",
     "video": "Video",
     "sharedVideo": "Video sing dibagikan"
+  },
+  "privacy": {
+    "title": "Kebijakan privasi",
+    "lastUpdated": "Diperbarui pungkasan: {{date}}",
+    "sections": {
+      "collection": {
+        "title": "Pengumpulan informasi",
+        "description": "Informasi apa sing kita kumpulake lan kepiye"
+      },
+      "usage": {
+        "title": "Penggunaan informasi",
+        "description": "Kepiye kita nggunakake informasi sing dikumpulake"
+      },
+      "sharing": {
+        "title": "Berbagi informasi",
+        "description": "Kapan lan karo sapa kita mbagekake informasi sampeyan"
+      },
+      "security": {
+        "title": "Keamanan data",
+        "description": "Kepiye kita nglindhungi informasi sampeyan"
+      },
+      "rights": {
+        "title": "Hak sampeyan",
+        "description": "Hak sampeyan babagan data pribadi"
+      },
+      "cookies": {
+        "title": "Cookie lan pelacakan",
+        "description": "Panggunaan cookie lan teknologi serupa"
+      },
+      "children": {
+        "title": "Privasi bocah",
+        "description": "Kebijakan kita babagan privasi bocah"
+      },
+      "changes": {
+        "title": "Perubahan kebijakan",
+        "description": "Kepiye kita menehi kabar babagan perubahan kebijakan iki"
+      },
+      "contact": {
+        "title": "Hubungi kita",
+        "description": "Hubungi kanggo pitakonan privasi"
+      }
+    }
+  },
+  "terms": {
+    "title": "Syarat layanan",
+    "lastUpdated": "Diperbarui pungkasan: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Penerimaan syarat",
+        "description": "Kanthi nggunakake InnerFriend, sampeyan setuju karo syarat-syarat iki"
+      },
+      "eligibility": {
+        "title": "Kelayakan",
+        "description": "Persyaratan kanggo nggunakake layanan kita"
+      },
+      "accounts": {
+        "title": "Akun pangguna",
+        "description": "Tanggung jawab sampeyan kanggo akun sampeyan"
+      },
+      "content": {
+        "title": "Konten pangguna",
+        "description": "Aturan babagan konten sing sampeyan kirim"
+      },
+      "prohibited": {
+        "title": "Aktivitas sing dilarang",
+        "description": "Apa sing dilarang ing platform kita"
+      },
+      "intellectual": {
+        "title": "Properti intelektual",
+        "description": "Informasi babagan hak cipta lan merek dagang"
+      },
+      "disclaimers": {
+        "title": "Penafian",
+        "description": "InnerFriend diwenehake 'apa anane' tanpa jaminan"
+      },
+      "liability": {
+        "title": "Batasan tanggung jawab",
+        "description": "Batasan tanggung jawab kita"
+      },
+      "termination": {
+        "title": "Penghentian",
+        "description": "Kapan akun bisa dihentikan"
+      },
+      "governing": {
+        "title": "Hukum sing berlaku",
+        "description": "Hukum sing ngatur syarat-syarat iki"
+      },
+      "contact": {
+        "title": "Hubungi kita",
+        "description": "Hubungi kanggo pitakonan babagan syarat-syarat iki"
+      }
+    }
   }
 }
