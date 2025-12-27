@@ -553,6 +553,107 @@ export type Database = {
           },
         ]
       }
+      posts: {
+        Row: {
+          id: string
+          author_id: string
+          content_type: Database["public"]["Enums"]["post_content_type"]
+          content: string
+          media_url: string | null
+          scheduled_at: string | null
+          location_name: string | null
+          location_lat: number | null
+          location_lng: number | null
+          visibility: Database["public"]["Enums"]["circle_tier"][]
+          is_suggested: boolean
+          is_sponsored: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          author_id: string
+          content_type: Database["public"]["Enums"]["post_content_type"]
+          content: string
+          media_url?: string | null
+          scheduled_at?: string | null
+          location_name?: string | null
+          location_lat?: number | null
+          location_lng?: number | null
+          visibility?: Database["public"]["Enums"]["circle_tier"][]
+          is_suggested?: boolean
+          is_sponsored?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          author_id?: string
+          content_type?: Database["public"]["Enums"]["post_content_type"]
+          content?: string
+          media_url?: string | null
+          scheduled_at?: string | null
+          location_name?: string | null
+          location_lat?: number | null
+          location_lng?: number | null
+          visibility?: Database["public"]["Enums"]["circle_tier"][]
+          is_suggested?: boolean
+          is_sponsored?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "posts_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      post_interactions: {
+        Row: {
+          id: string
+          post_id: string
+          user_id: string
+          interaction_type: Database["public"]["Enums"]["interaction_type"]
+          content: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          post_id: string
+          user_id: string
+          interaction_type: Database["public"]["Enums"]["interaction_type"]
+          content?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          post_id?: string
+          user_id?: string
+          interaction_type?: Database["public"]["Enums"]["interaction_type"]
+          content?: string | null
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_interactions_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "post_interactions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       admin_roles: {
         Row: {
           user_id: string
@@ -599,10 +700,34 @@ export type Database = {
         Returns: boolean
       }
       is_handle_appropriate: { Args: { handle: string }; Returns: boolean }
+      get_visible_posts_for_user: {
+        Args: { target_user_id: string }
+        Returns: {
+          id: string
+          author_id: string
+          content_type: Database["public"]["Enums"]["post_content_type"]
+          content: string
+          media_url: string | null
+          scheduled_at: string | null
+          location_name: string | null
+          location_lat: number | null
+          location_lng: number | null
+          visibility: Database["public"]["Enums"]["circle_tier"][]
+          is_suggested: boolean
+          is_sponsored: boolean
+          created_at: string
+          updated_at: string
+          author_display_name: string | null
+          author_user_handle: string | null
+          author_avatar_url: string | null
+        }[]
+      }
     }
     Enums: {
       circle_tier: "core" | "inner" | "outer"
       connection_status: "pending" | "confirmed" | "declined"
+      post_content_type: "text" | "photo" | "voice_note" | "video" | "call_invite" | "meetup_invite" | "proximity_ping" | "life_update"
+      interaction_type: "like" | "comment" | "voice_reply" | "call_accepted" | "meetup_rsvp" | "share"
       dispatch_organization_type: "police" | "fire" | "ems" | "combined" | "private_ems" | "hospital" | "crisis_center"
       dispatch_verification_status: "pending" | "verified" | "rejected" | "suspended"
       dispatch_access_status: "pending" | "approved" | "denied" | "expired"
@@ -737,11 +862,16 @@ export const Constants = {
     Enums: {
       circle_tier: ["core", "inner", "outer"],
       connection_status: ["pending", "confirmed", "declined"],
+      post_content_type: ["text", "photo", "voice_note", "video", "call_invite", "meetup_invite", "proximity_ping", "life_update"],
+      interaction_type: ["like", "comment", "voice_reply", "call_accepted", "meetup_rsvp", "share"],
       dispatch_organization_type: ["police", "fire", "ems", "combined", "private_ems", "hospital", "crisis_center"],
       dispatch_verification_status: ["pending", "verified", "rejected", "suspended"],
       dispatch_access_status: ["pending", "approved", "denied", "expired"],
       dispatch_legal_basis: ["consent", "exigent_circumstances", "court_order", "welfare_check"],
       admin_role_type: ["super_admin", "dispatch_verifier"],
     },
+    Tables: {
+      friend_connections: "friend_connections",
+    }
   },
 } as const

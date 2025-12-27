@@ -24,16 +24,16 @@
         "description": "Scopri opzionalmente quando qualcuno che hai elencato come stretto ti ha anche elencato — una dolce celebrazione della reciprocità."
       },
       "dataLiberation": {
-        "title": "Your Data, Your Way",
-        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+        "title": "I Tuoi Dati, La Tua Scelta",
+        "description": "Esporta tutti i tuoi dati in qualsiasi momento. Conforme al GDPR con gestione completa del consenso, eliminazione account e portabilità dei dati."
       },
       "nayborNetwork": {
-        "title": "Naybor Network",
-        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+        "title": "Rete Naybor",
+        "description": "Costruisci resilienza comunitaria con vicini fidati. Accesso SOS rapido, contatti di emergenza condivisi e aiuto reciproco."
       },
       "globalReach": {
-        "title": "23 Languages",
-        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+        "title": "23 Lingue",
+        "description": "Internazionalizzazione completa con supporto RTL per arabo, urdu ed ebraico. Disponibile nella tua lingua madre."
       }
     },
     "mission": {
@@ -91,8 +91,8 @@
       "unexpectedError": "Si è verificato un errore imprevisto. Riprova."
     },
     "toasts": {
-      "signOutError": "Failed to sign out",
-      "signOutSuccess": "Signed out successfully"
+      "signOutError": "Disconnessione fallita",
+      "signOutSuccess": "Disconnessione effettuata con successo"
     },
     "consent": {
       "agreeTo": "Accetto l'",
@@ -175,15 +175,15 @@
     "import": "Importa",
     "remove": "Rimuovi",
     "accept": "Accetta",
-    "refresh": "Refresh",
-    "retry": "Retry",
-    "share": "Share",
-    "sharing": "Sharing...",
-    "selectAll": "Select All",
-    "clear": "Clear",
-    "copy": "Copy",
-    "print": "Print",
-    "saving": "Saving..."
+    "refresh": "Aggiorna",
+    "retry": "Riprova",
+    "share": "Condividi",
+    "sharing": "Condivisione...",
+    "selectAll": "Seleziona tutto",
+    "clear": "Cancella",
+    "copy": "Copia",
+    "print": "Stampa",
+    "saving": "Salvataggio..."
   },
   "friend": {
     "addFriend": "Aggiungi Amico",
@@ -470,48 +470,48 @@
     }
   },
   "emptyState": {
-    "noPostsYet": "No posts yet",
+    "noPostsYet": "Ancora nessun post",
     "noFriendsYet": {
-      "core": "No core friends yet",
-      "inner": "No inner circle friends yet",
-      "outer": "No outer circle friends yet"
+      "core": "Ancora nessun amico nel nucleo",
+      "inner": "Ancora nessun amico nella cerchia interna",
+      "outer": "Ancora nessun amico nella cerchia esterna"
     },
     "noPostsDescription": {
-      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
-      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
-      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+      "core": "I tuoi amici del nucleo non hanno ancora condiviso nulla. Sii il primo a condividere qualcosa!",
+      "inner": "I tuoi amici della cerchia interna non hanno ancora condiviso nulla. Sii il primo a condividere qualcosa!",
+      "outer": "I tuoi amici della cerchia esterna non hanno ancora condiviso nulla. Sii il primo a condividere qualcosa!"
     },
     "getStarted": {
-      "core": "Get started by adding up to 5 friends to your Core.",
-      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
-      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+      "core": "Inizia aggiungendo fino a 5 amici al tuo Nucleo.",
+      "inner": "Inizia aggiungendo fino a 15 amici alla tua Cerchia Interna.",
+      "outer": "Inizia aggiungendo fino a 150 amici alla tua Cerchia Esterna."
     },
     "addToSee": {
-      "core": "Add up to 5 friends to see their posts here.",
-      "inner": "Add up to 15 friends to see their posts here.",
-      "outer": "Add up to 150 friends to see their posts here."
+      "core": "Aggiungi fino a 5 amici per vedere i loro post qui.",
+      "inner": "Aggiungi fino a 15 amici per vedere i loro post qui.",
+      "outer": "Aggiungi fino a 150 amici per vedere i loro post qui."
     },
     "addFriends": {
-      "core": "Add Core Friends",
-      "inner": "Add Inner Circle Friends",
-      "outer": "Add Outer Circle Friends"
+      "core": "Aggiungi Amici al Nucleo",
+      "inner": "Aggiungi Amici alla Cerchia Interna",
+      "outer": "Aggiungi Amici alla Cerchia Esterna"
     },
-    "createPost": "Create a Post",
-    "noParasoicalsYet": "No parasocials yet",
-    "noAcquaintedYet": "No acquainted cousins yet",
-    "noRoleModelsYet": "No role models yet",
-    "noNayborsYet": "No naybors yet",
-    "addParasocialsHint": "Add creators, celebrities, or figures you follow",
-    "acquaintedHint": "Friends are reclassified here through lack of contact over time",
-    "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
-    "nayborsHint": "Introduce yourself to your naybors and add them here",
-    "addToCircleHint": "Add someone to your closest circle"
+    "createPost": "Crea un Post",
+    "noParasoicalsYet": "Ancora nessun parasociale",
+    "noAcquaintedYet": "Ancora nessun conoscente",
+    "noRoleModelsYet": "Ancora nessun modello di riferimento",
+    "noNayborsYet": "Ancora nessun vicino",
+    "addParasocialsHint": "Aggiungi creatori, celebrità o personaggi che segui",
+    "acquaintedHint": "Gli amici vengono riclassificati qui per mancanza di contatto nel tempo",
+    "roleModelsHint": "Aggiungi persone le cui storie di vita ti ispirano a essere buono, migliore, il migliore",
+    "nayborsHint": "Presentati ai tuoi vicini e aggiungili qui",
+    "addToCircleHint": "Aggiungi qualcuno alla tua cerchia più stretta"
   },
   "labels": {
     "name": "Nome",
     "email": "Email",
-    "phone": "Phone Number",
-    "notes": "Notes",
+    "phone": "Numero di Telefono",
+    "notes": "Note",
     "handle": "Handle"
   },
   "capacity": {
@@ -578,8 +578,8 @@
     "addDescription": "Riserva posti per persone che non vuoi elencare esplicitamente. Ogni gruppo conta verso il tuo limite {{tier}} ma rimane privato.",
     "capacitySummary": "{{named}} nominati + {{reserved}} già riservati + {{new}} nuovi = {{total}}/{{limit}} {{tier}}",
     "addGroup": "Aggiungi gruppo",
-    "spotsCount_plural": "{{count}} Reserved Spots",
-    "spotsLabel_plural": "reserved spots"
+    "spotsCount_plural": "{{count}} Posti Riservati",
+    "spotsLabel_plural": "posti riservati"
   },
   "addFriend": {
     "addNaybor": "Aggiungi vicino",
@@ -601,116 +601,116 @@
     "addNayborPhoneButton": "Aggiungi info contatto per emergenze"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
-    "subtitle": "Curate and tend to your closest relationships",
-    "loading": "Loading your circles...",
-    "tend": "Tend",
-    "share": "Share",
-    "localStorageHint": "💡 Your lists are saved locally. Create an account to sync across devices and enable mutual matching.",
-    "dunbarDisclaimer": "Note: These Dunbar-inspired tier limits are subject to change as community conscience science evolves. Future modifications may include rules where certain tier counts affect others — for example, parasocial connections might reduce your allowable outer friend capacity.",
+    "title": "Le Tue Cerchie Interne",
+    "subtitle": "Cura e tendi alle tue relazioni più strette",
+    "loading": "Caricamento delle tue cerchie...",
+    "tend": "Cura",
+    "share": "Condividi",
+    "localStorageHint": "💡 Le tue liste sono salvate localmente. Crea un account per sincronizzare tra dispositivi e abilitare la corrispondenza reciproca.",
+    "dunbarDisclaimer": "Nota: Questi limiti di livello ispirati a Dunbar sono soggetti a modifiche con l'evoluzione della scienza della coscienza comunitaria. Modifiche future potrebbero includere regole dove certi conteggi di livello influenzano altri — ad esempio, le connessioni parasociali potrebbero ridurre la tua capacità di amici esterni consentita.",
     "toasts": {
-      "addedFriend": "Added {{name}} to your {{tier}} circle",
-      "movedFriend": "Moved {{name}} to {{tier}}",
-      "moveError": "Failed to move friend",
-      "removedFriend": "Removed {{name}} from your lists",
-      "addedReserved": "Added reserved group to {{tier}}",
-      "reservedError": "Failed to add reserved group",
-      "updatedReserved": "Updated reserved group",
-      "removedReserved": "Removed reserved group",
-      "imported": "Imported {{count}} friend",
-      "imported_plural": "Imported {{count}} friends",
-      "skippedDuplicates": "Skipped {{count}} duplicate",
-      "skippedDuplicates_plural": "Skipped {{count}} duplicates",
-      "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
+      "addedFriend": "Aggiunto {{name}} alla tua cerchia {{tier}}",
+      "movedFriend": "Spostato {{name}} in {{tier}}",
+      "moveError": "Impossibile spostare l'amico",
+      "removedFriend": "Rimosso {{name}} dalle tue liste",
+      "addedReserved": "Aggiunto gruppo riservato a {{tier}}",
+      "reservedError": "Impossibile aggiungere gruppo riservato",
+      "updatedReserved": "Gruppo riservato aggiornato",
+      "removedReserved": "Gruppo riservato rimosso",
+      "imported": "Importato {{count}} amico",
+      "imported_plural": "Importati {{count}} amici",
+      "skippedDuplicates": "Saltato {{count}} duplicato",
+      "skippedDuplicates_plural": "Saltati {{count}} duplicati",
+      "dataLiberation": "I tuoi dati ti appartengono. Esporta in qualsiasi momento per portarli altrove."
     }
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
-    "learnMore": "Learn more...",
-    "showLess": "Show less",
-    "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
-    "videoTitle": "Dentyne Ice - Face Time",
-    "quote": "\"Make Face Time\" — that's the ideal. When distance separates you, we'll help you bridge it with video kalls. But always remember: nothing beats being there.",
+    "title": "Tempo Reale, Non Tempo Pubblicitario",
+    "description": "Vinciamo quando lasci il nostro sito — per condividere momenti reali con le persone che contano di più.",
+    "learnMore": "Scopri di più...",
+    "showLess": "Mostra meno",
+    "inspiration": "La nostra ispirazione? Questa classica pubblicità Dentyne Ice — il promemoria perfetto che i momenti migliori accadono quando posi il telefono e ti presenti:",
+    "videoTitle": "Dentyne Ice - Tempo Reale",
+    "quote": "\"Crea Tempo Reale\" — questo è l'ideale. Quando la distanza vi separa, ti aiuteremo a colmarla con videochiamate. Ma ricorda sempre: niente batte esserci di persona.",
     "features": {
       "spark": {
-        "title": "Spark Video Kalls",
-        "description": "When you're apart, one click connects you"
+        "title": "Avvia Videochiamate",
+        "description": "Quando sei lontano, un click ti connette"
       },
       "tend": {
-        "title": "Tend Your Circles",
-        "description": "Reminders to reach out before connections fade"
+        "title": "Cura le Tue Cerchie",
+        "description": "Promemoria per contattare prima che le connessioni svaniscano"
       },
       "pull": {
-        "title": "Pull Closer",
-        "description": "Move meaningful connections into tighter orbits"
+        "title": "Avvicina",
+        "description": "Sposta connessioni significative in orbite più strette"
       }
     }
   },
   "tierSection": {
-    "reserve": "Reserve",
-    "reservedCount": "{{count}} Reserved",
-    "link": "Link",
-    "followCreator": "Follow Creator",
-    "addRoleModel": "Add Role Model",
-    "add": "Add",
+    "reserve": "Riserva",
+    "reservedCount": "{{count}} Riservati",
+    "link": "Collega",
+    "followCreator": "Segui Creatore",
+    "addRoleModel": "Aggiungi Modello",
+    "add": "Aggiungi",
     "keysShared": "Chiavi Condivise",
     "keysSharedCount": "Chiavi ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
-    "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
+    "title": "Cura le Tue Cerchie",
+    "markDescription": "Segna i tuoi amici {{tier}} che non hai contattato {{period}}",
     "periods": {
       "core": "questa settimana",
       "inner": "queste due settimane",
       "outer": "questi due mesi"
     },
-    "peopleCount": "{{count}} person",
-    "peopleCount_plural": "{{count}} people",
-    "noFriendsInTier": "No friends in this tier yet",
-    "checkInstruction": "✓ Check those you haven't talked to enough:",
-    "noPhone": "no phone",
-    "call": "Call",
-    "maybeLater": "Maybe Later",
-    "doneTending": "Done Tending",
-    "finish": "Finish",
-    "mobileHint": "Contact actions work best on mobile devices",
+    "peopleCount": "{{count}} persona",
+    "peopleCount_plural": "{{count}} persone",
+    "noFriendsInTier": "Ancora nessun amico in questo livello",
+    "checkInstruction": "✓ Seleziona quelli che non hai contattato abbastanza:",
+    "noPhone": "nessun telefono",
+    "call": "Chiama",
+    "maybeLater": "Forse Dopo",
+    "doneTending": "Cura Completata",
+    "finish": "Fine",
+    "mobileHint": "Le azioni di contatto funzionano meglio su dispositivi mobili",
     "reconnect": {
-      "title": "Time to Reconnect",
-      "description": "These friends could use some of your time"
+      "title": "È Ora di Riconnettersi",
+      "description": "Questi amici potrebbero usare un po' del tuo tempo"
     },
     "toasts": {
-      "allTended": "Amazing! You've tended to all your circles 🌱",
-      "noPhone": "No phone number for {{name}}",
-      "connecting": "Connecting with {{name}} via {{method}}",
-      "rememberReachOut": "Remember to reach out soon! 💛",
-      "friendsWaiting": "{{count}} friend waiting to hear from you",
-      "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
+      "allTended": "Fantastico! Hai curato tutte le tue cerchie 🌱",
+      "noPhone": "Nessun numero di telefono per {{name}}",
+      "connecting": "Connessione con {{name}} tramite {{method}}",
+      "rememberReachOut": "Ricorda di contattare presto! 💛",
+      "friendsWaiting": "{{count}} amico in attesa di sentirti",
+      "friendsWaiting_plural": "{{count}} amici in attesa di sentirti"
     }
   },
   "nayborSOS": {
     "title": "Naybor SOS™",
     "steps": {
-      "category": "What kind of help do you need?",
-      "contacts": "Choose naybors to contact"
+      "category": "Di che tipo di aiuto hai bisogno?",
+      "contacts": "Scegli i vicini da contattare"
     },
-    "critical": "Critical",
-    "emergencyWarning": "For life-threatening emergencies, call 911 first",
-    "suggestedActions": "Suggested actions:",
-    "addDetails": "Add details (optional)",
-    "describePlaceholder": "Describe your situation...",
-    "includeLocation": "Include location info",
-    "chooseNaybors": "Choose Naybors",
-    "chooseNayborsAria": "Continue to choose naybors to contact",
-    "nayborsSelected": "{{count}} naybor selected",
-    "nayborsSelected_plural": "{{count}} naybors selected",
-    "copyMessage": "Copy message",
-    "messageAll": "Message All ({{count}})",
-    "contacted": "Contacted {{count}} naybor",
-    "contacted_plural": "Contacted {{count}} naybors",
+    "critical": "Critico",
+    "emergencyWarning": "Per emergenze pericolose per la vita, chiama prima il 118",
+    "suggestedActions": "Azioni suggerite:",
+    "addDetails": "Aggiungi dettagli (opzionale)",
+    "describePlaceholder": "Descrivi la tua situazione...",
+    "includeLocation": "Includi informazioni sulla posizione",
+    "chooseNaybors": "Scegli Vicini",
+    "chooseNayborsAria": "Continua per scegliere i vicini da contattare",
+    "nayborsSelected": "{{count}} vicino selezionato",
+    "nayborsSelected_plural": "{{count}} vicini selezionati",
+    "copyMessage": "Copia messaggio",
+    "messageAll": "Invia a Tutti ({{count}})",
+    "contacted": "Contattato {{count}} vicino",
+    "contacted_plural": "Contattati {{count}} vicini",
     "toasts": {
-      "messageCopied": "Message copied to clipboard",
-      "noNayborsSelected": "No naybors with phone numbers selected"
+      "messageCopied": "Messaggio copiato negli appunti",
+      "noNayborsSelected": "Nessun vicino con numero di telefono selezionato"
     },
     "addMoreNaybors": "Aggiungi più vicini",
     "quick": "Veloce",
@@ -719,54 +719,54 @@
     "criticalUrgency": "Urgenza critica"
   },
   "callActions": {
-    "startKall": "Start a kall",
-    "kallNow": "Kall {{name}} now",
-    "scheduleKall": "Schedule a kall",
-    "scheduleWith": "Schedule with {{name}}",
-    "sharedServices": "Shared services:",
-    "theirPreferences": "Their preferences:",
-    "noMethods": "No contact methods available",
-    "requestInfo": "Request contact info",
+    "startKall": "Avvia una chiamata",
+    "kallNow": "Chiama {{name}} ora",
+    "scheduleKall": "Programma una chiamata",
+    "scheduleWith": "Programma con {{name}}",
+    "sharedServices": "Servizi condivisi:",
+    "theirPreferences": "Le loro preferenze:",
+    "noMethods": "Nessun metodo di contatto disponibile",
+    "requestInfo": "Richiedi info contatto",
     "toasts": {
-      "connecting": "Connecting via {{service}}",
-      "openService": "Open {{service}} to connect"
+      "connecting": "Connessione tramite {{service}}",
+      "openService": "Apri {{service}} per connetterti"
     }
   },
   "onboarding": {
     "steps": {
       "connect": {
-        "title": "Stay Connected",
-        "description": "Add your contact methods so friends can reach you easily."
+        "title": "Resta Connesso",
+        "description": "Aggiungi i tuoi metodi di contatto così gli amici possono raggiungerti facilmente."
       },
       "channels": {
-        "title": "Add Your Channels",
-        "description": "Which video call and messaging apps do you use?"
+        "title": "Aggiungi i Tuoi Canali",
+        "description": "Quali app di videochiamata e messaggistica usi?"
       },
       "complete": {
-        "title": "All Set!",
-        "description": "Your friends can now start or schedule kalls with you."
+        "title": "Tutto Pronto!",
+        "description": "I tuoi amici ora possono avviare o programmare chiamate con te."
       }
     },
-    "skipForNow": "Skip for now",
-    "getStarted": "Get Started",
-    "service": "Service",
-    "yourContactInfo": "Your {{service}} Contact Info",
-    "spontaneous": "Spontaneous",
-    "scheduled": "Scheduled",
-    "addMethod": "Add Method",
-    "continue": "Continue",
-    "methodsAdded": "You've added {{count}} contact method",
-    "methodsAdded_plural": "You've added {{count}} contact methods",
-    "publicProfile": "Public Profile",
-    "privateProfile": "Private Profile",
-    "publicProfileHint": "Anyone can find you by your handle",
-    "privateProfileHint": "Only confirmed friends can see your profile",
-    "addMore": "Add More",
-    "saving": "Saving...",
-    "completeSetup": "Complete Setup",
+    "skipForNow": "Salta per ora",
+    "getStarted": "Inizia",
+    "service": "Servizio",
+    "yourContactInfo": "Le Tue Info {{service}}",
+    "spontaneous": "Spontaneo",
+    "scheduled": "Programmato",
+    "addMethod": "Aggiungi Metodo",
+    "continue": "Continua",
+    "methodsAdded": "Hai aggiunto {{count}} metodo di contatto",
+    "methodsAdded_plural": "Hai aggiunto {{count}} metodi di contatto",
+    "publicProfile": "Profilo Pubblico",
+    "privateProfile": "Profilo Privato",
+    "publicProfileHint": "Chiunque può trovarti tramite il tuo handle",
+    "privateProfileHint": "Solo gli amici confermati possono vedere il tuo profilo",
+    "addMore": "Aggiungi Altri",
+    "saving": "Salvataggio...",
+    "completeSetup": "Completa Configurazione",
     "toasts": {
-      "enterContactInfo": "Please enter contact information",
-      "saveFailed": "Failed to save contact methods"
+      "enterContactInfo": "Inserisci le informazioni di contatto",
+      "saveFailed": "Salvataggio metodi di contatto fallito"
     },
     "hints": {
       "realFaceTime": "La tua città o il tuo luogo di incontro preferito — niente batte l'incontro di persona!",
@@ -804,117 +804,117 @@
         "description": "Conferma le tue impostazioni di accesso di emergenza"
       }
     },
-    "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
-    "address": "Street Address",
-    "addressPlaceholder": "123 Main Street",
-    "unitNumber": "Unit/Apt Number",
-    "unitPlaceholder": "Apt 4B",
-    "entryInstructions": "Special Entry Instructions",
-    "instructionsPlaceholder": "Keypad is to the right of door, ring twice...",
-    "instructionsHint": "Include any details responders should know about accessing your home",
-    "keyType": "Type of Access",
+    "addressHelp": "Questo indirizzo sarà condiviso con i soccorritori quando i tuoi vicini richiedono aiuto per tuo conto.",
+    "address": "Indirizzo",
+    "addressPlaceholder": "Via Roma 123",
+    "unitNumber": "Numero Interno/App",
+    "unitPlaceholder": "Int. 4B",
+    "entryInstructions": "Istruzioni Speciali di Accesso",
+    "instructionsPlaceholder": "Il tastierino è a destra della porta, suonare due volte...",
+    "instructionsHint": "Includi tutti i dettagli che i soccorritori dovrebbero sapere per accedere alla tua casa",
+    "keyType": "Tipo di Accesso",
     "keyTypes": {
-      "physical": "Physical Key",
-      "digital": "Digital Code",
-      "both": "Both"
+      "physical": "Chiave Fisica",
+      "digital": "Codice Digitale",
+      "both": "Entrambi"
     },
-    "digitalCodeType": "Code Type",
+    "digitalCodeType": "Tipo di Codice",
     "codeTypes": {
-      "keypad": "Door Keypad",
-      "smart_lock": "Smart Lock App",
-      "garage": "Garage Code",
-      "other": "Other"
+      "keypad": "Tastierino Porta",
+      "smart_lock": "App Serratura Smart",
+      "garage": "Codice Garage",
+      "other": "Altro"
     },
-    "notes": "Notes (optional)",
-    "notesPlaceholder": "Key is under the blue flowerpot...",
-    "confirmKeyHolder": "Confirm",
-    "currentKeyHolders": "Current Key Holders",
-    "selectNaybors": "Add a naybor who has access:",
-    "noNaybors": "Add naybors first to share keys with them",
-    "allNayborsAssigned": "All your naybors have been assigned",
+    "notes": "Note (opzionale)",
+    "notesPlaceholder": "La chiave è sotto il vaso blu...",
+    "confirmKeyHolder": "Conferma",
+    "currentKeyHolders": "Detentori di Chiavi Attuali",
+    "selectNaybors": "Aggiungi un vicino che ha accesso:",
+    "noNaybors": "Aggiungi prima i vicini per condividere le chiavi con loro",
+    "allNayborsAssigned": "Tutti i tuoi vicini sono stati assegnati",
     "mandatoryScenarios": "Permessi di Ingresso Obbligatori",
-    "mandatoryScenariosHelp": "These life-threatening or safety-critical scenarios always allow entry. They cannot be disabled because they protect life, limb, and innocent humans from trauma.",
-    "optionalScenarios": "Optional Entry Permissions",
-    "optionalScenariosHelp": "You can choose whether naybors can enter for these scenarios.",
+    "mandatoryScenariosHelp": "Questi scenari pericolosi per la vita o critici per la sicurezza permettono sempre l'ingresso. Non possono essere disabilitati perché proteggono la vita, l'integrità fisica e gli esseri umani innocenti dal trauma.",
+    "optionalScenarios": "Permessi di Ingresso Opzionali",
+    "optionalScenariosHelp": "Puoi scegliere se i vicini possono entrare per questi scenari.",
     "scenarios": {
       "cardiac_arrest": {
-        "name": "Cardiac Arrest",
-        "description": "Heart attack or sudden cardiac arrest — every second counts"
+        "name": "Arresto Cardiaco",
+        "description": "Infarto o arresto cardiaco improvviso — ogni secondo conta"
       },
       "choking": {
-        "name": "Choking",
-        "description": "Choking emergency — airway blocked, needs immediate help"
+        "name": "Soffocamento",
+        "description": "Emergenza soffocamento — vie aeree bloccate, serve aiuto immediato"
       },
       "drowning": {
-        "name": "Drowning",
-        "description": "Drowning in pool, bathtub, or other water"
+        "name": "Annegamento",
+        "description": "Annegamento in piscina, vasca da bagno o altra acqua"
       },
       "anaphylaxis": {
-        "name": "Anaphylactic Shock",
-        "description": "Severe allergic reaction from bee sting, food, medication"
+        "name": "Shock Anafilattico",
+        "description": "Grave reazione allergica da puntura d'ape, cibo, farmaco"
       },
       "elderly_fall": {
-        "name": "Elderly Fall",
-        "description": "Elderly person fallen, unable to get up, possibly injured"
+        "name": "Caduta Anziano",
+        "description": "Persona anziana caduta, incapace di alzarsi, possibilmente ferita"
       },
       "fire": {
-        "name": "Fire",
-        "description": "Fire detected — threat to life, limb, tissue, anyone immobilized or asleep"
+        "name": "Incendio",
+        "description": "Incendio rilevato — minaccia per vita, integrità, tessuti, chiunque immobilizzato o addormentato"
       },
       "gas_leak": {
-        "name": "Gas Leak",
-        "description": "Gas leak detected — explosion/poisoning risk"
+        "name": "Fuga di Gas",
+        "description": "Fuga di gas rilevata — rischio esplosione/avvelenamento"
       },
       "carbon_monoxide": {
-        "name": "Carbon Monoxide",
-        "description": "CO detector alarm — silent killer, occupants may be unconscious"
+        "name": "Monossido di Carbonio",
+        "description": "Allarme rilevatore CO — killer silenzioso, occupanti potrebbero essere incoscienti"
       },
       "childhood_corporal": {
-        "name": "Childhood Corporal Punishment",
-        "description": "Child alerting naybors to corporal punishment. Research shows community intervention prevents future violence."
+        "name": "Punizione Corporale su Minori",
+        "description": "Bambino che avvisa i vicini di punizione corporale. La ricerca mostra che l'intervento della comunità previene la violenza futura."
       },
       "take10_spiral": {
-        "name": "Take 10 Shouting Spiral",
-        "description": "Domestic shouting escalating unacceptably. De-escalation intervention needed."
+        "name": "Spirale di Urla Take 10",
+        "description": "Urla domestiche in escalation inaccettabile. Necessario intervento di de-escalation."
       },
       "bedroom_consent": {
-        "name": "Bedroom Consent Conflict",
-        "description": "Detected bedroom consent conflict emergency — immediate intervention required"
+        "name": "Conflitto di Consenso in Camera",
+        "description": "Rilevata emergenza conflitto di consenso in camera — intervento immediato richiesto"
       },
       "medical_other": {
-        "name": "Other Medical Emergency",
-        "description": "Other medical emergency requiring home entry"
+        "name": "Altra Emergenza Medica",
+        "description": "Altra emergenza medica che richiede ingresso in casa"
       },
       "intruder_check": {
-        "name": "Intruder Check",
-        "description": "Check on suspected intruder when you cannot respond"
+        "name": "Controllo Intruso",
+        "description": "Controllo per sospetto intruso quando non puoi rispondere"
       },
       "welfare_check": {
-        "name": "Welfare Check",
-        "description": "General welfare check when you are unresponsive for extended period"
+        "name": "Controllo Benessere",
+        "description": "Controllo benessere generale quando non rispondi per un periodo prolungato"
       },
       "flooding": {
-        "name": "Flooding/Water Leak",
-        "description": "Water leak or flooding — property damage prevention (not life-threatening)"
+        "name": "Allagamento/Perdita d'Acqua",
+        "description": "Perdita d'acqua o allagamento — prevenzione danni alla proprietà (non pericoloso per la vita)"
       }
     },
-    "yourAddress": "Your Address",
-    "noAddressSet": "No address set",
-    "unit": "Unit",
-    "keyHoldersSummary": "{{count}} naybor(s) have keys",
-    "keyHoldersSummary_plural": "{{count}} naybors have keys",
-    "noKeyHolders": "No key holders assigned",
-    "permissionsSummary": "Entry Permissions",
+    "yourAddress": "Il Tuo Indirizzo",
+    "noAddressSet": "Nessun indirizzo impostato",
+    "unit": "Interno",
+    "keyHoldersSummary": "{{count}} vicino/i hanno le chiavi",
+    "keyHoldersSummary_plural": "{{count}} vicini hanno le chiavi",
+    "noKeyHolders": "Nessun detentore di chiavi assegnato",
+    "permissionsSummary": "Permessi di Ingresso",
     "mandatoryCount": "{{count}}",
-    "mandatoryLabel": "mandatory (always allowed)",
+    "mandatoryLabel": "obbligatori (sempre permessi)",
     "optionalCount": "{{count}}",
-    "optionalLabel": "optional enabled",
-    "reviewWarning": "By saving these settings, you authorize your designated naybors to enter your home during the selected emergency scenarios. Make sure you trust these people with access to your home.",
+    "optionalLabel": "opzionali abilitati",
+    "reviewWarning": "Salvando queste impostazioni, autorizzi i tuoi vicini designati ad entrare in casa tua durante gli scenari di emergenza selezionati. Assicurati di fidarti di queste persone per l'accesso alla tua casa.",
     "savePreferences": "Salva Preferenze",
     "toasts": {
-      "keyHolderAdded": "Key holder added",
-      "keyHolderRemoved": "Key holder removed",
-      "saved": "Keys shared preferences saved"
+      "keyHolderAdded": "Detentore di chiavi aggiunto",
+      "keyHolderRemoved": "Detentore di chiavi rimosso",
+      "saved": "Preferenze chiavi condivise salvate"
     },
     "emergencyWorkerSharing": {
       "title": "Accesso Soccorritori",
@@ -969,57 +969,57 @@
     "optional": "optional"
   },
   "parasocial": {
-    "creatorDashboard": "Creator Dashboard",
-    "shareContent": "Share Content",
-    "shareNewContent": "Share New Content",
-    "shareDescription": "Share a link with your parasocial followers",
-    "noContentShared": "No content shared yet",
-    "noContentHint": "Share links to engage with your followers",
-    "title": "Title",
-    "titlePlaceholder": "What are you sharing?",
+    "creatorDashboard": "Dashboard Creatore",
+    "shareContent": "Condividi Contenuto",
+    "shareNewContent": "Condividi Nuovo Contenuto",
+    "shareDescription": "Condividi un link con i tuoi follower parasociali",
+    "noContentShared": "Ancora nessun contenuto condiviso",
+    "noContentHint": "Condividi link per interagire con i tuoi follower",
+    "title": "Titolo",
+    "titlePlaceholder": "Cosa stai condividendo?",
     "url": "URL",
     "urlPlaceholder": "https://...",
-    "description": "Description",
-    "descriptionPlaceholder": "Brief description (optional)",
-    "deleteTitle": "Delete this share?",
-    "deleteDescription": "This will remove the link from your followers feeds.",
+    "description": "Descrizione",
+    "descriptionPlaceholder": "Breve descrizione (opzionale)",
+    "deleteTitle": "Eliminare questa condivisione?",
+    "deleteDescription": "Questo rimuoverà il link dai feed dei tuoi follower.",
     "clicks": "{{count}} click",
-    "clicks_plural": "{{count}} clicks",
+    "clicks_plural": "{{count}} click",
     "engagement": "{{percent}}% engagement",
     "toasts": {
-      "titleAndUrlRequired": "Title and URL are required",
-      "invalidUrl": "Please enter a valid URL",
-      "sharedContent": "Content shared with your followers!",
-      "deleted": "Share deleted"
+      "titleAndUrlRequired": "Titolo e URL sono obbligatori",
+      "invalidUrl": "Inserisci un URL valido",
+      "sharedContent": "Contenuto condiviso con i tuoi follower!",
+      "deleted": "Condivisione eliminata"
     }
   },
   "profileSettings": {
-    "title": "Profile Settings",
-    "description": "Manage your profile and contact preferences",
+    "title": "Impostazioni Profilo",
+    "description": "Gestisci il tuo profilo e preferenze di contatto",
     "tabs": {
-      "profile": "Profile",
-      "contact": "Contact",
-      "creator": "Creator"
+      "profile": "Profilo",
+      "contact": "Contatto",
+      "creator": "Creatore"
     },
-    "displayName": "Display Name",
-    "displayNamePlaceholder": "Your name",
+    "displayName": "Nome Visualizzato",
+    "displayNamePlaceholder": "Il tuo nome",
     "handle": "Handle",
-    "handlePlaceholder": "your_handle",
-    "handleHint": "3-30 characters. Letters, numbers, and underscores only.",
-    "publicProfile": "Your Public Profile",
-    "publicProfileLabel": "Public Profile",
-    "privateProfileLabel": "Private Profile",
-    "publicDescription": "Anyone can view your profile page",
-    "privateDescription": "Only you and confirmed friends can view your profile",
-    "parasocialMode": "Parasocial Personality Mode",
-    "parasocialModeDescription": "Enable this if you are a public figure, creator, or celebrity who wants to receive parasocial connections from fans and share content with them.",
-    "parasocialModeHint": "When enabled, other users can add you to their Parasocials circle and see content you share. Save your profile to apply this change.",
-    "saveProfile": "Save Profile",
-    "saveSettings": "Save Settings",
+    "handlePlaceholder": "tuo_handle",
+    "handleHint": "3-30 caratteri. Solo lettere, numeri e underscore.",
+    "publicProfile": "Il Tuo Profilo Pubblico",
+    "publicProfileLabel": "Profilo Pubblico",
+    "privateProfileLabel": "Profilo Privato",
+    "publicDescription": "Chiunque può vedere la tua pagina profilo",
+    "privateDescription": "Solo tu e gli amici confermati possono vedere il tuo profilo",
+    "parasocialMode": "Modalità Personalità Parasociale",
+    "parasocialModeDescription": "Abilita questo se sei una figura pubblica, creatore o celebrità che vuole ricevere connessioni parasociali dai fan e condividere contenuti con loro.",
+    "parasocialModeHint": "Quando abilitato, altri utenti possono aggiungerti alla loro cerchia Parasociali e vedere i contenuti che condividi. Salva il tuo profilo per applicare questa modifica.",
+    "saveProfile": "Salva Profilo",
+    "saveSettings": "Salva Impostazioni",
     "toasts": {
-      "updated": "Profile updated",
-      "updateFailed": "Failed to update profile",
-      "linkCopied": "Link copied!"
+      "updated": "Profilo aggiornato",
+      "updateFailed": "Aggiornamento profilo fallito",
+      "linkCopied": "Link copiato!"
     },
     "errors": {
       "inappropriate": "This handle contains inappropriate language",
@@ -1032,54 +1032,54 @@
     }
   },
   "editFriend": {
-    "title": "Edit Contact",
-    "description": "Update contact information for {{name}}",
-    "namePlaceholder": "Friend s name",
-    "emailPlaceholder": "friend@example.com",
-    "preferredContactMethod": "Preferred Contact Method",
-    "selectContactMethod": "Choose how to reach them",
-    "notesPlaceholder": "Any notes about this person...",
-    "saveChanges": "Save Changes"
+    "title": "Modifica Contatto",
+    "description": "Aggiorna le informazioni di contatto per {{name}}",
+    "namePlaceholder": "Nome dell'amico",
+    "emailPlaceholder": "amico@esempio.com",
+    "preferredContactMethod": "Metodo di Contatto Preferito",
+    "selectContactMethod": "Scegli come raggiungerlo",
+    "notesPlaceholder": "Qualsiasi nota su questa persona...",
+    "saveChanges": "Salva Modifiche"
   },
   "post": {
-    "voiceNote": "Voice Note",
-    "audioUnavailable": "Audio unavailable",
-    "callInvitation": "Call Invitation",
-    "joinCall": "Join",
-    "meetupInvitation": "Meetup Invitation",
-    "location": "Location: {{name}}",
-    "rsvpYes": "RSVP Yes",
-    "rsvpMaybe": "Maybe",
-    "nearbyMessage": "I am nearby!",
-    "lifeUpdate": "Life Update",
-    "call": "Call",
-    "addContactInfo": "Add Contact Info",
-    "addContactInfoTooltip": "Add contact information for {{name}}",
-    "callViaHighFidelity": "Call via {{method}} (high-fidelity)",
-    "addMoreContactInfo": "Add more contact info",
-    "usePhoneRecommendation": "For best results, use your phone for calls",
-    "voiceReplyTooltip": "Send a voice reply (high-fidelity)",
-    "meetupTooltip": "Schedule a meetup (high-fidelity)",
-    "commentTooltip": "Add a comment",
-    "likeTooltip": "Like this post",
-    "likeTooltipHighFidelity": "Like (consider a more meaningful interaction)",
-    "shareTooltip": "Share",
+    "voiceNote": "Nota Vocale",
+    "audioUnavailable": "Audio non disponibile",
+    "callInvitation": "Invito a Chiamata",
+    "joinCall": "Partecipa",
+    "meetupInvitation": "Invito a Incontro",
+    "location": "Posizione: {{name}}",
+    "rsvpYes": "Confermo Sì",
+    "rsvpMaybe": "Forse",
+    "nearbyMessage": "Sono nelle vicinanze!",
+    "lifeUpdate": "Aggiornamento di Vita",
+    "call": "Chiama",
+    "addContactInfo": "Aggiungi Info Contatto",
+    "addContactInfoTooltip": "Aggiungi informazioni di contatto per {{name}}",
+    "callViaHighFidelity": "Chiama tramite {{method}} (alta fedeltà)",
+    "addMoreContactInfo": "Aggiungi altre info contatto",
+    "usePhoneRecommendation": "Per migliori risultati, usa il telefono per le chiamate",
+    "voiceReplyTooltip": "Invia una risposta vocale (alta fedeltà)",
+    "meetupTooltip": "Programma un incontro (alta fedeltà)",
+    "commentTooltip": "Aggiungi un commento",
+    "likeTooltip": "Mi piace questo post",
+    "likeTooltipHighFidelity": "Mi piace (considera un'interazione più significativa)",
+    "shareTooltip": "Condividi",
     "toasts": {
-      "noContact": "No contact information available",
-      "contactFailed": "Failed to initiate contact",
-      "noContactPerson": "No contact information available for this person"
+      "noContact": "Nessuna informazione di contatto disponibile",
+      "contactFailed": "Impossibile avviare il contatto",
+      "noContactPerson": "Nessuna informazione di contatto disponibile per questa persona"
     },
-    "callVia": "Call via {{method}}",
-    "voiceReply": "Voice Reply",
-    "meetup": "Meetup",
-    "comment": "Comment",
-    "like": "Like",
-    "selectContactMethod": "Select contact method",
-    "warningPlatform": "Warning: platform may have surveillance concerns",
-    "currentlySelected": "Currently selected",
-    "dontShowMonth": "Don't show for 1 month",
-    "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "callVia": "Chiama tramite {{method}}",
+    "voiceReply": "Risposta Vocale",
+    "meetup": "Incontro",
+    "comment": "Commenta",
+    "like": "Mi Piace",
+    "selectContactMethod": "Seleziona metodo di contatto",
+    "warningPlatform": "Attenzione: la piattaforma potrebbe avere problemi di sorveglianza",
+    "currentlySelected": "Attualmente selezionato",
+    "dontShowMonth": "Non mostrare per 1 mese",
+    "warningSilenced": "Avvisi {{method}} silenziati fino al mese prossimo",
+    "connectingVia": "Connessione tramite {{method}}"
   },
   "compose": {
     "title": "Share with your circles",
@@ -1140,20 +1140,20 @@
     }
   },
   "followCreator": {
-    "title": "Follow a Creator",
-    "description": "Search for verified creators to follow and see their content in your feed.",
-    "searchLabel": "Search by name or handle",
-    "searchPlaceholder": "@creator_handle or Creator Name",
-    "creatorModeHint": "Only users who have enabled Creator Mode will appear in search results.",
+    "title": "Segui un Creatore",
+    "description": "Cerca creatori verificati da seguire e vedere i loro contenuti nel tuo feed.",
+    "searchLabel": "Cerca per nome o handle",
+    "searchPlaceholder": "@handle_creatore o Nome Creatore",
+    "creatorModeHint": "Solo gli utenti che hanno abilitato la Modalità Creatore appariranno nei risultati di ricerca.",
     "toasts": {
-      "following": "Now following {{name}}",
-      "alreadyFollowing": "You are already following this creator",
-      "followFailed": "Failed to follow"
+      "following": "Ora segui {{name}}",
+      "alreadyFollowing": "Stai già seguendo questo creatore",
+      "followFailed": "Impossibile seguire"
     },
     "errors": {
-      "searching": "An error occurred while searching.",
-      "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
-      "noCreatorsFound": "No creators found matching that search."
+      "searching": "Si è verificato un errore durante la ricerca.",
+      "noCreators": "Nessun creatore trovato corrispondente a quella ricerca. Potrebbero non aver ancora abilitato la modalità creatore.",
+      "noCreatorsFound": "Nessun creatore trovato corrispondente a quella ricerca."
     }
   },
   "contactMethods": {
@@ -1167,27 +1167,27 @@
       "removeFailed": "Impossibile rimuovere il metodo di contatto",
       "reorderFailed": "Impossibile riordinare"
     },
-    "title": "Contact Methods",
-    "subtitle": "Add your preferred video call and messaging services so friends can reach you",
-    "addButton": "Add Contact Method",
-    "addButtonCompact": "Add",
-    "addDialogTitle": "Add Contact Method",
-    "addDialogDescription": "Add a way for your friends to reach you for video kalls",
-    "serviceLabel": "Service",
-    "contactInfoLabel": "Your {{service}} Contact Info",
-    "labelOptional": "Label (optional)",
-    "labelPlaceholder": "e.g., Personal, Work, Home",
-    "labelHint": "Helps you identify between multiple accounts on the same service",
-    "availableFor": "Available for",
-    "spontaneousKalls": "Spontaneous Kalls",
-    "spontaneousTooltip": "Instant, drop-in video calls when friends want to connect right now",
-    "scheduledKalls": "Scheduled Kalls",
-    "scheduledTooltip": "Planned video meetings set up in advance for a specific time",
-    "addMethod": "Add Method",
-    "dragToReorder": "Drag to reorder",
-    "dragReorderHint": "Drag to reorder priority. #1 is your preferred method.",
-    "noSpontaneousMethods": "No spontaneous call methods added yet",
-    "noScheduledMethods": "No scheduled call methods added yet",
+    "title": "Metodi di Contatto",
+    "subtitle": "Aggiungi i tuoi servizi preferiti di videochiamata e messaggistica così gli amici possono raggiungerti",
+    "addButton": "Aggiungi Metodo di Contatto",
+    "addButtonCompact": "Aggiungi",
+    "addDialogTitle": "Aggiungi Metodo di Contatto",
+    "addDialogDescription": "Aggiungi un modo per i tuoi amici di raggiungerti per videochiamate",
+    "serviceLabel": "Servizio",
+    "contactInfoLabel": "Le Tue Info {{service}}",
+    "labelOptional": "Etichetta (opzionale)",
+    "labelPlaceholder": "es. Personale, Lavoro, Casa",
+    "labelHint": "Ti aiuta a identificare tra più account sullo stesso servizio",
+    "availableFor": "Disponibile per",
+    "spontaneousKalls": "Chiamate Spontanee",
+    "spontaneousTooltip": "Videochiamate istantanee, drop-in quando gli amici vogliono connettersi subito",
+    "scheduledKalls": "Chiamate Programmate",
+    "scheduledTooltip": "Videoriunioni pianificate organizzate in anticipo per un orario specifico",
+    "addMethod": "Aggiungi Metodo",
+    "dragToReorder": "Trascina per riordinare",
+    "dragReorderHint": "Trascina per riordinare la priorità. #1 è il tuo metodo preferito.",
+    "noSpontaneousMethods": "Nessun metodo di chiamata spontanea aggiunto",
+    "noScheduledMethods": "Nessun metodo di chiamata programmata aggiunto",
     "guidance": {
       "example": "Example",
       "tip": "Tip",
@@ -1261,57 +1261,57 @@
   },
   "dev": {
     "label": "Dev",
-    "panelTitle": "Dev Panel",
-    "mode": "Development Mode",
-    "authStatus": "Auth Status",
-    "notLoggedIn": "Not logged in",
-    "authActions": "Auth Actions",
-    "refreshButton": "Refresh",
-    "clearApp": "Clear App",
-    "clearAll": "Clear All",
-    "forceSignOut": "Force Sign Out",
+    "panelTitle": "Pannello Dev",
+    "mode": "Modalità Sviluppo",
+    "authStatus": "Stato Auth",
+    "notLoggedIn": "Non connesso",
+    "authActions": "Azioni Auth",
+    "refreshButton": "Aggiorna",
+    "clearApp": "Cancella App",
+    "clearAll": "Cancella Tutto",
+    "forceSignOut": "Disconnessione Forzata",
     "toasts": {
-      "clearStorage": "Cleared {{count}} app-related localStorage keys",
-      "clearAll": "Cleared all localStorage and sessionStorage",
-      "signOut": "Force signed out and cleared auth storage",
-      "signOutFailed": "Failed to force sign out",
-      "refreshed": "Session refreshed",
-      "refreshFailed": "Failed to refresh session"
+      "clearStorage": "Cancellate {{count}} chiavi localStorage dell'app",
+      "clearAll": "Cancellati tutti localStorage e sessionStorage",
+      "signOut": "Disconnessione forzata e storage auth cancellato",
+      "signOutFailed": "Disconnessione forzata fallita",
+      "refreshed": "Sessione aggiornata",
+      "refreshFailed": "Aggiornamento sessione fallito"
     },
-    "forceLogout": "Force Logout",
-    "storageActions": "Storage Actions",
-    "storageInspector": "Storage Inspector",
-    "noStorageData": "No localStorage data",
-    "chars": "chars",
+    "forceLogout": "Logout Forzato",
+    "storageActions": "Azioni Storage",
+    "storageInspector": "Ispettore Storage",
+    "noStorageData": "Nessun dato localStorage",
+    "chars": "caratteri",
     "tips": {
-      "title": "Tips",
-      "sessions": "Sessions persist across page reloads",
-      "clearApp": "Use \"Clear App Data\" to reset friend lists",
-      "forceLogout": "Use \"Force Logout\" to fully clear auth state"
+      "title": "Suggerimenti",
+      "sessions": "Le sessioni persistono tra ricaricamenti pagina",
+      "clearApp": "Usa \"Cancella Dati App\" per resettare le liste amici",
+      "forceLogout": "Usa \"Logout Forzato\" per cancellare completamente lo stato auth"
     }
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
-    "findBy": "Find by",
-    "enterUsernameHint": "Enter their username exactly as they set it",
-    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "title": "Aggiungi Amico Collegato a {{tier}}",
+    "description": "Trova qualcuno tramite le sue informazioni di contatto per richiedere una connessione.",
+    "findBy": "Trova per",
+    "enterUsernameHint": "Inserisci il loro username esattamente come l'hanno impostato",
+    "enterContactHint": "Inserisci il loro {{type}} esattamente come l'hanno registrato",
     "errors": {
-      "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
-      "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
-      "searchError": "An error occurred while searching. Please try again.",
-      "connectionFailed": "Failed to send connection request"
+      "noUserHandle": "Nessun utente trovato con quell'handle. Assicurati che abbiano un account e abbiano impostato il loro handle.",
+      "noUserContact": "Nessun utente trovato con quel {{type}}. Potrebbero non averlo ancora aggiunto al loro profilo.",
+      "searchError": "Si è verificato un errore durante la ricerca. Riprova.",
+      "connectionFailed": "Invio richiesta di connessione fallito"
     },
-    "userFound": "User Found",
-    "showCircleLevel": "Show circle level",
-    "circleVisibleHint": "They'll see you added them as {{tier}}",
-    "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
-    "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
+    "userFound": "Utente Trovato",
+    "showCircleLevel": "Mostra livello cerchia",
+    "circleVisibleHint": "Vedranno che li hai aggiunti come {{tier}}",
+    "circleHiddenHint": "Non vedranno a quale cerchia li hai aggiunti",
+    "sendRequest": "Invia Richiesta di Connessione",
+    "privacyNote": "Vedranno solo le informazioni di contatto che hai usato per trovarli fino a quando non accettano. Una volta accettato, entrambi vedrete i reciproci metodi di contatto completi.",
     "serviceTypes": {
-      "phone": "Phone Number",
-      "email": "Email Address",
-      "handle": "User Handle",
+      "phone": "Numero di Telefono",
+      "email": "Indirizzo Email",
+      "handle": "Handle Utente",
       "signal": "Signal",
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
@@ -1326,99 +1326,99 @@
   },
   "gdpr": {
     "cookies": {
-      "title": "We use cookies",
-      "description": "We use cookies to improve your experience. Essential cookies are required for the app to work.",
-      "learnMore": "Learn more",
-      "customize": "Customize",
-      "customizeAria": "Customize cookie preferences",
-      "essentialOnly": "Essential Only",
-      "essentialOnlyAria": "Accept only essential cookies",
-      "acceptAll": "Accept All",
-      "acceptAllAria": "Accept all cookies",
-      "settingsTitle": "Cookie Preferences",
-      "settingsDescription": "Choose which types of cookies you want to allow. Essential cookies are always enabled as they are required for the site to function.",
-      "savePreferences": "Save Preferences",
-      "required": "Required",
+      "title": "Usiamo i cookie",
+      "description": "Usiamo i cookie per migliorare la tua esperienza. I cookie essenziali sono necessari per il funzionamento dell'app.",
+      "learnMore": "Scopri di più",
+      "customize": "Personalizza",
+      "customizeAria": "Personalizza preferenze cookie",
+      "essentialOnly": "Solo Essenziali",
+      "essentialOnlyAria": "Accetta solo cookie essenziali",
+      "acceptAll": "Accetta Tutti",
+      "acceptAllAria": "Accetta tutti i cookie",
+      "settingsTitle": "Preferenze Cookie",
+      "settingsDescription": "Scegli quali tipi di cookie vuoi permettere. I cookie essenziali sono sempre abilitati poiché necessari per il funzionamento del sito.",
+      "savePreferences": "Salva Preferenze",
+      "required": "Richiesto",
       "essential": {
-        "title": "Essential Cookies",
-        "description": "Required for basic site functionality like authentication and security."
+        "title": "Cookie Essenziali",
+        "description": "Necessari per funzionalità base del sito come autenticazione e sicurezza."
       },
       "functional": {
-        "title": "Functional Cookies",
-        "description": "Remember your preferences like language settings and UI customizations."
+        "title": "Cookie Funzionali",
+        "description": "Ricordano le tue preferenze come impostazioni lingua e personalizzazioni UI."
       },
       "analytics": {
-        "title": "Analytics Cookies",
-        "description": "Help us understand how visitors use our site to improve the experience."
+        "title": "Cookie Analitici",
+        "description": "Ci aiutano a capire come i visitatori usano il sito per migliorare l'esperienza."
       },
       "marketing": {
-        "title": "Marketing Cookies",
-        "description": "Used to deliver relevant advertisements and track campaign effectiveness."
+        "title": "Cookie Marketing",
+        "description": "Usati per fornire pubblicità rilevante e tracciare l'efficacia delle campagne."
       }
     },
     "settings": {
-      "cookiePreferences": "Cookie Preferences",
-      "cookieDescription": "Manage which types of cookies you allow us to use.",
-      "consentHistory": "Consent History",
-      "consentHistoryDescription": "View and manage your consent records.",
-      "consentGiven": "Consent given on",
-      "consentVersion": "Terms version",
-      "noConsent": "No consent record found. Please accept the cookie policy.",
-      "withdrawConsent": "Withdraw Consent",
-      "withdrawWarning": "Withdrawing consent will reset your cookie preferences and may limit some features. Are you sure?",
-      "confirmWithdraw": "Yes, Withdraw Consent",
-      "dataRights": "Your Data Rights",
-      "dataRightsDescription": "Under GDPR, you have the right to access, export, and delete your data.",
-      "exportData": "Export My Data",
-      "exportDescription": "Download all your data in a portable format",
-      "deleteAccount": "Delete My Account",
-      "deleteDescription": "Permanently delete your account and all data"
+      "cookiePreferences": "Preferenze Cookie",
+      "cookieDescription": "Gestisci quali tipi di cookie ci permetti di usare.",
+      "consentHistory": "Storico Consensi",
+      "consentHistoryDescription": "Visualizza e gestisci i tuoi record di consenso.",
+      "consentGiven": "Consenso dato il",
+      "consentVersion": "Versione termini",
+      "noConsent": "Nessun record di consenso trovato. Accetta la policy sui cookie.",
+      "withdrawConsent": "Revoca Consenso",
+      "withdrawWarning": "Revocare il consenso resetterà le tue preferenze cookie e potrebbe limitare alcune funzionalità. Sei sicuro?",
+      "confirmWithdraw": "Sì, Revoca Consenso",
+      "dataRights": "I Tuoi Diritti sui Dati",
+      "dataRightsDescription": "Secondo il GDPR, hai il diritto di accedere, esportare ed eliminare i tuoi dati.",
+      "exportData": "Esporta i Miei Dati",
+      "exportDescription": "Scarica tutti i tuoi dati in un formato portabile",
+      "deleteAccount": "Elimina il Mio Account",
+      "deleteDescription": "Elimina permanentemente il tuo account e tutti i dati"
     },
     "deletion": {
-      "title": "Delete Your Account",
-      "description": "This will permanently delete your account and all associated data.",
-      "warningTitle": "Warning: This cannot be undone",
-      "warningDescription": "Once deleted, your account and all data will be permanently removed. Make sure to export your data first if you want to keep it.",
-      "whatDeleted": "What will be deleted:",
+      "title": "Elimina il Tuo Account",
+      "description": "Questo eliminerà permanentemente il tuo account e tutti i dati associati.",
+      "warningTitle": "Attenzione: Non può essere annullato",
+      "warningDescription": "Una volta eliminato, il tuo account e tutti i dati saranno rimossi permanentemente. Assicurati di esportare i tuoi dati prima se vuoi conservarli.",
+      "whatDeleted": "Cosa sarà eliminato:",
       "deletedItems": {
-        "profile": "Your profile and personal information",
-        "connections": "All your friend connections and circles",
-        "posts": "All your posts and shared content",
-        "preferences": "Your preferences and settings",
-        "keysShared": "Your Keys Shared emergency access settings"
+        "profile": "Il tuo profilo e informazioni personali",
+        "connections": "Tutte le tue connessioni amici e cerchie",
+        "posts": "Tutti i tuoi post e contenuti condivisi",
+        "preferences": "Le tue preferenze e impostazioni",
+        "keysShared": "Le tue impostazioni di accesso emergenza Chiavi Condivise"
       },
-      "gracePeriodTitle": "30-Day Grace Period",
-      "gracePeriodDescription": "Your account will be scheduled for deletion in {{days}} days. You can cancel the deletion during this period by signing in.",
-      "exportFirst": "Export your data before deletion?",
-      "exportData": "Export Data",
-      "exported": "Data Exported",
-      "continue": "Continue to Deletion",
-      "confirmTitle": "Confirm Account Deletion",
-      "confirmDescription": "This is your final confirmation. Please verify your identity to proceed.",
-      "typeEmail": "Type your email to confirm: {{email}}",
-      "emailMismatch": "Email does not match your account",
-      "reasonLabel": "Reason for leaving",
-      "reasonPlaceholder": "Help us improve by sharing why you're leaving...",
-      "understandConsequences": "I understand that my account and all data will be permanently deleted after the grace period, and this action cannot be undone.",
-      "deleting": "Scheduling deletion...",
-      "confirmDelete": "Delete My Account",
-      "scheduledTitle": "Deletion Scheduled",
-      "scheduledDescription": "Your account has been scheduled for deletion.",
-      "scheduledDate": "Your account will be permanently deleted on:",
-      "cancelInfo": "To cancel the deletion, simply sign in to your account before the scheduled date."
+      "gracePeriodTitle": "Periodo di Grazia di 30 Giorni",
+      "gracePeriodDescription": "Il tuo account sarà programmato per l'eliminazione tra {{days}} giorni. Puoi annullare l'eliminazione durante questo periodo accedendo.",
+      "exportFirst": "Esportare i tuoi dati prima dell'eliminazione?",
+      "exportData": "Esporta Dati",
+      "exported": "Dati Esportati",
+      "continue": "Continua all'Eliminazione",
+      "confirmTitle": "Conferma Eliminazione Account",
+      "confirmDescription": "Questa è la tua conferma finale. Verifica la tua identità per procedere.",
+      "typeEmail": "Digita la tua email per confermare: {{email}}",
+      "emailMismatch": "L'email non corrisponde al tuo account",
+      "reasonLabel": "Motivo per cui te ne vai",
+      "reasonPlaceholder": "Aiutaci a migliorare condividendo perché te ne vai...",
+      "understandConsequences": "Capisco che il mio account e tutti i dati saranno eliminati permanentemente dopo il periodo di grazia, e questa azione non può essere annullata.",
+      "deleting": "Programmazione eliminazione...",
+      "confirmDelete": "Elimina il Mio Account",
+      "scheduledTitle": "Eliminazione Programmata",
+      "scheduledDescription": "Il tuo account è stato programmato per l'eliminazione.",
+      "scheduledDate": "Il tuo account sarà eliminato permanentemente il:",
+      "cancelInfo": "Per annullare l'eliminazione, accedi semplicemente al tuo account prima della data programmata."
     },
     "age": {
-      "title": "Age Verification",
-      "description": "We need to verify your age to comply with privacy regulations.",
-      "whyTitle": "Why we ask",
-      "whyDescription": "Under GDPR, users under {{age}} years old require parental consent to create an account.",
-      "birthYearLabel": "What year were you born?",
-      "selectYear": "Select year",
-      "privacyNote": "We only store your birth year for compliance purposes.",
-      "minorTitle": "Parental Consent Required",
-      "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
-      "parentalRequired": "Parental Consent Required",
-      "verify": "Verify Age"
+      "title": "Verifica Età",
+      "description": "Dobbiamo verificare la tua età per rispettare le normative sulla privacy.",
+      "whyTitle": "Perché lo chiediamo",
+      "whyDescription": "Secondo il GDPR, gli utenti sotto i {{age}} anni richiedono il consenso dei genitori per creare un account.",
+      "birthYearLabel": "In che anno sei nato?",
+      "selectYear": "Seleziona anno",
+      "privacyNote": "Conserviamo solo il tuo anno di nascita per motivi di conformità.",
+      "minorTitle": "Consenso Genitoriale Richiesto",
+      "minorDescription": "Gli utenti sotto i {{age}} anni richiedono il consenso dei genitori. Chiedi a un genitore o tutore di aiutarti a creare un account.",
+      "parentalRequired": "Consenso Genitoriale Richiesto",
+      "verify": "Verifica Età"
     }
   },
   "dispatch": {
@@ -1609,6 +1609,21 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "organizationNameRequired": "Il nome dell'organizzazione è obbligatorio",
+      "jurisdictionRequired": "È richiesta almeno una giurisdizione",
+      "taxIdRequired": "Il codice fiscale è obbligatorio",
+      "insuranceRequired": "Il nome della compagnia assicurativa è obbligatorio",
+      "policyRequired": "Il numero di polizza è obbligatorio",
+      "agentNameRequired": "Il nome dell'agente registrato è obbligatorio",
+      "agentContactRequired": "Il contatto dell'agente registrato è obbligatorio",
+      "contactNameRequired": "Il nome del contatto primario è obbligatorio",
+      "invalidEmail": "Inserisci un indirizzo email valido",
+      "invalidPhone": "Inserisci un numero di telefono valido",
+      "passwordMin": "La password deve essere di almeno 8 caratteri",
+      "passwordMatch": "Le password devono corrispondere",
+      "termsRequired": "Devi accettare i termini"
     }
   },
   "dataImport": {
@@ -1647,60 +1662,60 @@
   },
   "admin": {
     "dispatch": {
-      "title": "Dispatch Account Verification",
-      "searchPlaceholder": "Search by organization, email, or contact name...",
+      "title": "Verifica Account Dispatch",
+      "searchPlaceholder": "Cerca per organizzazione, email o nome contatto...",
       "filters": {
-        "all": "All Accounts"
+        "all": "Tutti gli Account"
       },
-      "noAccounts": "No accounts found matching your criteria",
+      "noAccounts": "Nessun account trovato corrispondente ai tuoi criteri",
       "accessDenied": {
-        "title": "Access Denied",
-        "description": "You don't have permission to access the dispatch verification panel."
+        "title": "Accesso Negato",
+        "description": "Non hai il permesso di accedere al pannello di verifica dispatch."
       },
       "actions": {
-        "verify": "Verify",
-        "reject": "Reject",
-        "suspend": "Suspend"
+        "verify": "Verifica",
+        "reject": "Rifiuta",
+        "suspend": "Sospendi"
       },
       "success": {
-        "verify": "Account verified successfully",
-        "reject": "Account rejected",
-        "suspend": "Account suspended"
+        "verify": "Account verificato con successo",
+        "reject": "Account rifiutato",
+        "suspend": "Account sospeso"
       },
       "errors": {
-        "fetchFailed": "Failed to fetch accounts",
-        "actionFailed": "Action failed. Please try again."
+        "fetchFailed": "Recupero account fallito",
+        "actionFailed": "Azione fallita. Riprova."
       },
       "detail": {
-        "description": "Review organization details and verification documents",
-        "organization": "Organization Details",
-        "name": "Name",
-        "type": "Type",
-        "jurisdictions": "Jurisdictions",
-        "legal": "Legal Information",
-        "taxId": "Tax ID",
-        "insurance": "Insurance Carrier",
-        "policyNumber": "Policy Number",
-        "registeredAgent": "Registered Agent",
-        "contact": "Contact Information",
-        "contactName": "Contact Name",
+        "description": "Rivedi i dettagli dell'organizzazione e i documenti di verifica",
+        "organization": "Dettagli Organizzazione",
+        "name": "Nome",
+        "type": "Tipo",
+        "jurisdictions": "Giurisdizioni",
+        "legal": "Informazioni Legali",
+        "taxId": "Codice Fiscale",
+        "insurance": "Compagnia Assicurativa",
+        "policyNumber": "Numero Polizza",
+        "registeredAgent": "Agente Registrato",
+        "contact": "Informazioni di Contatto",
+        "contactName": "Nome Contatto",
         "contactEmail": "Email",
-        "contactPhone": "Phone",
-        "status": "Account Status",
-        "verificationStatus": "Status",
-        "createdAt": "Applied On",
-        "rejectionReason": "Rejection Reason"
+        "contactPhone": "Telefono",
+        "status": "Stato Account",
+        "verificationStatus": "Stato",
+        "createdAt": "Data Richiesta",
+        "rejectionReason": "Motivo Rifiuto"
       },
       "confirm": {
-        "verifyTitle": "Verify Account?",
-        "verifyDescription": "This will grant the organization access to resident Door Key Tree information during emergencies.",
-        "rejectTitle": "Reject Account?",
-        "rejectDescription": "Please provide a reason for rejection. This will be shared with the organization.",
-        "suspendTitle": "Suspend Account?",
-        "suspendDescription": "This will immediately revoke the organization's access. Please provide a reason.",
-        "reason": "Reason",
-        "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
-        "processing": "Processing..."
+        "verifyTitle": "Verificare Account?",
+        "verifyDescription": "Questo concederà all'organizzazione l'accesso alle informazioni dell'Albero Chiavi Porta dei residenti durante le emergenze.",
+        "rejectTitle": "Rifiutare Account?",
+        "rejectDescription": "Fornisci un motivo per il rifiuto. Questo sarà condiviso con l'organizzazione.",
+        "suspendTitle": "Sospendere Account?",
+        "suspendDescription": "Questo revocherà immediatamente l'accesso dell'organizzazione. Fornisci un motivo.",
+        "reason": "Motivo",
+        "reasonPlaceholder": "Spiega perché questo account viene rifiutato/sospeso...",
+        "processing": "Elaborazione..."
       }
     }
   },
@@ -1775,5 +1790,91 @@
     "sharedPhoto": "Foto condivisa",
     "video": "Video",
     "sharedVideo": "Video condiviso"
+  },
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "lastUpdated": "Ultimo aggiornamento: 1 gennaio 2025",
+    "philosophy": {
+      "title": "La Nostra Filosofia sulla Privacy",
+      "description": "InnerFriend è costruito su una premessa fondamentale: le tue relazioni sono tue. Non siamo un social network che monetizza la tua attenzione o vende i tuoi dati. Siamo uno strumento che ti aiuta a mantenere connessioni significative con le persone che contano di più."
+    },
+    "dataCollection": {
+      "title": "Dati Che Raccogliamo",
+      "intro": "Raccogliamo solo ciò che è necessario per fornire il servizio:",
+      "items": {
+        "account": "Informazioni Account: Email e password (criptata) quando crei un account",
+        "friends": "Liste Amici: I nomi e le informazioni di contatto opzionali delle persone che aggiungi",
+        "connections": "Dati di Connessione: Metadati di corrispondenza reciproca se scegli di abilitarlo",
+        "preferences": "Preferenze: Le tue impostazioni app come lingua e preferenze di notifica"
+      }
+    },
+    "localStorage": {
+      "title": "Prima il Locale",
+      "description": "Di default, le tue liste amici sono memorizzate solo sul tuo dispositivo. Non tocchiamo mai i nostri server a meno che tu non scelga di creare un account per funzionalità come la sincronizzazione tra dispositivi o la corrispondenza reciproca."
+    },
+    "noSelling": {
+      "title": "Non Vendiamo Mai i Tuoi Dati",
+      "description": "I tuoi dati non sono in vendita. Punto. Non li condividiamo con inserzionisti, broker di dati o terze parti per scopi di marketing."
+    },
+    "gdprRights": {
+      "title": "I Tuoi Diritti (Conformità GDPR)",
+      "intro": "Hai il controllo completo sui tuoi dati:",
+      "items": {
+        "access": "Accesso: Esporta tutti i tuoi dati in qualsiasi momento in un formato portabile",
+        "deletion": "Eliminazione: Elimina il tuo account e tutti i dati associati con un clic",
+        "rectification": "Rettifica: Aggiorna o correggi qualsiasi tua informazione",
+        "portability": "Portabilità: Porta i tuoi dati verso altri social network compatibili con Dunbar"
+      }
+    },
+    "security": {
+      "title": "Sicurezza",
+      "description": "Usiamo la crittografia standard del settore per i dati in transito e a riposo. Le password sono hashate e non vengono mai memorizzate in testo semplice."
+    },
+    "contact": {
+      "title": "Contatti",
+      "description": "Domande sulla privacy? Contattaci a privacy@lifesaverlabs.org"
+    }
+  },
+  "terms": {
+    "title": "Termini di Servizio",
+    "lastUpdated": "Ultimo aggiornamento: 1 gennaio 2025",
+    "introduction": {
+      "title": "Introduzione",
+      "description": "Benvenuto su InnerFriend. Usando il nostro servizio, accetti questi termini. Li abbiamo mantenuti semplici e leggibili."
+    },
+    "service": {
+      "title": "Il Servizio",
+      "description": "InnerFriend ti aiuta a mantenere relazioni significative fornendo strumenti per organizzare e curare le tue cerchie sociali. Non siamo una piattaforma social — non ospitiamo contenuti pubblici né facilitiamo connessioni pubbliche."
+    },
+    "responsibilities": {
+      "title": "Le Tue Responsabilità",
+      "intro": "Usando InnerFriend, accetti di:",
+      "items": {
+        "accurate": "Fornire informazioni accurate quando crei un account",
+        "secure": "Mantenere sicure le tue credenziali di accesso",
+        "privacy": "Rispettare la privacy delle persone che aggiungi alle tue liste",
+        "lawful": "Usare il servizio solo per scopi legittimi"
+      }
+    },
+    "intellectualProperty": {
+      "title": "Proprietà Intellettuale",
+      "description": "InnerFriend è open source sotto licenza MIT. I tuoi dati ti appartengono — ne mantieni la piena proprietà."
+    },
+    "liability": {
+      "title": "Limitazione di Responsabilità",
+      "description": "InnerFriend è fornito \"così com'è\" senza garanzie. Non siamo responsabili per eventuali danni derivanti dal tuo uso del servizio."
+    },
+    "termination": {
+      "title": "Risoluzione",
+      "description": "Puoi eliminare il tuo account in qualsiasi momento. Ci riserviamo il diritto di terminare gli account che violano questi termini."
+    },
+    "changes": {
+      "title": "Modifiche ai Termini",
+      "description": "Potremmo aggiornare questi termini occasionalmente. Ti avviseremo di modifiche significative via email o attraverso l'app."
+    },
+    "contact": {
+      "title": "Contatti",
+      "description": "Domande? Contattaci a support@lifesaverlabs.org"
+    }
   }
 }

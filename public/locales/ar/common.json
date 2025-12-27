@@ -24,16 +24,16 @@
         "description": "اكتشف اختياريًا عندما يضعك شخص أدرجته كمقرب في قائمته أيضًا — احتفال لطيف بالمعاملة بالمثل."
       },
       "dataLiberation": {
-        "title": "Your Data, Your Way",
-        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+        "title": "بياناتك، طريقتك",
+        "description": "صدّر جميع بياناتك في أي وقت. متوافق مع GDPR."
       },
       "nayborNetwork": {
-        "title": "Naybor Network",
-        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+        "title": "شبكة الجيران",
+        "description": "ابنِ مرونة المجتمع مع جيران موثوقين."
       },
       "globalReach": {
-        "title": "23 Languages",
-        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+        "title": "23 لغة",
+        "description": "تدويل كامل مع دعم RTL."
       }
     },
     "mission": {
@@ -91,8 +91,8 @@
       "unexpectedError": "حدث خطأ غير متوقع. الرجاء المحاولة مرة أخرى."
     },
     "toasts": {
-      "signOutError": "Failed to sign out",
-      "signOutSuccess": "Signed out successfully"
+      "signOutError": "فشل تسجيل الخروج",
+      "signOutSuccess": "تم تسجيل الخروج بنجاح"
     },
     "consent": {
       "agreeTo": "أوافق على",
@@ -470,34 +470,34 @@
     }
   },
   "emptyState": {
-    "noPostsYet": "No posts yet",
+    "noPostsYet": "لا توجد منشورات بعد",
     "noFriendsYet": {
-      "core": "No core friends yet",
-      "inner": "No inner circle friends yet",
-      "outer": "No outer circle friends yet"
+      "core": "لا يوجد أصدقاء أساسيون بعد",
+      "inner": "لا يوجد أصدقاء في الدائرة الداخلية بعد",
+      "outer": "لا يوجد أصدقاء في الدائرة الخارجية بعد"
     },
     "noPostsDescription": {
-      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
-      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
-      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+      "core": "أصدقاؤك الأساسيون لم يشاركوا شيئاً بعد.",
+      "inner": "أصدقاء دائرتك الداخلية لم يشاركوا شيئاً بعد.",
+      "outer": "أصدقاء دائرتك الخارجية لم يشاركوا شيئاً بعد."
     },
     "getStarted": {
-      "core": "Get started by adding up to 5 friends to your Core.",
-      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
-      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+      "core": "ابدأ بإضافة ما يصل إلى 5 أصدقاء في دائرتك الأساسية.",
+      "inner": "ابدأ بإضافة ما يصل إلى 15 صديقاً في دائرتك الداخلية.",
+      "outer": "ابدأ بإضافة ما يصل إلى 150 صديقاً في دائرتك الخارجية."
     },
     "addToSee": {
-      "core": "Add up to 5 friends to see their posts here.",
-      "inner": "Add up to 15 friends to see their posts here.",
-      "outer": "Add up to 150 friends to see their posts here."
+      "core": "أضف ما يصل إلى 5 أصدقاء لرؤية منشوراتهم هنا.",
+      "inner": "أضف ما يصل إلى 15 صديقاً لرؤية منشوراتهم هنا.",
+      "outer": "أضف ما يصل إلى 150 صديقاً لرؤية منشوراتهم هنا."
     },
     "addFriends": {
-      "core": "Add Core Friends",
-      "inner": "Add Inner Circle Friends",
-      "outer": "Add Outer Circle Friends"
+      "core": "إضافة أصدقاء أساسيين",
+      "inner": "إضافة أصدقاء الدائرة الداخلية",
+      "outer": "إضافة أصدقاء الدائرة الخارجية"
     },
-    "createPost": "Create a Post",
-    "noParasoicalsYet": "No parasocials yet",
+    "createPost": "إنشاء منشور",
+    "noParasoicalsYet": "لا يوجد شخصيات اجتماعية بعد",
     "noAcquaintedYet": "No acquainted cousins yet",
     "noRoleModelsYet": "No role models yet",
     "noNayborsYet": "No naybors yet",
@@ -601,8 +601,8 @@
     "addNayborPhoneButton": "إضافة معلومات الاتصال للطوارئ"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
-    "subtitle": "Curate and tend to your closest relationships",
+    "title": "دائرة أصدقائك",
+    "subtitle": "أدر علاقاتك المهمة",
     "loading": "Loading your circles...",
     "tend": "Tend",
     "share": "Share",
@@ -622,28 +622,38 @@
       "skippedDuplicates": "Skipped {{count}} duplicate",
       "skippedDuplicates_plural": "Skipped {{count}} duplicates",
       "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
-    }
+    },
+    "addFriend": "إضافة صديق",
+    "export": "تصدير",
+    "import": "استيراد",
+    "settings": "الإعدادات",
+    "viewFeed": "عرض التغذية",
+    "tendCircles": "العناية بالدوائر",
+    "quickStats": "إحصائيات سريعة",
+    "totalFriends": "إجمالي الأصدقاء",
+    "emptySlots": "الأماكن المتاحة",
+    "lastTended": "آخر عناية"
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
-    "learnMore": "Learn more...",
-    "showLess": "Show less",
-    "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
+    "title": "وقت حقيقي، لا وقت إعلانات",
+    "description": "نفوز عندما تغادر موقعنا — لمشاركة لحظات حقيقية مع الأشخاص الأكثر أهمية.",
+    "learnMore": "اعرف المزيد...",
+    "showLess": "عرض أقل",
+    "inspiration": "إلهامنا؟ هذا الإعلان الكلاسيكي من Dentyne Ice.",
     "videoTitle": "Dentyne Ice - Face Time",
-    "quote": "\"Make Face Time\" — that's the ideal. When distance separates you, we'll help you bridge it with video kalls. But always remember: nothing beats being there.",
+    "quote": "\"اصنع وقتاً حقيقياً\" — هذا هو المثالي.",
     "features": {
       "spark": {
-        "title": "Spark Video Kalls",
-        "description": "When you're apart, one click connects you"
+        "title": "ابدأ مكالمات الفيديو",
+        "description": "عندما تكون بعيداً، نقرة واحدة تصلك"
       },
       "tend": {
-        "title": "Tend Your Circles",
-        "description": "Reminders to reach out before connections fade"
+        "title": "اعتنِ بدوائرك",
+        "description": "تذكيرات للتواصل قبل أن تتلاشى الروابط"
       },
       "pull": {
-        "title": "Pull Closer",
-        "description": "Move meaningful connections into tighter orbits"
+        "title": "اقترب أكثر",
+        "description": "انقل العلاقات المهمة إلى مدارات أقرب"
       }
     }
   },
@@ -658,52 +668,52 @@
     "keysSharedCount": "المفاتيح ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
-    "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
+    "title": "اعتنِ بدوائرك",
+    "markDescription": "حدد أصدقاءك في {{tier}} الذين لم تتواصل معهم {{period}}",
     "periods": {
       "core": "هذا الأسبوع",
       "inner": "هذين الأسبوعين",
       "outer": "هذين الشهرين"
     },
-    "peopleCount": "{{count}} person",
-    "peopleCount_plural": "{{count}} people",
-    "noFriendsInTier": "No friends in this tier yet",
-    "checkInstruction": "✓ Check those you haven't talked to enough:",
-    "noPhone": "no phone",
-    "call": "Call",
-    "maybeLater": "Maybe Later",
-    "doneTending": "Done Tending",
-    "finish": "Finish",
-    "mobileHint": "Contact actions work best on mobile devices",
+    "peopleCount": "{{count}} شخص",
+    "peopleCount_plural": "{{count}} أشخاص",
+    "noFriendsInTier": "لا يوجد أصدقاء في هذا المستوى بعد",
+    "checkInstruction": "✓ حدد من لم تتحدث معهم بما فيه الكفاية:",
+    "noPhone": "لا يوجد هاتف",
+    "call": "اتصال",
+    "maybeLater": "ربما لاحقاً",
+    "doneTending": "انتهيت من العناية",
+    "finish": "إنهاء",
+    "mobileHint": "إجراءات الاتصال تعمل بشكل أفضل على الأجهزة المحمولة",
     "reconnect": {
-      "title": "Time to Reconnect",
-      "description": "These friends could use some of your time"
+      "title": "حان وقت إعادة التواصل",
+      "description": "هؤلاء الأصدقاء يحتاجون بعض وقتك"
     },
     "toasts": {
-      "allTended": "Amazing! You've tended to all your circles 🌱",
-      "noPhone": "No phone number for {{name}}",
-      "connecting": "Connecting with {{name}} via {{method}}",
-      "rememberReachOut": "Remember to reach out soon! 💛",
-      "friendsWaiting": "{{count}} friend waiting to hear from you",
-      "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
+      "allTended": "رائع! لقد اعتنيت بجميع دوائرك 🌱",
+      "noPhone": "لا يوجد رقم هاتف لـ {{name}}",
+      "connecting": "جارٍ الاتصال بـ {{name}} عبر {{method}}",
+      "rememberReachOut": "تذكر التواصل قريباً! 💛",
+      "friendsWaiting": "{{count}} صديق ينتظر أخبارك",
+      "friendsWaiting_plural": "{{count}} أصدقاء ينتظرون أخبارك"
     }
   },
   "nayborSOS": {
     "title": "Naybor SOS™",
     "steps": {
-      "category": "What kind of help do you need?",
-      "contacts": "Choose naybors to contact"
+      "category": "ما نوع المساعدة التي تحتاجها؟",
+      "contacts": "اختر الجيران للتواصل"
     },
-    "critical": "Critical",
-    "emergencyWarning": "For life-threatening emergencies, call 911 first",
-    "suggestedActions": "Suggested actions:",
-    "addDetails": "Add details (optional)",
-    "describePlaceholder": "Describe your situation...",
-    "includeLocation": "Include location info",
-    "chooseNaybors": "Choose Naybors",
-    "chooseNayborsAria": "Continue to choose naybors to contact",
-    "nayborsSelected": "{{count}} naybor selected",
-    "nayborsSelected_plural": "{{count}} naybors selected",
+    "critical": "حرج",
+    "emergencyWarning": "للحالات الطارئة التي تهدد الحياة، اتصل بالطوارئ أولاً",
+    "suggestedActions": "الإجراءات المقترحة:",
+    "addDetails": "أضف تفاصيل (اختياري)",
+    "describePlaceholder": "صف موقفك...",
+    "includeLocation": "تضمين معلومات الموقع",
+    "chooseNaybors": "اختر الجيران",
+    "chooseNayborsAria": "تابع لاختيار الجيران للتواصل",
+    "nayborsSelected": "تم اختيار {{count}} جار",
+    "nayborsSelected_plural": "تم اختيار {{count}} جيران",
     "copyMessage": "Copy message",
     "messageAll": "Message All ({{count}})",
     "contacted": "Contacted {{count}} naybor",
@@ -730,7 +740,14 @@
     "toasts": {
       "connecting": "Connecting via {{service}}",
       "openService": "Open {{service}} to connect"
-    }
+    },
+    "startCall": "بدء مكالمة",
+    "scheduleCall": "جدولة مكالمة",
+    "sendMessage": "إرسال رسالة",
+    "viewProfile": "عرض الملف الشخصي",
+    "callNow": "اتصل الآن",
+    "videoCall": "مكالمة فيديو",
+    "voiceCall": "مكالمة صوتية"
   },
   "onboarding": {
     "steps": {
@@ -782,7 +799,18 @@
       "skype": "اسم Skype الخاص بك (في الإعدادات ← الحساب)",
       "webex": "رابط الغرفة الشخصية أو بريد Webex",
       "slack": "بريد العمل (يجب أن يكون الطرفان في نفس مساحة العمل)"
-    }
+    },
+    "welcome": "مرحباً بك في Inner Friend Circle",
+    "welcomeDescription": "دعنا نعد دوائر أصدقائك",
+    "step1": "إضافة أصدقاء أساسيين",
+    "step1Description": "ابدأ بأقرب 5 علاقات لديك",
+    "step2": "وسّع دائرتك",
+    "step2Description": "أضف أصدقاء إلى الدائرة الداخلية والخارجية",
+    "step3": "تعرف على جيرانك",
+    "step3Description": "ابنِ شبكة جيرانك للطوارئ",
+    "skip": "تخطي الآن",
+    "next": "التالي",
+    "finish": "ابدأ"
   },
   "keysShared": {
     "title": "المفاتيح المشتركة",
@@ -805,7 +833,7 @@
       }
     },
     "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
-    "address": "Street Address",
+    "address": "العنوان",
     "addressPlaceholder": "123 Main Street",
     "unitNumber": "Unit/Apt Number",
     "unitPlaceholder": "Apt 4B",
@@ -903,7 +931,7 @@
     "unit": "Unit",
     "keyHoldersSummary": "{{count}} naybor(s) have keys",
     "keyHoldersSummary_plural": "{{count}} naybors have keys",
-    "noKeyHolders": "No key holders assigned",
+    "noKeyHolders": "لا يوجد حاملو مفاتيح بعد",
     "permissionsSummary": "Entry Permissions",
     "mandatoryCount": "{{count}}",
     "mandatoryLabel": "mandatory (always allowed)",
@@ -943,7 +971,23 @@
           "description": "يرجى كسر الباب فقط بعد دراسة متأنية، كملاذ أخير عندما يكون ذلك ضرورياً قانونياً بشكل صارم."
         }
       }
-    }
+    },
+    "description": "شارك بأمان الوصول الطارئ لمنزلك مع جيران موثوقين",
+    "setup": "إعداد المفاتيح المشتركة",
+    "enabled": "المفاتيح المشتركة مفعّلة",
+    "disabled": "المفاتيح المشتركة معطّلة",
+    "addKeyHolder": "إضافة حامل مفتاح",
+    "editKeyHolder": "تعديل حامل المفتاح",
+    "removeKeyHolder": "إزالة حامل المفتاح",
+    "keyHolders": "حاملو المفاتيح",
+    "emergencyAccess": "الوصول الطارئ",
+    "emergencyAccessDescription": "السماح لعمال الطوارئ المعتمدين بالوصول إلى معلوماتك",
+    "entryCode": "رمز الدخول",
+    "specialInstructions": "تعليمات خاصة",
+    "trustLevel": "مستوى الثقة",
+    "high": "عالي",
+    "medium": "متوسط",
+    "low": "منخفض"
   },
   "legal": {
     "privacyPolicy": "سياسة الخصوصية",
@@ -1079,7 +1123,18 @@
     "currentlySelected": "Currently selected",
     "dontShowMonth": "Don't show for 1 month",
     "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "connectingVia": "Connecting via {{method}}",
+    "createPost": "إنشاء منشور",
+    "whatOnMind": "ما الذي يدور في ذهنك؟",
+    "shareWith": "مشاركة مع",
+    "addPhoto": "إضافة صورة",
+    "addVideo": "إضافة فيديو",
+    "post": "نشر",
+    "posting": "جارٍ النشر...",
+    "deletePost": "حذف المنشور",
+    "editPost": "تعديل المنشور",
+    "likePost": "إعجاب",
+    "commentOnPost": "تعليق"
   },
   "compose": {
     "title": "Share with your circles",
@@ -1260,11 +1315,11 @@
     }
   },
   "dev": {
-    "label": "Dev",
-    "panelTitle": "Dev Panel",
-    "mode": "Development Mode",
-    "authStatus": "Auth Status",
-    "notLoggedIn": "Not logged in",
+    "label": "مطور",
+    "panelTitle": "لوحة المطور",
+    "mode": "وضع التطوير",
+    "authStatus": "حالة المصادقة",
+    "notLoggedIn": "غير مسجل الدخول",
     "authActions": "Auth Actions",
     "refreshButton": "Refresh",
     "clearApp": "Clear App",
@@ -1288,25 +1343,30 @@
       "sessions": "Sessions persist across page reloads",
       "clearApp": "Use \"Clear App Data\" to reset friend lists",
       "forceLogout": "Use \"Force Logout\" to fully clear auth state"
-    }
+    },
+    "clearData": "مسح البيانات",
+    "resetApp": "إعادة تعيين التطبيق"
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
-    "findBy": "Find by",
-    "enterUsernameHint": "Enter their username exactly as they set it",
-    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "title": "إضافة صديق مرتبط إلى {{tier}}",
+    "description": "ابحث عن شخص عبر معلومات الاتصال الخاصة به.",
+    "findBy": "البحث عن طريق",
+    "enterUsernameHint": "أدخل اسم المستخدم بالضبط",
+    "enterContactHint": "أدخل {{type}} كما تم تسجيله",
     "errors": {
       "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
       "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
       "searchError": "An error occurred while searching. Please try again.",
-      "connectionFailed": "Failed to send connection request"
+      "connectionFailed": "Failed to send connection request",
+      "notFound": "لم يتم العثور على مستخدم بهذه المعلومات",
+      "alreadyConnected": "أنت متصل بالفعل بهذا المستخدم",
+      "requestPending": "لديك طلب معلق بالفعل"
     },
-    "userFound": "User Found",
+    "userFound": "تم العثور على المستخدم!",
     "showCircleLevel": "Show circle level",
     "circleVisibleHint": "They'll see you added them as {{tier}}",
     "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
+    "sendRequest": "إرسال طلب",
     "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
     "serviceTypes": {
       "phone": "Phone Number",
@@ -1316,7 +1376,11 @@
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
       "facetime": "FaceTime"
-    }
+    },
+    "search": "بحث",
+    "searching": "جارٍ البحث...",
+    "noResults": "لم يتم العثور على نتائج",
+    "requestSent": "تم إرسال الطلب!"
   },
   "feedPost": {
     "likeCount": "{{count}} إعجاب",
@@ -1419,7 +1483,21 @@
       "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
       "parentalRequired": "Parental Consent Required",
       "verify": "Verify Age"
-    }
+    },
+    "title": "التحقق من العمر",
+    "description": "Inner Friend Circle مصمم للمستخدمين الذين تبلغ أعمارهم 13 عاماً فأكثر.",
+    "ageQuestion": "هل عمرك 13 سنة أو أكثر؟",
+    "confirmAge": "نعم، عمري 13 سنة أو أكثر",
+    "underAge": "لا، عمري أقل من 13 سنة",
+    "underAgeMessage": "عذراً، Inner Friend Circle غير متاح للمستخدمين الذين تقل أعمارهم عن 13 عاماً.",
+    "parentalConsent": "إذا كان عمرك بين 13 و16 سنة، قد تحتاج إلى موافقة الوالدين.",
+    "learnMore": "تعرف على المزيد حول ممارسات الخصوصية لدينا",
+    "accept": "قبول",
+    "decline": "رفض",
+    "consentRequired": "الموافقة مطلوبة",
+    "consentDescription": "لاستخدام Inner Friend Circle، يجب أن توافق على سياسة الخصوصية وشروط الخدمة.",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة"
   },
   "dispatch": {
     "registration": {
@@ -1609,6 +1687,21 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "organizationNameRequired": "اسم المنظمة مطلوب",
+      "jurisdictionRequired": "مطلوب منطقة اختصاص واحدة على الأقل",
+      "taxIdRequired": "مطلوب رقم ضريبي صالح",
+      "insuranceCarrierRequired": "مطلوب شركة التأمين",
+      "policyNumberRequired": "مطلوب رقم البوليصة",
+      "registeredAgentNameRequired": "مطلوب اسم الوكيل المسجل",
+      "registeredAgentContactRequired": "مطلوب معلومات الاتصال بالوكيل المسجل",
+      "contactNameRequired": "مطلوب اسم جهة الاتصال",
+      "validEmailRequired": "مطلوب بريد إلكتروني صالح",
+      "validPhoneRequired": "مطلوب رقم هاتف صالح",
+      "passwordMinLength": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+      "mustAcceptTerms": "يجب الموافقة على الشروط",
+      "passwordsMustMatch": "كلمات المرور غير متطابقة"
     }
   },
   "dataImport": {
@@ -1647,7 +1740,7 @@
   },
   "admin": {
     "dispatch": {
-      "title": "Dispatch Account Verification",
+      "title": "حسابات الإرسال",
       "searchPlaceholder": "Search by organization, email, or contact name...",
       "filters": {
         "all": "All Accounts"
@@ -1701,8 +1794,17 @@
         "reason": "Reason",
         "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
         "processing": "Processing..."
-      }
-    }
+      },
+      "pending": "معلق",
+      "verified": "موثق",
+      "rejected": "مرفوض",
+      "suspended": "معلق"
+    },
+    "title": "لوحة الإدارة",
+    "users": "المستخدمون",
+    "accounts": "الحسابات",
+    "settings": "الإعدادات",
+    "logs": "السجلات"
   },
   "tierFeed": {
     "toasts": {
@@ -1775,5 +1877,181 @@
     "sharedPhoto": "صورة مشتركة",
     "video": "فيديو",
     "sharedVideo": "فيديو مشترك"
+  },
+  "privacy": {
+    "philosophy": {
+      "title": "فلسفتنا في الخصوصية أولاً",
+      "description": "تم بناء Inner Friend Circle بواسطة Lifesaver Labs مع الخصوصية كمبدأ أساسي. نحن نؤمن أن علاقاتك شخصية للغاية ونتعامل مع بياناتك بالاحترام الذي تستحقه."
+    },
+    "dataCollection": {
+      "title": "البيانات التي نجمعها",
+      "accountInfo": {
+        "title": "معلومات الحساب",
+        "description": "عنوان البريد الإلكتروني وكلمة المرور (مشفرة بأمان) للمصادقة. الاسم المعروض اختياري."
+      },
+      "friendData": {
+        "title": "بيانات الأصدقاء",
+        "description": "الأسماء ومعلومات الاتصال والملاحظات وتصنيفات المستوى التي تنشئها."
+      },
+      "emergencyData": {
+        "title": "بيانات الوصول للطوارئ (المفاتيح المشتركة)",
+        "description": "إذا كنت تستخدم ميزة المفاتيح المشتركة، نقوم بتخزين عنوانك ومعلومات حاملي المفاتيح."
+      },
+      "usageData": {
+        "title": "بيانات الاستخدام",
+        "description": "قد نجمع معلومات استخدام أساسية لتحسين الخدمة، لكننا لا نستخدم أدوات تحليل من طرف ثالث."
+      }
+    },
+    "dataUsage": {
+      "title": "كيف نستخدم بياناتك",
+      "provide": "لتوفير وصيانة خدمة Inner Friend Circle",
+      "matching": "لتمكين المطابقة المتبادلة",
+      "emergency": "لتسهيل تنسيق الطوارئ مع الجيران",
+      "notifications": "لإرسال إشعارات الخدمة المهمة (ليس تسويقاً أبداً)",
+      "improve": "لتحسين وتطوير ميزات جديدة"
+    },
+    "dataStorage": {
+      "title": "تخزين البيانات والأمان",
+      "description": "يتم تخزين بياناتك بأمان باستخدام Supabase. جميع البيانات مشفرة أثناء النقل وفي حالة السكون."
+    },
+    "rights": {
+      "title": "حقوقك (GDPR وتحرير البيانات)",
+      "access": {
+        "title": "حق الوصول والتصدير",
+        "description": "يمكنك تصدير جميع بياناتك في أي وقت بتنسيق JSON."
+      },
+      "deletion": {
+        "title": "حق الحذف",
+        "description": "يمكنك حذف حسابك وجميع البيانات المرتبطة به في أي وقت."
+      },
+      "rectification": {
+        "title": "حق التصحيح",
+        "description": "يمكنك تعديل بياناتك في أي وقت."
+      },
+      "object": {
+        "title": "حق الاعتراض",
+        "description": "يمكنك الانسحاب من ميزات معينة."
+      }
+    },
+    "thirdParties": {
+      "title": "خدمات الطرف الثالث",
+      "supabase": {
+        "name": "Supabase",
+        "description": "مزود قاعدة البيانات والمصادقة لدينا."
+      },
+      "noTracking": "نحن لا نستخدم أي شبكات إعلانية أو متتبعات وسائل التواصل الاجتماعي."
+    },
+    "cookies": {
+      "title": "ملفات تعريف الارتباط والتخزين المحلي",
+      "description": "نستخدم فقط ملفات تعريف الارتباط الضرورية لإدارة الجلسات."
+    },
+    "children": {
+      "title": "خصوصية الأطفال",
+      "description": "Inner Friend Circle غير مخصص للأطفال دون سن 13 عاماً."
+    },
+    "retention": {
+      "title": "الاحتفاظ بالبيانات",
+      "description": "نحتفظ ببياناتك طالما حسابك نشط."
+    },
+    "contact": {
+      "title": "اتصل بنا",
+      "description": "للأسئلة المتعلقة بالخصوصية، تواصل معنا على:",
+      "email": "البريد الإلكتروني",
+      "github": "GitHub"
+    },
+    "changes": {
+      "title": "التغييرات على هذه السياسة",
+      "description": "قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر."
+    }
+  },
+  "terms": {
+    "introduction": {
+      "title": "1. المقدمة",
+      "description": "مرحباً بك في Inner Friend Circle، خدمة مقدمة من Lifesaver Labs."
+    },
+    "service": {
+      "title": "2. وصف الخدمة",
+      "description": "Inner Friend Circle هي أداة لإدارة العلاقات تعطي الأولوية للخصوصية.",
+      "features": {
+        "tiers": "تنظيم الأصدقاء في مستويات ذات معنى",
+        "matching": "المطابقة المتبادلة الاختيارية",
+        "keysShared": "تنسيق الوصول للطوارئ عبر المفاتيح المشتركة",
+        "dataExport": "ميزات تصدير البيانات والنقل"
+      }
+    },
+    "userAccounts": {
+      "title": "3. حسابات المستخدمين",
+      "description": "أنت مسؤول عن حماية بيانات اعتماد حسابك."
+    },
+    "acceptableUse": {
+      "title": "4. الاستخدام المقبول",
+      "intro": "توافق على عدم استخدام الخدمة من أجل:",
+      "prohibited": {
+        "harm": "تخزين معلومات عن الآخرين دون علمهم",
+        "harassment": "المطاردة أو المضايقة أو مراقبة الآخرين",
+        "laws": "انتهاك أي قوانين سارية",
+        "unauthorized": "محاولة الوصول غير المصرح به لبيانات المستخدمين الآخرين",
+        "misuse": "إساءة استخدام ميزات الطوارئ",
+        "impersonate": "انتحال هوية الآخرين"
+      }
+    },
+    "userContent": {
+      "title": "5. محتوى المستخدم",
+      "description": "تحتفظ بملكية جميع المحتوى الذي تنشئه."
+    },
+    "keysShared": {
+      "title": "6. المفاتيح المشتركة وميزات الطوارئ",
+      "description": "تتيح لك ميزة المفاتيح المشتركة تعيين جيران موثوقين.",
+      "points": {
+        "risks": "تقر بأن مشاركة معلومات المفاتيح تحمل مخاطر",
+        "trust": "أنت مسؤول عن الثقة بالجيران الذين تعينهم",
+        "liability": "نحن لسنا مسؤولين عن تصرفات حاملي مفاتيحك",
+        "emergencyWorkers": "قد تصل حسابات الإرسال المعتمدة إلى معلوماتك",
+        "disable": "يمكنك تعطيل المشاركة في أي وقت"
+      }
+    },
+    "dataLiberation": {
+      "title": "7. تحرير البيانات",
+      "description": "نؤمن أن بياناتك ملك لك."
+    },
+    "privacy": {
+      "title": "8. الخصوصية",
+      "description": "استخدامك للخدمة يخضع أيضاً لسياسة الخصوصية الخاصة بنا."
+    },
+    "intellectualProperty": {
+      "title": "9. الملكية الفكرية",
+      "description": "Inner Friend Circle هو برنامج مفتوح المصدر."
+    },
+    "liability": {
+      "title": "10. تحديد المسؤولية",
+      "description": "يتم تقديم الخدمة \"كما هي\" دون أي ضمانات.",
+      "includes": "يشمل ذلك الأضرار الناجمة عن حاملي المفاتيح، تأخيرات الطوارئ، فقدان البيانات."
+    },
+    "indemnification": {
+      "title": "11. التعويض",
+      "description": "توافق على تعويض Lifesaver Labs."
+    },
+    "termination": {
+      "title": "12. الإنهاء",
+      "description": "يمكنك إنهاء حسابك في أي وقت."
+    },
+    "changes": {
+      "title": "13. التغييرات على الشروط",
+      "description": "نحتفظ بالحق في تعديل هذه الشروط."
+    },
+    "governingLaw": {
+      "title": "14. القانون الحاكم",
+      "description": "تخضع هذه الشروط للقانون المعمول به."
+    },
+    "severability": {
+      "title": "15. قابلية الفصل",
+      "description": "إذا كان أي حكم غير صالح، تظل الأحكام الأخرى سارية."
+    },
+    "contact": {
+      "title": "16. الاتصال",
+      "description": "للأسئلة، تواصل معنا على:",
+      "email": "البريد الإلكتروني",
+      "github": "GitHub"
+    }
   }
 }

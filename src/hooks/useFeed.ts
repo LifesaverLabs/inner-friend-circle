@@ -13,7 +13,9 @@ import {
   DEFAULT_NOTIFICATION_SETTINGS,
   PostContentType,
   InteractionType,
+  PostInteraction,
 } from '@/types/feed';
+import { usePosts, DatabasePost, DatabasePostInteraction } from './usePosts';
 import {
   getCoreFeed,
   getTierFeed,
@@ -75,8 +77,8 @@ interface UseFeedReturn {
   }) => FeedPost[];
 
   // Post operations
-  createPost: (post: Omit<FeedPost, 'id' | 'createdAt' | 'interactions'>) => FeedPost;
-  addInteraction: (postId: string, type: InteractionType, content?: string) => void;
+  createPost: (post: Omit<FeedPost, 'id' | 'createdAt' | 'interactions'>) => Promise<FeedPost | null>;
+  addInteraction: (postId: string, type: InteractionType, content?: string) => Promise<void>;
 
   // Nudge operations
   dismissNudge: (nudgeId: string) => void;
@@ -113,8 +115,19 @@ interface UseFeedReturn {
 }
 
 export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
+  // Use the posts hook for database operations
+  const {
+    posts: dbPosts,
+    interactions: dbInteractions,
+    loading: postsLoading,
+    error: postsError,
+    createPost: createDbPost,
+    addInteraction: addDbInteraction,
+    getPostInteractions,
+    hasUserInteracted,
+  } = usePosts({ userId });
+
   // State
-  const [posts, setPosts] = useState<FeedPost[]>([]);
   const [notifications, setNotifications] = useState<FeedNotification[]>([]);
   const [dismissedNudges, setDismissedNudges] = useState<Set<string>>(new Set());
   const [acquaintedNudgeHistory, setAcquaintedNudgeHistory] = useState<AcquaintedNudgeHistoryEntry[]>([]);
@@ -122,6 +135,50 @@ export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
   const [notificationSettings, setNotificationSettings] = useState<NotificationSettings>(DEFAULT_NOTIFICATION_SETTINGS);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Convert database posts to feed posts format
+  const posts: FeedPost[] = useMemo(() => {
+    return dbPosts.map((dbPost): FeedPost => {
+      const postInteractions = getPostInteractions(dbPost.id);
+      
+      return {
+        id: dbPost.id,
+        authorId: dbPost.author_id,
+        authorName: dbPost.author_display_name || dbPost.author_user_handle || 'Unknown User',
+        authorTier: friends.find(f => f.id === dbPost.author_id)?.tier || 'acquainted',
+        contentType: dbPost.content_type,
+        content: dbPost.content,
+        mediaUrl: dbPost.media_url || undefined,
+        createdAt: new Date(dbPost.created_at),
+        scheduledAt: dbPost.scheduled_at ? new Date(dbPost.scheduled_at) : undefined,
+        location: dbPost.location_name ? {
+          name: dbPost.location_name,
+          coordinates: dbPost.location_lat && dbPost.location_lng ? {
+            lat: dbPost.location_lat,
+            lng: dbPost.location_lng,
+          } : undefined,
+        } : undefined,
+        interactions: postInteractions.map((interaction): PostInteraction => ({
+          id: interaction.id,
+          postId: interaction.post_id,
+          userId: interaction.user_id,
+          userName: 'User', // TODO: Get from profiles
+          type: interaction.interaction_type,
+          content: interaction.content || undefined,
+          createdAt: new Date(interaction.created_at),
+        })),
+        visibility: dbPost.visibility,
+        isSuggested: dbPost.is_suggested,
+        isSponsored: dbPost.is_sponsored,
+      };
+    });
+  }, [dbPosts, dbInteractions, friends, getPostInteractions]);
+
+  // Update loading and error state based on posts hook
+  useEffect(() => {
+    setIsLoading(postsLoading);
+    setError(postsError);
+  }, [postsLoading, postsError]);
 
   // Load saved state from localStorage
   useEffect(() => {
@@ -140,15 +197,12 @@ export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
     } catch (e) {
       console.error('Failed to load nudge history:', e);
     }
-    setIsLoading(false);
   }, []);
 
   // Save nudge history to localStorage
   useEffect(() => {
-    if (!isLoading) {
-      localStorage.setItem(NUDGE_HISTORY_KEY, JSON.stringify(acquaintedNudgeHistory));
-    }
-  }, [acquaintedNudgeHistory, isLoading]);
+    localStorage.setItem(NUDGE_HISTORY_KEY, JSON.stringify(acquaintedNudgeHistory));
+  }, [acquaintedNudgeHistory]);
 
   // Generate sunset nudges for non-acquainted friends
   const nudges = useMemo(() => {
@@ -183,46 +237,39 @@ export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
   }, [posts]);
 
   // Post operations
-  const createPostFn = useCallback((
+  const createPostFn = useCallback(async (
     postData: Omit<FeedPost, 'id' | 'createdAt' | 'interactions'>
-  ): FeedPost => {
-    const newPost: FeedPost = {
-      ...postData,
-      id: `post-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      createdAt: new Date(),
-      interactions: [],
-    };
+  ): Promise<FeedPost | null> => {
+    const result = await createDbPost({
+      content: postData.content,
+      contentType: postData.contentType,
+      visibility: postData.visibility,
+      mediaUrl: postData.mediaUrl,
+      scheduledAt: postData.scheduledAt,
+      locationName: postData.location?.name,
+      locationLat: postData.location?.coordinates?.lat,
+      locationLng: postData.location?.coordinates?.lng,
+      isSuggested: postData.isSuggested,
+      isSponsored: postData.isSponsored,
+    });
 
-    setPosts(prev => [newPost, ...prev]);
-    return newPost;
-  }, []);
+    if (result.success) {
+      // Find the newly created post in the current posts array
+      return posts.find(p => p.authorId === postData.authorId && p.content === postData.content) || null;
+    }
+    
+    return null;
+  }, [createDbPost, posts]);
 
-  const addInteraction = useCallback((
+  const addInteraction = useCallback(async (
     postId: string,
     type: InteractionType,
     content?: string
   ) => {
     if (!userId) return;
 
-    setPosts(prev => prev.map(post => {
-      if (post.id !== postId) return post;
-
-      const newInteraction = {
-        id: `int-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-        postId,
-        userId,
-        userName: 'You', // Should come from user profile
-        type,
-        content,
-        createdAt: new Date(),
-      };
-
-      return {
-        ...post,
-        interactions: [...post.interactions, newInteraction],
-      };
-    }));
-  }, [userId]);
+    await addDbInteraction(postId, type, content);
+  }, [userId, addDbInteraction]);
 
   // Nudge operations
   const dismissNudge = useCallback((nudgeId: string) => {
