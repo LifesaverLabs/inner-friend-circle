@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { Share2, Heart, Upload } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 import { formatDistanceToNow, differenceInDays } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -95,10 +96,78 @@ export function FriendDashboard({
 
   const needsUrgentTending = daysSinceLastTended !== null && daysSinceLastTended >= 30;
 
-  const handleAddFriend = (tier: TierType) => (name: string, email?: string, roleModelReason?: string) => {
-    const result = addFriend({ name, email, tier, roleModelReason });
+  const handleAddFriend = (tier: TierType) => async (name: string, email?: string, phone?: string, preferredContact?: string) => {
+    // Add to local friend list
+    const result = addFriend({ name, email, phone, tier, preferredContact: preferredContact as any });
+    if (!result.success) {
+      toast.error(result.error);
+      return;
+    }
+    
+    toast.success(t('dashboard.toasts.addedFriend', { name, tier: t(`tiers.${tier}`) }));
+    
+    // Only create connection request for core/inner/outer tiers with email/phone
+    const connectionTiers: TierType[] = ['core', 'inner', 'outer'];
+    if (!connectionTiers.includes(tier) || (!email && !phone)) {
+      return;
+    }
+    
+    // Try to find the user by their email or phone in contact_methods
+    // Look up by email first (check various email service types)
+    if (email && user?.id) {
+      const { data: contactData } = await supabase
+        .from('contact_methods')
+        .select('id, user_id')
+        .ilike('contact_identifier', email)
+        .neq('user_id', user.id)
+        .limit(1)
+        .single();
+      
+      if (contactData) {
+        // Found a user with this email - create connection request
+        const connectionResult = await createConnectionRequest(
+          contactData.user_id,
+          tier as CircleTier,
+          contactData.id,
+          true // disclose circle
+        );
+        
+        if (connectionResult.success) {
+          toast.success(t('connections.toasts.requestSentTo', { name }));
+        }
+        return;
+      }
+    }
+    
+    // Try phone lookup if email didn't find anyone
+    if (phone && user?.id) {
+      const { data: phoneData } = await supabase
+        .from('contact_methods')
+        .select('id, user_id')
+        .eq('contact_identifier', phone)
+        .neq('user_id', user.id)
+        .limit(1)
+        .single();
+      
+      if (phoneData) {
+        const connectionResult = await createConnectionRequest(
+          phoneData.user_id,
+          tier as CircleTier,
+          phoneData.id,
+          true
+        );
+        
+        if (connectionResult.success) {
+          toast.success(t('connections.toasts.requestSentTo', { name }));
+        }
+      }
+    }
+  };
+
+  const handleAddRoleModel = (name: string, roleModelReason?: string) => {
+    const result = addFriend({ name, tier: 'rolemodel', roleModelReason });
     if (result.success) {
-      toast.success(t('dashboard.toasts.addedFriend', { name, tier: t(`tiers.${tier}`) }));
+      toast.success(t('dashboard.toasts.addedFriend', { name, tier: t('tiers.rolemodel') }));
     } else {
       toast.error(result.error);
     }
@@ -261,6 +330,7 @@ export function FriendDashboard({
           friends={getFriendsInTier(tier)}
           reservedGroups={lists.reservedSpots[tier] || []}
           onAddFriend={handleAddFriend(tier)}
+          onAddRoleModel={tier === 'rolemodel' ? handleAddRoleModel : undefined}
           onMoveFriend={handleMoveFriend}
           onRemoveFriend={handleRemoveFriend}
           onAddReservedGroup={handleAddReservedGroup(tier)}
@@ -282,7 +352,7 @@ export function FriendDashboard({
       ))}
     </div>
   ), [
-    getFriendsInTier, lists.reservedSpots, handleAddFriend, handleMoveFriend,
+    getFriendsInTier, lists.reservedSpots, handleAddFriend, handleAddRoleModel, handleMoveFriend,
     handleRemoveFriend, handleAddReservedGroup, handleUpdateReservedGroup,
     handleRemoveReservedGroup, handleReorderFriends, getTierCapacity, isLoggedIn,
     handleAddLinkedFriend, updateFriend, getAllowedMoves, feedShares, seenShares,

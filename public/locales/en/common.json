@@ -474,7 +474,8 @@
     "viaService": "via {{service}}",
     "toasts": {
       "requestSent": "Connection request sent!",
-      "confirmed": "Connection confirmed! You can now see each other's contact methods.",
+      "requestSentTo": "Connection request sent to {{name}}!",
+      "confirmed": "Connection confirmed! You can now see each other's posts.",
       "declined": "Connection declined.",
       "removed": "Connection removed."
     },
