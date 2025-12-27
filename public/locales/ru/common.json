@@ -533,7 +533,22 @@
     "unknownUser": "Неизвестный пользователь",
     "addedYouAs": "Добавил вас как {{tier}}",
     "circleHidden": "Круг скрыт",
-    "viaService": "через {{service}}"
+    "viaService": "через {{service}}",
+    "toasts": {
+      "requestSent": "Запрос на подключение отправлен!",
+      "confirmed": "Подключение подтверждено! Теперь вы можете видеть способы связи друг друга.",
+      "declined": "Подключение отклонено.",
+      "removed": "Подключение удалено."
+    },
+    "errors": {
+      "notAuthenticated": "Не аутентифицирован",
+      "cannotAddSelf": "Вы не можете добавить себя в друзья",
+      "alreadyExists": "Подключение уже существует",
+      "requestExists": "Запрос на подключение уже существует",
+      "createFailed": "Не удалось создать запрос на подключение",
+      "respondFailed": "Не удалось ответить на запрос",
+      "deleteFailed": "Не удалось удалить подключение"
+    }
   },
   "roleModel": {
     "addTitle": "Добавить образец для подражания",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "Имя пользователя должно быть 3-30 символов, только буквы, цифры и подчёркивания",
+      "checkAvailability": "Ошибка проверки доступности имени",
+      "validationError": "Ошибка проверки имени пользователя"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Войдите, чтобы добавить способы связи",
+      "added": "Способ связи добавлен",
+      "addFailed": "Не удалось добавить способ связи",
+      "updateFailed": "Не удалось обновить способ связи",
+      "removed": "Способ связи удалён",
+      "removeFailed": "Не удалось удалить способ связи",
+      "reorderFailed": "Не удалось изменить порядок"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

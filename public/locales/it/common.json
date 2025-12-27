@@ -533,7 +533,22 @@
     "unknownUser": "Utente sconosciuto",
     "addedYouAs": "Ti ha aggiunto come {{tier}}",
     "circleHidden": "Cerchia nascosta",
-    "viaService": "via {{service}}"
+    "viaService": "via {{service}}",
+    "toasts": {
+      "requestSent": "Richiesta di connessione inviata!",
+      "confirmed": "Connessione confermata! Ora potete vedere i metodi di contatto reciproci.",
+      "declined": "Connessione rifiutata.",
+      "removed": "Connessione rimossa."
+    },
+    "errors": {
+      "notAuthenticated": "Non autenticato",
+      "cannotAddSelf": "Non puoi aggiungere te stesso come amico",
+      "alreadyExists": "La connessione esiste già",
+      "requestExists": "La richiesta di connessione esiste già",
+      "createFailed": "Impossibile creare la richiesta di connessione",
+      "respondFailed": "Impossibile rispondere alla richiesta",
+      "deleteFailed": "Impossibile eliminare la connessione"
+    }
   },
   "roleModel": {
     "addTitle": "Aggiungi modello di ruolo",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "L'handle deve essere di 3-30 caratteri, solo lettere, numeri e underscore",
+      "checkAvailability": "Errore nel verificare la disponibilità dell'handle",
+      "validationError": "Errore nella validazione dell'handle"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Accedi per aggiungere metodi di contatto",
+      "added": "Metodo di contatto aggiunto",
+      "addFailed": "Impossibile aggiungere il metodo di contatto",
+      "updateFailed": "Impossibile aggiornare il metodo di contatto",
+      "removed": "Metodo di contatto rimosso",
+      "removeFailed": "Impossibile rimuovere il metodo di contatto",
+      "reorderFailed": "Impossibile riordinare"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

@@ -533,7 +533,22 @@
     "unknownUser": "مستخدم غير معروف",
     "addedYouAs": "أضافك كـ {{tier}}",
     "circleHidden": "الدائرة مخفية",
-    "viaService": "عبر {{service}}"
+    "viaService": "عبر {{service}}",
+    "toasts": {
+      "requestSent": "تم إرسال طلب الاتصال!",
+      "confirmed": "تم تأكيد الاتصال! يمكنكم الآن رؤية طرق الاتصال لبعضكم البعض.",
+      "declined": "تم رفض الاتصال.",
+      "removed": "تمت إزالة الاتصال."
+    },
+    "errors": {
+      "notAuthenticated": "غير مسجل الدخول",
+      "cannotAddSelf": "لا يمكنك إضافة نفسك كصديق",
+      "alreadyExists": "الاتصال موجود بالفعل",
+      "requestExists": "طلب الاتصال موجود بالفعل",
+      "createFailed": "فشل في إنشاء طلب الاتصال",
+      "respondFailed": "فشل في الرد على الطلب",
+      "deleteFailed": "فشل في حذف الاتصال"
+    }
   },
   "roleModel": {
     "addTitle": "إضافة قدوة",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "يجب أن يكون المعرف من 3-30 حرفاً، حروف وأرقام وشرطات سفلية فقط",
+      "checkAvailability": "خطأ في التحقق من توفر المعرف",
+      "validationError": "خطأ في التحقق من المعرف"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "يرجى تسجيل الدخول لإضافة طرق الاتصال",
+      "added": "تمت إضافة طريقة الاتصال",
+      "addFailed": "فشل في إضافة طريقة الاتصال",
+      "updateFailed": "فشل في تحديث طريقة الاتصال",
+      "removed": "تمت إزالة طريقة الاتصال",
+      "removeFailed": "فشل في إزالة طريقة الاتصال",
+      "reorderFailed": "فشل في إعادة الترتيب"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

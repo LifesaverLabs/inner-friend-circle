@@ -533,7 +533,22 @@
     "unknownUser": "Bilinmeyen Kullanıcı",
     "addedYouAs": "Seni {{tier}} olarak ekledi",
     "circleHidden": "Çember gizli",
-    "viaService": "{{service}} aracılığıyla"
+    "viaService": "{{service}} aracılığıyla",
+    "toasts": {
+      "requestSent": "Bağlantı isteği gönderildi!",
+      "confirmed": "Bağlantı onaylandı! Artık birbirinizin iletişim yöntemlerini görebilirsiniz.",
+      "declined": "Bağlantı reddedildi.",
+      "removed": "Bağlantı kaldırıldı."
+    },
+    "errors": {
+      "notAuthenticated": "Kimlik doğrulanmadı",
+      "cannotAddSelf": "Kendinizi arkadaş olarak ekleyemezsiniz",
+      "alreadyExists": "Bağlantı zaten mevcut",
+      "requestExists": "Bağlantı isteği zaten mevcut",
+      "createFailed": "Bağlantı isteği oluşturulamadı",
+      "respondFailed": "İsteğe yanıt verilemedi",
+      "deleteFailed": "Bağlantı silinemedi"
+    }
   },
   "roleModel": {
     "addTitle": "Rol Model Ekle",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "Kullanıcı adı 3-30 karakter olmalı, sadece harf, rakam ve alt çizgi",
+      "checkAvailability": "Kullanıcı adı müsaitliği kontrol edilirken hata",
+      "validationError": "Kullanıcı adı doğrulama hatası"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "İletişim yöntemi eklemek için giriş yapın",
+      "added": "İletişim yöntemi eklendi",
+      "addFailed": "İletişim yöntemi eklenemedi",
+      "updateFailed": "İletişim yöntemi güncellenemedi",
+      "removed": "İletişim yöntemi kaldırıldı",
+      "removeFailed": "İletişim yöntemi kaldırılamadı",
+      "reorderFailed": "Yeniden sıralama başarısız"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

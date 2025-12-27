@@ -533,7 +533,22 @@
     "unknownUser": "Usuário desconhecido",
     "addedYouAs": "Adicionou você como {{tier}}",
     "circleHidden": "Círculo oculto",
-    "viaService": "via {{service}}"
+    "viaService": "via {{service}}",
+    "toasts": {
+      "requestSent": "Solicitação de conexão enviada!",
+      "confirmed": "Conexão confirmada! Agora vocês podem ver os métodos de contato um do outro.",
+      "declined": "Conexão recusada.",
+      "removed": "Conexão removida."
+    },
+    "errors": {
+      "notAuthenticated": "Não autenticado",
+      "cannotAddSelf": "Você não pode adicionar a si mesmo como amigo",
+      "alreadyExists": "A conexão já existe",
+      "requestExists": "A solicitação de conexão já existe",
+      "createFailed": "Falha ao criar solicitação de conexão",
+      "respondFailed": "Falha ao responder à solicitação",
+      "deleteFailed": "Falha ao excluir conexão"
+    }
   },
   "roleModel": {
     "addTitle": "Adicionar modelo",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "O identificador deve ter 3-30 caracteres, apenas letras, números e underscores",
+      "checkAvailability": "Erro ao verificar disponibilidade do identificador",
+      "validationError": "Erro ao validar identificador"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Faça login para adicionar métodos de contato",
+      "added": "Método de contato adicionado",
+      "addFailed": "Falha ao adicionar método de contato",
+      "updateFailed": "Falha ao atualizar método de contato",
+      "removed": "Método de contato removido",
+      "removeFailed": "Falha ao remover método de contato",
+      "reorderFailed": "Falha ao reordenar"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

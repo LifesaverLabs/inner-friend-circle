@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -35,6 +36,7 @@ export interface FriendConnection {
 }
 
 export function useFriendConnections(userId: string | undefined) {
+  const { t } = useTranslation();
   const [connections, setConnections] = useState<FriendConnection[]>([]);
   const [pendingRequests, setPendingRequests] = useState<FriendConnection[]>([]);
   const [loading, setLoading] = useState(true);
@@ -138,11 +140,11 @@ export function useFriendConnections(userId: string | undefined) {
     discloseCircle: boolean = true
   ): Promise<{ success: boolean; error?: string }> => {
     if (!userId) {
-      return { success: false, error: 'Not authenticated' };
+      return { success: false, error: t('connections.errors.notAuthenticated') };
     }
 
     if (targetUserId === userId) {
-      return { success: false, error: "You can't add yourself as a friend" };
+      return { success: false, error: t('connections.errors.cannotAddSelf') };
     }
 
     // Check if connection already exists
@@ -150,7 +152,7 @@ export function useFriendConnections(userId: string | undefined) {
       c => c.target_user_id === targetUserId || c.requester_id === targetUserId
     );
     if (existing) {
-      return { success: false, error: 'Connection already exists' };
+      return { success: false, error: t('connections.errors.alreadyExists') };
     }
 
     try {
@@ -166,18 +168,18 @@ export function useFriendConnections(userId: string | undefined) {
 
       if (error) {
         if (error.code === '23505') {
-          return { success: false, error: 'Connection request already exists' };
+          return { success: false, error: t('connections.errors.requestExists') };
         }
         throw error;
       }
 
-      toast.success('Connection request sent!');
+      toast.success(t('connections.toasts.requestSent'));
       return { success: true };
     } catch (error) {
       console.error('Error creating connection:', error);
-      return { success: false, error: 'Failed to create connection request' };
+      return { success: false, error: t('connections.errors.createFailed') };
     }
-  }, [userId, connections]);
+  }, [userId, connections, t]);
 
   // Respond to a connection request (confirm or decline)
   // When accepting, the target can optionally specify their own tier for the requester
@@ -213,13 +215,13 @@ export function useFriendConnections(userId: string | undefined) {
 
       if (error) throw error;
 
-      toast.success(accept ? 'Connection confirmed! You can now see each other\'s contact methods.' : 'Connection declined.');
+      toast.success(accept ? t('connections.toasts.confirmed') : t('connections.toasts.declined'));
       return { success: true };
     } catch (error) {
       console.error('Error responding to request:', error);
-      return { success: false, error: 'Failed to respond to request' };
+      return { success: false, error: t('connections.errors.respondFailed') };
     }
-  }, [pendingRequests]);
+  }, [pendingRequests, t]);
 
   // Delete a connection
   const deleteConnection = useCallback(async (
@@ -233,13 +235,13 @@ export function useFriendConnections(userId: string | undefined) {
 
       if (error) throw error;
 
-      toast.success('Connection removed.');
+      toast.success(t('connections.toasts.removed'));
       return { success: true };
     } catch (error) {
       console.error('Error deleting connection:', error);
-      return { success: false, error: 'Failed to delete connection' };
+      return { success: false, error: t('connections.errors.deleteFailed') };
     }
-  }, []);
+  }, [t]);
 
   // Get confirmed friends for a specific tier from this user's perspective
   // This handles asymmetric tier classification:

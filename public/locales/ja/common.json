@@ -533,7 +533,22 @@
     "unknownUser": "不明なユーザー",
     "addedYouAs": "{{tier}}としてあなたを追加しました",
     "circleHidden": "サークル非表示",
-    "viaService": "{{service}}経由"
+    "viaService": "{{service}}経由",
+    "toasts": {
+      "requestSent": "接続リクエストを送信しました！",
+      "confirmed": "接続が確認されました！お互いの連絡方法が見れるようになりました。",
+      "declined": "接続を拒否しました。",
+      "removed": "接続を削除しました。"
+    },
+    "errors": {
+      "notAuthenticated": "認証されていません",
+      "cannotAddSelf": "自分自身を友達として追加することはできません",
+      "alreadyExists": "接続は既に存在します",
+      "requestExists": "接続リクエストは既に存在します",
+      "createFailed": "接続リクエストの作成に失敗しました",
+      "respondFailed": "リクエストへの応答に失敗しました",
+      "deleteFailed": "接続の削除に失敗しました"
+    }
   },
   "roleModel": {
     "addTitle": "ロールモデルを追加",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "ハンドルは3〜30文字で、英数字とアンダースコアのみ使用可能です",
+      "checkAvailability": "ハンドルの利用可否の確認中にエラーが発生しました",
+      "validationError": "ハンドルの検証中にエラーが発生しました"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "連絡方法を追加するにはサインインしてください",
+      "added": "連絡方法を追加しました",
+      "addFailed": "連絡方法の追加に失敗しました",
+      "updateFailed": "連絡方法の更新に失敗しました",
+      "removed": "連絡方法を削除しました",
+      "removeFailed": "連絡方法の削除に失敗しました",
+      "reorderFailed": "並べ替えに失敗しました"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

@@ -533,7 +533,22 @@
     "unknownUser": "अज्ञात उपयोगकर्ता",
     "addedYouAs": "आपको {{tier}} के रूप में जोड़ा",
     "circleHidden": "सर्कल छुपा हुआ है",
-    "viaService": "{{service}} के माध्यम से"
+    "viaService": "{{service}} के माध्यम से",
+    "toasts": {
+      "requestSent": "कनेक्शन अनुरोध भेजा गया!",
+      "confirmed": "कनेक्शन की पुष्टि हो गई! अब आप एक दूसरे की संपर्क विधियाँ देख सकते हैं।",
+      "declined": "कनेक्शन अस्वीकार।",
+      "removed": "कनेक्शन हटाया गया।"
+    },
+    "errors": {
+      "notAuthenticated": "प्रमाणित नहीं",
+      "cannotAddSelf": "आप खुद को मित्र के रूप में नहीं जोड़ सकते",
+      "alreadyExists": "कनेक्शन पहले से मौजूद है",
+      "requestExists": "कनेक्शन अनुरोध पहले से मौजूद है",
+      "createFailed": "कनेक्शन अनुरोध बनाने में विफल",
+      "respondFailed": "अनुरोध का जवाब देने में विफल",
+      "deleteFailed": "कनेक्शन हटाने में विफल"
+    }
   },
   "roleModel": {
     "addTitle": "रोल मॉडल जोड़ें",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "हैंडल 3-30 अक्षर का होना चाहिए, केवल अक्षर, संख्या और अंडरस्कोर",
+      "checkAvailability": "हैंडल उपलब्धता जाँचने में त्रुटि",
+      "validationError": "हैंडल सत्यापन में त्रुटि"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "संपर्क विधियाँ जोड़ने के लिए कृपया साइन इन करें",
+      "added": "संपर्क विधि जोड़ी गई",
+      "addFailed": "संपर्क विधि जोड़ने में विफल",
+      "updateFailed": "संपर्क विधि अपडेट करने में विफल",
+      "removed": "संपर्क विधि हटाई गई",
+      "removeFailed": "संपर्क विधि हटाने में विफल",
+      "reorderFailed": "पुनर्क्रमित करने में विफल"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

@@ -533,7 +533,22 @@
     "unknownUser": "తెలియని వినియోగదారు",
     "addedYouAs": "మిమ్మల్ని {{tier}}గా జోడించారు",
     "circleHidden": "సర్కిల్ దాచబడింది",
-    "viaService": "{{service}} ద్వారా"
+    "viaService": "{{service}} ద్వారా",
+    "toasts": {
+      "requestSent": "కనెక్షన్ అభ్యర్థన పంపబడింది!",
+      "confirmed": "కనెక్షన్ నిర్ధారించబడింది! ఇప్పుడు మీరు ఒకరి సంప్రదింపు పద్ధతులను చూడవచ్చు.",
+      "declined": "కనెక్షన్ తిరస్కరించబడింది.",
+      "removed": "కనెక్షన్ తొలగించబడింది."
+    },
+    "errors": {
+      "notAuthenticated": "ధృవీకరించబడలేదు",
+      "cannotAddSelf": "మీరు మిమ్మల్ని స్నేహితుడిగా జోడించలేరు",
+      "alreadyExists": "కనెక్షన్ ఇప్పటికే ఉంది",
+      "requestExists": "కనెక్షన్ అభ్యర్థన ఇప్పటికే ఉంది",
+      "createFailed": "కనెక్షన్ అభ్యర్థన సృష్టించడంలో విఫలమైంది",
+      "respondFailed": "అభ్యర్థనకు ప్రతిస్పందించడంలో విఫలమైంది",
+      "deleteFailed": "కనెక్షన్ తొలగించడంలో విఫలమైంది"
+    }
   },
   "roleModel": {
     "addTitle": "రోల్ మోడల్ జోడించండి",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "హ్యాండిల్ 3-30 అక్షరాలు ఉండాలి, అక్షరాలు, సంఖ్యలు మరియు అండర్‌స్కోర్‌లు మాత్రమే",
+      "checkAvailability": "హ్యాండిల్ లభ్యతను తనిఖీ చేయడంలో లోపం",
+      "validationError": "హ్యాండిల్ ధృవీకరణలో లోపం"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "సంప్రదింపు పద్ధతులను జోడించడానికి సైన్ ఇన్ చేయండి",
+      "added": "సంప్రదింపు పద్ధతి జోడించబడింది",
+      "addFailed": "సంప్రదింపు పద్ధతిని జోడించడంలో విఫలమైంది",
+      "updateFailed": "సంప్రదింపు పద్ధతిని నవీకరించడంలో విఫలమైంది",
+      "removed": "సంప్రదింపు పద్ధతి తొలగించబడింది",
+      "removeFailed": "సంప్రదింపు పద్ధతిని తొలగించడంలో విఫలమైంది",
+      "reorderFailed": "పునఃక్రమం చేయడంలో విఫలమైంది"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

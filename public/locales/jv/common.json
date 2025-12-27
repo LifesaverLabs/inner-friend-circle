@@ -533,7 +533,22 @@
     "unknownUser": "Pangguna Ora Dikenal",
     "addedYouAs": "Nambah sampeyan minangka {{tier}}",
     "circleHidden": "Lingkaran didhelikake",
-    "viaService": "liwat {{service}}"
+    "viaService": "liwat {{service}}",
+    "toasts": {
+      "requestSent": "Panjaluk sambungan wis dikirim!",
+      "confirmed": "Sambungan dikonfirmasi! Saiki sampeyan bisa ndeleng cara kontak saben liyane.",
+      "declined": "Sambungan ditolak.",
+      "removed": "Sambungan wis dibusak."
+    },
+    "errors": {
+      "notAuthenticated": "Durung diverifikasi",
+      "cannotAddSelf": "Sampeyan ora bisa nambah dhiri dhewe minangka kanca",
+      "alreadyExists": "Sambungan wis ana",
+      "requestExists": "Panjaluk sambungan wis ana",
+      "createFailed": "Gagal nggawe panjaluk sambungan",
+      "respondFailed": "Gagal njawab panjaluk",
+      "deleteFailed": "Gagal mbusak sambungan"
+    }
   },
   "roleModel": {
     "addTitle": "Tambah Role Model",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "Handle kudu 3-30 karakter, mung huruf, angka lan garis ngisor",
+      "checkAvailability": "Kesalahan mriksa kasedhiyan handle",
+      "validationError": "Kesalahan validasi handle"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Mangga mlebu kanggo nambah cara kontak",
+      "added": "Cara kontak wis ditambahake",
+      "addFailed": "Gagal nambah cara kontak",
+      "updateFailed": "Gagal nganyari cara kontak",
+      "removed": "Cara kontak wis dibusak",
+      "removeFailed": "Gagal mbusak cara kontak",
+      "reorderFailed": "Gagal ngatur ulang"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

@@ -533,7 +533,22 @@
     "unknownUser": "অজানা ব্যবহারকারী",
     "addedYouAs": "আপনাকে {{tier}} হিসাবে যোগ করেছে",
     "circleHidden": "বৃত্ত লুকানো",
-    "viaService": "{{service}} এর মাধ্যমে"
+    "viaService": "{{service}} এর মাধ্যমে",
+    "toasts": {
+      "requestSent": "সংযোগ অনুরোধ পাঠানো হয়েছে!",
+      "confirmed": "সংযোগ নিশ্চিত! এখন আপনারা একে অপরের যোগাযোগ পদ্ধতি দেখতে পারবেন।",
+      "declined": "সংযোগ প্রত্যাখ্যান।",
+      "removed": "সংযোগ সরানো হয়েছে।"
+    },
+    "errors": {
+      "notAuthenticated": "প্রমাণীকৃত নয়",
+      "cannotAddSelf": "আপনি নিজেকে বন্ধু হিসাবে যোগ করতে পারবেন না",
+      "alreadyExists": "সংযোগ ইতিমধ্যে বিদ্যমান",
+      "requestExists": "সংযোগ অনুরোধ ইতিমধ্যে বিদ্যমান",
+      "createFailed": "সংযোগ অনুরোধ তৈরি করতে ব্যর্থ",
+      "respondFailed": "অনুরোধে সাড়া দিতে ব্যর্থ",
+      "deleteFailed": "সংযোগ মুছতে ব্যর্থ"
+    }
   },
   "roleModel": {
     "addTitle": "রোল মডেল যোগ করুন",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "হ্যান্ডেল ৩-৩০ অক্ষর হতে হবে, শুধু অক্ষর, সংখ্যা এবং আন্ডারস্কোর",
+      "checkAvailability": "হ্যান্ডেল উপলব্ধতা পরীক্ষায় ত্রুটি",
+      "validationError": "হ্যান্ডেল যাচাইয়ে ত্রুটি"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "যোগাযোগ পদ্ধতি যোগ করতে সাইন ইন করুন",
+      "added": "যোগাযোগ পদ্ধতি যোগ করা হয়েছে",
+      "addFailed": "যোগাযোগ পদ্ধতি যোগ করতে ব্যর্থ",
+      "updateFailed": "যোগাযোগ পদ্ধতি আপডেট করতে ব্যর্থ",
+      "removed": "যোগাযোগ পদ্ধতি সরানো হয়েছে",
+      "removeFailed": "যোগাযোগ পদ্ধতি সরাতে ব্যর্থ",
+      "reorderFailed": "পুনঃক্রম করতে ব্যর্থ"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

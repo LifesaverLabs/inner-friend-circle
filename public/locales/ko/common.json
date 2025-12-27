@@ -533,7 +533,22 @@
     "unknownUser": "알 수 없는 사용자",
     "addedYouAs": "{{tier}}(으)로 추가함",
     "circleHidden": "서클 숨김",
-    "viaService": "{{service}} 통해"
+    "viaService": "{{service}} 통해",
+    "toasts": {
+      "requestSent": "연결 요청이 전송되었습니다!",
+      "confirmed": "연결이 확인되었습니다! 이제 서로의 연락 방법을 볼 수 있습니다.",
+      "declined": "연결이 거절되었습니다.",
+      "removed": "연결이 제거되었습니다."
+    },
+    "errors": {
+      "notAuthenticated": "인증되지 않음",
+      "cannotAddSelf": "자신을 친구로 추가할 수 없습니다",
+      "alreadyExists": "연결이 이미 존재합니다",
+      "requestExists": "연결 요청이 이미 존재합니다",
+      "createFailed": "연결 요청 생성 실패",
+      "respondFailed": "요청 응답 실패",
+      "deleteFailed": "연결 삭제 실패"
+    }
   },
   "roleModel": {
     "addTitle": "롤 모델 추가",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "핸들은 3-30자여야 하며, 문자, 숫자, 밑줄만 사용 가능합니다",
+      "checkAvailability": "핸들 가용성 확인 중 오류",
+      "validationError": "핸들 유효성 검사 중 오류"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "연락 방법을 추가하려면 로그인하세요",
+      "added": "연락 방법이 추가되었습니다",
+      "addFailed": "연락 방법 추가 실패",
+      "updateFailed": "연락 방법 업데이트 실패",
+      "removed": "연락 방법이 제거되었습니다",
+      "removeFailed": "연락 방법 제거 실패",
+      "reorderFailed": "재정렬 실패"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

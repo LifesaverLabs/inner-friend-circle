@@ -533,7 +533,22 @@
     "unknownUser": "משתמש לא ידוע",
     "addedYouAs": "הוסיף אותך כ{{tier}}",
     "circleHidden": "מעגל מוסתר",
-    "viaService": "דרך {{service}}"
+    "viaService": "דרך {{service}}",
+    "toasts": {
+      "requestSent": "בקשת חיבור נשלחה!",
+      "confirmed": "החיבור אושר! כעת תוכלו לראות את שיטות הקשר של זה.",
+      "declined": "החיבור נדחה.",
+      "removed": "החיבור הוסר."
+    },
+    "errors": {
+      "notAuthenticated": "לא מאומת",
+      "cannotAddSelf": "לא ניתן להוסיף את עצמך כחבר",
+      "alreadyExists": "החיבור כבר קיים",
+      "requestExists": "בקשת החיבור כבר קיימת",
+      "createFailed": "נכשל ביצירת בקשת חיבור",
+      "respondFailed": "נכשל בתגובה לבקשה",
+      "deleteFailed": "נכשל במחיקת החיבור"
+    }
   },
   "roleModel": {
     "addTitle": "הוסף דמות לחיקוי",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "הכינוי חייב להיות 3-30 תווים, אותיות, מספרים וקווים תחתונים בלבד",
+      "checkAvailability": "שגיאה בבדיקת זמינות הכינוי",
+      "validationError": "שגיאה באימות הכינוי"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "יש להתחבר כדי להוסיף שיטות קשר",
+      "added": "שיטת קשר נוספה",
+      "addFailed": "נכשל בהוספת שיטת קשר",
+      "updateFailed": "נכשל בעדכון שיטת קשר",
+      "removed": "שיטת קשר הוסרה",
+      "removeFailed": "נכשל בהסרת שיטת קשר",
+      "reorderFailed": "נכשל בסידור מחדש"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

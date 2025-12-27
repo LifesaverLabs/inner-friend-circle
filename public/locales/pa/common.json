@@ -533,7 +533,22 @@
     "unknownUser": "ਅਣਜਾਣ ਉਪਭੋਗਤਾ",
     "addedYouAs": "ਤੁਹਾਨੂੰ {{tier}} ਵਜੋਂ ਜੋੜਿਆ",
     "circleHidden": "ਸਰਕਲ ਲੁਕਿਆ ਹੋਇਆ",
-    "viaService": "{{service}} ਰਾਹੀਂ"
+    "viaService": "{{service}} ਰਾਹੀਂ",
+    "toasts": {
+      "requestSent": "ਕਨੈਕਸ਼ਨ ਬੇਨਤੀ ਭੇਜੀ ਗਈ!",
+      "confirmed": "ਕਨੈਕਸ਼ਨ ਪੁਸ਼ਟੀ! ਹੁਣ ਤੁਸੀਂ ਇੱਕ ਦੂਜੇ ਦੇ ਸੰਪਰਕ ਤਰੀਕੇ ਦੇਖ ਸਕਦੇ ਹੋ।",
+      "declined": "ਕਨੈਕਸ਼ਨ ਅਸਵੀਕਾਰ।",
+      "removed": "ਕਨੈਕਸ਼ਨ ਹਟਾਇਆ ਗਿਆ।"
+    },
+    "errors": {
+      "notAuthenticated": "ਪ੍ਰਮਾਣਿਤ ਨਹੀਂ",
+      "cannotAddSelf": "ਤੁਸੀਂ ਆਪਣੇ ਆਪ ਨੂੰ ਦੋਸਤ ਵਜੋਂ ਨਹੀਂ ਜੋੜ ਸਕਦੇ",
+      "alreadyExists": "ਕਨੈਕਸ਼ਨ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ",
+      "requestExists": "ਕਨੈਕਸ਼ਨ ਬੇਨਤੀ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ",
+      "createFailed": "ਕਨੈਕਸ਼ਨ ਬੇਨਤੀ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ",
+      "respondFailed": "ਬੇਨਤੀ ਦਾ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਅਸਫਲ",
+      "deleteFailed": "ਕਨੈਕਸ਼ਨ ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਫਲ"
+    }
   },
   "roleModel": {
     "addTitle": "ਰੋਲ ਮਾਡਲ ਜੋੜੋ",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "ਹੈਂਡਲ 3-30 ਅੱਖਰ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ, ਸਿਰਫ਼ ਅੱਖਰ, ਨੰਬਰ ਅਤੇ ਅੰਡਰਸਕੋਰ",
+      "checkAvailability": "ਹੈਂਡਲ ਉਪਲਬਧਤਾ ਦੀ ਜਾਂਚ ਵਿੱਚ ਗਲਤੀ",
+      "validationError": "ਹੈਂਡਲ ਪ੍ਰਮਾਣਿਕਤਾ ਵਿੱਚ ਗਲਤੀ"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "ਸੰਪਰਕ ਤਰੀਕੇ ਜੋੜਨ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ",
+      "added": "ਸੰਪਰਕ ਤਰੀਕਾ ਜੋੜਿਆ ਗਿਆ",
+      "addFailed": "ਸੰਪਰਕ ਤਰੀਕਾ ਜੋੜਨ ਵਿੱਚ ਅਸਫਲ",
+      "updateFailed": "ਸੰਪਰਕ ਤਰੀਕਾ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
+      "removed": "ਸੰਪਰਕ ਤਰੀਕਾ ਹਟਾਇਆ ਗਿਆ",
+      "removeFailed": "ਸੰਪਰਕ ਤਰੀਕਾ ਹਟਾਉਣ ਵਿੱਚ ਅਸਫਲ",
+      "reorderFailed": "ਮੁੜ ਕ੍ਰਮਬੱਧ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

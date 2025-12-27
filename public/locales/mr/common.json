@@ -533,7 +533,22 @@
     "unknownUser": "अज्ञात वापरकर्ता",
     "addedYouAs": "तुम्हाला {{tier}} म्हणून जोडले",
     "circleHidden": "वर्तुळ लपवले",
-    "viaService": "{{service}} द्वारे"
+    "viaService": "{{service}} द्वारे",
+    "toasts": {
+      "requestSent": "कनेक्शन विनंती पाठवली!",
+      "confirmed": "कनेक्शनची पुष्टी झाली! आता तुम्ही एकमेकांच्या संपर्क पद्धती पाहू शकता.",
+      "declined": "कनेक्शन नाकारले.",
+      "removed": "कनेक्शन काढले."
+    },
+    "errors": {
+      "notAuthenticated": "प्रमाणीकृत नाही",
+      "cannotAddSelf": "तुम्ही स्वतःला मित्र म्हणून जोडू शकत नाही",
+      "alreadyExists": "कनेक्शन आधीच अस्तित्वात आहे",
+      "requestExists": "कनेक्शन विनंती आधीच अस्तित्वात आहे",
+      "createFailed": "कनेक्शन विनंती तयार करण्यात अयशस्वी",
+      "respondFailed": "विनंतीला प्रतिसाद देण्यात अयशस्वी",
+      "deleteFailed": "कनेक्शन हटवण्यात अयशस्वी"
+    }
   },
   "roleModel": {
     "addTitle": "आदर्श व्यक्ती जोडा",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "हँडल 3-30 अक्षरे असावे, फक्त अक्षरे, अंक आणि अंडरस्कोर",
+      "checkAvailability": "हँडल उपलब्धता तपासण्यात त्रुटी",
+      "validationError": "हँडल प्रमाणीकरणात त्रुटी"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "संपर्क पद्धती जोडण्यासाठी साइन इन करा",
+      "added": "संपर्क पद्धत जोडली",
+      "addFailed": "संपर्क पद्धत जोडण्यात अयशस्वी",
+      "updateFailed": "संपर्क पद्धत अद्यतनित करण्यात अयशस्वी",
+      "removed": "संपर्क पद्धत काढली",
+      "removeFailed": "संपर्क पद्धत काढण्यात अयशस्वी",
+      "reorderFailed": "पुनर्क्रमित करण्यात अयशस्वी"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

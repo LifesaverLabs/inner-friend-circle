@@ -73,7 +73,7 @@ export function ProfileSettingsDialog({
 
     // Format check
     if (!/^[a-zA-Z0-9_]{3,30}$/.test(handle)) {
-      return 'Handle must be 3-30 characters, letters, numbers, and underscores only';
+      return t('profileSettings.errors.handleFormat');
     }
 
     // Check if handle is already taken by another user
@@ -85,11 +85,11 @@ export function ProfileSettingsDialog({
 
     if (error) {
       console.error('Error checking handle:', error);
-      return 'Error checking handle availability';
+      return t('profileSettings.errors.checkAvailability');
     }
 
     if (data && data.user_id !== userId) {
-      return 'This handle is already taken';
+      return t('profileSettings.errors.handleTaken');
     }
 
     // Check appropriateness using the database function
@@ -98,11 +98,11 @@ export function ProfileSettingsDialog({
 
     if (fnError) {
       console.error('Error checking handle appropriateness:', fnError);
-      return 'Error validating handle';
+      return t('profileSettings.errors.validationError');
     }
 
     if (!isAppropriate) {
-      return 'This handle contains inappropriate language';
+      return t('profileSettings.errors.inappropriate');
     }
 
     return null;

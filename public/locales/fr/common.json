@@ -533,7 +533,22 @@
     "unknownUser": "Utilisateur inconnu",
     "addedYouAs": "T'a ajouté comme {{tier}}",
     "circleHidden": "Cercle masqué",
-    "viaService": "via {{service}}"
+    "viaService": "via {{service}}",
+    "toasts": {
+      "requestSent": "Demande de connexion envoyée !",
+      "confirmed": "Connexion confirmée ! Vous pouvez maintenant voir vos méthodes de contact respectives.",
+      "declined": "Connexion refusée.",
+      "removed": "Connexion supprimée."
+    },
+    "errors": {
+      "notAuthenticated": "Non authentifié",
+      "cannotAddSelf": "Vous ne pouvez pas vous ajouter comme ami",
+      "alreadyExists": "La connexion existe déjà",
+      "requestExists": "La demande de connexion existe déjà",
+      "createFailed": "Échec de la création de la demande de connexion",
+      "respondFailed": "Échec de la réponse à la demande",
+      "deleteFailed": "Échec de la suppression de la connexion"
+    }
   },
   "roleModel": {
     "addTitle": "Ajouter un modèle",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "L'identifiant doit contenir 3-30 caractères, lettres, chiffres et underscores uniquement",
+      "checkAvailability": "Erreur lors de la vérification de la disponibilité",
+      "validationError": "Erreur lors de la validation de l'identifiant"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Veuillez vous connecter pour ajouter des méthodes de contact",
+      "added": "Méthode de contact ajoutée",
+      "addFailed": "Échec de l'ajout de la méthode de contact",
+      "updateFailed": "Échec de la mise à jour de la méthode de contact",
+      "removed": "Méthode de contact supprimée",
+      "removeFailed": "Échec de la suppression de la méthode de contact",
+      "reorderFailed": "Échec de la réorganisation"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

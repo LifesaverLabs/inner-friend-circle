@@ -533,7 +533,22 @@
     "unknownUser": "தெரியாத பயனர்",
     "addedYouAs": "உங்களை {{tier}} ஆக சேர்த்தார்",
     "circleHidden": "வட்டம் மறைக்கப்பட்டது",
-    "viaService": "{{service}} வழியாக"
+    "viaService": "{{service}} வழியாக",
+    "toasts": {
+      "requestSent": "இணைப்பு கோரிக்கை அனுப்பப்பட்டது!",
+      "confirmed": "இணைப்பு உறுதிப்படுத்தப்பட்டது! இப்போது நீங்கள் ஒருவருக்கொருவர் தொடர்பு முறைகளைப் பார்க்கலாம்.",
+      "declined": "இணைப்பு நிராகரிக்கப்பட்டது.",
+      "removed": "இணைப்பு நீக்கப்பட்டது."
+    },
+    "errors": {
+      "notAuthenticated": "அங்கீகரிக்கப்படவில்லை",
+      "cannotAddSelf": "உங்களை நண்பராகச் சேர்க்க முடியாது",
+      "alreadyExists": "இணைப்பு ஏற்கனவே உள்ளது",
+      "requestExists": "இணைப்பு கோரிக்கை ஏற்கனவே உள்ளது",
+      "createFailed": "இணைப்பு கோரிக்கையை உருவாக்க முடியவில்லை",
+      "respondFailed": "கோரிக்கைக்கு பதிலளிக்க முடியவில்லை",
+      "deleteFailed": "இணைப்பை நீக்க முடியவில்லை"
+    }
   },
   "roleModel": {
     "addTitle": "முன்மாதிரி சேர்க்கவும்",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "கைப்பிடி 3-30 எழுத்துகள் இருக்க வேண்டும், எழுத்துகள், எண்கள் மற்றும் அடிக்கோடுகள் மட்டுமே",
+      "checkAvailability": "கைப்பிடி கிடைக்குமா என்று சரிபார்க்கும் போது பிழை",
+      "validationError": "கைப்பிடி சரிபார்ப்பில் பிழை"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "தொடர்பு முறைகளைச் சேர்க்க உள்நுழையவும்",
+      "added": "தொடர்பு முறை சேர்க்கப்பட்டது",
+      "addFailed": "தொடர்பு முறையைச் சேர்க்க முடியவில்லை",
+      "updateFailed": "தொடர்பு முறையைப் புதுப்பிக்க முடியவில்லை",
+      "removed": "தொடர்பு முறை நீக்கப்பட்டது",
+      "removeFailed": "தொடர்பு முறையை நீக்க முடியவில்லை",
+      "reorderFailed": "மறுவரிசைப்படுத்த முடியவில்லை"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

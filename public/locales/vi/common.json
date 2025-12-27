@@ -533,7 +533,22 @@
     "unknownUser": "Người dùng không xác định",
     "addedYouAs": "Đã thêm bạn là {{tier}}",
     "circleHidden": "Vòng tròn đã ẩn",
-    "viaService": "qua {{service}}"
+    "viaService": "qua {{service}}",
+    "toasts": {
+      "requestSent": "Đã gửi yêu cầu kết nối!",
+      "confirmed": "Kết nối đã được xác nhận! Giờ các bạn có thể xem phương thức liên hệ của nhau.",
+      "declined": "Kết nối bị từ chối.",
+      "removed": "Kết nối đã bị xóa."
+    },
+    "errors": {
+      "notAuthenticated": "Chưa xác thực",
+      "cannotAddSelf": "Bạn không thể thêm chính mình làm bạn bè",
+      "alreadyExists": "Kết nối đã tồn tại",
+      "requestExists": "Yêu cầu kết nối đã tồn tại",
+      "createFailed": "Không thể tạo yêu cầu kết nối",
+      "respondFailed": "Không thể phản hồi yêu cầu",
+      "deleteFailed": "Không thể xóa kết nối"
+    }
   },
   "roleModel": {
     "addTitle": "Thêm hình mẫu",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "Tên người dùng phải từ 3-30 ký tự, chỉ bao gồm chữ cái, số và gạch dưới",
+      "checkAvailability": "Lỗi khi kiểm tra tính khả dụng của tên",
+      "validationError": "Lỗi khi xác thực tên người dùng"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Vui lòng đăng nhập để thêm phương thức liên hệ",
+      "added": "Đã thêm phương thức liên hệ",
+      "addFailed": "Không thể thêm phương thức liên hệ",
+      "updateFailed": "Không thể cập nhật phương thức liên hệ",
+      "removed": "Đã xóa phương thức liên hệ",
+      "removeFailed": "Không thể xóa phương thức liên hệ",
+      "reorderFailed": "Không thể sắp xếp lại"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

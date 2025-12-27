@@ -533,7 +533,22 @@
     "unknownUser": "未知用户",
     "addedYouAs": "将您添加为{{tier}}",
     "circleHidden": "圈子已隐藏",
-    "viaService": "通过{{service}}"
+    "viaService": "通过{{service}}",
+    "toasts": {
+      "requestSent": "连接请求已发送！",
+      "confirmed": "连接已确认！现在你们可以看到彼此的联系方式了。",
+      "declined": "连接已拒绝。",
+      "removed": "连接已删除。"
+    },
+    "errors": {
+      "notAuthenticated": "未认证",
+      "cannotAddSelf": "您不能将自己添加为好友",
+      "alreadyExists": "连接已存在",
+      "requestExists": "连接请求已存在",
+      "createFailed": "创建连接请求失败",
+      "respondFailed": "响应请求失败",
+      "deleteFailed": "删除连接失败"
+    }
   },
   "roleModel": {
     "addTitle": "添加榜样",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "用户名必须是3-30个字符，只能包含字母、数字和下划线",
+      "checkAvailability": "检查用户名可用性时出错",
+      "validationError": "验证用户名时出错"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "请登录以添加联系方式",
+      "added": "联系方式已添加",
+      "addFailed": "添加联系方式失败",
+      "updateFailed": "更新联系方式失败",
+      "removed": "联系方式已删除",
+      "removeFailed": "删除联系方式失败",
+      "reorderFailed": "重新排序失败"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

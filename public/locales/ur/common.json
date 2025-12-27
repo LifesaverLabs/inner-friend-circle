@@ -533,7 +533,22 @@
     "unknownUser": "نامعلوم صارف",
     "addedYouAs": "آپ کو {{tier}} کے طور پر شامل کیا",
     "circleHidden": "حلقہ چھپا ہوا ہے",
-    "viaService": "{{service}} کے ذریعے"
+    "viaService": "{{service}} کے ذریعے",
+    "toasts": {
+      "requestSent": "کنکشن کی درخواست بھیج دی گئی!",
+      "confirmed": "کنکشن کی تصدیق! اب آپ ایک دوسرے کے رابطے کے طریقے دیکھ سکتے ہیں۔",
+      "declined": "کنکشن مسترد۔",
+      "removed": "کنکشن ہٹا دیا گیا۔"
+    },
+    "errors": {
+      "notAuthenticated": "تصدیق نہیں ہوئی",
+      "cannotAddSelf": "آپ خود کو دوست کے طور پر شامل نہیں کر سکتے",
+      "alreadyExists": "کنکشن پہلے سے موجود ہے",
+      "requestExists": "کنکشن کی درخواست پہلے سے موجود ہے",
+      "createFailed": "کنکشن کی درخواست بنانے میں ناکام",
+      "respondFailed": "درخواست کا جواب دینے میں ناکام",
+      "deleteFailed": "کنکشن حذف کرنے میں ناکام"
+    }
   },
   "roleModel": {
     "addTitle": "رول ماڈل شامل کریں",
@@ -1010,7 +1025,10 @@
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
       "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "validatingHandle": "Error validating handle",
+      "handleFormat": "ہینڈل 3-30 حروف ہونا چاہیے، صرف حروف، اعداد اور انڈرسکور",
+      "checkAvailability": "ہینڈل کی دستیابی چیک کرنے میں خرابی",
+      "validationError": "ہینڈل کی توثیق میں خرابی"
     }
   },
   "editFriend": {
@@ -1140,7 +1158,14 @@
   },
   "contactMethods": {
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "رابطے کے طریقے شامل کرنے کے لیے سائن ان کریں",
+      "added": "رابطے کا طریقہ شامل کیا گیا",
+      "addFailed": "رابطے کا طریقہ شامل کرنے میں ناکام",
+      "updateFailed": "رابطے کا طریقہ اپڈیٹ کرنے میں ناکام",
+      "removed": "رابطے کا طریقہ ہٹا دیا گیا",
+      "removeFailed": "رابطے کا طریقہ ہٹانے میں ناکام",
+      "reorderFailed": "ترتیب بدلنے میں ناکام"
     },
     "title": "Contact Methods",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",

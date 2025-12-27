@@ -471,7 +471,22 @@
     "unknownUser": "Unknown User",
     "addedYouAs": "Added you as {{tier}}",
     "circleHidden": "Circle hidden",
-    "viaService": "via {{service}}"
+    "viaService": "via {{service}}",
+    "toasts": {
+      "requestSent": "Connection request sent!",
+      "confirmed": "Connection confirmed! You can now see each other's contact methods.",
+      "declined": "Connection declined.",
+      "removed": "Connection removed."
+    },
+    "errors": {
+      "notAuthenticated": "Not authenticated",
+      "cannotAddSelf": "You can't add yourself as a friend",
+      "alreadyExists": "Connection already exists",
+      "requestExists": "Connection request already exists",
+      "createFailed": "Failed to create connection request",
+      "respondFailed": "Failed to respond to request",
+      "deleteFailed": "Failed to delete connection"
+    }
   },
   "addLinkedFriend": {
     "title": "Add Linked Friend to {{tier}}",
@@ -1244,8 +1259,9 @@
     "errors": {
       "inappropriate": "This handle contains inappropriate language",
       "handleTaken": "This handle is already taken",
-      "checkingHandle": "Error checking handle availability",
-      "validatingHandle": "Error validating handle"
+      "handleFormat": "Handle must be 3-30 characters, letters, numbers, and underscores only",
+      "checkAvailability": "Error checking handle availability",
+      "validationError": "Error validating handle"
     }
   },
   "editFriend": {
@@ -1464,7 +1480,14 @@
       }
     },
     "toasts": {
-      "enterInfo": "Please enter contact information"
+      "enterInfo": "Please enter contact information",
+      "signInRequired": "Please sign in to add contact methods",
+      "added": "Contact method added",
+      "addFailed": "Failed to add contact method",
+      "updateFailed": "Failed to update contact method",
+      "removed": "Contact method removed",
+      "removeFailed": "Failed to remove contact method",
+      "reorderFailed": "Failed to reorder"
     }
   },
   "dev": {
