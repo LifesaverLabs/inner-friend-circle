@@ -516,6 +516,48 @@ export type Database = {
           },
         ]
       }
+      pending_invitations: {
+        Row: {
+          circle_tier: Database["public"]["Enums"]["circle_tier"]
+          created_at: string
+          friend_name: string
+          id: string
+          invitation_sent_at: string | null
+          invitee_email: string | null
+          invitee_phone: string | null
+          inviter_id: string
+          matched_at: string | null
+          matched_user_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          circle_tier: Database["public"]["Enums"]["circle_tier"]
+          created_at?: string
+          friend_name: string
+          id?: string
+          invitation_sent_at?: string | null
+          invitee_email?: string | null
+          invitee_phone?: string | null
+          inviter_id: string
+          matched_at?: string | null
+          matched_user_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          circle_tier?: Database["public"]["Enums"]["circle_tier"]
+          created_at?: string
+          friend_name?: string
+          id?: string
+          invitation_sent_at?: string | null
+          invitee_email?: string | null
+          invitee_phone?: string | null
+          inviter_id?: string
+          matched_at?: string | null
+          matched_user_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       post_interactions: {
         Row: {
           content: string | null
@@ -693,6 +735,10 @@ export type Database = {
         Returns: boolean
       }
       is_handle_appropriate: { Args: { handle: string }; Returns: boolean }
+      match_pending_invitations_for_user: {
+        Args: { new_user_id: string }
+        Returns: number
+      }
     }
     Enums: {
       admin_role_type: "super_admin" | "dispatch_verifier"

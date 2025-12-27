@@ -82,6 +82,20 @@ export function useContactMethods(userId?: string) {
       const newMethod = { ...data, service_type: data.service_type as ServiceType };
       setContactMethods(prev => [...prev, newMethod]);
       toast.success(t('contactMethods.toasts.added'));
+      
+      // Trigger auto-matching for pending invitations
+      // This runs in the background and doesn't block the UI
+      if (userId) {
+        supabase.rpc('match_pending_invitations_for_user', { new_user_id: userId })
+          .then(({ data: matchCount, error: matchError }) => {
+            if (matchError) {
+              console.error('Error matching pending invitations:', matchError);
+            } else if (matchCount && matchCount > 0) {
+              toast.success(t('connections.toasts.autoMatched', { count: matchCount }));
+            }
+          });
+      }
+      
       return newMethod;
     } catch (error: any) {
       console.error('Error adding contact method:', error);

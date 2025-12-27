@@ -477,7 +477,10 @@
       "requestSentTo": "Connection request sent to {{name}}!",
       "confirmed": "Connection confirmed! You can now see each other's posts.",
       "declined": "Connection declined.",
-      "removed": "Connection removed."
+      "removed": "Connection removed.",
+      "invitationSent": "Invitation email sent to {{name}}! They'll be automatically connected when they join.",
+      "invitationSaved": "Saved for auto-connection when they join.",
+      "autoMatched": "{{count}} friend(s) found you and sent connection requests!"
     },
     "errors": {
       "notAuthenticated": "Not authenticated",
