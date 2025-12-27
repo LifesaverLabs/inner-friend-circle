@@ -160,11 +160,13 @@ describe('ImportPreview Component', () => {
       duplicates: [
         {
           imported: defaultContacts[1],
+          existingFriendId: 'friend-1',
           existingFriendName: 'Jane S.',
           matchedBy: 'phone',
         },
         {
           imported: defaultContacts[2],
+          existingFriendId: 'friend-2',
           existingFriendName: 'Robert Wilson',
           matchedBy: 'email',
         },
@@ -313,8 +315,9 @@ describe('ImportPreview Component', () => {
     it('should disable import button when no contacts to import', () => {
       const emptyResult: DeduplicationResult = {
         unique: [],
-        duplicates: defaultContacts.map((c) => ({
+        duplicates: defaultContacts.map((c, i) => ({
           imported: c,
+          existingFriendId: `friend-${i}`,
           existingFriendName: 'Existing',
           matchedBy: 'phone' as const,
         })),
@@ -412,8 +415,9 @@ describe('ImportPreview Component', () => {
 
       const manyDupes: DeduplicationResult = {
         unique: [],
-        duplicates: manyContacts.map((c) => ({
+        duplicates: manyContacts.map((c, i) => ({
           imported: c,
+          existingFriendId: `friend-${i}`,
           existingFriendName: 'Existing',
           matchedBy: 'email' as const,
         })),

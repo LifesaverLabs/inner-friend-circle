@@ -262,7 +262,6 @@ describe('CsvImporter Component', () => {
         contacts: [],
         headers: ['Header1'],
         detectedMapping: {},
-        defaultCountry: 'US',
       });
 
       render(
@@ -314,7 +313,6 @@ describe('CsvImporter Component', () => {
           phoneColumn: 'Phone',
           emailColumn: 'Email',
         },
-        defaultCountry: 'US',
       });
 
       render(

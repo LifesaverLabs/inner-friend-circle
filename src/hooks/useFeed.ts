@@ -247,10 +247,18 @@ export function useFeed({ userId, friends }: UseFeedOptions): UseFeedReturn {
   const createPostFn = useCallback(async (
     postData: Omit<FeedPost, 'id' | 'createdAt' | 'interactions'>
   ): Promise<FeedPost | null> => {
+    // Filter visibility to only include valid CircleTier values (core, inner, outer)
+    // since the database only supports these tiers for post visibility
+    const validCircleTiers = ['core', 'inner', 'outer'] as const;
+    const filteredVisibility = postData.visibility.filter(
+      (tier): tier is typeof validCircleTiers[number] => 
+        validCircleTiers.includes(tier as typeof validCircleTiers[number])
+    );
+    
     const result = await createDbPost({
       content: postData.content,
       contentType: postData.contentType,
-      visibility: postData.visibility,
+      visibility: filteredVisibility,
       mediaUrl: postData.mediaUrl,
       scheduledAt: postData.scheduledAt,
       locationName: postData.location?.name,

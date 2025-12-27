@@ -335,12 +335,13 @@ export function getAcquaintedCapacity(existingFriends: Friend[]): {
 /**
  * Validate a phone number and return normalized E.164 format.
  */
-export function validateAndNormalizePhone(phone: string): {
+export function validateAndNormalizePhone(phone: string, defaultCountry?: CountryCode): {
   isValid: boolean;
   normalized: string | null;
 } {
-  const isValid = validatePhone(phone);
-  const normalized = normalizePhone(phone);
+  const country = defaultCountry || detectUserCountry();
+  const isValid = validatePhone(phone, country);
+  const normalized = normalizePhone(phone, country);
 
   return {
     isValid,
