@@ -34,6 +34,19 @@
       "globalReach": {
         "title": "23 Languages",
         "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+      },
+      "title": "기능",
+      "organize": {
+        "title": "친구 정리",
+        "description": "친한 친구들을 관계 유형과 친밀도에 따라 티어로 분류하세요"
+      },
+      "remind": {
+        "title": "연결 상태 유지",
+        "description": "너무 오래 연락하지 않으면 알림을 받아 관계를 유지하세요"
+      },
+      "emergency": {
+        "title": "긴급 네트워크",
+        "description": "긴급 상황에서 연락할 사람들로 신뢰할 수 있는 서클을 구축하세요"
       }
     },
     "mission": {
@@ -41,7 +54,22 @@
       "description": "여러분이 저희 사이트를 떠나 가장 중요한 사람들과 진정한 순간을 나눌 때 우리가 이깁니다. 거리가 떨어져 있을 때, 영상 통화를 시작하는 데 도움을 드리겠습니다. 하지만 직접 만나는 것만큼 좋은 것은 없습니다.",
       "inspiration": "우리의 영감: Dentyne Ice \"대면 시간을 만드세요\""
     },
-    "quote": "\"모든 관계가 대칭인 것은 아닙니다 — 그리고 그것은 완전히 자연스러운 것입니다. 목표는 완벽한 균형이 아니라 의도적인 존재입니다.\""
+    "quote": "\"모든 관계가 대칭인 것은 아닙니다 — 그리고 그것은 완전히 자연스러운 것입니다. 목표는 완벽한 균형이 아니라 의도적인 존재입니다.\"",
+    "hero": {
+      "title": "진정으로 중요한 사람들과 연결하세요",
+      "subtitle": "InnerFriend는 가장 가까운 관계를 관리하고 소중한 사람들과 연결 상태를 유지하도록 도와줍니다",
+      "cta": "시작하기",
+      "learnMore": "더 알아보기"
+    },
+    "privacy": {
+      "title": "개인정보 우선",
+      "description": "귀하의 데이터는 귀하의 것입니다. 소셜 그래프에 대한 완전한 통제권을 유지하세요."
+    },
+    "cta": {
+      "title": "여정을 시작할 준비가 되셨나요?",
+      "subtitle": "오늘 InnerFriend와 함께 의미 있는 관계를 구축하기 시작하세요",
+      "button": "무료로 시작하기"
+    }
   },
   "nav": {
     "home": "홈",
@@ -53,18 +81,8 @@
     "back": "뒤로"
   },
   "auth": {
-    "signIn": {
-      "title": "다시 오신 것을 환영합니다",
-      "subtitle": "서클에 액세스하려면 로그인하세요",
-      "button": "로그인",
-      "submitting": "로그인 중..."
-    },
-    "signUp": {
-      "title": "계정 만들기",
-      "subtitle": "가장 가까운 우정 가꾸기 시작",
-      "button": "계정 만들기",
-      "submitting": "계정 생성 중..."
-    },
+    "signIn": "로그인",
+    "signUp": "가입하기",
     "form": {
       "displayName": "표시 이름",
       "displayNameOptional": "표시 이름 (선택사항)",
@@ -100,6 +118,26 @@
       "and": "및",
       "termsOfService": "서비스 약관",
       "dataProcessingNote": "서비스를 제공하기 위해 귀하의 데이터를 처리합니다. 언제든지 데이터를 내보내거나 삭제할 수 있습니다."
+    },
+    "signOut": "로그아웃",
+    "email": "이메일",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "resetPassword": "비밀번호 재설정",
+    "noAccount": "계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "continueWith": "{{provider}}로 계속하기",
+    "orContinueWith": "또는 다음으로 계속",
+    "signingIn": "로그인 중...",
+    "signingUp": "가입 중...",
+    "errors": {
+      "invalidEmail": "유효한 이메일 주소를 입력하세요",
+      "invalidPassword": "비밀번호는 최소 8자 이상이어야 합니다",
+      "passwordMismatch": "비밀번호가 일치하지 않습니다",
+      "emailInUse": "이 이메일은 이미 사용 중입니다",
+      "invalidCredentials": "잘못된 이메일 또는 비밀번호입니다",
+      "generic": "오류가 발생했습니다. 다시 시도하세요"
     }
   },
   "notFound": {
@@ -175,15 +213,25 @@
     "import": "가져오기",
     "remove": "제거",
     "accept": "수락",
-    "refresh": "Refresh",
+    "refresh": "새로고침",
     "retry": "Retry",
     "share": "Share",
     "sharing": "Sharing...",
-    "selectAll": "Select All",
-    "clear": "Clear",
+    "selectAll": "전체 선택",
+    "clear": "지우기",
     "copy": "Copy",
     "print": "Print",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "finish": "완료",
+    "skip": "건너뛰기",
+    "sort": "정렬",
+    "loading": "로딩 중...",
+    "submit": "제출",
+    "continue": "계속",
+    "apply": "적용",
+    "deselectAll": "전체 선택 해제",
+    "expandAll": "전체 펼치기",
+    "collapseAll": "전체 접기"
   },
   "friend": {
     "addFriend": "친구 추가",
@@ -505,7 +553,27 @@
     "acquaintedHint": "Friends are reclassified here through lack of contact over time",
     "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
     "nayborsHint": "Introduce yourself to your naybors and add them here",
-    "addToCircleHint": "Add someone to your closest circle"
+    "addToCircleHint": "Add someone to your closest circle",
+    "noFriends": {
+      "title": "아직 친구가 없습니다",
+      "description": "첫 번째 친구를 추가하여 시작하세요",
+      "action": "친구 추가"
+    },
+    "noResults": {
+      "title": "결과 없음",
+      "description": "검색 조건에 일치하는 항목이 없습니다",
+      "action": "필터 지우기"
+    },
+    "noNotifications": {
+      "title": "알림 없음",
+      "description": "모두 확인했습니다!",
+      "action": "새로고침"
+    },
+    "noActivity": {
+      "title": "활동 없음",
+      "description": "최근 활동이 여기에 표시됩니다",
+      "action": "시작하기"
+    }
   },
   "labels": {
     "name": "이름",
@@ -579,7 +647,10 @@
     "capacitySummary": "{{named}}명 이름 지정 + {{reserved}}개 예약됨 + {{new}}개 신규 = {{total}}/{{limit}} {{tier}}",
     "addGroup": "그룹 추가",
     "spotsCount_plural": "{{count}} Reserved Spots",
-    "spotsLabel_plural": "reserved spots"
+    "spotsLabel_plural": "reserved spots",
+    "title": "예약된 섹션",
+    "description": "이 기능은 프리미엄 사용자를 위해 예약되어 있습니다",
+    "upgrade": "잠금 해제를 위해 업그레이드"
   },
   "addFriend": {
     "addNaybor": "이웃 추가",
@@ -601,7 +672,7 @@
     "addNayborPhoneButton": "비상 연락처 정보 추가"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
+    "title": "대시보드",
     "subtitle": "Curate and tend to your closest relationships",
     "loading": "Loading your circles...",
     "tend": "Tend",
@@ -622,11 +693,26 @@
       "skippedDuplicates": "Skipped {{count}} duplicate",
       "skippedDuplicates_plural": "Skipped {{count}} duplicates",
       "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
+    },
+    "welcome": "안녕하세요, {{name}}님",
+    "overview": "개요",
+    "recentActivity": "최근 활동",
+    "quickActions": "빠른 작업",
+    "stats": {
+      "totalFriends": "총 친구",
+      "innerCircle": "내부 서클",
+      "needsAttention": "관심 필요",
+      "lastContact": "마지막 연락"
+    },
+    "widgets": {
+      "upcomingBirthdays": "다가오는 생일",
+      "recentContacts": "최근 연락",
+      "suggestedActions": "추천 작업"
     }
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
+    "title": "미션",
+    "description": "미션은 친구들과 연결 상태를 유지하도록 도와줍니다",
     "learnMore": "Learn more...",
     "showLess": "Show less",
     "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
@@ -645,6 +731,21 @@
         "title": "Pull Closer",
         "description": "Move meaningful connections into tighter orbits"
       }
+    },
+    "subtitle": "중요한 관계와 연결 상태를 유지하세요",
+    "complete": "미션 완료",
+    "skip": "미션 건너뛰기",
+    "remind": "나중에 알림",
+    "empty": {
+      "title": "활성 미션 없음",
+      "description": "모두 완료했습니다! 새로운 미션은 곧 제공됩니다."
+    },
+    "types": {
+      "call": "전화 미션",
+      "message": "메시지 미션",
+      "meetup": "만남 미션",
+      "birthday": "생일 미션",
+      "checkin": "체크인 미션"
     }
   },
   "tierSection": {
@@ -658,7 +759,7 @@
     "keysSharedCount": "열쇠 ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
+    "title": "친구 가꾸기",
     "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
     "periods": {
       "core": "이번 주",
@@ -686,10 +787,48 @@
       "rememberReachOut": "Remember to reach out soon! 💛",
       "friendsWaiting": "{{count}} friend waiting to hear from you",
       "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
-    }
+    },
+    "subtitle": "관계는 정원과 같습니다 - 정기적인 관리가 필요합니다",
+    "description": "연락할 시간이 된 친구들",
+    "actions": {
+      "markContacted": "연락 완료로 표시",
+      "snooze": "다시 알림",
+      "viewProfile": "프로필 보기"
+    },
+    "filters": {
+      "all": "전체",
+      "overdue": "기한 지남",
+      "upcoming": "예정",
+      "byTier": "티어별"
+    },
+    "frequency": {
+      "daily": "매일",
+      "weekly": "매주",
+      "biweekly": "격주",
+      "monthly": "매월",
+      "quarterly": "분기별",
+      "yearly": "매년"
+    },
+    "status": {
+      "onTrack": "정상",
+      "dueSoon": "곧 연락 필요",
+      "overdue": "기한 지남",
+      "needsAttention": "관심 필요"
+    },
+    "reminderTypes": {
+      "call": "전화",
+      "text": "문자",
+      "visit": "방문",
+      "email": "이메일"
+    },
+    "lastContact": "마지막 연락",
+    "contactDue": "연락 예정",
+    "noContactYet": "아직 연락 없음",
+    "daysOverdue": "{{count}}일 지남",
+    "dueIn": "{{count}}일 후 예정"
   },
   "nayborSOS": {
-    "title": "Naybor SOS™",
+    "title": "NayborSOS",
     "steps": {
       "category": "What kind of help do you need?",
       "contacts": "Choose naybors to contact"
@@ -716,7 +855,33 @@
     "quick": "빠른",
     "noPhone": "전화 없음",
     "tapSOSForMore": "더 많은 옵션과 모든 이웃을 보려면 SOS를 탭하세요",
-    "criticalUrgency": "긴급 상황"
+    "criticalUrgency": "긴급 상황",
+    "subtitle": "가장 중요할 때 신뢰할 수 있는 서클에 도달하세요",
+    "description": "긴급 네트워크는 위기 상황에서 도움을 줄 수 있는 신뢰할 수 있는 연락처입니다",
+    "activate": "SOS 활성화",
+    "deactivate": "SOS 비활성화",
+    "status": {
+      "active": "SOS 활성화됨",
+      "inactive": "SOS 비활성화됨",
+      "pending": "대기 중..."
+    },
+    "contacts": {
+      "title": "긴급 연락처",
+      "add": "긴급 연락처 추가",
+      "remove": "긴급 연락처에서 제거",
+      "empty": "아직 긴급 연락처가 설정되지 않았습니다"
+    },
+    "message": {
+      "title": "긴급 메시지",
+      "placeholder": "네트워크에 전송될 메시지를 입력하세요",
+      "default": "도움이 필요합니다. 가능하면 연락해주세요."
+    },
+    "settings": {
+      "title": "SOS 설정",
+      "autoLocation": "자동으로 위치 공유",
+      "confirmActivation": "활성화 전 확인",
+      "cooldown": "활성화 간 대기 시간"
+    }
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -730,7 +895,16 @@
     "toasts": {
       "connecting": "Connecting via {{service}}",
       "openService": "Open {{service}} to connect"
-    }
+    },
+    "call": "전화하기",
+    "video": "영상통화",
+    "message": "메시지",
+    "email": "이메일",
+    "directions": "길찾기",
+    "schedule": "일정 예약",
+    "addNote": "메모 추가",
+    "recordCall": "통화 기록",
+    "shareContact": "연락처 공유"
   },
   "onboarding": {
     "steps": {
@@ -745,7 +919,11 @@
       "complete": {
         "title": "All Set!",
         "description": "Your friends can now start or schedule kalls with you."
-      }
+      },
+      "profile": "프로필 만들기",
+      "import": "연락처 가져오기",
+      "categorize": "친구 분류",
+      "preferences": "환경설정"
     },
     "skipForNow": "Skip for now",
     "getStarted": "Get Started",
@@ -782,6 +960,24 @@
       "skype": "Skype 이름 (설정 → 계정에서 확인)",
       "webex": "개인 룸 링크 또는 Webex 이메일",
       "slack": "업무용 이메일 (양측 모두 같은 워크스페이스에 있어야 함)"
+    },
+    "welcome": {
+      "title": "InnerFriend에 오신 것을 환영합니다",
+      "subtitle": "의미 있는 관계 관리를 시작해봅시다",
+      "description": "귀하의 내부 서클 경험을 맞춤화하기 위해 몇 가지 질문을 드리겠습니다"
+    },
+    "import": {
+      "title": "연락처 가져오기",
+      "description": "기존 연락처를 가져와서 시작하세요",
+      "fromPhone": "휴대폰 연락처에서",
+      "fromGoogle": "Google 연락처에서",
+      "manual": "수동으로 추가",
+      "skip": "지금은 건너뛰기"
+    },
+    "complete": {
+      "title": "모든 설정 완료!",
+      "subtitle": "내부 서클 관리를 시작할 준비가 되었습니다",
+      "action": "대시보드로 이동"
     }
   },
   "keysShared": {
@@ -943,7 +1139,33 @@
           "description": "법적으로 엄격하게 필요한 경우에만 최후의 수단으로 신중하게 고려한 후 문을 부숴주세요."
         }
       }
-    }
+    },
+    "subtitle": "당신의 신뢰 서클에 대한 접근 관리",
+    "description": "긴급 상황에서 당신의 내부 서클에 접근할 수 있는 사람들을 관리하세요",
+    "grant": "열쇠 부여",
+    "revoke": "열쇠 철회",
+    "manage": "공유된 열쇠 관리",
+    "permissions": {
+      "view": "연락처 보기",
+      "contact": "긴급 상황에서 연락 가능",
+      "location": "위치 접근"
+    },
+    "doorKeyTree": {
+      "title": "문 열쇠 트리",
+      "description": "긴급 상황에서 당신의 내부 서클에 접근할 수 있는 신뢰할 수 있는 사람들",
+      "empty": "아직 열쇠가 공유되지 않음"
+    },
+    "shareRequest": {
+      "title": "열쇠 요청",
+      "pending": "대기 중인 요청",
+      "accept": "수락",
+      "decline": "거절"
+    },
+    "sharedWithYou": "당신과 공유된 열쇠",
+    "sharedByYou": "당신이 공유한 열쇠",
+    "noSharedKeys": "아직 공유된 열쇠가 없습니다",
+    "expiresAt": "만료: {{date}}",
+    "neverExpires": "만료 없음"
   },
   "legal": {
     "privacyPolicy": "개인정보 처리방침",
@@ -975,11 +1197,11 @@
     "shareDescription": "Share a link with your parasocial followers",
     "noContentShared": "No content shared yet",
     "noContentHint": "Share links to engage with your followers",
-    "title": "Title",
+    "title": "크리에이터 팔로우",
     "titlePlaceholder": "What are you sharing?",
     "url": "URL",
     "urlPlaceholder": "https://...",
-    "description": "Description",
+    "description": "좋아하는 크리에이터를 팔로우하고 그들의 업데이트를 받으세요",
     "descriptionPlaceholder": "Brief description (optional)",
     "deleteTitle": "Delete this share?",
     "deleteDescription": "This will remove the link from your followers feeds.",
@@ -991,17 +1213,23 @@
       "invalidUrl": "Please enter a valid URL",
       "sharedContent": "Content shared with your followers!",
       "deleted": "Share deleted"
-    }
+    },
+    "subtitle": "좋아하는 크리에이터와 연결",
+    "follow": "팔로우",
+    "unfollow": "언팔로우",
+    "following": "팔로잉",
+    "followers": "팔로워",
+    "noCreators": "크리에이터를 찾을 수 없습니다"
   },
   "profileSettings": {
-    "title": "Profile Settings",
+    "title": "프로필 설정",
     "description": "Manage your profile and contact preferences",
     "tabs": {
       "profile": "Profile",
       "contact": "Contact",
       "creator": "Creator"
     },
-    "displayName": "Display Name",
+    "displayName": "표시 이름",
     "displayNamePlaceholder": "Your name",
     "handle": "Handle",
     "handlePlaceholder": "your_handle",
@@ -1029,17 +1257,51 @@
       "handleFormat": "핸들은 3-30자여야 하며, 문자, 숫자, 밑줄만 사용 가능합니다",
       "checkAvailability": "핸들 가용성 확인 중 오류",
       "validationError": "핸들 유효성 검사 중 오류"
+    },
+    "personalInfo": "개인 정보",
+    "bio": "자기소개",
+    "avatar": "아바타",
+    "changeAvatar": "아바타 변경",
+    "removeAvatar": "아바타 제거",
+    "privacy": {
+      "title": "개인정보 설정",
+      "profileVisibility": "프로필 공개 설정",
+      "showOnline": "온라인 상태 표시",
+      "showLastSeen": "마지막 접속 표시"
+    },
+    "notifications": {
+      "title": "알림 설정",
+      "email": "이메일 알림",
+      "push": "푸시 알림",
+      "sms": "SMS 알림"
+    },
+    "account": {
+      "title": "계정 설정",
+      "changePassword": "비밀번호 변경",
+      "twoFactor": "2단계 인증",
+      "sessions": "활성 세션",
+      "deleteAccount": "계정 삭제"
     }
   },
   "editFriend": {
-    "title": "Edit Contact",
+    "title": "친구 편집",
     "description": "Update contact information for {{name}}",
     "namePlaceholder": "Friend s name",
     "emailPlaceholder": "friend@example.com",
     "preferredContactMethod": "Preferred Contact Method",
     "selectContactMethod": "Choose how to reach them",
     "notesPlaceholder": "Any notes about this person...",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+    "basicInfo": "기본 정보",
+    "name": "이름",
+    "nickname": "별명",
+    "birthday": "생일",
+    "notes": "메모",
+    "tier": "티어",
+    "contactFrequency": "연락 빈도",
+    "save": "변경사항 저장",
+    "delete": "친구 삭제",
+    "confirmDelete": "이 친구를 삭제하시겠습니까?"
   },
   "post": {
     "voiceNote": "Voice Note",
@@ -1079,7 +1341,21 @@
     "currentlySelected": "Currently selected",
     "dontShowMonth": "Don't show for 1 month",
     "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "connectingVia": "Connecting via {{method}}",
+    "title": "게시물 만들기",
+    "placeholder": "무슨 생각을 하고 계세요?",
+    "submit": "게시",
+    "visibility": {
+      "public": "공개",
+      "friends": "친구만",
+      "private": "나만 보기"
+    },
+    "actions": {
+      "like": "좋아요",
+      "comment": "댓글",
+      "share": "공유",
+      "save": "저장"
+    }
   },
   "compose": {
     "title": "Share with your circles",
@@ -1140,7 +1416,7 @@
     }
   },
   "followCreator": {
-    "title": "Follow a Creator",
+    "title": "크리에이터 팔로우",
     "description": "Search for verified creators to follow and see their content in your feed.",
     "searchLabel": "Search by name or handle",
     "searchPlaceholder": "@creator_handle or Creator Name",
@@ -1154,7 +1430,11 @@
       "searching": "An error occurred while searching.",
       "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
       "noCreatorsFound": "No creators found matching that search."
-    }
+    },
+    "search": "크리에이터 검색",
+    "suggested": "추천 크리에이터",
+    "categories": "카테고리",
+    "trending": "인기 크리에이터"
   },
   "contactMethods": {
     "toasts": {
@@ -1167,7 +1447,7 @@
       "removeFailed": "연락 방법 제거 실패",
       "reorderFailed": "재정렬 실패"
     },
-    "title": "Contact Methods",
+    "title": "연락 방법",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",
     "addButton": "Add Contact Method",
     "addButtonCompact": "Add",
@@ -1257,7 +1537,24 @@
         "example": "yourname@company.com",
         "tip": "Slack 통화는 같은 워크스페이스 멤버 간에만 작동합니다."
       }
-    }
+    },
+    "phone": "전화",
+    "email": "이메일",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "signal": "Signal",
+    "messenger": "Messenger",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "discord": "Discord",
+    "slack": "Slack",
+    "other": "기타",
+    "preferred": "선호하는 방법",
+    "add": "연락 방법 추가",
+    "primary": "기본",
+    "secondary": "보조"
   },
   "dev": {
     "label": "Dev",
@@ -1288,11 +1585,17 @@
       "sessions": "Sessions persist across page reloads",
       "clearApp": "Use \"Clear App Data\" to reset friend lists",
       "forceLogout": "Use \"Force Logout\" to fully clear auth state"
-    }
+    },
+    "title": "개발자 설정",
+    "apiKeys": "API 키",
+    "webhooks": "웹훅",
+    "logs": "개발자 로그",
+    "testing": "테스트 모드",
+    "documentation": "API 문서"
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
+    "title": "연결된 친구 추가",
+    "description": "아래 코드를 공유하거나 친구의 코드를 스캔하세요",
     "findBy": "Find by",
     "enterUsernameHint": "Enter their username exactly as they set it",
     "enterContactHint": "Enter their {{type}} exactly as they registered it",
@@ -1306,7 +1609,7 @@
     "showCircleLevel": "Show circle level",
     "circleVisibleHint": "They'll see you added them as {{tier}}",
     "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
+    "sendRequest": "연결 요청 보내기",
     "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
     "serviceTypes": {
       "phone": "Phone Number",
@@ -1316,7 +1619,16 @@
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
       "facetime": "FaceTime"
-    }
+    },
+    "subtitle": "이미 InnerFriend를 사용하는 친구와 연결",
+    "searchPlaceholder": "이름 또는 이메일로 검색",
+    "noResults": "사용자를 찾을 수 없습니다",
+    "pending": "요청 대기 중",
+    "connected": "연결됨",
+    "yourCode": "나의 코드",
+    "scanCode": "코드 스캔",
+    "enterCode": "코드 입력",
+    "shareCode": "코드 공유"
   },
   "feedPost": {
     "likeCount": "좋아요 {{count}}개",
@@ -1419,6 +1731,44 @@
       "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
       "parentalRequired": "Parental Consent Required",
       "verify": "Verify Age"
+    },
+    "title": "데이터 개인정보",
+    "subtitle": "개인 데이터의 수집, 사용 및 보호 방법에 대해 알아보세요",
+    "consent": {
+      "title": "동의 관리",
+      "description": "데이터 처리 동의 관리",
+      "analytics": "분석 쿠키",
+      "marketing": "마케팅 커뮤니케이션",
+      "thirdParty": "제3자 공유",
+      "withdraw": "동의 철회"
+    },
+    "rights": {
+      "title": "귀하의 권리",
+      "access": "데이터 접근",
+      "rectification": "데이터 수정",
+      "erasure": "데이터 삭제",
+      "portability": "데이터 이식성",
+      "restriction": "처리 제한",
+      "objection": "처리 반대"
+    },
+    "export": {
+      "title": "데이터 내보내기",
+      "description": "모든 개인 데이터의 사본 다운로드",
+      "button": "데이터 내보내기",
+      "processing": "내보내기 준비 중...",
+      "ready": "데이터 다운로드 준비 완료"
+    },
+    "delete": {
+      "title": "계정 삭제",
+      "description": "계정과 모든 관련 데이터를 영구적으로 삭제합니다. 이 작업은 취소할 수 없습니다.",
+      "button": "계정 삭제",
+      "confirm": "삭제를 확인하려면 '삭제'를 입력하세요",
+      "warning": "이 작업은 되돌릴 수 없습니다"
+    },
+    "policy": {
+      "title": "개인정보 처리방침",
+      "lastUpdated": "마지막 업데이트",
+      "readFull": "전체 정책 읽기"
     }
   },
   "dispatch": {
@@ -1609,6 +1959,18 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "required": "이 필드는 필수입니다",
+      "invalidEmail": "유효한 이메일 주소를 입력하세요",
+      "invalidPhone": "유효한 전화번호를 입력하세요",
+      "minLength": "최소 {{min}}자 이상이어야 합니다",
+      "maxLength": "최대 {{max}}자를 초과할 수 없습니다",
+      "passwordMatch": "비밀번호가 일치해야 합니다",
+      "invalidUrl": "유효한 URL을 입력하세요",
+      "invalidDate": "유효한 날짜를 입력하세요",
+      "futureDate": "날짜는 미래여야 합니다",
+      "pastDate": "날짜는 과거여야 합니다"
     }
   },
   "dataImport": {
@@ -1702,6 +2064,33 @@
         "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
         "processing": "Processing..."
       }
+    },
+    "title": "관리자 패널",
+    "dashboard": "관리자 대시보드",
+    "users": {
+      "title": "사용자 관리",
+      "list": "모든 사용자",
+      "active": "활성 사용자",
+      "suspended": "정지된 사용자",
+      "invite": "사용자 초대"
+    },
+    "settings": {
+      "title": "시스템 설정",
+      "general": "일반 설정",
+      "security": "보안 설정",
+      "notifications": "알림 설정"
+    },
+    "logs": {
+      "title": "시스템 로그",
+      "audit": "감사 로그",
+      "error": "오류 로그",
+      "access": "접근 로그"
+    },
+    "analytics": {
+      "title": "분석",
+      "overview": "개요",
+      "users": "사용자 분석",
+      "engagement": "참여 지표"
     }
   },
   "tierFeed": {
@@ -1775,5 +2164,97 @@
     "sharedPhoto": "공유된 사진",
     "video": "동영상",
     "sharedVideo": "공유된 동영상"
+  },
+  "privacy": {
+    "title": "개인정보 처리방침",
+    "lastUpdated": "마지막 업데이트: {{date}}",
+    "sections": {
+      "collection": {
+        "title": "정보 수집",
+        "description": "당사가 수집하는 정보와 수집 방법에 대해 설명합니다"
+      },
+      "usage": {
+        "title": "정보 사용",
+        "description": "수집된 정보의 사용 방법에 대해 설명합니다"
+      },
+      "sharing": {
+        "title": "정보 공유",
+        "description": "귀하의 정보를 공유하는 경우와 대상에 대해 설명합니다"
+      },
+      "security": {
+        "title": "데이터 보안",
+        "description": "귀하의 정보를 보호하는 방법에 대해 설명합니다"
+      },
+      "rights": {
+        "title": "귀하의 권리",
+        "description": "개인 데이터에 대한 귀하의 권리에 대해 설명합니다"
+      },
+      "cookies": {
+        "title": "쿠키 및 추적",
+        "description": "쿠키 및 유사 기술의 사용에 대해 설명합니다"
+      },
+      "children": {
+        "title": "아동 개인정보",
+        "description": "아동 개인정보 보호에 대한 당사의 정책"
+      },
+      "changes": {
+        "title": "정책 변경",
+        "description": "이 정책에 대한 변경 통보 방법"
+      },
+      "contact": {
+        "title": "문의하기",
+        "description": "개인정보 관련 질문이 있으시면 연락주세요"
+      }
+    }
+  },
+  "terms": {
+    "title": "이용약관",
+    "lastUpdated": "마지막 업데이트: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "약관 동의",
+        "description": "InnerFriend를 사용함으로써 귀하는 본 약관에 동의합니다"
+      },
+      "eligibility": {
+        "title": "사용 자격",
+        "description": "당사 서비스 이용에 필요한 요건"
+      },
+      "accounts": {
+        "title": "사용자 계정",
+        "description": "귀하의 계정에 대한 책임"
+      },
+      "content": {
+        "title": "사용자 콘텐츠",
+        "description": "귀하가 제출하는 콘텐츠에 관한 규칙"
+      },
+      "prohibited": {
+        "title": "금지 행위",
+        "description": "당사 플랫폼에서 금지되는 행위"
+      },
+      "intellectual": {
+        "title": "지적재산권",
+        "description": "저작권 및 상표에 관한 정보"
+      },
+      "disclaimers": {
+        "title": "면책 조항",
+        "description": "InnerFriend는 보증 없이 「있는 그대로」 제공됩니다"
+      },
+      "liability": {
+        "title": "책임 제한",
+        "description": "당사 책임에 대한 제한"
+      },
+      "termination": {
+        "title": "해지",
+        "description": "계정 해지 가능 조건"
+      },
+      "governing": {
+        "title": "준거법",
+        "description": "본 약관에 적용되는 법률"
+      },
+      "contact": {
+        "title": "문의하기",
+        "description": "본 약관에 대한 질문 연락처"
+      }
+    }
   }
 }

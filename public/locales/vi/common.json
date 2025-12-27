@@ -34,6 +34,19 @@
       "globalReach": {
         "title": "23 Languages",
         "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+      },
+      "title": "Tính năng",
+      "organize": {
+        "title": "Tổ chức bạn bè",
+        "description": "Phân loại bạn thân theo tầng dựa trên loại mối quan hệ và mức độ thân thiết"
+      },
+      "remind": {
+        "title": "Duy trì kết nối",
+        "description": "Nhận nhắc nhở khi đã quá lâu không liên lạc để duy trì mối quan hệ"
+      },
+      "emergency": {
+        "title": "Mạng lưới khẩn cấp",
+        "description": "Xây dựng vòng tròn đáng tin cậy để liên hệ trong trường hợp khẩn cấp"
       }
     },
     "mission": {
@@ -41,7 +54,22 @@
       "description": "Chúng tôi thắng khi bạn rời trang web — để chia sẻ những khoảnh khắc thực sự với những người quan trọng nhất. Khi khoảng cách chia cắt bạn, chúng tôi sẽ giúp bạn bắt đầu cuộc gọi video. Nhưng không gì thay thế được sự hiện diện.",
       "inspiration": "Nguồn cảm hứng: Dentyne Ice \"Tạo thời gian gặp mặt\""
     },
-    "quote": "\"Không phải tất cả các mối quan hệ đều đối xứng — và điều đó hoàn toàn tự nhiên. Mục tiêu không phải là sự cân bằng hoàn hảo, mà là sự hiện diện có chủ đích.\""
+    "quote": "\"Không phải tất cả các mối quan hệ đều đối xứng — và điều đó hoàn toàn tự nhiên. Mục tiêu không phải là sự cân bằng hoàn hảo, mà là sự hiện diện có chủ đích.\"",
+    "hero": {
+      "title": "Kết nối với những người thực sự quan trọng",
+      "subtitle": "InnerFriend giúp bạn quản lý các mối quan hệ thân thiết nhất và duy trì kết nối với những người bạn quan tâm",
+      "cta": "Bắt đầu",
+      "learnMore": "Tìm hiểu thêm"
+    },
+    "privacy": {
+      "title": "Ưu tiên quyền riêng tư",
+      "description": "Dữ liệu của bạn thuộc về bạn. Duy trì quyền kiểm soát hoàn toàn đối với mạng xã hội của bạn."
+    },
+    "cta": {
+      "title": "Sẵn sàng bắt đầu hành trình?",
+      "subtitle": "Hãy bắt đầu xây dựng các mối quan hệ có ý nghĩa với InnerFriend ngay hôm nay",
+      "button": "Bắt đầu miễn phí"
+    }
   },
   "nav": {
     "home": "Trang chủ",
@@ -53,18 +81,8 @@
     "back": "Quay lại"
   },
   "auth": {
-    "signIn": {
-      "title": "Chào mừng trở lại",
-      "subtitle": "Đăng nhập để truy cập vòng tròn của bạn",
-      "button": "Đăng nhập",
-      "submitting": "Đang đăng nhập..."
-    },
-    "signUp": {
-      "title": "Tạo tài khoản của bạn",
-      "subtitle": "Bắt đầu vun đắp những tình bạn thân thiết nhất",
-      "button": "Tạo tài khoản",
-      "submitting": "Đang tạo tài khoản..."
-    },
+    "signIn": "Đăng nhập",
+    "signUp": "Đăng ký",
     "form": {
       "displayName": "Tên hiển thị",
       "displayNameOptional": "Tên hiển thị (tùy chọn)",
@@ -100,6 +118,26 @@
       "and": "and",
       "termsOfService": "Terms of Service",
       "dataProcessingNote": "We process your data to provide the service. You can export or delete your data at any time."
+    },
+    "signOut": "Đăng xuất",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "resetPassword": "Đặt lại mật khẩu",
+    "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?",
+    "continueWith": "Tiếp tục với {{provider}}",
+    "orContinueWith": "Hoặc tiếp tục với",
+    "signingIn": "Đang đăng nhập...",
+    "signingUp": "Đang đăng ký...",
+    "errors": {
+      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
+      "invalidPassword": "Mật khẩu phải có ít nhất 8 ký tự",
+      "passwordMismatch": "Mật khẩu không khớp",
+      "emailInUse": "Email này đã được sử dụng",
+      "invalidCredentials": "Email hoặc mật khẩu không đúng",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại"
     }
   },
   "notFound": {
@@ -160,30 +198,40 @@
   },
   "actions": {
     "add": "Thêm",
-    "edit": "Sửa",
+    "edit": "Chỉnh sửa",
     "delete": "Xóa",
     "save": "Lưu",
     "cancel": "Hủy",
     "confirm": "Xác nhận",
     "close": "Đóng",
     "back": "Quay lại",
-    "next": "Tiếp",
+    "next": "Tiếp theo",
     "done": "Xong",
     "search": "Tìm kiếm",
     "filter": "Lọc",
     "export": "Xuất",
     "import": "Nhập",
-    "remove": "Xóa",
+    "remove": "Xóa bỏ",
     "accept": "Chấp nhận",
-    "refresh": "Refresh",
+    "refresh": "Làm mới",
     "retry": "Retry",
     "share": "Share",
     "sharing": "Sharing...",
-    "selectAll": "Select All",
-    "clear": "Clear",
+    "selectAll": "Chọn tất cả",
+    "clear": "Xóa",
     "copy": "Copy",
     "print": "Print",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "finish": "Hoàn thành",
+    "skip": "Bỏ qua",
+    "sort": "Sắp xếp",
+    "loading": "Đang tải...",
+    "submit": "Gửi",
+    "continue": "Tiếp tục",
+    "apply": "Áp dụng",
+    "deselectAll": "Bỏ chọn tất cả",
+    "expandAll": "Mở rộng tất cả",
+    "collapseAll": "Thu gọn tất cả"
   },
   "friend": {
     "addFriend": "Thêm bạn",
@@ -505,7 +553,27 @@
     "acquaintedHint": "Friends are reclassified here through lack of contact over time",
     "roleModelsHint": "Add people whose life stories inspire you to be good, better, best",
     "nayborsHint": "Introduce yourself to your naybors and add them here",
-    "addToCircleHint": "Add someone to your closest circle"
+    "addToCircleHint": "Add someone to your closest circle",
+    "noFriends": {
+      "title": "Chưa có bạn bè",
+      "description": "Hãy bắt đầu bằng cách thêm người bạn đầu tiên",
+      "action": "Thêm bạn"
+    },
+    "noResults": {
+      "title": "Không có kết quả",
+      "description": "Không có gì phù hợp với tiêu chí tìm kiếm của bạn",
+      "action": "Xóa bộ lọc"
+    },
+    "noNotifications": {
+      "title": "Không có thông báo",
+      "description": "Bạn đã xem hết rồi!",
+      "action": "Làm mới"
+    },
+    "noActivity": {
+      "title": "Không có hoạt động",
+      "description": "Hoạt động gần đây của bạn sẽ hiển thị ở đây",
+      "action": "Bắt đầu"
+    }
   },
   "labels": {
     "name": "Tên",
@@ -579,7 +647,10 @@
     "capacitySummary": "{{named}} đã đặt tên + {{reserved}} đã đặt trước + {{new}} mới = {{total}}/{{limit}} {{tier}}",
     "addGroup": "Thêm nhóm",
     "spotsCount_plural": "{{count}} Reserved Spots",
-    "spotsLabel_plural": "reserved spots"
+    "spotsLabel_plural": "reserved spots",
+    "title": "Phần dành riêng",
+    "description": "Tính năng này dành riêng cho người dùng cao cấp",
+    "upgrade": "Nâng cấp để mở khóa"
   },
   "addFriend": {
     "addNaybor": "Thêm hàng xóm",
@@ -601,7 +672,7 @@
     "addNayborPhoneButton": "Thêm thông tin liên hệ cho trường hợp khẩn cấp"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
+    "title": "Bảng điều khiển",
     "subtitle": "Curate and tend to your closest relationships",
     "loading": "Loading your circles...",
     "tend": "Tend",
@@ -622,11 +693,26 @@
       "skippedDuplicates": "Skipped {{count}} duplicate",
       "skippedDuplicates_plural": "Skipped {{count}} duplicates",
       "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
+    },
+    "welcome": "Xin chào, {{name}}",
+    "overview": "Tổng quan",
+    "recentActivity": "Hoạt động gần đây",
+    "quickActions": "Thao tác nhanh",
+    "stats": {
+      "totalFriends": "Tổng số bạn",
+      "innerCircle": "Vòng tròn thân",
+      "needsAttention": "Cần chú ý",
+      "lastContact": "Liên hệ cuối"
+    },
+    "widgets": {
+      "upcomingBirthdays": "Sinh nhật sắp tới",
+      "recentContacts": "Liên hệ gần đây",
+      "suggestedActions": "Đề xuất hành động"
     }
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
+    "title": "Nhiệm vụ",
+    "description": "Nhiệm vụ giúp bạn giữ liên lạc với bạn bè",
     "learnMore": "Learn more...",
     "showLess": "Show less",
     "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
@@ -645,6 +731,21 @@
         "title": "Pull Closer",
         "description": "Move meaningful connections into tighter orbits"
       }
+    },
+    "subtitle": "Duy trì kết nối với những mối quan hệ quan trọng",
+    "complete": "Hoàn thành nhiệm vụ",
+    "skip": "Bỏ qua nhiệm vụ",
+    "remind": "Nhắc tôi sau",
+    "empty": {
+      "title": "Không có nhiệm vụ đang hoạt động",
+      "description": "Bạn đã hoàn thành tất cả! Nhiệm vụ mới sẽ sớm có."
+    },
+    "types": {
+      "call": "Nhiệm vụ gọi điện",
+      "message": "Nhiệm vụ nhắn tin",
+      "meetup": "Nhiệm vụ gặp mặt",
+      "birthday": "Nhiệm vụ sinh nhật",
+      "checkin": "Nhiệm vụ hỏi thăm"
     }
   },
   "tierSection": {
@@ -658,7 +759,7 @@
     "keysSharedCount": "Chìa khóa ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
+    "title": "Chăm sóc bạn bè",
     "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
     "periods": {
       "core": "tuần này",
@@ -686,10 +787,48 @@
       "rememberReachOut": "Remember to reach out soon! 💛",
       "friendsWaiting": "{{count}} friend waiting to hear from you",
       "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
-    }
+    },
+    "subtitle": "Các mối quan hệ giống như một khu vườn - cần được chăm sóc thường xuyên",
+    "description": "Những người bạn cần liên lạc",
+    "actions": {
+      "markContacted": "Đánh dấu đã liên hệ",
+      "snooze": "Tạm hoãn",
+      "viewProfile": "Xem hồ sơ"
+    },
+    "filters": {
+      "all": "Tất cả",
+      "overdue": "Quá hạn",
+      "upcoming": "Sắp đến",
+      "byTier": "Theo tầng"
+    },
+    "frequency": {
+      "daily": "Hàng ngày",
+      "weekly": "Hàng tuần",
+      "biweekly": "Hai tuần một lần",
+      "monthly": "Hàng tháng",
+      "quarterly": "Hàng quý",
+      "yearly": "Hàng năm"
+    },
+    "status": {
+      "onTrack": "Đúng tiến độ",
+      "dueSoon": "Sắp đến hạn",
+      "overdue": "Quá hạn",
+      "needsAttention": "Cần chú ý"
+    },
+    "reminderTypes": {
+      "call": "Gọi điện",
+      "text": "Nhắn tin",
+      "visit": "Thăm",
+      "email": "Email"
+    },
+    "lastContact": "Liên hệ cuối",
+    "contactDue": "Hạn liên hệ",
+    "noContactYet": "Chưa liên hệ",
+    "daysOverdue": "Quá hạn {{count}} ngày",
+    "dueIn": "Còn {{count}} ngày"
   },
   "nayborSOS": {
-    "title": "Naybor SOS™",
+    "title": "NayborSOS",
     "steps": {
       "category": "What kind of help do you need?",
       "contacts": "Choose naybors to contact"
@@ -716,7 +855,33 @@
     "quick": "Nhanh",
     "noPhone": "Không có điện thoại",
     "tapSOSForMore": "Nhấn SOS để có thêm tùy chọn và tất cả hàng xóm",
-    "criticalUrgency": "Mức độ khẩn cấp nghiêm trọng"
+    "criticalUrgency": "Mức độ khẩn cấp nghiêm trọng",
+    "subtitle": "Tiếp cận vòng tròn tin cậy của bạn khi cần nhất",
+    "description": "Mạng lưới khẩn cấp là những người liên hệ đáng tin cậy có thể giúp đỡ trong tình huống khẩn cấp",
+    "activate": "Kích hoạt SOS",
+    "deactivate": "Hủy kích hoạt SOS",
+    "status": {
+      "active": "SOS đang hoạt động",
+      "inactive": "SOS không hoạt động",
+      "pending": "Đang chờ..."
+    },
+    "contacts": {
+      "title": "Liên hệ khẩn cấp",
+      "add": "Thêm liên hệ khẩn cấp",
+      "remove": "Xóa khỏi danh sách khẩn cấp",
+      "empty": "Chưa thiết lập liên hệ khẩn cấp"
+    },
+    "message": {
+      "title": "Tin nhắn khẩn cấp",
+      "placeholder": "Nhập tin nhắn sẽ gửi đến mạng lưới của bạn",
+      "default": "Tôi cần giúp đỡ. Hãy liên hệ với tôi nếu bạn có thể."
+    },
+    "settings": {
+      "title": "Cài đặt SOS",
+      "autoLocation": "Tự động chia sẻ vị trí",
+      "confirmActivation": "Xác nhận trước khi kích hoạt",
+      "cooldown": "Thời gian chờ giữa các lần kích hoạt"
+    }
   },
   "callActions": {
     "startKall": "Start a kall",
@@ -730,7 +895,16 @@
     "toasts": {
       "connecting": "Connecting via {{service}}",
       "openService": "Open {{service}} to connect"
-    }
+    },
+    "call": "Gọi điện",
+    "video": "Gọi video",
+    "message": "Nhắn tin",
+    "email": "Email",
+    "directions": "Chỉ đường",
+    "schedule": "Lên lịch",
+    "addNote": "Thêm ghi chú",
+    "recordCall": "Ghi lại cuộc gọi",
+    "shareContact": "Chia sẻ liên hệ"
   },
   "onboarding": {
     "steps": {
@@ -745,7 +919,11 @@
       "complete": {
         "title": "All Set!",
         "description": "Your friends can now start or schedule kalls with you."
-      }
+      },
+      "profile": "Tạo hồ sơ",
+      "import": "Nhập danh bạ",
+      "categorize": "Phân loại bạn bè",
+      "preferences": "Tùy chọn"
     },
     "skipForNow": "Skip for now",
     "getStarted": "Get Started",
@@ -782,10 +960,28 @@
       "skype": "Tên Skype của bạn (trong Cài đặt → Tài khoản)",
       "webex": "Liên kết Phòng Cá nhân hoặc email Webex",
       "slack": "Email công việc (cả hai bên cần cùng không gian làm việc)"
+    },
+    "welcome": {
+      "title": "Chào mừng đến với InnerFriend",
+      "subtitle": "Hãy bắt đầu quản lý các mối quan hệ có ý nghĩa",
+      "description": "Chúng tôi sẽ hỏi bạn một vài câu để tùy chỉnh trải nghiệm vòng tròn thân"
+    },
+    "import": {
+      "title": "Nhập danh bạ",
+      "description": "Bắt đầu bằng cách nhập danh bạ hiện có",
+      "fromPhone": "Từ danh bạ điện thoại",
+      "fromGoogle": "Từ Google Contacts",
+      "manual": "Thêm thủ công",
+      "skip": "Bỏ qua bây giờ"
+    },
+    "complete": {
+      "title": "Tất cả đã sẵn sàng!",
+      "subtitle": "Bạn đã sẵn sàng bắt đầu quản lý vòng tròn thân của mình",
+      "action": "Đi đến bảng điều khiển"
     }
   },
   "keysShared": {
-    "title": "Chìa Khóa Đã Chia Sẻ",
+    "title": "Khóa đã chia sẻ",
     "steps": {
       "address": {
         "title": "Địa Chỉ Của Bạn",
@@ -943,7 +1139,33 @@
           "description": "Xin chỉ phá cửa sau khi cân nhắc kỹ, như phương án cuối cùng khi cần thiết về mặt pháp lý."
         }
       }
-    }
+    },
+    "subtitle": "Quản lý quyền truy cập vào vòng tròn tin cậy của bạn",
+    "description": "Quản lý những người có thể truy cập vào vòng tròn thân của bạn trong trường hợp khẩn cấp",
+    "grant": "Cấp khóa",
+    "revoke": "Thu hồi khóa",
+    "manage": "Quản lý khóa đã chia sẻ",
+    "permissions": {
+      "view": "Xem danh bạ",
+      "contact": "Có thể liên hệ trong trường hợp khẩn cấp",
+      "location": "Truy cập vị trí"
+    },
+    "doorKeyTree": {
+      "title": "Cây chìa khóa cửa",
+      "description": "Những người đáng tin cậy có thể truy cập vào vòng tròn thân của bạn trong trường hợp khẩn cấp",
+      "empty": "Chưa chia sẻ khóa nào"
+    },
+    "shareRequest": {
+      "title": "Yêu cầu khóa",
+      "pending": "Yêu cầu đang chờ",
+      "accept": "Chấp nhận",
+      "decline": "Từ chối"
+    },
+    "sharedWithYou": "Khóa được chia sẻ với bạn",
+    "sharedByYou": "Khóa bạn đã chia sẻ",
+    "noSharedKeys": "Chưa có khóa được chia sẻ",
+    "expiresAt": "Hết hạn: {{date}}",
+    "neverExpires": "Không hết hạn"
   },
   "legal": {
     "privacyPolicy": "Privacy Policy",
@@ -975,11 +1197,11 @@
     "shareDescription": "Share a link with your parasocial followers",
     "noContentShared": "No content shared yet",
     "noContentHint": "Share links to engage with your followers",
-    "title": "Title",
+    "title": "Theo dõi nhà sáng tạo",
     "titlePlaceholder": "What are you sharing?",
     "url": "URL",
     "urlPlaceholder": "https://...",
-    "description": "Description",
+    "description": "Theo dõi những nhà sáng tạo yêu thích của bạn và nhận cập nhật từ họ",
     "descriptionPlaceholder": "Brief description (optional)",
     "deleteTitle": "Delete this share?",
     "deleteDescription": "This will remove the link from your followers feeds.",
@@ -991,17 +1213,23 @@
       "invalidUrl": "Please enter a valid URL",
       "sharedContent": "Content shared with your followers!",
       "deleted": "Share deleted"
-    }
+    },
+    "subtitle": "Kết nối với những nhà sáng tạo yêu thích",
+    "follow": "Theo dõi",
+    "unfollow": "Bỏ theo dõi",
+    "following": "Đang theo dõi",
+    "followers": "Người theo dõi",
+    "noCreators": "Không tìm thấy nhà sáng tạo"
   },
   "profileSettings": {
-    "title": "Profile Settings",
+    "title": "Cài đặt hồ sơ",
     "description": "Manage your profile and contact preferences",
     "tabs": {
       "profile": "Profile",
       "contact": "Contact",
       "creator": "Creator"
     },
-    "displayName": "Display Name",
+    "displayName": "Tên hiển thị",
     "displayNamePlaceholder": "Your name",
     "handle": "Handle",
     "handlePlaceholder": "your_handle",
@@ -1029,17 +1257,51 @@
       "handleFormat": "Tên người dùng phải từ 3-30 ký tự, chỉ bao gồm chữ cái, số và gạch dưới",
       "checkAvailability": "Lỗi khi kiểm tra tính khả dụng của tên",
       "validationError": "Lỗi khi xác thực tên người dùng"
+    },
+    "personalInfo": "Thông tin cá nhân",
+    "bio": "Giới thiệu",
+    "avatar": "Ảnh đại diện",
+    "changeAvatar": "Đổi ảnh đại diện",
+    "removeAvatar": "Xóa ảnh đại diện",
+    "privacy": {
+      "title": "Cài đặt quyền riêng tư",
+      "profileVisibility": "Hiển thị hồ sơ",
+      "showOnline": "Hiển thị trạng thái trực tuyến",
+      "showLastSeen": "Hiển thị lần truy cập cuối"
+    },
+    "notifications": {
+      "title": "Cài đặt thông báo",
+      "email": "Thông báo email",
+      "push": "Thông báo đẩy",
+      "sms": "Thông báo SMS"
+    },
+    "account": {
+      "title": "Cài đặt tài khoản",
+      "changePassword": "Đổi mật khẩu",
+      "twoFactor": "Xác thực hai yếu tố",
+      "sessions": "Phiên hoạt động",
+      "deleteAccount": "Xóa tài khoản"
     }
   },
   "editFriend": {
-    "title": "Edit Contact",
+    "title": "Chỉnh sửa bạn bè",
     "description": "Update contact information for {{name}}",
     "namePlaceholder": "Friend s name",
     "emailPlaceholder": "friend@example.com",
     "preferredContactMethod": "Preferred Contact Method",
     "selectContactMethod": "Choose how to reach them",
     "notesPlaceholder": "Any notes about this person...",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+    "basicInfo": "Thông tin cơ bản",
+    "name": "Tên",
+    "nickname": "Biệt danh",
+    "birthday": "Sinh nhật",
+    "notes": "Ghi chú",
+    "tier": "Tầng",
+    "contactFrequency": "Tần suất liên hệ",
+    "save": "Lưu thay đổi",
+    "delete": "Xóa bạn",
+    "confirmDelete": "Bạn có chắc muốn xóa người bạn này?"
   },
   "post": {
     "voiceNote": "Voice Note",
@@ -1079,7 +1341,21 @@
     "currentlySelected": "Currently selected",
     "dontShowMonth": "Don't show for 1 month",
     "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "connectingVia": "Connecting via {{method}}",
+    "title": "Tạo bài viết",
+    "placeholder": "Bạn đang nghĩ gì?",
+    "submit": "Đăng",
+    "visibility": {
+      "public": "Công khai",
+      "friends": "Chỉ bạn bè",
+      "private": "Riêng tư"
+    },
+    "actions": {
+      "like": "Thích",
+      "comment": "Bình luận",
+      "share": "Chia sẻ",
+      "save": "Lưu"
+    }
   },
   "compose": {
     "title": "Share with your circles",
@@ -1140,7 +1416,7 @@
     }
   },
   "followCreator": {
-    "title": "Follow a Creator",
+    "title": "Theo dõi nhà sáng tạo",
     "description": "Search for verified creators to follow and see their content in your feed.",
     "searchLabel": "Search by name or handle",
     "searchPlaceholder": "@creator_handle or Creator Name",
@@ -1154,7 +1430,11 @@
       "searching": "An error occurred while searching.",
       "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
       "noCreatorsFound": "No creators found matching that search."
-    }
+    },
+    "search": "Tìm kiếm nhà sáng tạo",
+    "suggested": "Đề xuất cho bạn",
+    "categories": "Danh mục",
+    "trending": "Đang thịnh hành"
   },
   "contactMethods": {
     "toasts": {
@@ -1167,7 +1447,7 @@
       "removeFailed": "Không thể xóa phương thức liên hệ",
       "reorderFailed": "Không thể sắp xếp lại"
     },
-    "title": "Contact Methods",
+    "title": "Phương thức liên hệ",
     "subtitle": "Add your preferred video call and messaging services so friends can reach you",
     "addButton": "Add Contact Method",
     "addButtonCompact": "Add",
@@ -1257,7 +1537,24 @@
         "example": "yourname@company.com",
         "tip": "Cuộc gọi Slack chỉ hoạt động giữa các thành viên của cùng một không gian làm việc."
       }
-    }
+    },
+    "phone": "Điện thoại",
+    "email": "Email",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "signal": "Signal",
+    "messenger": "Messenger",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "discord": "Discord",
+    "slack": "Slack",
+    "other": "Khác",
+    "preferred": "Phương thức ưu tiên",
+    "add": "Thêm phương thức liên hệ",
+    "primary": "Chính",
+    "secondary": "Phụ"
   },
   "dev": {
     "label": "Dev",
@@ -1288,11 +1585,17 @@
       "sessions": "Sessions persist across page reloads",
       "clearApp": "Use \"Clear App Data\" to reset friend lists",
       "forceLogout": "Use \"Force Logout\" to fully clear auth state"
-    }
+    },
+    "title": "Cài đặt nhà phát triển",
+    "apiKeys": "Khóa API",
+    "webhooks": "Webhooks",
+    "logs": "Nhật ký nhà phát triển",
+    "testing": "Chế độ thử nghiệm",
+    "documentation": "Tài liệu API"
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
+    "title": "Thêm bạn liên kết",
+    "description": "Chia sẻ mã của bạn bên dưới hoặc quét mã của bạn bè",
     "findBy": "Find by",
     "enterUsernameHint": "Enter their username exactly as they set it",
     "enterContactHint": "Enter their {{type}} exactly as they registered it",
@@ -1306,7 +1609,7 @@
     "showCircleLevel": "Show circle level",
     "circleVisibleHint": "They'll see you added them as {{tier}}",
     "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
+    "sendRequest": "Gửi yêu cầu kết nối",
     "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
     "serviceTypes": {
       "phone": "Phone Number",
@@ -1316,7 +1619,16 @@
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
       "facetime": "FaceTime"
-    }
+    },
+    "subtitle": "Kết nối với bạn bè đã sử dụng InnerFriend",
+    "searchPlaceholder": "Tìm kiếm theo tên hoặc email",
+    "noResults": "Không tìm thấy người dùng",
+    "pending": "Đang chờ yêu cầu",
+    "connected": "Đã kết nối",
+    "yourCode": "Mã của bạn",
+    "scanCode": "Quét mã",
+    "enterCode": "Nhập mã",
+    "shareCode": "Chia sẻ mã"
   },
   "feedPost": {
     "likeCount": "{{count}} lượt thích",
@@ -1419,6 +1731,44 @@
       "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
       "parentalRequired": "Parental Consent Required",
       "verify": "Verify Age"
+    },
+    "title": "Quyền riêng tư dữ liệu",
+    "subtitle": "Tìm hiểu cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu cá nhân của bạn",
+    "consent": {
+      "title": "Quản lý đồng ý",
+      "description": "Quản lý sự đồng ý xử lý dữ liệu của bạn",
+      "analytics": "Cookie phân tích",
+      "marketing": "Truyền thông tiếp thị",
+      "thirdParty": "Chia sẻ bên thứ ba",
+      "withdraw": "Rút lại đồng ý"
+    },
+    "rights": {
+      "title": "Quyền của bạn",
+      "access": "Truy cập dữ liệu",
+      "rectification": "Sửa đổi dữ liệu",
+      "erasure": "Xóa dữ liệu",
+      "portability": "Di chuyển dữ liệu",
+      "restriction": "Hạn chế xử lý",
+      "objection": "Phản đối xử lý"
+    },
+    "export": {
+      "title": "Xuất dữ liệu",
+      "description": "Tải xuống bản sao của tất cả dữ liệu cá nhân của bạn",
+      "button": "Xuất dữ liệu",
+      "processing": "Đang chuẩn bị xuất...",
+      "ready": "Dữ liệu sẵn sàng tải xuống"
+    },
+    "delete": {
+      "title": "Xóa tài khoản",
+      "description": "Xóa vĩnh viễn tài khoản và tất cả dữ liệu liên quan. Hành động này không thể hoàn tác.",
+      "button": "Xóa tài khoản",
+      "confirm": "Nhập 'XÓA' để xác nhận",
+      "warning": "Hành động này không thể hoàn tác"
+    },
+    "policy": {
+      "title": "Chính sách quyền riêng tư",
+      "lastUpdated": "Cập nhật lần cuối",
+      "readFull": "Đọc toàn bộ chính sách"
     }
   },
   "dispatch": {
@@ -1609,6 +1959,18 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "required": "Trường này là bắt buộc",
+      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
+      "invalidPhone": "Vui lòng nhập số điện thoại hợp lệ",
+      "minLength": "Phải có ít nhất {{min}} ký tự",
+      "maxLength": "Không được vượt quá {{max}} ký tự",
+      "passwordMatch": "Mật khẩu phải khớp",
+      "invalidUrl": "Vui lòng nhập URL hợp lệ",
+      "invalidDate": "Vui lòng nhập ngày hợp lệ",
+      "futureDate": "Ngày phải ở tương lai",
+      "pastDate": "Ngày phải ở quá khứ"
     }
   },
   "dataImport": {
@@ -1702,6 +2064,33 @@
         "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
         "processing": "Processing..."
       }
+    },
+    "title": "Bảng quản trị",
+    "dashboard": "Bảng điều khiển quản trị",
+    "users": {
+      "title": "Quản lý người dùng",
+      "list": "Tất cả người dùng",
+      "active": "Người dùng hoạt động",
+      "suspended": "Người dùng bị đình chỉ",
+      "invite": "Mời người dùng"
+    },
+    "settings": {
+      "title": "Cài đặt hệ thống",
+      "general": "Cài đặt chung",
+      "security": "Cài đặt bảo mật",
+      "notifications": "Cài đặt thông báo"
+    },
+    "logs": {
+      "title": "Nhật ký hệ thống",
+      "audit": "Nhật ký kiểm toán",
+      "error": "Nhật ký lỗi",
+      "access": "Nhật ký truy cập"
+    },
+    "analytics": {
+      "title": "Phân tích",
+      "overview": "Tổng quan",
+      "users": "Phân tích người dùng",
+      "engagement": "Số liệu tương tác"
     }
   },
   "tierFeed": {
@@ -1775,5 +2164,97 @@
     "sharedPhoto": "Ảnh được chia sẻ",
     "video": "Video",
     "sharedVideo": "Video được chia sẻ"
+  },
+  "privacy": {
+    "title": "Chính sách quyền riêng tư",
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "sections": {
+      "collection": {
+        "title": "Thu thập thông tin",
+        "description": "Thông tin chúng tôi thu thập và cách chúng tôi thu thập"
+      },
+      "usage": {
+        "title": "Sử dụng thông tin",
+        "description": "Cách chúng tôi sử dụng thông tin thu thập được"
+      },
+      "sharing": {
+        "title": "Chia sẻ thông tin",
+        "description": "Khi nào và với ai chúng tôi chia sẻ thông tin của bạn"
+      },
+      "security": {
+        "title": "Bảo mật dữ liệu",
+        "description": "Cách chúng tôi bảo vệ thông tin của bạn"
+      },
+      "rights": {
+        "title": "Quyền của bạn",
+        "description": "Quyền của bạn liên quan đến dữ liệu cá nhân"
+      },
+      "cookies": {
+        "title": "Cookie và theo dõi",
+        "description": "Việc sử dụng cookie và các công nghệ tương tự"
+      },
+      "children": {
+        "title": "Quyền riêng tư của trẻ em",
+        "description": "Chính sách của chúng tôi về quyền riêng tư của trẻ em"
+      },
+      "changes": {
+        "title": "Thay đổi chính sách",
+        "description": "Cách chúng tôi thông báo về các thay đổi của chính sách này"
+      },
+      "contact": {
+        "title": "Liên hệ với chúng tôi",
+        "description": "Liên hệ nếu có câu hỏi về quyền riêng tư"
+      }
+    }
+  },
+  "terms": {
+    "title": "Điều khoản dịch vụ",
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Chấp nhận điều khoản",
+        "description": "Bằng cách sử dụng InnerFriend, bạn đồng ý với các điều khoản này"
+      },
+      "eligibility": {
+        "title": "Điều kiện sử dụng",
+        "description": "Yêu cầu để sử dụng dịch vụ của chúng tôi"
+      },
+      "accounts": {
+        "title": "Tài khoản người dùng",
+        "description": "Trách nhiệm của bạn đối với tài khoản"
+      },
+      "content": {
+        "title": "Nội dung người dùng",
+        "description": "Quy tắc về nội dung bạn gửi lên"
+      },
+      "prohibited": {
+        "title": "Hoạt động bị cấm",
+        "description": "Những gì bị cấm trên nền tảng của chúng tôi"
+      },
+      "intellectual": {
+        "title": "Sở hữu trí tuệ",
+        "description": "Thông tin về bản quyền và thương hiệu"
+      },
+      "disclaimers": {
+        "title": "Tuyên bố miễn trừ",
+        "description": "InnerFriend được cung cấp \"nguyên trạng\" không có bảo đảm"
+      },
+      "liability": {
+        "title": "Giới hạn trách nhiệm",
+        "description": "Giới hạn về trách nhiệm của chúng tôi"
+      },
+      "termination": {
+        "title": "Chấm dứt",
+        "description": "Khi nào tài khoản có thể bị chấm dứt"
+      },
+      "governing": {
+        "title": "Luật điều chỉnh",
+        "description": "Luật điều chỉnh các điều khoản này"
+      },
+      "contact": {
+        "title": "Liên hệ với chúng tôi",
+        "description": "Nơi liên hệ nếu có câu hỏi về các điều khoản này"
+      }
+    }
   }
 }
