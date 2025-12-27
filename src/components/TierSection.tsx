@@ -39,7 +39,8 @@ interface TierSectionProps {
   tier: TierType;
   friends: Friend[];
   reservedGroups: ReservedGroup[];
-  onAddFriend: (name: string, email?: string, roleModelReason?: string) => void;
+  onAddFriend: (name: string, email?: string, phone?: string, preferredContact?: string) => void;
+  onAddRoleModel?: (name: string, roleModelReason?: string) => void;
   onMoveFriend: (id: string, newTier: TierType) => void;
   onRemoveFriend: (id: string) => void;
   onUpdateFriend?: (id: string, updates: Partial<Friend>) => void;
@@ -76,6 +77,7 @@ export function TierSection({
   friends,
   reservedGroups,
   onAddFriend,
+  onAddRoleModel,
   onMoveFriend,
   onRemoveFriend,
   onUpdateFriend,
@@ -417,11 +419,11 @@ export function TierSection({
         capacity={capacity}
       />
 
-      {isRoleModelTier && (
+      {isRoleModelTier && onAddRoleModel && (
         <AddRoleModelDialog
           open={roleModelDialogOpen}
           onOpenChange={setRoleModelDialogOpen}
-          onAdd={(name, reason) => onAddFriend(name, undefined, reason)}
+          onAdd={onAddRoleModel}
           capacity={capacity}
         />
       )}
