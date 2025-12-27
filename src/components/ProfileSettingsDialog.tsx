@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -28,6 +29,7 @@ export function ProfileSettingsDialog({
   onOpenChange,
   userId,
 }: ProfileSettingsDialogProps) {
+  const { t } = useTranslation();
   const [displayName, setDisplayName] = useState('');
   const [userHandle, setUserHandle] = useState('');
   const [isPublic, setIsPublic] = useState(true);
@@ -133,18 +135,18 @@ export function ProfileSettingsDialog({
 
       if (error) throw error;
 
-      toast.success('Profile updated');
+      toast.success(t('profileSettings.toasts.updated'));
       onOpenChange(false);
     } catch (error: any) {
       console.error('Error saving profile:', error);
       if (error.message?.includes('user_handle_appropriate')) {
-        setHandleError('This handle contains inappropriate language');
+        setHandleError(t('profileSettings.errors.inappropriate'));
       } else if (error.message?.includes('user_handle_format')) {
-        setHandleError('Handle must be 3-30 characters, letters, numbers, and underscores only');
+        setHandleError(t('profileSettings.handleHint'));
       } else if (error.code === '23505') {
-        setHandleError('This handle is already taken');
+        setHandleError(t('profileSettings.errors.handleTaken'));
       } else {
-        toast.error('Failed to update profile');
+        toast.error(t('profileSettings.toasts.updateFailed'));
       }
     } finally {
       setIsSaving(false);
@@ -155,9 +157,9 @@ export function ProfileSettingsDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Profile Settings</DialogTitle>
+          <DialogTitle>{t('profileSettings.title')}</DialogTitle>
           <DialogDescription>
-            Manage your profile and contact preferences
+            {t('profileSettings.description')}
           </DialogDescription>
         </DialogHeader>
 
@@ -170,24 +172,24 @@ export function ProfileSettingsDialog({
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="profile">
                 <User className="w-4 h-4 mr-2" />
-                Profile
+                {t('profileSettings.tabs.profile')}
               </TabsTrigger>
               <TabsTrigger value="contact">
                 <Phone className="w-4 h-4 mr-2" />
-                Contact
+                {t('profileSettings.tabs.contact')}
               </TabsTrigger>
               <TabsTrigger value="creator">
                 <Star className="w-4 h-4 mr-2" />
-                Creator
+                {t('profileSettings.tabs.creator')}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="profile" className="space-y-4 mt-4">
               <div className="space-y-2">
-                <Label htmlFor="displayName">Display Name</Label>
+                <Label htmlFor="displayName">{t('profileSettings.displayName')}</Label>
                 <Input
                   id="displayName"
-                  placeholder="Your name"
+                  placeholder={t('profileSettings.displayNamePlaceholder')}
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
                 />
@@ -197,12 +199,12 @@ export function ProfileSettingsDialog({
                 <Label htmlFor="userHandle">
                   <span className="flex items-center gap-1">
                     <AtSign className="w-4 h-4" />
-                    Handle
+                    {t('profileSettings.handle')}
                   </span>
                 </Label>
                 <Input
                   id="userHandle"
-                  placeholder="your_handle"
+                  placeholder={t('profileSettings.handlePlaceholder')}
                   value={userHandle}
                   onChange={(e) => {
                     setUserHandle(e.target.value.toLowerCase());
@@ -214,14 +216,14 @@ export function ProfileSettingsDialog({
                   <p className="text-sm text-destructive">{handleError}</p>
                 )}
                 <p className="text-xs text-muted-foreground">
-                  3-30 characters. Letters, numbers, and underscores only.
+                  {t('profileSettings.handleHint')}
                 </p>
               </div>
 
               {/* Public Profile Link */}
               {userHandle && (
                 <div className="p-3 rounded-lg border bg-muted/30 space-y-2">
-                  <Label className="text-sm font-medium">Your Public Profile</Label>
+                  <Label className="text-sm font-medium">{t('profileSettings.publicProfile')}</Label>
                   <div className="flex items-center gap-2">
                     <code className="flex-1 text-sm bg-background px-3 py-2 rounded border truncate">
                       {window.location.origin}/u/{userHandle}
@@ -231,7 +233,7 @@ export function ProfileSettingsDialog({
                       size="sm"
                       onClick={() => {
                         navigator.clipboard.writeText(`${window.location.origin}/u/${userHandle}`);
-                        toast.success('Link copied!');
+                        toast.success(t('profileSettings.toasts.linkCopied'));
                       }}
                     >
                       <Copy className="h-4 w-4" />
@@ -257,12 +259,12 @@ export function ProfileSettingsDialog({
                   )}
                   <div>
                     <Label htmlFor="public-toggle" className="text-sm font-medium">
-                      {isPublic ? 'Public Profile' : 'Private Profile'}
+                      {isPublic ? t('profileSettings.publicProfileLabel') : t('profileSettings.privateProfileLabel')}
                     </Label>
                     <p className="text-xs text-muted-foreground">
-                      {isPublic 
-                        ? 'Anyone can view your profile page' 
-                        : 'Only you and confirmed friends can view your profile'
+                      {isPublic
+                        ? t('profileSettings.publicDescription')
+                        : t('profileSettings.privateDescription')
                       }
                     </p>
                   </div>
@@ -276,7 +278,7 @@ export function ProfileSettingsDialog({
 
               <div className="flex justify-end pt-4">
                 <Button onClick={handleSave} disabled={isSaving}>
-                  {isSaving ? 'Saving...' : 'Save Profile'}
+                  {isSaving ? t('actions.saving') : t('profileSettings.saveProfile')}
                 </Button>
               </div>
             </TabsContent>
@@ -289,11 +291,10 @@ export function ProfileSettingsDialog({
               <div className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
                 <div className="space-y-1">
                   <Label htmlFor="parasocial-toggle" className="text-base font-medium">
-                    Parasocial Personality Mode
+                    {t('profileSettings.parasocialMode')}
                   </Label>
                   <p className="text-sm text-muted-foreground">
-                    Enable this if you're a public figure, creator, or celebrity who wants to receive
-                    parasocial connections from fans and share content with them.
+                    {t('profileSettings.parasocialModeDescription')}
                   </p>
                 </div>
                 <Switch
@@ -306,12 +307,11 @@ export function ProfileSettingsDialog({
               {isParasocialPersonality && (
                 <div className="space-y-4">
                   <p className="text-sm text-muted-foreground">
-                    When enabled, other users can add you to their Parasocials circle and see content you share.
-                    Save your profile to apply this change.
+                    {t('profileSettings.parasocialModeHint')}
                   </p>
                   <div className="flex justify-end">
                     <Button onClick={handleSave} disabled={isSaving}>
-                      {isSaving ? 'Saving...' : 'Save Settings'}
+                      {isSaving ? t('actions.saving') : t('profileSettings.saveSettings')}
                     </Button>
                   </div>
                 </div>

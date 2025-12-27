@@ -102,7 +102,8 @@ describe('ImportPreview Component', () => {
         />
       );
 
-      expect(screen.getByText('vCard File')).toBeInTheDocument();
+      // i18n mock returns the translation key
+      expect(screen.getByText('contactImport.sources.vcard')).toBeInTheDocument();
     });
 
     it('should display contact names in the list', () => {
@@ -446,7 +447,8 @@ describe('ImportPreview Component', () => {
         />
       );
 
-      expect(screen.getByText('Phone Contacts')).toBeInTheDocument();
+      // i18n mock returns the translation key
+      expect(screen.getByText('contactImport.sources.contactPicker')).toBeInTheDocument();
     });
 
     it('should display correct source label for CSV', () => {
@@ -461,7 +463,8 @@ describe('ImportPreview Component', () => {
         />
       );
 
-      expect(screen.getByText('CSV File')).toBeInTheDocument();
+      // i18n mock returns the translation key
+      expect(screen.getByText('contactImport.sources.csv')).toBeInTheDocument();
     });
   });
 });

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Trash2, Video, Calendar, HelpCircle, Info, GripVertical } from 'lucide-react';
 import {
@@ -120,6 +121,7 @@ interface ContactMethodsManagerProps {
 }
 
 export function ContactMethodsManager({ userId, compact = false }: ContactMethodsManagerProps) {
+  const { t } = useTranslation();
   const {
     contactMethods,
     isLoading,
@@ -150,7 +152,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
   const handleAdd = async () => {
     if (!newIdentifier.trim()) {
-      toast.error('Please enter contact information');
+      toast.error(t('contactMethods.toasts.enterInfo'));
       return;
     }
 
@@ -213,21 +215,21 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
       <DialogTrigger asChild>
         <Button size={compact ? 'sm' : 'default'} variant={compact ? 'outline' : 'default'}>
           <Plus className="w-4 h-4 mr-1" />
-          {compact ? 'Add' : 'Add Contact Method'}
+          {compact ? t('contactMethods.addButtonCompact') : t('contactMethods.addButton')}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Add Contact Method</DialogTitle>
+          <DialogTitle>{t('contactMethods.addDialogTitle')}</DialogTitle>
           <DialogDescription>
-            Add a way for your friends to reach you for video kalls
+            {t('contactMethods.addDialogDescription')}
           </DialogDescription>
         </DialogHeader>
-        
+
         <div className="space-y-4 py-4">
           {/* Service Selection */}
           <div className="space-y-2">
-            <Label>Service</Label>
+            <Label>{t('contactMethods.serviceLabel')}</Label>
             <Select value={newService} onValueChange={(v) => setNewService(v as ServiceType)}>
               <SelectTrigger>
                 <SelectValue />
@@ -252,7 +254,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               <div className="text-sm">
                 <p className="text-foreground">{guidance.howToFind}</p>
                 <p className="text-muted-foreground mt-1">
-                  <span className="font-medium">Example:</span> {guidance.example}
+                  <span className="font-medium">{t('contactMethods.guidance.example')}:</span> {guidance.example}
                 </p>
                 {guidance.tip && (
                   <p className="text-primary/80 mt-1 text-xs">
@@ -266,7 +268,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
           {/* Contact Info Input */}
           <div className="space-y-2">
             <Label htmlFor="contact-identifier">
-              Your {selectedService.name} Contact Info
+              {t('contactMethods.contactInfoLabel', { service: selectedService.name })}
             </Label>
             <Input
               id="contact-identifier"
@@ -284,31 +286,31 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
           {/* Label Input */}
           <div className="space-y-2">
-            <Label htmlFor="contact-label">Label (optional)</Label>
+            <Label htmlFor="contact-label">{t('contactMethods.labelOptional')}</Label>
             <Input
               id="contact-label"
-              placeholder="e.g., Personal, Work, Home"
+              placeholder={t('contactMethods.labelPlaceholder')}
               value={newLabel}
               onChange={(e) => setNewLabel(e.target.value)}
             />
             <p className="text-xs text-muted-foreground">
-              Helps you identify between multiple accounts on the same service
+              {t('contactMethods.labelHint')}
             </p>
           </div>
 
           {/* Call Type Toggles */}
           <div className="space-y-3 pt-2">
-            <Label>Available for</Label>
+            <Label>{t('contactMethods.availableFor')}</Label>
             <TooltipProvider>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Spontaneous Kalls</span>
+                  <span className="text-sm text-muted-foreground">{t('contactMethods.spontaneousKalls')}</span>
                   <Tooltip>
                     <TooltipTrigger>
                       <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="max-w-xs">Instant, drop-in video calls when friends want to connect right now</p>
+                      <p className="max-w-xs">{t('contactMethods.spontaneousTooltip')}</p>
                     </TooltipContent>
                   </Tooltip>
                 </div>
@@ -316,13 +318,13 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Scheduled Kalls</span>
+                  <span className="text-sm text-muted-foreground">{t('contactMethods.scheduledKalls')}</span>
                   <Tooltip>
                     <TooltipTrigger>
                       <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="max-w-xs">Planned video meetings set up in advance for a specific time</p>
+                      <p className="max-w-xs">{t('contactMethods.scheduledTooltip')}</p>
                     </TooltipContent>
                   </Tooltip>
                 </div>
@@ -334,13 +336,13 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
 
         <DialogFooter>
           <Button variant="outline" onClick={handleCancel}>
-            Cancel
+            {t('actions.cancel')}
           </Button>
-          <Button 
-            onClick={handleAdd} 
+          <Button
+            onClick={handleAdd}
             disabled={!newIdentifier.trim() || (!forSpontaneous && !forScheduled)}
           >
-            Add Method
+            {t('contactMethods.addMethod')}
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -351,7 +353,7 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium text-foreground">Contact Methods</h3>
+          <h3 className="text-sm font-medium text-foreground">{t('contactMethods.title')}</h3>
           {AddMethodDialog}
         </div>
         <MethodsList methods={contactMethods} onRemove={removeContactMethod} />
@@ -363,9 +365,9 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold text-foreground">Contact Methods</h2>
+          <h2 className="text-xl font-semibold text-foreground">{t('contactMethods.title')}</h2>
           <p className="text-sm text-muted-foreground">
-            Add your preferred video call and messaging services so friends can reach you
+            {t('contactMethods.subtitle')}
           </p>
         </div>
         {AddMethodDialog}
@@ -376,16 +378,16 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Video className="w-5 h-5" />
-              Spontaneous Kalls
+              {t('contactMethods.spontaneousKalls')}
             </CardTitle>
             <CardDescription>
-              Drag to reorder priority. #1 is your preferred method.
+              {t('contactMethods.dragReorderHint')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {spontaneousMethods.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4 text-center">
-                No spontaneous call methods added yet
+                {t('contactMethods.noSpontaneousMethods')}
               </p>
             ) : (
               <DndContext
@@ -417,16 +419,16 @@ export function ContactMethodsManager({ userId, compact = false }: ContactMethod
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              Scheduled Kalls
+              {t('contactMethods.scheduledKalls')}
             </CardTitle>
             <CardDescription>
-              Drag to reorder priority. #1 is your preferred method.
+              {t('contactMethods.dragReorderHint')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {scheduledMethods.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4 text-center">
-                No scheduled call methods added yet
+                {t('contactMethods.noScheduledMethods')}
               </p>
             ) : (
               <DndContext

@@ -8,6 +8,7 @@
  */
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronRight, ChevronDown, Trash2, RefreshCw, User, Database, Bug, Key } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -22,6 +23,7 @@ interface DevPanelProps {
 }
 
 export function DevPanel({ user, onSignOut }: DevPanelProps) {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showStorageInfo, setShowStorageInfo] = useState(false);
 
@@ -37,13 +39,13 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
     );
 
     appKeys.forEach(key => localStorage.removeItem(key));
-    toast.success(`Cleared ${appKeys.length} app-related localStorage keys`);
+    toast.success(t('dev.toasts.clearStorage', { count: appKeys.length }));
   };
 
   const handleClearAllStorage = () => {
     localStorage.clear();
     sessionStorage.clear();
-    toast.success('Cleared all localStorage and sessionStorage');
+    toast.success(t('dev.toasts.clearAll'));
   };
 
   const handleForceSignOut = async () => {
@@ -55,9 +57,9 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
       // Then sign out
       await supabase.auth.signOut({ scope: 'local' });
       onSignOut?.();
-      toast.success('Force signed out and cleared auth storage');
+      toast.success(t('dev.toasts.signOut'));
     } catch (error) {
-      toast.error('Failed to force sign out');
+      toast.error(t('dev.toasts.signOutFailed'));
     }
   };
 
@@ -65,9 +67,9 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
     try {
       const { data, error } = await supabase.auth.refreshSession();
       if (error) throw error;
-      toast.success('Session refreshed');
+      toast.success(t('dev.toasts.refreshed'));
     } catch (error) {
-      toast.error('Failed to refresh session');
+      toast.error(t('dev.toasts.refreshFailed'));
     }
   };
 
@@ -98,7 +100,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
         className="bg-yellow-100 hover:bg-yellow-200 border-yellow-400 text-yellow-800 gap-1"
       >
         <Bug className="w-3.5 h-3.5" />
-        Dev
+        {t('dev.label')}
         {isOpen ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
       </Button>
 
@@ -106,15 +108,15 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
       {isOpen && (
         <div className="absolute bottom-10 right-0 w-80 bg-yellow-50 border border-yellow-400 rounded-lg shadow-lg p-3 space-y-3">
           <div className="flex items-center justify-between border-b border-yellow-300 pb-2">
-            <span className="font-medium text-yellow-800 text-sm">Dev Panel</span>
-            <span className="text-xs text-yellow-600">Development Mode</span>
+            <span className="font-medium text-yellow-800 text-sm">{t('dev.panelTitle')}</span>
+            <span className="text-xs text-yellow-600">{t('dev.mode')}</span>
           </div>
 
           {/* User info */}
           <div className="space-y-1">
             <div className="text-xs font-medium text-yellow-700 flex items-center gap-1">
               <User className="w-3 h-3" />
-              Auth Status
+              {t('dev.authStatus')}
             </div>
             <div className="text-xs bg-white rounded p-2 border border-yellow-200">
               {user ? (
@@ -123,7 +125,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
                   <div><strong>Email:</strong> {user.email || 'N/A'}</div>
                 </>
               ) : (
-                <span className="text-yellow-600">Not logged in</span>
+                <span className="text-yellow-600">{t('dev.notLoggedIn')}</span>
               )}
             </div>
           </div>
@@ -132,7 +134,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
           <div className="space-y-1">
             <div className="text-xs font-medium text-yellow-700 flex items-center gap-1">
               <Key className="w-3 h-3" />
-              Auth Actions
+              {t('dev.authActions')}
             </div>
             <div className="flex gap-1">
               <Button
@@ -143,7 +145,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
                 disabled={!user}
               >
                 <RefreshCw className="w-3 h-3 mr-1" />
-                Refresh
+                {t('dev.refreshButton')}
               </Button>
               <Button
                 variant="outline"
@@ -152,7 +154,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
                 className="flex-1 text-xs h-7 bg-white text-destructive hover:text-destructive"
                 disabled={!user}
               >
-                Force Logout
+                {t('dev.forceLogout')}
               </Button>
             </div>
           </div>
@@ -161,7 +163,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
           <div className="space-y-1">
             <div className="text-xs font-medium text-yellow-700 flex items-center gap-1">
               <Database className="w-3 h-3" />
-              Storage Actions
+              {t('dev.storageActions')}
             </div>
             <div className="flex gap-1">
               <Button
@@ -171,7 +173,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
                 className="flex-1 text-xs h-7 bg-white"
               >
                 <Trash2 className="w-3 h-3 mr-1" />
-                Clear App Data
+                {t('dev.clearApp')}
               </Button>
               <Button
                 variant="outline"
@@ -179,7 +181,7 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
                 onClick={handleClearAllStorage}
                 className="flex-1 text-xs h-7 bg-white text-destructive hover:text-destructive"
               >
-                Clear All
+                {t('dev.clearAll')}
               </Button>
             </div>
           </div>
@@ -193,17 +195,17 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
               className="w-full text-xs h-7 justify-start text-yellow-700"
             >
               {showStorageInfo ? <ChevronDown className="w-3 h-3 mr-1" /> : <ChevronRight className="w-3 h-3 mr-1" />}
-              Storage Inspector
+              {t('dev.storageInspector')}
             </Button>
             {showStorageInfo && storageInfo && (
               <div className="text-xs bg-white rounded p-2 border border-yellow-200 max-h-40 overflow-auto">
                 {Object.entries(storageInfo).length === 0 ? (
-                  <span className="text-yellow-600">No localStorage data</span>
+                  <span className="text-yellow-600">{t('dev.noStorageData')}</span>
                 ) : (
                   Object.entries(storageInfo).map(([key, { size, value }]) => (
                     <div key={key} className="border-b border-yellow-100 py-1 last:border-0">
                       <div className="font-medium truncate" title={key}>{key}</div>
-                      <div className="text-yellow-600">{size} chars</div>
+                      <div className="text-yellow-600">{size} {t('dev.chars')}</div>
                     </div>
                   ))
                 )}
@@ -213,11 +215,11 @@ export function DevPanel({ user, onSignOut }: DevPanelProps) {
 
           {/* Quick tips */}
           <div className="text-[10px] text-yellow-600 border-t border-yellow-300 pt-2">
-            <strong>Tips:</strong>
+            <strong>{t('dev.tips.title')}:</strong>
             <ul className="list-disc list-inside space-y-0.5 mt-1">
-              <li>Sessions persist across page reloads</li>
-              <li>Use "Clear App Data" to reset friend lists</li>
-              <li>Use "Force Logout" to fully clear auth state</li>
+              <li>{t('dev.tips.sessions')}</li>
+              <li>{t('dev.tips.clearApp')}</li>
+              <li>{t('dev.tips.forceLogout')}</li>
             </ul>
           </div>
         </div>

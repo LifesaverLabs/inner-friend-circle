@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { formatDistanceToNow } from 'date-fns';
 import { FeedPost, InteractionType } from '@/types/feed';
@@ -45,6 +46,7 @@ export const FeedPostCard = forwardRef<HTMLElement, FeedPostCardProps>(function 
   feedDefaultContactMethod,
   onRequestContactInfo,
 }, ref) {
+  const { t } = useTranslation();
   const borderColor = TIER_BORDER_COLORS[post.authorTier] || TIER_BORDER_COLORS[tier];
   const badgeColor = TIER_BADGE_COLORS[post.authorTier] || TIER_BADGE_COLORS[tier];
 
@@ -88,10 +90,10 @@ export const FeedPostCard = forwardRef<HTMLElement, FeedPostCardProps>(function 
       {(showLikeCount || commentCount > 0) && (
         <div className="flex items-center gap-4 mt-3 pt-3 border-t text-sm text-muted-foreground">
           {showLikeCount && likeCount > 0 && (
-            <span>{likeCount} like{likeCount !== 1 ? 's' : ''}</span>
+            <span>{t('feedPost.likeCount', { count: likeCount })}</span>
           )}
           {commentCount > 0 && (
-            <span>{commentCount} comment{commentCount !== 1 ? 's' : ''}</span>
+            <span>{t('feedPost.commentCount', { count: commentCount })}</span>
           )}
         </div>
       )}

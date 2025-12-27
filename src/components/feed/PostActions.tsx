@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Heart, MessageCircle, Mic, Phone, Calendar, Share2, ChevronDown, Plus, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FeedPost, InteractionType } from '@/types/feed';
@@ -52,6 +53,7 @@ export function PostActions({
   onRequestContactInfo,
   onContactMethodChange,
 }: PostActionsProps) {
+  const { t } = useTranslation();
   const [liked, setLiked] = useState(false);
 
   // In Core/Inner, high-fidelity actions are prominent, likes are deprioritized
@@ -77,7 +79,7 @@ export function PostActions({
   // Initiate actual contact via preferred method
   const initiateContact = (method: ContactMethod) => {
     if (!authorPhone) {
-      toast.error('No contact information available');
+      toast.error(t('post.toasts.noContact'));
       return;
     }
 
@@ -92,10 +94,10 @@ export function PostActions({
           duration: 10000, // Show warning longer to allow reading and action
           action: SUPPRESSIBLE_METHODS.includes(method)
             ? {
-                label: "Don't show for 1 month",
+                label: t('post.dontShowMonth'),
                 onClick: () => {
                   suppressWarningUntilNextMonth(method);
-                  toast.info(`${methodInfo.name} warnings silenced until next month`);
+                  toast.info(t('post.warningSilenced', { method: methodInfo.name }));
                 },
               }
             : undefined,
@@ -104,12 +106,12 @@ export function PostActions({
 
       const url = methodInfo.getUrl(authorPhone);
       window.open(url, '_blank');
-      toast.success(`Connecting via ${methodInfo.name}`);
+      toast.success(t('post.connectingVia', { method: methodInfo.name }));
 
       // Also log the interaction
       onInteract('call_accepted');
     } catch (error) {
-      toast.error('Failed to initiate contact');
+      toast.error(t('post.toasts.contactFailed'));
     }
   };
 
@@ -119,7 +121,7 @@ export function PostActions({
       if (onRequestContactInfo) {
         onRequestContactInfo(post.authorId);
       } else {
-        toast.info('No contact information available for this person');
+        toast.info(t('post.toasts.noContactPerson'));
       }
       return;
     }
@@ -131,7 +133,7 @@ export function PostActions({
 
   const handleContactMethodSelect = (method: ContactMethod) => {
     if (!authorPhone) {
-      toast.error('No contact information available');
+      toast.error(t('post.toasts.noContact'));
       return;
     }
 
@@ -177,13 +179,13 @@ export function PostActions({
               size="sm"
               onClick={handleAddContactInfo}
               className={buttonClass}
-              aria-label="Add contact info"
+              aria-label={t('post.addContactInfo')}
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
-              <span className="hidden sm:inline text-xs">Add Contact Info</span>
+              <span className="hidden sm:inline text-xs">{t('post.addContactInfo')}</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Add contact information for {post.authorName}</TooltipContent>
+          <TooltipContent>{t('post.addContactInfoTooltip', { name: post.authorName })}</TooltipContent>
         </Tooltip>
       );
     }
@@ -199,16 +201,16 @@ export function PostActions({
                 size="sm"
                 onClick={handleCall}
                 className={`${buttonClass} rounded-r-none pr-1`}
-                aria-label={`Call via ${CONTACT_METHODS[effectiveMethod].name}`}
+                aria-label={t('post.callVia', { method: CONTACT_METHODS[effectiveMethod].name })}
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
-                {prominent && <span className="hidden sm:inline">Call</span>}
+                {prominent && <span className="hidden sm:inline">{t('post.call')}</span>}
               </Button>
             </TooltipTrigger>
             <TooltipContent>
               {prominent
-                ? `Call via ${CONTACT_METHODS[effectiveMethod].name} (high-fidelity)`
-                : `Call via ${CONTACT_METHODS[effectiveMethod].name}`}
+                ? t('post.callViaHighFidelity', { method: CONTACT_METHODS[effectiveMethod].name })
+                : t('post.callVia', { method: CONTACT_METHODS[effectiveMethod].name })}
             </TooltipContent>
           </Tooltip>
 
@@ -219,7 +221,7 @@ export function PostActions({
               size="sm"
               className={`${buttonClass} rounded-l-none pl-0 px-1`}
               data-testid="contact-method-dropdown"
-              aria-label="Select contact method"
+              aria-label={t('post.selectContactMethod')}
             >
               <ChevronDown className="w-3 h-3" aria-hidden="true" />
             </Button>
@@ -238,13 +240,13 @@ export function PostActions({
               <span aria-hidden="true">{method.icon}</span>
               <span>{method.name}</span>
               {method.warning && (
-                <span className="text-amber-500" aria-label="Warning: platform may have surveillance concerns">
+                <span className="text-amber-500" aria-label={t('post.warningPlatform')}>
                   <span aria-hidden="true">⚠️</span>
                 </span>
               )}
               {key === effectiveMethod && (
                 <span className="ml-auto text-xs text-muted-foreground">
-                  <span className="sr-only">Currently selected</span>
+                  <span className="sr-only">{t('post.currentlySelected')}</span>
                   <span aria-hidden="true">✓</span>
                 </span>
               )}
@@ -259,7 +261,7 @@ export function PostActions({
                 className="flex items-center gap-2"
               >
                 <Plus className="w-4 h-4" aria-hidden="true" />
-                <span>Add more contact info</span>
+                <span>{t('post.addMoreContactInfo')}</span>
               </DropdownMenuItem>
             </>
           )}
@@ -274,7 +276,7 @@ export function PostActions({
       {isHighFidelityTier && authorPhone && (
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
           <Smartphone className="w-3 h-3" aria-hidden="true" />
-          <span>For best results, use your phone for calls</span>
+          <span>{t('post.usePhoneRecommendation')}</span>
         </div>
       )}
       <div className="flex items-center gap-1">
@@ -289,13 +291,13 @@ export function PostActions({
                 size="sm"
                 onClick={handleVoiceReply}
                 className="gap-2 text-primary hover:text-primary hover:bg-primary/10"
-                aria-label="Voice Reply"
+                aria-label={t('post.voiceReply')}
               >
                 <Mic className="w-4 h-4" aria-hidden="true" />
-                <span className="hidden sm:inline">Voice Reply</span>
+                <span className="hidden sm:inline">{t('post.voiceReply')}</span>
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Send a voice reply (high-fidelity)</TooltipContent>
+            <TooltipContent>{t('post.voiceReplyTooltip')}</TooltipContent>
           </Tooltip>
 
           {/* Call - high fidelity with dropdown */}
@@ -309,13 +311,13 @@ export function PostActions({
                 size="sm"
                 onClick={handleMeetupRsvp}
                 className="gap-2 text-primary hover:text-primary hover:bg-primary/10"
-                aria-label="Schedule a meetup"
+                aria-label={t('post.meetup')}
               >
                 <Calendar className="w-4 h-4" aria-hidden="true" />
-                <span className="hidden sm:inline">Meetup</span>
+                <span className="hidden sm:inline">{t('post.meetup')}</span>
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Schedule a meetup (high-fidelity)</TooltipContent>
+            <TooltipContent>{t('post.meetupTooltip')}</TooltipContent>
           </Tooltip>
         </>
       )}
@@ -328,13 +330,13 @@ export function PostActions({
             size="sm"
             onClick={handleComment}
             className="gap-2"
-            aria-label="Add a comment"
+            aria-label={t('post.commentTooltip')}
           >
             <MessageCircle className="w-4 h-4" aria-hidden="true" />
-            <span className="hidden sm:inline">Comment</span>
+            <span className="hidden sm:inline">{t('post.comment')}</span>
           </Button>
         </TooltipTrigger>
-        <TooltipContent>Add a comment</TooltipContent>
+        <TooltipContent>{t('post.commentTooltip')}</TooltipContent>
       </Tooltip>
 
       {/* Like - deprioritized in Core/Inner */}
@@ -349,17 +351,17 @@ export function PostActions({
                 ? 'text-muted-foreground/50 hover:text-muted-foreground text-xs'
                 : ''
             } ${liked ? 'text-red-500 hover:text-red-600' : ''}`}
-            aria-label={liked ? 'Unlike this post' : 'Like this post'}
+            aria-label={liked ? t('feed.unlike') : t('post.likeTooltip')}
             aria-pressed={liked}
           >
             <Heart className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} aria-hidden="true" />
-            {!isHighFidelityTier && <span className="hidden sm:inline">Like</span>}
+            {!isHighFidelityTier && <span className="hidden sm:inline">{t('post.like')}</span>}
           </Button>
         </TooltipTrigger>
         <TooltipContent>
           {isHighFidelityTier
-            ? 'Like (consider a more meaningful interaction)'
-            : 'Like this post'}
+            ? t('post.likeTooltipHighFidelity')
+            : t('post.likeTooltip')}
         </TooltipContent>
       </Tooltip>
 
@@ -371,12 +373,12 @@ export function PostActions({
             size="sm"
             onClick={handleShare}
             className="gap-2 ml-auto"
-            aria-label="Share this post"
+            aria-label={t('post.shareTooltip')}
           >
             <Share2 className="w-4 h-4" aria-hidden="true" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent>Share</TooltipContent>
+        <TooltipContent>{t('post.shareTooltip')}</TooltipContent>
       </Tooltip>
 
       {/* Outer tier has normal layout */}
@@ -389,12 +391,12 @@ export function PostActions({
                 size="sm"
                 onClick={handleVoiceReply}
                 className="gap-2"
-                aria-label="Send a voice reply"
+                aria-label={t('post.voiceReply')}
               >
                 <Mic className="w-4 h-4" aria-hidden="true" />
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Voice reply</TooltipContent>
+            <TooltipContent>{t('feed.voiceReply')}</TooltipContent>
           </Tooltip>
 
           {/* Call button with dropdown for outer tier */}

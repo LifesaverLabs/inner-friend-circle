@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Dialog,
   DialogContent,
@@ -39,23 +40,22 @@ interface ComposePostDialogProps {
 const CONTENT_TYPES: Array<{
   type: PostContentType;
   icon: typeof Type;
-  label: string;
-  description: string;
+  labelKey: string;
 }> = [
-  { type: 'text', icon: Type, label: 'Text', description: 'Share a thought' },
-  { type: 'photo', icon: Image, label: 'Photo', description: 'Share a photo' },
-  { type: 'voice_note', icon: Mic, label: 'Voice', description: 'Record a voice note' },
-  { type: 'video', icon: Video, label: 'Video', description: 'Share a video' },
-  { type: 'call_invite', icon: Phone, label: 'Call', description: 'Invite to a call' },
-  { type: 'meetup_invite', icon: Calendar, label: 'Meetup', description: 'Plan a meetup' },
-  { type: 'proximity_ping', icon: MapPin, label: 'Nearby', description: "I'm nearby!" },
-  { type: 'life_update', icon: Sparkles, label: 'Update', description: 'Share a life update' },
+  { type: 'text', icon: Type, labelKey: 'compose.types.text' },
+  { type: 'photo', icon: Image, labelKey: 'compose.types.photo' },
+  { type: 'voice_note', icon: Mic, labelKey: 'compose.types.voice' },
+  { type: 'video', icon: Video, labelKey: 'compose.types.video' },
+  { type: 'call_invite', icon: Phone, labelKey: 'compose.types.call' },
+  { type: 'meetup_invite', icon: Calendar, labelKey: 'compose.types.meetup' },
+  { type: 'proximity_ping', icon: MapPin, labelKey: 'compose.types.nearby' },
+  { type: 'life_update', icon: Sparkles, labelKey: 'compose.types.update' },
 ];
 
-const VISIBILITY_OPTIONS: Array<{ tier: FeedTier; label: string }> = [
-  { tier: 'core', label: 'Core (5 closest)' },
-  { tier: 'inner', label: 'Inner Circle (15)' },
-  { tier: 'outer', label: 'Outer Circle (150)' },
+const VISIBILITY_OPTIONS: Array<{ tier: FeedTier; labelKey: string }> = [
+  { tier: 'core', labelKey: 'compose.visibilityOptions.core' },
+  { tier: 'inner', labelKey: 'compose.visibilityOptions.inner' },
+  { tier: 'outer', labelKey: 'compose.visibilityOptions.outer' },
 ];
 
 export function ComposePostDialog({
@@ -64,11 +64,33 @@ export function ComposePostDialog({
   defaultVisibility = ['core', 'inner', 'outer'],
   onSubmit,
 }: ComposePostDialogProps) {
+  const { t } = useTranslation();
   const [contentType, setContentType] = useState<PostContentType>('text');
   const [content, setContent] = useState('');
   const [visibility, setVisibility] = useState<Set<FeedTier>>(
     new Set(defaultVisibility)
   );
+
+  const getPlaceholder = (type: PostContentType): string => {
+    switch (type) {
+      case 'text':
+        return t('compose.placeholders.text');
+      case 'photo':
+        return t('compose.placeholders.photo');
+      case 'video':
+        return t('compose.placeholders.video');
+      case 'call_invite':
+        return t('compose.placeholders.call');
+      case 'meetup_invite':
+        return t('compose.placeholders.meetup');
+      case 'proximity_ping':
+        return t('compose.placeholders.nearby');
+      case 'life_update':
+        return t('compose.placeholders.update');
+      default:
+        return t('compose.placeholders.default');
+    }
+  };
 
   const handleVisibilityChange = (tier: FeedTier, checked: boolean) => {
     const newVisibility = new Set(visibility);
@@ -104,15 +126,15 @@ export function ComposePostDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>Share with your circles</DialogTitle>
+          <DialogTitle>{t('compose.title')}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
           {/* Content type selector */}
           <div>
-            <Label className="text-sm font-medium mb-2 block">Type</Label>
+            <Label className="text-sm font-medium mb-2 block">{t('compose.type')}</Label>
             <div className="grid grid-cols-4 gap-2">
-              {CONTENT_TYPES.map(({ type, icon: Icon, label }) => (
+              {CONTENT_TYPES.map(({ type, icon: Icon, labelKey }) => (
                 <button
                   key={type}
                   onClick={() => setContentType(type)}
@@ -123,7 +145,7 @@ export function ComposePostDialog({
                   }`}
                 >
                   <Icon className="w-5 h-5" />
-                  <span className="text-xs">{label}</span>
+                  <span className="text-xs">{t(labelKey)}</span>
                 </button>
               ))}
             </div>
@@ -132,12 +154,12 @@ export function ComposePostDialog({
           {/* Content input */}
           <div>
             <Label htmlFor="content" className="text-sm font-medium mb-2 block">
-              Content
+              {t('compose.content')}
             </Label>
             {contentType === 'voice_note' ? (
               <div className="p-4 border rounded-lg text-center text-muted-foreground">
                 <Mic className="w-8 h-8 mx-auto mb-2" />
-                <p className="text-sm">Voice recording coming soon</p>
+                <p className="text-sm">{t('compose.voiceComingSoon')}</p>
               </div>
             ) : (
               <Textarea
@@ -153,10 +175,10 @@ export function ComposePostDialog({
           {/* Visibility selector */}
           <div>
             <Label className="text-sm font-medium mb-2 block">
-              Who can see this?
+              {t('compose.visibility')}
             </Label>
             <div className="space-y-2">
-              {VISIBILITY_OPTIONS.map(({ tier, label }) => (
+              {VISIBILITY_OPTIONS.map(({ tier, labelKey }) => (
                 <div key={tier} className="flex items-center gap-2">
                   <Checkbox
                     id={`visibility-${tier}`}
@@ -169,7 +191,7 @@ export function ComposePostDialog({
                     htmlFor={`visibility-${tier}`}
                     className="text-sm cursor-pointer"
                   >
-                    {label}
+                    {t(labelKey)}
                   </label>
                 </div>
               ))}
@@ -179,39 +201,18 @@ export function ComposePostDialog({
           {/* Actions */}
           <div className="flex justify-end gap-2 pt-2">
             <Button variant="outline" onClick={handleClose}>
-              Cancel
+              {t('actions.cancel')}
             </Button>
             <Button
               onClick={handleSubmit}
               disabled={!content.trim() || visibility.size === 0}
             >
               <Send className="w-4 h-4 mr-2" />
-              Share
+              {t('compose.shareButton')}
             </Button>
           </div>
         </div>
       </DialogContent>
     </Dialog>
   );
-}
-
-function getPlaceholder(type: PostContentType): string {
-  switch (type) {
-    case 'text':
-      return "What's on your mind?";
-    case 'photo':
-      return 'Add a caption to your photo...';
-    case 'video':
-      return 'Add a description to your video...';
-    case 'call_invite':
-      return 'Add details about the call...';
-    case 'meetup_invite':
-      return 'What are you planning?';
-    case 'proximity_ping':
-      return "Let your friends know you're nearby...";
-    case 'life_update':
-      return 'Share your exciting news...';
-    default:
-      return 'Write something...';
-  }
 }

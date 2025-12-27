@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PenLine, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -23,18 +24,6 @@ interface FeedHeaderProps {
   onComposeOpenChange?: (open: boolean) => void;
 }
 
-const TIER_NAMES: Record<FeedTier, string> = {
-  core: 'Core',
-  inner: 'Inner',
-  outer: 'Outer+',
-};
-
-const TIER_DESCRIPTIONS: Record<FeedTier, string> = {
-  core: 'Updates from your closest friends',
-  inner: 'Updates from your close friends',
-  outer: 'Updates from outer circle, naybors, parasocials & role models',
-};
-
 // Default methods that make sense for each tier
 const DEFAULT_CONTACT_METHODS: Record<FeedTier, ContactMethod> = {
   core: 'facetime',  // Core: Most intimate - FaceTime
@@ -51,6 +40,7 @@ export function FeedHeader({
   composeOpen: externalComposeOpen,
   onComposeOpenChange,
 }: FeedHeaderProps) {
+  const { t } = useTranslation();
   // Use internal state if no external control provided
   const [internalComposeOpen, setInternalComposeOpen] = useState(false);
   const composeOpen = externalComposeOpen ?? internalComposeOpen;
@@ -65,11 +55,11 @@ export function FeedHeader({
         className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border-b border-inherit gap-3"
       >
         <div>
-          <h2 className="text-lg font-semibold">{TIER_NAMES[tier]} Feed</h2>
+          <h2 className="text-lg font-semibold">{t(`feedHeader.tierNames.${tier}`)} {t('feedHeader.feed')}</h2>
           <p className="text-sm text-muted-foreground">
-            {TIER_DESCRIPTIONS[tier]}
+            {t(`feedHeader.tierDescriptions.${tier}`)}
             {postCount > 0 && (
-              <span className="ml-2">• {postCount} post{postCount !== 1 ? 's' : ''}</span>
+              <span className="ml-2">• {t('feedHeader.postCount', { count: postCount })}</span>
             )}
           </p>
         </div>
@@ -115,7 +105,7 @@ export function FeedHeader({
               className="gap-2"
             >
               <PenLine className="w-4 h-4" />
-              Share
+              {t('feedHeader.share')}
             </Button>
           )}
         </div>

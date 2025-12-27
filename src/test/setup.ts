@@ -1,6 +1,32 @@
 import '@testing-library/jest-dom';
 import { vi, beforeEach } from 'vitest';
 
+// Mock react-i18next to return the translation key as the value
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, options?: Record<string, unknown>) => {
+      // Return key with interpolation values replaced
+      if (options) {
+        let result = key;
+        for (const [k, v] of Object.entries(options)) {
+          result = result.replace(`{{${k}}}`, String(v));
+        }
+        return result;
+      }
+      return key;
+    },
+    i18n: {
+      language: 'en',
+      changeLanguage: vi.fn(),
+    },
+  }),
+  Trans: ({ children }: { children: React.ReactNode }) => children,
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+}));
+
 // Define __APP_VERSION__ for tests (normally injected by Vite at build time)
 (globalThis as Record<string, unknown>).__APP_VERSION__ = '0.0.0-test';
 

@@ -401,7 +401,8 @@ describe('TierFeed', () => {
 
       renderWithProviders(<TierFeed {...defaultProps} />);
 
-      expect(screen.getByText(/failed to load/i)).toBeInTheDocument();
+      // i18n mock returns the translation key
+      expect(screen.getByText('feed.errorLoadFeed')).toBeInTheDocument();
     });
 
     it('should show retry button on error', () => {
@@ -412,7 +413,8 @@ describe('TierFeed', () => {
 
       renderWithProviders(<TierFeed {...defaultProps} />);
 
-      expect(screen.getByRole('button', { name: /retry/i })).toBeInTheDocument();
+      // i18n mock returns the translation key
+      expect(screen.getByRole('button', { name: 'feed.retryLoadFeed' })).toBeInTheDocument();
     });
   });
 
@@ -617,8 +619,8 @@ describe('TierFeed - Connected Button', () => {
     // Should dismiss the nudge
     expect(dismissNudgeMock).toHaveBeenCalledWith('nudge-1');
 
-    // Should show success toast
-    expect(toast.success).toHaveBeenCalledWith('Marked Alice as connected');
+    // Should show success toast (i18n mock returns the key)
+    expect(toast.success).toHaveBeenCalledWith('tierFeed.toasts.markedConnected');
   });
 
   it('should show date dropdown trigger', () => {
@@ -666,8 +668,8 @@ describe('TierFeed - Connected Button', () => {
       />
     );
 
-    // The dropdown trigger should have an accessible label with the friend's name
+    // The dropdown trigger should have an accessible label (i18n mock returns key)
     const dropdown = screen.getByTestId('connected-date-dropdown');
-    expect(dropdown).toHaveAttribute('aria-label', 'Select when you connected with Alice');
+    expect(dropdown).toHaveAttribute('aria-label', 'accessibility.nudge.selectDateButton');
   });
 });

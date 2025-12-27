@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { ExternalLink, Play } from "lucide-react";
 
 export const NayborVideo = () => {
+  const { t } = useTranslation();
   const [videoFailed, setVideoFailed] = useState(false);
   const [loading, setLoading] = useState(true);
   const videoId = "ed5sac4OLbI";
@@ -33,15 +35,15 @@ export const NayborVideo = () => {
             </div>
           </div>
           <p className="text-sm text-foreground mb-2 font-medium">
-            Won't You Be My Naybor?
+            {t('nayborVideo.title')}
           </p>
           <p className="text-xs text-muted-foreground mb-4">
-            Click to watch on YouTube
+            {t('nayborVideo.clickToWatch')}
           </p>
         </a>
         <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-2">
           <p className="text-xs text-muted-foreground">
-            Video blocked by your network?
+            {t('nayborVideo.blocked')}
           </p>
           <a
             href="https://www.teardownthisfirewall.org"
@@ -50,7 +52,7 @@ export const NayborVideo = () => {
             className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
           >
             <ExternalLink className="w-3 h-3" />
-            Learn more
+            {t('nayborVideo.learnMore')}
           </a>
         </div>
       </div>
@@ -63,7 +65,7 @@ export const NayborVideo = () => {
         width="100%"
         height="100%"
         src={`https://www.youtube.com/embed/${videoId}?si=dQr0ssS5e-6rps7j`}
-        title="Won't You Be My Naybor? - Mr. Rogers"
+        title={t('nayborVideo.iframeTitle')}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"

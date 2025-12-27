@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -27,6 +28,7 @@ const tierEmoji: Record<TierType, string> = {
 };
 
 export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: ShareDialogProps) {
+  const { t } = useTranslation();
   const [selectedTiers, setSelectedTiers] = useState<TierType[]>([]);
   const [isHealthcareMode, setIsHealthcareMode] = useState(false);
 
@@ -48,14 +50,14 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
 
   const getShareContent = (forHealthcare = false) => {
     const lines: string[] = [];
-    
+
     if (forHealthcare) {
       lines.push('═'.repeat(50));
-      lines.push('CONFIDENTIAL PATIENT SOCIAL SUPPORT NETWORK');
+      lines.push(t('shareDialog.export.healthcareHeader'));
       lines.push('═'.repeat(50));
       lines.push('');
     } else {
-      lines.push('My Inner Friend Circles');
+      lines.push(t('shareDialog.export.header'));
       lines.push('');
     }
     
@@ -67,7 +69,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
         lines.push('─'.repeat(20));
         
         if (tierFriends.length === 0) {
-          lines.push('  (empty)');
+          lines.push(`  (${t('shareDialog.export.empty')})`);
         } else {
           tierFriends.forEach(friend => {
             let entry = `  • ${friend.name}`;
@@ -146,7 +148,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
       lines.push('');
     } else {
       lines.push('─'.repeat(30));
-      lines.push('Created with Inner Friend');
+      lines.push(t('shareDialog.export.footer'));
     }
     
     return lines.join('\n');
@@ -154,21 +156,21 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
 
   const handleCopy = async (forHealthcare = false) => {
     if (selectedTiers.length === 0) {
-      toast.error('Please select at least one tier to share');
+      toast.error(t('shareDialog.toasts.selectTier'));
       return;
     }
-    
+
     try {
       await navigator.clipboard.writeText(getShareContent(forHealthcare));
-      toast.success(forHealthcare ? 'Healthcare document copied' : 'Copied to clipboard');
+      toast.success(forHealthcare ? t('shareDialog.toasts.healthcareCopied') : t('shareDialog.toasts.copied'));
     } catch {
-      toast.error('Failed to copy');
+      toast.error(t('shareDialog.toasts.copyFailed'));
     }
   };
 
   const handlePrint = (forHealthcare = false) => {
     if (selectedTiers.length === 0) {
-      toast.error('Please select at least one tier to print');
+      toast.error(t('shareDialog.toasts.selectTierPrint'));
       return;
     }
 
@@ -178,7 +180,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
       printWindow.document.write(`
         <html>
           <head>
-            <title>${forHealthcare ? 'Confidential Patient Social Support Network' : 'My Inner Friend Circles'}</title>
+            <title>${forHealthcare ? t('shareDialog.export.healthcareHeader') : t('shareDialog.export.header')}</title>
             <style>
               body { 
                 font-family: ${forHealthcare ? "'Courier New', monospace" : "'Georgia', serif"}; 
@@ -232,32 +234,32 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
             ) : (
               <Share2 className="h-5 w-5" />
             )}
-            {isHealthcareMode ? 'Healthcare Provider Share' : 'Share Your Circles'}
+            {isHealthcareMode ? t('shareDialog.healthcareTitle') : t('shareDialog.title')}
           </DialogTitle>
           <DialogDescription>
-            {isHealthcareMode 
-              ? 'Share with your healthcare provider or social worker (includes privacy protections)'
-              : 'Select which tiers to include in your share'}
+            {isHealthcareMode
+              ? t('shareDialog.healthcareDescription')
+              : t('shareDialog.description')}
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 py-4">
           <div className="flex gap-2 flex-wrap">
             <Button variant="outline" size="sm" onClick={selectAll}>
-              Select All
+              {t('actions.selectAll')}
             </Button>
             <Button variant="outline" size="sm" onClick={clearAll}>
-              Clear
+              {t('actions.clear')}
             </Button>
             {!isHealthcareMode && (
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 onClick={handleHealthcareShare}
                 className="text-red-600 border-red-200 hover:bg-red-50 dark:text-red-400 dark:border-red-800 dark:hover:bg-red-950"
               >
                 <HeartPulse className="h-4 w-4 mr-1" />
-                Healthcare
+                {t('shareDialog.healthcareButton')}
               </Button>
             )}
           </div>
@@ -266,7 +268,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
             {shareTiers.map(tier => {
               const info = TIER_INFO[tier];
               const count = getFriendsInTier(tier).length;
-              
+
               return (
                 <div key={tier} className="flex items-center space-x-3">
                   <Checkbox
@@ -274,14 +276,14 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
                     checked={selectedTiers.includes(tier)}
                     onCheckedChange={() => toggleTier(tier)}
                   />
-                  <Label 
-                    htmlFor={tier} 
+                  <Label
+                    htmlFor={tier}
                     className="flex items-center gap-2 cursor-pointer flex-1"
                   >
                     <span>{tierEmoji[tier]}</span>
-                    <span className="font-medium">{info.name}</span>
+                    <span className="font-medium">{t(`tiers.${tier}`)}</span>
                     <span className="text-muted-foreground text-sm">
-                      ({count} {count === 1 ? 'person' : 'people'})
+                      ({t('tending.peopleCount', { count })})
                     </span>
                   </Label>
                 </div>
@@ -294,9 +296,9 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
               <div className="flex gap-2">
                 <HeartPulse className="h-4 w-4 text-green-600 shrink-0 mt-0.5" />
                 <div className="text-green-700 dark:text-green-300">
-                  <p className="font-medium">Healthcare Mode</p>
+                  <p className="font-medium">{t('shareDialog.healthcareMode')}</p>
                   <p className="mt-1 text-xs opacity-90">
-                    Document will include privacy law citations (HIPAA, GDPR, etc.) to protect this data under healthcare confidentiality.
+                    {t('shareDialog.healthcareModeHint')}
                   </p>
                 </div>
               </div>
@@ -308,11 +310,11 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
               <div className="flex gap-2">
                 <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
                 <div className="text-amber-700 dark:text-amber-300">
-                  <p className="font-medium">Privacy Note</p>
+                  <p className="font-medium">{t('shareDialog.privacyNote')}</p>
                   <p className="mt-1 text-xs opacity-90">
-                    {allSelected 
-                      ? "Sharing all circles reveals your complete social graph. This could be used for social engineering, competitive intelligence, or targeted marketing."
-                      : "Sharing multiple tiers reveals relationships between your circles that could be cross-referenced."}
+                    {allSelected
+                      ? t('shareDialog.privacyWarningAll')
+                      : t('shareDialog.privacyWarningMultiple', { count: selectedTiers.length })}
                   </p>
                 </div>
               </div>
@@ -328,7 +330,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
             className="flex-1"
           >
             <Copy className="h-4 w-4 mr-2" />
-            Copy
+            {t('actions.copy')}
           </Button>
           <Button
             onClick={() => handlePrint(isHealthcareMode)}
@@ -336,7 +338,7 @@ export function ShareDialog({ open, onOpenChange, friends, getFriendsInTier }: S
             className="flex-1"
           >
             <Printer className="h-4 w-4 mr-2" />
-            Print
+            {t('actions.print')}
           </Button>
         </DialogFooter>
       </DialogContent>

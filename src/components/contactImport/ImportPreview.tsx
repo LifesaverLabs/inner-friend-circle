@@ -34,10 +34,10 @@ interface ImportPreviewProps {
   isLoading?: boolean;
 }
 
-const SOURCE_LABELS: Record<ImportSource, string> = {
-  contact_picker: 'Phone Contacts',
-  vcard: 'vCard File',
-  csv: 'CSV File',
+const SOURCE_LABEL_KEYS: Record<ImportSource, string> = {
+  contact_picker: 'contactImport.sources.contactPicker',
+  vcard: 'contactImport.sources.vcard',
+  csv: 'contactImport.sources.csv',
 };
 
 export function ImportPreview({
@@ -102,7 +102,7 @@ export function ImportPreview({
       {/* Source Badge */}
       <div className="flex items-center gap-2">
         <span className="text-sm text-muted-foreground">{t('contactImport.preview.source')}:</span>
-        <Badge variant="outline">{SOURCE_LABELS[source]}</Badge>
+        <Badge variant="outline">{t(SOURCE_LABEL_KEYS[source])}</Badge>
       </div>
 
       {/* Capacity Warning */}

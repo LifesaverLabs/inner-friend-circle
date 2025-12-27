@@ -218,7 +218,7 @@ describe('Outer+ Feed - Header Description', () => {
     renderWithProviders(<TierFeed {...defaultProps} />);
 
     const header = screen.getByTestId('feed-header');
-    expect(header).toHaveTextContent(/outer\+/i);
+    expect(header).toHaveTextContent(/feedHeader\.tierNames\.outer/i);
   });
 
   it('should describe which tiers are included in the Outer+ feed', () => {

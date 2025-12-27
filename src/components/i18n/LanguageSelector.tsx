@@ -93,7 +93,7 @@ export function LanguageSelector({
                 </div>
               </div>
               {currentLang === code && (
-                <Check className="h-4 w-4 text-primary" aria-label="Selected" />
+                <Check className="h-4 w-4 text-primary" aria-label={t('accessibility.selected')} />
               )}
             </DropdownMenuItem>
           )

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertTriangle, Phone, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,6 +18,7 @@ interface NayborSOSBannerProps {
 }
 
 export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerProps) {
+  const { t } = useTranslation();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [quickPanelExpanded, setQuickPanelExpanded] = useState(false);
 
@@ -44,10 +46,10 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-medium text-sm">Naybor SOS™</span>
+                <span className="font-medium text-sm">{t('nayborSOS.title')}</span>
                 {!hasMinNetwork && (
                   <span className="text-xs px-1.5 py-0.5 rounded bg-warning/20 text-warning">
-                    Add more naybors
+                    {t('nayborSOS.addMoreNaybors')}
                   </span>
                 )}
               </div>
@@ -65,10 +67,10 @@ export function NayborSOSBanner({ naybors, onContactNaybor }: NayborSOSBannerPro
                 className="gap-1 text-tier-naybor hover:text-tier-naybor hover:bg-tier-naybor/10"
                 aria-expanded={quickPanelExpanded}
                 aria-controls="quick-sos-panel"
-                aria-label={quickPanelExpanded ? 'Hide quick contacts' : 'Show quick contacts'}
+                aria-label={quickPanelExpanded ? t('accessibility.naybor.hideQuickContacts') : t('accessibility.naybor.showQuickContacts')}
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
-                Quick
+                {t('nayborSOS.quick')}
                 {quickPanelExpanded ? (
                   <ChevronUp className="w-3 h-3" aria-hidden="true" />
                 ) : (

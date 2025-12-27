@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   ResponsiveDialog,
   ResponsiveDialogContent,
@@ -22,6 +23,7 @@ interface EditFriendDialogProps {
 }
 
 export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFriendDialogProps) {
+  const { t } = useTranslation();
   const [name, setName] = useState(friend.name);
   const [email, setEmail] = useState(friend.email || '');
   const [phone, setPhone] = useState(friend.phone || '');
@@ -54,38 +56,38 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
     <ResponsiveDialog open={open} onOpenChange={onOpenChange}>
       <ResponsiveDialogContent className="sm:max-w-md">
         <ResponsiveDialogHeader>
-          <ResponsiveDialogTitle>Edit Contact</ResponsiveDialogTitle>
+          <ResponsiveDialogTitle>{t('editFriend.title')}</ResponsiveDialogTitle>
           <ResponsiveDialogDescription>
-            Update contact information for {friend.name}
+            {t('editFriend.description', { name: friend.name })}
           </ResponsiveDialogDescription>
         </ResponsiveDialogHeader>
 
         <div className="space-y-4 py-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">{t('labels.name')}</Label>
             <Input
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Friend's name"
+              placeholder={t('editFriend.namePlaceholder')}
               className="text-base" // Prevent iOS zoom
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t('labels.email')}</Label>
             <Input
               id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="friend@example.com"
+              placeholder={t('editFriend.emailPlaceholder')}
               className="text-base" // Prevent iOS zoom
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number</Label>
+            <Label htmlFor="phone">{t('labels.phone')}</Label>
             <PhoneInput
               id="phone"
               value={phone}
@@ -95,18 +97,18 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
 
           {phone && (
             <div className="space-y-2">
-              <Label htmlFor="preferredContact">Preferred Contact Method</Label>
+              <Label htmlFor="preferredContact">{t('editFriend.preferredContactMethod')}</Label>
               <Select
                 value={preferredContact}
                 onValueChange={(val) => setPreferredContact(val as ContactMethod)}
               >
                 <SelectTrigger className="h-11"> {/* Touch-friendly height */}
-                  <SelectValue placeholder="Choose how to reach them" />
+                  <SelectValue placeholder={t('editFriend.selectContactMethod')} />
                 </SelectTrigger>
                 <SelectContent>
                   {(Object.entries(CONTACT_METHODS) as [ContactMethod, typeof CONTACT_METHODS[ContactMethod]][]).map(([key, method]) => (
                     <SelectItem key={key} value={key} className="h-11"> {/* Touch-friendly height */}
-                      {method.icon} {method.name}
+                      {method.icon} {t(`contact.methods.${key}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -115,12 +117,12 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
           )}
 
           <div className="space-y-2">
-            <Label htmlFor="notes">Notes</Label>
+            <Label htmlFor="notes">{t('labels.notes')}</Label>
             <Input
               id="notes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="Any notes about this person..."
+              placeholder={t('editFriend.notesPlaceholder')}
               className="text-base" // Prevent iOS zoom
             />
           </div>
@@ -128,10 +130,10 @@ export function EditFriendDialog({ open, onOpenChange, friend, onSave }: EditFri
 
         <ResponsiveDialogFooter>
           <Button variant="ghost" onClick={() => onOpenChange(false)} className="h-11">
-            Cancel
+            {t('actions.cancel')}
           </Button>
           <Button onClick={handleSave} disabled={!name.trim()} className="h-11">
-            Save Changes
+            {t('editFriend.saveChanges')}
           </Button>
         </ResponsiveDialogFooter>
       </ResponsiveDialogContent>

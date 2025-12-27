@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Upload,
@@ -50,22 +51,13 @@ interface ImportPreview {
 
 type ImportState = 'select' | 'preview' | 'importing' | 'success' | 'error';
 
-const TIER_LABELS: Record<TierType, string> = {
-  core: 'Core',
-  inner: 'Inner',
-  outer: 'Outer',
-  naybor: 'Naybor',
-  parasocial: 'Parasocial',
-  rolemodel: 'Role Model',
-  acquainted: 'Acquainted',
-};
-
 export function DataImportDialog({
   open,
   onOpenChange,
   onImport,
   existingFriendCount,
 }: DataImportDialogProps) {
+  const { t } = useTranslation();
   const [importState, setImportState] = useState<ImportState>('select');
   const [dragActive, setDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -92,7 +84,7 @@ export function DataImportDialog({
 
   const processFile = async (file: File) => {
     if (!file.name.endsWith('.json') && file.type !== 'application/json') {
-      setErrorMessage('Please select a JSON file.');
+      setErrorMessage(t('dataImport.errors.selectJson'));
       setImportState('error');
       return;
     }
@@ -133,7 +125,7 @@ export function DataImportDialog({
         setImportState('error');
       }
     } catch (err) {
-      setErrorMessage(err instanceof Error ? err.message : 'Failed to read file');
+      setErrorMessage(err instanceof Error ? err.message : t('dataImport.errors.readFailed'));
       setImportState('error');
     }
   };
@@ -165,7 +157,7 @@ export function DataImportDialog({
         onImport(importData, options);
         setImportState('success');
       } catch (err) {
-        setErrorMessage(err instanceof Error ? err.message : 'Import failed');
+        setErrorMessage(err instanceof Error ? err.message : t('dataImport.errors.importFailed'));
         setImportState('error');
       }
     }, 500);
@@ -202,10 +194,10 @@ export function DataImportDialog({
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2">
                   <Upload className="w-5 h-5 text-primary" />
-                  Import Data
+                  {t('dataImport.title')}
                 </DialogTitle>
                 <DialogDescription>
-                  Import your social graph from another Dunbar-compliant network.
+                  {t('dataImport.description')}
                 </DialogDescription>
               </DialogHeader>
 
@@ -223,10 +215,10 @@ export function DataImportDialog({
               >
                 <FileJson className="w-10 h-10 mx-auto mb-3 text-muted-foreground" />
                 <p className="text-sm font-medium mb-1">
-                  Drop your export file here
+                  {t('dataImport.dropZone')}
                 </p>
                 <p className="text-xs text-muted-foreground mb-4">
-                  or click to browse
+                  {t('dataImport.orBrowse')}
                 </p>
                 <input
                   type="file"
@@ -237,7 +229,7 @@ export function DataImportDialog({
                 />
                 <Button asChild variant="outline" size="sm">
                   <label htmlFor="file-input" className="cursor-pointer">
-                    Select File
+                    {t('dataImport.selectFile')}
                   </label>
                 </Button>
               </div>
@@ -245,14 +237,13 @@ export function DataImportDialog({
               <div className="mt-4 p-3 bg-muted/50 rounded-lg flex gap-2">
                 <Info className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
                 <p className="text-xs text-muted-foreground">
-                  You can import data exported from Inner Friend Circles or other
-                  compatible Dunbar-based social networks.
+                  {t('dataImport.compatibilityNote')}
                 </p>
               </div>
 
               <DialogFooter className="mt-6">
                 <Button variant="outline" onClick={handleClose}>
-                  Cancel
+                  {t('actions.cancel')}
                 </Button>
               </DialogFooter>
             </motion.div>
@@ -266,9 +257,9 @@ export function DataImportDialog({
               exit={{ opacity: 0 }}
             >
               <DialogHeader>
-                <DialogTitle>Import Preview</DialogTitle>
+                <DialogTitle>{t('dataImport.previewTitle')}</DialogTitle>
                 <DialogDescription>
-                  Review what will be imported from {selectedFile?.name}
+                  {t('dataImport.previewDescription', { filename: selectedFile?.name })}
                 </DialogDescription>
               </DialogHeader>
 
@@ -278,33 +269,33 @@ export function DataImportDialog({
                   <Badge variant="secondary">v{preview.version}</Badge>
                   {validationResult?.warnings.length ? (
                     <Badge variant="outline" className="text-yellow-600">
-                      {validationResult.warnings.length} warning(s)
+                      {t('dataImport.warningsCount', { count: validationResult.warnings.length })}
                     </Badge>
                   ) : null}
                 </div>
 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Friends to import</span>
+                    <span className="text-muted-foreground">{t('dataImport.friendsToImport')}</span>
                     <span className="font-medium">{preview.friendsToImport}</span>
                   </div>
 
                   {Object.entries(preview.friendsByTier).map(([tier, count]) => (
                     <div key={tier} className="flex justify-between pl-4">
                       <span className="text-muted-foreground text-xs">
-                        {TIER_LABELS[tier as TierType]}
+                        {t(`tiers.${tier}`)}
                       </span>
                       <span className="text-xs">{count}</span>
                     </div>
                   ))}
 
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Posts</span>
+                    <span className="text-muted-foreground">{t('dataImport.posts')}</span>
                     <span className="font-medium">{preview.postsToImport}</span>
                   </div>
 
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Interactions</span>
+                    <span className="text-muted-foreground">{t('dataImport.interactions')}</span>
                     <span className="font-medium">{preview.interactionsToImport}</span>
                   </div>
                 </div>
@@ -316,7 +307,7 @@ export function DataImportDialog({
                   <div className="flex gap-2 mb-2">
                     <AlertTriangle className="w-4 h-4 text-yellow-600 shrink-0" />
                     <span className="text-sm font-medium text-yellow-700 dark:text-yellow-500">
-                      Warnings
+                      {t('dataImport.warnings')}
                     </span>
                   </div>
                   <ul className="text-xs text-yellow-700 dark:text-yellow-500 space-y-1 pl-6">
@@ -324,7 +315,7 @@ export function DataImportDialog({
                       <li key={i}>{w}</li>
                     ))}
                     {validationResult.warnings.length > 3 && (
-                      <li>...and {validationResult.warnings.length - 3} more</li>
+                      <li>{t('dataImport.andMore', { count: validationResult.warnings.length - 3 })}</li>
                     )}
                   </ul>
                 </div>
@@ -334,7 +325,7 @@ export function DataImportDialog({
               {existingFriendCount > 0 && (
                 <div className="mt-4">
                   <h4 className="text-sm font-medium mb-3">
-                    How should we handle duplicates?
+                    {t('dataImport.duplicatesQuestion')}
                   </h4>
                   <RadioGroup
                     value={options.mergeStrategy}
@@ -349,19 +340,19 @@ export function DataImportDialog({
                     <div className="flex items-center gap-2">
                       <RadioGroupItem value="keep_existing" id="keep_existing" />
                       <Label htmlFor="keep_existing" className="text-sm">
-                        Keep existing friends (skip duplicates)
+                        {t('dataImport.keepExisting')}
                       </Label>
                     </div>
                     <div className="flex items-center gap-2">
                       <RadioGroupItem value="overwrite" id="overwrite" />
                       <Label htmlFor="overwrite" className="text-sm">
-                        Update existing friends with imported data
+                        {t('dataImport.overwrite')}
                       </Label>
                     </div>
                     <div className="flex items-center gap-2">
                       <RadioGroupItem value="keep_both" id="keep_both" />
                       <Label htmlFor="keep_both" className="text-sm">
-                        Keep both (may create duplicates)
+                        {t('dataImport.keepBoth')}
                       </Label>
                     </div>
                   </RadioGroup>
@@ -370,11 +361,11 @@ export function DataImportDialog({
 
               <DialogFooter className="mt-6">
                 <Button variant="outline" onClick={handleBack}>
-                  Back
+                  {t('actions.back')}
                 </Button>
                 <Button onClick={handleImport} className="gap-2">
                   <Upload className="w-4 h-4" />
-                  Import Data
+                  {t('dataImport.importButton')}
                 </Button>
               </DialogFooter>
             </motion.div>
@@ -396,7 +387,7 @@ export function DataImportDialog({
                   <Upload className="w-6 h-6 text-primary" />
                 </motion.div>
               </div>
-              <p className="text-sm text-muted-foreground">Importing your data...</p>
+              <p className="text-sm text-muted-foreground">{t('dataImport.importing')}</p>
             </motion.div>
           )}
 
@@ -411,22 +402,22 @@ export function DataImportDialog({
               <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-green-500/10 flex items-center justify-center">
                 <CheckCircle2 className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-semibold mb-1">Import Complete</h3>
+              <h3 className="font-semibold mb-1">{t('dataImport.successTitle')}</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Your data has been imported successfully.
+                {t('dataImport.successDescription')}
               </p>
 
               {preview && (
                 <div className="text-xs text-muted-foreground space-y-1">
-                  <p>{preview.friendsToImport} friends imported</p>
+                  <p>{t('dataImport.friendsImported', { count: preview.friendsToImport })}</p>
                   {preview.postsToImport > 0 && (
-                    <p>{preview.postsToImport} posts imported</p>
+                    <p>{t('dataImport.postsImported', { count: preview.postsToImport })}</p>
                   )}
                 </div>
               )}
 
               <DialogFooter className="mt-6 justify-center">
-                <Button onClick={handleClose}>Done</Button>
+                <Button onClick={handleClose}>{t('actions.done')}</Button>
               </DialogFooter>
             </motion.div>
           )}
@@ -442,16 +433,16 @@ export function DataImportDialog({
               <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-destructive/10 flex items-center justify-center">
                 <AlertCircle className="w-6 h-6 text-destructive" />
               </div>
-              <h3 className="font-semibold mb-1">Import Failed</h3>
+              <h3 className="font-semibold mb-1">{t('dataImport.errorTitle')}</h3>
               <p className="text-sm text-muted-foreground mb-4 whitespace-pre-line">
-                {errorMessage || 'Unable to import the file. Please check the format and try again.'}
+                {errorMessage || t('dataImport.errors.generic')}
               </p>
 
               <DialogFooter className="mt-6 justify-center gap-2">
                 <Button variant="outline" onClick={handleClose}>
-                  Cancel
+                  {t('actions.cancel')}
                 </Button>
-                <Button onClick={handleBack}>Try Another File</Button>
+                <Button onClick={handleBack}>{t('dataImport.tryAnother')}</Button>
               </DialogFooter>
             </motion.div>
           )}

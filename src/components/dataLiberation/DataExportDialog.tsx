@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, AlertTriangle, CheckCircle2, FileJson, X, Shield } from 'lucide-react';
 import {
@@ -44,16 +45,6 @@ interface ExportOptions {
 
 type ExportState = 'options' | 'exporting' | 'success' | 'error';
 
-const TIER_LABELS: Record<TierType, string> = {
-  core: 'Core',
-  inner: 'Inner',
-  outer: 'Outer',
-  naybor: 'Naybor',
-  parasocial: 'Parasocial',
-  rolemodel: 'Role Model',
-  acquainted: 'Acquainted',
-};
-
 export function DataExportDialog({
   open,
   onOpenChange,
@@ -64,6 +55,7 @@ export function DataExportDialog({
   notificationSettings,
   keysSharedPreferences,
 }: DataExportDialogProps) {
+  const { t } = useTranslation();
   const [options, setOptions] = useState<ExportOptions>({
     includeFriends: true,
     includePosts: true,
@@ -159,7 +151,7 @@ export function DataExportDialog({
       setExportedFilename(filename);
       setExportState('success');
     } catch (err) {
-      setErrorMessage(err instanceof Error ? err.message : 'Unknown error occurred');
+      setErrorMessage(err instanceof Error ? err.message : t('dataExport.errors.unknown'));
       setExportState('error');
     }
   };
@@ -189,45 +181,44 @@ export function DataExportDialog({
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-primary" />
-                  Export Your Data
+                  {t('dataExport.title')}
                 </DialogTitle>
                 <DialogDescription>
-                  Download your social graph to use elsewhere or as a backup.
-                  Only your own data is included.
+                  {t('dataExport.description')}
                 </DialogDescription>
               </DialogHeader>
 
               {/* Export Summary */}
               <div className="mt-4 p-4 bg-muted/50 rounded-lg">
-                <h4 className="text-sm font-medium mb-3">Export Summary</h4>
+                <h4 className="text-sm font-medium mb-3">{t('dataExport.summary')}</h4>
 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Friends</span>
+                    <span className="text-muted-foreground">{t('dataExport.friends')}</span>
                     <span className="font-medium">{exportSummary.totalFriends}</span>
                   </div>
 
                   {Object.entries(exportSummary.friendsByTier).map(([tier, count]) => (
                     <div key={tier} className="flex justify-between pl-4">
                       <span className="text-muted-foreground text-xs">
-                        {TIER_LABELS[tier as TierType]}
+                        {t(`tiers.${tier}`)}
                       </span>
                       <span className="text-xs">{count}</span>
                     </div>
                   ))}
 
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Your Posts</span>
+                    <span className="text-muted-foreground">{t('dataExport.yourPosts')}</span>
                     <span className="font-medium">{exportSummary.totalPosts}</span>
                   </div>
 
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Your Interactions</span>
+                    <span className="text-muted-foreground">{t('dataExport.yourInteractions')}</span>
                     <span className="font-medium">{exportSummary.totalInteractions}</span>
                   </div>
 
                   <div className="flex justify-between pt-2 border-t">
-                    <span className="text-muted-foreground">Estimated Size</span>
+                    <span className="text-muted-foreground">{t('dataExport.estimatedSize')}</span>
                     <Badge variant="secondary">{exportSummary.estimatedSizeKB} KB</Badge>
                   </div>
                 </div>
@@ -235,7 +226,7 @@ export function DataExportDialog({
 
               {/* Export Options */}
               <div className="mt-4 space-y-3">
-                <h4 className="text-sm font-medium">Include in Export</h4>
+                <h4 className="text-sm font-medium">{t('dataExport.includeInExport')}</h4>
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
@@ -247,7 +238,7 @@ export function DataExportDialog({
                       }
                     />
                     <Label htmlFor="includeFriends" className="text-sm">
-                      Friends and tiers
+                      {t('dataExport.options.friendsAndTiers')}
                     </Label>
                   </div>
 
@@ -262,7 +253,7 @@ export function DataExportDialog({
                           }
                         />
                         <Label htmlFor="includeContactInfo" className="text-sm text-muted-foreground">
-                          Email & phone numbers
+                          {t('dataExport.options.contactInfo')}
                         </Label>
                       </div>
 
@@ -275,7 +266,7 @@ export function DataExportDialog({
                           }
                         />
                         <Label htmlFor="includeNotes" className="text-sm text-muted-foreground">
-                          Private notes
+                          {t('dataExport.options.privateNotes')}
                         </Label>
                       </div>
                     </div>
@@ -290,7 +281,7 @@ export function DataExportDialog({
                       }
                     />
                     <Label htmlFor="includePosts" className="text-sm">
-                      Your posts and reactions
+                      {t('dataExport.options.postsAndReactions')}
                     </Label>
                   </div>
 
@@ -303,7 +294,7 @@ export function DataExportDialog({
                       }
                     />
                     <Label htmlFor="includeSettings" className="text-sm">
-                      Privacy & notification settings
+                      {t('dataExport.options.settings')}
                     </Label>
                   </div>
 
@@ -317,7 +308,7 @@ export function DataExportDialog({
                         }
                       />
                       <Label htmlFor="includeKeysShared" className="text-sm">
-                        Keys Shared preferences (emergency access)
+                        {t('dataExport.options.keysShared')}
                       </Label>
                     </div>
                   )}
@@ -329,27 +320,27 @@ export function DataExportDialog({
                 <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex gap-2">
                   <AlertTriangle className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
                   <div className="text-xs text-yellow-700 dark:text-yellow-500">
-                    <p className="font-medium mb-1">Sensitive data included:</p>
+                    <p className="font-medium mb-1">{t('dataExport.sensitiveWarning.title')}</p>
                     <ul className="list-disc list-inside space-y-0.5">
                       {options.includeContactInfo && exportSummary.hasContactInfo && (
-                        <li>Personal contact information (email, phone)</li>
+                        <li>{t('dataExport.sensitiveWarning.contactInfo')}</li>
                       )}
                       {options.includeKeysShared && keysSharedPreferences && (
-                        <li>Home security info (address, key holders, entry codes)</li>
+                        <li>{t('dataExport.sensitiveWarning.homeSecurityInfo')}</li>
                       )}
                     </ul>
-                    <p className="mt-1">Store the exported file securely.</p>
+                    <p className="mt-1">{t('dataExport.sensitiveWarning.storeSecurely')}</p>
                   </div>
                 </div>
               ) : null}
 
               <DialogFooter className="mt-6">
                 <Button variant="outline" onClick={handleClose}>
-                  Cancel
+                  {t('actions.cancel')}
                 </Button>
                 <Button onClick={handleExport} className="gap-2">
                   <Download className="w-4 h-4" />
-                  Download Export
+                  {t('dataExport.downloadButton')}
                 </Button>
               </DialogFooter>
             </motion.div>
@@ -371,7 +362,7 @@ export function DataExportDialog({
                   <FileJson className="w-6 h-6 text-primary" />
                 </motion.div>
               </div>
-              <p className="text-sm text-muted-foreground">Preparing your export...</p>
+              <p className="text-sm text-muted-foreground">{t('dataExport.preparing')}</p>
             </motion.div>
           )}
 
@@ -386,16 +377,16 @@ export function DataExportDialog({
               <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-green-500/10 flex items-center justify-center">
                 <CheckCircle2 className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-semibold mb-1">Export Complete</h3>
+              <h3 className="font-semibold mb-1">{t('dataExport.successTitle')}</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Your data has been downloaded successfully.
+                {t('dataExport.successDescription')}
               </p>
               <Badge variant="secondary" className="font-mono text-xs">
                 {exportedFilename}
               </Badge>
 
               <DialogFooter className="mt-6 justify-center">
-                <Button onClick={handleClose}>Done</Button>
+                <Button onClick={handleClose}>{t('actions.done')}</Button>
               </DialogFooter>
             </motion.div>
           )}
@@ -411,16 +402,16 @@ export function DataExportDialog({
               <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-destructive/10 flex items-center justify-center">
                 <X className="w-6 h-6 text-destructive" />
               </div>
-              <h3 className="font-semibold mb-1">Export Failed</h3>
+              <h3 className="font-semibold mb-1">{t('dataExport.errorTitle')}</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                {errorMessage || 'Unable to export your data. Please try again.'}
+                {errorMessage || t('dataExport.errors.generic')}
               </p>
 
               <DialogFooter className="mt-6 justify-center gap-2">
                 <Button variant="outline" onClick={handleClose}>
-                  Cancel
+                  {t('actions.cancel')}
                 </Button>
-                <Button onClick={handleRetry}>Try Again</Button>
+                <Button onClick={handleRetry}>{t('dataExport.tryAgain')}</Button>
               </DialogFooter>
             </motion.div>
           )}

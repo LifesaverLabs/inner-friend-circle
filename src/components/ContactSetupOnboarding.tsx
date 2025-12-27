@@ -26,21 +26,21 @@ import { supabase } from '@/integrations/supabase/client';
 import { ServiceType, SERVICES, SERVICE_LIST } from '@/types/contactMethod';
 import { toast } from 'sonner';
 
-// Quick guidance hints for onboarding
-const QUICK_HINTS: Record<ServiceType, string> = {
-  real_face_time: 'Your city or favorite meeting spot — nothing beats real face time!',
-  phone: 'Your phone number with country code (e.g., +1 555-123-4567)',
-  facetime: 'Phone number or Apple ID email linked to FaceTime',
-  whatsapp: 'Phone number with country code, no spaces (e.g., +15551234567)',
-  signal: 'Phone number registered with Signal app',
-  telegram: 'Your @username (without @) or phone number',
-  zoom: 'Personal Meeting ID or your zoom.us meeting link',
-  google_meet: 'Your Gmail address',
-  teams: 'Your Microsoft work or personal email',
-  discord: 'Username#1234 or your User ID',
-  skype: 'Your Skype Name (find in Settings → Account)',
-  webex: 'Personal Room link or Webex email',
-  slack: 'Work email (both parties need same workspace)',
+// Quick guidance hints for onboarding - i18n key mapping
+const QUICK_HINT_KEYS: Record<ServiceType, string> = {
+  real_face_time: 'onboarding.hints.realFaceTime',
+  phone: 'onboarding.hints.phone',
+  facetime: 'onboarding.hints.facetime',
+  whatsapp: 'onboarding.hints.whatsapp',
+  signal: 'onboarding.hints.signal',
+  telegram: 'onboarding.hints.telegram',
+  zoom: 'onboarding.hints.zoom',
+  google_meet: 'onboarding.hints.googleMeet',
+  teams: 'onboarding.hints.teams',
+  discord: 'onboarding.hints.discord',
+  skype: 'onboarding.hints.skype',
+  webex: 'onboarding.hints.webex',
+  slack: 'onboarding.hints.slack',
 };
 
 interface ContactSetupOnboardingProps {
@@ -260,7 +260,7 @@ export function ContactSetupOnboarding({
                       {/* Guidance hint */}
                       <div className="flex items-start gap-2 p-2 bg-muted/50 rounded text-xs">
                         <Info className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
-                        <span className="text-muted-foreground">{QUICK_HINTS[currentService]}</span>
+                        <span className="text-muted-foreground">{t(QUICK_HINT_KEYS[currentService])}</span>
                       </div>
                       
                       <div className="space-y-1">

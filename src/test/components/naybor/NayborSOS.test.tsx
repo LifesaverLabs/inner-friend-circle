@@ -40,11 +40,19 @@ const mockTranslations: Record<string, string> = {
   'nayborSOS.banner.title': 'Naybor SOS™',
   'nayborSOS.banner.networkStatus': '{{count}} naybors in your SOS network',
   'nayborSOS.banner.addMore': 'Add more naybors to strengthen your network',
+  'nayborSOS.addMoreNaybors': 'Add more naybors',
   'nayborSOS.banner.quickButton': 'Quick',
+  'nayborSOS.quick': 'Quick',
   'nayborSOS.banner.sosButton': 'SOS',
   // Quick Panel
   'nayborSOS.quickPanel.title': 'Quick Contacts',
   'nayborSOS.quickPanel.noPhone': 'No phone',
+  'nayborSOS.noPhone': 'No phone',
+  'nayborSOS.tapSOSForMore': 'Tap SOS for more options and all naybors',
+  'accessibility.naybor.sosRegion': 'Quick SOS contacts',
+  'accessibility.naybor.sosContactsList': 'Quick contacts:',
+  'accessibility.naybor.hideQuickContacts': 'Hide quick contacts',
+  'accessibility.naybor.showQuickContacts': 'Show quick contacts',
   // Actions
   'actions.back': 'Back',
   // Accessibility - keys from component

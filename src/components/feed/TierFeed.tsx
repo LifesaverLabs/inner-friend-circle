@@ -1,4 +1,5 @@
 import { useMemo, useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Loader2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -69,6 +70,7 @@ export function TierFeed({
   onRequestContactInfo,
   onUpdateLastContacted,
 }: TierFeedProps) {
+  const { t } = useTranslation();
   const {
     nudges,
     getTierFeed,
@@ -161,9 +163,9 @@ export function TierFeed({
       // No phone number - request contact info
       if (onRequestContactInfo) {
         onRequestContactInfo(friend.id);
-        toast.info(`Add contact info for ${friend.name} to reach out`);
+        toast.info(t('tierFeed.toasts.addContactInfo', { name: friend.name }));
       } else {
-        toast.error(`No contact information for ${friend.name}`);
+        toast.error(t('tierFeed.toasts.noContactInfo', { name: friend.name }));
       }
       return;
     }
@@ -176,10 +178,10 @@ export function TierFeed({
         duration: 10000,
         action: SUPPRESSIBLE_METHODS.includes(contactMethod)
           ? {
-              label: "Don't show for 1 month",
+              label: t('tierFeed.toasts.dontShowMonth'),
               onClick: () => {
                 suppressWarningUntilNextMonth(contactMethod);
-                toast.info(`${methodInfo.name} warnings silenced until next month`);
+                toast.info(t('tierFeed.toasts.warningSilenced', { method: methodInfo.name }));
               },
             }
           : undefined,
@@ -193,7 +195,7 @@ export function TierFeed({
         // Open contact method
         const url = methodInfo.getUrl(phone);
         window.open(url, '_blank');
-        toast.success(`Connecting with ${friend.name} via ${methodInfo.name}`);
+        toast.success(t('tierFeed.toasts.connecting', { name: friend.name, method: methodInfo.name }));
         break;
       }
       case 'plan_meetup': {
@@ -201,14 +203,14 @@ export function TierFeed({
         // Future: Could open a meetup scheduling dialog
         const url = methodInfo.getUrl(phone);
         window.open(url, '_blank');
-        toast.success(`Reach out to ${friend.name} to plan a meetup`);
+        toast.success(t('tierFeed.toasts.planMeetup', { name: friend.name }));
         break;
       }
     }
 
     // Dismiss the nudge after action
     dismissNudge(nudgeId);
-  }, [tierNudges, friends, defaultContactMethod, onRequestContactInfo, dismissNudge]);
+  }, [tierNudges, friends, defaultContactMethod, onRequestContactInfo, dismissNudge, t]);
 
   // Handle marking a friend as connected (update lastContacted date)
   const handleMarkConnected = useCallback((
@@ -221,12 +223,12 @@ export function TierFeed({
 
     if (onUpdateLastContacted) {
       onUpdateLastContacted(friendId, date);
-      toast.success(`Marked ${friend.name} as connected`);
+      toast.success(t('tierFeed.toasts.markedConnected', { name: friend.name }));
     }
 
     // Dismiss the nudge
     dismissNudge(nudgeId);
-  }, [friends, onUpdateLastContacted, dismissNudge]);
+  }, [friends, onUpdateLastContacted, dismissNudge, t]);
 
   const bgColor = TIER_BG_COLORS[tier];
   const borderColor = TIER_BORDER_COLORS[tier];
@@ -242,7 +244,7 @@ export function TierFeed({
       >
         <div className="flex items-center justify-center">
           <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" aria-hidden="true" />
-          <span className="ml-2 text-muted-foreground">Loading feed...</span>
+          <span className="ml-2 text-muted-foreground">{t('feed.loading')}</span>
         </div>
       </div>
     );
@@ -257,10 +259,10 @@ export function TierFeed({
         aria-live="assertive"
       >
         <div className="text-center">
-          <p className="text-destructive mb-4">Failed to load feed</p>
-          <Button variant="outline" onClick={() => window.location.reload()} aria-label="Retry loading the feed">
+          <p className="text-destructive mb-4">{t('feed.errorLoadFeed')}</p>
+          <Button variant="outline" onClick={() => window.location.reload()} aria-label={t('feed.retryLoadFeed')}>
             <RefreshCw className="w-4 h-4 mr-2" aria-hidden="true" />
-            Retry
+            {t('actions.retry')}
           </Button>
         </div>
       </div>

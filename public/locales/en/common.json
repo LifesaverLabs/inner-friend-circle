@@ -135,6 +135,46 @@
       "followFailed": "Failed to follow"
     }
   },
+  "feedPost": {
+    "likeCount": "{{count}} like",
+    "likeCount_plural": "{{count}} likes",
+    "commentCount": "{{count}} comment",
+    "commentCount_plural": "{{count}} comments"
+  },
+  "postContent": {
+    "voiceNote": "Voice Note",
+    "audioUnavailable": "Audio unavailable",
+    "callInvitation": "Call Invitation",
+    "joinCall": "Join call",
+    "join": "Join",
+    "meetupInvitation": "Meetup Invitation",
+    "location": "Location: {{name}}",
+    "rsvpOptions": "RSVP options",
+    "rsvpYes": "RSVP Yes",
+    "rsvpYesLabel": "RSVP yes to meetup",
+    "maybe": "Maybe",
+    "rsvpMaybeLabel": "RSVP maybe to meetup",
+    "imNearby": "I'm nearby!",
+    "callThisPerson": "Call this person",
+    "call": "Call",
+    "lifeUpdate": "Life Update"
+  },
+  "feedHeader": {
+    "feed": "Feed",
+    "share": "Share",
+    "tierNames": {
+      "core": "Core",
+      "inner": "Inner",
+      "outer": "Outer+"
+    },
+    "tierDescriptions": {
+      "core": "Updates from your closest friends",
+      "inner": "Updates from your close friends",
+      "outer": "Updates from outer circle, naybors, parasocials & role models"
+    },
+    "postCount": "{{count}} post",
+    "postCount_plural": "{{count}} posts"
+  },
   "tiers": {
     "core": "Core",
     "coreDescription": "Your closest confidants (up to 5)",
@@ -163,6 +203,7 @@
     "edit": "Edit",
     "delete": "Delete",
     "save": "Save",
+    "saving": "Saving...",
     "cancel": "Cancel",
     "confirm": "Confirm",
     "close": "Close",
@@ -175,10 +216,21 @@
     "import": "Import",
     "remove": "Remove",
     "accept": "Accept",
-    "refresh": "Refresh"
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "share": "Share",
+    "sharing": "Sharing...",
+    "selectAll": "Select All",
+    "clear": "Clear",
+    "copy": "Copy",
+    "print": "Print"
   },
   "labels": {
-    "name": "Name"
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "notes": "Notes",
+    "handle": "Handle"
   },
   "capacity": {
     "spotsAvailable": "{{available}} of {{limit}} spots available",
@@ -214,7 +266,10 @@
     "share": "Share",
     "voiceReply": "Voice Reply",
     "scheduleCall": "Schedule Call",
-    "planMeetup": "Plan Meetup"
+    "planMeetup": "Plan Meetup",
+    "loading": "Loading feed...",
+    "errorLoadFeed": "Failed to load feed",
+    "retryLoadFeed": "Retry loading the feed"
   },
   "emptyState": {
     "noPostsYet": "No posts yet",
@@ -374,7 +429,11 @@
     "select": "Select Language",
     "current": "Current language: {{language}}",
     "helpTranslate": "Help translate InnerFriend",
-    "communityTranslation": "Join our community of translators to make InnerFriend accessible to more people around the world."
+    "communityTranslation": "Join our community of translators to make InnerFriend accessible to more people around the world.",
+    "contribute": "Contribute",
+    "currentlyAvailable": "Currently available in {{count}} languages. Help us add more!",
+    "becomeTranslator": "Become a Translator",
+    "openSourceNote": "InnerFriend is open source. Your translations help build a more inclusive community."
   },
   "errors": {
     "generic": "Something went wrong. Please try again.",
@@ -398,7 +457,8 @@
     "callVia": "Call via {{method}}",
     "editContactInfo": "Edit contact info",
     "promoteTo": "Promote to",
-    "moveTo": "Move to {{tier}}"
+    "moveTo": "Move to {{tier}}",
+    "updated": "Updated {{name}}"
   },
   "connections": {
     "requests": "Connection Requests",
@@ -407,6 +467,34 @@
     "addedYouAs": "Added you as {{tier}}",
     "circleHidden": "Circle hidden",
     "viaService": "via {{service}}"
+  },
+  "addLinkedFriend": {
+    "title": "Add Linked Friend to {{tier}}",
+    "description": "Find someone by their contact info to request a connection.",
+    "findBy": "Find by",
+    "enterUsernameHint": "Enter their username exactly as they set it",
+    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "errors": {
+      "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
+      "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
+      "searchError": "An error occurred while searching. Please try again.",
+      "connectionFailed": "Failed to send connection request"
+    },
+    "userFound": "User Found",
+    "showCircleLevel": "Show circle level",
+    "circleVisibleHint": "They'll see you added them as {{tier}}",
+    "circleHiddenHint": "They won't see which circle you added them to",
+    "sendRequest": "Send Connection Request",
+    "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
+    "serviceTypes": {
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "handle": "User Handle",
+      "signal": "Signal",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "facetime": "FaceTime"
+    }
   },
   "roleModel": {
     "addTitle": "Add Role Model",
@@ -465,6 +553,11 @@
       "phone": "Phone",
       "vcard": "vCard",
       "csv": "CSV"
+    },
+    "sources": {
+      "contactPicker": "Phone Contacts",
+      "vcard": "vCard File",
+      "csv": "CSV File"
     },
     "acquaintedCapacity": "Acquainted capacity",
     "capacityFull": "Your Acquainted tier is full. Promote some contacts to make room.",
@@ -667,6 +760,10 @@
     "messageAll": "Message All ({{count}})",
     "contacted": "Contacted {{count}} naybor",
     "contacted_plural": "Contacted {{count}} naybors",
+    "addMoreNaybors": "Add more naybors",
+    "quick": "Quick",
+    "noPhone": "No phone",
+    "tapSOSForMore": "Tap SOS for more options and all naybors",
     "toasts": {
       "messageCopied": "Message copied to clipboard",
       "noNayborsSelected": "No naybors with phone numbers selected"
@@ -721,6 +818,21 @@
     "toasts": {
       "enterContactInfo": "Please enter contact information",
       "saveFailed": "Failed to save contact methods"
+    },
+    "hints": {
+      "realFaceTime": "Your city or favorite meeting spot — nothing beats real face time!",
+      "phone": "Your phone number with country code (e.g., +1 555-123-4567)",
+      "facetime": "Phone number or Apple ID email linked to FaceTime",
+      "whatsapp": "Phone number with country code, no spaces (e.g., +15551234567)",
+      "signal": "Phone number registered with Signal app",
+      "telegram": "Your @username (without @) or phone number",
+      "zoom": "Personal Meeting ID or your zoom.us meeting link",
+      "googleMeet": "Your Gmail address",
+      "teams": "Your Microsoft work or personal email",
+      "discord": "Username#1234 or your User ID",
+      "skype": "Your Skype Name (find in Settings → Account)",
+      "webex": "Personal Room link or Webex email",
+      "slack": "Work email (both parties need same workspace)"
     }
   },
   "keysShared": {
@@ -904,6 +1016,72 @@
     "underMinDescription": "Having trusted naybors nearby is essential for emergencies, mutual aid, and building community resilience. Introduce yourself to your neighbors!",
     "mrRogersQuote": "\"Won't you be my neighbor?\" — Fred Rogers"
   },
+  "tierFeed": {
+    "toasts": {
+      "addContactInfo": "Add contact info for {{name}} to reach out",
+      "noContactInfo": "No contact information for {{name}}",
+      "dontShowMonth": "Don't show for 1 month",
+      "warningSilenced": "{{method}} warnings silenced until next month",
+      "connecting": "Connecting with {{name}} via {{method}}",
+      "planMeetup": "Reach out to {{name}} to plan a meetup",
+      "markedConnected": "Marked {{name}} as connected"
+    }
+  },
+  "sunsetNudge": {
+    "actions": {
+      "scheduleCall": "Schedule Call",
+      "sendVoiceNote": "Send Voice Note",
+      "planMeetup": "Plan Meetup"
+    },
+    "dateOptions": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "twoDaysAgo": "2 days ago",
+      "threeDaysAgo": "3 days ago",
+      "oneWeekAgo": "1 week ago",
+      "twoWeeksAgo": "2 weeks ago"
+    }
+  },
+  "parasocialFeed": {
+    "new": "New",
+    "from": "from {{name}}",
+    "seen": "Seen",
+    "unseen": "Unseen",
+    "unknownCreator": "Unknown Creator"
+  },
+  "nayborVideo": {
+    "title": "Won't You Be My Naybor?",
+    "clickToWatch": "Click to watch on YouTube",
+    "blocked": "Video blocked by your network?",
+    "learnMore": "Learn more",
+    "iframeTitle": "Won't You Be My Naybor? - Mr. Rogers"
+  },
+  "dataLiberation": {
+    "banner": {
+      "title": "Your Data, Your Choice",
+      "description": "Export your social graph anytime to use with other Dunbar-compliant networks. Your data belongs to you.",
+      "exportButton": "Export My Data",
+      "learnMore": "Learn More",
+      "dismiss": "Dismiss banner"
+    }
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "goToPrevious": "Go to previous page",
+    "goToNext": "Go to next page",
+    "morePages": "More pages"
+  },
+  "sidebar": {
+    "toggle": "Toggle Sidebar"
+  },
+  "carousel": {
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "breadcrumb": {
+    "more": "More"
+  },
   "gdpr": {
     "cookies": {
       "title": "We use cookies",
@@ -1003,6 +1181,251 @@
   },
   "common": {
     "optional": "optional"
+  },
+  "parasocial": {
+    "creatorDashboard": "Creator Dashboard",
+    "shareContent": "Share Content",
+    "shareNewContent": "Share New Content",
+    "shareDescription": "Share a link with your parasocial followers",
+    "noContentShared": "No content shared yet",
+    "noContentHint": "Share links to engage with your followers",
+    "title": "Title",
+    "titlePlaceholder": "What are you sharing?",
+    "url": "URL",
+    "urlPlaceholder": "https://...",
+    "description": "Description",
+    "descriptionPlaceholder": "Brief description (optional)",
+    "deleteTitle": "Delete this share?",
+    "deleteDescription": "This will remove the link from your followers' feeds.",
+    "clicks": "{{count}} click",
+    "clicks_plural": "{{count}} clicks",
+    "engagement": "{{percent}}% engagement",
+    "toasts": {
+      "titleAndUrlRequired": "Title and URL are required",
+      "invalidUrl": "Please enter a valid URL",
+      "sharedContent": "Content shared with your followers!",
+      "deleted": "Share deleted"
+    }
+  },
+  "profileSettings": {
+    "title": "Profile Settings",
+    "description": "Manage your profile and contact preferences",
+    "tabs": {
+      "profile": "Profile",
+      "contact": "Contact",
+      "creator": "Creator"
+    },
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Your name",
+    "handle": "Handle",
+    "handlePlaceholder": "your_handle",
+    "handleHint": "3-30 characters. Letters, numbers, and underscores only.",
+    "publicProfile": "Your Public Profile",
+    "publicProfileLabel": "Public Profile",
+    "privateProfileLabel": "Private Profile",
+    "publicDescription": "Anyone can view your profile page",
+    "privateDescription": "Only you and confirmed friends can view your profile",
+    "parasocialMode": "Parasocial Personality Mode",
+    "parasocialModeDescription": "Enable this if you're a public figure, creator, or celebrity who wants to receive parasocial connections from fans and share content with them.",
+    "parasocialModeHint": "When enabled, other users can add you to their Parasocials circle and see content you share. Save your profile to apply this change.",
+    "saveProfile": "Save Profile",
+    "saveSettings": "Save Settings",
+    "toasts": {
+      "updated": "Profile updated",
+      "updateFailed": "Failed to update profile",
+      "linkCopied": "Link copied!"
+    },
+    "errors": {
+      "inappropriate": "This handle contains inappropriate language",
+      "handleTaken": "This handle is already taken",
+      "checkingHandle": "Error checking handle availability",
+      "validatingHandle": "Error validating handle"
+    }
+  },
+  "editFriend": {
+    "title": "Edit Contact",
+    "description": "Update contact information for {{name}}",
+    "namePlaceholder": "Friend's name",
+    "emailPlaceholder": "friend@example.com",
+    "preferredContactMethod": "Preferred Contact Method",
+    "selectContactMethod": "Choose how to reach them",
+    "notesPlaceholder": "Any notes about this person...",
+    "saveChanges": "Save Changes"
+  },
+  "post": {
+    "voiceNote": "Voice Note",
+    "audioUnavailable": "Audio unavailable",
+    "callInvitation": "Call Invitation",
+    "joinCall": "Join",
+    "meetupInvitation": "Meetup Invitation",
+    "location": "Location: {{name}}",
+    "rsvpYes": "RSVP Yes",
+    "rsvpMaybe": "Maybe",
+    "nearbyMessage": "I'm nearby!",
+    "lifeUpdate": "Life Update",
+    "call": "Call",
+    "addContactInfo": "Add Contact Info",
+    "addContactInfoTooltip": "Add contact information for {{name}}",
+    "callViaHighFidelity": "Call via {{method}} (high-fidelity)",
+    "callVia": "Call via {{method}}",
+    "addMoreContactInfo": "Add more contact info",
+    "usePhoneRecommendation": "For best results, use your phone for calls",
+    "voiceReply": "Voice Reply",
+    "voiceReplyTooltip": "Send a voice reply (high-fidelity)",
+    "meetup": "Meetup",
+    "meetupTooltip": "Schedule a meetup (high-fidelity)",
+    "comment": "Comment",
+    "commentTooltip": "Add a comment",
+    "like": "Like",
+    "likeTooltip": "Like this post",
+    "likeTooltipHighFidelity": "Like (consider a more meaningful interaction)",
+    "shareTooltip": "Share",
+    "selectContactMethod": "Select contact method",
+    "warningPlatform": "Warning: platform may have surveillance concerns",
+    "currentlySelected": "Currently selected",
+    "dontShowMonth": "Don't show for 1 month",
+    "warningSilenced": "{{method}} warnings silenced until next month",
+    "connectingVia": "Connecting via {{method}}",
+    "toasts": {
+      "noContact": "No contact information available",
+      "contactFailed": "Failed to initiate contact",
+      "noContactPerson": "No contact information available for this person"
+    }
+  },
+  "compose": {
+    "title": "Share with your circles",
+    "type": "Type",
+    "content": "Content",
+    "voiceComingSoon": "Voice recording coming soon",
+    "visibility": "Who can see this?",
+    "shareButton": "Share",
+    "types": {
+      "text": "Text",
+      "photo": "Photo",
+      "voice": "Voice",
+      "video": "Video",
+      "call": "Call",
+      "meetup": "Meetup",
+      "nearby": "Nearby",
+      "update": "Update"
+    },
+    "visibilityOptions": {
+      "core": "Core (5 closest)",
+      "inner": "Inner Circle (15)",
+      "outer": "Outer Circle (150)"
+    },
+    "placeholders": {
+      "text": "What's on your mind?",
+      "photo": "Add a caption to your photo...",
+      "video": "Add a description to your video...",
+      "call": "Add details about the call...",
+      "meetup": "What are you planning?",
+      "nearby": "Let your friends know you're nearby...",
+      "update": "Share your exciting news...",
+      "default": "Write something..."
+    }
+  },
+  "shareDialog": {
+    "title": "Share Your Circles",
+    "healthcareTitle": "Healthcare Provider Share",
+    "description": "Select which tiers to include in your share",
+    "healthcareDescription": "Share with your healthcare provider or social worker (includes privacy protections)",
+    "healthcareButton": "Healthcare",
+    "healthcareMode": "Healthcare Mode",
+    "healthcareModeHint": "Document will include privacy law citations (HIPAA, GDPR, etc.) to protect this data under healthcare confidentiality.",
+    "privacyNote": "Privacy Note",
+    "privacyWarningAll": "Sharing all circles reveals your complete social graph. This could be used for social engineering, competitive intelligence, or targeted marketing.",
+    "privacyWarningMultiple": "Sharing multiple tiers reveals relationships between your circles that could be cross-referenced.",
+    "export": {
+      "header": "My Inner Friend Circles",
+      "healthcareHeader": "CONFIDENTIAL PATIENT SOCIAL SUPPORT NETWORK",
+      "footer": "Created with InnerFriend",
+      "empty": "empty"
+    },
+    "toasts": {
+      "selectTier": "Please select at least one tier to share",
+      "copied": "Copied to clipboard",
+      "healthcareCopied": "Healthcare document copied",
+      "copyFailed": "Failed to copy",
+      "selectTierPrint": "Please select at least one tier to print"
+    }
+  },
+  "followCreator": {
+    "title": "Follow a Creator",
+    "description": "Search for verified creators to follow and see their content in your feed.",
+    "searchLabel": "Search by name or handle",
+    "searchPlaceholder": "@creator_handle or Creator Name",
+    "creatorModeHint": "Only users who have enabled Creator Mode will appear in search results.",
+    "toasts": {
+      "following": "Now following {{name}}",
+      "alreadyFollowing": "You are already following this creator",
+      "followFailed": "Failed to follow"
+    },
+    "errors": {
+      "searching": "An error occurred while searching.",
+      "noCreators": "No creators found matching that search. They may not have enabled creator mode yet.",
+      "noCreatorsFound": "No creators found matching that search."
+    }
+  },
+  "contactMethods": {
+    "title": "Contact Methods",
+    "subtitle": "Add your preferred video call and messaging services so friends can reach you",
+    "addButton": "Add Contact Method",
+    "addButtonCompact": "Add",
+    "addDialogTitle": "Add Contact Method",
+    "addDialogDescription": "Add a way for your friends to reach you for video kalls",
+    "serviceLabel": "Service",
+    "contactInfoLabel": "Your {{service}} Contact Info",
+    "labelOptional": "Label (optional)",
+    "labelPlaceholder": "e.g., Personal, Work, Home",
+    "labelHint": "Helps you identify between multiple accounts on the same service",
+    "availableFor": "Available for",
+    "spontaneousKalls": "Spontaneous Kalls",
+    "spontaneousTooltip": "Instant, drop-in video calls when friends want to connect right now",
+    "scheduledKalls": "Scheduled Kalls",
+    "scheduledTooltip": "Planned video meetings set up in advance for a specific time",
+    "addMethod": "Add Method",
+    "dragToReorder": "Drag to reorder",
+    "dragReorderHint": "Drag to reorder priority. #1 is your preferred method.",
+    "noSpontaneousMethods": "No spontaneous call methods added yet",
+    "noScheduledMethods": "No scheduled call methods added yet",
+    "guidance": {
+      "example": "Example",
+      "tip": "Tip"
+    },
+    "toasts": {
+      "enterInfo": "Please enter contact information"
+    }
+  },
+  "dev": {
+    "label": "Dev",
+    "panelTitle": "Dev Panel",
+    "mode": "Development Mode",
+    "authStatus": "Auth Status",
+    "notLoggedIn": "Not logged in",
+    "authActions": "Auth Actions",
+    "refreshButton": "Refresh",
+    "clearApp": "Clear App Data",
+    "clearAll": "Clear All",
+    "forceLogout": "Force Logout",
+    "storageActions": "Storage Actions",
+    "storageInspector": "Storage Inspector",
+    "noStorageData": "No localStorage data",
+    "chars": "chars",
+    "tips": {
+      "title": "Tips",
+      "sessions": "Sessions persist across page reloads",
+      "clearApp": "Use \"Clear App Data\" to reset friend lists",
+      "forceLogout": "Use \"Force Logout\" to fully clear auth state"
+    },
+    "toasts": {
+      "clearStorage": "Cleared {{count}} app-related localStorage keys",
+      "clearAll": "Cleared all localStorage and sessionStorage",
+      "signOut": "Force signed out and cleared auth storage",
+      "signOutFailed": "Failed to force sign out",
+      "refreshed": "Session refreshed",
+      "refreshFailed": "Failed to refresh session"
+    }
   },
   "dispatch": {
     "registration": {
@@ -1192,6 +1615,74 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    }
+  },
+  "dataExport": {
+    "title": "Export Your Data",
+    "description": "Download your social graph to use elsewhere or as a backup. Only your own data is included.",
+    "summary": "Export Summary",
+    "friends": "Friends",
+    "yourPosts": "Your Posts",
+    "yourInteractions": "Your Interactions",
+    "estimatedSize": "Estimated Size",
+    "includeInExport": "Include in Export",
+    "options": {
+      "friendsAndTiers": "Friends and tiers",
+      "contactInfo": "Email & phone numbers",
+      "privateNotes": "Private notes",
+      "postsAndReactions": "Your posts and reactions",
+      "settings": "Privacy & notification settings",
+      "keysShared": "Keys Shared preferences (emergency access)"
+    },
+    "sensitiveWarning": {
+      "title": "Sensitive data included:",
+      "contactInfo": "Personal contact information (email, phone)",
+      "homeSecurityInfo": "Home security info (address, key holders, entry codes)",
+      "storeSecurely": "Store the exported file securely."
+    },
+    "downloadButton": "Download Export",
+    "preparing": "Preparing your export...",
+    "successTitle": "Export Complete",
+    "successDescription": "Your data has been downloaded successfully.",
+    "errorTitle": "Export Failed",
+    "tryAgain": "Try Again",
+    "errors": {
+      "unknown": "Unknown error occurred",
+      "generic": "Unable to export your data. Please try again."
+    }
+  },
+  "dataImport": {
+    "title": "Import Data",
+    "description": "Import your social graph from another Dunbar-compliant network.",
+    "dropZone": "Drop your export file here",
+    "orBrowse": "or click to browse",
+    "selectFile": "Select File",
+    "compatibilityNote": "You can import data exported from Inner Friend Circles or other compatible Dunbar-based social networks.",
+    "previewTitle": "Import Preview",
+    "previewDescription": "Review what will be imported from {{filename}}",
+    "warningsCount": "{{count}} warning(s)",
+    "friendsToImport": "Friends to import",
+    "posts": "Posts",
+    "interactions": "Interactions",
+    "warnings": "Warnings",
+    "andMore": "...and {{count}} more",
+    "duplicatesQuestion": "How should we handle duplicates?",
+    "keepExisting": "Keep existing friends (skip duplicates)",
+    "overwrite": "Update existing friends with imported data",
+    "keepBoth": "Keep both (may create duplicates)",
+    "importButton": "Import Data",
+    "importing": "Importing your data...",
+    "successTitle": "Import Complete",
+    "successDescription": "Your data has been imported successfully.",
+    "friendsImported": "{{count}} friends imported",
+    "postsImported": "{{count}} posts imported",
+    "errorTitle": "Import Failed",
+    "tryAnother": "Try Another File",
+    "errors": {
+      "selectJson": "Please select a JSON file.",
+      "readFailed": "Failed to read file",
+      "importFailed": "Import failed",
+      "generic": "Unable to import the file. Please check the format and try again."
     }
   },
   "admin": {

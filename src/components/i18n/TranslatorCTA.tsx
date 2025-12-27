@@ -41,7 +41,7 @@ export function TranslatorCTA({ variant = 'card', className }: TranslatorCTAProp
             className="gap-2"
           >
             <Heart className="h-4 w-4" aria-hidden="true" />
-            Contribute
+            {t('language.contribute')}
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </Button>
         </div>
@@ -88,37 +88,20 @@ export function TranslatorCTA({ variant = 'card', className }: TranslatorCTAProp
         </div>
 
         <p className="text-sm text-muted-foreground">
-          Currently available in {languageCount} languages. We're looking for translators
-          to add support for more languages including:
+          {t('language.currentlyAvailable', { count: languageCount })}
         </p>
-
-        <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-          <span>Portuguese</span>
-          <span>•</span>
-          <span>Bengali</span>
-          <span>•</span>
-          <span>Japanese</span>
-          <span>•</span>
-          <span>French</span>
-          <span>•</span>
-          <span>German</span>
-          <span>•</span>
-          <span>Korean</span>
-          <span>•</span>
-          <span>and more...</span>
-        </div>
 
         <Button
           onClick={() => window.open(contributeUrl, '_blank')}
           className="w-full gap-2"
         >
           <Heart className="h-4 w-4" aria-hidden="true" />
-          Become a Translator
+          {t('language.becomeTranslator')}
           <ExternalLink className="h-3 w-3" aria-hidden="true" />
         </Button>
 
         <p className="text-xs text-center text-muted-foreground">
-          InnerFriend is open source. Your translations help build a more inclusive community.
+          {t('language.openSourceNote')}
         </p>
       </CardContent>
     </Card>
