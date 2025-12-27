@@ -21,19 +21,35 @@ import {
 
 /**
  * Get Core feed posts - chronological, no suggested content, no ads
+ * Also includes user's own posts that are visible to the core tier
  */
 export function getCoreFeed(posts: FeedPost[]): FeedPost[] {
   return posts
-    .filter(p => p.authorTier === 'core' && !p.isSuggested && !p.isSponsored)
+    .filter(p => {
+      if (p.isSuggested || p.isSponsored) return false;
+      // Include core friends' posts
+      if (p.authorTier === 'core') return true;
+      // Include user's own posts that are visible to core
+      if ((p.authorTier as string) === 'self' && p.visibility.includes('core')) return true;
+      return false;
+    })
     .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 }
 
 /**
  * Get feed posts for a specific tier
+ * Also includes user's own posts that are visible to that tier
  */
 export function getTierFeed(posts: FeedPost[], tier: TierType): FeedPost[] {
   return posts
-    .filter(p => p.authorTier === tier && !p.isSuggested && !p.isSponsored)
+    .filter(p => {
+      if (p.isSuggested || p.isSponsored) return false;
+      // Include posts from friends in this tier
+      if (p.authorTier === tier) return true;
+      // Include user's own posts that are visible to this tier
+      if ((p.authorTier as string) === 'self' && p.visibility.includes(tier)) return true;
+      return false;
+    })
     .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 }
 
