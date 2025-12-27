@@ -1,1 +1,4 @@
 project_id = "fsiheymjsxxhedfrlwbp"
+
+[functions.send-friend-invite]
+verify_jwt = true

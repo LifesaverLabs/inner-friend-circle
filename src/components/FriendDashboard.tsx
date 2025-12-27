@@ -112,9 +112,13 @@ export function FriendDashboard({
       return;
     }
     
+    if (!user?.id) return;
+    
     // Try to find the user by their email or phone in contact_methods
-    // Look up by email first (check various email service types)
-    if (email && user?.id) {
+    let foundUser = false;
+    
+    // Look up by email first
+    if (email) {
       const { data: contactData } = await supabase
         .from('contact_methods')
         .select('id, user_id')
@@ -135,12 +139,12 @@ export function FriendDashboard({
         if (connectionResult.success) {
           toast.success(t('connections.toasts.requestSentTo', { name }));
         }
-        return;
+        foundUser = true;
       }
     }
     
     // Try phone lookup if email didn't find anyone
-    if (phone && user?.id) {
+    if (!foundUser && phone) {
       const { data: phoneData } = await supabase
         .from('contact_methods')
         .select('id, user_id')
@@ -160,6 +164,61 @@ export function FriendDashboard({
         if (connectionResult.success) {
           toast.success(t('connections.toasts.requestSentTo', { name }));
         }
+        foundUser = true;
+      }
+    }
+    
+    // User not found - create pending invitation and send email
+    if (!foundUser && (email || phone)) {
+      // Get inviter's display name for the email
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('display_name')
+        .eq('user_id', user.id)
+        .single();
+      
+      const inviterName = profile?.display_name || 'Someone';
+      
+      // Create pending invitation record
+      const { error: insertError } = await supabase
+        .from('pending_invitations')
+        .insert({
+          inviter_id: user.id,
+          invitee_email: email || null,
+          invitee_phone: phone || null,
+          circle_tier: tier as CircleTier,
+          friend_name: name,
+        });
+      
+      if (insertError) {
+        console.error('Error creating pending invitation:', insertError);
+      }
+      
+      // Send invitation email if we have an email
+      if (email) {
+        try {
+          const { error: invokeError } = await supabase.functions.invoke('send-friend-invite', {
+            body: {
+              invitee_email: email,
+              invitee_name: name,
+              inviter_name: inviterName,
+              circle_tier: tier,
+            },
+          });
+          
+          if (invokeError) {
+            console.error('Error sending invitation email:', invokeError);
+            toast.info(t('connections.toasts.invitationSaved'));
+          } else {
+            toast.success(t('connections.toasts.invitationSent', { name }));
+          }
+        } catch (err) {
+          console.error('Error invoking send-friend-invite:', err);
+          toast.info(t('connections.toasts.invitationSaved'));
+        }
+      } else {
+        // Phone only - just save the pending invitation
+        toast.info(t('connections.toasts.invitationSaved'));
       }
     }
   };
