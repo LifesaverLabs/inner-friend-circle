@@ -24,16 +24,16 @@
         "description": "Découvrez optionnellement quand quelqu'un que vous avez listé comme proche vous a également listé — une célébration douce de la réciprocité."
       },
       "dataLiberation": {
-        "title": "Your Data, Your Way",
-        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+        "title": "Vos Données, Votre Façon",
+        "description": "Exportez toutes vos données à tout moment. Conforme au RGPD."
       },
       "nayborNetwork": {
-        "title": "Naybor Network",
-        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+        "title": "Réseau de Voisins",
+        "description": "Construisez la résilience communautaire avec des voisins de confiance."
       },
       "globalReach": {
-        "title": "23 Languages",
-        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+        "title": "23 Langues",
+        "description": "Internationalisation complète avec support RTL."
       }
     },
     "mission": {
@@ -91,8 +91,8 @@
       "unexpectedError": "Une erreur inattendue s'est produite. Veuillez réessayer."
     },
     "toasts": {
-      "signOutError": "Failed to sign out",
-      "signOutSuccess": "Signed out successfully"
+      "signOutError": "Échec de la déconnexion",
+      "signOutSuccess": "Déconnexion réussie"
     },
     "consent": {
       "agreeTo": "J'accepte la",
@@ -470,34 +470,34 @@
     }
   },
   "emptyState": {
-    "noPostsYet": "No posts yet",
+    "noPostsYet": "Pas encore de publications",
     "noFriendsYet": {
-      "core": "No core friends yet",
-      "inner": "No inner circle friends yet",
-      "outer": "No outer circle friends yet"
+      "core": "Pas encore d'amis Core",
+      "inner": "Pas encore d'amis Inner Circle",
+      "outer": "Pas encore d'amis Outer Circle"
     },
     "noPostsDescription": {
-      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
-      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
-      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+      "core": "Vos amis Core n'ont encore rien partagé.",
+      "inner": "Vos amis Inner Circle n'ont encore rien partagé.",
+      "outer": "Vos amis Outer Circle n'ont encore rien partagé."
     },
     "getStarted": {
-      "core": "Get started by adding up to 5 friends to your Core.",
-      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
-      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+      "core": "Commencez par ajouter jusqu'à 5 amis dans votre Core.",
+      "inner": "Commencez par ajouter jusqu'à 15 amis dans votre Inner Circle.",
+      "outer": "Commencez par ajouter jusqu'à 150 amis dans votre Outer Circle."
     },
     "addToSee": {
-      "core": "Add up to 5 friends to see their posts here.",
-      "inner": "Add up to 15 friends to see their posts here.",
-      "outer": "Add up to 150 friends to see their posts here."
+      "core": "Ajoutez jusqu'à 5 amis pour voir leurs publications ici.",
+      "inner": "Ajoutez jusqu'à 15 amis pour voir leurs publications ici.",
+      "outer": "Ajoutez jusqu'à 150 amis pour voir leurs publications ici."
     },
     "addFriends": {
-      "core": "Add Core Friends",
-      "inner": "Add Inner Circle Friends",
-      "outer": "Add Outer Circle Friends"
+      "core": "Ajouter des Amis Core",
+      "inner": "Ajouter des Amis Inner Circle",
+      "outer": "Ajouter des Amis Outer Circle"
     },
-    "createPost": "Create a Post",
-    "noParasoicalsYet": "No parasocials yet",
+    "createPost": "Créer une Publication",
+    "noParasoicalsYet": "Pas encore de parasociaux",
     "noAcquaintedYet": "No acquainted cousins yet",
     "noRoleModelsYet": "No role models yet",
     "noNayborsYet": "No naybors yet",
@@ -601,8 +601,8 @@
     "addNayborPhoneButton": "Ajouter info de contact pour urgences"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
-    "subtitle": "Curate and tend to your closest relationships",
+    "title": "Votre Cercle d'Amis",
+    "subtitle": "Gérez vos relations significatives",
     "loading": "Loading your circles...",
     "tend": "Tend",
     "share": "Share",
@@ -622,28 +622,38 @@
       "skippedDuplicates": "Skipped {{count}} duplicate",
       "skippedDuplicates_plural": "Skipped {{count}} duplicates",
       "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
-    }
+    },
+    "addFriend": "Ajouter un Ami",
+    "export": "Exporter",
+    "import": "Importer",
+    "settings": "Paramètres",
+    "viewFeed": "Voir le Fil",
+    "tendCircles": "Entretenir les Cercles",
+    "quickStats": "Stats Rapides",
+    "totalFriends": "Total d'Amis",
+    "emptySlots": "Places Disponibles",
+    "lastTended": "Dernier Entretien"
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
-    "learnMore": "Learn more...",
-    "showLess": "Show less",
-    "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
+    "title": "Du Vrai Temps, Pas du Temps Pub",
+    "description": "Nous gagnons quand vous quittez notre site — pour partager de vrais moments avec les personnes qui comptent le plus.",
+    "learnMore": "En savoir plus...",
+    "showLess": "Afficher moins",
+    "inspiration": "Notre inspiration ? Cette publicité classique de Dentyne Ice.",
     "videoTitle": "Dentyne Ice - Face Time",
-    "quote": "\"Make Face Time\" — that's the ideal. When distance separates you, we'll help you bridge it with video kalls. But always remember: nothing beats being there.",
+    "quote": "\"Faites du Vrai Temps\" — c'est l'idéal.",
     "features": {
       "spark": {
-        "title": "Spark Video Kalls",
-        "description": "When you're apart, one click connects you"
+        "title": "Lancer des Appels Vidéo",
+        "description": "Quand vous êtes séparés, un clic vous connecte"
       },
       "tend": {
-        "title": "Tend Your Circles",
-        "description": "Reminders to reach out before connections fade"
+        "title": "Entretenez Vos Cercles",
+        "description": "Des rappels pour rester en contact avant que les liens ne s'effacent"
       },
       "pull": {
-        "title": "Pull Closer",
-        "description": "Move meaningful connections into tighter orbits"
+        "title": "Rapprochez-vous",
+        "description": "Déplacez les connexions significatives vers des orbites plus proches"
       }
     }
   },
@@ -658,52 +668,52 @@
     "keysSharedCount": "Clés ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
-    "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
+    "title": "Entretenez Vos Cercles",
+    "markDescription": "Marquez vos amis {{tier}} que vous n'avez pas contactés {{period}}",
     "periods": {
       "core": "cette semaine",
       "inner": "ces deux semaines",
       "outer": "ces deux mois"
     },
-    "peopleCount": "{{count}} person",
-    "peopleCount_plural": "{{count}} people",
-    "noFriendsInTier": "No friends in this tier yet",
-    "checkInstruction": "✓ Check those you haven't talked to enough:",
-    "noPhone": "no phone",
-    "call": "Call",
-    "maybeLater": "Maybe Later",
-    "doneTending": "Done Tending",
-    "finish": "Finish",
-    "mobileHint": "Contact actions work best on mobile devices",
+    "peopleCount": "{{count}} personne",
+    "peopleCount_plural": "{{count}} personnes",
+    "noFriendsInTier": "Pas encore d'amis à ce niveau",
+    "checkInstruction": "✓ Cochez ceux à qui vous n'avez pas assez parlé :",
+    "noPhone": "pas de téléphone",
+    "call": "Appeler",
+    "maybeLater": "Peut-être Plus Tard",
+    "doneTending": "Entretien Terminé",
+    "finish": "Terminer",
+    "mobileHint": "Les actions de contact fonctionnent mieux sur mobile",
     "reconnect": {
-      "title": "Time to Reconnect",
-      "description": "These friends could use some of your time"
+      "title": "C'est l'Heure de Reconnecter",
+      "description": "Ces amis ont besoin de votre temps"
     },
     "toasts": {
-      "allTended": "Amazing! You've tended to all your circles 🌱",
-      "noPhone": "No phone number for {{name}}",
-      "connecting": "Connecting with {{name}} via {{method}}",
-      "rememberReachOut": "Remember to reach out soon! 💛",
-      "friendsWaiting": "{{count}} friend waiting to hear from you",
-      "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
+      "allTended": "Incroyable ! Vous avez entretenu tous vos cercles 🌱",
+      "noPhone": "Pas de numéro de téléphone pour {{name}}",
+      "connecting": "Connexion avec {{name}} via {{method}}",
+      "rememberReachOut": "N'oubliez pas de reprendre contact bientôt ! 💛",
+      "friendsWaiting": "{{count}} ami attend de vos nouvelles",
+      "friendsWaiting_plural": "{{count}} amis attendent de vos nouvelles"
     }
   },
   "nayborSOS": {
     "title": "Naybor SOS™",
     "steps": {
-      "category": "What kind of help do you need?",
-      "contacts": "Choose naybors to contact"
+      "category": "De quel type d'aide avez-vous besoin ?",
+      "contacts": "Choisissez les voisins à contacter"
     },
-    "critical": "Critical",
-    "emergencyWarning": "For life-threatening emergencies, call 911 first",
-    "suggestedActions": "Suggested actions:",
-    "addDetails": "Add details (optional)",
-    "describePlaceholder": "Describe your situation...",
-    "includeLocation": "Include location info",
-    "chooseNaybors": "Choose Naybors",
-    "chooseNayborsAria": "Continue to choose naybors to contact",
-    "nayborsSelected": "{{count}} naybor selected",
-    "nayborsSelected_plural": "{{count}} naybors selected",
+    "critical": "Critique",
+    "emergencyWarning": "Pour les urgences vitales, appelez le 15 d'abord",
+    "suggestedActions": "Actions suggérées :",
+    "addDetails": "Ajouter des détails (optionnel)",
+    "describePlaceholder": "Décrivez votre situation...",
+    "includeLocation": "Inclure les informations de localisation",
+    "chooseNaybors": "Choisir les Voisins",
+    "chooseNayborsAria": "Continuer pour choisir les voisins à contacter",
+    "nayborsSelected": "{{count}} voisin sélectionné",
+    "nayborsSelected_plural": "{{count}} voisins sélectionnés",
     "copyMessage": "Copy message",
     "messageAll": "Message All ({{count}})",
     "contacted": "Contacted {{count}} naybor",
@@ -730,7 +740,14 @@
     "toasts": {
       "connecting": "Connecting via {{service}}",
       "openService": "Open {{service}} to connect"
-    }
+    },
+    "startCall": "Démarrer l'Appel",
+    "scheduleCall": "Planifier un Appel",
+    "sendMessage": "Envoyer un Message",
+    "viewProfile": "Voir le Profil",
+    "callNow": "Appeler Maintenant",
+    "videoCall": "Appel Vidéo",
+    "voiceCall": "Appel Vocal"
   },
   "onboarding": {
     "steps": {
@@ -782,10 +799,21 @@
       "skype": "Votre nom Skype (dans Paramètres → Compte)",
       "webex": "Lien de salle personnelle ou email Webex",
       "slack": "Email professionnel (les deux parties doivent être dans le même espace)"
-    }
+    },
+    "welcome": "Bienvenue sur Inner Friend Circle",
+    "welcomeDescription": "Configurons vos cercles d'amis",
+    "step1": "Ajouter des Amis Core",
+    "step1Description": "Commencez par vos 5 relations les plus proches",
+    "step2": "Élargissez Votre Cercle",
+    "step2Description": "Ajoutez des amis à Inner et Outer",
+    "step3": "Connaissez Vos Voisins",
+    "step3Description": "Construisez votre réseau de voisinage pour les urgences",
+    "skip": "Passer pour l'instant",
+    "next": "Suivant",
+    "finish": "Commencer"
   },
   "keysShared": {
-    "title": "Clés Partagées",
+    "title": "Keys Shared",
     "steps": {
       "address": {
         "title": "Votre Adresse",
@@ -805,7 +833,7 @@
       }
     },
     "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
-    "address": "Street Address",
+    "address": "Adresse",
     "addressPlaceholder": "123 Main Street",
     "unitNumber": "Unit/Apt Number",
     "unitPlaceholder": "Apt 4B",
@@ -903,7 +931,7 @@
     "unit": "Unit",
     "keyHoldersSummary": "{{count}} naybor(s) have keys",
     "keyHoldersSummary_plural": "{{count}} naybors have keys",
-    "noKeyHolders": "No key holders assigned",
+    "noKeyHolders": "Pas encore de détenteurs de clés",
     "permissionsSummary": "Entry Permissions",
     "mandatoryCount": "{{count}}",
     "mandatoryLabel": "mandatory (always allowed)",
@@ -943,7 +971,23 @@
           "description": "Veuillez n'enfoncer la porte qu'après mûre réflexion, en dernier recours lorsque c'est strictement légalement nécessaire."
         }
       }
-    }
+    },
+    "description": "Partagez de manière sécurisée l'accès d'urgence à votre domicile avec des voisins de confiance",
+    "setup": "Configurer Keys Shared",
+    "enabled": "Keys Shared Activé",
+    "disabled": "Keys Shared Désactivé",
+    "addKeyHolder": "Ajouter un Détenteur de Clé",
+    "editKeyHolder": "Modifier le Détenteur de Clé",
+    "removeKeyHolder": "Supprimer le Détenteur de Clé",
+    "keyHolders": "Détenteurs de Clés",
+    "emergencyAccess": "Accès d'Urgence",
+    "emergencyAccessDescription": "Permettre aux agents d'urgence vérifiés d'accéder à vos informations",
+    "entryCode": "Code d'Entrée",
+    "specialInstructions": "Instructions Spéciales",
+    "trustLevel": "Niveau de Confiance",
+    "high": "Élevé",
+    "medium": "Moyen",
+    "low": "Faible"
   },
   "legal": {
     "privacyPolicy": "Politique de Confidentialité",
@@ -1079,7 +1123,18 @@
     "currentlySelected": "Currently selected",
     "dontShowMonth": "Don't show for 1 month",
     "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "connectingVia": "Connecting via {{method}}",
+    "createPost": "Créer une Publication",
+    "whatOnMind": "Qu'avez-vous en tête ?",
+    "shareWith": "Partager avec",
+    "addPhoto": "Ajouter une Photo",
+    "addVideo": "Ajouter une Vidéo",
+    "post": "Publier",
+    "posting": "Publication...",
+    "deletePost": "Supprimer la Publication",
+    "editPost": "Modifier la Publication",
+    "likePost": "J'aime",
+    "commentOnPost": "Commenter"
   },
   "compose": {
     "title": "Share with your circles",
@@ -1261,10 +1316,10 @@
   },
   "dev": {
     "label": "Dev",
-    "panelTitle": "Dev Panel",
-    "mode": "Development Mode",
-    "authStatus": "Auth Status",
-    "notLoggedIn": "Not logged in",
+    "panelTitle": "Panneau de Développement",
+    "mode": "Mode Développement",
+    "authStatus": "État d'Auth",
+    "notLoggedIn": "Non connecté",
     "authActions": "Auth Actions",
     "refreshButton": "Refresh",
     "clearApp": "Clear App",
@@ -1288,25 +1343,30 @@
       "sessions": "Sessions persist across page reloads",
       "clearApp": "Use \"Clear App Data\" to reset friend lists",
       "forceLogout": "Use \"Force Logout\" to fully clear auth state"
-    }
+    },
+    "clearData": "Effacer les Données",
+    "resetApp": "Réinitialiser l'App"
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
-    "findBy": "Find by",
-    "enterUsernameHint": "Enter their username exactly as they set it",
-    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "title": "Ajouter un Ami Lié à {{tier}}",
+    "description": "Trouvez quelqu'un par ses coordonnées.",
+    "findBy": "Rechercher par",
+    "enterUsernameHint": "Entrez le nom d'utilisateur exactement",
+    "enterContactHint": "Entrez le {{type}} exactement comme enregistré",
     "errors": {
       "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
       "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
       "searchError": "An error occurred while searching. Please try again.",
-      "connectionFailed": "Failed to send connection request"
+      "connectionFailed": "Failed to send connection request",
+      "notFound": "Aucun utilisateur trouvé avec ces informations",
+      "alreadyConnected": "Vous êtes déjà connecté avec cet utilisateur",
+      "requestPending": "Vous avez déjà une demande en attente"
     },
-    "userFound": "User Found",
+    "userFound": "Utilisateur trouvé !",
     "showCircleLevel": "Show circle level",
     "circleVisibleHint": "They'll see you added them as {{tier}}",
     "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
+    "sendRequest": "Envoyer la Demande",
     "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
     "serviceTypes": {
       "phone": "Phone Number",
@@ -1316,7 +1376,11 @@
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
       "facetime": "FaceTime"
-    }
+    },
+    "search": "Rechercher",
+    "searching": "Recherche...",
+    "noResults": "Aucun résultat trouvé",
+    "requestSent": "Demande Envoyée !"
   },
   "feedPost": {
     "likeCount": "{{count}} j'aime",
@@ -1419,7 +1483,21 @@
       "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
       "parentalRequired": "Parental Consent Required",
       "verify": "Verify Age"
-    }
+    },
+    "title": "Vérification d'Âge",
+    "description": "Inner Friend Circle est conçu pour les utilisateurs de 13 ans et plus.",
+    "ageQuestion": "Avez-vous 13 ans ou plus ?",
+    "confirmAge": "Oui, j'ai 13 ans ou plus",
+    "underAge": "Non, j'ai moins de 13 ans",
+    "underAgeMessage": "Désolé, Inner Friend Circle n'est pas disponible pour les utilisateurs de moins de 13 ans.",
+    "parentalConsent": "Si vous avez entre 13 et 16 ans, vous pourriez avoir besoin du consentement parental.",
+    "learnMore": "En savoir plus sur nos pratiques de confidentialité",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "consentRequired": "Consentement requis",
+    "consentDescription": "Pour utiliser Inner Friend Circle, vous devez accepter notre Politique de Confidentialité et nos Conditions d'Utilisation.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation"
   },
   "dispatch": {
     "registration": {
@@ -1609,6 +1687,21 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "organizationNameRequired": "Le nom de l'organisation est requis",
+      "jurisdictionRequired": "Au moins une juridiction est requise",
+      "taxIdRequired": "Numéro fiscal valide requis",
+      "insuranceCarrierRequired": "Assureur requis",
+      "policyNumberRequired": "Numéro de police requis",
+      "registeredAgentNameRequired": "Nom de l'agent enregistré requis",
+      "registeredAgentContactRequired": "Contact de l'agent enregistré requis",
+      "contactNameRequired": "Nom du contact requis",
+      "validEmailRequired": "Email valide requis",
+      "validPhoneRequired": "Téléphone valide requis",
+      "passwordMinLength": "Le mot de passe doit contenir au moins 8 caractères",
+      "mustAcceptTerms": "Vous devez accepter les conditions",
+      "passwordsMustMatch": "Les mots de passe ne correspondent pas"
     }
   },
   "dataImport": {
@@ -1647,7 +1740,7 @@
   },
   "admin": {
     "dispatch": {
-      "title": "Dispatch Account Verification",
+      "title": "Comptes de Dispatch",
       "searchPlaceholder": "Search by organization, email, or contact name...",
       "filters": {
         "all": "All Accounts"
@@ -1701,8 +1794,17 @@
         "reason": "Reason",
         "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
         "processing": "Processing..."
-      }
-    }
+      },
+      "pending": "En Attente",
+      "verified": "Vérifiés",
+      "rejected": "Refusés",
+      "suspended": "Suspendus"
+    },
+    "title": "Panneau d'Administration",
+    "users": "Utilisateurs",
+    "accounts": "Comptes",
+    "settings": "Paramètres",
+    "logs": "Journaux"
   },
   "tierFeed": {
     "toasts": {
@@ -1775,5 +1877,181 @@
     "sharedPhoto": "Photo partagée",
     "video": "Vidéo",
     "sharedVideo": "Vidéo partagée"
+  },
+  "privacy": {
+    "philosophy": {
+      "title": "Notre Philosophie Vie Privée d'Abord",
+      "description": "Inner Friend Circle est construit par Lifesaver Labs avec la vie privée comme principe fondamental."
+    },
+    "dataCollection": {
+      "title": "Quelles Données Nous Collectons",
+      "accountInfo": {
+        "title": "Informations du Compte",
+        "description": "Adresse email et mot de passe (haché de manière sécurisée) pour l'authentification."
+      },
+      "friendData": {
+        "title": "Données des Amis",
+        "description": "Noms, informations de contact, notes et classifications de niveau que vous créez."
+      },
+      "emergencyData": {
+        "title": "Données d'Accès d'Urgence (Keys Shared)",
+        "description": "Si vous utilisez Keys Shared, nous stockons votre adresse et les informations des détenteurs de clés."
+      },
+      "usageData": {
+        "title": "Données d'Utilisation",
+        "description": "Nous pouvons collecter des informations d'utilisation basiques mais n'utilisons pas d'outils d'analyse tiers."
+      }
+    },
+    "dataUsage": {
+      "title": "Comment Nous Utilisons Vos Données",
+      "provide": "Pour fournir et maintenir le service Inner Friend Circle",
+      "matching": "Pour permettre la correspondance mutuelle",
+      "emergency": "Pour faciliter la coordination d'urgence avec les voisins",
+      "notifications": "Pour vous envoyer des notifications importantes (jamais de marketing)",
+      "improve": "Pour améliorer et développer de nouvelles fonctionnalités"
+    },
+    "dataStorage": {
+      "title": "Stockage et Sécurité des Données",
+      "description": "Vos données sont stockées de manière sécurisée avec Supabase."
+    },
+    "rights": {
+      "title": "Vos Droits (RGPD & Libération des Données)",
+      "access": {
+        "title": "Droit d'Accès et d'Export",
+        "description": "Vous pouvez exporter toutes vos données à tout moment."
+      },
+      "deletion": {
+        "title": "Droit de Suppression",
+        "description": "Vous pouvez supprimer votre compte et toutes les données associées."
+      },
+      "rectification": {
+        "title": "Droit de Rectification",
+        "description": "Vous pouvez modifier vos données à tout moment."
+      },
+      "object": {
+        "title": "Droit d'Opposition",
+        "description": "Vous pouvez vous opposer à certaines fonctionnalités."
+      }
+    },
+    "thirdParties": {
+      "title": "Services Tiers",
+      "supabase": {
+        "name": "Supabase",
+        "description": "Notre fournisseur de base de données et d'authentification."
+      },
+      "noTracking": "Nous n'utilisons aucun réseau publicitaire ni service d'analyse tiers."
+    },
+    "cookies": {
+      "title": "Cookies et Stockage Local",
+      "description": "Nous utilisons uniquement des cookies essentiels pour la gestion des sessions."
+    },
+    "children": {
+      "title": "Vie Privée des Enfants",
+      "description": "Inner Friend Circle n'est pas destiné aux enfants de moins de 13 ans."
+    },
+    "retention": {
+      "title": "Conservation des Données",
+      "description": "Nous conservons vos données tant que votre compte est actif."
+    },
+    "contact": {
+      "title": "Nous Contacter",
+      "description": "Pour les questions relatives à la vie privée, contactez-nous à :",
+      "email": "Email",
+      "github": "GitHub"
+    },
+    "changes": {
+      "title": "Modifications de Cette Politique",
+      "description": "Nous pouvons mettre à jour cette politique de temps en temps."
+    }
+  },
+  "terms": {
+    "introduction": {
+      "title": "1. Introduction",
+      "description": "Bienvenue sur Inner Friend Circle, un service fourni par Lifesaver Labs."
+    },
+    "service": {
+      "title": "2. Description du Service",
+      "description": "Inner Friend Circle est un outil de gestion des relations axé sur la vie privée.",
+      "features": {
+        "tiers": "Organisation des amis en niveaux significatifs",
+        "matching": "Correspondance mutuelle optionnelle",
+        "keysShared": "Coordination d'accès d'urgence Keys Shared",
+        "dataExport": "Fonctionnalités d'export et de portabilité des données"
+      }
+    },
+    "userAccounts": {
+      "title": "3. Comptes Utilisateur",
+      "description": "Vous êtes responsable de la protection de vos identifiants."
+    },
+    "acceptableUse": {
+      "title": "4. Utilisation Acceptable",
+      "intro": "Vous acceptez de ne pas utiliser le service pour :",
+      "prohibited": {
+        "harm": "Stocker des informations sur d'autres sans leur connaissance",
+        "harassment": "Harcèlement ou surveillance d'autrui",
+        "laws": "Violer les lois applicables",
+        "unauthorized": "Accès non autorisé aux données d'autres utilisateurs",
+        "misuse": "Mauvaise utilisation des fonctionnalités d'urgence",
+        "impersonate": "Usurpation d'identité"
+      }
+    },
+    "userContent": {
+      "title": "5. Contenu Utilisateur",
+      "description": "Vous conservez la propriété de tout le contenu que vous créez."
+    },
+    "keysShared": {
+      "title": "6. Keys Shared & Fonctionnalités d'Urgence",
+      "description": "Keys Shared vous permet de désigner des voisins de confiance.",
+      "points": {
+        "risks": "Vous reconnaissez que le partage d'informations de clés comporte des risques",
+        "trust": "Vous êtes responsable de faire confiance aux voisins que vous désignez",
+        "liability": "Nous ne sommes pas responsables des actions de vos détenteurs de clés",
+        "emergencyWorkers": "Les comptes de dispatch vérifiés peuvent accéder à vos informations",
+        "disable": "Vous pouvez désactiver le partage à tout moment"
+      }
+    },
+    "dataLiberation": {
+      "title": "7. Libération des Données",
+      "description": "Nous croyons que vos données vous appartiennent."
+    },
+    "privacy": {
+      "title": "8. Vie Privée",
+      "description": "Votre utilisation est également régie par notre Politique de Confidentialité."
+    },
+    "intellectualProperty": {
+      "title": "9. Propriété Intellectuelle",
+      "description": "Inner Friend Circle est un logiciel open-source."
+    },
+    "liability": {
+      "title": "10. Limitation de Responsabilité",
+      "description": "LE SERVICE EST FOURNI \"TEL QUEL\" SANS GARANTIE.",
+      "includes": "Cela inclut les dommages causés par les détenteurs de clés, les retards d'urgence, la perte de données."
+    },
+    "indemnification": {
+      "title": "11. Indemnisation",
+      "description": "Vous acceptez d'indemniser Lifesaver Labs."
+    },
+    "termination": {
+      "title": "12. Résiliation",
+      "description": "Vous pouvez résilier votre compte à tout moment."
+    },
+    "changes": {
+      "title": "13. Modifications des Conditions",
+      "description": "Nous nous réservons le droit de modifier ces conditions."
+    },
+    "governingLaw": {
+      "title": "14. Loi Applicable",
+      "description": "Ces conditions sont régies par la loi applicable."
+    },
+    "severability": {
+      "title": "15. Divisibilité",
+      "description": "Si une disposition est invalide, les autres restent en vigueur."
+    },
+    "contact": {
+      "title": "16. Contact",
+      "description": "Pour les questions, contactez-nous à :",
+      "email": "Email",
+      "github": "GitHub"
+    }
   }
 }

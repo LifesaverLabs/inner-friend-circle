@@ -24,16 +24,16 @@
         "description": "גלה באופציה כשמישהו שרשמת כקרוב גם רשם אותך — חגיגה עדינה של הדדיות."
       },
       "dataLiberation": {
-        "title": "Your Data, Your Way",
-        "description": "Export all your data anytime. GDPR compliant with full consent management, account deletion, and data portability."
+        "title": "הנתונים שלך, הדרך שלך",
+        "description": "ייצא את כל הנתונים שלך בכל עת. תואם GDPR."
       },
       "nayborNetwork": {
-        "title": "Naybor Network",
-        "description": "Build community resilience with trusted neighbors. Quick SOS access, shared emergency contacts, and mutual aid."
+        "title": "רשת שכנים",
+        "description": "בנה עמידות קהילתית עם שכנים מהימנים."
       },
       "globalReach": {
-        "title": "23 Languages",
-        "description": "Full internationalization with RTL support for Arabic, Urdu, and Hebrew. Available in your native language."
+        "title": "23 שפות",
+        "description": "בינאום מלא עם תמיכה ב-RTL."
       }
     },
     "mission": {
@@ -91,8 +91,8 @@
       "unexpectedError": "אירעה שגיאה לא צפויה. נסה שוב."
     },
     "toasts": {
-      "signOutError": "Failed to sign out",
-      "signOutSuccess": "Signed out successfully"
+      "signOutError": "ההתנתקות נכשלה",
+      "signOutSuccess": "התנתקת בהצלחה"
     },
     "consent": {
       "agreeTo": "אני מסכים ל",
@@ -470,34 +470,34 @@
     }
   },
   "emptyState": {
-    "noPostsYet": "No posts yet",
+    "noPostsYet": "אין עדיין פוסטים",
     "noFriendsYet": {
-      "core": "No core friends yet",
-      "inner": "No inner circle friends yet",
-      "outer": "No outer circle friends yet"
+      "core": "אין עדיין חברי ליבה",
+      "inner": "אין עדיין חברים במעגל הפנימי",
+      "outer": "אין עדיין חברים במעגל החיצוני"
     },
     "noPostsDescription": {
-      "core": "Your core friends haven't shared anything yet. Be the first to share something!",
-      "inner": "Your inner circle friends haven't shared anything yet. Be the first to share something!",
-      "outer": "Your outer circle friends haven't shared anything yet. Be the first to share something!"
+      "core": "חברי הליבה שלך עדיין לא שיתפו דבר.",
+      "inner": "חברי המעגל הפנימי שלך עדיין לא שיתפו דבר.",
+      "outer": "חברי המעגל החיצוני שלך עדיין לא שיתפו דבר."
     },
     "getStarted": {
-      "core": "Get started by adding up to 5 friends to your Core.",
-      "inner": "Get started by adding up to 15 friends to your Inner Circle.",
-      "outer": "Get started by adding up to 150 friends to your Outer Circle."
+      "core": "התחל בהוספת עד 5 חברים לליבה שלך.",
+      "inner": "התחל בהוספת עד 15 חברים למעגל הפנימי שלך.",
+      "outer": "התחל בהוספת עד 150 חברים למעגל החיצוני שלך."
     },
     "addToSee": {
-      "core": "Add up to 5 friends to see their posts here.",
-      "inner": "Add up to 15 friends to see their posts here.",
-      "outer": "Add up to 150 friends to see their posts here."
+      "core": "הוסף עד 5 חברים כדי לראות את הפוסטים שלהם כאן.",
+      "inner": "הוסף עד 15 חברים כדי לראות את הפוסטים שלהם כאן.",
+      "outer": "הוסף עד 150 חברים כדי לראות את הפוסטים שלהם כאן."
     },
     "addFriends": {
-      "core": "Add Core Friends",
-      "inner": "Add Inner Circle Friends",
-      "outer": "Add Outer Circle Friends"
+      "core": "הוסף חברי ליבה",
+      "inner": "הוסף חברי מעגל פנימי",
+      "outer": "הוסף חברי מעגל חיצוני"
     },
-    "createPost": "Create a Post",
-    "noParasoicalsYet": "No parasocials yet",
+    "createPost": "צור פוסט",
+    "noParasoicalsYet": "אין עדיין פרא-חברתיים",
     "noAcquaintedYet": "No acquainted cousins yet",
     "noRoleModelsYet": "No role models yet",
     "noNayborsYet": "No naybors yet",
@@ -601,8 +601,8 @@
     "addNayborPhoneButton": "הוסף פרטי קשר למקרי חירום"
   },
   "dashboard": {
-    "title": "Your Inner Circles",
-    "subtitle": "Curate and tend to your closest relationships",
+    "title": "מעגל החברים שלך",
+    "subtitle": "נהל את הקשרים המשמעותיים שלך",
     "loading": "Loading your circles...",
     "tend": "Tend",
     "share": "Share",
@@ -622,28 +622,38 @@
       "skippedDuplicates": "Skipped {{count}} duplicate",
       "skippedDuplicates_plural": "Skipped {{count}} duplicates",
       "dataLiberation": "Your data belongs to you. Export anytime to take it elsewhere."
-    }
+    },
+    "addFriend": "הוסף חבר",
+    "export": "ייצוא",
+    "import": "ייבוא",
+    "settings": "הגדרות",
+    "viewFeed": "צפה בפיד",
+    "tendCircles": "טפח מעגלים",
+    "quickStats": "סטטיסטיקות מהירות",
+    "totalFriends": "סך הכל חברים",
+    "emptySlots": "מקומות פנויים",
+    "lastTended": "טופל לאחרונה"
   },
   "mission": {
-    "title": "Face Time, Not Ad Time",
-    "description": "We win when you leave our site — to share real moments with the people who matter most.",
-    "learnMore": "Learn more...",
-    "showLess": "Show less",
-    "inspiration": "Our inspiration? This classic Dentyne Ice commercial — the perfect reminder that the best moments happen when you put down the phone and show up:",
+    "title": "זמן אמיתי, לא זמן פרסומות",
+    "description": "אנחנו מנצחים כשאתה עוזב את האתר שלנו — לשתף רגעים אמיתיים עם האנשים החשובים ביותר.",
+    "learnMore": "למד עוד...",
+    "showLess": "הצג פחות",
+    "inspiration": "ההשראה שלנו? הפרסומת הקלאסית של Dentyne Ice.",
     "videoTitle": "Dentyne Ice - Face Time",
-    "quote": "\"Make Face Time\" — that's the ideal. When distance separates you, we'll help you bridge it with video kalls. But always remember: nothing beats being there.",
+    "quote": "\"עשה זמן אמיתי\" — זה האידיאל.",
     "features": {
       "spark": {
-        "title": "Spark Video Kalls",
-        "description": "When you're apart, one click connects you"
+        "title": "התחל שיחות וידאו",
+        "description": "כשאתם רחוקים, לחיצה אחת מחברת אתכם"
       },
       "tend": {
-        "title": "Tend Your Circles",
-        "description": "Reminders to reach out before connections fade"
+        "title": "טפח את המעגלים שלך",
+        "description": "תזכורות ליצור קשר לפני שהקשרים דוהים"
       },
       "pull": {
-        "title": "Pull Closer",
-        "description": "Move meaningful connections into tighter orbits"
+        "title": "קרב יותר",
+        "description": "הזז קשרים משמעותיים למסלולים קרובים יותר"
       }
     }
   },
@@ -658,52 +668,52 @@
     "keysSharedCount": "מפתחות ({{count}})"
   },
   "tending": {
-    "title": "Tend Your Circles",
-    "markDescription": "Mark your {{tier}} friends you haven't connected with {{period}}",
+    "title": "טפח את המעגלים שלך",
+    "markDescription": "סמן את חברי ה-{{tier}} שלא התחברת איתם {{period}}",
     "periods": {
-      "core": "השבוע הזה",
-      "inner": "השבועיים האלה",
-      "outer": "החודשיים האלה"
+      "core": "השבוע",
+      "inner": "בשבועיים האחרונים",
+      "outer": "בחודשיים האחרונים"
     },
-    "peopleCount": "{{count}} person",
-    "peopleCount_plural": "{{count}} people",
-    "noFriendsInTier": "No friends in this tier yet",
-    "checkInstruction": "✓ Check those you haven't talked to enough:",
-    "noPhone": "no phone",
-    "call": "Call",
-    "maybeLater": "Maybe Later",
-    "doneTending": "Done Tending",
-    "finish": "Finish",
-    "mobileHint": "Contact actions work best on mobile devices",
+    "peopleCount": "אדם {{count}}",
+    "peopleCount_plural": "{{count}} אנשים",
+    "noFriendsInTier": "אין עדיין חברים בשכבה זו",
+    "checkInstruction": "✓ סמן את אלה שלא דיברת איתם מספיק:",
+    "noPhone": "אין טלפון",
+    "call": "התקשר",
+    "maybeLater": "אולי אחר כך",
+    "doneTending": "סיימתי לטפח",
+    "finish": "סיים",
+    "mobileHint": "פעולות יצירת קשר עובדות בצורה הטובה ביותר במכשירים ניידים",
     "reconnect": {
-      "title": "Time to Reconnect",
-      "description": "These friends could use some of your time"
+      "title": "הגיע הזמן להתחבר מחדש",
+      "description": "החברים האלה יכולים להשתמש בקצת מהזמן שלך"
     },
     "toasts": {
-      "allTended": "Amazing! You've tended to all your circles 🌱",
-      "noPhone": "No phone number for {{name}}",
-      "connecting": "Connecting with {{name}} via {{method}}",
-      "rememberReachOut": "Remember to reach out soon! 💛",
-      "friendsWaiting": "{{count}} friend waiting to hear from you",
-      "friendsWaiting_plural": "{{count}} friends waiting to hear from you"
+      "allTended": "מדהים! טיפחת את כל המעגלים שלך 🌱",
+      "noPhone": "אין מספר טלפון עבור {{name}}",
+      "connecting": "מתחבר ל-{{name}} דרך {{method}}",
+      "rememberReachOut": "זכור ליצור קשר בקרוב! 💛",
+      "friendsWaiting": "חבר {{count}} מחכה לשמוע ממך",
+      "friendsWaiting_plural": "{{count}} חברים מחכים לשמוע ממך"
     }
   },
   "nayborSOS": {
     "title": "Naybor SOS™",
     "steps": {
-      "category": "What kind of help do you need?",
-      "contacts": "Choose naybors to contact"
+      "category": "איזה סוג עזרה אתה צריך?",
+      "contacts": "בחר שכנים ליצירת קשר"
     },
-    "critical": "Critical",
-    "emergencyWarning": "For life-threatening emergencies, call 911 first",
-    "suggestedActions": "Suggested actions:",
-    "addDetails": "Add details (optional)",
-    "describePlaceholder": "Describe your situation...",
-    "includeLocation": "Include location info",
-    "chooseNaybors": "Choose Naybors",
-    "chooseNayborsAria": "Continue to choose naybors to contact",
-    "nayborsSelected": "{{count}} naybor selected",
-    "nayborsSelected_plural": "{{count}} naybors selected",
+    "critical": "קריטי",
+    "emergencyWarning": "למצבי חירום מסכני חיים, התקשר למד\"א קודם",
+    "suggestedActions": "פעולות מוצעות:",
+    "addDetails": "הוסף פרטים (אופציונלי)",
+    "describePlaceholder": "תאר את המצב שלך...",
+    "includeLocation": "כלול מידע מיקום",
+    "chooseNaybors": "בחר שכנים",
+    "chooseNayborsAria": "המשך לבחור שכנים ליצירת קשר",
+    "nayborsSelected": "נבחר שכן {{count}}",
+    "nayborsSelected_plural": "נבחרו {{count}} שכנים",
     "copyMessage": "Copy message",
     "messageAll": "Message All ({{count}})",
     "contacted": "Contacted {{count}} naybor",
@@ -730,7 +740,14 @@
     "toasts": {
       "connecting": "Connecting via {{service}}",
       "openService": "Open {{service}} to connect"
-    }
+    },
+    "startCall": "התחל שיחה",
+    "scheduleCall": "תזמן שיחה",
+    "sendMessage": "שלח הודעה",
+    "viewProfile": "צפה בפרופיל",
+    "callNow": "התקשר עכשיו",
+    "videoCall": "שיחת וידאו",
+    "voiceCall": "שיחה קולית"
   },
   "onboarding": {
     "steps": {
@@ -782,7 +799,18 @@
       "skype": "שם ה-Skype שלך (בהגדרות ← חשבון)",
       "webex": "קישור חדר אישי או אימייל Webex",
       "slack": "אימייל עבודה (שני הצדדים צריכים להיות באותו מרחב עבודה)"
-    }
+    },
+    "welcome": "ברוך הבא ל-Inner Friend Circle",
+    "welcomeDescription": "בוא נגדיר את מעגלי החברים שלך",
+    "step1": "הוסף חברי ליבה",
+    "step1Description": "התחל עם 5 הקשרים הקרובים ביותר שלך",
+    "step2": "הרחב את המעגל שלך",
+    "step2Description": "הוסף חברים למעגל הפנימי והחיצוני",
+    "step3": "הכר את השכנים שלך",
+    "step3Description": "בנה את רשת השכונה שלך לחירום",
+    "skip": "דלג לעכשיו",
+    "next": "הבא",
+    "finish": "התחל"
   },
   "keysShared": {
     "title": "מפתחות משותפים",
@@ -805,7 +833,7 @@
       }
     },
     "addressHelp": "This address will be shared with emergency responders when your naybors request help on your behalf.",
-    "address": "Street Address",
+    "address": "כתובת",
     "addressPlaceholder": "123 Main Street",
     "unitNumber": "Unit/Apt Number",
     "unitPlaceholder": "Apt 4B",
@@ -903,7 +931,7 @@
     "unit": "Unit",
     "keyHoldersSummary": "{{count}} naybor(s) have keys",
     "keyHoldersSummary_plural": "{{count}} naybors have keys",
-    "noKeyHolders": "No key holders assigned",
+    "noKeyHolders": "אין עדיין מחזיקי מפתחות",
     "permissionsSummary": "Entry Permissions",
     "mandatoryCount": "{{count}}",
     "mandatoryLabel": "mandatory (always allowed)",
@@ -943,7 +971,23 @@
           "description": "אנא פרוץ דלת רק לאחר שיקול דעת מעמיק, כמוצא אחרון כאשר זה הכרחי מבחינה משפטית."
         }
       }
-    }
+    },
+    "description": "שתף בבטחה גישה לחירום לביתך עם שכנים מהימנים",
+    "setup": "הגדר מפתחות משותפים",
+    "enabled": "מפתחות משותפים מופעלים",
+    "disabled": "מפתחות משותפים מושבתים",
+    "addKeyHolder": "הוסף מחזיק מפתח",
+    "editKeyHolder": "ערוך מחזיק מפתח",
+    "removeKeyHolder": "הסר מחזיק מפתח",
+    "keyHolders": "מחזיקי מפתחות",
+    "emergencyAccess": "גישה לחירום",
+    "emergencyAccessDescription": "אפשר לעובדי חירום מאומתים לגשת למידע שלך",
+    "entryCode": "קוד כניסה",
+    "specialInstructions": "הוראות מיוחדות",
+    "trustLevel": "רמת אמון",
+    "high": "גבוה",
+    "medium": "בינוני",
+    "low": "נמוך"
   },
   "legal": {
     "privacyPolicy": "מדיניות פרטיות",
@@ -1079,7 +1123,18 @@
     "currentlySelected": "Currently selected",
     "dontShowMonth": "Don't show for 1 month",
     "warningSilenced": "{{method}} warnings silenced until next month",
-    "connectingVia": "Connecting via {{method}}"
+    "connectingVia": "Connecting via {{method}}",
+    "createPost": "צור פוסט",
+    "whatOnMind": "מה עובר לך בראש?",
+    "shareWith": "שתף עם",
+    "addPhoto": "הוסף תמונה",
+    "addVideo": "הוסף וידאו",
+    "post": "פרסם",
+    "posting": "מפרסם...",
+    "deletePost": "מחק פוסט",
+    "editPost": "ערוך פוסט",
+    "likePost": "אהבתי",
+    "commentOnPost": "הגב"
   },
   "compose": {
     "title": "Share with your circles",
@@ -1260,11 +1315,11 @@
     }
   },
   "dev": {
-    "label": "Dev",
-    "panelTitle": "Dev Panel",
-    "mode": "Development Mode",
-    "authStatus": "Auth Status",
-    "notLoggedIn": "Not logged in",
+    "label": "פיתוח",
+    "panelTitle": "לוח מפתחים",
+    "mode": "מצב פיתוח",
+    "authStatus": "סטטוס אימות",
+    "notLoggedIn": "לא מחובר",
     "authActions": "Auth Actions",
     "refreshButton": "Refresh",
     "clearApp": "Clear App",
@@ -1288,25 +1343,30 @@
       "sessions": "Sessions persist across page reloads",
       "clearApp": "Use \"Clear App Data\" to reset friend lists",
       "forceLogout": "Use \"Force Logout\" to fully clear auth state"
-    }
+    },
+    "clearData": "נקה נתונים",
+    "resetApp": "אפס אפליקציה"
   },
   "addLinkedFriend": {
-    "title": "Add Linked Friend to {{tier}}",
-    "description": "Find someone by their contact info to request a connection.",
-    "findBy": "Find by",
-    "enterUsernameHint": "Enter their username exactly as they set it",
-    "enterContactHint": "Enter their {{type}} exactly as they registered it",
+    "title": "הוסף חבר מקושר ל-{{tier}}",
+    "description": "מצא מישהו לפי פרטי הקשר שלו.",
+    "findBy": "חפש לפי",
+    "enterUsernameHint": "הזן את שם המשתמש בדיוק",
+    "enterContactHint": "הזן {{type}} בדיוק כפי שנרשם",
     "errors": {
       "noUserHandle": "No user found with that handle. Make sure they have an account and have set their handle.",
       "noUserContact": "No user found with that {{type}}. They may not have added it to their profile yet.",
       "searchError": "An error occurred while searching. Please try again.",
-      "connectionFailed": "Failed to send connection request"
+      "connectionFailed": "Failed to send connection request",
+      "notFound": "לא נמצא משתמש עם פרטים אלה",
+      "alreadyConnected": "אתה כבר מחובר למשתמש זה",
+      "requestPending": "כבר יש לך בקשה ממתינה"
     },
-    "userFound": "User Found",
+    "userFound": "משתמש נמצא!",
     "showCircleLevel": "Show circle level",
     "circleVisibleHint": "They'll see you added them as {{tier}}",
     "circleHiddenHint": "They won't see which circle you added them to",
-    "sendRequest": "Send Connection Request",
+    "sendRequest": "שלח בקשה",
     "privacyNote": "They'll see only the contact info you used to find them until they accept. Once accepted, you'll both see each other's full contact methods.",
     "serviceTypes": {
       "phone": "Phone Number",
@@ -1316,7 +1376,11 @@
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
       "facetime": "FaceTime"
-    }
+    },
+    "search": "חפש",
+    "searching": "מחפש...",
+    "noResults": "לא נמצאו תוצאות",
+    "requestSent": "הבקשה נשלחה!"
   },
   "feedPost": {
     "likeCount": "{{count}} לייק",
@@ -1419,7 +1483,21 @@
       "minorDescription": "Users under {{age}} require parental consent. Please ask a parent or guardian to help you create an account.",
       "parentalRequired": "Parental Consent Required",
       "verify": "Verify Age"
-    }
+    },
+    "title": "אימות גיל",
+    "description": "Inner Friend Circle מיועד למשתמשים בני 13 ומעלה.",
+    "ageQuestion": "האם אתה בן 13 או יותר?",
+    "confirmAge": "כן, אני בן 13 או יותר",
+    "underAge": "לא, אני מתחת לגיל 13",
+    "underAgeMessage": "מצטערים, Inner Friend Circle אינו זמין למשתמשים מתחת לגיל 13.",
+    "parentalConsent": "אם אתה בן 13-16, ייתכן שתצטרך הסכמת הורים.",
+    "learnMore": "למד עוד על נהלי הפרטיות שלנו",
+    "accept": "קבל",
+    "decline": "דחה",
+    "consentRequired": "נדרשת הסכמה",
+    "consentDescription": "כדי להשתמש ב-Inner Friend Circle, עליך להסכים למדיניות הפרטיות ולתנאי השימוש.",
+    "privacyPolicy": "מדיניות פרטיות",
+    "termsOfService": "תנאי שימוש"
   },
   "dispatch": {
     "registration": {
@@ -1609,6 +1687,21 @@
         "requiredFields": "Please fill in all required fields",
         "requestFailed": "Failed to submit access request"
       }
+    },
+    "validation": {
+      "organizationNameRequired": "שם הארגון נדרש",
+      "jurisdictionRequired": "נדרשת לפחות תחום שיפוט אחד",
+      "taxIdRequired": "נדרש מספר זיהוי מס תקין",
+      "insuranceCarrierRequired": "נדרש מבטח",
+      "policyNumberRequired": "נדרש מספר פוליסה",
+      "registeredAgentNameRequired": "נדרש שם סוכן רשום",
+      "registeredAgentContactRequired": "נדרש פרטי קשר של סוכן רשום",
+      "contactNameRequired": "נדרש שם איש קשר",
+      "validEmailRequired": "נדרש דוא\"ל תקין",
+      "validPhoneRequired": "נדרש טלפון תקין",
+      "passwordMinLength": "הסיסמה חייבת להכיל לפחות 8 תווים",
+      "mustAcceptTerms": "עליך לקבל את התנאים",
+      "passwordsMustMatch": "הסיסמאות אינן תואמות"
     }
   },
   "dataImport": {
@@ -1647,7 +1740,7 @@
   },
   "admin": {
     "dispatch": {
-      "title": "Dispatch Account Verification",
+      "title": "חשבונות שליחה",
       "searchPlaceholder": "Search by organization, email, or contact name...",
       "filters": {
         "all": "All Accounts"
@@ -1701,8 +1794,17 @@
         "reason": "Reason",
         "reasonPlaceholder": "Explain why this account is being rejected/suspended...",
         "processing": "Processing..."
-      }
-    }
+      },
+      "pending": "ממתין",
+      "verified": "מאומת",
+      "rejected": "נדחה",
+      "suspended": "מושעה"
+    },
+    "title": "לוח בקרה",
+    "users": "משתמשים",
+    "accounts": "חשבונות",
+    "settings": "הגדרות",
+    "logs": "יומנים"
   },
   "tierFeed": {
     "toasts": {
@@ -1775,5 +1877,181 @@
     "sharedPhoto": "תמונה משותפת",
     "video": "סרטון",
     "sharedVideo": "סרטון משותף"
+  },
+  "privacy": {
+    "philosophy": {
+      "title": "הפילוסופיה שלנו - פרטיות קודם",
+      "description": "Inner Friend Circle נבנה על ידי Lifesaver Labs עם פרטיות כעיקרון מרכזי."
+    },
+    "dataCollection": {
+      "title": "אילו נתונים אנו אוספים",
+      "accountInfo": {
+        "title": "פרטי חשבון",
+        "description": "כתובת דוא\"ל וסיסמה (מוצפנת) לאימות. שם תצוגה אופציונלי."
+      },
+      "friendData": {
+        "title": "נתוני חברים",
+        "description": "שמות, פרטי קשר, הערות וסיווגי שכבות שאתה יוצר."
+      },
+      "emergencyData": {
+        "title": "נתוני גישה לחירום (מפתחות משותפים)",
+        "description": "אם אתה משתמש בתכונת מפתחות משותפים, אנו שומרים את הכתובת ופרטי מחזיקי המפתחות."
+      },
+      "usageData": {
+        "title": "נתוני שימוש",
+        "description": "אנו עשויים לאסוף מידע שימוש בסיסי אך איננו משתמשים בכלי ניתוח צד שלישי."
+      }
+    },
+    "dataUsage": {
+      "title": "כיצד אנו משתמשים בנתונים שלך",
+      "provide": "לספק ולתחזק את שירות Inner Friend Circle",
+      "matching": "לאפשר התאמה הדדית",
+      "emergency": "להקל על תיאום חירום עם שכנים",
+      "notifications": "לשלוח הודעות שירות חשובות (לא שיווק)",
+      "improve": "לשפר ולפתח תכונות חדשות"
+    },
+    "dataStorage": {
+      "title": "אחסון נתונים ואבטחה",
+      "description": "הנתונים שלך מאוחסנים בצורה מאובטחת באמצעות Supabase."
+    },
+    "rights": {
+      "title": "הזכויות שלך (GDPR ושחרור נתונים)",
+      "access": {
+        "title": "זכות גישה וייצוא",
+        "description": "תוכל לייצא את כל הנתונים שלך בכל עת בפורמט JSON."
+      },
+      "deletion": {
+        "title": "זכות מחיקה",
+        "description": "תוכל למחוק את החשבון ואת כל הנתונים המשויכים בכל עת."
+      },
+      "rectification": {
+        "title": "זכות תיקון",
+        "description": "תוכל לערוך את הנתונים שלך בכל עת."
+      },
+      "object": {
+        "title": "זכות להתנגד",
+        "description": "תוכל לבחור שלא להשתתף בתכונות מסוימות."
+      }
+    },
+    "thirdParties": {
+      "title": "שירותי צד שלישי",
+      "supabase": {
+        "name": "Supabase",
+        "description": "ספק מסד הנתונים והאימות שלנו."
+      },
+      "noTracking": "איננו משתמשים ברשתות פרסום או עוקבי מדיה חברתית."
+    },
+    "cookies": {
+      "title": "עוגיות ואחסון מקומי",
+      "description": "אנו משתמשים רק בעוגיות חיוניות לניהול הפעלות."
+    },
+    "children": {
+      "title": "פרטיות ילדים",
+      "description": "Inner Friend Circle אינו מיועד לילדים מתחת לגיל 13."
+    },
+    "retention": {
+      "title": "שמירת נתונים",
+      "description": "אנו שומרים את הנתונים שלך כל עוד החשבון שלך פעיל."
+    },
+    "contact": {
+      "title": "צור קשר",
+      "description": "לשאלות פרטיות, פנה אלינו ב:",
+      "email": "דוא\"ל",
+      "github": "GitHub"
+    },
+    "changes": {
+      "title": "שינויים למדיניות זו",
+      "description": "אנו עשויים לעדכן מדיניות פרטיות זו מעת לעת."
+    }
+  },
+  "terms": {
+    "introduction": {
+      "title": "1. הקדמה",
+      "description": "ברוכים הבאים ל-Inner Friend Circle, שירות של Lifesaver Labs."
+    },
+    "service": {
+      "title": "2. תיאור השירות",
+      "description": "Inner Friend Circle הוא כלי לניהול יחסים המתמקד בפרטיות.",
+      "features": {
+        "tiers": "ארגון חברים לשכבות משמעותיות",
+        "matching": "התאמה הדדית אופציונלית",
+        "keysShared": "תיאום גישה לחירום עם מפתחות משותפים",
+        "dataExport": "תכונות ייצוא וניידות נתונים"
+      }
+    },
+    "userAccounts": {
+      "title": "3. חשבונות משתמש",
+      "description": "אתה אחראי לשמירה על אישורי החשבון שלך."
+    },
+    "acceptableUse": {
+      "title": "4. שימוש מקובל",
+      "intro": "אתה מסכים לא להשתמש בשירות עבור:",
+      "prohibited": {
+        "harm": "אחסון מידע על אחרים ללא ידיעתם",
+        "harassment": "עוקב, הטרדה או מעקב אחר אחרים",
+        "laws": "הפרת חוקים רלוונטיים",
+        "unauthorized": "ניסיון לגישה לא מורשית לנתוני משתמשים אחרים",
+        "misuse": "שימוש לרעה בתכונות חירום",
+        "impersonate": "התחזות לאחרים"
+      }
+    },
+    "userContent": {
+      "title": "5. תוכן משתמש",
+      "description": "אתה שומר על הבעלות על כל התוכן שאתה יוצר."
+    },
+    "keysShared": {
+      "title": "6. מפתחות משותפים ותכונות חירום",
+      "description": "תכונת מפתחות משותפים מאפשרת לך לייעד שכנים מהימנים.",
+      "points": {
+        "risks": "אתה מכיר בכך ששיתוף מידע מפתחות נושא סיכונים",
+        "trust": "אתה אחראי לסמוך על השכנים שאתה מייעד",
+        "liability": "איננו אחראים לפעולות מחזיקי המפתחות שלך",
+        "emergencyWorkers": "חשבונות שליחה מאומתים עשויים לגשת למידע שלך",
+        "disable": "תוכל להשבית שיתוף בכל עת"
+      }
+    },
+    "dataLiberation": {
+      "title": "7. שחרור נתונים",
+      "description": "אנו מאמינים שהנתונים שלך שייכים לך."
+    },
+    "privacy": {
+      "title": "8. פרטיות",
+      "description": "השימוש שלך כפוף גם למדיניות הפרטיות שלנו."
+    },
+    "intellectualProperty": {
+      "title": "9. קניין רוחני",
+      "description": "Inner Friend Circle הוא תוכנה בקוד פתוח."
+    },
+    "liability": {
+      "title": "10. הגבלת אחריות",
+      "description": "השירות מסופק \"כמות שהוא\" ללא אחריות.",
+      "includes": "זה כולל נזקים ממחזיקי מפתחות, עיכובי חירום, אובדן נתונים."
+    },
+    "indemnification": {
+      "title": "11. שיפוי",
+      "description": "אתה מסכים לשפות את Lifesaver Labs."
+    },
+    "termination": {
+      "title": "12. סיום",
+      "description": "תוכל לסיים את החשבון שלך בכל עת."
+    },
+    "changes": {
+      "title": "13. שינויים בתנאים",
+      "description": "אנו שומרים את הזכות לשנות תנאים אלה."
+    },
+    "governingLaw": {
+      "title": "14. החוק החל",
+      "description": "תנאים אלה כפופים לחוק החל."
+    },
+    "severability": {
+      "title": "15. הפרדה",
+      "description": "אם הוראה כלשהי אינה תקפה, ההוראות הנותרות נשארות בתוקף."
+    },
+    "contact": {
+      "title": "16. צור קשר",
+      "description": "לשאלות, צור איתנו קשר ב:",
+      "email": "דוא\"ל",
+      "github": "GitHub"
+    }
   }
 }

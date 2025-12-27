@@ -34,7 +34,7 @@ interface ComposePostDialogProps {
     content: string;
     contentType: PostContentType;
     visibility: TierType[];
-  }) => void;
+  }) => Promise<void>;
 }
 
 const CONTENT_TYPES: Array<{
@@ -102,20 +102,25 @@ export function ComposePostDialog({
     setVisibility(newVisibility);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!content.trim() || visibility.size === 0) return;
 
-    onSubmit?.({
-      content: content.trim(),
-      contentType,
-      visibility: Array.from(visibility) as TierType[],
-    });
+    try {
+      await onSubmit?.({
+        content: content.trim(),
+        contentType,
+        visibility: Array.from(visibility) as TierType[],
+      });
 
-    // Reset form
-    setContent('');
-    setContentType('text');
-    setVisibility(new Set(defaultVisibility));
-    onOpenChange(false);
+      // Reset form only after successful submission
+      setContent('');
+      setContentType('text');
+      setVisibility(new Set(defaultVisibility));
+      onOpenChange(false);
+    } catch (error) {
+      // Error handling is done in the onSubmit function
+      console.error('Failed to create post:', error);
+    }
   };
 
   const handleClose = () => {

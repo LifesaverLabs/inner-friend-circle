@@ -22,6 +22,11 @@ interface FeedHeaderProps {
   onDefaultContactMethodChange?: (method: ContactMethod) => void;
   composeOpen?: boolean;
   onComposeOpenChange?: (open: boolean) => void;
+  onCreatePost?: (post: {
+    content: string;
+    contentType: import('@/types/feed').PostContentType;
+    visibility: import('@/types/friend').TierType[];
+  }) => Promise<void>;
 }
 
 // Default methods that make sense for each tier
@@ -39,6 +44,7 @@ export function FeedHeader({
   onDefaultContactMethodChange,
   composeOpen: externalComposeOpen,
   onComposeOpenChange,
+  onCreatePost,
 }: FeedHeaderProps) {
   const { t } = useTranslation();
   // Use internal state if no external control provided
@@ -115,6 +121,7 @@ export function FeedHeader({
         open={composeOpen}
         onOpenChange={setComposeOpen}
         defaultVisibility={[tier]}
+        onSubmit={onCreatePost}
       />
     </>
   );

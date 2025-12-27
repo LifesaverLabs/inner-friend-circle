@@ -43,184 +43,157 @@ export default function Terms() {
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-6">
             {/* Introduction */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.introduction.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                Welcome to Inner Friend Circle, a service provided by Lifesaver Labs. By accessing or using
-                our service, you agree to be bound by these Terms of Service ("Terms"). If you disagree with
-                any part of these terms, you may not access the service.
+                {t('terms.introduction.description')}
               </p>
             </section>
 
             {/* Description of Service */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">2. Description of Service</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.service.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                Inner Friend Circle is a privacy-first relationship management tool that helps you maintain
-                meaningful connections based on Dunbar's number research. The service includes:
+                {t('terms.service.description')}
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm mt-2">
-                <li>Organization of friends into meaningful tiers (Core, Inner, Outer, Naybor, etc.)</li>
-                <li>Optional mutual matching to discover reciprocal friendships</li>
-                <li>Keys Shared emergency access coordination for naybors</li>
-                <li>Data export and portability features</li>
+                <li>{t('terms.service.features.tiers')}</li>
+                <li>{t('terms.service.features.matching')}</li>
+                <li>{t('terms.service.features.keysShared')}</li>
+                <li>{t('terms.service.features.dataExport')}</li>
               </ul>
             </section>
 
             {/* User Accounts */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">3. User Accounts</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.userAccounts.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                You are responsible for safeguarding your account credentials and for any activities or
-                actions under your account. You must notify us immediately upon becoming aware of any
-                breach of security or unauthorized use of your account.
+                {t('terms.userAccounts.description')}
               </p>
             </section>
 
             {/* Acceptable Use */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">4. Acceptable Use</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.acceptableUse.title')}</h2>
               <p className="text-muted-foreground text-sm mb-2">
-                You agree not to use the service to:
+                {t('terms.acceptableUse.intro')}
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-                <li>Store information about others without their knowledge in ways that could harm them</li>
-                <li>Engage in stalking, harassment, or surveillance of others</li>
-                <li>Violate any applicable laws or regulations</li>
-                <li>Attempt to gain unauthorized access to other users' data</li>
-                <li>Use the emergency features (Keys Shared, Naybor SOS) for non-emergency purposes</li>
-                <li>Impersonate others or misrepresent your identity</li>
+                <li>{t('terms.acceptableUse.prohibited.harm')}</li>
+                <li>{t('terms.acceptableUse.prohibited.harassment')}</li>
+                <li>{t('terms.acceptableUse.prohibited.laws')}</li>
+                <li>{t('terms.acceptableUse.prohibited.unauthorized')}</li>
+                <li>{t('terms.acceptableUse.prohibited.misuse')}</li>
+                <li>{t('terms.acceptableUse.prohibited.impersonate')}</li>
               </ul>
             </section>
 
             {/* User Content */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">5. User Content</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.userContent.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                You retain ownership of all content you create within the service (friend information, notes,
-                preferences). By using the service, you grant us a limited license to process and store this
-                content solely to provide the service to you. We do not claim ownership of your data.
+                {t('terms.userContent.description')}
               </p>
             </section>
 
             {/* Keys Shared & Emergency Features */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">6. Keys Shared & Emergency Features</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.keysShared.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                The Keys Shared feature allows you to designate trusted naybors who have access to your home
-                in emergencies. By using this feature:
+                {t('terms.keysShared.description')}
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm mt-2">
-                <li>You acknowledge that sharing key/access information carries inherent risks</li>
-                <li>You are responsible for ensuring you trust the naybors you designate</li>
-                <li>We are not liable for actions taken by your designated key holders</li>
-                <li>If you enable emergency worker sharing, verified dispatch accounts may access your information in emergencies</li>
-                <li>You can disable emergency worker sharing at any time</li>
+                <li>{t('terms.keysShared.points.risks')}</li>
+                <li>{t('terms.keysShared.points.trust')}</li>
+                <li>{t('terms.keysShared.points.liability')}</li>
+                <li>{t('terms.keysShared.points.emergencyWorkers')}</li>
+                <li>{t('terms.keysShared.points.disable')}</li>
               </ul>
             </section>
 
             {/* Data Liberation */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">7. Data Liberation</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.dataLiberation.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                We believe your data belongs to you. You have the right to export all your data at any time
-                in a portable format. You also have the right to delete your account and all associated data.
-                We will never hold your data hostage.
+                {t('terms.dataLiberation.description')}
               </p>
             </section>
 
             {/* Privacy */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">8. Privacy</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.privacy.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                Your use of the service is also governed by our Privacy Policy, which is incorporated into
-                these Terms by reference. Please review our Privacy Policy to understand how we collect,
-                use, and protect your information.
+                {t('terms.privacy.description')}
               </p>
             </section>
 
             {/* Intellectual Property */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">9. Intellectual Property</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.intellectualProperty.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                Inner Friend Circle is open-source software. The source code is available under the terms
-                of its open-source license. The Inner Friend Circle name, logo, and associated trademarks
-                are the property of Lifesaver Labs.
+                {t('terms.intellectualProperty.description')}
               </p>
             </section>
 
             {/* Limitation of Liability */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">10. Limitation of Liability</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.liability.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT
-                PERMITTED BY LAW, LIFESAVER LABS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
-                CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICE.
+                {t('terms.liability.description')}
               </p>
               <p className="text-muted-foreground text-sm mt-2">
-                This includes, but is not limited to, damages arising from: actions taken by your designated
-                key holders, emergency response delays, data loss, or service interruptions.
+                {t('terms.liability.includes')}
               </p>
             </section>
 
             {/* Indemnification */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">11. Indemnification</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.indemnification.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                You agree to indemnify and hold harmless Lifesaver Labs and its officers, directors,
-                employees, and agents from any claims, damages, or expenses arising from your use of the
-                service or violation of these Terms.
+                {t('terms.indemnification.description')}
               </p>
             </section>
 
             {/* Termination */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">12. Termination</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.termination.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                You may terminate your account at any time by deleting it through the Settings. We may
-                terminate or suspend your access to the service immediately, without prior notice, for
-                conduct that we believe violates these Terms or is harmful to other users.
+                {t('terms.termination.description')}
               </p>
             </section>
 
             {/* Changes to Terms */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">13. Changes to Terms</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.changes.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                We reserve the right to modify these Terms at any time. We will provide notice of significant
-                changes by posting the new Terms on this page and updating the "last updated" date. Your
-                continued use of the service after changes take effect constitutes acceptance of the new Terms.
+                {t('terms.changes.description')}
               </p>
             </section>
 
             {/* Governing Law */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">14. Governing Law</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.governingLaw.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                These Terms shall be governed by and construed in accordance with applicable laws, without
-                regard to conflict of law provisions. For EU users, these terms do not affect your statutory
-                rights under GDPR or applicable consumer protection laws.
+                {t('terms.governingLaw.description')}
               </p>
             </section>
 
             {/* Severability */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">15. Severability</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.severability.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                If any provision of these Terms is found to be unenforceable or invalid, that provision will
-                be limited or eliminated to the minimum extent necessary, and the remaining provisions will
-                remain in full force and effect.
+                {t('terms.severability.description')}
               </p>
             </section>
 
             {/* Contact */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">16. Contact</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('terms.contact.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                For questions about these Terms, contact us at:
+                {t('terms.contact.description')}
               </p>
               <ul className="list-none text-sm text-muted-foreground mt-2 space-y-1">
-                <li>Email: legal@lifesaverlabs.org</li>
-                <li>GitHub: github.com/lifesaverlabs/inner-friend-circle</li>
+                <li>{t('terms.contact.email')}: legal@lifesaverlabs.org</li>
+                <li>{t('terms.contact.github')}: github.com/lifesaverlabs/inner-friend-circle</li>
               </ul>
             </section>
           </div>

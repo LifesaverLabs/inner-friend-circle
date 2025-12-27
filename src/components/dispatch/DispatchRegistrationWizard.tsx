@@ -57,33 +57,33 @@ type WizardStep = 'organization' | 'legal' | 'contact' | 'account' | 'review';
 
 const STEPS: WizardStep[] = ['organization', 'legal', 'contact', 'account', 'review'];
 
-// Validation schemas
-const organizationSchema = z.object({
-  organizationName: z.string().min(2, 'Organization name is required'),
+// Validation schema factories (accept t function for i18n)
+const createOrganizationSchema = (t: (key: string) => string) => z.object({
+  organizationName: z.string().min(2, t('dispatch.validation.organizationNameRequired')),
   organizationType: z.enum(['police', 'fire', 'ems', 'combined', 'private_ems', 'hospital', 'crisis_center']),
-  jurisdictions: z.array(z.string()).min(1, 'At least one jurisdiction is required'),
+  jurisdictions: z.array(z.string()).min(1, t('dispatch.validation.jurisdictionRequired')),
 });
 
-const legalSchema = z.object({
-  taxId: z.string().min(9, 'Valid tax ID required'),
-  insuranceCarrier: z.string().min(2, 'Insurance carrier required'),
-  insurancePolicyNumber: z.string().min(1, 'Policy number required'),
-  registeredAgentName: z.string().min(2, 'Registered agent name required'),
-  registeredAgentContact: z.string().min(5, 'Registered agent contact required'),
+const createLegalSchema = (t: (key: string) => string) => z.object({
+  taxId: z.string().min(9, t('dispatch.validation.taxIdRequired')),
+  insuranceCarrier: z.string().min(2, t('dispatch.validation.insuranceCarrierRequired')),
+  insurancePolicyNumber: z.string().min(1, t('dispatch.validation.policyNumberRequired')),
+  registeredAgentName: z.string().min(2, t('dispatch.validation.registeredAgentNameRequired')),
+  registeredAgentContact: z.string().min(5, t('dispatch.validation.registeredAgentContactRequired')),
 });
 
-const contactSchema = z.object({
-  primaryContactName: z.string().min(2, 'Contact name required'),
-  primaryContactEmail: z.string().email('Valid email required'),
-  primaryContactPhone: z.string().min(10, 'Valid phone required'),
+const createContactSchema = (t: (key: string) => string) => z.object({
+  primaryContactName: z.string().min(2, t('dispatch.validation.contactNameRequired')),
+  primaryContactEmail: z.string().email(t('dispatch.validation.validEmailRequired')),
+  primaryContactPhone: z.string().min(10, t('dispatch.validation.validPhoneRequired')),
 });
 
-const accountSchema = z.object({
-  password: z.string().min(8, 'Password must be at least 8 characters'),
+const createAccountSchema = (t: (key: string) => string) => z.object({
+  password: z.string().min(8, t('dispatch.validation.passwordMinLength')),
   confirmPassword: z.string(),
-  acceptedTerms: z.literal(true, { errorMap: () => ({ message: 'You must accept the terms' }) }),
+  acceptedTerms: z.literal(true, { errorMap: () => ({ message: t('dispatch.validation.mustAcceptTerms') }) }),
 }).refine((data) => data.password === data.confirmPassword, {
-  message: 'Passwords do not match',
+  message: t('dispatch.validation.passwordsMustMatch'),
   path: ['confirmPassword'],
 });
 
@@ -154,16 +154,16 @@ export function DispatchRegistrationWizard({ onSuccess }: DispatchRegistrationWi
 
     switch (step) {
       case 'organization':
-        result = organizationSchema.safeParse(formData);
+        result = createOrganizationSchema(t).safeParse(formData);
         break;
       case 'legal':
-        result = legalSchema.safeParse(formData);
+        result = createLegalSchema(t).safeParse(formData);
         break;
       case 'contact':
-        result = contactSchema.safeParse(formData);
+        result = createContactSchema(t).safeParse(formData);
         break;
       case 'account':
-        result = accountSchema.safeParse(formData);
+        result = createAccountSchema(t).safeParse(formData);
         break;
       default:
         return true;

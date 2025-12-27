@@ -77,6 +77,7 @@ export function TierFeed({
     addInteraction,
     dismissNudge,
     shouldShowLikeCount,
+    createPost,
     isLoading,
     error,
   } = useFeed({ userId, friends });
@@ -230,6 +231,35 @@ export function TierFeed({
     dismissNudge(nudgeId);
   }, [friends, onUpdateLastContacted, dismissNudge, t]);
 
+  // Handle creating a new post
+  const handleCreatePost = useCallback(async (postData: {
+    content: string;
+    contentType: import('@/types/feed').PostContentType;
+    visibility: import('@/types/friend').TierType[];
+  }) => {
+    if (!userId) {
+      toast.error(t('tierFeed.toasts.notLoggedIn'));
+      return;
+    }
+
+    const result = await createPost({
+      authorId: userId,
+      authorName: 'You', // Will be populated from profile
+      authorTier: 'core', // Default, will be determined by connections
+      contentType: postData.contentType,
+      content: postData.content,
+      createdAt: new Date(),
+      visibility: postData.visibility,
+      isSuggested: false,
+      isSponsored: false,
+      interactions: [],
+    });
+
+    if (result) {
+      toast.success(t('tierFeed.toasts.postCreated'));
+    }
+  }, [userId, createPost, t]);
+
   const bgColor = TIER_BG_COLORS[tier];
   const borderColor = TIER_BORDER_COLORS[tier];
 
@@ -317,6 +347,7 @@ export function TierFeed({
         onDefaultContactMethodChange={setDefaultContactMethod}
         composeOpen={composeOpen}
         onComposeOpenChange={setComposeOpen}
+        onCreatePost={handleCreatePost}
       />
 
       {/*

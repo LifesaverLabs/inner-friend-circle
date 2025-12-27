@@ -43,43 +43,38 @@ export default function Privacy() {
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-6">
             {/* Privacy-First Philosophy */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Our Privacy-First Philosophy</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.philosophy.title')}</h2>
               <p className="text-muted-foreground">
-                Inner Friend Circle is built by Lifesaver Labs with privacy as a core principle. We believe your
-                relationships are deeply personal, and we treat your data with the respect it deserves. We collect
-                only what's necessary to provide the service, and we never sell your data to third parties.
+                {t('privacy.philosophy.description')}
               </p>
             </section>
 
             {/* What We Collect */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">What Data We Collect</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.dataCollection.title')}</h2>
               <div className="space-y-3">
                 <div>
-                  <h3 className="font-medium">Account Information</h3>
+                  <h3 className="font-medium">{t('privacy.dataCollection.accountInfo.title')}</h3>
                   <p className="text-muted-foreground text-sm">
-                    Email address and password (securely hashed) for authentication. Optional display name.
+                    {t('privacy.dataCollection.accountInfo.description')}
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium">Friend Data</h3>
+                  <h3 className="font-medium">{t('privacy.dataCollection.friendData.title')}</h3>
                   <p className="text-muted-foreground text-sm">
-                    Names, contact information (email, phone), notes, and tier classifications you create.
-                    This is stored to provide the core service functionality.
+                    {t('privacy.dataCollection.friendData.description')}
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium">Emergency Access Data (Keys Shared)</h3>
+                  <h3 className="font-medium">{t('privacy.dataCollection.emergencyData.title')}</h3>
                   <p className="text-muted-foreground text-sm">
-                    If you use the Keys Shared feature, we store your address, key holder information,
-                    and emergency access preferences. This data is especially sensitive and is protected accordingly.
+                    {t('privacy.dataCollection.emergencyData.description')}
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium">Usage Data</h3>
+                  <h3 className="font-medium">{t('privacy.dataCollection.usageData.title')}</h3>
                   <p className="text-muted-foreground text-sm">
-                    We may collect basic usage information to improve the service, but we do not use
-                    third-party analytics or tracking tools.
+                    {t('privacy.dataCollection.usageData.description')}
                   </p>
                 </div>
               </div>
@@ -87,65 +82,61 @@ export default function Privacy() {
 
             {/* How We Use Data */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">How We Use Your Data</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.dataUsage.title')}</h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 text-sm">
-                <li>To provide and maintain the Inner Friend Circle service</li>
-                <li>To enable mutual matching when you and another user both list each other</li>
-                <li>To facilitate emergency naybor coordination if you enable Keys Shared</li>
-                <li>To send you important service notifications (never marketing)</li>
-                <li>To improve and develop new features</li>
+                <li>{t('privacy.dataUsage.provide')}</li>
+                <li>{t('privacy.dataUsage.matching')}</li>
+                <li>{t('privacy.dataUsage.emergency')}</li>
+                <li>{t('privacy.dataUsage.notifications')}</li>
+                <li>{t('privacy.dataUsage.improve')}</li>
               </ul>
             </section>
 
             {/* Data Storage */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Data Storage & Security</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.dataStorage.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                Your data is stored securely using Supabase, a trusted infrastructure provider. All data is
-                encrypted in transit (HTTPS/TLS) and at rest. We implement row-level security to ensure
-                you can only access your own data. Authentication is handled securely with industry-standard practices.
+                {t('privacy.dataStorage.description')}
               </p>
             </section>
 
             {/* Your Rights */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Your Rights (GDPR & Data Liberation)</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.rights.title')}</h2>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-3">
                   <Heart className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-medium">Right to Access & Export</h3>
+                    <h3 className="font-medium">{t('privacy.rights.access.title')}</h3>
                     <p className="text-muted-foreground">
-                      You can export all your data at any time in a portable JSON format. Use the Export
-                      feature in your dashboard. Your data belongs to you.
+                      {t('privacy.rights.access.description')}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Heart className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-medium">Right to Deletion</h3>
+                    <h3 className="font-medium">{t('privacy.rights.deletion.title')}</h3>
                     <p className="text-muted-foreground">
-                      You can delete your account and all associated data at any time from Settings.
-                      Deletion is permanent and cascades to all your data.
+                      {t('privacy.rights.deletion.description')}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Heart className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-medium">Right to Rectification</h3>
+                    <h3 className="font-medium">{t('privacy.rights.rectification.title')}</h3>
                     <p className="text-muted-foreground">
-                      You can edit your data at any time through the application interface.
+                      {t('privacy.rights.rectification.description')}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Heart className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-medium">Right to Object</h3>
+                    <h3 className="font-medium">{t('privacy.rights.object.title')}</h3>
                     <p className="text-muted-foreground">
-                      You can opt out of specific features like emergency worker sharing for Keys Shared data.
+                      {t('privacy.rights.object.description')}
                     </p>
                   </div>
                 </div>
@@ -154,64 +145,56 @@ export default function Privacy() {
 
             {/* Third Parties */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Third-Party Services</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.thirdParties.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                <strong>Supabase:</strong> Our database and authentication provider. They process data on our
-                behalf under strict data processing agreements. See their privacy policy at supabase.com/privacy.
+                <strong>{t('privacy.thirdParties.supabase.name')}:</strong> {t('privacy.thirdParties.supabase.description')}
               </p>
               <p className="text-muted-foreground text-sm mt-2">
-                We do not use any advertising networks, social media trackers, or third-party analytics services.
+                {t('privacy.thirdParties.noTracking')}
               </p>
             </section>
 
             {/* Cookies */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Cookies & Local Storage</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.cookies.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                We use only essential cookies/local storage for authentication session management. We do not
-                use tracking cookies, advertising cookies, or any non-essential cookies.
+                {t('privacy.cookies.description')}
               </p>
             </section>
 
             {/* Children */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Children's Privacy</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.children.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                Inner Friend Circle is not intended for children under 13 years of age. We do not knowingly
-                collect personal information from children under 13. If you become aware that a child has
-                provided us with personal data, please contact us.
+                {t('privacy.children.description')}
               </p>
             </section>
 
             {/* Data Retention */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Data Retention</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.retention.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                We retain your data for as long as your account is active. When you delete your account,
-                all associated data is permanently deleted within 30 days. Backups may retain data for up
-                to 90 days for disaster recovery purposes.
+                {t('privacy.retention.description')}
               </p>
             </section>
 
             {/* Contact */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Contact Us</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.contact.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                For privacy-related questions or to exercise your rights, contact us at:
+                {t('privacy.contact.description')}
               </p>
               <ul className="list-none text-sm text-muted-foreground mt-2 space-y-1">
-                <li>Email: privacy@lifesaverlabs.org</li>
-                <li>GitHub: github.com/lifesaverlabs/inner-friend-circle</li>
+                <li>{t('privacy.contact.email')}: privacy@lifesaverlabs.org</li>
+                <li>{t('privacy.contact.github')}: github.com/lifesaverlabs/inner-friend-circle</li>
               </ul>
             </section>
 
             {/* Changes */}
             <section>
-              <h2 className="text-xl font-semibold mb-3">Changes to This Policy</h2>
+              <h2 className="text-xl font-semibold mb-3">{t('privacy.changes.title')}</h2>
               <p className="text-muted-foreground text-sm">
-                We may update this privacy policy from time to time. We will notify you of any changes by
-                posting the new policy on this page and updating the "last updated" date. Continued use of
-                the service after changes constitutes acceptance of the updated policy.
+                {t('privacy.changes.description')}
               </p>
             </section>
           </div>
