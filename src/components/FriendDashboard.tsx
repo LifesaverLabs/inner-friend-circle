@@ -30,6 +30,7 @@ import { useKeysShared } from '@/hooks/useKeysShared';
 import { TierType } from '@/types/friend';
 import { ExportableSocialGraph } from '@/types/feed';
 import { convertImportedFriends } from '@/lib/dataPortability';
+import { extractDigits } from '@/lib/phoneUtils';
 
 interface FriendDashboardProps {
   isLoggedIn: boolean;
@@ -146,20 +147,28 @@ export function FriendDashboard({
     
     // Try phone lookup if email didn't find anyone
     if (!foundUser && phone) {
-      const { data: phoneDataArray } = await supabase
+      // Normalize phone for comparison (strip non-digits)
+      const normalizedPhone = extractDigits(phone);
+      
+      // Fetch all contact methods and compare normalized phone numbers
+      const { data: allPhoneContacts } = await supabase
         .from('contact_methods')
-        .select('id, user_id')
-        .eq('contact_identifier', phone)
-        .neq('user_id', user.id)
-        .limit(1);
+        .select('id, user_id, contact_identifier')
+        .neq('user_id', user.id);
       
-      const phoneData = phoneDataArray?.[0];
+      const phoneMatch = (allPhoneContacts || []).find(c => {
+        const contactDigits = extractDigits(c.contact_identifier);
+        // Match if digits are same or one ends with the other (handles country code differences)
+        return contactDigits === normalizedPhone || 
+               contactDigits.endsWith(normalizedPhone) || 
+               normalizedPhone.endsWith(contactDigits);
+      });
       
-      if (phoneData) {
+      if (phoneMatch) {
         const connectionResult = await createConnectionRequest(
-          phoneData.user_id,
+          phoneMatch.user_id,
           tier as CircleTier,
-          phoneData.id,
+          phoneMatch.id,
           true
         );
         
@@ -203,7 +212,17 @@ export function FriendDashboard({
         .select('contact_identifier, user_id')
         .eq('user_id', user.id);
       
-      const ourContactIds = new Set((ourContacts || []).map(c => c.contact_identifier.toLowerCase()));
+      // Create normalized sets for comparison (email lowercase, phone digits only)
+      const ourEmailContacts = new Set<string>();
+      const ourPhoneContacts = new Set<string>();
+      for (const c of ourContacts || []) {
+        const val = c.contact_identifier;
+        if (val.includes('@')) {
+          ourEmailContacts.add(val.toLowerCase());
+        } else {
+          ourPhoneContacts.add(extractDigits(val));
+        }
+      }
       
       // Find any pending invitations directed at our contact methods
       const { data: reverseInvitations } = await supabase
@@ -214,10 +233,28 @@ export function FriendDashboard({
       
       // Check if any reverse invitation matches
       for (const invite of reverseInvitations || []) {
-        const inviteContactLower = (invite.invitee_email || invite.invitee_phone || '').toLowerCase();
+        let matchesOurContact = false;
+        
+        // Check email match
+        if (invite.invitee_email && ourEmailContacts.has(invite.invitee_email.toLowerCase())) {
+          matchesOurContact = true;
+        }
+        
+        // Check phone match (normalized)
+        if (invite.invitee_phone) {
+          const invitePhoneDigits = extractDigits(invite.invitee_phone);
+          for (const ourPhone of ourPhoneContacts) {
+            if (ourPhone === invitePhoneDigits || 
+                ourPhone.endsWith(invitePhoneDigits) || 
+                invitePhoneDigits.endsWith(ourPhone)) {
+              matchesOurContact = true;
+              break;
+            }
+          }
+        }
         
         // Does this invitation target one of our contact methods?
-        if (ourContactIds.has(inviteContactLower)) {
+        if (matchesOurContact) {
           // Now check if the inviter has a contact method matching what we just tried to add
           const { data: theirContacts } = await supabase
             .from('contact_methods')
@@ -225,8 +262,20 @@ export function FriendDashboard({
             .eq('user_id', invite.inviter_id);
           
           const theirContactMatch = (theirContacts || []).find(c => {
-            const cLower = c.contact_identifier.toLowerCase();
-            return (email && cLower === email.toLowerCase()) || (phone && cLower === phone);
+            const cVal = c.contact_identifier;
+            // Email comparison
+            if (email && cVal.includes('@')) {
+              return cVal.toLowerCase() === email.toLowerCase();
+            }
+            // Phone comparison (normalized)
+            if (phone) {
+              const cDigits = extractDigits(cVal);
+              const phoneDigits = extractDigits(phone);
+              return cDigits === phoneDigits || 
+                     cDigits.endsWith(phoneDigits) || 
+                     phoneDigits.endsWith(cDigits);
+            }
+            return false;
           });
           
           if (theirContactMatch) {
