@@ -119,13 +119,14 @@ export function FriendDashboard({
     
     // Look up by email first
     if (email) {
-      const { data: contactData } = await supabase
+      const { data: contactDataArray } = await supabase
         .from('contact_methods')
         .select('id, user_id')
         .ilike('contact_identifier', email)
         .neq('user_id', user.id)
-        .limit(1)
-        .single();
+        .limit(1);
+      
+      const contactData = contactDataArray?.[0];
       
       if (contactData) {
         // Found a user with this email - create connection request
@@ -145,13 +146,14 @@ export function FriendDashboard({
     
     // Try phone lookup if email didn't find anyone
     if (!foundUser && phone) {
-      const { data: phoneData } = await supabase
+      const { data: phoneDataArray } = await supabase
         .from('contact_methods')
         .select('id, user_id')
         .eq('contact_identifier', phone)
         .neq('user_id', user.id)
-        .limit(1)
-        .single();
+        .limit(1);
+      
+      const phoneData = phoneDataArray?.[0];
       
       if (phoneData) {
         const connectionResult = await createConnectionRequest(
